@@ -1,0 +1,22 @@
+[
+  {
+    "vnum": 2001,
+    "name": "Stone Golem",
+    "level": 11,
+    "hp_dice": [11, 10, 30],
+    "ac": 25,
+    "damage_dice": [2, 10, 8],
+    "flags": ["guardian"],
+    "room_vnum": 1001
+  },
+  {
+    "vnum": 2002,
+    "name": "Water Elemental",
+    "level": 5,
+    "hp_dice": [5, 8, 10],
+    "ac": 17,
+    "damage_dice": [2, 6, 4],
+    "flags": ["elemental"],
+    "room_vnum": 1003
+  }
+]

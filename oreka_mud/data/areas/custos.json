@@ -1,0 +1,68 @@
+{
+  "rooms": [
+    {
+      "vnum": 1000,
+      "name": "Central Aetherial Altar",
+      "description": "At the chapel's heart, this crystalline plinth hums with bio-lumen light, where the four elements entwine in a perpetual vortex. Here, thou standest amid swirling winds, crackling flames, flowing waters, and unyielding earth. Pasua Clerics may channel divine energy to cast commune (as the spell, once per day per character) to seek guidance from the Lords. Encounter: A lingering Deceiver illusion (Will save DC 18) tests the faithful, or a Druid's Wild Shape ritual summons an elemental guardian (CR 3) for aid in quests. Tie-in: Bards inspire Kin unity (+2 morale bonus to allies' saves for 1 hour after a Perform check DC 20).",
+      "exits": {
+        "north": 1001,
+        "east": 1002,
+        "south": 1003,
+        "west": 1004
+      },
+      "flags": [
+        "safe",
+        "altar"
+      ]
+    },
+    {
+      "vnum": 1001,
+      "name": "Quadrant of the Lord of Stone (North)",
+      "description": "Walls of etched granite depict the Giants' creation, with altars for offerings of earth and gems. Fighters with Elemental Affinity (Earth) gain temporary DR 5/bludgeoning for 1 hour after meditation. Encounter: A stone golem ward (CR 11) awakens if the altar is defiled, challenging guardians of the Veil.",
+      "exits": {
+        "south": 1000
+      },
+      "flags": [
+        "earth",
+        "altar"
+      ]
+    },
+    {
+      "vnum": 1002,
+      "name": "Quadrant of the Lady of Fire (East)",
+      "description": "Braziers flicker with eternal flames, mosaics showing dwarven forges. Taraf-Imro-inspired Clerics (Fire domain) can ignite flaming sphere spontaneously here. Encounter: Phantom flames test resolve (Reflex DC 16 or 2d6 fire damage), revealing hidden runes for a quest hook.",
+      "exits": {
+        "west": 1000
+      },
+      "flags": [
+        "fire",
+        "altar"
+      ]
+    },
+    {
+      "vnum": 1003,
+      "name": "Quadrant of the Lady of the Sea (Tempest, South)",
+      "description": "Pools of sacred river water reflect stormy skies, with shells and waves in bas-relief. Eruskan Clerics (Water domain) summon healing rains (cure moderate wounds, mass, once per visit). Encounter: A water elemental (CR 5) manifests to aid or challenge those seeking the river's source.",
+      "exits": {
+        "north": 1000
+      },
+      "flags": [
+        "water",
+        "altar"
+      ]
+    },
+    {
+      "vnum": 1004,
+      "name": "Quadrant of the Youngest Brother (Wind, West)",
+      "description": "Winds whisper through open vents, feathers and kites adorning the space. Hasura Bards or Mytroan Rangers feel the air's grace, gaining feather fall at will for 10 minutes. Encounter: A gust carries illusory whispers of the Shattering, requiring a Decipher Script check (DC 20) to uncover lost lore.",
+      "exits": {
+        "east": 1000
+      },
+      "flags": [
+        "air",
+        "altar"
+      ]
+    }
+  ],
+  "mobs": []
+}

@@ -1,0 +1,6 @@
+#SOCIAL
+say
+You say, '$m'.~
+$n says, '$m'.~
+~
+#END

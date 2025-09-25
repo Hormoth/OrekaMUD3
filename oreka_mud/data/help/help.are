@@ -1,0 +1,13 @@
+#HELP
+look
+Displays the description of the current room and its exits.
+~
+say
+Says a message to everyone in the room.
+~
+kill
+Attacks a target in the room.
+~
+quest
+Manages quests (e.g., 'quest start' to begin a quest).
+~
