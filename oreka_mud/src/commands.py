@@ -32,6 +32,14 @@ class CommandParser:
                     if s.lower() == spell_name.lower():
                         known = True
                         break
+        # Check for domain spells (Cleric only)
+        if not known and character.char_class == "Cleric":
+            # Check if the spell is a domain spell available at this level
+            available_domains = character.get_available_domain_spells() if hasattr(character, 'get_available_domain_spells') else {}
+            for lvl, spells in available_domains.items():
+                if any(s.lower() == spell_name.lower() for s in spells):
+                    known = True
+                    break
         if not known:
             return f"You do not have {spell_name} prepared or known."
         # Find spell level for this class
@@ -177,52 +185,73 @@ class CommandParser:
         return "\n".join(lines)
 
     def cmd_score(self, character, args):
+        # Section 1: Identity
         lines = [
-            f"Name: {character.name}",
-            f"Title: {character.title or ''}",
-            f"Race: {character.race}",
-            f"Class: {getattr(character, 'char_class', 'Adventurer')}",
-            f"Level: {character.level}",
+            "+" + "-"*40 + "+",
+            f"| Name: {character.name:<15} Level: {character.level:<3}  |",
+            f"| Title: {character.title or '':<32} |",
+            f"| Race: {character.race:<15} Class: {getattr(character, 'char_class', 'Adventurer'):<12} |",
         ]
-        # Show class alignment and hit die if available
+        # Class details
         if hasattr(character, 'get_class_data'):
             class_data = character.get_class_data()
-            lines.append(f"Class Alignment: {class_data.get('alignment', '-')}")
-            lines.append(f"Hit Die: d{class_data.get('hit_die', '-')}  Skill Points/Level: {class_data.get('skill_points', '-')}  BAB: {class_data.get('bab_progression', '-')}  Saves: {class_data.get('save_progression', '-')}")
-        lines += [
-            f"Alignment: {getattr(character, 'alignment', 'Unaligned')}",
-            f"Deity: {getattr(character, 'deity', 'None')}",
-            f"Size: {getattr(character, 'size', 'Medium')}",
-            f"Speed: {getattr(character, 'speed', character.move)} ft.",
-            f"Initiative: {getattr(character, 'initiative', (character.dex_score - 10) // 2)}",
-            f"HP: {character.hp}/{character.max_hp}",
-            f"Mana: {character.mana}/{character.max_mana}",
-            f"AC: {character.ac}",
-            f"Touch AC: {getattr(character, 'touch_ac', character.ac)}",
-            f"Flat-Footed AC: {getattr(character, 'flat_ac', character.ac)}",
-            f"BAB: {getattr(character, 'bab', (character.level * 3) // 4)}",
-            f"Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2)}",
-            f"Fortitude: {getattr(character, 'fortitude', (character.con_score - 10) // 2)}",
-            f"Reflex: {getattr(character, 'reflex', (character.dex_score - 10) // 2)}",
-            f"Will: {getattr(character, 'will', (character.wis_score - 10) // 2)}",
-            f"STR: {character.str_score}",
-            f"DEX: {character.dex_score}",
-            f"CON: {character.con_score}",
-            f"INT: {character.int_score}",
-            f"WIS: {character.wis_score}",
-            f"CHA: {character.cha_score}",
-            f"XP: {character.xp}",
-            f"Elemental Affinity: {character.elemental_affinity or ''}",
-            f"Immortal: {'Yes' if character.is_immortal else 'No'}",
-            f"Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None'}",
-            f"Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None'}",
-        ]
-        # Active conditions, status effects, buffs/debuffs
+            lines.append(f"| Class Alignment: {class_data.get('alignment', '-'):<27} |")
+            lines.append(f"| Hit Die: d{class_data.get('hit_die', '-')}  Skill/Level: {class_data.get('skill_points', '-')}  |")
+            lines.append(f"| BAB: {class_data.get('bab_progression', '-'):>6}  Saves: {class_data.get('save_progression', '-')} |")
+        lines.append("+" + "-"*40 + "+")
+
+        # Section 2: Roleplay/Meta
+        lines.append(f"| Alignment: {getattr(character, 'alignment', 'Unaligned'):<15} Deity: {getattr(character, 'deity', 'None'):<18}|")
+        lines.append(f"| Size: {getattr(character, 'size', 'Medium'):<8} Speed: {getattr(character, 'speed', character.move):<4} ft.   Immortal: {'Yes' if character.is_immortal else 'No':<3} |")
+        lines.append(f"| Elemental Affinity: {character.elemental_affinity or 'None':<22}|")
+        lines.append("+" + "-"*40 + "+")
+
+        # Section 3: Combat
+        lines.append(f"| HP: {character.hp:>3}/{character.max_hp:<3}  Mana: {character.mana:>3}/{character.max_mana:<3}  AC: {character.ac:<2}  |")
+        lines.append(f"| Touch AC: {getattr(character, 'touch_ac', character.ac):<2}  Flat-Footed AC: {getattr(character, 'flat_ac', character.ac):<2}  |")
+        lines.append(f"| BAB: {getattr(character, 'bab', (character.level * 3) // 4):<2}  Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2):<2} |")
+
+        # D&D 3.5 Save Calculation
+        def calc_save(save_type):
+            class_data = character.get_class_data()
+            prog = class_data.get('save_progression', {}).get(save_type, 'poor')
+            lvl = getattr(character, 'class_level', character.level)
+            if prog == 'good':
+                base = 2 + (lvl // 2)
+            else:
+                base = lvl // 3
+            if save_type == 'fort':
+                mod = (character.con_score - 10) // 2
+            elif save_type == 'ref':
+                mod = (character.dex_score - 10) // 2
+            else:
+                mod = (character.wis_score - 10) // 2
+            return base + mod
+
+        fort = calc_save('fort')
+        ref = calc_save('ref')
+        will = calc_save('will')
+        lines.append(f"| Fort: {fort:<2}  Ref: {ref:<2}  Will: {will:<2} |")
+        lines.append("+" + "-"*40 + "+")
+
+        # Section 4: Stats
+        lines.append(f"| STR: {character.str_score:<2}  DEX: {character.dex_score:<2}  CON: {character.con_score:<2}  INT: {character.int_score:<2}  WIS: {character.wis_score:<2}  CHA: {character.cha_score:<2} |")
+        lines.append("+" + "-"*40 + "+")
+
+        # Section 5: XP, Resistances, Immunities
+        lines.append(f"| XP: {character.xp:<8} |")
+        lines.append(f"| Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None':<28}|")
+        lines.append(f"| Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None':<29}|")
+        lines.append("+" + "-"*40 + "+")
+
+        # Section 6: Active Effects
         effects = getattr(character, 'active_effects', [])
         if effects:
-            lines.append("\nActive Conditions/Status Effects:")
+            lines.append("| Active Conditions/Status Effects:         |")
             for effect in effects:
-                lines.append(f"- {effect}")
+                lines.append(f"| - {effect:<36}|")
+            lines.append("+" + "-"*40 + "+")
+
         return "\n".join(lines)
 
     def cmd_companion(self, character, args):

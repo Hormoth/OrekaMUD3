@@ -229,7 +229,8 @@ class Character:
     def __init__(self, name, title, race, level, hp, max_hp, ac, room, is_immortal=False, elemental_affinity=None,
                  str_score=10, dex_score=10, con_score=10, int_score=10, wis_score=10, cha_score=10,
                  mana=100, max_mana=100, move=100, max_move=100, inventory=None, skills=None,
-                 char_class="Adventurer", class_level=None, class_features=None, spells_known=None, spells_per_day=None):
+                 char_class="Adventurer", class_level=None, class_features=None, spells_known=None, spells_per_day=None,
+                 alignment=None, deity=None, feats=None, domains=None):
         self.name = name
         self.title = title
         self.race = race
@@ -262,11 +263,53 @@ class Character:
         self.class_features = self.get_class_features()
         self.spells_known = spells_known if spells_known is not None else self._auto_spells_known()
         self.spells_per_day = spells_per_day if spells_per_day is not None else self._auto_spells_per_day()
+        self.alignment = alignment
+        self.deity = deity
         # Always initialize prompt and full_prompt
         self.prompt = "AC %a HP %h/%H Mana %m/%M [%RACE] >"  # Default prompt
         self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Mana %m/%M Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Mana %m/%M Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
         self.conditions = set()  # Track status effects/conditions (e.g., 'prone', 'flanking', 'shaken')
-        self.feats = []  # Always initialize feats as an empty list
+        self.feats = feats if feats is not None else []  # Accept feats from constructor or default to empty list
+        self.domains = domains if domains is not None else []  # List of domain names (e.g., ["War", "Sun"])
+        self.domain_powers = {}  # domain_name -> granted power description or callable
+        self.domain_spells = {}  # spell_level -> set of domain spell names
+        self._init_domains()
+
+    def _init_domains(self):
+        """Initialize domain powers and domain spells for this character."""
+        # Import a DOMAIN_DATA dict: domain_name -> {"powers": str/callable, "spells": {level: spell_name}}
+        try:
+            from src.spells import DOMAIN_DATA
+        except ImportError:
+            DOMAIN_DATA = {}
+        for domain in self.domains:
+            data = DOMAIN_DATA.get(domain)
+            if not data:
+                continue
+            self.domain_powers[domain] = data.get("power")
+            for lvl, spell in data.get("spells", {}).items():
+                if lvl not in self.domain_spells:
+                    self.domain_spells[lvl] = set()
+                self.domain_spells[lvl].add(spell)
+
+    def get_available_domain_spells(self):
+        """Return a dict of spell_level -> set of domain spells available at current spellcasting level."""
+        # Only include domain spells for levels the character can cast
+        available = {}
+        max_spell_level = self.get_max_spell_level()
+        for lvl, spells in self.domain_spells.items():
+            if int(lvl) <= max_spell_level:
+                available[lvl] = spells
+        return available
+
+    def get_max_spell_level(self):
+        """Return the highest spell level the character can cast (based on class_level and class)."""
+        # This is a placeholder; real logic should use class spell progression tables
+        # For Cleric: 1st at 1, 2nd at 3, 3rd at 5, 4th at 7, 5th at 9, 6th at 11, 7th at 13, 8th at 15, 9th at 17
+        if self.char_class == "Cleric":
+            return min(9, (self.class_level + 1) // 2)
+        # Add other classes as needed
+        return 0
     def set_class(self, new_class):
         self.char_class = new_class
         self.class_features = self.get_class_features()

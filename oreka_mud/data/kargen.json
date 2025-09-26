@@ -1,0 +1,44 @@
+{
+  "name": "Kargen",
+  "title": null,
+  "race": "Taraf-Imro Human",
+  "level": 1,
+  "char_class": "Wizard",
+  "class_level": 1,
+  "class_features": [
+    "Summon Familiar",
+    "Scribe Scroll"
+  ],
+  "spells_known": {
+    "1": [
+      "Magic Missile"
+    ]
+  },
+  "spells_per_day": {
+    "1": 1
+  },
+  "hp": 10,
+  "max_hp": 10,
+  "ac": 10,
+  "room_vnum": 1003,
+  "quests": [],
+  "state": "EXPLORING",
+  "is_ai": false,
+  "is_immortal": false,
+  "elemental_affinity": null,
+  "str_score": 10,
+  "dex_score": 16,
+  "con_score": 17,
+  "int_score": 16,
+  "wis_score": 14,
+  "cha_score": 7,
+  "mana": 100,
+  "max_mana": 100,
+  "move": 100,
+  "max_move": 100,
+  "xp": 0,
+  "show_all": false,
+  "inventory": [],
+  "alignment": "Chaotic Good",
+  "deity": "Dagdan, The United Sun"
+}

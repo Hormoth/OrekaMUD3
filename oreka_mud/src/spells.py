@@ -1,3 +1,63 @@
+# D&D 3.5 Domain data: domain_name -> {"power": str, "spells": {level: spell_name}}
+DOMAIN_DATA = {
+    "Air": {
+        "power": "Turn/rebuke earth creatures, +1 caster level with [Air] spells.",
+        "spells": {
+            1: "Obscuring Mist",
+            2: "Wind Wall",
+            3: "Gaseous Form",
+            4: "Air Walk",
+            5: "Control Winds",
+            6: "Chain Lightning",
+            7: "Control Weather",
+            8: "Whirlwind",
+            9: "Elemental Swarm (air only)"
+        }
+    },
+    "Animal": {
+        "power": "Knowledge (nature) as class skill, speak with animals 1/day.",
+        "spells": {
+            1: "Calm Animals",
+            2: "Hold Animal",
+            3: "Dominate Animal",
+            4: "Summon Nature’s Ally IV",
+            5: "Commune with Nature",
+            6: "Antilife Shell",
+            7: "Animal Shapes",
+            8: "Summon Nature’s Ally VIII",
+            9: "Shapechange"
+        }
+    },
+    "Chaos": {
+        "power": "Cast chaos spells at +1 caster level.",
+        "spells": {
+            1: "Protection from Law",
+            2: "Shatter",
+            3: "Magic Circle against Law",
+            4: "Chaos Hammer",
+            5: "Dispel Law",
+            6: "Animate Objects",
+            7: "Word of Chaos",
+            8: "Cloak of Chaos",
+            9: "Summon Monster IX (chaotic only)"
+        }
+    },
+    "Death": {
+        "power": "Rebuke/command undead, Death Touch (slay living, limited uses).",
+        "spells": {
+            1: "Cause Fear",
+            2: "Death Knell",
+            3: "Animate Dead",
+            4: "Death Ward",
+            5: "Slay Living",
+            6: "Create Undead",
+            7: "Destruction",
+            8: "Create Greater Undead",
+            9: "Wail of the Banshee"
+        }
+    },
+    # ... Add all other domains as needed ...
+}
 # spells.py
 """
 Central D&D 3.5 spell data for OrekaMUD.
