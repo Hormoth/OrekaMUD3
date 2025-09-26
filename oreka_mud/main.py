@@ -953,10 +953,66 @@ async def log_players(world):
         await asyncio.sleep(60)
 
 async def main():
+
     world = OrekaWorld()
     world.load_data()
     parser = CommandParser(world)
-    
+
+    # --- Spawn a level 1 monster from mobs.json in all chapel.json rooms ---
+    import os
+    import random
+    from src.mob import Mob
+    import json as _json
+    # Load all level 1 monsters from mobs.json
+    mobs_path = os.path.join(os.path.dirname(__file__), "data", "mobs.json")
+    with open(mobs_path, "r") as f:
+        all_mobs = _json.load(f)
+    level1_mobs = [m for m in all_mobs if m.get("level", 0) == 1]
+    if not level1_mobs:
+        raise Exception("No level 1 monsters found in mobs.json!")
+    # Find chapel.json rooms (by area or filename in room data)
+    chapel_rooms = [room for room in world.rooms.values() if getattr(room, 'area', '').lower() == 'chapel' or getattr(room, 'filename', '').lower() == 'chapel.json']
+    if not chapel_rooms:
+        # Fallback: try to match by vnum range if known (e.g., 2000-2099)
+        chapel_rooms = [room for room in world.rooms.values() if 2000 <= getattr(room, 'vnum', 0) < 2100]
+    for room in chapel_rooms:
+        mob_data = random.choice(level1_mobs)
+        # Use Mob.from_dict if available, else fallback to Mob constructor
+        mob = None
+        if hasattr(Mob, 'from_dict'):
+            mob = Mob.from_dict(mob_data, world)
+            mob.room = room
+        else:
+            mob = Mob(
+                vnum=mob_data.get("vnum", 0),
+                name=mob_data.get("name", "Level 1 Monster"),
+                level=mob_data.get("level", 1),
+                hp_dice=mob_data.get("hp_dice", [1,6,0]),
+                ac=mob_data.get("ac", 10),
+                damage_dice=mob_data.get("damage_dice", [1,2,0]),
+                flags=mob_data.get("flags", []),
+                type_=mob_data.get("type_", ""),
+                alignment=mob_data.get("alignment", "Neutral"),
+                ability_scores=mob_data.get("ability_scores", {}),
+                initiative=mob_data.get("initiative", 0),
+                speed=mob_data.get("speed", {}),
+                attacks=mob_data.get("attacks", []),
+                special_attacks=mob_data.get("special_attacks", []),
+                special_qualities=mob_data.get("special_qualities", []),
+                feats=mob_data.get("feats", []),
+                skills=mob_data.get("skills", {}),
+                saves=mob_data.get("saves", {}),
+                environment=mob_data.get("environment", ""),
+                organization=mob_data.get("organization", ""),
+                cr=mob_data.get("cr", None),
+                advancement=mob_data.get("advancement", None),
+                description=mob_data.get("description", "A level 1 monster.")
+            )
+        mob.room = room
+        if not hasattr(room, 'mobs'):
+            room.mobs = []
+        room.mobs.append(mob)
+
     ai_character = Character("Aelthara", None, "Eruskan Human", 7, 60, 120, 16, world.rooms[1000],
                             str_score=12, dex_score=14, con_score=12, int_score=14, wis_score=12, cha_score=16,
                             mana=100, max_mana=100, move=100, max_move=100)
@@ -994,7 +1050,7 @@ async def main():
     hareem.is_ai = False
     world.players.append(hareem)
     world.rooms[1000].players.append(hareem)
-    
+
     logger.info("Starting Oreka MUD server on localhost:4000")
     server = await asyncio.start_server(
         lambda r, w: handle_client(r, w, world, parser), "localhost", 4000
