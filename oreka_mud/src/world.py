@@ -1,3 +1,5 @@
+
+import os
 import json
 from src.room import Room
 from src.mob import Mob
@@ -12,16 +14,26 @@ class OrekaWorld:
         }
 
     def load_data(self):
-        import json
-        # Load rooms from JSON
-        with open("data/rooms.json", "r") as f:
-            rooms_data = json.load(f)
-        for room_data in rooms_data:
-            room = Room(**room_data)
-            self.rooms[room.vnum] = room
+        # Load all area JSON files from data/areas
+        area_dir = os.path.join("data", "areas")
+        for filename in os.listdir(area_dir):
+            if filename.endswith(".json"):
+                with open(os.path.join(area_dir, filename), "r") as f:
+                    try:
+                        data = json.load(f)
+                        # Support both list-of-rooms and {"rooms": [...]} formats
+                        if isinstance(data, dict) and "rooms" in data:
+                            rooms_data = data["rooms"]
+                        else:
+                            rooms_data = data
+                        for room_data in rooms_data:
+                            room = Room(**room_data)
+                            self.rooms[room.vnum] = room
+                    except Exception as e:
+                        print(f"Error loading {filename}: {e}")
 
         # Load mobs from JSON
-        with open("data/mobs.json", "r") as f:
+        with open(os.path.join("data", "mobs.json"), "r") as f:
             mobs_data = json.load(f)
         for mob_data in mobs_data:
             mob = Mob(**{k: v for k, v in mob_data.items() if k != "room_vnum"})

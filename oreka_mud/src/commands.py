@@ -1,6 +1,98 @@
 from src.combat import attack
+from src.character import State
 
 class CommandParser:
+    def cmd_cast(self, character, args):
+        """Casts a spell if prepared/known and slots are available, enforcing V/S and concentration."""
+        from src.spells import get_spell_by_name
+        if not args:
+            return "Cast what spell? Usage: cast <spell name>"
+        spell_name = args.strip()
+        spell = get_spell_by_name(spell_name)
+        if not spell:
+            return f"No such spell: {spell_name}"
+        # Check if character has the spell prepared/known
+        known = False
+        # For prepared casters, check prepared_spells; for spontaneous, check spells_known
+        spellcasting = character.get_spellcasting_info() if hasattr(character, 'get_spellcasting_info') else None
+        is_prepared = spellcasting and spellcasting.get('type', '').lower() == 'prepared'
+        if is_prepared:
+            prepared = getattr(character, 'prepared_spells', {})
+            for lvl, spells in prepared.items():
+                if any(s.lower() == spell_name.lower() for s in spells):
+                    known = True
+                    break
+        else:
+            for s in character.spells_known.values():
+                if isinstance(s, dict):
+                    if s.get("name", "").lower() == spell_name.lower():
+                        known = True
+                        break
+                elif isinstance(s, str):
+                    if s.lower() == spell_name.lower():
+                        known = True
+                        break
+        if not known:
+            return f"You do not have {spell_name} prepared or known."
+        # Find spell level for this class
+        spell_level = spell["level"].get(character.char_class)
+        if spell_level is None:
+            return f"Your class cannot cast {spell_name}."
+        # Check slots
+        slots = character.spells_per_day.get(spell_level, 0)
+        if slots < 1:
+            return f"No spell slots remaining for level {spell_level}."
+        # Enforce V/S components
+        components = spell.get("components", [])
+        if "V" in components and not character.can_cast_verbal():
+            return "You cannot cast this spell: you are unable to speak!"
+        if "S" in components and not character.can_cast_somatic():
+            return "You cannot cast this spell: you are unable to move!"
+        # Concentration check if interrupted (e.g., hit in combat)
+        if character.was_interrupted():
+            conc_result = character.skill_check("Concentration")
+            # DC 10 + spell level (simplified)
+            dc = 10 + spell_level
+            if isinstance(conc_result, str):
+                return f"Spell fails: {conc_result}"
+            if conc_result < dc:
+                character.clear_interrupted()
+                return f"You fail to concentrate and lose the spell! (Needed {dc}, rolled {conc_result})"
+            character.clear_interrupted()
+        # Alignment/Deity restrictions (for divine casters)
+        # Check for alignment tags in spell['school'] or spell.get('alignment')
+        alignment = getattr(character, 'alignment', None)
+        deity = getattr(character, 'deity', None)
+        # Only enforce for Cleric, Paladin, Druid (expand as needed)
+        if character.char_class in ("Cleric", "Paladin", "Druid"):
+            school = spell.get("school", "")
+            # Alignment tag check (e.g., [Evil], [Good], [Lawful], [Chaotic])
+            import re
+            align_tags = re.findall(r'\[(.*?)\]', school)
+            for tag in align_tags:
+                tag = tag.lower()
+                if tag == "evil" and (not alignment or "evil" not in alignment.lower()):
+                    return "Your alignment prevents you from casting [Evil] spells."
+                if tag == "good" and (not alignment or "good" not in alignment.lower()):
+                    return "Your alignment prevents you from casting [Good] spells."
+                if tag == "lawful" and (not alignment or "lawful" not in alignment.lower()):
+                    return "Your alignment prevents you from casting [Lawful] spells."
+                if tag == "chaotic" and (not alignment or "chaotic" not in alignment.lower()):
+                    return "Your alignment prevents you from casting [Chaotic] spells."
+            # Deity restriction (if spell has 'deity' key)
+            spell_deity = spell.get("deity")
+            if spell_deity and (not deity or deity.lower() != spell_deity.lower()):
+                return f"Only followers of {spell_deity} may cast this spell."
+        # Deduct slot
+        character.spells_per_day[spell_level] -= 1
+        # Remove from prepared if prepared caster
+        if is_prepared:
+            for lvl, spells in character.prepared_spells.items():
+                if spell_name in spells:
+                    character.prepared_spells[lvl].remove(spell_name)
+                    break
+        # Simulate spell effect (placeholder)
+        return f"You cast {spell_name}! {spell['description']} (Slots left for level {spell_level}: {character.spells_per_day[spell_level]})"
     def __init__(self, world):
         self.world = world
         self.commands = {
@@ -12,8 +104,217 @@ class CommandParser:
             "quest": self.cmd_quest,
             "gecho": self.cmd_gecho,
             "who": self.cmd_who,
-            "stats": self.cmd_stats
+            "stats": self.cmd_stats,
+            "get": self.cmd_get,
+            "take": self.cmd_get,
+            "drop": self.cmd_drop,
+            "inventory": self.cmd_inventory,
+            "inv": self.cmd_inventory,
+            "help": self.cmd_help,
+            "score": self.cmd_score,
+            "skills": self.cmd_skills,
+            "spells": self.cmd_spells,
+            "cast": self.cmd_cast,
+            "companion": self.cmd_companion,
+            "quest": self.cmd_questpage,
+            "levelup": self.cmd_levelup
         }
+
+    def cmd_spells(self, character, args):
+        lines = ["Spells Known and Spells Per Day:"]
+        spellcasting = character.get_spellcasting_info() if hasattr(character, 'get_spellcasting_info') else None
+        if spellcasting:
+            lines.append(f"Spellcasting Type: {spellcasting.get('type','-')}, Starts at Level: {spellcasting.get('start_level','-')}")
+        # Spells known: dict of level -> list of spell names
+        spells_known = getattr(character, 'spells_known', {})
+        if spells_known:
+            lines.append("Spells Known:")
+            for lvl in sorted(spells_known.keys()):
+                spell_list = spells_known[lvl]
+                lines.append(f"  Level {lvl}: {', '.join(spell_list) if spell_list else 'None'}")
+        else:
+            lines.append("Spells Known: None")
+        # Spells per day: dict of level -> int
+        spells_per_day = getattr(character, 'spells_per_day', {})
+        if spells_per_day:
+            lines.append("Spells Per Day:")
+            for lvl in sorted(spells_per_day.keys()):
+                lines.append(f"  Level {lvl}: {spells_per_day[lvl]}")
+        else:
+            lines.append("Spells Per Day: None")
+        return "\n".join(lines)
+
+    def cmd_skills(self, character, args):
+        lines = ["Skills, Feats, and Class Features:"]
+        # Skills
+        skills = getattr(character, 'skills', {})
+        if hasattr(character, 'get_class_skills'):
+            class_skills = character.get_class_skills()
+            lines.append(f"Class Skills: {', '.join(class_skills) if class_skills else 'None'}")
+        if skills:
+            lines.append("Skills:")
+            for skill, value in skills.items():
+                lines.append(f"  {skill}: {value}")
+        else:
+            lines.append("Skills: None")
+        # Feats
+        feats = getattr(character, 'feats', [])
+        if feats:
+            lines.append("Feats:")
+            for feat in feats:
+                lines.append(f"  {feat}")
+        else:
+            lines.append("Feats: None")
+        # Class Features
+        if hasattr(character, 'get_class_features'):
+            features = character.get_class_features()
+            if features:
+                lines.append("Class Features:")
+                for feature in features:
+                    lines.append(f"  {feature}")
+            else:
+                lines.append("Class Features: None")
+        return "\n".join(lines)
+
+    def cmd_score(self, character, args):
+        lines = [
+            f"Name: {character.name}",
+            f"Title: {character.title or ''}",
+            f"Race: {character.race}",
+            f"Class: {getattr(character, 'char_class', 'Adventurer')}",
+            f"Level: {character.level}",
+        ]
+        # Show class alignment and hit die if available
+        if hasattr(character, 'get_class_data'):
+            class_data = character.get_class_data()
+            lines.append(f"Class Alignment: {class_data.get('alignment', '-')}")
+            lines.append(f"Hit Die: d{class_data.get('hit_die', '-')}  Skill Points/Level: {class_data.get('skill_points', '-')}  BAB: {class_data.get('bab_progression', '-')}  Saves: {class_data.get('save_progression', '-')}")
+        lines += [
+            f"Alignment: {getattr(character, 'alignment', 'Unaligned')}",
+            f"Deity: {getattr(character, 'deity', 'None')}",
+            f"Size: {getattr(character, 'size', 'Medium')}",
+            f"Speed: {getattr(character, 'speed', character.move)} ft.",
+            f"Initiative: {getattr(character, 'initiative', (character.dex_score - 10) // 2)}",
+            f"HP: {character.hp}/{character.max_hp}",
+            f"Mana: {character.mana}/{character.max_mana}",
+            f"AC: {character.ac}",
+            f"Touch AC: {getattr(character, 'touch_ac', character.ac)}",
+            f"Flat-Footed AC: {getattr(character, 'flat_ac', character.ac)}",
+            f"BAB: {getattr(character, 'bab', (character.level * 3) // 4)}",
+            f"Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2)}",
+            f"Fortitude: {getattr(character, 'fortitude', (character.con_score - 10) // 2)}",
+            f"Reflex: {getattr(character, 'reflex', (character.dex_score - 10) // 2)}",
+            f"Will: {getattr(character, 'will', (character.wis_score - 10) // 2)}",
+            f"STR: {character.str_score}",
+            f"DEX: {character.dex_score}",
+            f"CON: {character.con_score}",
+            f"INT: {character.int_score}",
+            f"WIS: {character.wis_score}",
+            f"CHA: {character.cha_score}",
+            f"XP: {character.xp}",
+            f"Elemental Affinity: {character.elemental_affinity or ''}",
+            f"Immortal: {'Yes' if character.is_immortal else 'No'}",
+            f"Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None'}",
+            f"Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None'}",
+        ]
+        # Active conditions, status effects, buffs/debuffs
+        effects = getattr(character, 'active_effects', [])
+        if effects:
+            lines.append("\nActive Conditions/Status Effects:")
+            for effect in effects:
+                lines.append(f"- {effect}")
+        return "\n".join(lines)
+
+    def cmd_companion(self, character, args):
+        lines = ["Companion(s):"]
+        companions = getattr(character, 'companions', [])
+        if not companions:
+            lines.append("  None")
+        else:
+            for comp in companions:
+                lines.append(f"- {comp}")
+        return "\n".join(lines)
+
+    def cmd_questpage(self, character, args):
+        lines = ["Quest Log and Reputation:"]
+        # Reputation/Standing
+        rep = getattr(character, 'reputation', {})
+        if rep:
+            lines.append("Reputation/Standing:")
+            for faction, value in rep.items():
+                lines.append(f"  {faction}: {value}")
+        else:
+            lines.append("Reputation/Standing: None")
+        # Quest log
+        quests = getattr(character, 'quest_log', [])
+        if quests:
+            lines.append("Quest Log:")
+            for quest in quests:
+                lines.append(f"  {quest}")
+        else:
+            lines.append("Quest Log: None")
+        return "\n".join(lines)
+
+    def cmd_help(self, character, args):
+        if args and args.strip().lower() == "prompt":
+            return (
+                "Prompt Customization:\n"
+                "You can change your prompt using the 'setprompt' command.\n"
+                "Example: setprompt AC %a HP %h/%H EXP %x>\n"
+                "Available prompt codes:\n"
+                "  %a = AC, %h = HP, %H = Max HP, %x = XP to next level, %RACE = your race,\n"
+                "  %m = Mana, %M = Max Mana, %v = Move, %V = Max Move,\n"
+                "  %s = Str, %d = Dex, %c = Con, %i = Int, %w = Wis, %c = Cha, %s = [Immortal] if immortal.\n"
+                "Type 'setprompt <your prompt>' to change it."
+            )
+        cmds = sorted(self.commands.keys())
+        help_text = "Available commands: " + ", ".join(cmds)
+        help_text += "\nType 'help <topic>' for more info. For prompt customization, type 'help prompt'."
+        return help_text
+
+    def cmd_get(self, character, args):
+        # Find item in room by name
+        if not args:
+            return "Get what?"
+        item = next((i for i in character.room.items if i.name.lower() == args.lower()), None)
+        if not item:
+            return f"No {args} here."
+        character.room.items.remove(item)
+        character.inventory.append(item)
+        return f"You pick up {item.name}."
+
+    def cmd_drop(self, character, args):
+        # Find item in inventory by name
+        if not args:
+            return "Drop what?"
+        item = next((i for i in character.inventory if i.name.lower() == args.lower()), None)
+        if not item:
+            return f"You don't have {args}."
+        character.inventory.remove(item)
+        character.room.items.append(item)
+        return f"You drop {item.name}."
+
+    def cmd_inventory(self, character, args):
+        total_weight = sum(getattr(item, 'weight', 0) for item in character.inventory)
+        # D&D 3.5 encumbrance thresholds (simplified):
+        light = character.str_score * 5
+        medium = character.str_score * 10
+        heavy = character.str_score * 15
+        if total_weight <= light:
+            enc = "Light"
+        elif total_weight <= medium:
+            enc = "Medium"
+        elif total_weight <= heavy:
+            enc = "Heavy"
+        else:
+            enc = "Overloaded!"
+        lines = [f"You are carrying ({total_weight} lbs): Encumbrance: {enc}"]
+        if not character.inventory:
+            lines.append("  (nothing)")
+        else:
+            for item in character.inventory:
+                lines.append(f"- {item.name} (wt {item.weight})")
+        return "\n".join(lines)
 
     def cmd_look(self, character, args):
         return character.room.description
@@ -58,3 +359,230 @@ class CommandParser:
 
     def cmd_stats(self, character, args):
         return character.toggle_stats()
+
+    # --- D&D 3.5 Skill Command Stubs ---
+    def cmd_appraise(self, character, args):
+        result = character.skill_check("Appraise")
+        return f"You appraise the item. Skill check result: {result}"
+
+    def cmd_balance(self, character, args):
+        result = character.skill_check("Balance")
+        return f"You attempt to keep your balance. Skill check result: {result}"
+
+    def cmd_bluff(self, character, args):
+        result = character.skill_check("Bluff")
+        return f"You attempt to bluff. Skill check result: {result}"
+
+    def cmd_climb(self, character, args):
+        result = character.skill_check("Climb")
+        return f"You attempt to climb. Skill check result: {result}"
+
+    def cmd_concentration(self, character, args):
+        result = character.skill_check("Concentration")
+        return f"You focus your concentration. Skill check result: {result}"
+
+    def cmd_decipher(self, character, args):
+        result = character.skill_check("Decipher Script")
+        return f"You attempt to decipher the script. Skill check result: {result}"
+
+    def cmd_diplomacy(self, character, args):
+        result = character.skill_check("Diplomacy")
+        return f"You attempt diplomacy. Skill check result: {result}"
+
+    def cmd_disable(self, character, args):
+        result = character.skill_check("Disable Device")
+        return f"You attempt to disable the device. Skill check result: {result}"
+
+    def cmd_disguise(self, character, args):
+        result = character.skill_check("Disguise")
+        return f"You attempt to disguise yourself. Skill check result: {result}"
+
+    def cmd_escape(self, character, args):
+        result = character.skill_check("Escape Artist")
+        return f"You attempt to escape. Skill check result: {result}"
+
+    def cmd_forgery(self, character, args):
+        result = character.skill_check("Forgery")
+        return f"You attempt to forge a document. Skill check result: {result}"
+
+    def cmd_gather(self, character, args):
+        result = character.skill_check("Gather Information")
+        return f"You attempt to gather information. Skill check result: {result}"
+
+    def cmd_handle(self, character, args):
+        result = character.skill_check("Handle Animal")
+        return f"You attempt to handle the animal. Skill check result: {result}"
+
+    def cmd_heal(self, character, args):
+        result = character.skill_check("Heal")
+        return f"You attempt to heal. Skill check result: {result}"
+
+    def cmd_hide(self, character, args):
+        result = character.skill_check("Hide")
+        return f"You attempt to hide. Skill check result: {result}"
+
+    def cmd_intimidate(self, character, args):
+        result = character.skill_check("Intimidate")
+        return f"You attempt to intimidate. Skill check result: {result}"
+
+    def cmd_jump(self, character, args):
+        result = character.skill_check("Jump")
+        return f"You attempt to jump. Skill check result: {result}"
+
+    def cmd_knowledge(self, character, args):
+        # args should specify the knowledge type
+        skill = f"Knowledge ({args.strip().lower()})" if args else "Knowledge (arcana)"
+        result = character.skill_check(skill.title())
+        return f"You recall knowledge about {args or 'arcana'}. Skill check result: {result}"
+
+    def cmd_listen(self, character, args):
+        result = character.skill_check("Listen")
+        return f"You attempt to listen carefully. Skill check result: {result}"
+
+    def cmd_movesilently(self, character, args):
+        result = character.skill_check("Move Silently")
+        return f"You attempt to move silently. Skill check result: {result}"
+
+    def cmd_openlock(self, character, args):
+        result = character.skill_check("Open Lock")
+        return f"You attempt to open the lock. Skill check result: {result}"
+
+    def cmd_perform(self, character, args):
+        result = character.skill_check("Perform (any)")
+        return f"You attempt to perform. Skill check result: {result}"
+
+    def cmd_profession(self, character, args):
+        result = character.skill_check("Profession (any)")
+        return f"You attempt to use your profession. Skill check result: {result}"
+
+    def cmd_ride(self, character, args):
+        result = character.skill_check("Ride")
+        return f"You attempt to ride. Skill check result: {result}"
+
+    def cmd_search(self, character, args):
+        result = character.skill_check("Search")
+        return f"You search the area. Skill check result: {result}"
+
+    def cmd_sensemotive(self, character, args):
+        result = character.skill_check("Sense Motive")
+        return f"You attempt to sense motive. Skill check result: {result}"
+
+    def cmd_sleight(self, character, args):
+        result = character.skill_check("Sleight of Hand")
+        return f"You attempt sleight of hand. Skill check result: {result}"
+
+    def cmd_spellcraft(self, character, args):
+        result = character.skill_check("Spellcraft")
+        return f"You attempt to identify magic. Skill check result: {result}"
+
+    def cmd_spot(self, character, args):
+        result = character.skill_check("Spot")
+        return f"You attempt to spot something. Skill check result: {result}"
+
+    def cmd_survival(self, character, args):
+        result = character.skill_check("Survival")
+        return f"You attempt to survive in the wild. Skill check result: {result}"
+
+    def cmd_swim(self, character, args):
+        result = character.skill_check("Swim")
+        return f"You attempt to swim. Skill check result: {result}"
+
+    def cmd_tumble(self, character, args):
+        result = character.skill_check("Tumble")
+        return f"You attempt to tumble. Skill check result: {result}"
+
+    def cmd_usemagic(self, character, args):
+        result = character.skill_check("Use Magic Device")
+        return f"You attempt to use a magic device. Skill check result: {result}"
+
+    def cmd_userope(self, character, args):
+        result = character.skill_check("Use Rope")
+        return f"You attempt to use a rope. Skill check result: {result}"
+
+    def cmd_help_feats(self, character, args):
+        """
+        Show all feats, their type (passive/active), description, and usage if active.
+        Usage: help feats [<feat name>]
+        """
+        from src.feats import FEATS
+        lines = []
+        if args:
+            name = args.strip().lower()
+            # Try to find the feat by name (case-insensitive, partial match allowed)
+            for feat_key, feat in FEATS.items():
+                if name in feat_key.lower():
+                    lines.append(f"{feat.name}:")
+                    lines.append(f"  Description: {feat.description}")
+                    # Determine passive/active
+                    if feat.effect is None:
+                        lines.append("  Type: Passive (always on or handled automatically)")
+                        lines.append("  Usage: This feat is always in effect or handled by the system.")
+                    else:
+                        # Heuristic: if effect expects a target, it's active
+                        import inspect
+                        params = inspect.signature(feat.effect).parameters
+                        if any(p in params for p in ("target", "targets")):
+                            lines.append("  Type: Active (requires a command or action)")
+                            # Suggest usage based on feat name
+                            if "disarm" in feat.name.lower():
+                                lines.append("  Usage: Use the 'disarm <target>' command in combat.")
+                            elif "trip" in feat.name.lower():
+                                lines.append("  Usage: Use the 'trip <target>' command in combat.")
+                            elif "bull rush" in feat.name.lower():
+                                lines.append("  Usage: Use the 'bullrush <target>' command in combat.")
+                            elif "grapple" in feat.name.lower():
+                                lines.append("  Usage: Use the 'grapple <target>' command in combat.")
+                            elif "overrun" in feat.name.lower():
+                                lines.append("  Usage: Use the 'overrun <target>' command in combat.")
+                            elif "sunder" in feat.name.lower():
+                                lines.append("  Usage: Use the 'sunder <target>' command in combat.")
+                            elif "whirlwind" in feat.name.lower():
+                                lines.append("  Usage: Use the 'whirlwind' command in combat.")
+                            elif "spring attack" in feat.name.lower():
+                                lines.append("  Usage: Use the 'springattack <target>' command in combat.")
+                            elif "stunning fist" in feat.name.lower():
+                                lines.append("  Usage: Use the 'stunningfist <target>' command in combat.")
+                            elif "feint" in feat.name.lower():
+                                lines.append("  Usage: Use the 'feint <target>' command in combat.")
+                            else:
+                                lines.append("  Usage: This feat is used via a special command or action in combat.")
+                        else:
+                            lines.append("  Type: Passive (always on or handled automatically)")
+                            lines.append("  Usage: This feat is always in effect or handled by the system.")
+                    return "\n".join(lines)
+            return "No such feat found. Type 'help feats' to see all feats."
+        # No args: list all feats
+        lines.append("Feats List:")
+        for feat in sorted(FEATS.values(), key=lambda f: f.name):
+            if feat.effect is None:
+                ftype = "Passive"
+            else:
+                import inspect
+                params = inspect.signature(feat.effect).parameters
+                if any(p in params for p in ("target", "targets")):
+                    ftype = "Active"
+                else:
+                    ftype = "Passive"
+            lines.append(f"- {feat.name}: {ftype} - {feat.description}")
+        lines.append("\nType 'help feats <feat name>' for details on a specific feat.")
+        return "\n".join(lines)
+
+    def cmd_levelup(self, character, args):
+        """
+        Level up the character by 1 and trigger Bonus Feat selection if eligible.
+        """
+        import asyncio
+        old_level = getattr(character, 'class_level', 1)
+        new_level = old_level + 1
+        character.set_level(new_level)
+        # If running in async context, schedule bonus feat prompt
+        try:
+            loop = asyncio.get_event_loop()
+            coro = character.check_levelup_bonus_feat(character.writer, character.reader)
+            if loop.is_running():
+                asyncio.ensure_future(coro)
+            else:
+                loop.run_until_complete(coro)
+        except Exception:
+            pass
+        return f"You have reached level {new_level}!"
