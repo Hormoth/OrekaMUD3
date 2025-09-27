@@ -434,6 +434,7 @@ class CommandParser:
             "cast": self.cmd_cast,
             "companion": self.cmd_companion,
             "quest": self.cmd_questpage,
+<<<<<<< HEAD
             "levelup": self.cmd_levelup
             ,"recall": self.cmd_recall
             ,"@dig": self.cmd_dig
@@ -535,6 +536,381 @@ class CommandParser:
         character.room = self.world.rooms[center_vnum]
         character.room.players.append(character)
         return f"You are enveloped in shimmering light and find yourself at the {character.room.name}."
+=======
+            "levelup": self.cmd_levelup,
+            # --- Build commands (restricted to immortals) ---
+            "build": self.cmd_build,
+            "dig": self.cmd_dig,
+            "setdesc": self.cmd_setdesc,
+            "setexit": self.cmd_setexit,
+            "setmob": self.cmd_setmob,
+            "setitem": self.cmd_setitem,
+            "setflag": self.cmd_setflag,
+            "setname": self.cmd_setname,
+            "setvnum": self.cmd_setvnum,
+            "setarea": self.cmd_setarea,
+            "setroom": self.cmd_setroom,
+            "setreset": self.cmd_setreset,
+            "setdoor": self.cmd_setdoor,
+            "setowner": self.cmd_setowner,
+            "setzone": self.cmd_setzone,
+            "setweather": self.cmd_setweather,
+            "setlight": self.cmd_setlight,
+            "setterrain": self.cmd_setterrain,
+            "setnote": self.cmd_setnote,
+            "sethelp": self.cmd_sethelp,
+            "setcolor": self.cmd_setcolor,
+            "setprompt": self.cmd_setprompt,
+            "settitle": self.cmd_settitle,
+            "setrace": self.cmd_setrace,
+            "setclass": self.cmd_setclass,
+            "setdeity": self.cmd_setdeity,
+            "setalignment": self.cmd_setalignment,
+            "setlevel": self.cmd_setlevel,
+            "sethp": self.cmd_sethp,
+            "setmana": self.cmd_setmana,
+            "setmove": self.cmd_setmove,
+            "setac": self.cmd_setac,
+            "setstr": self.cmd_setstr,
+            "setdex": self.cmd_setdex,
+            "setcon": self.cmd_setcon,
+            "setint": self.cmd_setint,
+            "setwis": self.cmd_setwis,
+            "setcha": self.cmd_setcha,
+            "setxp": self.cmd_setxp,
+            "setgold": self.cmd_setgold,
+            "setfeats": self.cmd_setfeats,
+            "setskills": self.cmd_setskills,
+            "setspells": self.cmd_setspells,
+            "setinventory": self.cmd_setinventory,
+            "setequipment": self.cmd_setequipment,
+            "setresist": self.cmd_setresist,
+            "setimmune": self.cmd_setimmune,
+            "setaffinity": self.cmd_setaffinity,
+            "setai": self.cmd_setai,
+            "setimmortal": self.cmd_setimmortal,
+            "setpassword": self.cmd_setpassword,
+            "setemail": self.cmd_setemail
+        }
+
+    # --- Build command stubs, all restricted to immortals ---
+    def _immortal_only(self, character):
+        if not getattr(character, 'is_immortal', False):
+            return "Command restricted to immortals!"
+        return None
+
+    def cmd_build(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing build logic...
+        return "[IMMORTAL] Build command executed."
+
+    def cmd_dig(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing dig logic...
+        return "[IMMORTAL] Dig command executed."
+
+    def cmd_setdesc(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setdesc logic...
+        return "[IMMORTAL] Setdesc command executed."
+
+    def cmd_setexit(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setexit logic...
+        return "[IMMORTAL] Setexit command executed."
+
+    def cmd_setmob(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setmob logic...
+        return "[IMMORTAL] Setmob command executed."
+
+    def cmd_setitem(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setitem logic...
+        return "[IMMORTAL] Setitem command executed."
+
+    def cmd_setflag(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setflag logic...
+        return "[IMMORTAL] Setflag command executed."
+
+    def cmd_setname(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setname logic...
+        return "[IMMORTAL] Setname command executed."
+
+    def cmd_setvnum(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setvnum logic...
+        return "[IMMORTAL] Setvnum command executed."
+
+    def cmd_setarea(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setarea logic...
+        return "[IMMORTAL] Setarea command executed."
+
+    def cmd_setroom(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setroom logic...
+        return "[IMMORTAL] Setroom command executed."
+
+    def cmd_setreset(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setreset logic...
+        return "[IMMORTAL] Setreset command executed."
+
+    def cmd_setdoor(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setdoor logic...
+        return "[IMMORTAL] Setdoor command executed."
+
+    def cmd_setowner(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setowner logic...
+        return "[IMMORTAL] Setowner command executed."
+
+    def cmd_setzone(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setzone logic...
+        return "[IMMORTAL] Setzone command executed."
+
+    def cmd_setweather(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setweather logic...
+        return "[IMMORTAL] Setweather command executed."
+
+    def cmd_setlight(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setlight logic...
+        return "[IMMORTAL] Setlight command executed."
+
+    def cmd_setterrain(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setterrain logic...
+        return "[IMMORTAL] Setterrain command executed."
+
+    def cmd_setnote(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setnote logic...
+        return "[IMMORTAL] Setnote command executed."
+
+    def cmd_sethelp(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing sethelp logic...
+        return "[IMMORTAL] Sethelp command executed."
+
+    def cmd_setcolor(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setcolor logic...
+        return "[IMMORTAL] Setcolor command executed."
+
+    def cmd_setprompt(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setprompt logic...
+        return "[IMMORTAL] Setprompt command executed."
+
+    def cmd_settitle(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing settitle logic...
+        return "[IMMORTAL] Settitle command executed."
+
+    def cmd_setrace(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setrace logic...
+        return "[IMMORTAL] Setrace command executed."
+
+    def cmd_setclass(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setclass logic...
+        return "[IMMORTAL] Setclass command executed."
+
+    def cmd_setdeity(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setdeity logic...
+        return "[IMMORTAL] Setdeity command executed."
+
+    def cmd_setalignment(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setalignment logic...
+        return "[IMMORTAL] Setalignment command executed."
+
+    def cmd_setlevel(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setlevel logic...
+        return "[IMMORTAL] Setlevel command executed."
+
+    def cmd_sethp(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing sethp logic...
+        return "[IMMORTAL] Sethp command executed."
+
+    def cmd_setmana(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setmana logic...
+        return "[IMMORTAL] Setmana command executed."
+
+    def cmd_setmove(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setmove logic...
+        return "[IMMORTAL] Setmove command executed."
+
+    def cmd_setac(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setac logic...
+        return "[IMMORTAL] Setac command executed."
+
+    def cmd_setstr(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setstr logic...
+        return "[IMMORTAL] Setstr command executed."
+
+    def cmd_setdex(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setdex logic...
+        return "[IMMORTAL] Setdex command executed."
+
+    def cmd_setcon(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setcon logic...
+        return "[IMMORTAL] Setcon command executed."
+
+    def cmd_setint(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setint logic...
+        return "[IMMORTAL] Setint command executed."
+
+    def cmd_setwis(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setwis logic...
+        return "[IMMORTAL] Setwis command executed."
+
+    def cmd_setcha(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setcha logic...
+        return "[IMMORTAL] Setcha command executed."
+
+    def cmd_setxp(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setxp logic...
+        return "[IMMORTAL] Setxp command executed."
+
+    def cmd_setgold(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setgold logic...
+        return "[IMMORTAL] Setgold command executed."
+
+    def cmd_setfeats(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setfeats logic...
+        return "[IMMORTAL] Setfeats command executed."
+
+    def cmd_setskills(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setskills logic...
+        return "[IMMORTAL] Setskills command executed."
+
+    def cmd_setspells(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setspells logic...
+        return "[IMMORTAL] Setspells command executed."
+
+    def cmd_setinventory(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setinventory logic...
+        return "[IMMORTAL] Setinventory command executed."
+
+    def cmd_setequipment(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setequipment logic...
+        return "[IMMORTAL] Setequipment command executed."
+
+    def cmd_setresist(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setresist logic...
+        return "[IMMORTAL] Setresist command executed."
+
+    def cmd_setimmune(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setimmune logic...
+        return "[IMMORTAL] Setimmune command executed."
+
+    def cmd_setaffinity(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setaffinity logic...
+        return "[IMMORTAL] Setaffinity command executed."
+
+    def cmd_setai(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setai logic...
+        return "[IMMORTAL] Setai command executed."
+
+    def cmd_setimmortal(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setimmortal logic...
+        return "[IMMORTAL] Setimmortal command executed."
+
+    def cmd_setpassword(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setpassword logic...
+        return "[IMMORTAL] Setpassword command executed."
+
+    def cmd_setemail(self, character, args):
+        check = self._immortal_only(character)
+        if check: return check
+        # ...existing setemail logic...
+        return "[IMMORTAL] Setemail command executed."
+>>>>>>> c01d78e14419aa9ff08638343b3eedad01a94080
 
     def cmd_spells(self, character, args):
         lines = ["Spells Known and Spells Per Day:"]
