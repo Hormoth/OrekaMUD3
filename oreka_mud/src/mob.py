@@ -2,6 +2,35 @@ import random
 from .feats import get_feat
 
 class Mob:
+    def to_dict(self):
+        """Serialize mob for saving (exclude live state like conditions, alive, etc)."""
+        return {
+            "vnum": self.vnum,
+            "name": self.name,
+            "level": self.level,
+            "hp_dice": getattr(self, 'hp_dice', [1, 8, 0]),
+            "ac": self.ac,
+            "damage_dice": self.damage_dice,
+            "flags": self.flags,
+            "type_": self.type_,
+            "alignment": self.alignment,
+            "ability_scores": self.ability_scores,
+            "initiative": self.initiative,
+            "speed": self.speed,
+            "attacks": self.attacks,
+            "special_attacks": self.special_attacks,
+            "special_qualities": self.special_qualities,
+            "feats": self.feats,
+            "skills": self.skills,
+            "saves": self.saves,
+            "environment": self.environment,
+            "organization": self.organization,
+            "cr": self.cr,
+            "advancement": self.advancement,
+            "description": self.description,
+            # Save room_vnum for placement
+            "room_vnum": getattr(self, 'room_vnum', None)
+        }
     # --- Combat Maneuver/Skill Methods for Feats ---
     def disarm(self, target):
         # Improved Disarm: +4 bonus, no AoO
@@ -89,13 +118,69 @@ class Mob:
     def __init__(self, vnum, name, level, hp_dice, ac, damage_dice, flags=None, 
                  type_="", alignment="", ability_scores=None, initiative=0, speed=None, attacks=None, 
                  special_attacks=None, special_qualities=None, feats=None, skills=None, saves=None, 
-                 environment="", organization="", cr=None, advancement=None, description=""):
-        # ...existing code...
+                 environment="", organization="", cr=None, advancement=None, description="",
+                 shop_inventory=None, shop_type=None, buy_rate=1.0, sell_rate=1.0, dialogue=None, **kwargs):
+        self.vnum = vnum
+        self.name = name
+        self.level = level
+        self.hp = sum(random.randint(1, hp_dice[1]) for _ in range(hp_dice[0])) + hp_dice[2]
+        self.max_hp = self.hp
+        self.ac = ac
+        self.damage_dice = damage_dice
+        self.flags = flags or []
+        self.type_ = type_  # e.g., 'Animal', 'Magical Beast'
+        self.alignment = alignment
+        self.ability_scores = ability_scores or {"Str":10, "Dex":10, "Con":10, "Int":2, "Wis":10, "Cha":6}
+        self.initiative = initiative
+        self.speed = speed or {"land": 30}
+        self.attacks = attacks or []  # List of dicts: {"type": "claw", "bonus": 5, "damage": "1d6+3"}
+        self.special_attacks = special_attacks or []
+        self.special_qualities = special_qualities or []
+        self.feats = feats or []
+        self.skills = skills or {}
+        self.saves = saves or {"Fort": 0, "Ref": 0, "Will": 0}
+        self.environment = environment
+        self.organization = organization
+        self.cr = cr
+        self.advancement = advancement
+        self.description = description
+        self.alive = True
+        self.conditions = set()
         self.dodge_target = None  # For Dodge feat: vnum or name of target
         self.weapon_type = attacks[0]["type"] if attacks else None  # For Weapon Finesse/Focus
         self.aoo_count = 0  # Attacks of opportunity used this round
         self.power_attack_amt = 0  # Power Attack value for this round
         self.track_target = None  # For Track feat
+        # Shopkeeper fields
+        self.shop_inventory = shop_inventory or []  # List of item vnums
+        self.shop_type = shop_type  # e.g., 'general', 'weapons', 'magic'
+        self.buy_rate = buy_rate  # Multiplier for buying from player (e.g., 1.0 = 100% value)
+        self.sell_rate = sell_rate  # Multiplier for selling to player (e.g., 1.0 = 100% value)
+        self.dialogue = dialogue
+
+    def is_shopkeeper(self):
+        return 'shopkeeper' in (self.flags or []) or self.shop_inventory
+
+    def get_shop_items(self):
+        from .items import load_items_db
+        db = load_items_db()
+        return [db[vnum] for vnum in self.shop_inventory if vnum in db]
+
+    def get_buy_price(self, item):
+        # Price player pays to buy from shop
+        return int(getattr(item, 'value', 0) * self.sell_rate)
+
+    def get_sell_price(self, item):
+        # Price shop pays to buy from player
+        return int(getattr(item, 'value', 0) * self.buy_rate)
+
+    def add_shop_item(self, item_vnum):
+        if item_vnum not in self.shop_inventory:
+            self.shop_inventory.append(item_vnum)
+
+    def remove_shop_item(self, item_vnum):
+        if item_vnum in self.shop_inventory:
+            self.shop_inventory.remove(item_vnum)
     def set_dodge_target(self, target):
         self.dodge_target = target
 
@@ -109,33 +194,45 @@ class Mob:
 
     def reset_aoo(self):
         self.aoo_count = 0
-
-    def can_aoo(self):
-        # Combat Reflexes: extra AoOs per round equal to Dex mod
-        max_aoo = 1
-        if self.has_feat("Combat Reflexes"):
-            dex_mod = (self.ability_scores.get("Dex", 10) - 10) // 2
-            max_aoo += max(0, dex_mod)
-        return self.aoo_count < max_aoo
-
-    def use_aoo(self):
-        self.aoo_count += 1
-
-    def set_track_target(self, target):
-        self.track_target = target
-    def get_hp(self):
-        # Base HP plus passive feat bonuses (e.g., Toughness)
-        hp = self.max_hp
-        from .feats import get_feat
-        if self.has_feat("Toughness"):
-            hp = get_feat("Toughness").apply(self, value=hp)
-        return hp
-
-    def get_skill(self, skill):
-        # Base skill plus passive feat bonuses
-        value = self.skills.get(skill, 0)
-        from .feats import FEATS
-        # Always check Acrobatic, Agile, Alertness for their skills
+        data = {
+            "vnum": self.vnum,
+            "name": self.name,
+            "level": self.level,
+            "hp_dice": getattr(self, 'hp_dice', [1, 8, 0]),
+            "ac": self.ac,
+            "damage_dice": self.damage_dice,
+            "flags": self.flags,
+            "type_": self.type_,
+            "alignment": self.alignment,
+            "ability_scores": self.ability_scores,
+            "initiative": self.initiative,
+            "speed": self.speed,
+            "attacks": self.attacks,
+            "special_attacks": self.special_attacks,
+            "special_qualities": self.special_qualities,
+            "feats": self.feats,
+            "skills": self.skills,
+            "saves": self.saves,
+            "environment": self.environment,
+            "organization": self.organization,
+            "cr": self.cr,
+            "advancement": self.advancement,
+            "description": self.description,
+            # Save room_vnum for placement
+            "room_vnum": getattr(self, 'room_vnum', None)
+        }
+        # Shopkeeper fields
+        if self.shop_inventory:
+            data["shop_inventory"] = self.shop_inventory
+        if self.shop_type:
+            data["shop_type"] = self.shop_type
+        if getattr(self, "buy_rate", None) is not None:
+            data["buy_rate"] = self.buy_rate
+        if getattr(self, "sell_rate", None) is not None:
+            data["sell_rate"] = self.sell_rate
+        if getattr(self, "dialogue", None):
+            data["dialogue"] = self.dialogue
+        return data
         for feat_name in self.feats:
             feat = FEATS.get(feat_name)
             if feat and feat.effect:
@@ -182,36 +279,7 @@ class Mob:
         if self.has_feat("Run") and mode == "land":
             return int(base * 1.25)  # x5 instead of x4 (approximate)
         return base
-    def __init__(self, vnum, name, level, hp_dice, ac, damage_dice, flags=None, 
-                 type_="", alignment="", ability_scores=None, initiative=0, speed=None, attacks=None, 
-                 special_attacks=None, special_qualities=None, feats=None, skills=None, saves=None, 
-                 environment="", organization="", cr=None, advancement=None, description=""):
-        self.vnum = vnum
-        self.name = name
-        self.level = level
-        self.hp = sum(random.randint(1, hp_dice[1]) for _ in range(hp_dice[0])) + hp_dice[2]
-        self.max_hp = self.hp
-        self.ac = ac
-        self.damage_dice = damage_dice
-        self.flags = flags or []
-        self.type_ = type_  # e.g., 'Animal', 'Magical Beast'
-        self.alignment = alignment
-        self.ability_scores = ability_scores or {"Str":10, "Dex":10, "Con":10, "Int":2, "Wis":10, "Cha":6}
-        self.initiative = initiative
-        self.speed = speed or {"land": 30}
-        self.attacks = attacks or []  # List of dicts: {"type": "claw", "bonus": 5, "damage": "1d6+3"}
-        self.special_attacks = special_attacks or []
-        self.special_qualities = special_qualities or []
-        self.feats = feats or []
-        self.skills = skills or {}
-        self.saves = saves or {"Fort": 0, "Ref": 0, "Will": 0}
-        self.environment = environment
-        self.organization = organization
-        self.cr = cr
-        self.advancement = advancement
-        self.description = description
-        self.alive = True
-        self.conditions = set()
+    # (Removed duplicate __init__ definition. The above definition with shopkeeper fields and **kwargs is now the only one.)
 
     def add_condition(self, condition):
         self.conditions.add(condition)

@@ -1,39 +1,46 @@
 {
   "name": "Hormoth",
   "title": null,
-  "race": "Hasura Elf",
+  "race": "Taraf-Imro Human",
   "level": 1,
-  "char_class": "Barbarian",
+  "char_class": "Cleric",
   "class_level": 1,
   "class_features": [
-    "Fast Movement",
-    "Illiteracy",
-    "Rage 1/day"
+    "Turn or Rebuke Undead",
+    "Domains (2)",
+    "Aura"
   ],
-  "spells_known": [],
-  "spells_per_day": {},
+  "spells_known": {
+    "1": [
+      "Cure Light Wounds"
+    ]
+  },
+  "spells_per_day": {
+    "1": 1
+  },
   "hp": 10,
   "max_hp": 10,
   "ac": 10,
   "room_vnum": 1000,
   "quests": [],
-  "state": "EXPLORING",
+  "state": "COMBAT",
   "is_ai": false,
   "is_immortal": false,
   "elemental_affinity": null,
-  "str_score": 10,
-  "dex_score": 10,
-  "con_score": 10,
-  "int_score": 10,
-  "wis_score": 10,
-  "cha_score": 10,
-  "mana": 100,
-  "max_mana": 100,
+  "str_score": 13,
+  "dex_score": 7,
+  "con_score": 15,
+  "int_score": 12,
+  "wis_score": 16,
+  "cha_score": 12,
+  
+  
   "move": 100,
   "max_move": 100,
   "xp": 0,
   "show_all": false,
   "inventory": [],
   "alignment": "Chaotic Good",
-  "deity": "None/Atheist"
+  "deity": "Tarvek Wen, Doombringer",
+  "hashed_password": "4ff859344107d76238dd150f7015691d59796f435835eb43b50b24583a3d5d19"
 }

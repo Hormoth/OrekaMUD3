@@ -1,1 +1,2 @@
+telnetlib3
 # No external dependencies for MVP

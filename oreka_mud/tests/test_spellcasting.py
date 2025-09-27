@@ -22,7 +22,7 @@ class SpellcastingTest(unittest.TestCase):
 
     def test_cast_unknown_spell(self):
         result = self.cmd.cmd_cast(self.char, "Cure Light Wounds")
-        self.assertIn("do not know the spell", result)
+        self.assertIn("prepared or known", result)
 
     def test_cast_no_slots(self):
         # Exhaust all level 1 slots

@@ -5,6 +5,40 @@ from src.room import Room
 from src.mob import Mob
 
 class OrekaWorld:
+    def save_items(self):
+        """Save all items to data/items.json."""
+        import os, json
+        if not hasattr(self, 'items'):
+            return
+        items_file = os.path.join("data", "items.json")
+        items_data = [item.to_dict() for item in self.items.values()]
+        with open(items_file, "w", encoding="utf-8") as f:
+            json.dump(items_data, f, indent=2)
+    def save_mobs(self):
+        """Save all mobs to data/mobs.json."""
+        import os, json
+        mobs_file = os.path.join("data", "mobs.json")
+        mobs_data = []
+        for mob in self.mobs.values():
+            d = mob.to_dict()
+            # Try to find the room vnum for this mob
+            for room in self.rooms.values():
+                if mob in room.mobs:
+                    d["room_vnum"] = room.vnum
+                    break
+            mobs_data.append(d)
+        with open(mobs_file, "w", encoding="utf-8") as f:
+            json.dump(mobs_data, f, indent=2)
+    def save_rooms(self):
+        """Save all rooms to their area JSON files in data/areas/ (grouped by file if possible)."""
+        import os, json
+        # Group rooms by area file (assume all in one file for now: Chapel.json or similar)
+        area_dir = os.path.join("data", "areas")
+        # For now, save all rooms to Chapel.json (expand logic for multi-area later)
+        area_file = os.path.join(area_dir, "Chapel.json")
+        rooms_data = [room.to_dict() for room in self.rooms.values()]
+        with open(area_file, "w", encoding="utf-8") as f:
+            json.dump(rooms_data, f, indent=2)
     def __init__(self):
         self.rooms = {}
         self.mobs = {}

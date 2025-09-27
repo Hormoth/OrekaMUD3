@@ -1,0 +1,102 @@
+{
+  "1. Persistence & Saving": {
+    "World_Persistence": [
+      "Saving/loading for rooms, mobs, and items"
+    ],
+    "Player_Data": [
+      "Backup, rollback, and migration tools"
+    ]
+  },
+  "2. Core Gameplay Systems": {
+    "Economy": [
+      "Currency/gold system"
+    ],
+    "Shops_Vendors": [
+      "Shop NPCs and item transactions (buy/sell)",
+      "Shopkeeper NPCs and item transaction logic"
+    ],
+    "Death_Respawn": [
+      "Death, corpse, and respawn mechanics"
+    ],
+    "Area_Zone_Management": [
+      "Area/zone reset and repopulation"
+    ],
+    "Logging_Moderation": [
+      "Admin action logging",
+      "Player death/event logging"
+    ]
+  },
+  "3. Social & Admin Features": {
+    "Channels": [
+      "Chat channels (global, guild, group)",
+      "Mute/ban commands"
+    ],
+    "Help_System": [
+      "Dynamic/context-sensitive help system"
+    ]
+  },
+  "4. User Experience & Onboarding": {
+    "Newbie_Tutorial": [
+      "Onboarding/tutorial system for new players"
+    ],
+    "Score_Stat_Display": [
+      "Expanded score/stat display with formatting"
+    ]
+  },
+  "5. Gameplay Depth & Fun": {
+    "Quests": [
+      "Advanced quest scripting/branching",
+      "Quest logs and tracking"
+    ],
+    "Events_Resets": [
+      "Event system (scheduled/random)",
+      "Area/world reset logic"
+    ],
+    "PvP_PK": [
+      "PvP/PK rules and toggles"
+    ],
+    "Mob_AI": [
+      "Advanced mob AI, pathing, and scripting"
+    ],
+    "Training_Practice": [
+      "Training/practice system for skills/spells"
+    ],
+    "Skill_Spell_Learning": [
+      "In-game learning of new skills/spells"
+    ]
+  },
+  "6. Advanced Systems & Social": {
+    "Guilds_Clans": [
+      "Guild/clan creation and management",
+      "Guild chat and permissions"
+    ],
+    "Mail_Notes": [
+      "In-game mail/note system"
+    ],
+    "Banking_Auction": [
+      "Banking system for player accounts",
+      "Auction house for item trading"
+    ],
+    "Mounts_Pets": [
+      "Mounts, pets, and follower AI"
+    ],
+    "Crafting_Professions": [
+      "Crafting (forge, alchemy, enchanting)",
+      "Profession/skill advancement system"
+    ],
+    "Player_Housing": [
+      "Player-owned rooms/housing mechanics"
+    ],
+    "Remort_Rebirth": [
+      "Remort/rebirth system for high-level players"
+    ]
+  },
+  "7. Quality of Life & Optional": {
+    "Command_Aliases": [
+      "Alias/macro system for commands"
+    ],
+    "Web_GUI": [
+      "Web or GUI interface (optional)"
+    ]
+  }
+}

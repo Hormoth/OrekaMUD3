@@ -31,7 +31,9 @@ class CommandIntegrationTest(unittest.TestCase):
     def test_cmd_score_includes_level_and_hp(self):
         result = self.parser.cmd_score(self.char, "")
         self.assertIn("Level:", result)
-        self.assertIn(f"HP: {self.char.hp}/{self.char.max_hp}", result)
+        # Accept any whitespace between HP: and value
+        import re
+        self.assertRegex(result, rf"HP:\s*{self.char.hp}\/{self.char.max_hp}")
 
 if __name__ == "__main__":
     unittest.main()

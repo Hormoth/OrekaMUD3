@@ -1,0 +1,40 @@
+[
+  {"vnum": 1, "name": "Club", "item_type": "weapon", "weight": 3, "value": 0, "description": "A simple wooden club.", "damage": [1,6,0], "properties": ["simple"]},
+  {"vnum": 2, "name": "Dagger", "item_type": "weapon", "weight": 1, "value": 2, "description": "A small, easily concealed blade.", "damage": [1,4,0], "properties": ["simple", "light", "thrown"]},
+  {"vnum": 3, "name": "Greatsword", "item_type": "weapon", "weight": 8, "value": 50, "description": "A massive two-handed sword.", "damage": [2,6,0], "properties": ["martial", "two-handed"]},
+  {"vnum": 4, "name": "Longbow", "item_type": "weapon", "weight": 3, "value": 75, "description": "A tall bow for ranged attacks.", "damage": [1,8,0], "properties": ["martial", "ranged"]},
+  {"vnum": 5, "name": "Shortsword", "item_type": "weapon", "weight": 2, "value": 10, "description": "A short, stabbing sword.", "damage": [1,6,0], "properties": ["martial", "light"]},
+  {"vnum": 6, "name": "Battleaxe", "item_type": "weapon", "weight": 6, "value": 10, "description": "A sturdy axe for battle.", "damage": [1,8,0], "properties": ["martial"]},
+  {"vnum": 7, "name": "Mace, Heavy", "item_type": "weapon", "weight": 8, "value": 12, "description": "A heavy, bludgeoning mace.", "damage": [1,8,0], "properties": ["simple"]},
+  {"vnum": 8, "name": "Quarterstaff", "item_type": "weapon", "weight": 4, "value": 0, "description": "A long wooden staff.", "damage": [1,6,0], "properties": ["simple", "two-handed"]},
+
+  {"vnum": 101, "name": "Padded Armor", "item_type": "armor", "weight": 10, "value": 5, "description": "Quilted layers of cloth.", "ac_bonus": 1, "properties": ["light"]},
+  {"vnum": 102, "name": "Leather Armor", "item_type": "armor", "weight": 15, "value": 10, "description": "Cured leather armor.", "ac_bonus": 2, "properties": ["light"]},
+  {"vnum": 103, "name": "Chain Shirt", "item_type": "armor", "weight": 25, "value": 100, "description": "A shirt of interlocking metal rings.", "ac_bonus": 4, "properties": ["light"]},
+  {"vnum": 104, "name": "Scale Mail", "item_type": "armor", "weight": 30, "value": 50, "description": "Armor of overlapping metal scales.", "ac_bonus": 4, "properties": ["medium"]},
+  {"vnum": 105, "name": "Breastplate", "item_type": "armor", "weight": 30, "value": 200, "description": "A solid metal chestplate.", "ac_bonus": 5, "properties": ["medium"]},
+  {"vnum": 106, "name": "Full Plate", "item_type": "armor", "weight": 50, "value": 1500, "description": "The best protection money can buy.", "ac_bonus": 8, "properties": ["heavy"]},
+  {"vnum": 107, "name": "Shield, Heavy Steel", "item_type": "shield", "weight": 15, "value": 20, "description": "A large steel shield.", "ac_bonus": 2, "properties": ["shield"]},
+  {"vnum": 108, "name": "Shield, Light Wooden", "item_type": "shield", "weight": 5, "value": 3, "description": "A small wooden shield.", "ac_bonus": 1, "properties": ["shield"]},
+
+  {"vnum": 201, "name": "Backpack", "item_type": "gear", "weight": 2, "value": 2, "description": "A sturdy backpack for carrying gear."},
+  {"vnum": 202, "name": "Rope, 50 ft.", "item_type": "gear", "weight": 10, "value": 1, "description": "A 50-foot coil of hempen rope."},
+  {"vnum": 203, "name": "Torch", "item_type": "gear", "weight": 0.2, "value": 0.01, "description": "A simple wooden torch."},
+  {"vnum": 204, "name": "Rations, 1 day", "item_type": "gear", "weight": 1, "value": 0.5, "description": "Enough food for one day."},
+  {"vnum": 205, "name": "Waterskin", "item_type": "gear", "weight": 4, "value": 1, "description": "A leather container for water."},
+  {"vnum": 206, "name": "Bedroll", "item_type": "gear", "weight": 5, "value": 0.1, "description": "A simple bedroll for sleeping."},
+  {"vnum": 207, "name": "Flint and Steel", "item_type": "gear", "weight": 0, "value": 1, "description": "Used to start fires."},
+  {"vnum": 208, "name": "Lantern, Hooded", "item_type": "gear", "weight": 2, "value": 7, "description": "A lantern with a hood to control light."},
+
+  {"vnum": 301, "name": "Potion of Cure Light Wounds", "item_type": "potion", "weight": 0.1, "value": 50, "description": "Heals 1d8+1 HP."},
+  {"vnum": 302, "name": "Potion of Bull's Strength", "item_type": "potion", "weight": 0.1, "value": 300, "description": "+4 Strength for 3 minutes."},
+  {"vnum": 303, "name": "Scroll of Magic Missile", "item_type": "scroll", "weight": 0.1, "value": 25, "description": "Casts Magic Missile."},
+  {"vnum": 304, "name": "Scroll of Fireball", "item_type": "scroll", "weight": 0.1, "value": 375, "description": "Casts Fireball."},
+
+  {"vnum": 401, "name": "+1 Longsword", "item_type": "weapon", "weight": 4, "value": 2315, "description": "A longsword with a +1 enhancement bonus.", "damage": [1,8,1], "magical": true, "properties": ["martial"]},
+  {"vnum": 402, "name": "+1 Chain Shirt", "item_type": "armor", "weight": 25, "value": 1250, "description": "A chain shirt with a +1 enhancement bonus.", "ac_bonus": 5, "magical": true, "properties": ["light"]},
+  {"vnum": 403, "name": "Cloak of Resistance +1", "item_type": "wondrous", "weight": 1, "value": 1000, "description": "+1 resistance bonus on all saves.", "properties": ["wondrous"]},
+  {"vnum": 404, "name": "Bag of Holding", "item_type": "wondrous", "weight": 15, "value": 2500, "description": "A bag that can hold far more than its size suggests.", "properties": ["wondrous"]},
+  {"vnum": 405, "name": "Ring of Protection +1", "item_type": "ring", "weight": 0, "value": 2000, "description": "+1 deflection bonus to AC.", "properties": ["ring"]},
+  {"vnum": 406, "name": "Amulet of Natural Armor +1", "item_type": "amulet", "weight": 0.1, "value": 2000, "description": "+1 natural armor bonus to AC.", "properties": ["amulet"]}
+]

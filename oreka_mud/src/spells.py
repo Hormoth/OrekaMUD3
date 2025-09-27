@@ -20,11 +20,11 @@ DOMAIN_DATA = {
             1: "Calm Animals",
             2: "Hold Animal",
             3: "Dominate Animal",
-            4: "Summon Nature’s Ally IV",
+            4: "Summon Nature's Ally IV",
             5: "Commune with Nature",
             6: "Antilife Shell",
             7: "Animal Shapes",
-            8: "Summon Nature’s Ally VIII",
+            8: "Summon Nature's Ally VIII",
             9: "Shapechange"
         }
     },

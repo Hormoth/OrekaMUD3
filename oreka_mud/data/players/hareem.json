@@ -1,0 +1,56 @@
+[
+{
+  "name": "Hareem",
+  "title": "The Golden Rose",
+  "race": "Human",
+  "level": 60,
+  "hp": 600,
+  "max_hp": 600,
+  "ac": 30,
+  "room": 1000,
+  "is_immortal": true,
+  "str_score": 18,
+  "dex_score": 20,
+  "con_score": 18,
+  "int_score": 22,
+  "wis_score": 28,
+  "cha_score": 30,
+  
+  
+  "move": 200,
+  "max_move": 200,
+  "alignment": "Chaotic Good",
+  "deity": "Hareem, The Golden Rose",
+  "feats": ["Leadership", "Skill Focus (Perform)", "Skill Focus (Diplomacy)", "Epic Reputation"],
+  "domains": ["Good", "Charm", "Community", "Retribution"],
+  "is_ai": false,
+  "hashed_password": "b6b0a90b1b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6b6"
+},
+{
+  "name": "Hareem",
+  "title": "The Golden Rose",
+  "race": "Human",
+  "level": 60,
+  "hp": 600,
+  "max_hp": 600,
+  "ac": 30,
+  "room": 1000,
+  "is_immortal": true,
+  "str_score": 18,
+  "dex_score": 20,
+  "con_score": 18,
+  "int_score": 22,
+  "wis_score": 28,
+  "cha_score": 30,
+  
+  
+  "move": 200,
+  "max_move": 200,
+  "alignment": "Chaotic Good",
+  "deity": "Hareem, The Golden Rose",
+  "feats": ["Leadership", "Skill Focus (Perform)", "Skill Focus (Diplomacy)", "Epic Reputation"],
+  "domains": ["Good", "Charm", "Community", "Retribution"],
+  "is_ai": false,
+  "hashed_password": "b1e1e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2e2"
+}
+]

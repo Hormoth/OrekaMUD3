@@ -25,6 +25,89 @@ class State(Enum):
     COMBAT = 2
 
 class Character:
+    def __init__(self, name, title, race, level, hp, max_hp, ac, room, is_immortal=False, elemental_affinity=None,
+                 str_score=10, dex_score=10, con_score=10, int_score=10, wis_score=10, cha_score=10,
+                 move=100, max_move=100, inventory=None, skills=None,
+                 char_class="Adventurer", class_level=None, class_features=None, spells_known=None, spells_per_day=None,
+                 alignment=None, deity=None, feats=None, domains=None, is_builder=False):
+        self.name = name
+        self.title = title
+        self.race = race
+        self.level = level
+        self.hp = hp
+        self.max_hp = max_hp
+        self.ac = ac
+        self.room = room
+        self.quests = []
+        self.state = State.EXPLORING
+        self.is_ai = False
+        self.is_immortal = is_immortal
+        self.elemental_affinity = elemental_affinity
+        self.str_score = str_score
+        self.dex_score = dex_score
+        self.con_score = con_score
+        self.int_score = int_score
+        self.wis_score = wis_score
+        self.cha_score = cha_score
+        self.move = move
+        self.max_move = max_move
+        self.xp = 0  # Current experience points
+        self.show_all = False
+        self.inventory = inventory or []  # List of Item objects
+        self.skills = skills or {}
+        self.char_class = char_class
+        self.class_level = class_level if class_level is not None else level
+        self.class_features = class_features if class_features is not None else []
+        self.spells_known = spells_known if spells_known is not None else self._auto_spells_known()
+        self.spells_per_day = spells_per_day if spells_per_day is not None else self._auto_spells_per_day()
+        self.alignment = alignment
+        self.deity = deity
+        # Always initialize prompt and full_prompt
+        self.prompt = "AC %a HP %h/%H [%RACE] >"  # Default prompt
+        self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
+        self.conditions = set()  # Track status effects/conditions (e.g., 'prone', 'flanking', 'shaken')
+        self.feats = feats if feats is not None else []  # Accept feats from constructor or default to empty list
+        self.domains = domains if domains is not None else []  # List of domain names (e.g., ["War", "Sun"])
+        self.domain_powers = {}  # domain_name -> granted power description or callable
+        self.domain_spells = {}  # spell_level -> set of domain spell names
+        self.is_builder = is_builder
+        self._init_domains()
+    def save(self):
+        """Save this character to a JSON file in data/players/ by name (lowercase), with backup."""
+        import os, json, shutil, datetime
+        player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
+        os.makedirs(player_dir, exist_ok=True)
+        filename = os.path.join(player_dir, f"{self.name.lower()}.json")
+        # Backup existing file if it exists
+        if os.path.exists(filename):
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            backup_name = os.path.join(player_dir, f"{self.name.lower()}.{timestamp}.bak.json")
+            shutil.copy2(filename, backup_name)
+        # Atomic save: write to temp, then move
+        tmpfile = filename + ".tmp"
+        with open(tmpfile, 'w', encoding='utf-8') as f:
+            json.dump(self.to_dict(), f, indent=2)
+        os.replace(tmpfile, filename)
+
+    @classmethod
+    def rollback(cls, name, timestamp=None):
+        """Restore a player file from the most recent or specified backup."""
+        import os, shutil, glob
+        player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
+        base = os.path.join(player_dir, f"{name.lower()}.json")
+        pattern = os.path.join(player_dir, f"{name.lower()}.*.bak.json")
+        backups = sorted(glob.glob(pattern), reverse=True)
+        if not backups:
+            raise FileNotFoundError(f"No backups found for {name}.")
+        if timestamp:
+            match = [b for b in backups if timestamp in b]
+            if not match:
+                raise FileNotFoundError(f"No backup for {name} with timestamp {timestamp}.")
+            backup = match[0]
+        else:
+            backup = backups[0]
+        shutil.copy2(backup, base)
+        return base
     def prepare_spells(self, new_prepared):
         """
         Set the character's prepared spells (for classes that prepare spells).
@@ -176,8 +259,6 @@ class Character:
             "int_score": self.int_score,
             "wis_score": self.wis_score,
             "cha_score": self.cha_score,
-            "mana": self.mana,
-            "max_mana": self.max_mana,
             "move": self.move,
             "max_move": self.max_move,
             "xp": self.xp,
@@ -185,34 +266,57 @@ class Character:
             "inventory": [item.to_dict() for item in self.inventory],
             "alignment": getattr(self, 'alignment', None),
             "deity": getattr(self, 'deity', None),
+            "is_builder": getattr(self, 'is_builder', False),
         }
 
     @staticmethod
     def from_dict(data, world=None):
+        import os
+        import time
         from src.items import Item
-        char = Character(
-            name=data["name"],
-            title=data.get("title"),
-            race=data.get("race"),
-            level=data.get("level", 1),
-            hp=data.get("hp", 10),
-            max_hp=data.get("max_hp", 10),
-            ac=data.get("ac", 10),
-            room=None,  # Set after loading
-            is_immortal=data.get("is_immortal", False),
-            elemental_affinity=data.get("elemental_affinity"),
-            str_score=data.get("str_score", 10),
-            dex_score=data.get("dex_score", 10),
-            con_score=data.get("con_score", 10),
-            int_score=data.get("int_score", 10),
-            wis_score=data.get("wis_score", 10),
-            cha_score=data.get("cha_score", 10),
-            mana=data.get("mana", 100),
-            max_mana=data.get("max_mana", 100),
-            move=data.get("move", 100),
-            max_move=data.get("max_move", 100),
-            inventory=[Item.from_dict(i) for i in data.get("inventory", [])]
-        )
+        # File locking: if loading from a file, try to acquire a lock
+        lock_acquired = False
+        lock_path = None
+        if hasattr(data, '_file_path'):
+            lock_path = data._file_path + '.lock'
+            for _ in range(20):  # Try for up to 2 seconds
+                try:
+                    fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                    os.close(fd)
+                    lock_acquired = True
+                    break
+                except FileExistsError:
+                    time.sleep(0.1)
+        try:
+            char = Character(
+                name=data["name"],
+                title=data.get("title"),
+                race=data.get("race"),
+                level=data.get("level", 1),
+                hp=data.get("hp", 10),
+                max_hp=data.get("max_hp", 10),
+                ac=data.get("ac", 10),
+                room=None,  # Set after loading
+                is_immortal=data.get("is_immortal", False),
+                elemental_affinity=data.get("elemental_affinity"),
+                str_score=data.get("str_score", 10),
+                dex_score=data.get("dex_score", 10),
+                con_score=data.get("con_score", 10),
+                int_score=data.get("int_score", 10),
+                wis_score=data.get("wis_score", 10),
+                cha_score=data.get("cha_score", 10),
+                move=data.get("move", 100),
+                max_move=data.get("max_move", 100),
+                inventory=[Item.from_dict(i) for i in data.get("inventory", [])],
+                is_builder=data.get("is_builder", False)
+            )
+        finally:
+            if lock_acquired and lock_path:
+                try:
+                    os.remove(lock_path)
+                except Exception:
+                    pass
+
         char.char_class = data.get("char_class", "Adventurer")
         char.class_level = data.get("class_level", data.get("level", 1))
         char.class_features = data.get("class_features", [])
@@ -225,55 +329,8 @@ class Character:
         char.show_all = data.get("show_all", False)
         char.alignment = data.get("alignment")
         char.deity = data.get("deity")
+        char.is_builder = data.get("is_builder", False)
         return char
-    def __init__(self, name, title, race, level, hp, max_hp, ac, room, is_immortal=False, elemental_affinity=None,
-                 str_score=10, dex_score=10, con_score=10, int_score=10, wis_score=10, cha_score=10,
-                 mana=100, max_mana=100, move=100, max_move=100, inventory=None, skills=None,
-                 char_class="Adventurer", class_level=None, class_features=None, spells_known=None, spells_per_day=None,
-                 alignment=None, deity=None, feats=None, domains=None):
-        self.name = name
-        self.title = title
-        self.race = race
-        self.level = level
-        self.hp = hp
-        self.max_hp = max_hp
-        self.ac = ac
-        self.room = room
-        self.quests = []
-        self.state = State.EXPLORING
-        self.is_ai = False
-        self.is_immortal = is_immortal
-        self.elemental_affinity = elemental_affinity
-        self.str_score = str_score
-        self.dex_score = dex_score
-        self.con_score = con_score
-        self.int_score = int_score
-        self.wis_score = wis_score
-        self.cha_score = cha_score
-        self.mana = mana
-        self.max_mana = max_mana
-        self.move = move
-        self.max_move = max_move
-        self.xp = 0  # Current experience points
-        self.show_all = False
-        self.inventory = inventory or []  # List of Item objects
-        self.char_class = char_class
-        self.class_level = class_level if class_level is not None else level
-        # Dynamically compute class features from class data
-        self.class_features = self.get_class_features()
-        self.spells_known = spells_known if spells_known is not None else self._auto_spells_known()
-        self.spells_per_day = spells_per_day if spells_per_day is not None else self._auto_spells_per_day()
-        self.alignment = alignment
-        self.deity = deity
-        # Always initialize prompt and full_prompt
-        self.prompt = "AC %a HP %h/%H Mana %m/%M [%RACE] >"  # Default prompt
-        self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Mana %m/%M Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Mana %m/%M Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
-        self.conditions = set()  # Track status effects/conditions (e.g., 'prone', 'flanking', 'shaken')
-        self.feats = feats if feats is not None else []  # Accept feats from constructor or default to empty list
-        self.domains = domains if domains is not None else []  # List of domain names (e.g., ["War", "Sun"])
-        self.domain_powers = {}  # domain_name -> granted power description or callable
-        self.domain_spells = {}  # spell_level -> set of domain spell names
-        self._init_domains()
 
     def _init_domains(self):
         """Initialize domain powers and domain spells for this character."""
@@ -322,7 +379,7 @@ class Character:
         self.spells_known = self._auto_spells_known()
         self.spells_per_day = self._auto_spells_per_day()
         self.prompt = "(%RACE): AC %a HP %h/%H EXP %x>" if self.is_immortal else "AC %a HP %h/%H EXP %x>"
-        self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Mana %m/%M Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Mana %m/%M Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
+        self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
 
     def skill_check(self, skill, bonus=0):
         import random
@@ -406,7 +463,7 @@ class Character:
         cha_mod = (self.cha_score - 10) // 2
         xp_to_next = max(0, {1: 1000, 2: 3000, 3: 6000, 4: 10000, 5: 15000, 6: 21000, 7: 28000, 60: 0}.get(self.level + 1, 0) - self.xp)
         if self.show_all:
-            return self.full_prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%m", str(self.mana)).replace("%M", str(self.max_mana)).replace("%v", str(self.move)).replace("%V", str(self.max_move)).replace("%s", f"{self.str_score} ({str_mod:+})").replace("%d", f"{self.dex_score} ({dex_mod:+})").replace("%c", f"{self.con_score} ({con_mod:+})").replace("%i", f"{self.int_score} ({int_mod:+})").replace("%w", f"{self.wis_score} ({wis_mod:+})").replace("%c", f"{self.cha_score} ({cha_mod:+})").replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
+            return self.full_prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%v", str(self.move)).replace("%V", str(self.max_move)).replace("%s", f"{self.str_score} ({str_mod:+})").replace("%d", f"{self.dex_score} ({dex_mod:+})").replace("%c", f"{self.con_score} ({con_mod:+})").replace("%i", f"{self.int_score} ({int_mod:+})").replace("%w", f"{self.wis_score} ({wis_mod:+})").replace("%c", f"{self.cha_score} ({cha_mod:+})").replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
         return self.prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
     
     def toggle_stats(self):
@@ -444,8 +501,6 @@ class Character:
         prompt = prompt.replace("%a", str(self.ac))
         prompt = prompt.replace("%h", str(self.hp))
         prompt = prompt.replace("%H", str(self.max_hp))
-        prompt = prompt.replace("%m", str(self.mana))
-        prompt = prompt.replace("%M", str(self.max_mana))
         prompt = prompt.replace("%RACE", self.race or "Unknown")
         # Add more codes as needed
         return prompt

@@ -12,7 +12,7 @@ class FeatSystemTest(unittest.TestCase):
         self.room = None
         self.char = Character(
             name="TestFighter", title="", race="Human", level=1, hp=10, max_hp=10, ac=10, room=self.room,
-            char_class="Fighter", skills={}, spells_known={}
+            char_class="Fighter", skills={}, spells_known={}, str_score=13
         )
 
     def test_eligible_feats_at_creation(self):

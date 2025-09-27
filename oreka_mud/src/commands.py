@@ -2,6 +2,315 @@ from src.combat import attack
 from src.character import State
 
 class CommandParser:
+    def cmd_appraise(self, character, args):
+        """Appraise the value of an item in your inventory or in the shopkeeper's stock."""
+        shopkeeper = self._find_shopkeeper(character)
+        if not shopkeeper:
+            return "There is no shopkeeper here."
+        if not args:
+            return "Appraise what? Usage: appraise <item name>"
+        # Check player's inventory first
+        item = next((i for i in character.inventory if i.name.lower() == args.lower()), None)
+        if item:
+            price = shopkeeper.get_sell_price(item)
+            return f"{shopkeeper.name} says: 'I can offer you {price} gp for your {item.name}." + (" It's in fine condition!'" if getattr(item, 'hp', None) == getattr(item, 'max_hp', None) else " It's a bit worn, but I'll take it.'")
+        # Check shopkeeper's stock
+        items = shopkeeper.get_shop_items()
+        item = next((i for i in items if i.name.lower() == args.lower()), None)
+        if item:
+            price = shopkeeper.get_buy_price(item)
+            return f"{shopkeeper.name} says: 'That {item.name} will cost you {price} gp.'"
+        return f"{shopkeeper.name} says: 'I don't see any {args} here.'"
+
+    def cmd_talk(self, character, args):
+        """Talk to the shopkeeper in the room for a greeting or info."""
+        shopkeeper = self._find_shopkeeper(character)
+        if not shopkeeper:
+            return "There is no shopkeeper here."
+        dialogue = getattr(shopkeeper, 'dialogue', None)
+        if dialogue:
+            return f"{shopkeeper.name} says: '{dialogue}'"
+        # Default dialogue
+        return f"{shopkeeper.name} says: 'Welcome! Type list to see my wares, buy <item> to purchase, sell <item> to sell, or appraise <item> for a price.'"
+    def _find_shopkeeper(self, character):
+        # Return the first shopkeeper mob in the room, or None
+        for mob in getattr(character.room, 'mobs', []):
+            if hasattr(mob, 'is_shopkeeper') and mob.is_shopkeeper():
+                return mob
+        return None
+
+    def cmd_list(self, character, args):
+        """List items for sale from the shopkeeper in the room."""
+        shopkeeper = self._find_shopkeeper(character)
+        if not shopkeeper:
+            return "There is no shopkeeper here."
+        items = shopkeeper.get_shop_items()
+        if not items:
+            return f"{shopkeeper.name} has nothing for sale."
+        lines = [f"{shopkeeper.name} offers the following items:"]
+        for item in items:
+            price = shopkeeper.get_buy_price(item)
+            lines.append(f"- {item.name} (Price: {price} gp)")
+        return "\n".join(lines)
+
+    def cmd_buy(self, character, args):
+        """Buy an item from the shopkeeper in the room. Usage: buy <item name>"""
+        shopkeeper = self._find_shopkeeper(character)
+        if not shopkeeper:
+            return "There is no shopkeeper here."
+        if not args:
+            return "Buy what? Usage: buy <item name>"
+        items = shopkeeper.get_shop_items()
+        item = next((i for i in items if i.name.lower() == args.lower()), None)
+        if not item:
+            return f"{shopkeeper.name} does not have {args}."
+        price = shopkeeper.get_buy_price(item)
+        if getattr(character, 'gold', 0) < price:
+            return f"You cannot afford {item.name}. (Price: {price} gp)"
+        character.gold -= price
+        character.inventory.append(item)
+        shopkeeper.remove_shop_item(item.vnum)
+        return f"You buy {item.name} for {price} gp."
+
+    def cmd_sell(self, character, args):
+        """Sell an item to the shopkeeper in the room. Usage: sell <item name>"""
+        shopkeeper = self._find_shopkeeper(character)
+        if not shopkeeper:
+            return "There is no shopkeeper here."
+        if not args:
+            return "Sell what? Usage: sell <item name>"
+        item = next((i for i in character.inventory if i.name.lower() == args.lower()), None)
+        if not item:
+            return f"You do not have {args}."
+        price = shopkeeper.get_sell_price(item)
+        character.gold = getattr(character, 'gold', 0) + price
+        character.inventory.remove(item)
+        shopkeeper.add_shop_item(item.vnum)
+        return f"You sell {item.name} for {price} gp."
+    def cmd_components(self, character, args):
+        """
+        Show all raw materials, spell components, and reagents available in the game.
+        Usage: components
+        """
+        import os, json
+        lines = ["Raw Materials, Spell Components, and Reagents:"]
+        # Load raw materials
+        raw_path = os.path.join(os.path.dirname(__file__), '../data/items_raw_materials.json')
+        try:
+            with open(raw_path, 'r', encoding='utf-8') as f:
+                raw_materials = json.load(f)
+            lines.append("\nRaw Materials:")
+            for item in raw_materials:
+                lines.append(f"- {item['name']}: {item.get('description','')}")
+        except Exception as e:
+            lines.append(f"(Could not load raw materials: {e})")
+
+        # Load spell components from spells.py (if any)
+        try:
+            from src.spells import SPELLS
+            component_set = set()
+            material_set = set()
+            for spell in SPELLS:
+                for comp in spell.get('components', []):
+                    if comp not in ('V', 'S', 'F', 'DF'):
+                        component_set.add(comp)
+                # Try to extract material components from description (optional)
+                desc = spell.get('description', '')
+                for mat in ["bat guano", "sulfur", "pearl", "amber", "resin", "charcoal", "saltpeter", "mercury", "mandrake root", "dragon blood"]:
+                    if mat in desc.lower():
+                        material_set.add(mat)
+            if component_set or material_set:
+                lines.append("\nSpell Components:")
+                for comp in sorted(component_set):
+                    lines.append(f"- {comp}")
+                for mat in sorted(material_set):
+                    lines.append(f"- {mat.title()}")
+        except Exception as e:
+            lines.append(f"(Could not load spell components: {e})")
+
+        # List all unique materials from material_prices.json
+        try:
+            mat_path = os.path.join(os.path.dirname(__file__), '../data/material_prices.json')
+            with open(mat_path, 'r', encoding='utf-8') as f:
+                mat_data = json.load(f)
+            lines.append("\nAll Known Materials:")
+            for mat in sorted(mat_data.keys()):
+                lines.append(f"- {mat.title()}")
+        except Exception as e:
+            lines.append(f"(Could not load material list: {e})")
+
+        return "\n".join(lines)
+    def cmd_saveplayer(self, character, args):
+        """@saveplayer <name> | Force-save a player's data (admin only)."""
+        if not getattr(character, 'is_immortal', False):
+            return "Permission denied: You are not an admin."
+        from src.character import Character
+        name = args.strip()
+        if not name:
+            return "Usage: @saveplayer <name>"
+        try:
+            # This assumes the player is loaded in memory; otherwise, load from file
+            for player in self.world.players:
+                if player.name.lower() == name.lower():
+                    player.save()
+                    return f"Player {name} saved."
+            # Not in memory: try to load and save
+            import os, json
+            player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
+            filename = os.path.join(player_dir, f"{name.lower()}.json")
+            if not os.path.exists(filename):
+                return f"Player file for {name} not found."
+            with open(filename, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            char = Character.from_dict(data)
+            char.save()
+            return f"Player {name} saved (from file)."
+        except Exception as e:
+            import logging
+            logging.error(f"Error saving player {name}: {e}")
+            return f"Error saving player {name}: {e}"
+
+    def cmd_backupplayer(self, character, args):
+        """@backupplayer <name> | Create a backup of a player's data (admin only)."""
+        if not getattr(character, 'is_immortal', False):
+            return "Permission denied: You are not an admin."
+        from src.character import Character
+        name = args.strip()
+        if not name:
+            return "Usage: @backupplayer <name>"
+        try:
+            # Just call save, which now always creates a backup
+            for player in self.world.players:
+                if player.name.lower() == name.lower():
+                    player.save()
+                    return f"Backup created for {name}."
+            # Not in memory: try to load and save
+            import os, json
+            player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
+            filename = os.path.join(player_dir, f"{name.lower()}.json")
+            if not os.path.exists(filename):
+                return f"Player file for {name} not found."
+            with open(filename, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            char = Character.from_dict(data)
+            char.save()
+            return f"Backup created for {name} (from file)."
+        except Exception as e:
+            import logging
+            logging.error(f"Error backing up player {name}: {e}")
+            return f"Error backing up player {name}: {e}"
+
+    def cmd_restoreplayer(self, character, args):
+        """@restoreplayer <name> [timestamp] | Restore a player's data from backup (admin only)."""
+        if not getattr(character, 'is_immortal', False):
+            return "Permission denied: You are not an admin."
+        from src.character import Character
+        parts = args.strip().split()
+        if not parts:
+            return "Usage: @restoreplayer <name> [timestamp]"
+        name = parts[0]
+        timestamp = parts[1] if len(parts) > 1 else None
+        try:
+            path = Character.rollback(name, timestamp)
+            return f"Player {name} restored from backup: {path}"
+        except Exception as e:
+            import logging
+            logging.error(f"Error restoring player {name}: {e}")
+            return f"Error restoring player {name}: {e}"
+    def cmd_mobadd(self, character, args):
+        """@mobadd <name> | Creates a new mob in the current room."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        if not args.strip():
+            return "Usage: @mobadd <name>"
+        from src.mob import Mob
+        # Find an unused vnum
+        max_vnum = max(self.world.mobs.keys(), default=1000)
+        new_vnum = max_vnum + 1
+        name = args.strip()
+        # Basic mob template
+        mob = Mob(new_vnum, name, 1, (1, 6, 0), 10, (1, 4, 0))
+        self.world.mobs[new_vnum] = mob
+        character.room.mobs.append(mob)
+        self.world.save_mobs()
+        return f"Mob '{name}' created in this room (vnum {new_vnum})."
+
+    def cmd_mobedit(self, character, args):
+        """@mobedit <vnum> <field> <value> | Edits a mob's property."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        parts = args.split(None, 2)
+        if len(parts) < 3:
+            return "Usage: @mobedit <vnum> <field> <value>"
+        try:
+            vnum = int(parts[0])
+        except ValueError:
+            return "Vnum must be a number."
+        field, value = parts[1], parts[2]
+        mob = self.world.mobs.get(vnum)
+        if not mob:
+            return f"No mob with vnum {vnum}."
+        # Basic fields only for now
+        if hasattr(mob, field):
+            # Try to cast to int if possible
+            try:
+                val = int(value)
+            except ValueError:
+                val = value
+            setattr(mob, field, val)
+            self.world.save_mobs()
+            return f"Mob {vnum} field '{field}' set to {val}."
+        return f"Mob has no field '{field}'."
+
+    def cmd_itemadd(self, character, args):
+        """@itemadd <name> | Creates a new item in the current room."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        if not args.strip():
+            return "Usage: @itemadd <name>"
+        from src.items import Item
+        # Find an unused vnum
+        if hasattr(self.world, 'items'):
+            max_vnum = max(self.world.items.keys(), default=1000)
+        else:
+            if not hasattr(self.world, 'items'):
+                self.world.items = {}
+            max_vnum = 1000
+        new_vnum = max_vnum + 1
+        name = args.strip()
+        # Basic item template
+        item = Item(new_vnum, name, "misc", 1, 0, description=f"A {name}.")
+        self.world.items[new_vnum] = item
+        character.room.items.append(item)
+        self.world.save_items()
+        return f"Item '{name}' created in this room (vnum {new_vnum})."
+
+    def cmd_itemedit(self, character, args):
+        """@itemedit <vnum> <field> <value> | Edits an item's property."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        parts = args.split(None, 2)
+        if len(parts) < 3:
+            return "Usage: @itemedit <vnum> <field> <value>"
+        try:
+            vnum = int(parts[0])
+        except ValueError:
+            return "Vnum must be a number."
+        field, value = parts[1], parts[2]
+        item = None
+        if hasattr(self.world, 'items'):
+            item = self.world.items.get(vnum)
+        if not item:
+            return f"No item with vnum {vnum}."
+        if hasattr(item, field):
+            try:
+                val = int(value)
+            except ValueError:
+                val = value
+            setattr(item, field, val)
+            self.world.save_items()
+            return f"Item {vnum} field '{field}' set to {val}."
+        return f"Item has no field '{field}'."
     def cmd_cast(self, character, args):
         """Casts a spell if prepared/known and slots are available, enforcing V/S and concentration."""
         from src.spells import get_spell_by_name
@@ -126,7 +435,106 @@ class CommandParser:
             "companion": self.cmd_companion,
             "quest": self.cmd_questpage,
             "levelup": self.cmd_levelup
+            ,"recall": self.cmd_recall
+            ,"@dig": self.cmd_dig
+            ,"@desc": self.cmd_desc
+            ,"@exit": self.cmd_exit
+            ,"@flag": self.cmd_flag
+            ,"@mobadd": self.cmd_mobadd
+            ,"@mobedit": self.cmd_mobedit
+            ,"@itemadd": self.cmd_itemadd
+            ,"@itemedit": self.cmd_itemedit
+            ,"components": self.cmd_components
         }
+
+    # --- Builder Commands ---
+    def cmd_dig(self, character, args):
+        """@dig <direction> <room name> | Creates a new room in the given direction, linking it to the current room."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        parts = args.split(None, 1)
+        if not parts or len(parts) < 2:
+            return "Usage: @dig <direction> <room name>"
+        direction, name = parts[0].lower(), parts[1].strip()
+        # Find an unused vnum
+        max_vnum = max(self.world.rooms.keys(), default=1000)
+        new_vnum = max_vnum + 1
+        # Create new room
+        from src.room import Room
+        new_room = Room(new_vnum, name, f"This is {name}.", {{}}, [], [])
+        self.world.rooms[new_vnum] = new_room
+        # Link exits
+        character.room.exits[direction] = new_vnum
+        # Add reverse exit
+        reverse = {"north": "south", "south": "north", "east": "west", "west": "east", "up": "down", "down": "up"}
+        rev_dir = reverse.get(direction, None)
+        if rev_dir:
+            new_room.exits[rev_dir] = character.room.vnum
+        self.world.save_rooms()
+        return f"Room '{name}' created to the {direction} (vnum {new_vnum})."
+
+    def cmd_desc(self, character, args):
+        """@desc <new description> | Sets the description of the current room."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        if not args.strip():
+            return "Usage: @desc <new description>"
+        character.room.description = args.strip()
+        self.world.save_rooms()
+        return "Room description updated."
+
+    def cmd_exit(self, character, args):
+        """@exit <direction> <vnum> | Creates or changes an exit in the current room."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        parts = args.split(None, 1)
+        if not parts or len(parts) < 2:
+            return "Usage: @exit <direction> <vnum>"
+        direction, vnum_str = parts[0].lower(), parts[1].strip()
+        try:
+            vnum = int(vnum_str)
+        except ValueError:
+            return "Vnum must be a number."
+        if vnum not in self.world.rooms:
+            return f"No room with vnum {vnum}."
+        character.room.exits[direction] = vnum
+        self.world.save_rooms()
+        return f"Exit '{direction}' set to room {vnum}."
+
+    def cmd_flag(self, character, args):
+        """@flag <flag> [on|off] | Sets or clears a flag on the current room."""
+        if not getattr(character, 'is_builder', False):
+            return "Permission denied: You are not a builder."
+        parts = args.split()
+        if not parts:
+            return "Usage: @flag <flag> [on|off]"
+        flag = parts[0].lower()
+        action = parts[1].lower() if len(parts) > 1 else "on"
+        if action == "on":
+            if flag not in character.room.flags:
+                character.room.flags.append(flag)
+            self.world.save_rooms()
+            return f"Flag '{flag}' set on this room."
+        elif action == "off":
+            if flag in character.room.flags:
+                character.room.flags.remove(flag)
+            self.world.save_rooms()
+            return f"Flag '{flag}' removed from this room."
+        else:
+            return "Usage: @flag <flag> [on|off]"
+
+    def cmd_recall(self, character, args):
+        """Teleports the player to the center room of the chapel (Central Aetherial Altar)."""
+        center_vnum = 1000
+        if center_vnum not in self.world.rooms:
+            return "Recall failed: Chapel center room not found."
+        # Remove from current room
+        if character in character.room.players:
+            character.room.players.remove(character)
+        # Move to center room
+        character.room = self.world.rooms[center_vnum]
+        character.room.players.append(character)
+        return f"You are enveloped in shimmering light and find yourself at the {character.room.name}."
 
     def cmd_spells(self, character, args):
         lines = ["Spells Known and Spells Per Day:"]
@@ -186,30 +594,30 @@ class CommandParser:
 
     def cmd_score(self, character, args):
         # Section 1: Identity
+        width = 60
         lines = [
-            "+" + "-"*40 + "+",
-            f"| Name: {character.name:<15} Level: {character.level:<3}  |",
-            f"| Title: {character.title or '':<32} |",
-            f"| Race: {character.race:<15} Class: {getattr(character, 'char_class', 'Adventurer'):<12} |",
+            "+" + "-"*width + "+",
+            f"| Name: {character.name:<20} Level: {character.level:<3}  Title: {character.title or '':<25} |",
+            f"| Race: {character.race:<18} Class: {getattr(character, 'char_class', 'Adventurer'):<18} |",
         ]
         # Class details
         if hasattr(character, 'get_class_data'):
             class_data = character.get_class_data()
-            lines.append(f"| Class Alignment: {class_data.get('alignment', '-'):<27} |")
-            lines.append(f"| Hit Die: d{class_data.get('hit_die', '-')}  Skill/Level: {class_data.get('skill_points', '-')}  |")
-            lines.append(f"| BAB: {class_data.get('bab_progression', '-'):>6}  Saves: {class_data.get('save_progression', '-')} |")
-        lines.append("+" + "-"*40 + "+")
+            lines.append(f"| Class Alignment: {class_data.get('alignment', '-'):<40} |")
+            lines.append(f"| Hit Die: d{class_data.get('hit_die', '-')}  Skill/Level: {class_data.get('skill_points', '-')}  BAB: {class_data.get('bab_progression', '-'):>6}  Saves: {class_data.get('save_progression', '-')} |")
+
+        lines.append("+" + "-"*width + "+")
 
         # Section 2: Roleplay/Meta
-        lines.append(f"| Alignment: {getattr(character, 'alignment', 'Unaligned'):<15} Deity: {getattr(character, 'deity', 'None'):<18}|")
-        lines.append(f"| Size: {getattr(character, 'size', 'Medium'):<8} Speed: {getattr(character, 'speed', character.move):<4} ft.   Immortal: {'Yes' if character.is_immortal else 'No':<3} |")
-        lines.append(f"| Elemental Affinity: {character.elemental_affinity or 'None':<22}|")
-        lines.append("+" + "-"*40 + "+")
+        alignment = getattr(character, 'alignment', 'Unaligned') or 'Unaligned'
+        deity = getattr(character, 'deity', 'None') or 'None'
+        lines.append(f"| Alignment: {alignment:<20} Deity: {deity:<30}|")
+        lines.append(f"| Size: {getattr(character, 'size', 'Medium'):<10} Speed: {getattr(character, 'speed', character.move):<4} ft.   Immortal: {'Yes' if character.is_immortal else 'No':<3}   Elemental Affinity: {character.elemental_affinity or 'None':<15}|")
+        lines.append("+" + "-"*width + "+")
 
         # Section 3: Combat
-        lines.append(f"| HP: {character.hp:>3}/{character.max_hp:<3}  Mana: {character.mana:>3}/{character.max_mana:<3}  AC: {character.ac:<2}  |")
-        lines.append(f"| Touch AC: {getattr(character, 'touch_ac', character.ac):<2}  Flat-Footed AC: {getattr(character, 'flat_ac', character.ac):<2}  |")
-        lines.append(f"| BAB: {getattr(character, 'bab', (character.level * 3) // 4):<2}  Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2):<2} |")
+        lines.append(f"| HP: {character.hp:>3}/{character.max_hp:<3}  AC: {character.ac:<2}  Touch AC: {getattr(character, 'touch_ac', character.ac):<2}  Flat-Footed AC: {getattr(character, 'flat_ac', character.ac):<2}  |")
+        lines.append(f"| BAB: {getattr(character, 'bab', (character.level * 3) // 4):<2}  Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2):<2}  |")
 
         # D&D 3.5 Save Calculation
         def calc_save(save_type):
@@ -232,25 +640,25 @@ class CommandParser:
         ref = calc_save('ref')
         will = calc_save('will')
         lines.append(f"| Fort: {fort:<2}  Ref: {ref:<2}  Will: {will:<2} |")
-        lines.append("+" + "-"*40 + "+")
+        lines.append("+" + "-"*width + "+")
 
         # Section 4: Stats
         lines.append(f"| STR: {character.str_score:<2}  DEX: {character.dex_score:<2}  CON: {character.con_score:<2}  INT: {character.int_score:<2}  WIS: {character.wis_score:<2}  CHA: {character.cha_score:<2} |")
-        lines.append("+" + "-"*40 + "+")
+        lines.append("+" + "-"*width + "+")
 
         # Section 5: XP, Resistances, Immunities
-        lines.append(f"| XP: {character.xp:<8} |")
-        lines.append(f"| Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None':<28}|")
-        lines.append(f"| Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None':<29}|")
-        lines.append("+" + "-"*40 + "+")
+        lines.append(f"| XP: {character.xp:<12} |")
+        lines.append(f"| Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None':<45}|")
+        lines.append(f"| Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None':<45}|")
+        lines.append("+" + "-"*width + "+")
 
         # Section 6: Active Effects
         effects = getattr(character, 'active_effects', [])
         if effects:
-            lines.append("| Active Conditions/Status Effects:         |")
+            lines.append("| Active Conditions/Status Effects:                                         |")
             for effect in effects:
-                lines.append(f"| - {effect:<36}|")
-            lines.append("+" + "-"*40 + "+")
+                lines.append(f"| - {effect:<55}|")
+            lines.append("+" + "-"*width + "+")
 
         return "\n".join(lines)
 
@@ -292,7 +700,7 @@ class CommandParser:
                 "Example: setprompt AC %a HP %h/%H EXP %x>\n"
                 "Available prompt codes:\n"
                 "  %a = AC, %h = HP, %H = Max HP, %x = XP to next level, %RACE = your race,\n"
-                "  %m = Mana, %M = Max Mana, %v = Move, %V = Max Move,\n"
+                "  %v = Move, %V = Max Move,\n"
                 "  %s = Str, %d = Dex, %c = Con, %i = Int, %w = Wis, %c = Cha, %s = [Immortal] if immortal.\n"
                 "Type 'setprompt <your prompt>' to change it."
             )
@@ -346,7 +754,16 @@ class CommandParser:
         return "\n".join(lines)
 
     def cmd_look(self, character, args):
-        return character.room.description
+        desc = character.room.description
+        # List mobs in the room
+        mob_lines = []
+        for mob in character.room.mobs:
+            if hasattr(mob, 'alive') and not mob.alive:
+                continue
+            mob_lines.append(f"You see {mob.name} here.")
+        if mob_lines:
+            desc += "\n" + "\n".join(mob_lines)
+        return desc
 
     def cmd_say(self, character, args):
         return f"{character.name} says, '{args}'"
@@ -366,11 +783,21 @@ class CommandParser:
                 character.room.players.remove(character)
                 character.room = self.world.rooms[new_vnum]
                 character.room.players.append(character)
-                return f"You move {direction} to {character.room.name}."
+                # Show room description and mobs after moving
+                look_output = self.cmd_look(character, "")
+                return f"You move {direction} to {character.room.name}.\n{look_output}"
         return "No exit that way!"
 
     def cmd_exits(self, character, args):
-        return ", ".join(character.room.exits.keys())
+        # Only show exits that are connected to existing rooms
+        connected_exits = []
+        for direction, vnum in character.room.exits.items():
+            if vnum in self.world.rooms:
+                connected_exits.append(direction)
+        if connected_exits:
+            return "Exits: " + ", ".join(connected_exits)
+        else:
+            return "No visible exits."
 
     def cmd_quest(self, character, args):
         if args.lower() == "start" and 1 not in [q["id"] for q in character.quests]:
