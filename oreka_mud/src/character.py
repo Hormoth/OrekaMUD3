@@ -374,12 +374,47 @@ class Character:
         self.spells_per_day = self._auto_spells_per_day()
 
     def set_level(self, new_level):
+        old_level = getattr(self, 'class_level', 1)
         self.class_level = new_level
         self.class_features = self.get_class_features()
         self.spells_known = self._auto_spells_known()
         self.spells_per_day = self._auto_spells_per_day()
         self.prompt = "(%RACE): AC %a HP %h/%H EXP %x>" if self.is_immortal else "AC %a HP %h/%H EXP %x>"
         self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
+
+        # D&D 3.5e: Grant general feat at 1, 3, 6, 9, 12, 15, 18
+        if new_level in (1, 3, 6, 9, 12, 15, 18):
+            if hasattr(self, 'grant_general_feat'):
+                # If async context, schedule prompt, else just append placeholder
+                try:
+                    import asyncio
+                    loop = asyncio.get_event_loop()
+                    coro = self.grant_general_feat(self.writer, self.reader)
+                    if loop.is_running():
+                        asyncio.ensure_future(coro)
+                    else:
+                        loop.run_until_complete(coro)
+                except Exception:
+                    # Fallback: just append placeholder
+                    self.feats.append("General Feat (choose)")
+            else:
+                self.feats.append("General Feat (choose)")
+
+        # D&D 3.5e: Ability score increase at 4, 8, 12, 16, 20
+        if new_level in (4, 8, 12, 16, 20):
+            if hasattr(self, 'grant_ability_increase'):
+                try:
+                    import asyncio
+                    loop = asyncio.get_event_loop()
+                    coro = self.grant_ability_increase(self.writer, self.reader)
+                    if loop.is_running():
+                        asyncio.ensure_future(coro)
+                    else:
+                        loop.run_until_complete(coro)
+                except Exception:
+                    self.feats.append("Ability Score Increase (choose)")
+            else:
+                self.feats.append("Ability Score Increase (choose)")
 
     def skill_check(self, skill, bonus=0):
         import random

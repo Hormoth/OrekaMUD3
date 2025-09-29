@@ -2,6 +2,26 @@ from src.combat import attack
 from src.character import State
 
 class CommandParser:
+    def cmd_progression(self, character, args):
+        """Show the D&D 3.5e advancement chart for feats, skill ranks, and ability increases."""
+        lines = [
+            "D&D 3.5e Character Advancement Chart:",
+            "",
+            "| Level | Feat? | Ability Score? | Max Class Skill | Max Cross-Class Skill |",
+            "|-------|-------|----------------|-----------------|----------------------|",
+        ]
+        for lvl in range(1, 21):
+            feat = "Yes" if lvl == 1 or lvl in (3, 6, 9, 12, 15, 18) else ""
+            ability = "Yes" if lvl in (4, 8, 12, 16, 20) else ""
+            max_class = lvl + 3
+            max_cross = (lvl + 3) / 2
+            lines.append(f"| {lvl:<5} | {feat:<5} | {ability:<14} | {max_class:<15} | {max_cross:<20} |")
+        lines.append("")
+        lines.append("- Feats: 1st, 3rd, 6th, 9th, 12th, 15th, 18th level.")
+        lines.append("- Ability Score: 4th, 8th, 12th, 16th, 20th level.")
+        lines.append("- Max Class Skill Rank: level + 3")
+        lines.append("- Max Cross-Class Skill Rank: (level + 3) / 2")
+        return "\n".join(lines)
     def cmd_appraise(self, character, args):
         """Appraise the value of an item in your inventory or in the shopkeeper's stock."""
         shopkeeper = self._find_shopkeeper(character)
@@ -410,6 +430,7 @@ class CommandParser:
                     break
         # Simulate spell effect (placeholder)
         return f"You cast {spell_name}! {spell['description']} (Slots left for level {spell_level}: {character.spells_per_day[spell_level]})"
+    # ...existing code...
     def __init__(self, world):
         self.world = world
         self.commands = {
@@ -434,18 +455,17 @@ class CommandParser:
             "cast": self.cmd_cast,
             "companion": self.cmd_companion,
             "quest": self.cmd_questpage,
-<<<<<<< HEAD
-            "levelup": self.cmd_levelup
-            ,"recall": self.cmd_recall
-            ,"@dig": self.cmd_dig
-            ,"@desc": self.cmd_desc
-            ,"@exit": self.cmd_exit
-            ,"@flag": self.cmd_flag
-            ,"@mobadd": self.cmd_mobadd
-            ,"@mobedit": self.cmd_mobedit
-            ,"@itemadd": self.cmd_itemadd
-            ,"@itemedit": self.cmd_itemedit
-            ,"components": self.cmd_components
+            "levelup": self.cmd_levelup,
+            "recall": self.cmd_recall,
+            "@dig": self.cmd_dig,
+            "@desc": self.cmd_desc,
+            "@exit": self.cmd_exit,
+            "@flag": self.cmd_flag,
+            "@mobadd": self.cmd_mobadd,
+            "@mobedit": self.cmd_mobedit,
+            "@itemadd": self.cmd_itemadd,
+            "@itemedit": self.cmd_itemedit,
+            "components": self.cmd_components
         }
 
     # --- Builder Commands ---
@@ -536,62 +556,6 @@ class CommandParser:
         character.room = self.world.rooms[center_vnum]
         character.room.players.append(character)
         return f"You are enveloped in shimmering light and find yourself at the {character.room.name}."
-=======
-            "levelup": self.cmd_levelup,
-            # --- Build commands (restricted to immortals) ---
-            "build": self.cmd_build,
-            "dig": self.cmd_dig,
-            "setdesc": self.cmd_setdesc,
-            "setexit": self.cmd_setexit,
-            "setmob": self.cmd_setmob,
-            "setitem": self.cmd_setitem,
-            "setflag": self.cmd_setflag,
-            "setname": self.cmd_setname,
-            "setvnum": self.cmd_setvnum,
-            "setarea": self.cmd_setarea,
-            "setroom": self.cmd_setroom,
-            "setreset": self.cmd_setreset,
-            "setdoor": self.cmd_setdoor,
-            "setowner": self.cmd_setowner,
-            "setzone": self.cmd_setzone,
-            "setweather": self.cmd_setweather,
-            "setlight": self.cmd_setlight,
-            "setterrain": self.cmd_setterrain,
-            "setnote": self.cmd_setnote,
-            "sethelp": self.cmd_sethelp,
-            "setcolor": self.cmd_setcolor,
-            "setprompt": self.cmd_setprompt,
-            "settitle": self.cmd_settitle,
-            "setrace": self.cmd_setrace,
-            "setclass": self.cmd_setclass,
-            "setdeity": self.cmd_setdeity,
-            "setalignment": self.cmd_setalignment,
-            "setlevel": self.cmd_setlevel,
-            "sethp": self.cmd_sethp,
-            "setmana": self.cmd_setmana,
-            "setmove": self.cmd_setmove,
-            "setac": self.cmd_setac,
-            "setstr": self.cmd_setstr,
-            "setdex": self.cmd_setdex,
-            "setcon": self.cmd_setcon,
-            "setint": self.cmd_setint,
-            "setwis": self.cmd_setwis,
-            "setcha": self.cmd_setcha,
-            "setxp": self.cmd_setxp,
-            "setgold": self.cmd_setgold,
-            "setfeats": self.cmd_setfeats,
-            "setskills": self.cmd_setskills,
-            "setspells": self.cmd_setspells,
-            "setinventory": self.cmd_setinventory,
-            "setequipment": self.cmd_setequipment,
-            "setresist": self.cmd_setresist,
-            "setimmune": self.cmd_setimmune,
-            "setaffinity": self.cmd_setaffinity,
-            "setai": self.cmd_setai,
-            "setimmortal": self.cmd_setimmortal,
-            "setpassword": self.cmd_setpassword,
-            "setemail": self.cmd_setemail
-        }
 
     # --- Build command stubs, all restricted to immortals ---
     def _immortal_only(self, character):
@@ -910,8 +874,6 @@ class CommandParser:
         if check: return check
         # ...existing setemail logic...
         return "[IMMORTAL] Setemail command executed."
->>>>>>> c01d78e14419aa9ff08638343b3eedad01a94080
-
     def cmd_spells(self, character, args):
         lines = ["Spells Known and Spells Per Day:"]
         spellcasting = character.get_spellcasting_info() if hasattr(character, 'get_spellcasting_info') else None
@@ -969,31 +931,29 @@ class CommandParser:
         return "\n".join(lines)
 
     def cmd_score(self, character, args):
-        # Section 1: Identity
-        width = 60
-        lines = [
-            "+" + "-"*width + "+",
-            f"| Name: {character.name:<20} Level: {character.level:<3}  Title: {character.title or '':<25} |",
-            f"| Race: {character.race:<18} Class: {getattr(character, 'char_class', 'Adventurer'):<18} |",
-        ]
-        # Class details
-        if hasattr(character, 'get_class_data'):
-            class_data = character.get_class_data()
-            lines.append(f"| Class Alignment: {class_data.get('alignment', '-'):<40} |")
-            lines.append(f"| Hit Die: d{class_data.get('hit_die', '-')}  Skill/Level: {class_data.get('skill_points', '-')}  BAB: {class_data.get('bab_progression', '-'):>6}  Saves: {class_data.get('save_progression', '-')} |")
+        width = 80
+        def pad_line(content):
+            # Pads content to width, with | at start and end
+            return f"|{content}{' ' * (width - len(content))}|"
+
+        lines = []
+        lines.append("+" + "-"*width + "+")
+        lines.append(pad_line(f" Name: {character.name:<20} Level: {character.level:<3}  Title: {str(character.title or '')[:30]:<30}"))
+        lines.append(pad_line(f" Race: {str(character.race)[:20]:<20} Class: {str(getattr(character, 'char_class', 'Adventurer'))[:20]:<20}"))
+        # Class details removed for player score output
 
         lines.append("+" + "-"*width + "+")
 
         # Section 2: Roleplay/Meta
-        alignment = getattr(character, 'alignment', 'Unaligned') or 'Unaligned'
-        deity = getattr(character, 'deity', 'None') or 'None'
-        lines.append(f"| Alignment: {alignment:<20} Deity: {deity:<30}|")
-        lines.append(f"| Size: {getattr(character, 'size', 'Medium'):<10} Speed: {getattr(character, 'speed', character.move):<4} ft.   Immortal: {'Yes' if character.is_immortal else 'No':<3}   Elemental Affinity: {character.elemental_affinity or 'None':<15}|")
+        alignment = str(getattr(character, 'alignment', 'Unaligned') or 'Unaligned')
+        deity = str(getattr(character, 'deity', 'None') or 'None')
+        lines.append(pad_line(f" Alignment: {alignment:<20} Deity: {deity:<30}"))
+        lines.append(pad_line(f" Size: {str(getattr(character, 'size', 'Medium')):<10} Speed: {str(getattr(character, 'speed', character.move)):<4} ft.   Immortal: {'Yes' if character.is_immortal else 'No':<3}   Elemental Affinity: {str(character.elemental_affinity or 'None'):<15}"))
         lines.append("+" + "-"*width + "+")
 
         # Section 3: Combat
-        lines.append(f"| HP: {character.hp:>3}/{character.max_hp:<3}  AC: {character.ac:<2}  Touch AC: {getattr(character, 'touch_ac', character.ac):<2}  Flat-Footed AC: {getattr(character, 'flat_ac', character.ac):<2}  |")
-        lines.append(f"| BAB: {getattr(character, 'bab', (character.level * 3) // 4):<2}  Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2):<2}  |")
+        lines.append(pad_line(f" HP: {character.hp:>3}/{character.max_hp:<3}  AC: {character.ac:<2}  Touch AC: {getattr(character, 'touch_ac', character.ac):<2}  Flat-Footed AC: {getattr(character, 'flat_ac', character.ac):<2}"))
+        lines.append(pad_line(f" BAB: {getattr(character, 'bab', (character.level * 3) // 4):<2}  Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2):<2}"))
 
         # D&D 3.5 Save Calculation
         def calc_save(save_type):
@@ -1015,25 +975,24 @@ class CommandParser:
         fort = calc_save('fort')
         ref = calc_save('ref')
         will = calc_save('will')
-        lines.append(f"| Fort: {fort:<2}  Ref: {ref:<2}  Will: {will:<2} |")
+        lines.append(pad_line(f" Saves: Fortitude: {fort:<2}  Reflex: {ref:<2}  Will: {will:<2}"))
         lines.append("+" + "-"*width + "+")
 
         # Section 4: Stats
-        lines.append(f"| STR: {character.str_score:<2}  DEX: {character.dex_score:<2}  CON: {character.con_score:<2}  INT: {character.int_score:<2}  WIS: {character.wis_score:<2}  CHA: {character.cha_score:<2} |")
+        lines.append(pad_line(f" STR: {character.str_score:<2}  DEX: {character.dex_score:<2}  CON: {character.con_score:<2}  INT: {character.int_score:<2}  WIS: {character.wis_score:<2}  CHA: {character.cha_score:<2}"))
         lines.append("+" + "-"*width + "+")
 
         # Section 5: XP, Resistances, Immunities
-        lines.append(f"| XP: {character.xp:<12} |")
-        lines.append(f"| Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None':<45}|")
-        lines.append(f"| Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None':<45}|")
+        lines.append(pad_line(f" XP: {character.xp:<12}"))
+        lines.append(pad_line(f" Resistances: {', '.join(getattr(character, 'resistances', [])) or 'None'}"))
+        lines.append(pad_line(f" Immunities: {', '.join(getattr(character, 'immunities', [])) or 'None'}"))
         lines.append("+" + "-"*width + "+")
 
         # Section 6: Active Effects
         effects = getattr(character, 'active_effects', [])
         if effects:
-            lines.append("| Active Conditions/Status Effects:                                         |")
-            for effect in effects:
-                lines.append(f"| - {effect:<55}|")
+            effect_line = f" Active Conditions/Status Effects: {', '.join(str(e) for e in effects)}"
+            lines.append(pad_line(effect_line))
             lines.append("+" + "-"*width + "+")
 
         return "\n".join(lines)
@@ -1193,9 +1152,6 @@ class CommandParser:
         return character.toggle_stats()
 
     # --- D&D 3.5 Skill Command Stubs ---
-    def cmd_appraise(self, character, args):
-        result = character.skill_check("Appraise")
-        return f"You appraise the item. Skill check result: {result}"
 
     def cmd_balance(self, character, args):
         result = character.skill_check("Balance")

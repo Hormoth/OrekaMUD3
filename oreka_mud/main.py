@@ -286,7 +286,11 @@ async def handle_client(reader, writer, world, parser):
                     writer.write("No such character.\n")
                     continue
                 with open(player_path, "r", encoding="utf-8") as f:
-                    pdata = json.load(f)
+                    try:
+                        pdata = json.load(f)
+                    except json.JSONDecodeError:
+                        writer.write("Player file is empty or corrupt. Please contact an admin or recreate your character.\n")
+                        continue
                 if isinstance(pdata, list):
                     pdata = pdata[0]
                 expected_hash = pdata.get("hashed_password")
@@ -821,6 +825,49 @@ async def prompt_class(writer, reader):
 
 async def prompt_skills(writer, reader, chosen_class):
     class_skills = CLASSES[chosen_class]["class_skills"]
+    # Build the full skill list (all skills in the game)
+    all_skills = set(class_skills)
+    for cdata in CLASSES.values():
+        all_skills.update(cdata.get("class_skills", []))
+    all_skills = sorted(all_skills)
+    # For Craft/Profession/Perform, treat each (any) as a group
+    def skill_base_name(skill):
+        if skill.startswith("Craft ("):
+            return "Craft (any)"
+        if skill.startswith("Profession ("):
+            return "Profession (any)"
+        if skill.startswith("Perform ("):
+            return "Perform (any)"
+        return skill
+    # Mark cross-class skills
+    cross_class_skills = [s for s in all_skills if skill_base_name(s) not in class_skills]
+    # Initialize all skills to 0 for display and allocation
+    skills = {s: 0 for s in all_skills}
+
+    # Show all current complete craft skills (from materials.json)
+    import json
+    import os
+    craft_skills_set = set()
+    materials_path = os.path.join(os.path.dirname(__file__), '../data/materials.json')
+    try:
+        with open(materials_path, 'r', encoding='utf-8') as f:
+            materials = json.load(f)
+        for mat in materials:
+            for skill in mat.get('crafting_skills', []):
+                craft_skills_set.add(skill)
+    except Exception:
+        craft_skills_set = set()
+    if craft_skills_set:
+        writer.write("\nAvailable crafting skills in this world:\n")
+        for skill in sorted(craft_skills_set):
+            writer.write(f"  Craft ({skill.capitalize()})\n")
+        writer.write("\n")
+
+    # Add skill rank limit info
+    writer.write("Skill Rank Limits:\n")
+    writer.write("- Class skills: max rank = character level + 3\n")
+    writer.write("- Cross-class skills: max rank = (character level + 3) / 2\n")
+    writer.write("- Cross-class skills cost 2 points per rank.\n\n")
     # Get int_score and chosen_race from the call stack (globals in main.py)
     import inspect
 
@@ -832,23 +879,26 @@ async def prompt_skills(writer, reader, chosen_class):
     skill_points = max((base + int_mod), 1) * 4  # 1st level: base + Int mod, min 1, times 4
     if "Human" in chosen_race:
         skill_points += 4
-    skills = {s: 0 for s in class_skills}
     spent = 0
     writer.write(f"\nYou have {skill_points} skill points to spend.\n")
 
     def show_skills():
         writer.write("\nCurrent skills:\n")
-        for s in class_skills:
-            writer.write(f"  {s}: {skills[s]}\n")
+        for s in all_skills:
+            is_cross = skill_base_name(s) not in class_skills
+            mark = "*" if is_cross else " "
+            writer.write(f"{mark} {s}: {skills[s]}\n")
+        writer.write("* = cross-class skill (costs 2 points per rank, max rank = (level+3)/2)\n")
         writer.write(f"Points remaining: {skill_points - spent}\n")
 
     show_skills()
+    max_rank_class = 1 + 3  # 1st level
+    max_rank_cross = (1 + 3) // 2
     while spent < skill_points:
         writer.write("Type 'add <number> <skill>' to allocate, or 'help <skill>' for info.\n")
         cmd = (await reader.read(100)).strip()
         if cmd.lower().startswith("help "):
             skill_name = cmd[5:].strip()
-            # For now, just echo the skill name; you can expand with real info
             writer.write(f"Info about {skill_name}: (description here)\n")
             continue
         if cmd.lower().startswith("add "):
@@ -856,23 +906,35 @@ async def prompt_skills(writer, reader, chosen_class):
                 parts = cmd.split()
                 num = int(parts[1])
                 skill = " ".join(parts[2:])
-                if skill not in class_skills:
+                if skill not in all_skills:
                     writer.write("Invalid skill name.\n")
                     continue
+                is_cross = skill_base_name(skill) not in class_skills
+                # Enforce max rank
+                current = skills[skill]
+                if is_cross:
+                    max_rank = max_rank_cross
+                    cost = num * 2
+                else:
+                    max_rank = max_rank_class
+                    cost = num
                 if num < 0:
                     writer.write("Cannot add negative points.\n")
                     continue
-                if spent + num > skill_points:
+                if current + num > max_rank:
+                    writer.write(f"Cannot exceed max rank ({max_rank}) for this skill.\n")
+                    continue
+                if spent + cost > skill_points:
                     writer.write("Not enough points remaining.\n")
                     continue
                 skills[skill] += num
-                spent += num
+                spent += cost
                 show_skills()
             except Exception:
                 writer.write("Invalid command format. Use: add <number> <skill>\n")
             continue
         writer.write("Unknown command. Use 'add <number> <skill>' or 'help <skill>'.\n")
-    return skills
+    return {k: v for k, v in skills.items() if v > 0}
 
 
 async def prompt_spells(writer, reader, chosen_class, domains=None):
@@ -1087,12 +1149,10 @@ async def log_players(world):
 
 
 async def main():
-
     world = OrekaWorld()
     world.load_data()
     parser = CommandParser(world)
 
-<<<<<<< HEAD
     ai_character = Character(
         "Aelthara",
         None,
@@ -1111,66 +1171,6 @@ async def main():
         move=100,
         max_move=100,
     )
-=======
-    # --- Spawn a level 1 monster from mobs.json in all chapel.json rooms ---
-    import os
-    import random
-    from src.mob import Mob
-    import json as _json
-    # Load all level 1 monsters from mobs.json
-    mobs_path = os.path.join(os.path.dirname(__file__), "data", "mobs.json")
-    with open(mobs_path, "r") as f:
-        all_mobs = _json.load(f)
-    level1_mobs = [m for m in all_mobs if m.get("level", 0) == 1]
-    if not level1_mobs:
-        raise Exception("No level 1 monsters found in mobs.json!")
-    # Find chapel.json rooms (by area or filename in room data)
-    chapel_rooms = [room for room in world.rooms.values() if getattr(room, 'area', '').lower() == 'chapel' or getattr(room, 'filename', '').lower() == 'chapel.json']
-    if not chapel_rooms:
-        # Fallback: try to match by vnum range if known (e.g., 2000-2099)
-        chapel_rooms = [room for room in world.rooms.values() if 2000 <= getattr(room, 'vnum', 0) < 2100]
-    for room in chapel_rooms:
-        mob_data = random.choice(level1_mobs)
-        # Use Mob.from_dict if available, else fallback to Mob constructor
-        mob = None
-        if hasattr(Mob, 'from_dict'):
-            mob = Mob.from_dict(mob_data, world)
-            mob.room = room
-        else:
-            mob = Mob(
-                vnum=mob_data.get("vnum", 0),
-                name=mob_data.get("name", "Level 1 Monster"),
-                level=mob_data.get("level", 1),
-                hp_dice=mob_data.get("hp_dice", [1,6,0]),
-                ac=mob_data.get("ac", 10),
-                damage_dice=mob_data.get("damage_dice", [1,2,0]),
-                flags=mob_data.get("flags", []),
-                type_=mob_data.get("type_", ""),
-                alignment=mob_data.get("alignment", "Neutral"),
-                ability_scores=mob_data.get("ability_scores", {}),
-                initiative=mob_data.get("initiative", 0),
-                speed=mob_data.get("speed", {}),
-                attacks=mob_data.get("attacks", []),
-                special_attacks=mob_data.get("special_attacks", []),
-                special_qualities=mob_data.get("special_qualities", []),
-                feats=mob_data.get("feats", []),
-                skills=mob_data.get("skills", {}),
-                saves=mob_data.get("saves", {}),
-                environment=mob_data.get("environment", ""),
-                organization=mob_data.get("organization", ""),
-                cr=mob_data.get("cr", None),
-                advancement=mob_data.get("advancement", None),
-                description=mob_data.get("description", "A level 1 monster.")
-            )
-        mob.room = room
-        if not hasattr(room, 'mobs'):
-            room.mobs = []
-        room.mobs.append(mob)
-
-    ai_character = Character("Aelthara", None, "Eruskan Human", 7, 60, 120, 16, world.rooms[1000],
-                            str_score=12, dex_score=14, con_score=12, int_score=14, wis_score=12, cha_score=16,
-                            mana=100, max_mana=100, move=100, max_move=100)
->>>>>>> c01d78e14419aa9ff08638343b3eedad01a94080
     ai_character.is_ai = True
     ai_character.quests.append(world.quests[1])
     world.players.append(ai_character)
@@ -1209,19 +1209,12 @@ async def main():
     world.players.append(hareem)
     world.rooms[1000].players.append(hareem)
 
-<<<<<<< HEAD
     logger.info("Starting Oreka MUD server on localhost:4000 (telnetlib3)")
 
     async def telnet_shell(reader, writer):
         await handle_client(reader, writer, world, parser)
 
     server = await telnetlib3.create_server(port=4000, shell=telnet_shell)
-=======
-    logger.info("Starting Oreka MUD server on localhost:4000")
-    server = await asyncio.start_server(
-        lambda r, w: handle_client(r, w, world, parser), "localhost", 4000
-    )
->>>>>>> c01d78e14419aa9ff08638343b3eedad01a94080
     asyncio.create_task(log_players(world))
     # asyncio.create_task(idle_check())  # idle_check is not defined
     async with server:
