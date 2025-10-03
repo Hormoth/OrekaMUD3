@@ -1,8 +1,15 @@
 import random
+import os
+import hashlib
+import hmac
 
 from enum import Enum
 from oreka_mud.src.classes import CLASSES
 from oreka_mud.src.spells import get_spells_for_class
+
+# ---------------------------
+# Color Tags & Helpers
+# ---------------------------
 
 COLOR_TAGS = {
     "@RESET@": "\033[0m",
@@ -20,9 +27,58 @@ def apply_color_tags(text):
         text = text.replace(tag, code)
     return text
 
+# ---------------------------
+# Password Security Helpers
+# ---------------------------
+
+def _hash_password(raw: str, *, iterations: int = 200_000) -> str:
+    """
+    PBKDF2-HMAC-SHA256 with random 16-byte salt.
+    Returns 'pbkdf2$iters$hexsalt$hexhash'.
+    """
+    if not isinstance(raw, str) or len(raw) == 0:
+        raise ValueError("Password must be a non-empty string.")
+    salt = os.urandom(16)
+    dk = hashlib.pbkdf2_hmac("sha256", raw.encode("utf-8"), salt, iterations)
+    return f"pbkdf2${iterations}${salt.hex()}${dk.hex()}"
+
+def _verify_password(raw: str, stored: str) -> bool:
+    """
+    Verifies a raw password against the stored 'pbkdf2$iters$salt$hash' format.
+    """
+    try:
+        algo, iters_s, salt_hex, hash_hex = stored.split("$", 3)
+        if algo != "pbkdf2":
+            return False
+        iters = int(iters_s)
+        salt = bytes.fromhex(salt_hex)
+        expected = bytes.fromhex(hash_hex)
+        dk = hashlib.pbkdf2_hmac("sha256", raw.encode("utf-8"), salt, iters)
+        return hmac.compare_digest(dk, expected)
+    except Exception:
+        return False
+
+def _validate_password_policy(pw: str):
+    """
+    Simple policy: >= 8 chars, at least 1 letter and 1 digit.
+    Raise ValueError with a friendly message if invalid.
+    """
+    if not isinstance(pw, str) or len(pw) < 8:
+        raise ValueError("Password must be at least 8 characters.")
+    if not any(c.isalpha() for c in pw) or not any(c.isdigit() for c in pw):
+        raise ValueError("Password must include at least one letter and one number.")
+
+# ---------------------------
+# Core Types
+# ---------------------------
+
 class State(Enum):
     EXPLORING = 1
     COMBAT = 2
+
+# ---------------------------
+# Character
+# ---------------------------
 
 class Character:
     SKILL_ABILITY = {
@@ -43,6 +99,7 @@ class Character:
         "Search": "int_score",
         # ...add more as needed...
     }
+
     SKILL_SYNERGY = {
         "Bluff": ["Diplomacy"],
         "Tumble": ["Balance"],
@@ -53,6 +110,7 @@ class Character:
         "Diplomacy": ["Sense Motive"],
         # ...add more as needed...
     }
+
     SKILL_UNTRAINED = {
         "Climb": True,
         "Survival": True,
@@ -114,8 +172,14 @@ class Character:
         self.domain_powers = {}
         self.domain_spells = {}
         self.is_builder = is_builder
-        self.password = password
+
+        # --- Secure password handling (no plaintext stored) ---
+        self.hashed_password = None
+        if password:
+            self.set_password(password)
+
         self._init_domains()
+
         # Barbarian mechanics
         self.raging = False  # Barbarian rage state
         self.fast_movement = False  # Barbarian fast movement state
@@ -128,6 +192,39 @@ class Character:
         self.conditions = set()
         self.prompt = "AC %a HP %h/%H [%RACE] >"  # Default prompt
         self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
+
+    # ---------------------------
+    # Password API
+    # ---------------------------
+
+    def set_password(self, raw_password: str):
+        """
+        Set/replace the account password. Validates policy and stores a secure hash.
+        """
+        _validate_password_policy(raw_password)
+        self.hashed_password = _hash_password(raw_password)
+
+    def check_password(self, raw_password: str) -> bool:
+        """
+        Verify a candidate password against the stored hash.
+        """
+        hp = getattr(self, "hashed_password", None)
+        if not hp:
+            return False
+        return _verify_password(raw_password, hp)
+
+    def update_password(self, current_password: str, new_password: str):
+        """
+        Update password after verifying the current one. Raises ValueError on failure.
+        """
+        if not self.check_password(current_password):
+            raise ValueError("Current password is incorrect.")
+        _validate_password_policy(new_password)
+        self.hashed_password = _hash_password(new_password)
+
+    # ---------------------------
+    # Barbarian / Combat helpers
+    # ---------------------------
 
     def get_equipped_armor_type(self):
         for item in self.inventory:
@@ -286,8 +383,12 @@ class Character:
             return 4
         return 0
 
+    # ---------------------------
+    # Persistence
+    # ---------------------------
+
     def save(self):
-        import os, json, shutil, glob, datetime
+        import json, shutil, glob, datetime
         player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
         os.makedirs(player_dir, exist_ok=True)
         filename = os.path.join(player_dir, f"{self.name.lower()}.json")
@@ -304,7 +405,7 @@ class Character:
 
     @classmethod
     def rollback(cls, name, timestamp=None):
-        import os, shutil, glob
+        import shutil, glob
         player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
         base = os.path.join(player_dir, f"{name.lower()}.json")
         pattern = os.path.join(player_dir, f"{name.lower()}.*.bak.json")
@@ -320,6 +421,10 @@ class Character:
             backup = backups[0]
         shutil.copy2(backup, base)
         return base
+
+    # ---------------------------
+    # Spells, Feats, Leveling
+    # ---------------------------
 
     def prepare_spells(self, new_prepared):
         self.prepared_spells = new_prepared
@@ -414,10 +519,6 @@ class Character:
     def get_class_data(self):
         return CLASSES.get(self.char_class, {})
 
-    def get_class_skills(self):
-        class_data = self.get_class_data()
-        return class_data.get("class_skills", [])
-
     def get_class_features(self):
         class_data = self.get_class_data()
         features = []
@@ -469,7 +570,6 @@ class Character:
 
     @staticmethod
     def from_dict(data):
-        import os
         import time
         from oreka_mud.src.items import Item
         lock_acquired = False
@@ -508,7 +608,18 @@ class Character:
                 inventory=[Item.from_dict(i) for i in data.get("inventory", [])],
                 is_builder=data.get("is_builder", False)
             )
+
+            # --- Password fields & legacy migration ---
             char.hashed_password = data.get("hashed_password")
+            legacy_plain = data.get("password")
+            if not char.hashed_password and legacy_plain:
+                try:
+                    char.set_password(legacy_plain)
+                except Exception:
+                    # leave as None; caller/UX can force a reset if needed
+                    pass
+
+            # --- The rest of your assignments (unchanged) ---
             char.char_class = data.get("char_class", "Adventurer")
             char.class_level = data.get("class_level", data.get("level", 1))
             char.class_features = data.get("class_features", [])
@@ -530,6 +641,10 @@ class Character:
                 except Exception:
                     pass
         return char
+
+    # ---------------------------
+    # Domains / Spells
+    # ---------------------------
 
     def _init_domains(self):
         try:
@@ -614,9 +729,11 @@ class Character:
                 f"  Wisdom:       {self.wis_score}\n"
                 f"  Charisma:     {self.cha_score}\n"
             )
-            self.writer.write(msg.encode())
+            # Ensure msg is a string before encoding
+            if not isinstance(msg, str):
+                msg = str(msg)
+            self.writer.write(msg)
 
-        from oreka_mud.src.classes import CLASSES
         if self.char_class == "Barbarian":
             class_data = CLASSES.get("Barbarian", {})
             features = class_data.get("features", {})
@@ -625,6 +742,8 @@ class Character:
                 msg = f"\nCongratulations! As a Barbarian, you have gained the following at level {new_level}:\n  - " + "\n  - ".join(gained) + "\n"
                 if hasattr(self, "writer") and self.writer:
                     try:
+                        if not isinstance(msg, str):
+                            msg = str(msg)
                         self.writer.write(msg.encode())
                     except Exception:
                         print(msg)
@@ -639,11 +758,17 @@ class Character:
                 msg = f"\nCongratulations! As a Bard, you have gained the following at level {new_level}:\n  - " + "\n  - ".join(gained) + "\n"
                 if hasattr(self, "writer") and self.writer:
                     try:
+                        if not isinstance(msg, str):
+                            msg = str(msg)
                         self.writer.write(msg.encode())
                     except Exception:
                         print(msg)
                 else:
                     print(msg)
+
+    # ---------------------------
+    # Conditions & Prompts
+    # ---------------------------
 
     def add_condition(self, condition):
         self.conditions.add(condition)
@@ -691,6 +816,10 @@ class Character:
             self.can_run = True
             self.can_charge = True
 
+    # ---------------------------
+    # Skills
+    # ---------------------------
+
     def get_max_skill_rank(self, skill):
         class_skills = getattr(self, 'class_skills', [])
         if skill in class_skills:
@@ -725,7 +854,8 @@ class Character:
             return result + f"\nFailure. (DC {dc})"
 
     def get_class_skills(self):
-        if self.char_class == "Cleric":
-            return CLASSES["Cleric"]["class_skills"]
+        """
+        Single authoritative class skills getter to avoid duplicates.
+        """
         class_data = self.get_class_data()
         return class_data.get("class_skills", [])
