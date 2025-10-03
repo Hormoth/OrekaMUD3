@@ -2,8 +2,8 @@ import unittest
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.character import Character
-from src.commands import CommandParser
+from .src.character import Character
+from .src.commands import CommandParser
 
 class CommandIntegrationTest(unittest.TestCase):
     def setUp(self):

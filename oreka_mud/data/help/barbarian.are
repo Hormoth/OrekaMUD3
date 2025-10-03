@@ -1,0 +1,36 @@
+Barbarian (D&D 3.5e)
+--------------------
+Hit Die: d12
+Skill Points: 4/level
+Class Skills: Climb, Craft (any), Handle Animal, Intimidate, Jump, Listen, Ride, Survival, Swim
+Armor: Light, Medium (no Rage/Fast Movement in Medium/Heavy)
+
+Class Features by Level:
+1: Fast Movement, Illiteracy, Rage 1/day
+2: Uncanny Dodge
+3: Trap Sense +1
+4: Rage 2/day
+5: Improved Uncanny Dodge
+6: Trap Sense +2
+7: Damage Reduction 1/-
+8: Rage 3/day
+9: Trap Sense +3
+10: Damage Reduction 2/-
+11: Greater Rage
+12: Rage 4/day, Trap Sense +4
+13: Damage Reduction 3/-
+14: Indomitable Will
+15: Trap Sense +5
+16: Damage Reduction 4/-, Rage 5/day
+17: Tireless Rage
+18: Trap Sense +6
+19: Damage Reduction 5/-
+20: Mighty Rage, Rage 6/day
+
+Commands:
+  rage      - Activate Rage
+  calm      - End Rage
+  fastmove  - Show Fast Movement status
+
+Description:
+Barbarians are fierce warriors of primitive background who can enter a battle rage, gaining great strength and resilience. They excel at surviving in harsh environments and shrugging off damage. Their rage grants them powerful combat bonuses, but leaves them vulnerable when it ends. Use these abilities wisely!

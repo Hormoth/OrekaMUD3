@@ -2,6 +2,17 @@ import random
 from .feats import get_feat
 
 class Mob:
+    def choose_dodge_target(self, combat_targets):
+        """
+        Dynamically select a Dodge target from current combatants.
+        For player: prompt for selection. For AI: pick highest threat.
+        """
+        # For now, pick the first alive target (stub; expand for UI/AI logic)
+        for t in combat_targets:
+            if getattr(t, 'alive', True):
+                self.set_dodge_target(getattr(t, 'vnum', None) or getattr(t, 'name', None))
+                return t
+        return None
     def to_dict(self):
         """Serialize mob for saving (exclude live state like conditions, alive, etc)."""
         return {
@@ -256,11 +267,12 @@ class Mob:
         return value
 
     def get_ac(self, vs_aop=False, attacker=None):
-        # Base AC plus passive feat bonuses (e.g., Dodge, Mobility)
+        # Base AC plus passive feat bonuses (Dodge, Mobility)
         ac = self.ac
-        # Dodge: +1 AC vs chosen target
+        # Dodge: +1 AC vs chosen target (must be set via set_dodge_target or choose_dodge_target)
         if self.has_feat("Dodge") and attacker and (getattr(attacker, 'vnum', None) == self.dodge_target or getattr(attacker, 'name', None) == self.dodge_target):
             ac += 1
+        # Mobility: +4 AC vs attacks of opportunity
         if vs_aop and self.has_feat("Mobility"):
             ac += 4
         return ac
@@ -291,58 +303,79 @@ class Mob:
         return condition in self.conditions
 
     def attack(self, target, power_attack_amt=None, all_targets=None):
-        # Attack logic with feat support (Power Attack, Weapon Finesse, Weapon Focus, Cleave, Dodge, Combat Reflexes)
+        # Attack logic with feat support (Power Attack, Weapon Finesse, Weapon Focus, Cleave, Great Cleave, Dodge, Combat Reflexes)
         roll = random.randint(1, 20)
         bab = (self.level * 3) // 4
-        # Weapon Finesse: use Dex instead of Str for attack bonus if using a finesse weapon
         str_mod = (self.ability_scores.get("Str", 10) - 10) // 2
         dex_mod = (self.ability_scores.get("Dex", 10) - 10) // 2
         using_finesse = self.has_feat("Weapon Finesse") and self._is_finesse_weapon()
         stat_mod = dex_mod if using_finesse else str_mod
         attack_bonus = bab + stat_mod
-        # Power Attack: trade attack for damage
         pa_amt = self.power_attack_amt if power_attack_amt is None else power_attack_amt
         if self.has_feat("Power Attack") and pa_amt > 0:
             attack_bonus -= pa_amt
-        # Weapon Focus: +1 to attack with specified weapon
         if self.has_feat("Weapon Focus"):
             for f in self.feats:
                 if f.startswith("Weapon Focus"):
                     focus_type = f.split("(")[-1].rstrip(")")
                     if self.weapon_type and self.weapon_type in focus_type:
                         attack_bonus += 1
-        # Dodge: target may have +1 AC if dodging this mob
         ac = target.get_ac(attacker=self)
+        if hasattr(target, 'is_flat_footed') and not target.is_flat_footed():
+            pass
+        if hasattr(target, 'is_immune_to_sneak_attack') and target.is_immune_to_sneak_attack(getattr(self, 'level', None)):
+            sneak_attack = False
+        else:
+            sneak_attack = True
         # TODO: Add other feat/condition/skill modifiers
         if roll == 1:
             return "Miss!"
         if roll == 20 or roll + attack_bonus >= ac:
-            # Power Attack: add to damage
             damage = sum(random.randint(1, self.damage_dice[1]) for _ in range(self.damage_dice[0])) + self.damage_dice[2]
             if self.has_feat("Power Attack") and pa_amt > 0:
                 damage += pa_amt
+            if hasattr(target, 'apply_damage_reduction'):
+                damage = target.apply_damage_reduction(damage)
             target.hp = max(0, target.hp - damage)
             result = f"{self.name} hits {target.name} for {damage} damage!"
             if target.hp == 0:
                 target.alive = False
                 result = f"{self.name} kills {target.name}!"
-                # Cleave: grant extra attack if available
-                if self.has_feat("Cleave") and all_targets:
-                    # Find another adjacent target (not self or dead)
-                    for t in all_targets:
-                        if t is not target and getattr(t, 'alive', True):
-                            result += f" {self.name} cleaves into {t.name}! "
-                            result += self.attack(t, power_attack_amt=pa_amt, all_targets=all_targets)
-                            break
+                # Cleave/Great Cleave logic
+                if all_targets:
+                    if self.has_feat("Great Cleave"):
+                        # Great Cleave: keep attacking until no valid targets remain
+                        remaining_targets = [t for t in all_targets if t is not target and getattr(t, 'alive', True)]
+                        while remaining_targets:
+                            next_target = remaining_targets.pop(0)
+                            result += f" {self.name} great cleaves into {next_target.name}! "
+                            result += self.attack(next_target, power_attack_amt=pa_amt, all_targets=[t for t in all_targets if t is not next_target and getattr(t, 'alive', True)])
+                            # Update remaining_targets in case more are killed
+                            remaining_targets = [t for t in all_targets if t is not target and getattr(t, 'alive', True)]
+                    elif self.has_feat("Cleave"):
+                        # Cleave: only one extra attack per kill
+                        for t in all_targets:
+                            if t is not target and getattr(t, 'alive', True):
+                                result += f" {self.name} cleaves into {t.name}! "
+                                result += self.attack(t, power_attack_amt=pa_amt, all_targets=None)
+                                break
             return result
         return "Miss!"
 
     def _is_finesse_weapon(self):
-        # Simple check: treat 'claw', 'bite', 'dagger', etc. as finesse weapons
+        # Expanded check: treat all attacks with finesse weapon types as finesse weapons
         if not self.attacks:
             return False
-        finesse_types = ["claw", "bite", "dagger", "rapier", "shortsword"]
-        return self.attacks[0]["type"] in finesse_types
+        # Comprehensive D&D 3.5e finesse weapon list
+        finesse_types = {
+            "claw", "bite", "dagger", "rapier", "shortsword", "punch", "unarmed", "whip", "kukri", "spiked chain", "hand", "sickle", "light mace", "light hammer", "club", "nunchaku", "parrying dagger", "sap", "sai", "butterfly sword", "elven thinblade", "elven lightblade", "chain", "needle", "stiletto", "main-gauche", "jitte", "katana", "wakizashi"
+        }
+        # Check all attacks for finesse type
+        for atk in self.attacks:
+            if atk.get("type") in finesse_types:
+                return True
+        # Optionally, check for 'finesse' property in item/weapon data in future
+        return False
 
     def has_feat(self, feat_name):
         """Return True if mob has the named feat (case-insensitive, partial match allowed for Weapon Focus etc)."""
@@ -370,6 +403,17 @@ class Mob:
         if class_name in ("wizard", "sorcerer"):
             return w in ("club", "dagger", "heavy crossbow", "light crossbow", "quarterstaff")
         return False
+
+    # Saving throw stubs for Trap Sense and Indomitable Will
+    def saving_throw(self, save_type, dc, effect_type=None, is_trap=False):
+        # Example: save_type = 'reflex', 'will', 'fortitude'
+        bonus = 0
+        if is_trap and hasattr(self, 'get_trap_sense_bonus'):
+            bonus += self.get_trap_sense_bonus()
+        if save_type == 'will' and hasattr(self, 'get_indomitable_will_bonus'):
+            bonus += self.get_indomitable_will_bonus(effect_type)
+        roll = random.randint(1, 20) + bonus
+        return roll >= dc
 
 # Weapon lists (abbreviated, expand as needed)
 SIMPLE_WEAPONS = set([

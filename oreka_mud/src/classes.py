@@ -382,3 +382,126 @@ CLASSES = {
         }
     }
 }
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": [
+        "Concentration", "Craft (any)", "Diplomacy", "Heal",
+        "Knowledge (arcana)", "Knowledge (religion)", "Profession (any)", "Spellcraft"
+    ],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": True
+    }
+}
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": [],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": ['Knowledge', 'Healing', 'War', 'Protection', 'Good', 'Evil', 'Law', 'Chaos', 'Sun', 'Travel'],
+        "spells": ['Cure Light Wounds', 'Bless', 'Shield of Faith', 'Detect Magic', 'Divine Favor', 'Hold Person', 'Prayer', 'Dispel Magic', 'Cure Serious Wounds', 'Flame Strike', 'Raise Dead']
+    },
+    "features": ['features', 'features'],
+    "progression": ['1: Divine Spellcasting, Turn/Rebuke Undead, Domains, Spontaneous Cure/Inflict', '2+: New spell levels, domain spells, bonus feats at 3, 6, 9, etc.']
+}
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": [],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": ['Knowledge', 'Healing', 'War', 'Protection', 'Good', 'Evil', 'Law', 'Chaos', 'Sun', 'Travel'],
+        "spells": ['Cure Light Wounds', 'Bless', 'Shield of Faith', 'Detect Magic', 'Divine Favor', 'Hold Person', 'Prayer', 'Dispel Magic', 'Cure Serious Wounds', 'Flame Strike', 'Raise Dead']
+    },
+    "features": ['features', 'features'],
+    "progression": ['1: Divine Spellcasting, Turn/Rebuke Undead, Domains, Spontaneous Cure/Inflict', '2+: New spell levels, domain spells, bonus feats at 3, 6, 9, etc.']
+}
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": ['Concentration', 'Craft (any)', 'Diplomacy', 'Heal', 'Knowledge (arcana)', 'Knowledge (religion)', 'Profession (any)', 'Spellcraft'],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": ['Air', 'Chaos', 'Death', 'Earth', 'Evil', 'Fire', 'Good', 'Healing', 'Knowledge', 'Law', 'Luck', 'Magic', 'Plant', 'Protection', 'Strength', 'Sun', 'Travel', 'Trickery', 'War', 'Water'],
+        "spells": ['Cure Light Wounds', 'Bless', 'Shield of Faith', 'Detect Magic', 'Divine Favor', 'Hold Person', 'Prayer', 'Dispel Magic', 'Cure Serious Wounds', 'Flame Strike', 'Raise Dead', 'Greater Command', 'Holy Smite', 'Righteous Might', 'Mass Cure Light Wounds', 'Blade Barrier', 'Resurrection', 'Earthquake', 'Gate']
+    },
+    "features": ['Divine Spellcasting', 'Turn/Rebuke Undead', 'Spontaneous Cure/Inflict', 'Domain Spells', 'Channel Energy (optional)', 'Deity & Alignment Restrictions'],
+    "feats": ['Extra Turning', 'Improved Turning', 'Divine Metamagic', 'Augment Healing', 'Empower Spell', 'Quicken Spell', 'Spell Focus', 'Combat Casting'],
+    "progression": ['1: Divine Spellcasting, Turn/Rebuke Undead, Domains, Spontaneous Cure/Inflict', '2: New spell levels, domain spells', '3: Bonus feat', '6: Bonus feat', '9: Bonus feat', '12: Bonus feat', '15: Bonus feat', '18: Bonus feat']
+}
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": ['Concentration', 'Craft (any)', 'Diplomacy', 'Heal', 'Knowledge (arcana)', 'Knowledge (religion)', 'Profession (any)', 'Spellcraft'],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": ['Air', 'Chaos', 'Death', 'Earth', 'Evil', 'Fire', 'Good', 'Healing', 'Knowledge', 'Law', 'Luck', 'Magic', 'Plant', 'Protection', 'Strength', 'Sun', 'Travel', 'Trickery', 'War', 'Water'],
+        "spells": ['Cure Light Wounds', 'Bless', 'Shield of Faith', 'Detect Magic', 'Divine Favor', 'Hold Person', 'Prayer', 'Dispel Magic', 'Cure Serious Wounds', 'Flame Strike', 'Raise Dead', 'Greater Command', 'Holy Smite', 'Righteous Might', 'Mass Cure Light Wounds', 'Blade Barrier', 'Resurrection', 'Earthquake', 'Gate']
+    },
+    "features": ['Divine Spellcasting', 'Turn/Rebuke Undead', 'Spontaneous Cure/Inflict', 'Domain Spells', 'Channel Energy (optional)', 'Deity & Alignment Restrictions'],
+    "feats": ['Extra Turning', 'Improved Turning', 'Divine Metamagic', 'Augment Healing', 'Empower Spell', 'Quicken Spell', 'Spell Focus', 'Combat Casting'],
+    "progression": ['1: Divine Spellcasting, Turn/Rebuke Undead, Domains, Spontaneous Cure/Inflict', '2: New spell levels, domain spells', '3: Bonus feat', '6: Bonus feat', '9: Bonus feat', '12: Bonus feat', '15: Bonus feat', '18: Bonus feat']
+}
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": ['Concentration', 'Craft (any)', 'Diplomacy', 'Heal', 'Knowledge (arcana)', 'Knowledge (religion)', 'Profession (any)', 'Spellcraft'],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": ['Air', 'Chaos', 'Death', 'Earth', 'Evil', 'Fire', 'Good', 'Healing', 'Knowledge', 'Law', 'Luck', 'Magic', 'Plant', 'Protection', 'Strength', 'Sun', 'Travel', 'Trickery', 'War', 'Water'],
+        "spells": ['Cure Light Wounds', 'Bless', 'Shield of Faith', 'Detect Magic', 'Divine Favor', 'Hold Person', 'Prayer', 'Dispel Magic', 'Cure Serious Wounds', 'Flame Strike', 'Raise Dead', 'Greater Command', 'Holy Smite', 'Righteous Might', 'Mass Cure Light Wounds', 'Blade Barrier', 'Resurrection', 'Earthquake', 'Gate']
+    },
+    "features": ['Divine Spellcasting', 'Turn/Rebuke Undead', 'Spontaneous Cure/Inflict', 'Domain Spells', 'Channel Energy (optional)', 'Deity & Alignment Restrictions'],
+    "feats": ['Extra Turning', 'Improved Turning', 'Divine Metamagic', 'Augment Healing', 'Empower Spell', 'Quicken Spell', 'Spell Focus', 'Combat Casting'],
+    "progression": ['1: Divine Spellcasting, Turn/Rebuke Undead, Domains, Spontaneous Cure/Inflict', '2: New spell levels, domain spells', '3: Bonus feat', '6: Bonus feat', '9: Bonus feat', '12: Bonus feat', '15: Bonus feat', '18: Bonus feat']
+}
+
+
+CLASSES["Cleric"] = {
+    "name": "Cleric",
+    "class_skills": ['Concentration', 'Craft (any)', 'Diplomacy', 'Heal', 'Knowledge (arcana)', 'Knowledge (religion)', 'Profession (any)', 'Spellcraft'],
+    "save_progression": {"fort": "good", "ref": "poor", "will": "good"},
+    "attack_progression": "medium",
+    "spellcasting": {
+        "type": "prepared",
+        "start_level": 1,
+        "max_level": 9,
+        "domains": ['Air', 'Chaos', 'Death', 'Earth', 'Evil', 'Fire', 'Good', 'Healing', 'Knowledge', 'Law', 'Luck', 'Magic', 'Plant', 'Protection', 'Strength', 'Sun', 'Travel', 'Trickery', 'War', 'Water'],
+        "spells": ['Cure Light Wounds', 'Bless', 'Shield of Faith', 'Detect Magic', 'Divine Favor', 'Hold Person', 'Prayer', 'Dispel Magic', 'Cure Serious Wounds', 'Flame Strike', 'Raise Dead', 'Greater Command', 'Holy Smite', 'Righteous Might', 'Mass Cure Light Wounds', 'Blade Barrier', 'Resurrection', 'Earthquake', 'Gate']
+    },
+    "features": ['Divine Spellcasting', 'Turn/Rebuke Undead', 'Spontaneous Cure/Inflict', 'Domain Spells', 'Channel Energy (optional)', 'Deity & Alignment Restrictions'],
+    "feats": ['Extra Turning', 'Improved Turning', 'Divine Metamagic', 'Augment Healing', 'Empower Spell', 'Quicken Spell', 'Spell Focus', 'Combat Casting'],
+    "progression": ['1: Divine Spellcasting, Turn/Rebuke Undead, Domains, Spontaneous Cure/Inflict', '2: New spell levels, domain spells', '3: Bonus feat', '6: Bonus feat', '9: Bonus feat', '12: Bonus feat', '15: Bonus feat', '18: Bonus feat']
+}

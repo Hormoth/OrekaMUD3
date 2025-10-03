@@ -3,9 +3,9 @@ import unittest
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.character import Character
-from src.feats import list_eligible_feats, FEATS
-from src.classes import CLASSES
+from .src.character import Character
+from .src.feats import list_eligible_feats, FEATS
+from .src.classes import CLASSES
 
 class FeatSystemTest(unittest.TestCase):
     def setUp(self):

@@ -11,6 +11,10 @@ def attack(attacker, target, power_attack_amt=0):
         return "Miss!"
     if roll == 20 or roll + bab >= getattr(target, 'ac', 10):
         damage = random.randint(1, 8) + 2
+        # Apply Damage Reduction (DR) if present
+        dr = getattr(target, 'damage_reduction', 0)
+        if dr > 0:
+            damage = max(0, damage - dr)
         target.hp = max(0, target.hp - damage)
         if target.hp == 0:
             target.alive = False
@@ -41,7 +45,7 @@ def attack(attacker, target, power_attack_amt=0):
                     loot_msg += f"\nLoot: {gold} gp."
                     # Item drop
                     if random.random() < item_chance:
-                        from src import items as itemdb
+                        from oreka_mud.src import items as itemdb
                         # Determine item type for drop
                         if item_type == 'mundane':
                             item = itemdb.get_random_item(magical=False)

@@ -1,8 +1,11 @@
+import random
+
+
 
 from enum import Enum
-from src.combat import attack
-from src.classes import CLASSES
-from src.spells import get_spells_for_class
+# from oreka_mud.src.combat import attack  # Removed unused import
+from oreka_mud.src.classes import CLASSES
+from oreka_mud.src.spells import get_spells_for_class
 
 COLOR_TAGS = {
     "@RESET@": "\033[0m",
@@ -25,11 +28,58 @@ class State(Enum):
     COMBAT = 2
 
 class Character:
+    SKILL_ABILITY = {
+        "Climb": "str_score",
+        "Survival": "wis_score",
+        "Handle Animal": "cha_score",
+        "Intimidate": "cha_score",
+        "Jump": "str_score",
+        "Listen": "wis_score",
+        "Ride": "dex_score",
+        "Swim": "str_score",
+        "Balance": "dex_score",
+        "Spellcraft": "int_score",
+        "Diplomacy": "cha_score",
+        "Sense Motive": "wis_score",
+        "Use Rope": "dex_score",
+        "Escape Artist": "dex_score",
+        "Search": "int_score",
+        # ...add more as needed...
+    }
+    SKILL_SYNERGY = {
+        "Bluff": ["Diplomacy"],
+        "Tumble": ["Balance"],
+        "Handle Animal": ["Ride"],
+        "Knowledge (arcana)": ["Spellcraft"],
+        "Escape Artist": ["Use Rope"],
+        "Search": ["Survival"],
+        "Diplomacy": ["Sense Motive"],
+        # ...add more as needed...
+    }
+    SKILL_UNTRAINED = {
+        "Climb": True,
+        "Survival": True,
+        "Handle Animal": False,
+        "Intimidate": True,
+        "Jump": True,
+        "Listen": True,
+        "Ride": True,
+        "Swim": True,
+        "Balance": True,
+        "Spellcraft": False,
+        "Diplomacy": True,
+        "Sense Motive": True,
+        "Use Rope": True,
+        "Escape Artist": True,
+        "Search": True,
+        # ...add more as needed...
+    }
+
     def __init__(self, name, title, race, level, hp, max_hp, ac, room, is_immortal=False, elemental_affinity=None,
                  str_score=10, dex_score=10, con_score=10, int_score=10, wis_score=10, cha_score=10,
                  move=100, max_move=100, inventory=None, skills=None,
                  char_class="Adventurer", class_level=None, class_features=None, spells_known=None, spells_per_day=None,
-                 alignment=None, deity=None, feats=None, domains=None, is_builder=False):
+                 alignment=None, deity=None, feats=None, domains=None, is_builder=False, password=None):
         self.name = name
         self.title = title
         self.race = race
@@ -62,28 +112,204 @@ class Character:
         self.spells_per_day = spells_per_day if spells_per_day is not None else self._auto_spells_per_day()
         self.alignment = alignment
         self.deity = deity
-        # Always initialize prompt and full_prompt
-        self.prompt = "AC %a HP %h/%H [%RACE] >"  # Default prompt
-        self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
-        self.conditions = set()  # Track status effects/conditions (e.g., 'prone', 'flanking', 'shaken')
-        self.feats = feats if feats is not None else []  # Accept feats from constructor or default to empty list
-        self.domains = domains if domains is not None else []  # List of domain names (e.g., ["War", "Sun"])
-        self.domain_powers = {}  # domain_name -> granted power description or callable
-        self.domain_spells = {}  # spell_level -> set of domain spell names
+        self.feats = feats if feats is not None else []
+        self.domains = domains if domains is not None else []
+        self.domain_powers = {}
+        self.domain_spells = {}
         self.is_builder = is_builder
+        self.password = password
         self._init_domains()
+        # Barbarian mechanics
+        self.raging = False  # Barbarian rage state
+        self.fast_movement = False  # Barbarian fast movement state
+        self.damage_reduction = 0  # Barbarian DR
+        self.trap_sense = 0  # Barbarian trap sense bonus
+        self.uncanny_dodge = False  # Barbarian uncanny dodge state
+        self.rages_used_today = 0  # Barbarian rages used today
+        self.fatigued = False  # Fatigue state after rage
+        self.illiterate = (self.char_class.lower() == "barbarian")
+        self.conditions = set()
+
+    # ...all your other methods, properly indented as shown above...
+    # For example:
+    def get_equipped_armor_type(self):
+        for item in self.inventory:
+            if getattr(item, 'item_type', None) == 'armor' and getattr(item, 'slot', None) == 'body':
+                armor_type = item.stats.get('armor_type', 'light') if hasattr(item, 'stats') else 'light'
+                return armor_type
+        return 'none'
+
+    # Continue with all other methods as you have them, indented inside the class.
+
+    def get_rages_per_day(self):
+        """Return number of rages per day based on level."""
+        if self.char_class.lower() != "barbarian":
+            return 0
+        lvl = self.class_level
+        if lvl >= 20:
+            return 6
+        elif lvl >= 16:
+            return 5
+        elif lvl >= 12:
+            return 4
+        elif lvl >= 8:
+            return 3
+        elif lvl >= 4:
+            return 2
+        else:
+            return 1
+
+    def has_greater_rage(self):
+        return self.char_class.lower() == "barbarian" and self.class_level >= 11
+
+    def has_tireless_rage(self):
+        return self.char_class.lower() == "barbarian" and self.class_level >= 17
+
+    def has_mighty_rage(self):
+        return self.char_class.lower() == "barbarian" and self.class_level >= 20
+
+    def activate_rage(self):
+        """Activate Barbarian Rage with upgrades and per-day limits."""
+        if self.char_class.lower() != "barbarian":
+            return "You are not a Barbarian."
+        armor_type = self.get_equipped_armor_type()
+        if armor_type in ('medium', 'heavy'):
+            return "You cannot rage while wearing medium or heavy armor."
+        if self.raging:
+            return "You are already raging!"
+        if self.rages_used_today >= self.get_rages_per_day():
+            return f"You have used all your rages for today ({self.get_rages_per_day()})."
+        # Determine rage bonuses
+        str_bonus = 4
+        con_bonus = 4
+        ac_penalty = 2
+        if self.has_greater_rage():
+            str_bonus = 6
+            con_bonus = 6
+            ac_penalty = 2
+        if self.has_mighty_rage():
+            str_bonus = 8
+            con_bonus = 8
+            ac_penalty = 2
+        self.raging = True
+        self.str_score += str_bonus
+        self.con_score += con_bonus
+        self.ac -= ac_penalty
+        self.max_hp += con_bonus * self.level // 2
+        self.hp += con_bonus * self.level // 2
+        self.rages_used_today += 1
+        self.fatigued = False
+        return f"You fly into a rage! (+{str_bonus} Str, +{con_bonus} Con, -{ac_penalty} AC, +HP)"
+
+    def deactivate_rage(self):
+        """Deactivate Barbarian Rage and apply fatigue if needed."""
+        if not self.raging:
+            return "You are not raging."
+        # Determine rage bonuses
+        str_bonus = 4
+        con_bonus = 4
+        ac_penalty = 2
+        if self.has_greater_rage():
+            str_bonus = 6
+            con_bonus = 6
+            ac_penalty = 2
+        if self.has_mighty_rage():
+            str_bonus = 8
+            con_bonus = 8
+            ac_penalty = 2
+        self.raging = False
+        self.str_score -= str_bonus
+        self.con_score -= con_bonus
+        self.ac += ac_penalty
+        self.max_hp -= con_bonus * self.level // 2
+        self.hp = min(self.hp, self.max_hp)
+        # Apply fatigue unless Tireless Rage
+        if not self.has_tireless_rage():
+            self.fatigued = True
+            return "You calm down and become fatigued after rage."
+        else:
+            self.fatigued = False
+            return "You calm down and feel no fatigue (Tireless Rage)."
+
+    def rest(self):
+        """Rest to reset rages used and remove fatigue."""
+        self.rages_used_today = 0
+        self.fatigued = False
+        return "You rest and recover your strength."
+
+    def update_barbarian_features(self):
+        """Update Barbarian features based on level."""
+        if self.char_class.lower() != "barbarian":
+            return
+        armor_type = self.get_equipped_armor_type()
+        self.fast_movement = self.class_level >= 1 and armor_type == 'light'
+        # Fast Movement also increases initiative by 1
+        if self.fast_movement:
+            self.initiative_bonus = getattr(self, 'initiative_bonus', 0) + 1
+        else:
+            self.initiative_bonus = getattr(self, 'initiative_bonus', 0)
+    def get_initiative(self):
+        # Returns initiative modifier including Fast Movement bonus
+        base = (self.dex_score - 10) // 2
+        bonus = getattr(self, 'initiative_bonus', 0)
+        return base + bonus
+    # Damage Reduction, Trap Sense, and Uncanny Dodge are updated in update_barbarian_features
+
+    def get_damage_reduction(self):
+        return self.damage_reduction if self.char_class.lower() == "barbarian" else 0
+
+    def get_trap_sense(self):
+        return self.trap_sense if self.char_class.lower() == "barbarian" else 0
+
+    def has_uncanny_dodge(self):
+        return self.char_class.lower() == "barbarian" and self.class_level >= 2
+
+    def has_improved_uncanny_dodge(self):
+        return self.char_class.lower() == "barbarian" and self.class_level >= 5
+
+    def is_flat_footed(self):
+        # If Uncanny Dodge, cannot be caught flat-footed except by rogues 4+ levels higher
+        if self.has_uncanny_dodge():
+            return False
+        # ...existing flat-footed logic...
+        return True
+
+    def is_immune_to_sneak_attack(self, attacker_level=None):
+        # If Improved Uncanny Dodge, immune to sneak attack except by rogues 4+ levels higher
+        if self.has_improved_uncanny_dodge():
+            if attacker_level is not None and attacker_level >= self.class_level + 4:
+                return False
+            return True
+        return False
+
+    def apply_damage_reduction(self, damage):
+        # Subtract DR from incoming physical damage
+        dr = self.get_damage_reduction()
+        return max(0, damage - dr)
+
+    def get_trap_sense_bonus(self):
+        # Bonus to Reflex saves and AC vs traps
+        return self.trap_sense if self.char_class.lower() == "barbarian" else 0
+
+    def get_indomitable_will_bonus(self, effect_type=None):
+        # Bonus on Will saves vs enchantments
+        if self.char_class.lower() == "barbarian" and self.class_level >= 14 and effect_type == "enchantment":
+            return 4
+        return 0
     def save(self):
-        """Save this character to a JSON file in data/players/ by name (lowercase), with backup."""
-        import os, json, shutil, datetime
+        import os, json, shutil, glob, datetime
         player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
         os.makedirs(player_dir, exist_ok=True)
         filename = os.path.join(player_dir, f"{self.name.lower()}.json")
-        # Backup existing file if it exists
+        # Remove old backups
+        for old in glob.glob(os.path.join(player_dir, f"{self.name.lower()}.*.bak.json")):
+            os.remove(old)
+        # Create new backup if file exists
         if os.path.exists(filename):
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             backup_name = os.path.join(player_dir, f"{self.name.lower()}.{timestamp}.bak.json")
             shutil.copy2(filename, backup_name)
-        # Atomic save: write to temp, then move
+        # Atomic save
         tmpfile = filename + ".tmp"
         with open(tmpfile, 'w', encoding='utf-8') as f:
             json.dump(self.to_dict(), f, indent=2)
@@ -142,7 +368,7 @@ class Character:
         Grant a bonus feat to the character (for level-up or class feature).
         Prompts the user for eligible feats.
         """
-        from src.feats import list_eligible_feats
+        from oreka_mud.src.feats import list_eligible_feats
         eligible = list_eligible_feats(self)
         if not eligible:
             return None
@@ -176,7 +402,7 @@ class Character:
         return None
     def get_skill(self, skill):
         value = self.skills.get(skill, 0) if hasattr(self, 'skills') else 0
-        from src.feats import FEATS
+        from oreka_mud.src.feats import FEATS
         # Always check Acrobatic, Agile, Alertness for their skills
         for feat_name in getattr(self, 'feats', []):
             feat = FEATS.get(feat_name)
@@ -192,7 +418,7 @@ class Character:
 
     def get_save(self, save):
         value = self.saves.get(save, 0) if hasattr(self, 'saves') else 0
-        from src.feats import FEATS
+        from oreka_mud.src.feats import FEATS
         for feat_name in getattr(self, 'feats', []):
             feat = FEATS.get(feat_name)
             if feat and feat.effect:
@@ -236,6 +462,7 @@ class Character:
     def to_dict(self):
         return {
             "name": self.name,
+            "password": self.password,
             "title": self.title,
             "race": self.race,
             "level": self.level,
@@ -270,11 +497,10 @@ class Character:
         }
 
     @staticmethod
-    def from_dict(data, world=None):
+    def from_dict(data):
         import os
         import time
-        from src.items import Item
-        # File locking: if loading from a file, try to acquire a lock
+        from oreka_mud.src.items import Item
         lock_acquired = False
         lock_path = None
         if hasattr(data, '_file_path'):
@@ -287,6 +513,7 @@ class Character:
                     break
                 except FileExistsError:
                     time.sleep(0.1)
+        char = None
         try:
             char = Character(
                 name=data["name"],
@@ -296,7 +523,7 @@ class Character:
                 hp=data.get("hp", 10),
                 max_hp=data.get("max_hp", 10),
                 ac=data.get("ac", 10),
-                room=None,  # Set after loading
+                room=None,
                 is_immortal=data.get("is_immortal", False),
                 elemental_affinity=data.get("elemental_affinity"),
                 str_score=data.get("str_score", 10),
@@ -308,35 +535,35 @@ class Character:
                 move=data.get("move", 100),
                 max_move=data.get("max_move", 100),
                 inventory=[Item.from_dict(i) for i in data.get("inventory", [])],
-                is_builder=data.get("is_builder", False)
+                is_builder=data.get("is_builder", False),
+                password=data.get("password")
             )
+            char.char_class = data.get("char_class", "Adventurer")
+            char.class_level = data.get("class_level", data.get("level", 1))
+            char.class_features = data.get("class_features", [])
+            char.spells_known = data.get("spells_known", {})
+            char.spells_per_day = data.get("spells_per_day", {})
+            char.quests = data.get("quests", [])
+            char.state = State[data.get("state", "EXPLORING")]
+            char.is_ai = data.get("is_ai", False)
+            char.xp = data.get("xp", 0)
+            char.show_all = data.get("show_all", False)
+            char.alignment = data.get("alignment")
+            char.deity = data.get("deity")
+            char.is_builder = data.get("is_builder", False)
         finally:
             if lock_acquired and lock_path:
                 try:
                     os.remove(lock_path)
                 except Exception:
                     pass
-
-        char.char_class = data.get("char_class", "Adventurer")
-        char.class_level = data.get("class_level", data.get("level", 1))
-        char.class_features = data.get("class_features", [])
-        char.spells_known = data.get("spells_known", {})
-        char.spells_per_day = data.get("spells_per_day", {})
-        char.quests = data.get("quests", [])
-        char.state = State[data.get("state", "EXPLORING")]
-        char.is_ai = data.get("is_ai", False)
-        char.xp = data.get("xp", 0)
-        char.show_all = data.get("show_all", False)
-        char.alignment = data.get("alignment")
-        char.deity = data.get("deity")
-        char.is_builder = data.get("is_builder", False)
         return char
 
     def _init_domains(self):
         """Initialize domain powers and domain spells for this character."""
         # Import a DOMAIN_DATA dict: domain_name -> {"powers": str/callable, "spells": {level: spell_name}}
         try:
-            from src.spells import DOMAIN_DATA
+            from oreka_mud.src.spells import DOMAIN_DATA
         except ImportError:
             DOMAIN_DATA = {}
         for domain in self.domains:
@@ -374,13 +601,76 @@ class Character:
         self.spells_per_day = self._auto_spells_per_day()
 
     def set_level(self, new_level):
-        old_level = getattr(self, 'class_level', 1)
         self.class_level = new_level
         self.class_features = self.get_class_features()
         self.spells_known = self._auto_spells_known()
         self.spells_per_day = self._auto_spells_per_day()
         self.prompt = "(%RACE): AC %a HP %h/%H EXP %x>" if self.is_immortal else "AC %a HP %h/%H EXP %x>"
         self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
+
+        # D&D 3.5e: Grant general feat at 1, 3, 6, 9, 12, 15, 18
+        if new_level in (1, 3, 6, 9, 12, 15, 18):
+            if hasattr(self, 'grant_general_feat'):
+                # If async context, schedule prompt, else just append placeholder
+                try:
+                    import asyncio
+                    loop = asyncio.get_event_loop()
+                    coro = self.grant_general_feat(self.writer, self.reader)
+                    if loop.is_running():
+                        asyncio.ensure_future(coro)
+                    else:
+                        loop.run_until_complete(coro)
+                except Exception:
+                    self.feats.append("General Feat (choose)")
+            else:
+                self.feats.append("General Feat (choose)")
+
+        # D&D 3.5e: Ability score increase at 4, 8, 12, 16, 20
+        if new_level in (4, 8, 12, 16, 20):
+            if hasattr(self, 'grant_ability_increase'):
+                try:
+                    import asyncio
+                    loop = asyncio.get_event_loop()
+                    coro = self.grant_ability_increase(self.writer, self.reader)
+                    if loop.is_running():
+                        asyncio.ensure_future(coro)
+                    else:
+                        loop.run_until_complete(coro)
+                except Exception:
+                    self.feats.append("Ability Score Increase (choose)")
+            else:
+                self.feats.append("Ability Score Increase (choose)")
+
+        # Notify player of new class features gained at this level (Barbarian)
+        from oreka_mud.src.classes import CLASSES
+        if self.char_class == "Barbarian":
+            class_data = CLASSES.get("Barbarian", {})
+            features = class_data.get("features", {})
+            gained = features.get(new_level, [])
+            if gained:
+                msg = f"\nCongratulations! As a Barbarian, you have gained the following at level {new_level}:\n  - " + "\n  - ".join(gained) + "\n"
+                if hasattr(self, "writer") and self.writer:
+                    try:
+                        self.writer.write(msg.encode())
+                    except Exception:
+                        print(msg)
+                else:
+                    print(msg)
+
+        # Notify player of new class features gained at this level (Bard)
+        if self.char_class == "Bard":
+            class_data = CLASSES.get("Bard", {})
+            features = class_data.get("features", {})
+            gained = features.get(new_level, [])
+            if gained:
+                msg = f"\nCongratulations! As a Bard, you have gained the following at level {new_level}:\n  - " + "\n  - ".join(gained) + "\n"
+                if hasattr(self, "writer") and self.writer:
+                    try:
+                        self.writer.write(msg.encode())
+                    except Exception:
+                        print(msg)
+                else:
+                    print(msg)
 
         # D&D 3.5e: Grant general feat at 1, 3, 6, 9, 12, 15, 18
         if new_level in (1, 3, 6, 9, 12, 15, 18):
@@ -416,108 +706,52 @@ class Character:
             else:
                 self.feats.append("Ability Score Increase (choose)")
 
-    def skill_check(self, skill, bonus=0):
-        import random
-        # D&D 3.5: Skills that cannot be used untrained
-        trained_only = {
-            "Decipher Script", "Disable Device", "Handle Animal", "Knowledge (arcana)", "Knowledge (architecture and engineering)",
-            "Knowledge (dungeoneering)", "Knowledge (geography)", "Knowledge (history)", "Knowledge (local)", "Knowledge (nature)",
-            "Knowledge (nobility and royalty)", "Knowledge (religion)", "Knowledge (the planes)", "Profession (any)", "Sleight of Hand", "Spellcraft", "Tumble", "Use Magic Device"
-        }
-        # Skills with armor check penalty
-        armor_check_skills = {
-            "Balance", "Climb", "Escape Artist", "Hide", "Jump", "Move Silently", "Sleight of Hand", "Swim", "Tumble"
-        }
-        # Ability modifier mapping
-        ability_mods = {
-            "Appraise": (self.int_score - 10) // 2,
-            "Balance": (self.dex_score - 10) // 2,
-            "Bluff": (self.cha_score - 10) // 2,
-            "Climb": (self.str_score - 10) // 2,
-            "Concentration": (self.con_score - 10) // 2,
-            "Craft (any)": (self.int_score - 10) // 2,
-            "Decipher Script": (self.int_score - 10) // 2,
-            "Diplomacy": (self.cha_score - 10) // 2,
-            "Disable Device": (self.int_score - 10) // 2,
-            "Disguise": (self.cha_score - 10) // 2,
-            "Escape Artist": (self.dex_score - 10) // 2,
-            "Forgery": (self.int_score - 10) // 2,
-            "Gather Information": (self.cha_score - 10) // 2,
-            "Handle Animal": (self.cha_score - 10) // 2,
-            "Heal": (self.wis_score - 10) // 2,
-            "Hide": (self.dex_score - 10) // 2,
-            "Intimidate": (self.cha_score - 10) // 2,
-            "Jump": (self.str_score - 10) // 2,
-            "Knowledge (arcana)": (self.int_score - 10) // 2,
-            "Knowledge (architecture and engineering)": (self.int_score - 10) // 2,
-            "Knowledge (dungeoneering)": (self.int_score - 10) // 2,
-            "Knowledge (geography)": (self.int_score - 10) // 2,
-            "Knowledge (history)": (self.int_score - 10) // 2,
-            "Knowledge (local)": (self.int_score - 10) // 2,
-            "Knowledge (nature)": (self.int_score - 10) // 2,
-            "Knowledge (nobility and royalty)": (self.int_score - 10) // 2,
-            "Knowledge (religion)": (self.int_score - 10) // 2,
-            "Knowledge (the planes)": (self.int_score - 10) // 2,
-            "Listen": (self.wis_score - 10) // 2,
-            "Move Silently": (self.dex_score - 10) // 2,
-            "Open Lock": (self.dex_score - 10) // 2,
-            "Perform (any)": (self.cha_score - 10) // 2,
-            "Profession (any)": (self.wis_score - 10) // 2,
-            "Ride": (self.dex_score - 10) // 2,
-            "Search": (self.int_score - 10) // 2,
-            "Sense Motive": (self.wis_score - 10) // 2,
-            "Sleight of Hand": (self.dex_score - 10) // 2,
-            "Spellcraft": (self.int_score - 10) // 2,
-            "Spot": (self.wis_score - 10) // 2,
-            "Survival": (self.wis_score - 10) // 2,
-            "Swim": (self.str_score - 10) // 2,
-            "Tumble": (self.dex_score - 10) // 2,
-            "Use Magic Device": (self.cha_score - 10) // 2,
-            "Use Rope": (self.dex_score - 10) // 2
-        }
-        # Enforce trained-only skills
-        skill_val = self.skills.get(skill, 0)
-        if skill in trained_only and skill_val == 0:
-            return f"You cannot use {skill} untrained."
-        # Armor check penalty (stub: assumes self.armor_check_penalty exists, else 0)
-        armor_penalty = getattr(self, 'armor_check_penalty', 0)
-        penalty = armor_penalty if skill in armor_check_skills else 0
-        roll = random.randint(1, 20)
-        ability_mod = ability_mods.get(skill, 0)
-        # Cross-class skill logic (stub):
-        # In a full implementation, check if skill is in self.get_class_skills(),
-        # and enforce max ranks/costs accordingly.
-        return roll + skill_val + ability_mod + bonus - penalty
+        # Report ability scores on level up
+        if hasattr(self, 'writer') and self.writer:
+            msg = (
+                f"\nYou have reached level {new_level}!\n"
+                f"Current Ability Scores:\n"
+                f"  Strength:     {self.str_score}\n"
+                f"  Dexterity:    {self.dex_score}\n"
+                f"  Constitution: {self.con_score}\n"
+                f"  Intelligence: {self.int_score}\n"
+                f"  Wisdom:       {self.wis_score}\n"
+                f"  Charisma:     {self.cha_score}\n"
+            )
+            self.writer.write(msg.encode())
 
-    def get_prompt(self):
-        str_mod = (self.str_score - 10) // 2
-        dex_mod = (self.dex_score - 10) // 2
-        con_mod = (self.con_score - 10) // 2
-        int_mod = (self.int_score - 10) // 2
-        wis_mod = (self.wis_score - 10) // 2
-        cha_mod = (self.cha_score - 10) // 2
-        xp_to_next = max(0, {1: 1000, 2: 3000, 3: 6000, 4: 10000, 5: 15000, 6: 21000, 7: 28000, 60: 0}.get(self.level + 1, 0) - self.xp)
-        if self.show_all:
-            return self.full_prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%v", str(self.move)).replace("%V", str(self.max_move)).replace("%s", f"{self.str_score} ({str_mod:+})").replace("%d", f"{self.dex_score} ({dex_mod:+})").replace("%c", f"{self.con_score} ({con_mod:+})").replace("%i", f"{self.int_score} ({int_mod:+})").replace("%w", f"{self.wis_score} ({wis_mod:+})").replace("%c", f"{self.cha_score} ({cha_mod:+})").replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
-        return self.prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
+        # Notify player of new class features gained at this level (Barbarian)
+        from oreka_mud.src.classes import CLASSES
+        if self.char_class == "Barbarian":
+            class_data = CLASSES.get("Barbarian", {})
+            features = class_data.get("features", {})
+            gained = features.get(new_level, [])
+            if gained:
+                msg = f"\nCongratulations! As a Barbarian, you have gained the following at level {new_level}:\n  - " + "\n  - ".join(gained) + "\n"
+                if hasattr(self, "writer") and self.writer:
+                    try:
+                        self.writer.write(msg.encode())
+                    except Exception:
+                        print(msg)
+                else:
+                    print(msg)
+
+            # Notify player of new class features gained at this level (Bard)
+            if self.char_class == "Bard":
+                class_data = CLASSES.get("Bard", {})
+                features = class_data.get("features", {})
+                gained = features.get(new_level, [])
+                if gained:
+                    msg = f"\nCongratulations! As a Bard, you have gained the following at level {new_level}:\n  - " + "\n  - ".join(gained) + "\n"
+                    if hasattr(self, "writer") and self.writer:
+                        try:
+                            self.writer.write(msg.encode())
+                        except Exception:
+                            print(msg)
+                    else:
+                        print(msg)
     
-    def toggle_stats(self):
-        self.show_all = not self.show_all
-        return f"Stats display {'enabled' if self.show_all else 'disabled'}.\n{self.get_prompt()}"
-
-    async def ai_decide(self, world):
-        if self.state == State.COMBAT:
-            for mob in self.room.mobs:
-                if mob.alive and self.hp > self.max_hp * 0.2:
-                    return attack(self, mob)
-                elif self.hp <= self.max_hp * 0.2:
-                    self.state = State.EXPLORING
-                    return "You flee from combat!"
-        if self.quests and self.room.vnum == self.quests[0]["location"]:
-            self.quests.clear()
-            self.xp += 1000
-            return "Quest completed: Starweave Ritual! +1000 XP"
-        return self.get_prompt()
+        # Removed unreachable nested skill_check function.
 
     def add_condition(self, condition):
         """Add a status condition (e.g., 'prone', 'flanking', 'shaken')."""
@@ -539,6 +773,80 @@ class Character:
         prompt = prompt.replace("%RACE", self.race or "Unknown")
         # Add more codes as needed
         return prompt
+    def get_prompt(self):
+        """Return the current prompt string for the character."""
+        return self.render_prompt()
 
     def set_prompt(self, new_prompt):
         self.prompt = new_prompt
+
+    def learn_literacy(self):
+        self.illiterate = False
+
+    def can_read(self, file_type=None):
+        """Return True if character can read. Barbarians can always read help files."""
+        if not self.illiterate:
+            return True
+        if file_type == "help":
+            return True
+        return False
+
+    def is_fatigued(self):
+        return getattr(self, 'fatigued', False)
+
+    def apply_fatigue_penalties(self):
+        """Apply fatigue penalties: -2 Str/Dex, block running/charging."""
+        if self.is_fatigued():
+            self.str_score = max(1, self.str_score - 2)
+            self.dex_score = max(1, self.dex_score - 2)
+            self.can_run = False
+            self.can_charge = False
+        else:
+            # Restore running/charging ability if not fatigued
+            self.can_run = True
+            self.can_charge = True
+
+    def get_max_skill_rank(self, skill):
+        # Class skills: level + 3; cross-class: (level + 3) / 2
+        class_skills = getattr(self, 'class_skills', [])
+        if skill in class_skills:
+            return self.class_level + 3
+        return (self.class_level + 3) // 2
+
+    def skill_cost(self, skill):
+        # Class skill: 1 point/rank; cross-class: 2 points/rank
+        class_skills = getattr(self, 'class_skills', [])
+        return 1 if skill in class_skills else 2
+
+    def skill_check(self, skill, dc=15):
+        # Untrained use check
+        if not self.SKILL_UNTRAINED.get(skill, True) and self.skills.get(skill, 0) < 1:
+            return "You cannot use this skill untrained."
+        ranks = self.skills.get(skill, 0)
+        ability_mod = getattr(self, self.SKILL_ABILITY.get(skill, "int_score"), 0)
+        # Synergy bonuses
+        synergy_bonus = 0
+        for synergy_skill, targets in self.SKILL_SYNERGY.items():
+            if ranks >= 5 and skill in targets:
+                synergy_bonus += 2
+        # Check if any other skills grant synergy to this skill
+        for s, r in self.skills.items():
+            if r >= 5:
+                for target in self.SKILL_SYNERGY.get(s, []):
+                    if target == skill:
+                        synergy_bonus += 2
+        # Feat, racial, magic, condition modifiers (stub)
+        feat_bonus = 0  # TODO: Add feat/race/magic/condition bonuses
+        roll = random.randint(1, 20)
+        total = roll + ranks + (ability_mod - 10) // 2 + synergy_bonus + feat_bonus
+        result = f"Skill check: d20({roll}) + ranks({ranks}) + ability({(ability_mod - 10) // 2}) + synergy({synergy_bonus}) + feat({feat_bonus}) = {total}"
+        if total >= dc:
+            return result + f"\nSuccess! (DC {dc})"
+        else:
+            return result + f"\nFailure. (DC {dc})"
+
+
+    def get_class_skills(self):
+        if self.char_class == "Cleric":
+            return CLASSES["Cleric"]["class_skills"]
+        # ...other classes...

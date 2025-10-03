@@ -62,7 +62,6 @@ def meets_prereq(character, prereq):
 
 def is_eligible_for_feat(character, feat):
     """Return True if character meets all prerequisites for the feat (by name or Feat object)."""
-    from src.feats import FEATS
     if isinstance(feat, str):
         feat = FEATS.get(feat)
     if not feat:
@@ -74,7 +73,7 @@ def is_eligible_for_feat(character, feat):
 
 def list_eligible_feats(character, only_bonus=False):
     """Return a list of feat names the character is eligible to select (optionally only bonus feats)."""
-    from src.feats import FEATS
+    from .feats import FEATS
     eligible = []
     for fname, feat in FEATS.items():
         if only_bonus and not getattr(feat, 'is_bonus', False):

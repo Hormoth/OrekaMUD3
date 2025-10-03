@@ -5,15 +5,15 @@ ACTIVE_SESSIONS = {}  # username: (writer, last_activity)
 import telnetlib3
 import time
 import logging
-from src.world import OrekaWorld
-from src.commands import CommandParser
-from src.character import Character
+from .src.world import OrekaWorld
+from .src.commands import CommandParser
+from .src.character import Character
 import hashlib
 import json
 import getpass
-from src.classes import CLASSES
-from src.feats import FEATS
-from src.spells import SPELLS
+from .src.classes import CLASSES
+from .src.feats import FEATS
+from .src.spells import SPELLS
 
 
 import telnetlib3
@@ -377,7 +377,7 @@ async def handle_client(reader, writer, world, parser):
             # Domains (if Cleric)
             domains = []
             if chosen_class == "Cleric":
-                from src.spells import DOMAIN_DATA
+                from .src.spells import DOMAIN_DATA
                 domain_names = list(DOMAIN_DATA.keys())
                 writer.write("\nChoose your first domain for your Cleric:\n")
                 for i, d in enumerate(domain_names, 1):
@@ -513,7 +513,7 @@ async def handle_client(reader, writer, world, parser):
             writer.write(b"Restarting character creation...\n")
             return await handle_client(reader, writer, world, parser)
         # Convert spells list to dict by level for compatibility with cmd_spells
-        from src.spells import SPELLS
+        from .src.spells import SPELLS
 
         spells_by_level = {}
         for spell_name in spells:
@@ -572,7 +572,7 @@ async def handle_client(reader, writer, world, parser):
             hp=600,
             max_hp=600,
             ac=30,
-            room=start_room,
+            room=world.rooms[1000],
             is_immortal=True,
             elemental_affinity="Fire",
             str_score=30,
@@ -608,7 +608,7 @@ async def handle_client(reader, writer, world, parser):
             hp=600,
             max_hp=600,
             ac=30,
-            room=start_room,
+            room=world.rooms[1000],
             is_immortal=True,
             str_score=18,
             dex_score=20,
@@ -938,7 +938,7 @@ async def prompt_skills(writer, reader, chosen_class):
 
 
 async def prompt_spells(writer, reader, chosen_class, domains=None):
-    from src.spells import DOMAIN_DATA
+    from .src.spells import DOMAIN_DATA
 
     spell_list = [
         s
@@ -972,7 +972,7 @@ async def prompt_spells(writer, reader, chosen_class, domains=None):
     return chosen
 
 
-from src.feats import list_eligible_feats
+from .src.feats import list_eligible_feats
 
 
 async def prompt_feats(writer, reader, character=None, allow_multiple=False):

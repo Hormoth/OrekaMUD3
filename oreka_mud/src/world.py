@@ -1,8 +1,8 @@
 
 import os
 import json
-from src.room import Room
-from src.mob import Mob
+from .room import Room
+from .mob import Mob
 
 class OrekaWorld:
     def save_items(self):

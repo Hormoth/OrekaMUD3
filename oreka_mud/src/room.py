@@ -1,4 +1,12 @@
 class Room:
+    # Canonical terrain/environment flags for D&D 3.5e
+    TERRAIN_FLAGS = [
+        "difficult", "obstacle", "stairs", "slope", "undergrowth", "heavy_undergrowth", "water", "shallow_water", "deep_water", "ice", "sand", "cover", "concealment", "elevation", "rough", "trap", "dark", "fog"
+    ]
+
+    def has_flag(self, flag):
+        """Check if this room has a given flag (case-insensitive)."""
+        return any(f.lower() == flag.lower() for f in self.flags)
     def __init__(self, vnum, name, description, exits, flags, items=None):
         self.vnum = vnum
         self.name = name
