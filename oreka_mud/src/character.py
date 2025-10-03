@@ -449,17 +449,18 @@ class Character:
         class_data = self.get_class_data()
         return class_data.get("class_skills", [])
 
-    def get_class_features(self):
-        class_data = self.get_class_data()
-        features = []
-        for lvl in sorted(class_data.get("features", {})):
-            if self.class_level >= lvl:
-                features.extend(class_data["features"][lvl])
-        return features
+def get_class_features(self):
+    class_data = self.get_class_data()
+    features = []
+    for lvl in sorted(class_data.get("features", {})):
+        if self.class_level >= lvl:
+            features.extend(class_data["features"][lvl])
+    return features
 
-    def get_spellcasting_info(self):
-        class_data = self.get_class_data()
-        return class_data.get("spellcasting", None)
+def get_spellcasting_info(self):
+    class_data = self.get_class_data()
+    return class_data.get("spellcasting", None)
+
 def to_dict(self):
     return {
         "name": self.name,
@@ -552,6 +553,7 @@ def from_dict(data):
         char.alignment = data.get("alignment")
         char.deity = data.get("deity")
         char.is_builder = data.get("is_builder", False)
+        char._init_domains()
     finally:
         if lock_acquired and lock_path:
             try:
@@ -560,46 +562,47 @@ def from_dict(data):
                 pass
     return char
 
-    def _init_domains(self):
-        """Initialize domain powers and domain spells for this character."""
-        # Import a DOMAIN_DATA dict: domain_name -> {"powers": str/callable, "spells": {level: spell_name}}
-        try:
-            from oreka_mud.src.spells import DOMAIN_DATA
-        except ImportError:
-            DOMAIN_DATA = {}
-        for domain in self.domains:
-            data = DOMAIN_DATA.get(domain)
-            if not data:
-                continue
-            self.domain_powers[domain] = data.get("power")
-            for lvl, spell in data.get("spells", {}).items():
-                if lvl not in self.domain_spells:
-                    self.domain_spells[lvl] = set()
-                self.domain_spells[lvl].add(spell)
+def _init_domains(self):
+    """Initialize domain powers and domain spells for this character."""
+    # Import a DOMAIN_DATA dict: domain_name -> {"powers": str/callable, "spells": {level: spell_name}}
+    try:
+        from oreka_mud.src.spells import DOMAIN_DATA
+    except ImportError:
+        DOMAIN_DATA = {}
+    for domain in self.domains:
+        data = DOMAIN_DATA.get(domain)
+        if not data:
+            continue
+        self.domain_powers[domain] = data.get("power")
+        for lvl, spell in data.get("spells", {}).items():
+            if lvl not in self.domain_spells:
+                self.domain_spells[lvl] = set()
+            self.domain_spells[lvl].add(spell)
 
-    def get_available_domain_spells(self):
-        """Return a dict of spell_level -> set of domain spells available at current spellcasting level."""
-        # Only include domain spells for levels the character can cast
-        available = {}
-        max_spell_level = self.get_max_spell_level()
-        for lvl, spells in self.domain_spells.items():
-            if int(lvl) <= max_spell_level:
-                available[lvl] = spells
-        return available
+def get_available_domain_spells(self):
+    """Return a dict of spell_level -> set of domain spells available at current spellcasting level."""
+    # Only include domain spells for levels the character can cast
+    available = {}
+    max_spell_level = self.get_max_spell_level()
+    for lvl, spells in self.domain_spells.items():
+        if int(lvl) <= max_spell_level:
+            available[lvl] = spells
+    return available
 
-    def get_max_spell_level(self):
-        """Return the highest spell level the character can cast (based on class_level and class)."""
-        # This is a placeholder; real logic should use class spell progression tables
-        # For Cleric: 1st at 1, 2nd at 3, 3rd at 5, 4th at 7, 5th at 9, 6th at 11, 7th at 13, 8th at 15, 9th at 17
-        if self.char_class == "Cleric":
-            return min(9, (self.class_level + 1) // 2)
-        # Add other classes as needed
-        return 0
-    def set_class(self, new_class):
-        self.char_class = new_class
-        self.class_features = self.get_class_features()
-        self.spells_known = self._auto_spells_known()
-        self.spells_per_day = self._auto_spells_per_day()
+def get_max_spell_level(self):
+    """Return the highest spell level the character can cast (based on class_level and class)."""
+    # This is a placeholder; real logic should use class spell progression tables
+    # For Cleric: 1st at 1, 2nd at 3, 3rd at 5, 4th at 7, 5th at 9, 6th at 11, 7th at 13, 8th at 15, 9th at 17
+    if self.char_class == "Cleric":
+        return min(9, (self.class_level + 1) // 2)
+    # Add other classes as needed
+    return 0
+
+def set_class(self, new_class):
+    self.char_class = new_class
+    self.class_features = self.get_class_features()
+    self.spells_known = self._auto_spells_known()
+    self.spells_per_day = self._auto_spells_per_day()
 
     def set_level(self, new_level):
         self.class_level = new_level
@@ -751,7 +754,7 @@ def from_dict(data):
                             print(msg)
                     else:
                         print(msg)
-    
+        
         # Removed unreachable nested skill_check function.
 
     def add_condition(self, condition):
@@ -774,6 +777,7 @@ def from_dict(data):
         prompt = prompt.replace("%RACE", self.race or "Unknown")
         # Add more codes as needed
         return prompt
+
     def get_prompt(self):
         """Return the current prompt string for the character."""
         return self.render_prompt()
@@ -845,7 +849,6 @@ def from_dict(data):
             return result + f"\nSuccess! (DC {dc})"
         else:
             return result + f"\nFailure. (DC {dc})"
-
 
     def get_class_skills(self):
         if self.char_class == "Cleric":
