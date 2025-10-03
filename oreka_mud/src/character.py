@@ -129,7 +129,8 @@ class Character:
         self.fatigued = False  # Fatigue state after rage
         self.illiterate = (self.char_class.lower() == "barbarian")
         self.conditions = set()
-
+        self.prompt = "AC %a HP %h/%H [%RACE] >"  # Default prompt
+        self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
     # ...all your other methods, properly indented as shown above...
     # For example:
     def get_equipped_armor_type(self):
@@ -459,105 +460,105 @@ class Character:
     def get_spellcasting_info(self):
         class_data = self.get_class_data()
         return class_data.get("spellcasting", None)
-    def to_dict(self):
-        return {
-            "name": self.name,
-            "password": self.password,
-            "title": self.title,
-            "race": self.race,
-            "level": self.level,
-            "char_class": self.char_class,
-            "class_level": self.class_level,
-            "class_features": self.class_features,
-            "spells_known": getattr(self, 'spells_known', {}),
-            "spells_per_day": getattr(self, 'spells_per_day', {}),
-            "hp": self.hp,
-            "max_hp": self.max_hp,
-            "ac": self.ac,
-            "room_vnum": self.room.vnum if self.room else None,
-            "quests": self.quests,
-            "state": self.state.name if hasattr(self.state, 'name') else self.state,
-            "is_ai": self.is_ai,
-            "is_immortal": self.is_immortal,
-            "elemental_affinity": self.elemental_affinity,
-            "str_score": self.str_score,
-            "dex_score": self.dex_score,
-            "con_score": self.con_score,
-            "int_score": self.int_score,
-            "wis_score": self.wis_score,
-            "cha_score": self.cha_score,
-            "move": self.move,
-            "max_move": self.max_move,
-            "xp": self.xp,
-            "show_all": self.show_all,
-            "inventory": [item.to_dict() for item in self.inventory],
-            "alignment": getattr(self, 'alignment', None),
-            "deity": getattr(self, 'deity', None),
-            "is_builder": getattr(self, 'is_builder', False),
-        }
+def to_dict(self):
+    return {
+        "name": self.name,
+        "hashed_password": getattr(self, "hashed_password", None),  # Always save hash!
+        "title": self.title,
+        "race": self.race,
+        "level": self.level,
+        "char_class": self.char_class,
+        "class_level": self.class_level,
+        "class_features": self.class_features,
+        "spells_known": getattr(self, 'spells_known', {}),
+        "spells_per_day": getattr(self, 'spells_per_day', {}),
+        "hp": self.hp,
+        "max_hp": self.max_hp,
+        "ac": self.ac,
+        "room_vnum": self.room.vnum if self.room else None,
+        "quests": self.quests,
+        "state": self.state.name if hasattr(self.state, 'name') else self.state,
+        "is_ai": self.is_ai,
+        "is_immortal": self.is_immortal,
+        "elemental_affinity": self.elemental_affinity,
+        "str_score": self.str_score,
+        "dex_score": self.dex_score,
+        "con_score": self.con_score,
+        "int_score": self.int_score,
+        "wis_score": self.wis_score,
+        "cha_score": self.cha_score,
+        "move": self.move,
+        "max_move": self.max_move,
+        "xp": self.xp,
+        "show_all": self.show_all,
+        "inventory": [item.to_dict() for item in self.inventory],
+        "alignment": getattr(self, 'alignment', None),
+        "deity": getattr(self, 'deity', None),
+        "is_builder": getattr(self, 'is_builder', False),
+    }
 
-    @staticmethod
-    def from_dict(data):
-        import os
-        import time
-        from oreka_mud.src.items import Item
-        lock_acquired = False
-        lock_path = None
-        if hasattr(data, '_file_path'):
-            lock_path = data._file_path + '.lock'
-            for _ in range(20):  # Try for up to 2 seconds
-                try:
-                    fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
-                    os.close(fd)
-                    lock_acquired = True
-                    break
-                except FileExistsError:
-                    time.sleep(0.1)
-        char = None
-        try:
-            char = Character(
-                name=data["name"],
-                title=data.get("title"),
-                race=data.get("race"),
-                level=data.get("level", 1),
-                hp=data.get("hp", 10),
-                max_hp=data.get("max_hp", 10),
-                ac=data.get("ac", 10),
-                room=None,
-                is_immortal=data.get("is_immortal", False),
-                elemental_affinity=data.get("elemental_affinity"),
-                str_score=data.get("str_score", 10),
-                dex_score=data.get("dex_score", 10),
-                con_score=data.get("con_score", 10),
-                int_score=data.get("int_score", 10),
-                wis_score=data.get("wis_score", 10),
-                cha_score=data.get("cha_score", 10),
-                move=data.get("move", 100),
-                max_move=data.get("max_move", 100),
-                inventory=[Item.from_dict(i) for i in data.get("inventory", [])],
-                is_builder=data.get("is_builder", False),
-                password=data.get("password")
-            )
-            char.char_class = data.get("char_class", "Adventurer")
-            char.class_level = data.get("class_level", data.get("level", 1))
-            char.class_features = data.get("class_features", [])
-            char.spells_known = data.get("spells_known", {})
-            char.spells_per_day = data.get("spells_per_day", {})
-            char.quests = data.get("quests", [])
-            char.state = State[data.get("state", "EXPLORING")]
-            char.is_ai = data.get("is_ai", False)
-            char.xp = data.get("xp", 0)
-            char.show_all = data.get("show_all", False)
-            char.alignment = data.get("alignment")
-            char.deity = data.get("deity")
-            char.is_builder = data.get("is_builder", False)
-        finally:
-            if lock_acquired and lock_path:
-                try:
-                    os.remove(lock_path)
-                except Exception:
-                    pass
-        return char
+@staticmethod
+def from_dict(data):
+    import os
+    import time
+    from oreka_mud.src.items import Item
+    lock_acquired = False
+    lock_path = None
+    if hasattr(data, '_file_path'):
+        lock_path = data._file_path + '.lock'
+        for _ in range(20):  # Try for up to 2 seconds
+            try:
+                fd = os.open(lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                os.close(fd)
+                lock_acquired = True
+                break
+            except FileExistsError:
+                time.sleep(0.1)
+    char = None
+    try:
+        char = Character(
+            name=data["name"],
+            title=data.get("title"),
+            race=data.get("race"),
+            level=data.get("level", 1),
+            hp=data.get("hp", 10),
+            max_hp=data.get("max_hp", 10),
+            ac=data.get("ac", 10),
+            room=None,
+            is_immortal=data.get("is_immortal", False),
+            elemental_affinity=data.get("elemental_affinity"),
+            str_score=data.get("str_score", 10),
+            dex_score=data.get("dex_score", 10),
+            con_score=data.get("con_score", 10),
+            int_score=data.get("int_score", 10),
+            wis_score=data.get("wis_score", 10),
+            cha_score=data.get("cha_score", 10),
+            move=data.get("move", 100),
+            max_move=data.get("max_move", 100),
+            inventory=[Item.from_dict(i) for i in data.get("inventory", [])],
+            is_builder=data.get("is_builder", False)
+        )
+        char.hashed_password = data.get("hashed_password")  # <-- Load hash!
+        char.char_class = data.get("char_class", "Adventurer")
+        char.class_level = data.get("class_level", data.get("level", 1))
+        char.class_features = data.get("class_features", [])
+        char.spells_known = data.get("spells_known", {})
+        char.spells_per_day = data.get("spells_per_day", {})
+        char.quests = data.get("quests", [])
+        char.state = State[data.get("state", "EXPLORING")]
+        char.is_ai = data.get("is_ai", False)
+        char.xp = data.get("xp", 0)
+        char.show_all = data.get("show_all", False)
+        char.alignment = data.get("alignment")
+        char.deity = data.get("deity")
+        char.is_builder = data.get("is_builder", False)
+    finally:
+        if lock_acquired and lock_path:
+            try:
+                os.remove(lock_path)
+            except Exception:
+                pass
+    return char
 
     def _init_domains(self):
         """Initialize domain powers and domain spells for this character."""

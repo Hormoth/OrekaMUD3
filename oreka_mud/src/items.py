@@ -4,15 +4,10 @@ import os
 ITEMS_DB = None
 
 def load_items_db():
-    global ITEMS_DB
-    if ITEMS_DB is not None:
-        return ITEMS_DB
-    path = os.path.join(os.path.dirname(__file__), '../data/items.json')
-    path = os.path.abspath(path)
+    import os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "items.json")
     with open(path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    ITEMS_DB = {item['vnum']: Item.from_dict(item) for item in data}
-    return ITEMS_DB
+        return json.load(f)
 
 def get_item_by_vnum(vnum):
     db = load_items_db()
