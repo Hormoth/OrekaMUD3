@@ -17,10 +17,10 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 
 ## Project Overview
 
-**Total Codebase:** ~14,000 lines of Python
+**Total Codebase:** ~14,300 lines of Python
 **Core Systems:** 10 major modules
-**Commands:** 173+ player/admin commands
-**Completion Status:** ~90% core mechanics
+**Commands:** 180+ player/admin commands
+**Completion Status:** ~92% core mechanics
 
 ### Architecture
 - **Server:** Async telnet server for multiplayer
@@ -34,12 +34,12 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 
 | Module | Lines | Status | Description |
 |--------|-------|--------|-------------|
-| `commands.py` | 3,601 | Complete | 173+ commands (player, admin, builder) |
+| `commands.py` | 3,720 | Complete | 180+ commands (player, admin, builder) |
 | `spells.py` | 2,090 | Complete | 60+ spells, 23 domains, full casting |
 | `feats.py` | 1,577 | Complete | 100+ feats with prerequisites |
-| `character.py` | 1,137 | Complete | Stats, equipment, conditions, spellcasting |
+| `character.py` | 1,187 | Complete | Stats, equipment, conditions, auto-attack |
 | `quests.py` | 1,132 | Complete | Quest system with objectives and rewards |
-| `combat.py` | 1,068 | Complete | Initiative, attacks, saving throws |
+| `combat.py` | 1,189 | Complete | Initiative, attacks, auto-attack, action queue |
 | `skills.py` | 982 | Complete | 40+ D&D 3.5 skills with synergies |
 | `maneuvers.py` | 766 | Complete | Combat maneuvers (disarm, trip, grapple) |
 | `conditions.py` | 484 | Complete | 20+ conditions with mechanical effects |
@@ -62,6 +62,8 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 - Skill ranks and synergy bonuses
 - Feat integration
 - JSON persistence with backup system
+- **Auto-attack system** with combat target tracking
+- **Action queue** for spells, skills, feats, maneuvers
 
 ### Combat System (`combat.py`)
 - Initiative rolling (d20 + DEX + feat bonuses)
@@ -73,6 +75,9 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 - Flanking detection
 - Attacks of opportunity with feat support
 - Quest kill triggers
+- **Auto-attack** - Automatically attacks target each round
+- **Action queue execution** - Queued spells/maneuvers replace auto-attack
+- **Mob AI targeting** - Mobs auto-target random players
 
 ### Spell System (`spells.py`)
 - **60+ spells** across levels 0-9
@@ -152,6 +157,9 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 | Feats | Combat | Feat bonuses apply to attacks/damage |
 | Skills | Commands | Skill checks work via commands |
 | Quests | Character | Quest log tracked per character |
+| Auto-Attack | Combat | Executes queued actions or auto-attacks each turn |
+| Auto-Attack | Spells | Queued spells cast via action queue |
+| Auto-Attack | Maneuvers | Queued maneuvers execute via action queue |
 
 ### Partially Connected
 | System | Issue | Priority |
@@ -260,10 +268,31 @@ python -m pytest oreka_mud/tests/ -v
 ### Command Categories
 - **Movement:** north, south, east, west, up, down, recall
 - **Combat:** kill, flee, cast, attack
+- **Auto-Attack:** queue (q), showqueue (sq), clearqueue (cq), autoattack (aa), target
 - **Inventory:** get, drop, inventory, wear, remove, equipment
 - **Information:** score, skills, spells, help, who
 - **Builder:** @dig, @desc, @exit, @mobadd, @itemadd
 - **Admin:** gecho, levelup, saveplayer, force
+
+### Auto-Attack Commands
+| Command | Shortcut | Description |
+|---------|----------|-------------|
+| `queue <type> <name> [target]` | `q` | Queue spell/skill/feat/maneuver for next turn |
+| `showqueue` | `sq` | Show currently queued action |
+| `clearqueue` | `cq` | Clear the queued action |
+| `autoattack` | `aa` | Toggle auto-attack on/off |
+| `target <mob>` | - | Set auto-attack target without attacking |
+
+**Queue Types:** spell, skill, feat, maneuver, item
+
+**Examples:**
+```
+kill goblin              # Start combat, sets target
+queue spell fireball     # Cast fireball next turn instead of attacking
+queue maneuver trip goblin   # Trip attempt next turn
+sq                       # Check what's queued
+aa                       # Toggle auto-attack off
+```
 
 ---
 
