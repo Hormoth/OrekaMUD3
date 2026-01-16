@@ -1632,7 +1632,125 @@ class CommandParser:
         target = next((m for m in character.room.mobs if m.name.lower() == args.lower() and m.alive), None)
         if target:
             character.state = State.COMBAT
+            character.set_combat_target(target)  # Set auto-attack target
             return attack(character, target)
+        return "No such target!"
+
+    # =========================================================================
+    # Auto-Attack and Action Queue Commands
+    # =========================================================================
+    def cmd_queue(self, character, args):
+        """Queue an action to replace your next auto-attack.
+        Usage: queue <spell|skill|feat|maneuver|item> <name> [target]
+        Example: queue spell fireball
+        Example: queue spell cure light wounds self
+        Example: queue maneuver disarm goblin
+        """
+        if not args:
+            return ("Usage: queue <type> <name> [target]\n"
+                    "Types: spell, skill, feat, maneuver, item\n"
+                    "Example: queue spell fireball\n"
+                    "Example: queue maneuver trip goblin")
+
+        parts = args.split(None, 2)  # Split into max 3 parts
+        if len(parts) < 2:
+            return "Usage: queue <type> <name> [target]"
+
+        action_type = parts[0].lower()
+        action_name = parts[1]
+        action_args = parts[2] if len(parts) > 2 else ""
+
+        valid_types = ['spell', 'skill', 'feat', 'maneuver', 'item']
+        if action_type not in valid_types:
+            return f"Invalid action type '{action_type}'. Valid types: {', '.join(valid_types)}"
+
+        # Validate the action exists
+        if action_type == 'spell':
+            from src.spells import get_spell_by_name
+            spell = get_spell_by_name(action_name)
+            if not spell:
+                return f"No such spell: {action_name}"
+            # Check if known
+            known = False
+            for s in character.spells_known.values():
+                if isinstance(s, dict) and s.get("name", "").lower() == action_name.lower():
+                    known = True
+                    break
+                elif isinstance(s, str) and s.lower() == action_name.lower():
+                    known = True
+                    break
+            if not known:
+                return f"You don't know the spell: {action_name}"
+
+        elif action_type == 'maneuver':
+            from src import maneuvers
+            valid_maneuvers = ['disarm', 'trip', 'bullrush', 'grapple', 'overrun', 'sunder', 'feint']
+            if action_name.lower() not in valid_maneuvers:
+                return f"Invalid maneuver '{action_name}'. Valid: {', '.join(valid_maneuvers)}"
+
+        elif action_type == 'feat':
+            # Check if character has the feat
+            if action_name not in character.feats:
+                return f"You don't have the feat: {action_name}"
+
+        character.queue_action(action_type, action_name, action_args)
+        return f"Queued {action_type}: {action_name}" + (f" (target: {action_args})" if action_args else "") + "\nThis will replace your next auto-attack."
+
+    def cmd_q(self, character, args):
+        """Shortcut for queue command."""
+        return self.cmd_queue(character, args)
+
+    def cmd_clearqueue(self, character, args):
+        """Clear your queued action."""
+        if character.has_queued_action():
+            character.clear_queue()
+            return "Queued action cleared."
+        return "No action was queued."
+
+    def cmd_cq(self, character, args):
+        """Shortcut for clearqueue."""
+        return self.cmd_clearqueue(character, args)
+
+    def cmd_showqueue(self, character, args):
+        """Show your currently queued action."""
+        if character.has_queued_action():
+            action_type, action_name, action_args = character.queued_action
+            result = f"Queued: {action_type} - {action_name}"
+            if action_args:
+                result += f" (target: {action_args})"
+            return result
+        return "No action queued. You will auto-attack."
+
+    def cmd_sq(self, character, args):
+        """Shortcut for showqueue."""
+        return self.cmd_showqueue(character, args)
+
+    def cmd_autoattack(self, character, args):
+        """Toggle auto-attack on or off."""
+        enabled = character.toggle_auto_attack()
+        if enabled:
+            return "Auto-attack is now ON. You will automatically attack your target each round."
+        else:
+            return "Auto-attack is now OFF. You must manually attack each round."
+
+    def cmd_aa(self, character, args):
+        """Shortcut for autoattack toggle."""
+        return self.cmd_autoattack(character, args)
+
+    def cmd_target(self, character, args):
+        """Set your auto-attack target without attacking.
+        Usage: target <mob name>
+        """
+        if not args:
+            if character.combat_target:
+                target_name = getattr(character.combat_target, 'name', 'Unknown')
+                return f"Current target: {target_name}"
+            return "No target set. Usage: target <mob name>"
+
+        target = next((m for m in character.room.mobs if m.name.lower() == args.lower() and m.alive), None)
+        if target:
+            character.set_combat_target(target)
+            return f"Target set to: {target.name}"
         return "No such target!"
 
     def cmd_move(self, character, args):

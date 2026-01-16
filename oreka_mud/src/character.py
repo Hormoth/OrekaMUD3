@@ -118,6 +118,13 @@ class Character:
         self.domain_powers = {}  # domain_name -> granted power description or callable
         self.domain_spells = {}  # spell_level -> set of domain spell names
         self.is_builder = is_builder
+
+        # Auto-attack and action queue system
+        self.auto_attack_enabled = True  # Auto-attack is on by default
+        self.combat_target = None  # Current combat target (mob or player)
+        self.queued_action = None  # (action_type, action_name, args) - replaces next auto-attack
+        # action_type: 'spell', 'skill', 'feat', 'maneuver', 'item'
+
         self._init_domains()
     def save(self):
         """Save this character to a JSON file in data/players/ by name (lowercase), with backup."""
@@ -351,6 +358,7 @@ class Character:
             "is_stable": getattr(self, 'is_stable', False),
             "conditions": list(getattr(self, 'conditions', set())),
             "active_conditions": getattr(self, 'active_conditions', {}),
+            "auto_attack_enabled": getattr(self, 'auto_attack_enabled', True),
         }
 
     @staticmethod
@@ -433,6 +441,7 @@ class Character:
         char.is_stable = data.get("is_stable", False)
         char.conditions = set(data.get("conditions", []))
         char.active_conditions = data.get("active_conditions", {})
+        char.auto_attack_enabled = data.get("auto_attack_enabled", True)
 
         # Load equipment
         equipment_data = data.get("equipment", {})
@@ -480,6 +489,47 @@ class Character:
             return min(9, (self.class_level + 1) // 2)
         # Add other classes as needed
         return 0
+
+    # =========================================================================
+    # Auto-attack and Action Queue System
+    # =========================================================================
+    def queue_action(self, action_type, action_name, args=""):
+        """Queue an action to replace the next auto-attack.
+
+        Args:
+            action_type: 'spell', 'skill', 'feat', 'maneuver', or 'item'
+            action_name: Name of the spell/skill/feat/maneuver/item
+            args: Additional arguments (e.g., target name)
+        """
+        self.queued_action = (action_type, action_name, args)
+
+    def clear_queue(self):
+        """Clear the queued action."""
+        self.queued_action = None
+
+    def has_queued_action(self):
+        """Check if there's a queued action."""
+        return self.queued_action is not None
+
+    def get_queued_action(self):
+        """Get and clear the queued action (consume it)."""
+        action = self.queued_action
+        self.queued_action = None
+        return action
+
+    def set_combat_target(self, target):
+        """Set the current combat target for auto-attack."""
+        self.combat_target = target
+
+    def clear_combat_target(self):
+        """Clear the combat target."""
+        self.combat_target = None
+
+    def toggle_auto_attack(self):
+        """Toggle auto-attack on/off."""
+        self.auto_attack_enabled = not self.auto_attack_enabled
+        return self.auto_attack_enabled
+
     def set_class(self, new_class):
         self.char_class = new_class
         self.class_features = self.get_class_features()

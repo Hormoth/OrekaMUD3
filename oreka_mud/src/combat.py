@@ -222,6 +222,127 @@ class CombatInstance:
             msg += f"\n{current.combatant.name}'s turn."
         return msg
 
+    def execute_turn(self, combatant, command_parser=None) -> str:
+        """Execute a combatant's turn - either queued action or auto-attack.
+
+        Args:
+            combatant: The character/mob whose turn it is
+            command_parser: CommandParser instance to execute queued actions
+
+        Returns:
+            String describing what happened
+        """
+        results = []
+
+        # Check if combatant can act
+        if hasattr(combatant, 'can_act') and not combatant.can_act():
+            return f"{combatant.name} cannot act due to their condition!"
+
+        # Check for queued action (players only)
+        if hasattr(combatant, 'has_queued_action') and combatant.has_queued_action():
+            action = combatant.get_queued_action()
+            if action:
+                action_type, action_name, action_args = action
+
+                if action_type == 'spell' and command_parser:
+                    # Cast the queued spell
+                    spell_args = action_name
+                    if action_args:
+                        spell_args += " " + action_args
+                    result = command_parser.cmd_cast(combatant, spell_args)
+                    results.append(result)
+
+                elif action_type == 'maneuver':
+                    # Execute combat maneuver
+                    from src import maneuvers
+                    target = combatant.combat_target
+                    if action_args:
+                        # Find target by name
+                        for state in self.initiative_order:
+                            if state.combatant.name.lower() == action_args.lower():
+                                target = state.combatant
+                                break
+
+                    if target and target != combatant:
+                        maneuver_func = getattr(maneuvers, action_name.lower(), None)
+                        if maneuver_func:
+                            result = maneuver_func(combatant, target)
+                            results.append(result)
+                        else:
+                            results.append(f"Unknown maneuver: {action_name}")
+                    else:
+                        results.append("No valid target for maneuver!")
+
+                elif action_type == 'skill' and command_parser:
+                    # Execute skill check
+                    skill_cmd = f"cmd_{action_name.lower().replace(' ', '_')}"
+                    if hasattr(command_parser, skill_cmd):
+                        result = getattr(command_parser, skill_cmd)(combatant, action_args)
+                        results.append(result)
+                    else:
+                        result = combatant.skill_check(action_name)
+                        results.append(f"{combatant.name} uses {action_name}: {result}")
+
+                elif action_type == 'feat':
+                    # Some feats are active abilities
+                    results.append(f"{combatant.name} uses feat: {action_name}")
+                    # Feat effects would be handled here
+
+                elif action_type == 'item':
+                    results.append(f"{combatant.name} uses item: {action_name}")
+                    # Item use would be handled here
+
+                return "\n".join(results) if results else "Action executed."
+
+        # Auto-attack if enabled and has target
+        auto_attack_on = getattr(combatant, 'auto_attack_enabled', True)
+        target = getattr(combatant, 'combat_target', None)
+
+        # For mobs, find a player target if they don't have one
+        if not hasattr(combatant, 'xp'):  # It's a mob
+            if not target or not getattr(target, 'hp', 0) > 0:
+                # Target a random alive player
+                alive_players = [s.combatant for s in self.initiative_order
+                                if hasattr(s.combatant, 'xp') and getattr(s.combatant, 'hp', 0) > 0]
+                if alive_players:
+                    import random
+                    target = random.choice(alive_players)
+
+        if auto_attack_on and target:
+            # Check if target is still valid
+            if hasattr(target, 'hp') and target.hp <= 0:
+                results.append(f"{combatant.name}'s target is dead!")
+                if hasattr(combatant, 'clear_combat_target'):
+                    combatant.clear_combat_target()
+            elif hasattr(target, 'alive') and not target.alive:
+                results.append(f"{combatant.name}'s target is dead!")
+                if hasattr(combatant, 'clear_combat_target'):
+                    combatant.clear_combat_target()
+            else:
+                # Execute auto-attack
+                result = attack(combatant, target)
+                results.append(result)
+
+                # Check if target died
+                if hasattr(target, 'hp') and target.hp <= 0:
+                    if hasattr(target, 'alive'):
+                        target.alive = False
+                    results.append(f"{target.name} has been slain!")
+
+                    # Quest trigger for kills
+                    if hasattr(combatant, 'quest_log'):
+                        from src import quests
+                        mob_type = getattr(target, 'mob_type', target.name.lower())
+                        quest_updates = quests.on_mob_killed(combatant, mob_type)
+                        for update in quest_updates:
+                            results.append(f"[Quest] {update}")
+        elif not target:
+            results.append(f"{combatant.name} has no target!")
+        else:
+            results.append(f"{combatant.name} waits (auto-attack disabled).")
+
+        return "\n".join(results) if results else "Turn executed."
+
     def check_combat_end(self) -> Tuple[bool, str]:
         """Check if combat should end. Returns (should_end, message)"""
         # Separate combatants into teams (players vs mobs)
