@@ -1617,8 +1617,149 @@ class CommandParser:
             desc += "\n" + "\n".join(mob_lines)
         return desc
 
+    # =========================================================================
+    # Chat and Communication Commands
+    # =========================================================================
     def cmd_say(self, character, args):
-        return f"{character.name} says, '{args}'"
+        """Say something to everyone in the room."""
+        if not args:
+            return "Say what?"
+        from src.chat import format_say, broadcast_to_room
+        message = format_say(character, args)
+        # Broadcast to others in room
+        broadcast_to_room(character.room, message, exclude=character)
+        # Return message to speaker
+        return f"You say, '{args}'"
+
+    def cmd_tell(self, character, args):
+        """Send a private message to another player.
+        Usage: tell <player> <message>
+        """
+        if not args:
+            return "Tell whom what? Usage: tell <player> <message>"
+        parts = args.split(None, 1)
+        if len(parts) < 2:
+            return "Tell them what? Usage: tell <player> <message>"
+
+        target_name, message = parts
+        from src.chat import find_player_by_name, send_tell
+        recipient = find_player_by_name(self.world, target_name)
+
+        if not recipient:
+            # Try prefix match
+            from src.chat import find_player_by_name_prefix
+            recipient = find_player_by_name_prefix(self.world, target_name)
+
+        if not recipient:
+            return f"Player '{target_name}' not found."
+
+        success, response = send_tell(character, recipient, message)
+        return response
+
+    def cmd_whisper(self, character, args):
+        """Whisper to another player (alias for tell)."""
+        return self.cmd_tell(character, args)
+
+    def cmd_reply(self, character, args):
+        """Reply to the last person who sent you a tell.
+        Usage: reply <message>
+        """
+        if not args:
+            return "Reply with what?"
+
+        last_sender = getattr(character, 'last_tell_from', None)
+        if not last_sender:
+            return "No one has sent you a tell to reply to."
+
+        from src.chat import find_player_by_name, send_tell
+        recipient = find_player_by_name(self.world, last_sender)
+        if not recipient:
+            return f"{last_sender} is no longer online."
+
+        success, response = send_tell(character, recipient, args)
+        return response
+
+    def cmd_emote(self, character, args):
+        """Perform an emote/action visible to everyone in the room.
+        Usage: emote <action>
+        Example: emote waves hello
+        Output: Playername waves hello
+        """
+        if not args:
+            return "Emote what?"
+        from src.chat import format_emote, broadcast_to_room
+        message = format_emote(character, args)
+        # Broadcast to others in room
+        broadcast_to_room(character.room, message, exclude=character)
+        # Return to actor
+        return format_emote(character, args)
+
+    def cmd_me(self, character, args):
+        """Alias for emote."""
+        return self.cmd_emote(character, args)
+
+    def cmd_ooc(self, character, args):
+        """Send an out-of-character message to everyone in the world.
+        Usage: ooc <message>
+        """
+        if not args:
+            return "OOC what?"
+        from src.chat import format_ooc, broadcast_to_world
+        message = format_ooc(character, args)
+        # Broadcast to everyone except sender
+        broadcast_to_world(self.world, message, exclude=character)
+        # Return to sender
+        return message
+
+    def cmd_global(self, character, args):
+        """Send a message to the global chat channel.
+        Usage: global <message>
+        """
+        if not args:
+            return "Say what globally?"
+        from src.chat import format_global, broadcast_to_world
+        message = format_global(character, args)
+        # Broadcast to everyone except sender
+        broadcast_to_world(self.world, message, exclude=character)
+        # Return to sender
+        return message
+
+    def cmd_chat(self, character, args):
+        """Alias for global chat."""
+        return self.cmd_global(character, args)
+
+    def cmd_shout(self, character, args):
+        """Shout something that can be heard in nearby rooms.
+        Usage: shout <message>
+        """
+        if not args:
+            return "Shout what?"
+        from src.chat import format_shout, broadcast_to_room
+        message = format_shout(character, args)
+        # Broadcast to current room (TODO: expand to nearby rooms)
+        broadcast_to_room(character.room, message, exclude=character)
+        # Return to shouter
+        return f"You shout, '{args}'"
+
+    def cmd_yell(self, character, args):
+        """Alias for shout."""
+        return self.cmd_shout(character, args)
+
+    def cmd_who(self, character, args):
+        """List all online players."""
+        online = []
+        for player in self.world.players:
+            if getattr(player, 'is_ai', False):
+                continue  # Skip AI players
+            status = ""
+            if getattr(player, 'is_immortal', False):
+                status = " [IMM]"
+            online.append(f"  {player.name} - {player.race} {player.char_class} Level {player.level}{status}")
+
+        if not online:
+            return "No players online."
+
+        return f"Players Online ({len(online)}):\n" + "\n".join(online)
 
     def cmd_kill(self, character, args):
         # Check if character can act based on conditions
@@ -1832,9 +1973,25 @@ class CommandParser:
         if direction in character.room.exits:
             new_vnum = character.room.exits[direction]
             if new_vnum in self.world.rooms:
-                character.room.players.remove(character)
-                character.room = self.world.rooms[new_vnum]
-                character.room.players.append(character)
+                from src.chat import broadcast_to_room
+
+                old_room = character.room
+                new_room = self.world.rooms[new_vnum]
+
+                # Announce departure to old room
+                broadcast_to_room(old_room, f"{character.name} leaves {direction}.", exclude=character)
+
+                # Move the character
+                old_room.players.remove(character)
+                character.room = new_room
+                new_room.players.append(character)
+
+                # Announce arrival to new room
+                # Figure out opposite direction for "arrives from"
+                opposites = {'north': 'south', 'south': 'north', 'east': 'west',
+                            'west': 'east', 'up': 'below', 'down': 'above'}
+                from_dir = opposites.get(direction, 'somewhere')
+                broadcast_to_room(new_room, f"{character.name} arrives from the {from_dir}.", exclude=character)
 
                 # Quest trigger for room entry
                 result = f"You move {direction} to {character.room.name}."
@@ -1867,12 +2024,16 @@ class CommandParser:
         return "Quest status: " + (f"{character.quests[0]['name']}" if character.quests else "No active quests.")
 
     def cmd_gecho(self, character, args):
+        """Admin broadcast to all players."""
         if not character.is_immortal:
             return "Command restricted to immortals!"
-        return f"[GLOBAL] {character.name} broadcasts: {args}"
-
-    def cmd_who(self, character, args):
-        return self.world.do_who()
+        if not args:
+            return "Broadcast what?"
+        from src.chat import format_admin, broadcast_to_world
+        message = format_admin(character, args)
+        # Broadcast to everyone including sender
+        broadcast_to_world(self.world, message, exclude=None)
+        return "Broadcast sent."
 
     def cmd_stats(self, character, args):
         return character.toggle_stats()
