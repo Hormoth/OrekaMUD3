@@ -34,16 +34,21 @@ class TestCharacter(unittest.TestCase):
 
 class TestCombat(unittest.TestCase):
     class Dummy:
-        def __init__(self):
+        def __init__(self, name="Dummy"):
+            self.name = name
             self.level = 1
             self.ac = 10
             self.hp = 10
             self.alive = True
+            self.conditions = set()
+            self.active_conditions = {}
     def test_attack(self):
-        attacker = self.Dummy()
-        target = self.Dummy()
+        attacker = self.Dummy("Attacker")
+        target = self.Dummy("Target")
         result = attack(attacker, target)
-        self.assertIn(result, ["Miss!", None])
+        # Result contains attack message with attacker/target names
+        self.assertIsInstance(result, str)
+        self.assertTrue("Attacker" in result or "Target" in result)
 
 class TestFeats(unittest.TestCase):
     def test_meets_prereq_level(self):

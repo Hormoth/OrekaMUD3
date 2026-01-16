@@ -1,5 +1,6 @@
 import random
 from .feats import get_feat
+from . import maneuvers
 
 class Mob:
     def to_dict(self):
@@ -33,88 +34,56 @@ class Mob:
         }
     # --- Combat Maneuver/Skill Methods for Feats ---
     def disarm(self, target):
-        # Improved Disarm: +4 bonus, no AoO
-        bonus = 0
-        if self.has_feat("Improved Disarm"):
-            bonus += 4
-            # No AoO for this action
-        # TODO: Implement opposed roll logic
-        return f"{self.name} attempts to disarm {target.name} (bonus: {bonus})"
+        """Attempt to disarm an opponent. Uses D&D 3.5 rules."""
+        return maneuvers.disarm(self, target)
 
     def trip(self, target):
-        # Improved Trip: +4 bonus, no AoO
-        bonus = 0
-        if self.has_feat("Improved Trip"):
-            bonus += 4
-            # No AoO for this action
-        # TODO: Implement opposed roll logic
-        return f"{self.name} attempts to trip {target.name} (bonus: {bonus})"
+        """Attempt to trip an opponent. Uses D&D 3.5 rules."""
+        return maneuvers.trip(self, target)
 
     def bull_rush(self, target):
-        # Improved Bull Rush: +4 bonus, no AoO
-        bonus = 0
-        if self.has_feat("Improved Bull Rush"):
-            bonus += 4
-            # No AoO for this action
-        # TODO: Implement opposed roll logic
-        return f"{self.name} attempts to bull rush {target.name} (bonus: {bonus})"
+        """Attempt to bull rush an opponent. Uses D&D 3.5 rules."""
+        return maneuvers.bull_rush(self, target)
 
     def grapple(self, target):
-        # Improved Grapple: +4 bonus, no AoO
-        bonus = 0
-        if self.has_feat("Improved Grapple"):
-            bonus += 4
-            # No AoO for this action
-        # TODO: Implement opposed roll logic
-        return f"{self.name} attempts to grapple {target.name} (bonus: {bonus})"
+        """Attempt to grapple an opponent. Uses D&D 3.5 rules."""
+        return maneuvers.grapple(self, target)
 
     def overrun(self, target):
-        # Improved Overrun: +4 bonus, no AoO
-        bonus = 0
-        if self.has_feat("Improved Overrun"):
-            bonus += 4
-            # No AoO for this action
-        # TODO: Implement opposed roll logic
-        return f"{self.name} attempts to overrun {target.name} (bonus: {bonus})"
+        """Attempt to overrun an opponent. Uses D&D 3.5 rules."""
+        return maneuvers.overrun(self, target)
 
     def sunder(self, target):
-        # Improved Sunder: +4 bonus, no AoO
-        bonus = 0
-        if self.has_feat("Improved Sunder"):
-            bonus += 4
-            # No AoO for this action
-        # TODO: Implement opposed roll logic
-        return f"{self.name} attempts to sunder {target.name}'s weapon (bonus: {bonus})"
+        """Attempt to sunder an opponent's weapon. Uses D&D 3.5 rules."""
+        return maneuvers.sunder(self, target)
 
     def whirlwind_attack(self, targets):
-        # Whirlwind Attack: attack all adjacent enemies once
-        if not self.has_feat("Whirlwind Attack"):
-            return "You do not have the Whirlwind Attack feat."
-        # TODO: Implement attack logic for all targets
-        return f"{self.name} makes a Whirlwind Attack!"
+        """Attack all adjacent enemies once. Requires Whirlwind Attack feat."""
+        return maneuvers.whirlwind_attack(self, targets)
 
-    def spring_attack(self, target):
-        # Spring Attack: move-attack-move, no AoO from target
-        if not self.has_feat("Spring Attack"):
-            return "You do not have the Spring Attack feat."
-        # TODO: Implement move-attack-move logic
-        return f"{self.name} performs a Spring Attack on {target.name}!"
+    def spring_attack(self, target, move_before=10, move_after=10):
+        """Move, attack, and continue moving. Requires Spring Attack feat."""
+        return maneuvers.spring_attack(self, target, move_before, move_after)
 
     def stunning_fist(self, target):
-        # Stunning Fist: attempt to stun target
-        if not self.has_feat("Stunning Fist"):
-            return "You do not have the Stunning Fist feat."
-        # TODO: Implement attack and Fort save logic
-        return f"{self.name} attempts a Stunning Fist on {target.name}!"
+        """Attempt to stun an opponent. Requires Stunning Fist feat."""
+        return maneuvers.stunning_fist(self, target)
 
     def feint(self, target):
-        # Improved Feint: feint as a move action
-        bonus = 0
-        if self.has_feat("Improved Feint"):
-            # Feint as move action (handled in action system)
-            pass
-        # TODO: Implement opposed Bluff vs Sense Motive
-        return f"{self.name} attempts to feint {target.name}!"
+        """Attempt to feint in combat. Uses Bluff vs Sense Motive."""
+        return maneuvers.feint(self, target)
+
+    def grapple_damage(self, target):
+        """Deal damage while grappling."""
+        return maneuvers.grapple_action_damage(self, target)
+
+    def grapple_pin(self, target):
+        """Attempt to pin a grappled opponent."""
+        return maneuvers.grapple_action_pin(self, target)
+
+    def grapple_escape(self, grappler):
+        """Attempt to escape from a grapple."""
+        return maneuvers.grapple_action_escape(self, grappler)
     def __init__(self, vnum, name, level, hp_dice, ac, damage_dice, flags=None, 
                  type_="", alignment="", ability_scores=None, initiative=0, speed=None, attacks=None, 
                  special_attacks=None, special_qualities=None, feats=None, skills=None, saves=None, 
@@ -146,7 +115,9 @@ class Mob:
         self.description = description
         self.alive = True
         self.conditions = set()
+        self.active_conditions = {}  # {condition_name: rounds_remaining}
         self.dodge_target = None  # For Dodge feat: vnum or name of target
+        self.size = "medium"  # Default size category
         self.weapon_type = attacks[0]["type"] if attacks else None  # For Weapon Finesse/Focus
         self.aoo_count = 0  # Attacks of opportunity used this round
         self.power_attack_amt = 0  # Power Attack value for this round
@@ -282,13 +253,73 @@ class Mob:
     # (Removed duplicate __init__ definition. The above definition with shopkeeper fields and **kwargs is now the only one.)
 
     def add_condition(self, condition):
+        """Add a status condition."""
         self.conditions.add(condition)
 
     def remove_condition(self, condition):
+        """Remove a status condition."""
         self.conditions.discard(condition)
+        if condition in self.active_conditions:
+            del self.active_conditions[condition]
 
     def has_condition(self, condition):
-        return condition in self.conditions
+        """Check if mob has a given condition."""
+        return condition in self.conditions or condition in self.active_conditions
+
+    def add_timed_condition(self, condition: str, duration: int = None):
+        """Add a condition with optional duration in rounds."""
+        self.conditions.add(condition)
+        if duration is not None:
+            self.active_conditions[condition] = duration
+
+    def tick_conditions(self) -> list:
+        """Called each combat round to decrement condition durations."""
+        expired = []
+        to_remove = []
+
+        for condition, duration in self.active_conditions.items():
+            if duration is not None:
+                new_duration = duration - 1
+                if new_duration <= 0:
+                    expired.append(condition)
+                    to_remove.append(condition)
+                else:
+                    self.active_conditions[condition] = new_duration
+
+        for condition in to_remove:
+            del self.active_conditions[condition]
+            self.conditions.discard(condition)
+
+        return expired
+
+    def can_act(self) -> bool:
+        """Check if mob can take actions based on conditions."""
+        from . import conditions as cond
+        if self.hp <= 0:
+            return False
+        return cond.can_act(self)
+
+    def can_move(self) -> bool:
+        """Check if mob can move based on conditions."""
+        from . import conditions as cond
+        if self.hp <= 0:
+            return False
+        return cond.can_move(self)
+
+    def get_condition_modifier(self, modifier_type: str) -> int:
+        """Get total modifier from all conditions for a given type."""
+        from . import conditions as cond
+        return cond.calculate_condition_modifiers(self, modifier_type)
+
+    def has_condition_effect(self, effect_key: str) -> bool:
+        """Check if any active condition has a specific effect."""
+        from . import conditions as cond
+        return cond.has_effect(self, effect_key)
+
+    def loses_dex_to_ac(self) -> bool:
+        """Check if mob loses Dex bonus to AC from conditions."""
+        from . import conditions as cond
+        return cond.has_effect(self, 'loses_dex_to_ac')
 
     def attack(self, target, power_attack_amt=None, all_targets=None):
         # Attack logic with feat support (Power Attack, Weapon Finesse, Weapon Focus, Cleave, Dodge, Combat Reflexes)

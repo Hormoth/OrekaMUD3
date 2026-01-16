@@ -1,5 +1,6 @@
 from src.combat import attack
 from src.character import State
+from src import quests
 
 class CommandParser:
     def cmd_progression(self, character, args):
@@ -465,7 +466,42 @@ class CommandParser:
             "@mobedit": self.cmd_mobedit,
             "@itemadd": self.cmd_itemadd,
             "@itemedit": self.cmd_itemedit,
-            "components": self.cmd_components
+            "components": self.cmd_components,
+            # Equipment commands
+            "wear": self.cmd_wear,
+            "equip": self.cmd_wear,
+            "remove": self.cmd_remove,
+            "unequip": self.cmd_remove,
+            "equipment": self.cmd_equipment,
+            "eq": self.cmd_equipment,
+            # Rest and recovery
+            "rest": self.cmd_rest,
+            "sleep": self.cmd_rest,
+            # Status
+            "conditions": self.cmd_conditions,
+            "status": self.cmd_status,
+            # Full attack
+            "fullattack": self.cmd_fullattack,
+            "fa": self.cmd_fullattack,
+            # Admin condition commands
+            "@addcondition": self.cmd_addcondition,
+            "@removecondition": self.cmd_removecondition,
+            "@listconditions": self.cmd_listconditions,
+            # Combat maneuver commands
+            "disarm": self.cmd_disarm,
+            "trip": self.cmd_trip,
+            "bullrush": self.cmd_bullrush,
+            "grapple": self.cmd_grapple,
+            "overrun": self.cmd_overrun,
+            "sunder": self.cmd_sunder,
+            "feint": self.cmd_feint,
+            "whirlwind": self.cmd_whirlwind,
+            "springattack": self.cmd_springattack,
+            "stunningfist": self.cmd_stunningfist,
+            "stun": self.cmd_stunningfist,
+            "gdamage": self.cmd_grapple_damage,
+            "gpin": self.cmd_grapple_pin,
+            "gescape": self.cmd_grapple_escape,
         }
 
     # --- Builder Commands ---
@@ -953,7 +989,9 @@ class CommandParser:
 
         # Section 3: Combat
         lines.append(pad_line(f" HP: {character.hp:>3}/{character.max_hp:<3}  AC: {character.ac:<2}  Touch AC: {getattr(character, 'touch_ac', character.ac):<2}  Flat-Footed AC: {getattr(character, 'flat_ac', character.ac):<2}"))
-        lines.append(pad_line(f" BAB: {getattr(character, 'bab', (character.level * 3) // 4):<2}  Grapple: {getattr(character, 'grapple', (character.level * 3) // 4 + (character.str_score - 10) // 2):<2}"))
+        bab = getattr(character, 'bab', (character.level * 3) // 4)
+        grapple_mod = bab + (character.str_score - 10) // 2  # BAB + Str mod
+        lines.append(pad_line(f" BAB: {bab:<2}  Grapple: {grapple_mod:<2}"))
 
         # D&D 3.5 Save Calculation
         def calc_save(save_type):
@@ -1053,7 +1091,16 @@ class CommandParser:
             return f"No {args} here."
         character.room.items.remove(item)
         character.inventory.append(item)
-        return f"You pick up {item.name}."
+        result = f"You pick up {item.name}."
+
+        # Quest trigger for item collection
+        if hasattr(character, 'quest_log'):
+            item_type = getattr(item, 'item_type', item.name.lower())
+            quest_updates = quests.on_item_collected(character, item_type)
+            for update in quest_updates:
+                result += f"\n[Quest] {update}"
+
+        return result
 
     def cmd_drop(self, character, args):
         # Find item in inventory by name
@@ -1104,6 +1151,14 @@ class CommandParser:
         return f"{character.name} says, '{args}'"
 
     def cmd_kill(self, character, args):
+        # Check if character can act based on conditions
+        if hasattr(character, 'can_act') and not character.can_act():
+            return "You cannot act in your current condition!"
+
+        # Check for cannot_attack effect (e.g., nauseated)
+        if hasattr(character, 'has_condition_effect') and character.has_condition_effect('cannot_attack'):
+            return "You cannot attack in your current condition!"
+
         target = next((m for m in character.room.mobs if m.name.lower() == args.lower() and m.alive), None)
         if target:
             character.state = State.COMBAT
@@ -1111,6 +1166,10 @@ class CommandParser:
         return "No such target!"
 
     def cmd_move(self, character, args):
+        # Check if character can move based on conditions
+        if hasattr(character, 'can_move') and not character.can_move():
+            return "You cannot move in your current condition!"
+
         direction = args.lower()
         if direction in character.room.exits:
             new_vnum = character.room.exits[direction]
@@ -1118,9 +1177,18 @@ class CommandParser:
                 character.room.players.remove(character)
                 character.room = self.world.rooms[new_vnum]
                 character.room.players.append(character)
+
+                # Quest trigger for room entry
+                result = f"You move {direction} to {character.room.name}."
+                if hasattr(character, 'quest_log'):
+                    room_vnum = str(new_vnum)
+                    quest_updates = quests.on_room_entered(character, room_vnum)
+                    for update in quest_updates:
+                        result += f"\n[Quest] {update}"
+
                 # Show room description and mobs after moving
                 look_output = self.cmd_look(character, "")
-                return f"You move {direction} to {character.room.name}.\n{look_output}"
+                return f"{result}\n{look_output}"
         return "No exit that way!"
 
     def cmd_exits(self, character, args):
@@ -1374,3 +1442,1690 @@ class CommandParser:
         except Exception:
             pass
         return f"You have reached level {new_level}!"
+
+    # =========================================================================
+    # Equipment Commands
+    # =========================================================================
+
+    def cmd_wear(self, character, args):
+        """
+        Equip an item from your inventory.
+        Usage: wear <item name> [slot]
+        """
+        if not args:
+            return "Wear what? Usage: wear <item name>"
+
+        parts = args.split()
+        item_name = parts[0].lower()
+        slot = parts[1].lower() if len(parts) > 1 else None
+
+        # Find item in inventory
+        item = None
+        for inv_item in character.inventory:
+            if inv_item.name.lower().startswith(item_name) or item_name in inv_item.name.lower():
+                item = inv_item
+                break
+
+        if not item:
+            return f"You don't have '{args}' in your inventory."
+
+        success, msg, unequipped = character.equip_item(item, slot)
+        return msg
+
+    def cmd_remove(self, character, args):
+        """
+        Remove an equipped item.
+        Usage: remove <slot or item name>
+        """
+        if not args:
+            return "Remove what? Usage: remove <slot or item name>"
+
+        from src.character import EQUIPMENT_SLOTS
+        arg = args.lower().strip()
+
+        # Check if it's a slot name
+        if arg in EQUIPMENT_SLOTS:
+            success, msg, item = character.unequip_item(arg)
+            return msg
+
+        # Try to find by item name
+        for slot, item in character.equipment.items():
+            if item and (arg in item.name.lower() or item.name.lower().startswith(arg)):
+                success, msg, removed = character.unequip_item(slot)
+                return msg
+
+        return f"You don't have '{args}' equipped."
+
+    def cmd_equipment(self, character, args):
+        """
+        Display currently equipped items.
+        Usage: equipment
+        """
+        from src.character import EQUIPMENT_SLOTS
+
+        lines = ["=== Equipment ==="]
+
+        slot_names = {
+            "head": "Head",
+            "face": "Face",
+            "neck": "Neck",
+            "shoulders": "Shoulders",
+            "body": "Body/Armor",
+            "torso": "Torso",
+            "arms": "Arms",
+            "hands": "Hands",
+            "ring_left": "Ring (L)",
+            "ring_right": "Ring (R)",
+            "waist": "Waist",
+            "feet": "Feet",
+            "main_hand": "Main Hand",
+            "off_hand": "Off Hand",
+        }
+
+        for slot in EQUIPMENT_SLOTS:
+            item = character.equipment.get(slot)
+            slot_display = slot_names.get(slot, slot.title())
+            if item:
+                ac_info = f" (AC +{item.ac_bonus})" if getattr(item, 'ac_bonus', 0) else ""
+                dmg_info = ""
+                if getattr(item, 'damage', None):
+                    d = item.damage
+                    dmg_info = f" ({d[0]}d{d[1]}+{d[2]})" if len(d) > 2 else f" ({d[0]}d{d[1]})"
+                lines.append(f"  {slot_display:12}: {item.name}{ac_info}{dmg_info}")
+            else:
+                lines.append(f"  {slot_display:12}: -empty-")
+
+        lines.append(f"\nAC: {character.ac}")
+        lines.append(f"Gold: {getattr(character, 'gold', 0)} gp")
+
+        return "\n".join(lines)
+
+    # =========================================================================
+    # Rest and Recovery Commands
+    # =========================================================================
+
+    def cmd_rest(self, character, args):
+        """
+        Rest to recover HP and spell slots.
+        Usage: rest [short|long]
+        - short: 1 hour rest, recover some HP
+        - long: 8 hour rest, full recovery (default)
+
+        You must be in a safe room to rest.
+        """
+        # Check for safe room
+        room_flags = getattr(character.room, 'flags', [])
+        if 'safe' not in room_flags and 'inn' not in room_flags and 'temple' not in room_flags:
+            return "You cannot rest here. Find an inn or safe area."
+
+        # Check for combat
+        from src.combat import get_combat
+        combat = get_combat(character.room)
+        if combat and combat.is_active:
+            return "You cannot rest while in combat!"
+
+        # Determine rest type
+        rest_type = args.lower().strip() if args else "long"
+
+        if rest_type in ("short", "s", "1"):
+            hours = 1
+        else:  # Default to long rest
+            hours = 8
+
+        return character.rest(hours)
+
+    # =========================================================================
+    # Status and Condition Commands
+    # =========================================================================
+
+    def cmd_conditions(self, character, args):
+        """
+        Display current conditions affecting you.
+        Usage: conditions
+        """
+        from src.conditions import describe_condition
+
+        lines = ["=== Active Conditions ==="]
+
+        if not character.conditions and not character.active_conditions:
+            lines.append("  None")
+            return "\n".join(lines)
+
+        # Permanent conditions
+        for cond in character.conditions:
+            if cond not in character.active_conditions:
+                desc = describe_condition(cond)
+                lines.append(f"  {desc}")
+
+        # Timed conditions
+        for cond, duration in character.active_conditions.items():
+            desc = describe_condition(cond)
+            lines.append(f"  {desc} ({duration} rounds remaining)")
+
+        return "\n".join(lines)
+
+    def cmd_status(self, character, args):
+        """
+        Display detailed character status including health state.
+        Usage: status
+        """
+        from src.character import HealthStatus
+
+        lines = ["=== Character Status ==="]
+        lines.append(f"Name: {character.name}")
+        lines.append(f"Race: {character.race}")
+        lines.append(f"Class: {character.char_class} Level {character.class_level}")
+        lines.append("")
+
+        # Health status
+        status = character.health_status
+        status_colors = {
+            HealthStatus.HEALTHY: "Healthy",
+            HealthStatus.DISABLED: "DISABLED (0 HP)",
+            HealthStatus.DYING: "DYING!",
+            HealthStatus.STABLE: "Stable (unconscious)",
+            HealthStatus.DEAD: "DEAD",
+        }
+        lines.append(f"HP: {character.hp}/{character.max_hp}")
+        lines.append(f"Status: {status_colors.get(status, 'Unknown')}")
+        lines.append(f"AC: {character.ac}")
+        lines.append("")
+
+        # Ability scores
+        lines.append("Abilities:")
+        for stat in ['str', 'dex', 'con', 'int', 'wis', 'cha']:
+            score = getattr(character, f'{stat}_score', 10)
+            mod = (score - 10) // 2
+            lines.append(f"  {stat.upper()}: {score} ({mod:+d})")
+
+        # Active conditions summary
+        if character.conditions or character.active_conditions:
+            lines.append("")
+            lines.append("Conditions: " + ", ".join(character.conditions | set(character.active_conditions.keys())))
+
+        return "\n".join(lines)
+
+    # =========================================================================
+    # Combat Commands
+    # =========================================================================
+
+    def cmd_fullattack(self, character, args):
+        """
+        Make a full attack (all iterative attacks based on BAB).
+        Usage: fullattack <target>
+        """
+        from src.combat import attack as combat_attack
+
+        if not args:
+            return "Attack who? Usage: fullattack <target>"
+
+        # Find target mob
+        target = None
+        target_name = args.lower()
+        for mob in character.room.mobs:
+            if mob.alive and target_name in mob.name.lower():
+                target = mob
+                break
+
+        if not target:
+            return f"You don't see '{args}' here."
+
+        # Execute full attack
+        return combat_attack(character, target, is_full_attack=True)
+
+    # =========================================================================
+    # Admin Condition Commands
+    # =========================================================================
+
+    def cmd_addcondition(self, character, args):
+        """
+        Add a condition to a target (admin command).
+        Usage: @addcondition <target> <condition> [duration]
+        Example: @addcondition goblin stunned 3
+        """
+        if not character.is_immortal:
+            return "Command restricted to immortals!"
+
+        from src import conditions as cond
+
+        parts = args.split()
+        if len(parts) < 2:
+            return "Usage: @addcondition <target> <condition> [duration]"
+
+        target_name = parts[0].lower()
+        condition_name = parts[1].lower()
+        duration = int(parts[2]) if len(parts) > 2 else None
+
+        # Validate condition exists
+        condition = cond.get_condition(condition_name)
+        if not condition:
+            valid_conditions = ", ".join(sorted(cond.get_condition_list()))
+            return f"Unknown condition: {condition_name}\nValid conditions: {valid_conditions}"
+
+        # Find target (player or mob)
+        target = None
+        for p in character.room.players:
+            if p.name.lower() == target_name:
+                target = p
+                break
+        if not target:
+            for m in character.room.mobs:
+                if m.name.lower() == target_name and m.alive:
+                    target = m
+                    break
+
+        if not target:
+            return f"No target named '{parts[0]}' found in this room."
+
+        # Apply condition
+        if hasattr(target, 'add_timed_condition'):
+            target.add_timed_condition(condition_name, duration)
+        else:
+            target.conditions.add(condition_name)
+            if duration:
+                target.active_conditions[condition_name] = duration
+
+        duration_msg = f" for {duration} rounds" if duration else " (permanent)"
+        return f"Applied {condition.name} to {target.name}{duration_msg}."
+
+    def cmd_removecondition(self, character, args):
+        """
+        Remove a condition from a target (admin command).
+        Usage: @removecondition <target> <condition>
+        Example: @removecondition goblin stunned
+        """
+        if not character.is_immortal:
+            return "Command restricted to immortals!"
+
+        parts = args.split()
+        if len(parts) < 2:
+            return "Usage: @removecondition <target> <condition>"
+
+        target_name = parts[0].lower()
+        condition_name = parts[1].lower()
+
+        # Find target (player or mob)
+        target = None
+        for p in character.room.players:
+            if p.name.lower() == target_name:
+                target = p
+                break
+        if not target:
+            for m in character.room.mobs:
+                if m.name.lower() == target_name and m.alive:
+                    target = m
+                    break
+
+        if not target:
+            return f"No target named '{parts[0]}' found in this room."
+
+        # Check if target has condition
+        if not (condition_name in getattr(target, 'conditions', set()) or
+                condition_name in getattr(target, 'active_conditions', {})):
+            return f"{target.name} does not have the {condition_name} condition."
+
+        # Remove condition
+        if hasattr(target, 'remove_condition'):
+            target.remove_condition(condition_name)
+        else:
+            target.conditions.discard(condition_name)
+
+        if condition_name in getattr(target, 'active_conditions', {}):
+            del target.active_conditions[condition_name]
+
+        return f"Removed {condition_name} from {target.name}."
+
+    def cmd_listconditions(self, character, args):
+        """
+        List all available conditions.
+        Usage: @listconditions [category]
+        Categories: physical, mental, other, combat, all
+        """
+        from src import conditions as cond
+
+        category = args.lower() if args else "all"
+
+        # Define categories
+        physical = ['blinded', 'dazzled', 'deafened', 'entangled', 'exhausted', 'fatigued',
+                   'grappled', 'helpless', 'paralyzed', 'petrified', 'pinned', 'prone', 'stunned']
+        mental = ['confused', 'cowering', 'dazed', 'fascinated', 'frightened', 'nauseated',
+                 'panicked', 'shaken']
+        other = ['incorporeal', 'invisible', 'sickened', 'staggered', 'stable', 'unconscious']
+        combat = ['flanked', 'flat_footed', 'silenced', 'bound', 'gagged']
+
+        if category == "physical":
+            conditions_to_show = physical
+        elif category == "mental":
+            conditions_to_show = mental
+        elif category == "other":
+            conditions_to_show = other
+        elif category == "combat":
+            conditions_to_show = combat
+        else:
+            conditions_to_show = cond.get_condition_list()
+
+        lines = [f"=== Conditions ({category.title()}) ==="]
+        for cond_name in sorted(conditions_to_show):
+            condition = cond.get_condition(cond_name)
+            if condition:
+                lines.append(f"  {condition.name}: {condition.description[:60]}...")
+
+        return "\n".join(lines)
+
+    # =========================================================================
+    # Combat Maneuver Commands
+    # =========================================================================
+
+    def _find_target(self, character, target_name):
+        """Find a target mob in the room by name."""
+        target_name = target_name.lower()
+        for mob in character.room.mobs:
+            if mob.alive and target_name in mob.name.lower():
+                return mob
+        return None
+
+    def _check_can_act(self, character):
+        """Check if character can take actions."""
+        if hasattr(character, 'can_act') and not character.can_act():
+            return "You cannot act in your current condition!"
+        return None
+
+    def cmd_disarm(self, character, args):
+        """
+        Attempt to disarm an opponent.
+        Usage: disarm <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Disarm who? Usage: disarm <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.disarm(target)
+
+    def cmd_trip(self, character, args):
+        """
+        Attempt to trip an opponent.
+        Usage: trip <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Trip who? Usage: trip <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.trip(target)
+
+    def cmd_bullrush(self, character, args):
+        """
+        Attempt to bull rush an opponent, pushing them back.
+        Usage: bullrush <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Bull rush who? Usage: bullrush <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.bull_rush(target)
+
+    def cmd_grapple(self, character, args):
+        """
+        Attempt to grapple an opponent.
+        Usage: grapple <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Grapple who? Usage: grapple <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.grapple(target)
+
+    def cmd_overrun(self, character, args):
+        """
+        Attempt to overrun an opponent, moving through their space.
+        Usage: overrun <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Overrun who? Usage: overrun <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.overrun(target)
+
+    def cmd_sunder(self, character, args):
+        """
+        Attempt to destroy an opponent's weapon.
+        Usage: sunder <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Sunder whose weapon? Usage: sunder <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.sunder(target)
+
+    def cmd_feint(self, character, args):
+        """
+        Feint in combat to deny opponent their Dex bonus to AC.
+        Usage: feint <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not args:
+            return "Feint who? Usage: feint <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.feint(target)
+
+    def cmd_whirlwind(self, character, args):
+        """
+        Attack all adjacent enemies at once. Requires Whirlwind Attack feat.
+        Usage: whirlwind
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not character.has_feat("Whirlwind Attack"):
+            return "You don't have the Whirlwind Attack feat!"
+
+        # Get all alive mobs in room
+        targets = [m for m in character.room.mobs if m.alive and m.hp > 0]
+        if not targets:
+            return "There are no enemies to attack!"
+
+        return character.whirlwind_attack(targets)
+
+    def cmd_springattack(self, character, args):
+        """
+        Move, attack, and continue moving. Requires Spring Attack feat.
+        Usage: springattack <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not character.has_feat("Spring Attack"):
+            return "You don't have the Spring Attack feat!"
+
+        if not args:
+            return "Spring attack who? Usage: springattack <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.spring_attack(target)
+
+    def cmd_stunningfist(self, character, args):
+        """
+        Attempt to stun an opponent with an unarmed strike. Requires Stunning Fist feat.
+        Usage: stunningfist <target>
+        """
+        error = self._check_can_act(character)
+        if error:
+            return error
+
+        if not character.has_feat("Stunning Fist"):
+            return "You don't have the Stunning Fist feat!"
+
+        if not args:
+            return "Stunning fist who? Usage: stunningfist <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        return character.stunning_fist(target)
+
+    def cmd_grapple_damage(self, character, args):
+        """
+        Deal damage to a grappled opponent.
+        Usage: gdamage <target>
+        """
+        if not character.has_condition('grappled'):
+            return "You are not grappling anyone!"
+
+        if not args:
+            return "Damage who? Usage: gdamage <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        if not target.has_condition('grappled'):
+            return f"{target.name} is not grappled!"
+
+        return character.grapple_damage(target)
+
+    def cmd_grapple_pin(self, character, args):
+        """
+        Attempt to pin a grappled opponent.
+        Usage: gpin <target>
+        """
+        if not character.has_condition('grappled'):
+            return "You are not grappling anyone!"
+
+        if not args:
+            return "Pin who? Usage: gpin <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        if not target.has_condition('grappled'):
+            return f"{target.name} is not grappled!"
+
+        return character.grapple_pin(target)
+
+    def cmd_grapple_escape(self, character, args):
+        """
+        Attempt to escape from a grapple.
+        Usage: gescape
+        """
+        if not character.has_condition('grappled'):
+            return "You are not grappled!"
+
+        # Find who is grappling us (any grappled mob in room)
+        grappler = None
+        for mob in character.room.mobs:
+            if mob.alive and mob.has_condition('grappled'):
+                grappler = mob
+                break
+
+        if not grappler:
+            # Remove condition if no grappler found
+            character.remove_condition('grappled')
+            return "You are no longer grappled."
+
+        return character.grapple_escape(grappler)
+
+    # =========================================================================
+    # Skill Check Commands
+    # =========================================================================
+
+    def cmd_check(self, character, args):
+        """
+        Perform a skill check.
+        Usage: check <skill> [dc]
+        Examples:
+          check climb
+          check climb 15
+          check "knowledge arcana"
+          check hide
+        """
+        from src import skills
+
+        if not args:
+            return "Check what? Usage: check <skill> [dc]\nType 'skills' to see available skills."
+
+        parts = args.split()
+
+        # Handle quoted skill names like "knowledge arcana"
+        if args.startswith('"') or args.startswith("'"):
+            # Find quoted skill name
+            quote_char = args[0]
+            end_quote = args.find(quote_char, 1)
+            if end_quote > 0:
+                skill_name = args[1:end_quote]
+                rest = args[end_quote + 1:].strip().split()
+            else:
+                skill_name = args[1:]
+                rest = []
+        else:
+            # Try to match a skill name (some have multiple words)
+            skill_name = None
+            for sname in skills.SKILLS.keys():
+                if args.lower().startswith(sname.lower()):
+                    skill_name = sname
+                    rest = args[len(sname):].strip().split()
+                    break
+
+            if not skill_name:
+                # Take first word as skill name
+                skill_name = parts[0]
+                rest = parts[1:]
+
+        # Try to find skill
+        skill = skills.SKILLS.get(skill_name)
+        if not skill:
+            # Try case-insensitive partial match
+            for sname, s in skills.SKILLS.items():
+                if skill_name.lower() in sname.lower():
+                    skill_name = sname
+                    skill = s
+                    break
+
+        if not skill:
+            return f"Unknown skill: {skill_name}\nType 'skills' to see available skills."
+
+        # Parse DC if provided
+        dc = None
+        if rest:
+            try:
+                dc = int(rest[0])
+            except ValueError:
+                pass
+
+        # Perform the check
+        success, total, desc = skills.skill_check(character, skill_name, dc=dc)
+
+        return desc
+
+    def cmd_take10(self, character, args):
+        """
+        Perform a skill check using Take 10 (no rolling).
+        Usage: take10 <skill>
+        Requires: No stress or distractions (not in combat)
+        """
+        from src import skills
+        from src.combat import get_combat
+
+        # Check for combat
+        combat = get_combat(character.room)
+        if combat and combat.is_active:
+            return "You cannot take 10 while in combat!"
+
+        if not args:
+            return "Take 10 on what skill? Usage: take10 <skill>"
+
+        skill_name = args.strip()
+
+        # Try to find skill
+        skill = skills.SKILLS.get(skill_name)
+        if not skill:
+            for sname in skills.SKILLS.keys():
+                if skill_name.lower() in sname.lower():
+                    skill_name = sname
+                    skill = skills.SKILLS.get(sname)
+                    break
+
+        if not skill:
+            return f"Unknown skill: {skill_name}"
+
+        success, total, desc = skills.skill_check(character, skill_name, take_10=True)
+        return desc
+
+    def cmd_take20(self, character, args):
+        """
+        Perform a skill check using Take 20 (maximum effort, requires time).
+        Usage: take20 <skill>
+        Requires: No danger from failure, 20x normal time
+        """
+        from src import skills
+        from src.combat import get_combat
+
+        # Check for combat
+        combat = get_combat(character.room)
+        if combat and combat.is_active:
+            return "You cannot take 20 while in combat!"
+
+        if not args:
+            return "Take 20 on what skill? Usage: take20 <skill>"
+
+        skill_name = args.strip()
+
+        # Try to find skill
+        skill = skills.SKILLS.get(skill_name)
+        if not skill:
+            for sname in skills.SKILLS.keys():
+                if skill_name.lower() in sname.lower():
+                    skill_name = sname
+                    skill = skills.SKILLS.get(sname)
+                    break
+
+        if not skill:
+            return f"Unknown skill: {skill_name}"
+
+        # Can't take 20 on skills with consequences for failure
+        no_take_20 = ["Disable Device", "Open Lock", "Use Magic Device", "Tumble"]
+        if skill_name in no_take_20:
+            return f"You cannot take 20 on {skill_name} (failure has consequences)."
+
+        success, total, desc = skills.skill_check(character, skill_name, take_20=True)
+        return f"After careful effort (20x normal time):\n{desc}"
+
+    def cmd_skilllist(self, character, args):
+        """
+        List all available skills.
+        Usage: skills [ability]
+        Examples:
+          skills        - List all skills
+          skills str    - List Strength-based skills
+          skills trained - List trained-only skills
+        """
+        from src import skills
+
+        ability_filter = args.lower() if args else None
+
+        lines = ["=== Skills ==="]
+
+        # Group by ability
+        by_ability = {}
+        for skill_name, skill in sorted(skills.SKILLS.items()):
+            ability = skill.key_ability
+            if ability not in by_ability:
+                by_ability[ability] = []
+            by_ability[ability].append(skill)
+
+        ability_order = ["Str", "Dex", "Con", "Int", "Wis", "Cha"]
+
+        for ability in ability_order:
+            if ability_filter and ability_filter not in ability.lower() and ability_filter != "trained":
+                continue
+
+            skill_list = by_ability.get(ability, [])
+            if not skill_list:
+                continue
+
+            lines.append(f"\n{ability}-based:")
+            for skill in sorted(skill_list, key=lambda s: s.name):
+                if ability_filter == "trained" and not skill.trained_only:
+                    continue
+
+                # Get character's ranks
+                ranks = skills.get_skill_ranks(character, skill.name)
+                total_mod, _ = skills.calculate_skill_modifier(character, skill.name)
+
+                # Build skill info
+                markers = []
+                if skill.trained_only:
+                    markers.append("T")
+                if skill.armor_check_penalty:
+                    markers.append("*")
+                marker_str = f" [{','.join(markers)}]" if markers else ""
+
+                # Class skill indicator
+                is_class = skills.is_class_skill(character, skill.name)
+                class_marker = "C" if is_class else "X"
+
+                lines.append(f"  {skill.name:35} {class_marker} Ranks: {ranks:2} Mod: {total_mod:+3}{marker_str}")
+
+        lines.append("\nLegend: T=Trained Only, *=Armor Check Penalty, C=Class Skill, X=Cross-Class")
+        lines.append("Usage: check <skill> [dc] | take10 <skill> | take20 <skill>")
+
+        return "\n".join(lines)
+
+    def cmd_hide(self, character, args):
+        """
+        Attempt to hide from enemies.
+        Usage: hide
+        Opposed by: Spot checks from observers
+        """
+        from src import skills
+        from src.combat import get_combat
+
+        # Check if in combat
+        combat = get_combat(character.room)
+        if combat and combat.is_active:
+            return "You cannot hide while in active combat!"
+
+        # Check for cover/concealment (simplified)
+        room = character.room
+        has_cover = 'shadows' in getattr(room, 'flags', []) or \
+                   'dark' in getattr(room, 'flags', []) or \
+                   'forest' in getattr(room, 'flags', [])
+
+        if not has_cover:
+            return "You have nowhere to hide here. Find cover or concealment first."
+
+        # Get observers (mobs in room)
+        observers = [m for m in room.mobs if m.alive and m.hp > 0]
+
+        if not observers:
+            success, total, desc = skills.skill_check(character, "Hide")
+            return f"{desc}\nYou successfully hide (no observers)."
+
+        # Check against each observer
+        results = [f"{character.name} attempts to hide..."]
+        hidden_from_all = True
+
+        for observer in observers:
+            actor_wins, hider_total, spotter_total, desc = skills.opposed_skill_check(
+                character, "Hide",
+                observer, "Spot"
+            )
+            if actor_wins:
+                results.append(f"  vs {observer.name}: HIDDEN (Hide {hider_total} vs Spot {spotter_total})")
+            else:
+                hidden_from_all = False
+                results.append(f"  vs {observer.name}: SPOTTED! (Hide {hider_total} vs Spot {spotter_total})")
+
+        if hidden_from_all:
+            character.add_condition('hidden')
+            results.append("You successfully hide from all observers!")
+        else:
+            results.append("You fail to hide from some observers.")
+
+        return "\n".join(results)
+
+    def cmd_sneak(self, character, args):
+        """
+        Move silently through the area.
+        Usage: sneak
+        Opposed by: Listen checks from nearby creatures
+        """
+        from src import skills
+
+        # Get listeners (mobs in room)
+        listeners = [m for m in character.room.mobs if m.alive and m.hp > 0]
+
+        if not listeners:
+            success, total, desc = skills.skill_check(character, "Move Silently")
+            return f"{desc}\nYou move silently (no listeners)."
+
+        # Check against each listener
+        results = [f"{character.name} attempts to move silently..."]
+        silent_to_all = True
+
+        for listener in listeners:
+            actor_wins, mover_total, listener_total, desc = skills.opposed_skill_check(
+                character, "Move Silently",
+                listener, "Listen"
+            )
+            if actor_wins:
+                results.append(f"  vs {listener.name}: SILENT (Sneak {mover_total} vs Listen {listener_total})")
+            else:
+                silent_to_all = False
+                results.append(f"  vs {listener.name}: HEARD! (Sneak {mover_total} vs Listen {listener_total})")
+
+        if silent_to_all:
+            results.append("You move silently past all listeners!")
+        else:
+            results.append("Some creatures hear you moving.")
+
+        return "\n".join(results)
+
+    def cmd_search(self, character, args):
+        """
+        Search the area for hidden objects or doors.
+        Usage: search [dc]
+        """
+        from src import skills
+
+        # Default DC for hidden things
+        dc = 20
+        if args:
+            try:
+                dc = int(args)
+            except ValueError:
+                pass
+
+        success, total, desc = skills.skill_check(character, "Search", dc=dc)
+
+        if success:
+            # Check for hidden things in the room
+            room = character.room
+            found_items = []
+
+            # Check for hidden exits
+            for direction, exit_data in getattr(room, 'exits', {}).items():
+                if isinstance(exit_data, dict) and exit_data.get('hidden'):
+                    found_items.append(f"a hidden exit to the {direction}")
+
+            # Check for hidden items
+            for item in getattr(room, 'items', []):
+                if getattr(item, 'hidden', False):
+                    found_items.append(f"a hidden {item.name}")
+                    item.hidden = False  # Reveal it
+
+            if found_items:
+                desc += f"\nYou find: {', '.join(found_items)}!"
+            else:
+                desc += "\nYou find nothing hidden."
+
+        return desc
+
+    def cmd_listen(self, character, args):
+        """
+        Listen for sounds in the area.
+        Usage: listen [dc]
+        """
+        from src import skills
+
+        dc = 15  # Default
+        if args:
+            try:
+                dc = int(args)
+            except ValueError:
+                pass
+
+        success, total, desc = skills.skill_check(character, "Listen", dc=dc)
+
+        if success:
+            # Check for things to hear
+            room = character.room
+            sounds = []
+
+            # Adjacent room occupants
+            for direction, exit_data in getattr(room, 'exits', {}).items():
+                adj_vnum = exit_data if isinstance(exit_data, int) else exit_data.get('room')
+                if adj_vnum:
+                    # Would need world reference to check adjacent room
+                    pass
+
+            # Mobs in current room (hidden ones)
+            for mob in room.mobs:
+                if mob.alive and mob.has_condition('hidden'):
+                    sounds.append(f"something moving nearby")
+                    break
+
+            if sounds:
+                desc += f"\nYou hear: {', '.join(sounds)}"
+            else:
+                desc += "\nYou hear nothing unusual."
+
+        return desc
+
+    def cmd_spot(self, character, args):
+        """
+        Spot hidden creatures or objects.
+        Usage: spot
+        """
+        from src import skills
+
+        results = [f"{character.name} looks around carefully..."]
+
+        # Check for hidden mobs
+        hidden_found = []
+        for mob in character.room.mobs:
+            if mob.alive and mob.has_condition('hidden'):
+                # Opposed check
+                actor_wins, spotter_total, hider_total, desc = skills.opposed_skill_check(
+                    character, "Spot",
+                    mob, "Hide"
+                )
+                if actor_wins:
+                    mob.remove_condition('hidden')
+                    hidden_found.append(mob.name)
+                    results.append(f"  You spot {mob.name}! (Spot {spotter_total} vs Hide {hider_total})")
+                else:
+                    results.append(f"  You sense something but can't locate it...")
+
+        if not character.room.mobs or not any(m.has_condition('hidden') for m in character.room.mobs):
+            success, total, desc = skills.skill_check(character, "Spot")
+            results.append(desc)
+            if success:
+                results.append("You see nothing out of the ordinary.")
+
+        return "\n".join(results)
+
+    def cmd_climb(self, character, args):
+        """
+        Attempt to climb a surface.
+        Usage: climb [dc]
+        Default DCs: rope=0, ladder=5, knotted rope=5, wall with ledges=10, rough=20, smooth=25
+        """
+        from src import skills
+
+        dc = 15  # Default
+        if args:
+            try:
+                dc = int(args)
+            except ValueError:
+                # Try to parse surface type
+                surfaces = {
+                    "rope": 0, "ladder": 5, "knotted": 5,
+                    "ledges": 10, "rough": 20, "smooth": 25, "overhang": 25
+                }
+                for surface, sdc in surfaces.items():
+                    if surface in args.lower():
+                        dc = sdc
+                        break
+
+        success, total, desc = skills.skill_check(character, "Climb", dc=dc)
+
+        if success:
+            desc += "\nYou climb successfully!"
+        else:
+            desc += "\nYou fail to climb and make no progress."
+            # Optional: Check for falling (fail by 5+)
+            if total < dc - 5:
+                desc += " You slip and fall!"
+
+        return desc
+
+    def cmd_jump(self, character, args):
+        """
+        Attempt to jump a distance.
+        Usage: jump <distance in feet>
+        Running: DC = distance in feet (horizontal) or 4x feet (vertical)
+        Standing: DC is doubled
+        """
+        from src import skills
+
+        if not args:
+            return "Jump how far? Usage: jump <distance> (e.g., 'jump 10' for 10 feet)"
+
+        try:
+            distance = int(args)
+        except ValueError:
+            return "Please specify distance in feet (e.g., 'jump 10')"
+
+        # Assume running jump; DC = distance for horizontal
+        dc = distance
+
+        # Check movement
+        is_running = getattr(character, 'is_running', False)
+        if not is_running:
+            dc *= 2  # Standing jump
+
+        # Get current speed (affects max distance)
+        base_speed = getattr(character, 'max_move', 30)
+        speed_mod = (base_speed - 30) // 10 * 4  # +4 per 10 ft above 30
+
+        success, total, desc = skills.skill_check(character, "Jump", dc=dc, modifier=speed_mod)
+
+        if success:
+            desc += f"\nYou successfully jump {distance} feet!"
+        else:
+            # Calculate actual distance jumped
+            actual = max(0, total // (2 if not is_running else 1))
+            desc += f"\nYou only manage to jump {actual} feet."
+
+        return desc
+
+    def cmd_tumble(self, character, args):
+        """
+        Tumble through a threatened area or to reduce falling damage.
+        Usage: tumble [target]
+        DC 15: Move through threatened area without AoO
+        DC 25: Tumble through enemy's space
+        """
+        from src import skills
+
+        # Check for trained only
+        ranks = skills.get_skill_ranks(character, "Tumble")
+        if ranks == 0:
+            return "You cannot tumble untrained."
+
+        dc = 15  # Default: avoid AoO
+        through_enemy = False
+
+        if args:
+            target = self._find_target(character, args)
+            if target:
+                dc = 25
+                through_enemy = True
+
+        success, total, desc = skills.skill_check(character, "Tumble", dc=dc)
+
+        if success:
+            if through_enemy:
+                desc += f"\nYou tumble through your opponent's space!"
+            else:
+                desc += "\nYou tumble safely through the threatened area!"
+        else:
+            desc += "\nYou stumble and provoke attacks of opportunity!"
+
+        return desc
+
+    def cmd_intimidate(self, character, args):
+        """
+        Attempt to demoralize an opponent.
+        Usage: intimidate <target>
+        On success: Target is shaken for 1+ rounds.
+        """
+        from src import skills
+
+        if not args:
+            return "Intimidate who? Usage: intimidate <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            # Try players
+            for p in character.room.players:
+                if p != character and args.lower() in p.name.lower():
+                    target = p
+                    break
+
+        if not target:
+            return f"You don't see '{args}' here."
+
+        success, total, desc = skills.check_intimidate(character, target)
+
+        if success:
+            # Apply shaken condition
+            rounds = 1 + max(0, (total - (10 + target.level + skills.get_ability_mod(target, "Wis"))) // 5)
+            target.add_timed_condition('shaken', rounds)
+
+        return desc
+
+    def cmd_diplomacy(self, character, args):
+        """
+        Attempt to improve an NPC's attitude.
+        Usage: diplomacy <target>
+        """
+        from src import skills
+
+        if not args:
+            return "Negotiate with who? Usage: diplomacy <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            return f"You don't see '{args}' here."
+
+        # Get current attitude (default to indifferent)
+        current_attitude = getattr(target, 'attitude', 'indifferent')
+
+        new_attitude, total, desc = skills.check_diplomacy(character, target, current_attitude)
+
+        # Update target's attitude
+        if hasattr(target, 'attitude'):
+            target.attitude = new_attitude
+
+        return desc
+
+    def cmd_bluff(self, character, args):
+        """
+        Attempt to deceive someone or feint in combat.
+        Usage: bluff <target>
+        In combat: Feint to deny Dex bonus to AC
+        Out of combat: Opposed by Sense Motive
+        """
+        from src import skills
+        from src.combat import get_combat
+
+        if not args:
+            return "Bluff who? Usage: bluff <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            for p in character.room.players:
+                if p != character and args.lower() in p.name.lower():
+                    target = p
+                    break
+
+        if not target:
+            return f"You don't see '{args}' here."
+
+        # In combat = feint
+        combat = get_combat(character.room)
+        if combat and combat.is_active:
+            success, bluff_total, sm_total, desc = skills.check_bluff_feint(character, target)
+            if success:
+                # Mark target as flat-footed for next attack
+                target.add_timed_condition('flat_footed', 1)
+            return desc
+        else:
+            # Out of combat - opposed Bluff vs Sense Motive
+            actor_wins, actor_total, target_total, desc = skills.opposed_skill_check(
+                character, "Bluff",
+                target, "Sense Motive"
+            )
+            if actor_wins:
+                return f"{desc}\n{target.name} believes your bluff!"
+            else:
+                return f"{desc}\n{target.name} sees through your deception!"
+
+    def cmd_sensemotive(self, character, args):
+        """
+        Try to determine if someone is lying or get a hunch about them.
+        Usage: sensemotive <target>
+        """
+        from src import skills
+
+        if not args:
+            return "Sense the motives of who? Usage: sensemotive <target>"
+
+        target = self._find_target(character, args)
+        if not target:
+            for p in character.room.players:
+                if p != character and args.lower() in p.name.lower():
+                    target = p
+                    break
+
+        if not target:
+            return f"You don't see '{args}' here."
+
+        # Opposed check vs Bluff (or fixed DC for hunch)
+        bluff_ranks = skills.get_skill_ranks(target, "Bluff")
+
+        if bluff_ranks > 0:
+            actor_wins, actor_total, target_total, desc = skills.opposed_skill_check(
+                character, "Sense Motive",
+                target, "Bluff"
+            )
+            if actor_wins:
+                return f"{desc}\nYou sense that {target.name} may be hiding something."
+            else:
+                return f"{desc}\nYou cannot read {target.name}'s intentions."
+        else:
+            # Hunch check (DC 20)
+            success, total, desc = skills.skill_check(character, "Sense Motive", dc=20)
+            if success:
+                return f"{desc}\nYou get a hunch about {target.name}'s general attitude."
+            else:
+                return f"{desc}\nYou cannot get a read on {target.name}."
+
+    def cmd_heal_skill(self, character, args):
+        """
+        Use the Heal skill for first aid or treating wounds.
+        Usage: healskill <target> [type]
+        Types: first_aid, treat_wounds, treat_poison, treat_disease
+        """
+        from src import skills
+
+        if not args:
+            return "Heal who? Usage: healskill <target> [type]"
+
+        parts = args.split()
+        target_name = parts[0]
+        heal_type = parts[1] if len(parts) > 1 else "first_aid"
+
+        # Find target
+        target = None
+        if target_name.lower() == "self" or target_name.lower() == character.name.lower():
+            target = character
+        else:
+            target = self._find_target(character, target_name)
+            if not target:
+                for p in character.room.players:
+                    if target_name.lower() in p.name.lower():
+                        target = p
+                        break
+
+        if not target:
+            return f"You don't see '{target_name}' here."
+
+        # Determine DC
+        dcs = {
+            "first_aid": 15,        # Stabilize dying
+            "treat_wounds": 15,     # Restore 1 HP (long-term care)
+            "treat_poison": 15,     # Help save vs secondary damage
+            "treat_disease": 15,    # Help save vs disease
+            "aid_another": 10,      # Give +2 to next Heal check
+        }
+
+        dc = dcs.get(heal_type, 15)
+        success, total, desc = skills.skill_check(character, "Heal", dc=dc)
+
+        if success:
+            if heal_type == "first_aid":
+                if hasattr(target, 'health_status'):
+                    from src.character import HealthStatus
+                    if target.health_status in (HealthStatus.DYING,):
+                        target.is_stable = True
+                        desc += f"\n{target.name} is stabilized!"
+                    else:
+                        desc += f"\n{target.name} doesn't need first aid."
+                else:
+                    desc += f"\nYou tend to {target.name}'s wounds."
+            elif heal_type == "treat_wounds":
+                old_hp = target.hp
+                target.hp = min(target.hp + 1, target.max_hp)
+                desc += f"\nWith long-term care, {target.name} recovers 1 HP. ({old_hp} -> {target.hp})"
+            else:
+                desc += f"\nYou provide medical attention to {target.name}."
+        else:
+            desc += f"\nYour attempt to help fails."
+
+        return desc
+
+    # =========================================================================
+    # Quest Commands
+    # =========================================================================
+
+    def _get_quest_log(self, character):
+        """Get or create a QuestLog for the character."""
+        from src.quests import QuestLog
+        if not hasattr(character, 'quest_log') or character.quest_log is None:
+            character.quest_log = QuestLog()
+        return character.quest_log
+
+    def _get_quest_manager(self):
+        """Get or create the world's QuestManager."""
+        from src.quests import QuestManager
+        if not hasattr(self.world, 'quest_manager') or self.world.quest_manager is None:
+            self.world.quest_manager = QuestManager()
+            self.world.quest_manager.load_quests()
+        return self.world.quest_manager
+
+    def cmd_questlog(self, character, args):
+        """
+        Display your quest log.
+        Usage: questlog [active|complete|all]
+        """
+        from src.quests import QuestState
+
+        quest_log = self._get_quest_log(character)
+        quest_manager = self._get_quest_manager()
+
+        filter_type = args.lower() if args else "active"
+
+        lines = ["=== Quest Log ==="]
+
+        # Active quests
+        if filter_type in ("active", "all"):
+            active = [q for q in quest_log.active_quests.values()
+                     if q.state in (QuestState.ACTIVE, QuestState.COMPLETE)]
+
+            if active:
+                lines.append("\nActive Quests:")
+                for aq in active:
+                    quest = quest_manager.get_quest(aq.quest_id)
+                    if quest:
+                        status = "[READY TO TURN IN]" if aq.state == QuestState.COMPLETE else ""
+                        lines.append(f"  [{quest.id}] {quest.name} (Lv.{quest.level}) {status}")
+
+                        # Show objectives
+                        for obj in aq.objectives:
+                            if not obj.hidden:
+                                check = "[X]" if obj.is_complete else "[ ]"
+                                opt = "(Optional)" if obj.optional else ""
+                                lines.append(f"      {check} {obj.description} {obj.progress_text} {opt}")
+            else:
+                lines.append("\nNo active quests.")
+
+        # Completed quests
+        if filter_type in ("complete", "all"):
+            if quest_log.completed_quests:
+                lines.append("\nCompleted Quests:")
+                for qid in sorted(quest_log.completed_quests):
+                    quest = quest_manager.get_quest(qid)
+                    if quest:
+                        lines.append(f"  [{qid}] {quest.name}")
+            elif filter_type == "complete":
+                lines.append("\nNo completed quests.")
+
+        lines.append("\nCommands: questlog | quest accept <id> | quest abandon <id> | quest turnin <id>")
+        return "\n".join(lines)
+
+    def cmd_quest_action(self, character, args):
+        """
+        Quest management command.
+        Usage:
+          quest list          - Show available quests
+          quest info <id>     - Show quest details
+          quest accept <id>   - Accept a quest
+          quest abandon <id>  - Abandon a quest
+          quest turnin <id>   - Turn in a completed quest
+        """
+        from src.quests import QuestState, apply_quest_rewards
+
+        if not args:
+            return self.cmd_questlog(character, "")
+
+        parts = args.split()
+        action = parts[0].lower()
+        quest_id = int(parts[1]) if len(parts) > 1 and parts[1].isdigit() else None
+
+        quest_log = self._get_quest_log(character)
+        quest_manager = self._get_quest_manager()
+
+        if action == "list":
+            # Show available quests in this room or from nearby NPCs
+            room_vnum = character.room.vnum if character.room else 0
+            available = quest_manager.get_available_quests(character, quest_log, room_vnum=room_vnum)
+
+            if not available:
+                # Show all available quests
+                available = quest_manager.get_available_quests(character, quest_log)
+
+            if available:
+                lines = ["=== Available Quests ==="]
+                for quest in available:
+                    lines.append(f"  [{quest.id}] {quest.name} (Lv.{quest.level}) - {quest.giver_npc}")
+                    lines.append(f"      {quest.description[:60]}...")
+                lines.append("\nUse 'quest accept <id>' to accept a quest.")
+                return "\n".join(lines)
+            else:
+                return "No quests available at your level."
+
+        elif action == "info":
+            if quest_id is None:
+                return "Usage: quest info <id>"
+
+            quest = quest_manager.get_quest(quest_id)
+            if not quest:
+                return f"Quest #{quest_id} not found."
+
+            lines = [f"=== {quest.name} ==="]
+            lines.append(f"Level: {quest.level} | Category: {quest.category.title()}")
+            lines.append(f"Quest Giver: {quest.giver_npc}")
+            lines.append(f"\n{quest.description}")
+
+            lines.append("\nObjectives:")
+            for obj in quest.objectives:
+                if not obj.hidden:
+                    opt = "(Optional)" if obj.optional else ""
+                    lines.append(f"  - {obj.description} {opt}")
+
+            lines.append("\nRewards:")
+            if quest.rewards.xp:
+                lines.append(f"  XP: {quest.rewards.xp}")
+            if quest.rewards.gold:
+                lines.append(f"  Gold: {quest.rewards.gold}")
+            for item in quest.rewards.items:
+                lines.append(f"  Item: {item}")
+            if quest.rewards.title:
+                lines.append(f"  Title: {quest.rewards.title}")
+            for faction, rep in quest.rewards.reputation.items():
+                lines.append(f"  Reputation: +{rep} with {faction}")
+
+            # Check status
+            if quest_log.is_quest_active(quest_id):
+                lines.append("\nStatus: ACTIVE")
+            elif quest_log.is_quest_complete(quest_id):
+                lines.append("\nStatus: COMPLETED")
+            else:
+                meets, reason = quest.prerequisites.check(character, quest_log)
+                if meets:
+                    lines.append("\nStatus: Available - use 'quest accept' to start")
+                else:
+                    lines.append(f"\nStatus: Locked - {reason}")
+
+            return "\n".join(lines)
+
+        elif action == "accept":
+            if quest_id is None:
+                return "Usage: quest accept <id>"
+
+            quest = quest_manager.get_quest(quest_id)
+            if not quest:
+                return f"Quest #{quest_id} not found."
+
+            # Check prerequisites
+            meets, reason = quest.prerequisites.check(character, quest_log)
+            if not meets:
+                return f"Cannot accept quest: {reason}"
+
+            success, msg = quest_log.accept_quest(quest)
+            if success and quest.accept_text:
+                msg += f"\n\n{quest.giver_npc} says: \"{quest.accept_text}\""
+            return msg
+
+        elif action == "abandon":
+            if quest_id is None:
+                return "Usage: quest abandon <id>"
+
+            quest = quest_manager.get_quest(quest_id)
+            if not quest:
+                return f"Quest #{quest_id} not found."
+
+            if not quest.abandonable:
+                return f"Quest '{quest.name}' cannot be abandoned."
+
+            success, msg = quest_log.abandon_quest(quest_id)
+            return msg
+
+        elif action == "turnin":
+            if quest_id is None:
+                return "Usage: quest turnin <id>"
+
+            quest = quest_manager.get_quest(quest_id)
+            if not quest:
+                return f"Quest #{quest_id} not found."
+
+            active_quest = quest_log.get_active_quest(quest_id)
+            if not active_quest:
+                return "You don't have this quest active."
+
+            if active_quest.state != QuestState.COMPLETE:
+                return "Quest objectives not complete yet."
+
+            # Turn in and apply rewards
+            success, msg = quest_log.turn_in_quest(quest_id)
+            if success:
+                lines = [msg]
+                if quest.complete_text:
+                    lines.append(f"\n{quest.giver_npc or 'Quest Giver'} says: \"{quest.complete_text}\"")
+
+                # Apply rewards
+                reward_msgs = apply_quest_rewards(character, quest, quest_log)
+                lines.extend(reward_msgs)
+
+                # Check for chain quest
+                if quest.chain_quest:
+                    next_quest = quest_manager.get_quest(quest.chain_quest)
+                    if next_quest:
+                        lines.append(f"\nNew quest available: {next_quest.name}")
+
+                return "\n".join(lines)
+            return msg
+
+        else:
+            return "Unknown quest action. Use: list, info, accept, abandon, turnin"
+
+    def cmd_talkto(self, character, args):
+        """
+        Talk to an NPC to get quests or turn in completed ones.
+        Usage: talkto <npc name>
+        """
+        from src.quests import QuestState, on_npc_talked, apply_quest_rewards
+
+        if not args:
+            return "Talk to who? Usage: talkto <npc name>"
+
+        npc_name = args.lower()
+        quest_log = self._get_quest_log(character)
+        quest_manager = self._get_quest_manager()
+
+        # Find NPC in room
+        npc = None
+        for mob in character.room.mobs:
+            if mob.alive and npc_name in mob.name.lower():
+                npc = mob
+                break
+
+        if not npc:
+            return f"You don't see '{args}' here."
+
+        lines = [f"You approach {npc.name}."]
+
+        # Update quest talk objectives
+        talk_msgs = on_npc_talked(character, npc.name, quest_log, quest_manager)
+        lines.extend(talk_msgs)
+
+        # Check for quests to turn in
+        turnin_quests = quest_manager.get_turnin_quests(quest_log, npc_name=npc.name)
+        for quest, active_quest in turnin_quests:
+            lines.append(f"\n{npc.name} says: \"Ah, you've completed {quest.name}!\"")
+            if quest.complete_text:
+                lines.append(f"\"{quest.complete_text}\"")
+
+            # Auto turn in
+            success, msg = quest_log.turn_in_quest(quest.id)
+            if success:
+                reward_msgs = apply_quest_rewards(character, quest, quest_log)
+                lines.extend(reward_msgs)
+
+        # Check for available quests
+        available = quest_manager.get_available_quests(character, quest_log, npc_name=npc.name)
+        if available:
+            lines.append(f"\n{npc.name} has quests available:")
+            for quest in available:
+                lines.append(f"  [{quest.id}] {quest.name} (Lv.{quest.level})")
+            lines.append("Use 'quest accept <id>' to accept a quest.")
+
+        # Show NPC dialogue if they have one
+        if hasattr(npc, 'dialogue') and npc.dialogue:
+            lines.append(f"\n{npc.name} says: \"{npc.dialogue}\"")
+        elif not available and not turnin_quests:
+            lines.append(f"\n{npc.name} has nothing to say right now.")
+
+        return "\n".join(lines)
+
+    def cmd_reputation(self, character, args):
+        """
+        Display your reputation with various factions.
+        Usage: reputation
+        """
+        reputation = getattr(character, 'reputation', {})
+        titles = getattr(character, 'titles', [])
+
+        lines = ["=== Reputation & Titles ==="]
+
+        if titles:
+            lines.append("\nTitles:")
+            for title in titles:
+                lines.append(f"  {title}")
+
+        if reputation:
+            lines.append("\nFaction Standing:")
+
+            # Reputation thresholds
+            def rep_rank(value):
+                if value >= 100:
+                    return "Exalted"
+                elif value >= 75:
+                    return "Revered"
+                elif value >= 50:
+                    return "Honored"
+                elif value >= 25:
+                    return "Friendly"
+                elif value >= 0:
+                    return "Neutral"
+                elif value >= -25:
+                    return "Unfriendly"
+                elif value >= -50:
+                    return "Hostile"
+                else:
+                    return "Hated"
+
+            for faction, value in sorted(reputation.items()):
+                rank = rep_rank(value)
+                lines.append(f"  {faction}: {value} ({rank})")
+        else:
+            lines.append("\nNo faction reputation yet.")
+
+        return "\n".join(lines)

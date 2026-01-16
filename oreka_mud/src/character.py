@@ -1,8 +1,9 @@
 
 from enum import Enum
-from src.combat import attack
+import random
 from src.classes import CLASSES
 from src.spells import get_spells_for_class
+from src import conditions as cond
 
 COLOR_TAGS = {
     "@RESET@": "\033[0m",
@@ -24,6 +25,35 @@ class State(Enum):
     EXPLORING = 1
     COMBAT = 2
 
+
+class HealthStatus(Enum):
+    """D&D 3.5 health states"""
+    HEALTHY = "healthy"       # HP > 0
+    DISABLED = "disabled"     # HP == 0, can take single action
+    DYING = "dying"           # HP -1 to -9, unconscious, losing HP
+    DEAD = "dead"             # HP <= -10
+    STABLE = "stable"         # Dying but stabilized
+
+
+# D&D 3.5 Equipment Slots
+EQUIPMENT_SLOTS = [
+    "head",       # Helm, hat, circlet
+    "face",       # Goggles, mask, lenses
+    "neck",       # Amulet, necklace, periapt
+    "shoulders",  # Cloak, cape, mantle
+    "body",       # Armor, robe
+    "torso",      # Vest, shirt (under armor)
+    "arms",       # Bracers, armbands
+    "hands",      # Gloves, gauntlets
+    "ring_left",  # Ring
+    "ring_right", # Ring
+    "waist",      # Belt
+    "feet",       # Boots, shoes
+    "main_hand",  # Weapon
+    "off_hand",   # Shield, second weapon, or empty
+]
+
+
 class Character:
     def __init__(self, name, title, race, level, hp, max_hp, ac, room, is_immortal=False, elemental_affinity=None,
                  str_score=10, dex_score=10, con_score=10, int_score=10, wis_score=10, cha_score=10,
@@ -39,6 +69,9 @@ class Character:
         self.ac = ac
         self.room = room
         self.quests = []
+        self.quest_log = None  # Will be initialized with QuestLog when needed
+        self.reputation = {}  # {faction_name: reputation_value}
+        self.titles = []  # List of earned titles
         self.state = State.EXPLORING
         self.is_ai = False
         self.is_immortal = is_immortal
@@ -66,8 +99,22 @@ class Character:
         self.prompt = "AC %a HP %h/%H [%RACE] >"  # Default prompt
         self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
         self.conditions = set()  # Track status effects/conditions (e.g., 'prone', 'flanking', 'shaken')
+        self.active_conditions = {}  # {condition_name: rounds_remaining} for duration tracking
         self.feats = feats if feats is not None else []  # Accept feats from constructor or default to empty list
         self.domains = domains if domains is not None else []  # List of domain names (e.g., ["War", "Sun"])
+
+        # Equipment system
+        self.equipment = {slot: None for slot in EQUIPMENT_SLOTS}
+        self.gold = 0  # Currency
+
+        # Dying/stabilization tracking
+        self.is_stable = False  # True if dying but stabilized
+
+        # Spell slot tracking
+        self.spells_used = {}  # {spell_level: count_used_today}
+
+        # Damage dice for unarmed attacks
+        self.damage_dice = [1, 3, 0]  # 1d3 unarmed by default
         self.domain_powers = {}  # domain_name -> granted power description or callable
         self.domain_spells = {}  # spell_level -> set of domain spell names
         self.is_builder = is_builder
@@ -234,6 +281,14 @@ class Character:
         class_data = self.get_class_data()
         return class_data.get("spellcasting", None)
     def to_dict(self):
+        # Serialize equipment
+        equipment_dict = {}
+        for slot, item in self.equipment.items():
+            if item:
+                equipment_dict[slot] = item.to_dict()
+            else:
+                equipment_dict[slot] = None
+
         return {
             "name": self.name,
             "title": self.title,
@@ -244,11 +299,15 @@ class Character:
             "class_features": self.class_features,
             "spells_known": getattr(self, 'spells_known', {}),
             "spells_per_day": getattr(self, 'spells_per_day', {}),
+            "spells_used": getattr(self, 'spells_used', {}),
             "hp": self.hp,
             "max_hp": self.max_hp,
             "ac": self.ac,
             "room_vnum": self.room.vnum if self.room else None,
             "quests": self.quests,
+            "quest_log": self.quest_log.to_dict() if self.quest_log else None,
+            "reputation": getattr(self, 'reputation', {}),
+            "titles": getattr(self, 'titles', []),
             "state": self.state.name if hasattr(self.state, 'name') else self.state,
             "is_ai": self.is_ai,
             "is_immortal": self.is_immortal,
@@ -264,9 +323,17 @@ class Character:
             "xp": self.xp,
             "show_all": self.show_all,
             "inventory": [item.to_dict() for item in self.inventory],
+            "equipment": equipment_dict,
+            "gold": getattr(self, 'gold', 0),
+            "feats": getattr(self, 'feats', []),
+            "skills": getattr(self, 'skills', {}),
+            "domains": getattr(self, 'domains', []),
             "alignment": getattr(self, 'alignment', None),
             "deity": getattr(self, 'deity', None),
             "is_builder": getattr(self, 'is_builder', False),
+            "is_stable": getattr(self, 'is_stable', False),
+            "conditions": list(getattr(self, 'conditions', set())),
+            "active_conditions": getattr(self, 'active_conditions', {}),
         }
 
     @staticmethod
@@ -322,7 +389,17 @@ class Character:
         char.class_features = data.get("class_features", [])
         char.spells_known = data.get("spells_known", {})
         char.spells_per_day = data.get("spells_per_day", {})
+        char.spells_used = data.get("spells_used", {})
         char.quests = data.get("quests", [])
+        # Load quest log from saved data
+        quest_log_data = data.get("quest_log")
+        if quest_log_data:
+            from src.quests import QuestLog
+            char.quest_log = QuestLog.from_dict(quest_log_data)
+        else:
+            char.quest_log = None
+        char.reputation = data.get("reputation", {})
+        char.titles = data.get("titles", [])
         char.state = State[data.get("state", "EXPLORING")]
         char.is_ai = data.get("is_ai", False)
         char.xp = data.get("xp", 0)
@@ -330,6 +407,25 @@ class Character:
         char.alignment = data.get("alignment")
         char.deity = data.get("deity")
         char.is_builder = data.get("is_builder", False)
+
+        # Load new fields
+        char.gold = data.get("gold", 0)
+        char.feats = data.get("feats", [])
+        char.skills = data.get("skills", {})
+        char.domains = data.get("domains", [])
+        char.is_stable = data.get("is_stable", False)
+        char.conditions = set(data.get("conditions", []))
+        char.active_conditions = data.get("active_conditions", {})
+
+        # Load equipment
+        equipment_data = data.get("equipment", {})
+        if equipment_data:
+            for slot, item_data in equipment_data.items():
+                if item_data:
+                    char.equipment[slot] = Item.from_dict(item_data)
+                else:
+                    char.equipment[slot] = None
+
         return char
 
     def _init_domains(self):
@@ -529,7 +625,487 @@ class Character:
 
     def has_condition(self, condition):
         """Check if the character has a given condition."""
-        return condition in self.conditions
+        return condition in self.conditions or condition in self.active_conditions
+
+    def get_condition_modifier(self, modifier_type: str) -> int:
+        """
+        Get total modifier from all conditions for a given type.
+        Uses the conditions module to calculate cumulative penalties/bonuses.
+
+        modifier_type can be: 'attack_penalty', 'ac_penalty', 'save_penalty',
+        'damage_penalty', 'initiative_penalty', etc.
+        """
+        return cond.calculate_condition_modifiers(self, modifier_type)
+
+    def can_act(self) -> bool:
+        """Check if character can take actions based on conditions."""
+        if not self.is_conscious:
+            return False
+        return cond.can_act(self)
+
+    def can_move(self) -> bool:
+        """Check if character can move based on conditions."""
+        if not self.is_conscious:
+            return False
+        return cond.can_move(self)
+
+    def can_cast(self) -> bool:
+        """Check if character can cast spells based on conditions."""
+        if not self.is_conscious:
+            return False
+        return cond.can_cast_spells(self)
+
+    def has_condition_effect(self, effect_key: str) -> bool:
+        """Check if any active condition has a specific effect."""
+        return cond.has_effect(self, effect_key)
+
+    def loses_dex_to_ac(self) -> bool:
+        """Check if character loses Dex bonus to AC from conditions."""
+        return cond.has_effect(self, 'loses_dex_to_ac')
+
+    def get_speed_multiplier(self) -> float:
+        """Get speed multiplier from conditions (e.g., exhausted = 0.5)."""
+        # Check for speed_multiplier in conditions
+        multiplier = 1.0
+        all_conditions = self.conditions | set(self.active_conditions.keys())
+        for cond_name in all_conditions:
+            condition = cond.get_condition(cond_name)
+            if condition and 'speed_multiplier' in condition.effects:
+                multiplier = min(multiplier, condition.effects['speed_multiplier'])
+        return multiplier
+
+    def list_conditions(self) -> list:
+        """Return list of active condition names with descriptions."""
+        result = []
+        all_conditions = self.conditions | set(self.active_conditions.keys())
+        for cond_name in sorted(all_conditions):
+            condition = cond.get_condition(cond_name)
+            if condition:
+                duration = self.active_conditions.get(cond_name)
+                if duration:
+                    result.append(f"{condition.name} ({duration} rounds)")
+                else:
+                    result.append(condition.name)
+            else:
+                result.append(cond_name)
+        return result
+
+    def describe_conditions(self) -> str:
+        """Get formatted description of all active conditions."""
+        conditions_list = self.list_conditions()
+        if not conditions_list:
+            return "No active conditions."
+        return "Active conditions: " + ", ".join(conditions_list)
+
+    # =========================================================================
+    # D&D 3.5 Health Status System
+    # =========================================================================
+
+    @property
+    def health_status(self) -> HealthStatus:
+        """
+        Determine character's health status based on HP.
+        D&D 3.5 rules: 0 = disabled, -1 to -9 = dying, -10 or less = dead
+        """
+        if self.hp > 0:
+            return HealthStatus.HEALTHY
+        elif self.hp == 0:
+            return HealthStatus.DISABLED
+        elif self.hp > -10:
+            if self.is_stable:
+                return HealthStatus.STABLE
+            return HealthStatus.DYING
+        else:
+            return HealthStatus.DEAD
+
+    @property
+    def is_conscious(self) -> bool:
+        """Check if character is conscious (can take actions)"""
+        status = self.health_status
+        return status in (HealthStatus.HEALTHY, HealthStatus.DISABLED)
+
+    @property
+    def is_alive(self) -> bool:
+        """Check if character is alive"""
+        return self.health_status != HealthStatus.DEAD
+
+    def stabilization_check(self) -> tuple:
+        """
+        Make a stabilization check when dying.
+        D&D 3.5: 10% chance to stabilize each round.
+        Returns (stabilized: bool, message: str)
+        """
+        if self.health_status not in (HealthStatus.DYING,):
+            return False, ""
+
+        roll = random.randint(1, 100)
+        if roll <= 10:
+            self.is_stable = True
+            return True, f"{self.name} stabilizes at {self.hp} HP!"
+        else:
+            # Lose 1 HP
+            self.hp -= 1
+            if self.hp <= -10:
+                return False, f"{self.name} bleeds out and dies!"
+            return False, f"{self.name} continues bleeding ({self.hp} HP)..."
+
+    def take_damage(self, amount: int) -> str:
+        """
+        Take damage and return status message.
+        Handles transition to dying/dead states.
+        """
+        old_hp = self.hp
+        self.hp -= amount
+
+        # If was stable and took damage, no longer stable
+        if self.is_stable and amount > 0:
+            self.is_stable = False
+
+        status = self.health_status
+        msg = f"{self.name} takes {amount} damage! ({old_hp} -> {self.hp} HP)"
+
+        if status == HealthStatus.DISABLED:
+            msg += f"\n{self.name} is disabled (0 HP)!"
+        elif status == HealthStatus.DYING:
+            msg += f"\n{self.name} is dying!"
+        elif status == HealthStatus.DEAD:
+            msg += f"\n{self.name} has died!"
+
+        return msg
+
+    def heal(self, amount: int) -> str:
+        """Heal damage and return status message."""
+        old_hp = self.hp
+        self.hp = min(self.hp + amount, self.max_hp)
+
+        # If healed above 0, no longer dying/stable
+        if self.hp > 0:
+            self.is_stable = False
+
+        return f"{self.name} heals {amount} HP! ({old_hp} -> {self.hp} HP)"
+
+    # =========================================================================
+    # Condition Duration System
+    # =========================================================================
+
+    def add_timed_condition(self, condition: str, duration: int = None):
+        """
+        Add a condition with optional duration in rounds.
+        If duration is None, condition is permanent until removed.
+        """
+        self.conditions.add(condition)
+        if duration is not None:
+            self.active_conditions[condition] = duration
+
+    def tick_conditions(self) -> list:
+        """
+        Called each combat round to decrement condition durations.
+        Returns list of expired condition names.
+        """
+        expired = []
+        to_remove = []
+
+        for condition, duration in self.active_conditions.items():
+            if duration is not None:
+                new_duration = duration - 1
+                if new_duration <= 0:
+                    expired.append(condition)
+                    to_remove.append(condition)
+                else:
+                    self.active_conditions[condition] = new_duration
+
+        # Remove expired conditions
+        for condition in to_remove:
+            del self.active_conditions[condition]
+            self.conditions.discard(condition)
+
+        return expired
+
+    # =========================================================================
+    # Equipment System
+    # =========================================================================
+
+    def get_equipment_slot_for_item(self, item) -> str:
+        """Determine which slot an item should go in based on its type."""
+        slot_mapping = {
+            'weapon': 'main_hand',
+            'shield': 'off_hand',
+            'armor': 'body',
+            'helm': 'head',
+            'helmet': 'head',
+            'hat': 'head',
+            'circlet': 'head',
+            'goggles': 'face',
+            'mask': 'face',
+            'amulet': 'neck',
+            'necklace': 'neck',
+            'periapt': 'neck',
+            'cloak': 'shoulders',
+            'cape': 'shoulders',
+            'mantle': 'shoulders',
+            'robe': 'body',
+            'vest': 'torso',
+            'shirt': 'torso',
+            'bracers': 'arms',
+            'armband': 'arms',
+            'gloves': 'hands',
+            'gauntlets': 'hands',
+            'ring': 'ring_left',  # Default to left, can specify right
+            'belt': 'waist',
+            'boots': 'feet',
+            'shoes': 'feet',
+        }
+
+        item_type = getattr(item, 'item_type', '').lower()
+        item_slot = getattr(item, 'slot', '').lower()
+
+        # First check if item has explicit slot
+        if item_slot and item_slot in EQUIPMENT_SLOTS:
+            return item_slot
+
+        # Check item type
+        if item_type in slot_mapping:
+            return slot_mapping[item_type]
+
+        # Check item name for hints
+        item_name = getattr(item, 'name', '').lower()
+        for keyword, slot in slot_mapping.items():
+            if keyword in item_name:
+                return slot
+
+        return None  # Can't be equipped
+
+    def equip_item(self, item, slot: str = None) -> tuple:
+        """
+        Equip an item to the appropriate slot.
+        Returns (success: bool, message: str, unequipped_item or None)
+        """
+        # Determine slot
+        if slot is None:
+            slot = self.get_equipment_slot_for_item(item)
+
+        if slot is None:
+            return False, f"You cannot equip {item.name}.", None
+
+        if slot not in EQUIPMENT_SLOTS:
+            return False, f"Invalid equipment slot: {slot}", None
+
+        # Handle ring slots
+        if slot == 'ring_left' and self.equipment.get('ring_left'):
+            if not self.equipment.get('ring_right'):
+                slot = 'ring_right'
+
+        # Check if item is in inventory
+        if item not in self.inventory:
+            return False, f"You don't have {item.name} in your inventory.", None
+
+        # Unequip current item in slot if any
+        unequipped = None
+        if self.equipment.get(slot):
+            unequipped = self.equipment[slot]
+            self.inventory.append(unequipped)
+
+        # Equip new item
+        self.equipment[slot] = item
+        self.inventory.remove(item)
+
+        # Recalculate AC
+        self._recalculate_ac()
+
+        msg = f"You equip {item.name}."
+        if unequipped:
+            msg += f" (Removed {unequipped.name})"
+
+        return True, msg, unequipped
+
+    def unequip_item(self, slot: str) -> tuple:
+        """
+        Unequip item from a slot.
+        Returns (success: bool, message: str, unequipped_item or None)
+        """
+        if slot not in EQUIPMENT_SLOTS:
+            return False, f"Invalid slot: {slot}", None
+
+        item = self.equipment.get(slot)
+        if not item:
+            return False, f"Nothing equipped in {slot}.", None
+
+        self.equipment[slot] = None
+        self.inventory.append(item)
+
+        # Recalculate AC
+        self._recalculate_ac()
+
+        return True, f"You remove {item.name}.", item
+
+    def _recalculate_ac(self):
+        """Recalculate AC based on equipped items and Dex."""
+        base_ac = 10
+        dex_mod = (self.dex_score - 10) // 2
+        max_dex = 99  # Default no limit
+
+        armor_bonus = 0
+        shield_bonus = 0
+        natural_bonus = 0
+        deflection_bonus = 0
+        dodge_bonus = 0
+
+        # Check body armor
+        armor = self.equipment.get('body')
+        if armor:
+            armor_bonus = getattr(armor, 'ac_bonus', 0)
+            max_dex = min(max_dex, getattr(armor, 'max_dex_bonus', 99))
+
+        # Check shield
+        shield = self.equipment.get('off_hand')
+        if shield and getattr(shield, 'item_type', '').lower() == 'shield':
+            shield_bonus = getattr(shield, 'ac_bonus', 0)
+
+        # Check other equipment for bonuses
+        for slot, item in self.equipment.items():
+            if item and slot not in ('body', 'off_hand'):
+                bonuses = getattr(item, 'stat_bonuses', {})
+                if 'natural_armor' in bonuses:
+                    natural_bonus = max(natural_bonus, bonuses['natural_armor'])
+                if 'deflection' in bonuses:
+                    deflection_bonus = max(deflection_bonus, bonuses['deflection'])
+                if 'dodge' in bonuses:
+                    dodge_bonus += bonuses['dodge']  # Dodge stacks
+
+        # Apply max dex from armor
+        effective_dex = min(dex_mod, max_dex)
+
+        self.ac = base_ac + armor_bonus + shield_bonus + natural_bonus + deflection_bonus + dodge_bonus + effective_dex
+
+    def get_equipped_weapon(self):
+        """Get the currently equipped weapon, or None for unarmed."""
+        return self.equipment.get('main_hand')
+
+    # =========================================================================
+    # Rest and Recovery
+    # =========================================================================
+
+    def rest(self, hours: int = 8) -> str:
+        """
+        Rest for a period of time.
+        8 hours = full rest (full HP recovery, spell slots restored)
+        1 hour = short rest (regain some HP)
+        """
+        messages = []
+
+        if hours >= 8:
+            # Long rest - full recovery
+            old_hp = self.hp
+            self.hp = self.max_hp
+            messages.append(f"After a full night's rest, you recover fully. ({old_hp} -> {self.max_hp} HP)")
+
+            # Restore spell slots
+            if self.spells_per_day:
+                self.spells_used = {}
+                messages.append("Your spell slots have been restored.")
+
+            # Clear temporary conditions
+            temp_conditions = ['fatigued', 'shaken']
+            for cond in temp_conditions:
+                if cond in self.conditions:
+                    self.conditions.discard(cond)
+                    messages.append(f"You are no longer {cond}.")
+
+            # Stabilize if dying
+            if self.health_status == HealthStatus.DYING:
+                self.is_stable = True
+                messages.append("You have stabilized.")
+
+        else:
+            # Short rest - recover some HP
+            con_mod = (self.con_score - 10) // 2
+            recovery = max(1, self.level + con_mod)
+            old_hp = self.hp
+            self.hp = min(self.hp + recovery, self.max_hp)
+            messages.append(f"After a short rest, you recover {self.hp - old_hp} HP. ({old_hp} -> {self.hp} HP)")
+
+        return "\n".join(messages)
+
+    # =========================================================================
+    # Feat Support
+    # =========================================================================
+
+    def has_feat(self, feat_name: str) -> bool:
+        """Check if character has a feat (case-insensitive, partial match)."""
+        feat_lower = feat_name.lower()
+        for f in self.feats:
+            if feat_lower in f.lower():
+                return True
+        return False
+
+    # =========================================================================
+    # Combat Maneuvers
+    # =========================================================================
+
+    def disarm(self, target):
+        """Attempt to disarm an opponent. Uses D&D 3.5 rules."""
+        from src import maneuvers
+        return maneuvers.disarm(self, target)
+
+    def trip(self, target):
+        """Attempt to trip an opponent. Uses D&D 3.5 rules."""
+        from src import maneuvers
+        return maneuvers.trip(self, target)
+
+    def bull_rush(self, target):
+        """Attempt to bull rush an opponent. Uses D&D 3.5 rules."""
+        from src import maneuvers
+        return maneuvers.bull_rush(self, target)
+
+    def grapple(self, target):
+        """Attempt to grapple an opponent. Uses D&D 3.5 rules."""
+        from src import maneuvers
+        return maneuvers.grapple(self, target)
+
+    def overrun(self, target):
+        """Attempt to overrun an opponent. Uses D&D 3.5 rules."""
+        from src import maneuvers
+        return maneuvers.overrun(self, target)
+
+    def sunder(self, target):
+        """Attempt to sunder an opponent's weapon. Uses D&D 3.5 rules."""
+        from src import maneuvers
+        return maneuvers.sunder(self, target)
+
+    def whirlwind_attack(self, targets):
+        """Attack all adjacent enemies once. Requires Whirlwind Attack feat."""
+        from src import maneuvers
+        return maneuvers.whirlwind_attack(self, targets)
+
+    def spring_attack(self, target, move_before=10, move_after=10):
+        """Move, attack, and continue moving. Requires Spring Attack feat."""
+        from src import maneuvers
+        return maneuvers.spring_attack(self, target, move_before, move_after)
+
+    def stunning_fist(self, target):
+        """Attempt to stun an opponent. Requires Stunning Fist feat."""
+        from src import maneuvers
+        return maneuvers.stunning_fist(self, target)
+
+    def feint(self, target):
+        """Attempt to feint in combat. Uses Bluff vs Sense Motive."""
+        from src import maneuvers
+        return maneuvers.feint(self, target)
+
+    def grapple_damage(self, target):
+        """Deal damage while grappling."""
+        from src import maneuvers
+        return maneuvers.grapple_action_damage(self, target)
+
+    def grapple_pin(self, target):
+        """Attempt to pin a grappled opponent."""
+        from src import maneuvers
+        return maneuvers.grapple_action_pin(self, target)
+
+    def grapple_escape(self, grappler):
+        """Attempt to escape from a grapple."""
+        from src import maneuvers
+        return maneuvers.grapple_action_escape(self, grappler)
 
     def render_prompt(self):
         prompt = self.prompt
