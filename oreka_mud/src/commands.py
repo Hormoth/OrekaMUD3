@@ -429,8 +429,359 @@ class CommandParser:
                 if spell_name in spells:
                     character.prepared_spells[lvl].remove(spell_name)
                     break
-        # Simulate spell effect (placeholder)
-        return f"You cast {spell_name}! {spell['description']} (Slots left for level {spell_level}: {character.spells_per_day[spell_level]})"
+
+        # Execute the spell effect
+        effect_result = self._execute_spell(character, spell_name, args, spell_level)
+
+        # Add slot info
+        slots_remaining = character.spells_per_day.get(spell_level, 0)
+        return f"{effect_result}\nSlots left for level {spell_level}: {slots_remaining}"
+
+    def _execute_spell(self, caster, spell_name, args, spell_level):
+        """Execute the actual spell effect - damage, healing, buffs, conditions."""
+        import random
+        from src.spells import (
+            get_spell, calculate_spell_damage, calculate_healing,
+            calculate_spell_dc, calculate_caster_level, get_num_missiles,
+            get_num_rays, SaveType, SpellEffectType, TargetType
+        )
+        from src import conditions as cond
+
+        spell = get_spell(spell_name)
+        if not spell:
+            return f"You cast {spell_name}! (Effect not implemented)"
+
+        char_class = getattr(caster, 'char_class', 'Wizard')
+        caster_level = calculate_caster_level(caster, char_class)
+        results = [f"You cast {spell.name}!"]
+
+        # Determine target
+        target = None
+        target_name = args.split()[-1] if args and len(args.split()) > len(spell_name.split()) else None
+
+        # For self-targeted spells
+        if spell.target_type == TargetType.SELF:
+            target = caster
+        # For touch/single target spells, find target
+        elif spell.target_type in (TargetType.TOUCH, TargetType.RANGED_TOUCH, TargetType.SINGLE):
+            if target_name:
+                # Look for target in room
+                if hasattr(caster, 'room') and caster.room:
+                    # Check mobs
+                    for mob in getattr(caster.room, 'mobs', []):
+                        if hasattr(mob, 'name') and mob.name.lower() == target_name.lower():
+                            if hasattr(mob, 'alive') and mob.alive:
+                                target = mob
+                                break
+                    # Check players
+                    if not target:
+                        for player in getattr(caster.room, 'players', []):
+                            if hasattr(player, 'name') and player.name.lower() == target_name.lower():
+                                target = player
+                                break
+            # Default to self for buffs/healing without target
+            if not target and spell.effect_type in (SpellEffectType.BUFF, SpellEffectType.HEALING, SpellEffectType.PROTECTION):
+                target = caster
+
+        # Handle touch attacks
+        if spell.target_type == TargetType.RANGED_TOUCH and target and target != caster:
+            # Roll ranged touch attack
+            attack_roll = random.randint(1, 20)
+            attack_bonus = (getattr(caster, 'level', 1) // 2) + ((getattr(caster, 'dex_score', 10) - 10) // 2)
+            total_attack = attack_roll + attack_bonus
+            target_touch_ac = 10 + ((getattr(target, 'dex_score', 10) - 10) // 2)
+
+            if attack_roll == 1 or (attack_roll != 20 and total_attack < target_touch_ac):
+                results.append(f"Ranged touch attack misses {target.name}! ({total_attack} vs Touch AC {target_touch_ac})")
+                return "\n".join(results)
+            results.append(f"Ranged touch attack hits {target.name}! ({total_attack} vs Touch AC {target_touch_ac})")
+
+        elif spell.target_type == TargetType.TOUCH and target and target != caster:
+            # Touch attack (melee)
+            attack_roll = random.randint(1, 20)
+            attack_bonus = (getattr(caster, 'level', 1) // 2) + ((getattr(caster, 'str_score', 10) - 10) // 2)
+            total_attack = attack_roll + attack_bonus
+            target_touch_ac = 10 + ((getattr(target, 'dex_score', 10) - 10) // 2)
+
+            # For healing/buff spells on allies, auto-hit
+            if spell.effect_type not in (SpellEffectType.DAMAGE, SpellEffectType.CONDITION, SpellEffectType.DEBUFF):
+                pass  # Auto-hit friendly spells
+            elif attack_roll == 1 or (attack_roll != 20 and total_attack < target_touch_ac):
+                results.append(f"Touch attack misses {target.name}! ({total_attack} vs Touch AC {target_touch_ac})")
+                return "\n".join(results)
+            else:
+                results.append(f"Touch attack hits {target.name}!")
+
+        # Calculate saving throw DC
+        spell_dc = calculate_spell_dc(caster, spell, char_class)
+
+        # Handle different spell effect types
+        # =====================================================================
+        # DAMAGE SPELLS
+        # =====================================================================
+        if spell.effect_type == SpellEffectType.DAMAGE and spell.damage_dice:
+            targets_hit = []
+
+            # Area spells hit multiple targets
+            if spell.target_type in (TargetType.AREA_BURST, TargetType.AREA_CONE, TargetType.AREA_LINE, TargetType.AREA_SPREAD):
+                if hasattr(caster, 'room') and caster.room:
+                    # Hit all mobs in room
+                    for mob in getattr(caster.room, 'mobs', []):
+                        if hasattr(mob, 'alive') and mob.alive:
+                            targets_hit.append(mob)
+            elif target:
+                targets_hit.append(target)
+
+            if not targets_hit:
+                results.append("No valid targets!")
+                return "\n".join(results)
+
+            # Special handling for Magic Missile (auto-hit, multiple missiles)
+            if spell.name.lower() == "magic missile":
+                num_missiles = get_num_missiles(caster_level)
+                total_damage = 0
+                for _ in range(num_missiles):
+                    missile_dmg = random.randint(1, 4) + 1
+                    total_damage += missile_dmg
+
+                # Distribute damage (simplified: all at one target)
+                for t in targets_hit[:1]:
+                    # Check for Shield spell immunity
+                    if hasattr(t, 'active_buffs') and t.active_buffs.get('immune_magic_missile'):
+                        results.append(f"{t.name}'s Shield blocks the missiles!")
+                        continue
+
+                    t.hp = max(0, t.hp - total_damage)
+                    results.append(f"{num_missiles} missiles strike {t.name} for {total_damage} force damage!")
+
+                    if t.hp <= 0:
+                        if hasattr(t, 'alive'):
+                            t.alive = False
+                        results.append(f"{t.name} is slain!")
+                        # Quest trigger
+                        if hasattr(caster, 'quest_log'):
+                            mob_type = getattr(t, 'mob_type', t.name.lower())
+                            quest_updates = quests.on_mob_killed(caster, mob_type)
+                            for update in quest_updates:
+                                results.append(f"[Quest] {update}")
+
+            # Special handling for Scorching Ray (multiple rays)
+            elif spell.name.lower() == "scorching ray":
+                num_rays = get_num_rays(caster_level)
+                for i, t in enumerate(targets_hit[:num_rays]):
+                    damage, dice_str = calculate_spell_damage(caster, spell.damage_dice, char_class)
+                    t.hp = max(0, t.hp - damage)
+                    results.append(f"Ray {i+1} hits {t.name} for {damage} fire damage! ({dice_str})")
+
+                    if t.hp <= 0:
+                        if hasattr(t, 'alive'):
+                            t.alive = False
+                        results.append(f"{t.name} is slain!")
+
+            # Standard damage spell
+            else:
+                damage, dice_str = calculate_spell_damage(caster, spell.damage_dice, char_class)
+
+                for t in targets_hit:
+                    final_damage = damage
+
+                    # Saving throw
+                    if spell.save_type != SaveType.NONE:
+                        save_roll = random.randint(1, 20)
+                        save_bonus = 0
+                        if spell.save_type == SaveType.REFLEX:
+                            save_bonus = ((getattr(t, 'dex_score', 10) - 10) // 2) + (getattr(t, 'level', 1) // 2)
+                        elif spell.save_type == SaveType.FORTITUDE:
+                            save_bonus = ((getattr(t, 'con_score', 10) - 10) // 2) + (getattr(t, 'level', 1) // 2)
+                        elif spell.save_type == SaveType.WILL:
+                            save_bonus = ((getattr(t, 'wis_score', 10) - 10) // 2) + (getattr(t, 'level', 1) // 2)
+
+                        total_save = save_roll + save_bonus
+
+                        if total_save >= spell_dc:
+                            if spell.save_effect.value == "half":
+                                final_damage = damage // 2
+                                results.append(f"{t.name} makes save ({total_save} vs DC {spell_dc}) - half damage!")
+                            elif spell.save_effect.value == "negates":
+                                results.append(f"{t.name} makes save ({total_save} vs DC {spell_dc}) - no effect!")
+                                continue
+                        else:
+                            results.append(f"{t.name} fails save ({total_save} vs DC {spell_dc})!")
+
+                    t.hp = max(0, t.hp - final_damage)
+                    damage_type = spell.damage_type or "magical"
+                    results.append(f"{t.name} takes {final_damage} {damage_type} damage! ({dice_str})")
+
+                    if t.hp <= 0:
+                        if hasattr(t, 'alive'):
+                            t.alive = False
+                        results.append(f"{t.name} is slain!")
+                        # Quest trigger
+                        if hasattr(caster, 'quest_log'):
+                            mob_type = getattr(t, 'mob_type', t.name.lower())
+                            quest_updates = quests.on_mob_killed(caster, mob_type)
+                            for update in quest_updates:
+                                results.append(f"[Quest] {update}")
+
+        # =====================================================================
+        # HEALING SPELLS
+        # =====================================================================
+        elif spell.effect_type == SpellEffectType.HEALING and spell.healing_dice:
+            if not target:
+                target = caster
+
+            healing, dice_str = calculate_healing(caster, spell.healing_dice, char_class)
+            old_hp = target.hp
+            target.hp = min(target.max_hp, target.hp + healing)
+            actual_heal = target.hp - old_hp
+
+            if target == caster:
+                results.append(f"You heal yourself for {actual_heal} HP! ({dice_str}) [HP: {target.hp}/{target.max_hp}]")
+            else:
+                results.append(f"You heal {target.name} for {actual_heal} HP! ({dice_str}) [HP: {target.hp}/{target.max_hp}]")
+
+        # =====================================================================
+        # BUFF SPELLS
+        # =====================================================================
+        elif spell.effect_type == SpellEffectType.BUFF and spell.buff_effects:
+            if not target:
+                target = caster
+
+            # Initialize active_buffs if needed
+            if not hasattr(target, 'active_buffs'):
+                target.active_buffs = {}
+
+            # Apply buff effects
+            buff_desc = []
+            duration_rounds = spell.duration_rounds if spell.duration_rounds > 0 else caster_level * 10
+
+            for buff_name, buff_value in spell.buff_effects.items():
+                target.active_buffs[buff_name] = {
+                    'value': buff_value,
+                    'duration': duration_rounds,
+                    'spell': spell.name
+                }
+
+                # Apply stat bonuses immediately
+                if buff_name == 'str_bonus':
+                    if not hasattr(target, 'temp_str_bonus'):
+                        target.temp_str_bonus = 0
+                    target.temp_str_bonus += buff_value
+                    buff_desc.append(f"+{buff_value} Str")
+                elif buff_name == 'dex_bonus':
+                    if not hasattr(target, 'temp_dex_bonus'):
+                        target.temp_dex_bonus = 0
+                    target.temp_dex_bonus += buff_value
+                    buff_desc.append(f"+{buff_value} Dex")
+                elif buff_name == 'con_bonus':
+                    if not hasattr(target, 'temp_con_bonus'):
+                        target.temp_con_bonus = 0
+                    target.temp_con_bonus += buff_value
+                    buff_desc.append(f"+{buff_value} Con")
+                elif buff_name == 'armor_bonus':
+                    if not hasattr(target, 'temp_ac_bonus'):
+                        target.temp_ac_bonus = 0
+                    target.temp_ac_bonus += buff_value
+                    buff_desc.append(f"+{buff_value} AC (armor)")
+                elif buff_name == 'shield_bonus':
+                    if not hasattr(target, 'temp_ac_bonus'):
+                        target.temp_ac_bonus = 0
+                    target.temp_ac_bonus += buff_value
+                    buff_desc.append(f"+{buff_value} AC (shield)")
+                elif buff_name == 'attack_bonus':
+                    buff_desc.append(f"+{buff_value} attack")
+                elif buff_name == 'save_bonus':
+                    buff_desc.append(f"+{buff_value} saves")
+                elif buff_name == 'invisible':
+                    if hasattr(target, 'add_condition'):
+                        target.add_condition('invisible')
+                    buff_desc.append("Invisible")
+                elif buff_name == 'fly_speed':
+                    buff_desc.append(f"Fly {buff_value} ft.")
+                elif buff_name == 'concealment':
+                    buff_desc.append(f"{buff_value}% concealment")
+
+            target_name = "yourself" if target == caster else target.name
+            results.append(f"You enhance {target_name}: {', '.join(buff_desc)} for {duration_rounds} rounds!")
+
+        # =====================================================================
+        # CONDITION SPELLS (debuffs)
+        # =====================================================================
+        elif spell.effect_type == SpellEffectType.CONDITION and spell.condition_applied:
+            if not target or target == caster:
+                results.append("You need a target for this spell!")
+                return "\n".join(results)
+
+            # Saving throw
+            saved = False
+            if spell.save_type != SaveType.NONE:
+                save_roll = random.randint(1, 20)
+                save_bonus = 0
+                if spell.save_type == SaveType.WILL:
+                    save_bonus = ((getattr(target, 'wis_score', 10) - 10) // 2) + (getattr(target, 'level', 1) // 2)
+                elif spell.save_type == SaveType.FORTITUDE:
+                    save_bonus = ((getattr(target, 'con_score', 10) - 10) // 2) + (getattr(target, 'level', 1) // 2)
+                elif spell.save_type == SaveType.REFLEX:
+                    save_bonus = ((getattr(target, 'dex_score', 10) - 10) // 2) + (getattr(target, 'level', 1) // 2)
+
+                total_save = save_roll + save_bonus
+
+                if total_save >= spell_dc:
+                    saved = True
+                    if spell.save_effect.value == "negates":
+                        results.append(f"{target.name} resists the spell! (Save {total_save} vs DC {spell_dc})")
+                        return "\n".join(results)
+                    elif spell.save_effect.value == "partial":
+                        results.append(f"{target.name} partially resists! (Save {total_save} vs DC {spell_dc})")
+                else:
+                    results.append(f"{target.name} fails to resist! (Save {total_save} vs DC {spell_dc})")
+
+            # Apply condition
+            condition_name = spell.condition_applied
+            duration = spell.condition_duration if spell.condition_duration > 0 else caster_level
+
+            if hasattr(target, 'add_condition'):
+                target.add_condition(condition_name)
+            if hasattr(target, 'active_conditions'):
+                target.active_conditions[condition_name] = duration
+
+            condition_display = condition_name.replace('_', ' ').title()
+            results.append(f"{target.name} is now {condition_display} for {duration} rounds!")
+
+        # =====================================================================
+        # PROTECTION SPELLS
+        # =====================================================================
+        elif spell.effect_type == SpellEffectType.PROTECTION:
+            if not target:
+                target = caster
+
+            if not hasattr(target, 'active_buffs'):
+                target.active_buffs = {}
+
+            duration_rounds = spell.duration_rounds if spell.duration_rounds > 0 else caster_level * 10
+
+            for buff_name, buff_value in spell.buff_effects.items():
+                target.active_buffs[buff_name] = {
+                    'value': buff_value,
+                    'duration': duration_rounds,
+                    'spell': spell.name
+                }
+
+            target_name = "yourself" if target == caster else target.name
+            results.append(f"You protect {target_name} with {spell.name} for {duration_rounds} rounds!")
+
+        # =====================================================================
+        # UTILITY/OTHER SPELLS
+        # =====================================================================
+        else:
+            results.append(spell.description)
+
+        # Show remaining slots
+        remaining = caster.spells_per_day.get(spell_level, 0)
+        results.append(f"(Level {spell_level} slots remaining: {remaining})")
+
+        return "\n".join(results)
+
     # ...existing code...
     def __init__(self, world):
         self.world = world
@@ -454,6 +805,11 @@ class CommandParser:
             "skills": self.cmd_skills,
             "spells": self.cmd_spells,
             "cast": self.cmd_cast,
+            "spellinfo": self.cmd_spellinfo,
+            "spellbook": self.cmd_spellbook,
+            "domains": self.cmd_domains,
+            "prepare": self.cmd_prepare,
+            "memorize": self.cmd_prepare,  # Alias
             "companion": self.cmd_companion,
             "quest": self.cmd_questpage,
             "levelup": self.cmd_levelup,
@@ -933,6 +1289,120 @@ class CommandParser:
         else:
             lines.append("Spells Per Day: None")
         return "\n".join(lines)
+
+    def cmd_spellinfo(self, character, args):
+        """Get detailed information about a specific spell."""
+        from src.spells import describe_spell, get_spell
+        if not args:
+            return "Usage: spellinfo <spell name>"
+        spell = get_spell(args)
+        if not spell:
+            return f"Unknown spell: {args}"
+        return describe_spell(args)
+
+    def cmd_spellbook(self, character, args):
+        """List all spells available to your class organized by level."""
+        from src.spells import get_spells_by_level, get_spell_count
+        char_class = getattr(character, 'char_class', None)
+        if not char_class:
+            return "You have no class to learn spells from."
+
+        # Check if class can cast spells
+        from src.classes import CLASSES
+        class_data = CLASSES.get(char_class, {})
+        spellcasting = class_data.get('spellcasting')
+        if not spellcasting:
+            return f"{char_class}s do not cast spells."
+
+        lines = [f"=== {char_class} Spellbook ==="]
+        lines.append(f"Spellcasting: {spellcasting.get('type', 'Unknown').title()}")
+
+        max_spell_level = min(9, (character.level + 1) // 2)  # Rough approximation
+
+        for spell_level in range(0, max_spell_level + 1):
+            spells = get_spells_by_level(char_class, spell_level)
+            if spells:
+                level_name = "Cantrips/Orisons" if spell_level == 0 else f"Level {spell_level}"
+                lines.append(f"\n{level_name}:")
+                for spell in spells:
+                    lines.append(f"  {spell.name} - {spell.school.value}")
+
+        lines.append(f"\nTotal spells in database: {get_spell_count()}")
+        return "\n".join(lines)
+
+    def cmd_domains(self, character, args):
+        """Show domain spells and powers for divine casters."""
+        from src.spells import get_domain_spells, get_domain_power, DOMAIN_DATA
+        char_class = getattr(character, 'char_class', None)
+
+        if char_class != "Cleric":
+            return "Only Clerics have domains."
+
+        domains = getattr(character, 'domains', [])
+        if not domains:
+            # Show available domains
+            lines = ["You have not chosen your domains yet."]
+            lines.append("\nAvailable Domains:")
+            for domain_name in sorted(DOMAIN_DATA.keys()):
+                power = get_domain_power(domain_name)
+                lines.append(f"  {domain_name}: {power[:60]}...")
+            return "\n".join(lines)
+
+        lines = ["=== Your Domains ==="]
+        for domain in domains:
+            lines.append(f"\n--- {domain} Domain ---")
+            power = get_domain_power(domain)
+            lines.append(f"Granted Power: {power}")
+            lines.append("Domain Spells:")
+            domain_spells = get_domain_spells(domain)
+            for level, spell_name in sorted(domain_spells.items()):
+                lines.append(f"  {level}: {spell_name}")
+
+        return "\n".join(lines)
+
+    def cmd_prepare(self, character, args):
+        """Prepare (memorize) a spell for prepared casters."""
+        from src.spells import get_spell
+        if not args:
+            return "Usage: prepare <spell name>"
+
+        # Check if character is a prepared caster
+        char_class = getattr(character, 'char_class', None)
+        spellcasting = character.get_spellcasting_info() if hasattr(character, 'get_spellcasting_info') else None
+
+        if not spellcasting or spellcasting.get('type', '').lower() != 'prepared':
+            # Wizards and Clerics are prepared, Sorcerers and Bards are spontaneous
+            if char_class in ("Sorcerer", "Bard"):
+                return f"As a {char_class}, you cast spells spontaneously and don't need to prepare them."
+            elif char_class not in ("Wizard", "Cleric", "Druid", "Paladin", "Ranger"):
+                return "You cannot prepare spells."
+
+        spell = get_spell(args)
+        if not spell:
+            return f"Unknown spell: {args}"
+
+        # Check if class can cast this spell
+        if char_class not in spell.level:
+            return f"{char_class}s cannot cast {spell.name}."
+
+        spell_level = spell.level[char_class]
+
+        # Initialize prepared_spells if needed
+        if not hasattr(character, 'prepared_spells'):
+            character.prepared_spells = {}
+        if spell_level not in character.prepared_spells:
+            character.prepared_spells[spell_level] = []
+
+        # Check if we have slots available
+        spells_per_day = getattr(character, 'spells_per_day', {})
+        max_prepared = spells_per_day.get(spell_level, 0)
+        current_prepared = len(character.prepared_spells.get(spell_level, []))
+
+        if current_prepared >= max_prepared:
+            return f"You cannot prepare any more level {spell_level} spells today. (Max: {max_prepared})"
+
+        character.prepared_spells[spell_level].append(spell.name)
+        return f"You prepare {spell.name} (level {spell_level}). Prepared: {current_prepared + 1}/{max_prepared}"
 
     def cmd_skills(self, character, args):
         lines = ["Skills, Feats, and Class Features:"]

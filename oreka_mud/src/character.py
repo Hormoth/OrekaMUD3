@@ -249,7 +249,16 @@ class Character:
         """Auto-populate spells known for spellcasting classes."""
         if self.char_class in ("Wizard", "Sorcerer", "Bard", "Cleric", "Paladin", "Ranger"):
             spells = get_spells_for_class(self.char_class, self.class_level)
-            return {spell["name"]: spell for spell in spells}
+            # Handle both old dict format and new Spell dataclass format
+            result = {}
+            for spell in spells:
+                if hasattr(spell, 'name'):
+                    # New Spell dataclass
+                    result[spell.name] = spell.name
+                elif isinstance(spell, dict):
+                    # Old dict format
+                    result[spell["name"]] = spell
+            return result
         return {}
 
     def _auto_spells_per_day(self):
@@ -258,7 +267,15 @@ class Character:
             spells = get_spells_for_class(self.char_class, self.class_level)
             per_day = {}
             for spell in spells:
-                lvl = spell["level"][self.char_class]
+                # Handle both old dict format and new Spell dataclass format
+                if hasattr(spell, 'level'):
+                    # New Spell dataclass
+                    lvl = spell.level.get(self.char_class, 0)
+                elif isinstance(spell, dict):
+                    # Old dict format
+                    lvl = spell["level"][self.char_class]
+                else:
+                    continue
                 per_day[lvl] = per_day.get(lvl, 0) + 1
             return {lvl: 1 for lvl in per_day}
         return {}
