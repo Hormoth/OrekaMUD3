@@ -697,11 +697,14 @@ async def handle_client(reader, writer, world, parser):
                 writer.write(
                     f"{WHITE}{result}\n{character.get_prompt()} {RESET}"
                 )
-        elif cmd in ["south", "east", "west"]:
-            result = parser.cmd_move(character, cmd)
+        elif cmd in ["north", "south", "east", "west", "up", "down", "n", "s", "e", "w", "u", "d"]:
+            # Map shortcuts to full direction names
+            direction_map = {"n": "north", "s": "south", "e": "east", "w": "west", "u": "up", "d": "down"}
+            direction = direction_map.get(cmd, cmd)
+            result = parser.cmd_move(character, direction)
             # Check if room changed
             add_space = character.room.vnum != prev_room_vnum
-            if "move" in result:
+            if "move" in result.lower():
                 look_result = parser.cmd_look(character, "")
                 writer.write(
                     format_room_output(
@@ -722,6 +725,51 @@ async def handle_client(reader, writer, world, parser):
             )
 
         await writer.drain()
+
+        # =====================================================================
+        # COMBAT LOOP - Auto-advance turns when in combat
+        # =====================================================================
+        from src.character import State
+        from src.combat import get_combat, start_combat as init_combat
+
+        if character.state == State.COMBAT:
+            combat = get_combat(character.room)
+            if combat and combat.is_active:
+                # Process combat round
+                combat_messages = []
+
+                # Check if combat should end
+                should_end, end_msg = combat.check_combat_end()
+                if should_end:
+                    combat_messages.append(end_msg)
+                    combat.end_combat()
+                    character.clear_combat_target()
+                    character.state = State.EXPLORING
+                else:
+                    # Advance to next turn
+                    turn_msg = combat.advance_turn()
+                    if turn_msg:
+                        combat_messages.append(turn_msg)
+
+                    # Get current combatant
+                    current = combat.get_current_combatant()
+                    if current:
+                        # Execute the turn (auto-attack or queued action)
+                        turn_result = combat.execute_turn(current.combatant, parser)
+                        combat_messages.append(turn_result)
+
+                        # Check again if combat should end after this action
+                        should_end, end_msg = combat.check_combat_end()
+                        if should_end:
+                            combat_messages.append(end_msg)
+                            combat.end_combat()
+                            character.clear_combat_target()
+                            character.state = State.EXPLORING
+
+                # Send all combat messages
+                if combat_messages:
+                    writer.write(f"{WHITE}" + "\n".join(combat_messages) + f"\n{character.get_prompt()} {RESET}")
+                    await writer.drain()
 
         if getattr(character, "is_ai", False):
             ai_result = await character.ai_decide(world)

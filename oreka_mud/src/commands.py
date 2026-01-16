@@ -1631,10 +1631,80 @@ class CommandParser:
 
         target = next((m for m in character.room.mobs if m.name.lower() == args.lower() and m.alive), None)
         if target:
+            # Initialize combat instance
+            from src.combat import start_combat as init_combat
+            combat = init_combat(character.room, character, target)
+
             character.state = State.COMBAT
             character.set_combat_target(target)  # Set auto-attack target
-            return attack(character, target)
+
+            # Build combat start message
+            results = []
+            results.append(combat.start_combat())
+            results.append(attack(character, target))
+
+            # Check if target died from first attack
+            if target.hp <= 0:
+                target.alive = False
+                results.append(f"{target.name} has been slain!")
+                # Quest trigger
+                if hasattr(character, 'quest_log'):
+                    mob_type = getattr(target, 'mob_type', target.name.lower())
+                    quest_updates = quests.on_mob_killed(character, mob_type)
+                    for update in quest_updates:
+                        results.append(f"[Quest] {update}")
+                # End combat if no enemies left
+                should_end, end_msg = combat.check_combat_end()
+                if should_end:
+                    results.append(end_msg)
+                    combat.end_combat()
+                    character.clear_combat_target()
+                    character.state = State.EXPLORING
+
+            return "\n".join(results)
         return "No such target!"
+
+    def cmd_flee(self, character, args):
+        """Attempt to flee from combat."""
+        import random
+        from src.combat import get_combat, end_combat
+
+        if character.state != State.COMBAT:
+            return "You're not in combat!"
+
+        # 50% base chance to flee, modified by Dex
+        dex_mod = (getattr(character, 'dex_score', 10) - 10) // 2
+        flee_chance = 50 + (dex_mod * 5)
+
+        if random.randint(1, 100) <= flee_chance:
+            # Success - pick a random exit and move
+            if character.room.exits:
+                direction = random.choice(list(character.room.exits.keys()))
+                new_vnum = character.room.exits[direction]
+
+                # Remove from combat
+                combat = get_combat(character.room)
+                if combat:
+                    combat.remove_combatant(character)
+                    # End combat if no players left
+                    should_end, _ = combat.check_combat_end()
+                    if should_end:
+                        end_combat(character.room)
+
+                character.state = State.EXPLORING
+                character.clear_combat_target()
+                character.clear_queue()
+
+                # Move to new room
+                if new_vnum in self.world.rooms:
+                    character.room.players.remove(character)
+                    character.room = self.world.rooms[new_vnum]
+                    character.room.players.append(character)
+                    return f"You flee {direction}!\nYou escape to {character.room.name}."
+
+            return "You flee in panic but there's nowhere to go!"
+        else:
+            return "You try to flee but can't escape!"
 
     # =========================================================================
     # Auto-Attack and Action Queue Commands
