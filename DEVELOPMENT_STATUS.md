@@ -17,10 +17,10 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 
 ## Project Overview
 
-**Total Codebase:** ~14,300 lines of Python
-**Core Systems:** 10 major modules
-**Commands:** 180+ player/admin commands
-**Completion Status:** ~92% core mechanics
+**Total Codebase:** ~14,500 lines of Python
+**Core Systems:** 11 major modules
+**Commands:** 190+ player/admin commands
+**Completion Status:** ~94% core mechanics
 
 ### Architecture
 - **Server:** Async telnet server for multiplayer
@@ -44,6 +44,7 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 | `maneuvers.py` | 766 | Complete | Combat maneuvers (disarm, trip, grapple) |
 | `conditions.py` | 484 | Complete | 20+ conditions with mechanical effects |
 | `classes.py` | 384 | Complete | 11 classes with full progression |
+| `chat.py` | 209 | Complete | Message broadcasting, chat channels, PvP announcements |
 | `items.py` | 99 | Basic | Item framework, needs expansion |
 | `mob.py` | 414 | Partial | NPC/monster system |
 | `room.py` | 22 | Minimal | Room structure |
@@ -78,6 +79,22 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 - **Auto-attack** - Automatically attacks target each round
 - **Action queue execution** - Queued spells/maneuvers replace auto-attack
 - **Mob AI targeting** - Mobs auto-target random players
+- **PvP Combat** - Players can attack other players with `kill <player>`
+
+### Chat System (`chat.py`)
+- **Room broadcasting** - Messages to all players in a room
+- **World broadcasting** - Global messages to all online players
+- **Private messaging** - Tell/whisper between players with reply support
+- **Chat channels:**
+  - `say` - Speak to players in the same room (white)
+  - `tell`/`whisper` - Private messages (magenta)
+  - `ooc` - Out-of-character chat (cyan)
+  - `global`/`chat` - World-wide chat (yellow)
+  - `shout`/`yell` - Area broadcast (bold yellow)
+  - `emote`/`me` - Roleplay actions (yellow)
+- **Movement announcements** - Arrival/departure messages when players move
+- **PvP announcements** - Combat start and defeat broadcasts to room
+- Color-coded output with ANSI escape sequences
 
 ### Spell System (`spells.py`)
 - **60+ spells** across levels 0-9
@@ -160,6 +177,12 @@ A D&D 3.5 Edition MUD (Multi-User Dungeon) implementation in Python.
 | Auto-Attack | Combat | Executes queued actions or auto-attacks each turn |
 | Auto-Attack | Spells | Queued spells cast via action queue |
 | Auto-Attack | Maneuvers | Queued maneuvers execute via action queue |
+| Chat | Room | say, emote broadcast to room players |
+| Chat | World | global, ooc broadcast to all online players |
+| Chat | Players | tell, whisper, reply for private messaging |
+| Movement | Chat | Arrival/departure announcements to rooms |
+| PvP | Combat | Players can attack players, shared combat instance |
+| PvP | Chat | Attack and defeat announcements to room |
 
 ### Partially Connected
 | System | Issue | Priority |
@@ -262,13 +285,15 @@ python -m pytest oreka_mud/tests/ -v
 - `src/character.py` - Character class and stats
 - `src/combat.py` - Combat resolution
 - `src/commands.py` - All player commands
+- `src/chat.py` - Message broadcasting and chat channels
 - `src/spells.py` - Spell definitions and casting
 - `src/feats.py` - Feat definitions and prerequisites
 
 ### Command Categories
-- **Movement:** north, south, east, west, up, down, recall
-- **Combat:** kill, flee, cast, attack
+- **Movement:** north, south, east, west, up, down, recall (shortcuts: n, s, e, w, u, d)
+- **Combat:** kill, flee, cast, attack (PvP: kill <player>)
 - **Auto-Attack:** queue (q), showqueue (sq), clearqueue (cq), autoattack (aa), target
+- **Chat:** say, tell, whisper, reply, emote, me, ooc, global, chat, shout, yell
 - **Inventory:** get, drop, inventory, wear, remove, equipment
 - **Information:** score, skills, spells, help, who
 - **Builder:** @dig, @desc, @exit, @mobadd, @itemadd
@@ -292,6 +317,48 @@ queue spell fireball     # Cast fireball next turn instead of attacking
 queue maneuver trip goblin   # Trip attempt next turn
 sq                       # Check what's queued
 aa                       # Toggle auto-attack off
+```
+
+### Chat Commands
+| Command | Description |
+|---------|-------------|
+| `say <message>` | Speak to players in the same room |
+| `tell <player> <message>` | Send private message to a player |
+| `whisper <player> <message>` | Alias for tell |
+| `reply <message>` | Reply to last person who sent you a tell |
+| `emote <action>` / `me <action>` | Perform a roleplay action |
+| `ooc <message>` | Out-of-character global chat |
+| `global <message>` / `chat <message>` | World-wide chat |
+| `shout <message>` / `yell <message>` | Shout to nearby areas |
+| `who` | List online players |
+
+**Examples:**
+```
+say Hello everyone!           # "PlayerName says, 'Hello everyone!'"
+tell Bob Want to group?       # Private message to Bob
+reply Sure!                   # Reply to last tell received
+emote waves hello             # "PlayerName waves hello"
+me 's eyes glow               # "PlayerName's eyes glow"
+ooc Anyone know where the inn is?
+global LFG level 5 dungeon
+```
+
+### PvP Commands
+| Command | Description |
+|---------|-------------|
+| `kill <player>` | Attack another player in the same room |
+
+**PvP Features:**
+- Both players enter combat state
+- Defender auto-targets attacker if no current target
+- Room receives attack and defeat announcements
+- Defeated players remain at 0 HP (can be healed/respawned)
+
+**Examples:**
+```
+kill Bob                      # Attack Bob (announces to room)
+# "*** PlayerName attacks Bob! ***"
+# On defeat: "*** Bob has been defeated by PlayerName! ***"
 ```
 
 ---
