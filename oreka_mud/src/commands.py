@@ -1762,6 +1762,12 @@ class CommandParser:
         return f"Players Online ({len(online)}):\n" + "\n".join(online)
 
     def cmd_kill(self, character, args):
+        """Attack a mob or player.
+        Usage: kill <target>
+        """
+        if not args:
+            return "Kill whom?"
+
         # Check if character can act based on conditions
         if hasattr(character, 'can_act') and not character.can_act():
             return "You cannot act in your current condition!"
@@ -1770,22 +1776,73 @@ class CommandParser:
         if hasattr(character, 'has_condition_effect') and character.has_condition_effect('cannot_attack'):
             return "You cannot attack in your current condition!"
 
+        target = None
+        is_pvp = False
+
+        # First check mobs
         target = next((m for m in character.room.mobs if m.name.lower() == args.lower() and m.alive), None)
-        if target:
-            # Initialize combat instance
-            from src.combat import start_combat as init_combat
-            combat = init_combat(character.room, character, target)
 
-            character.state = State.COMBAT
-            character.set_combat_target(target)  # Set auto-attack target
+        # If no mob found, check players (PvP)
+        if not target:
+            for player in character.room.players:
+                if player.name.lower() == args.lower():
+                    # Can't attack yourself
+                    if player == character:
+                        return "You can't attack yourself!"
+                    # Can't attack dead players
+                    if getattr(player, 'hp', 0) <= 0:
+                        return f"{player.name} is already dead!"
+                    target = player
+                    is_pvp = True
+                    break
 
-            # Build combat start message
-            results = []
-            results.append(combat.start_combat())
-            results.append(attack(character, target))
+        if not target:
+            return "No such target!"
 
-            # Check if target died from first attack
-            if target.hp <= 0:
+        # Initialize combat instance
+        from src.combat import start_combat as init_combat
+        from src.chat import broadcast_to_room
+
+        combat = init_combat(character.room, character, target)
+
+        character.state = State.COMBAT
+        character.set_combat_target(target)
+
+        # If PvP, put the other player in combat too
+        if is_pvp:
+            target.state = State.COMBAT
+            if not getattr(target, 'combat_target', None):
+                target.set_combat_target(character)  # Auto-target attacker
+
+        # Build combat start message
+        results = []
+        combat_start_msg = combat.start_combat()
+        results.append(combat_start_msg)
+
+        # Announce PvP to room
+        if is_pvp:
+            broadcast_to_room(character.room,
+                f"\033[1;31m*** {character.name} attacks {target.name}! ***\033[0m",
+                exclude=character)
+
+        # Execute first attack
+        attack_result = attack(character, target)
+        results.append(attack_result)
+
+        # Check if target died from first attack
+        if target.hp <= 0:
+            if is_pvp:
+                # Player death
+                results.append(f"\033[1;31m{target.name} has been defeated by {character.name}!\033[0m")
+                broadcast_to_room(character.room,
+                    f"\033[1;31m*** {target.name} has been defeated by {character.name}! ***\033[0m",
+                    exclude=character)
+                # Don't set alive=False for players, just leave them at 0 HP
+                # They can be healed or will need to respawn
+                target.state = State.EXPLORING
+                target.clear_combat_target()
+            else:
+                # Mob death
                 target.alive = False
                 results.append(f"{target.name} has been slain!")
                 # Quest trigger
@@ -1794,16 +1851,16 @@ class CommandParser:
                     quest_updates = quests.on_mob_killed(character, mob_type)
                     for update in quest_updates:
                         results.append(f"[Quest] {update}")
-                # End combat if no enemies left
-                should_end, end_msg = combat.check_combat_end()
-                if should_end:
-                    results.append(end_msg)
-                    combat.end_combat()
-                    character.clear_combat_target()
-                    character.state = State.EXPLORING
 
-            return "\n".join(results)
-        return "No such target!"
+            # End combat if no enemies left
+            should_end, end_msg = combat.check_combat_end()
+            if should_end:
+                results.append(end_msg)
+                combat.end_combat()
+                character.clear_combat_target()
+                character.state = State.EXPLORING
+
+        return "\n".join(results)
 
     def cmd_flee(self, character, args):
         """Attempt to flee from combat."""
