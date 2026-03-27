@@ -1,0 +1,1003 @@
+[
+  {
+    "vnum": 13100,
+    "name": "Canopy Hold — Rootwall Gate (West)",
+    "description": "A massive barrier of interwoven thorns, living roots, and stone anchors blocks the western approach to Canopy Hold. The Rootwall rises thirty feet high, its surface bristling with iron-hard thorns the length of a forearm, and the gate itself is a tunnel of trained vine controlled by a Kovaka gate-warden stationed in a platform above. Stone pillars — the signature Kovaka adaptation — reinforce the living wall at structural points, earth-element runes carved into their faces glowing faintly in the perpetual green twilight. The air smells of jungle loam and the sharp resin of sky-oak sap.",
+    "exits": {
+      "north": 13101,
+      "south": 9405
+    },
+    "flags": [
+      "gate",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13101,
+    "name": "Canopy Hold — Guard Station",
+    "description": "Just inside the Rootwall Gate, a permanent guard station occupies a stone-reinforced platform built into the wall's interior face. Four Kovaka warriors maintain watch here at all times, their stone-ward totems humming faintly with earth-element resonance. Weapon racks line the inner wall holding spears, short bows, and the heavy-bladed machetes that Kovaka jungle patrols favor. The station's roof is woven living vine, and the floor is packed earth reinforced with flat stones — the Kovaka compromise between their ancestral masonry and the jungle's demands.",
+    "exits": {
+      "south": 13100,
+      "east": 13102,
+      "north": 13103
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13102,
+    "name": "Canopy Hold — Supply Cache",
+    "description": "A low stone-and-timber building set against the Rootwall's interior serves as the ground-level supply cache for Canopy Hold's garrison. Barrels of preserved rations, bundles of arrows, coils of rope, and replacement bridge-planks are stored in methodical Kovaka fashion — everything labeled, inventoried, and rotated on a schedule that has not varied in decades. The building is one of the few ground-level permanent structures, its stone walls a concession to the Kovaka preference for earth-worked construction. A thick layer of moss grows on the roof, camouflaging it from above.",
+    "exits": {
+      "west": 13101,
+      "north": 13104
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13103,
+    "name": "Canopy Hold — Rope-Lift Station",
+    "description": "Three heavy rope-and-pulley lifts ascend from the jungle floor to the mid-canopy platforms one hundred and thirty feet above. The mechanisms are Kovaka engineering at its most practical — stone counterweights, ironwood pulleys, and braided sky-oak rope that can support four armored warriors simultaneously. A lift attendant operates each mechanism from a ground-level booth, communicating with the platform above through a system of tugs and bell-pulls. The lifts creak and sway as they ascend through layers of increasingly dense foliage, the light shifting from green twilight to the bright canopy above.",
+    "exits": {
+      "south": 13101,
+      "up": 13105,
+      "east": 13104
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13104,
+    "name": "Canopy Hold — Jungle Clearing",
+    "description": "A deliberately maintained clearing at the base of Canopy Hold's central sky-oak provides space for ground-level assembly and the occasional ceremony that tradition demands be performed on bare earth. The clearing is perhaps forty paces across, its edges defined by the massive buttress roots of surrounding trees. Stone markers at the cardinal points bear Kovaka earth-ward glyphs that keep the jungle from reclaiming the space. The central sky-oak's trunk rises like a fortress tower, its bark scarred by centuries of carved-stair construction, and the first platform is visible as a dark shape against the canopy far above.",
+    "exits": {
+      "west": 13103,
+      "south": 13102,
+      "up": 13106
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13105,
+    "name": "Canopy Hold — Arrival Platform",
+    "description": "The rope-lift deposits passengers onto a broad ironwood platform one hundred and thirty feet above the jungle floor, where the perpetual twilight of the lower canopy gives way to dappled sunlight filtering through the sky-oaks' upper leaves. The platform is reinforced with Kovaka stone anchors driven into the host tree's trunk, and its railings are living vine trained into chest-high barriers. From here, the full scope of Canopy Hold becomes visible — a network of platforms, bridges, and structures spanning dozens of trees, home to nearly four thousand Kovaka Elves. The wind carries the sounds of hammers, voices, and the creak of bridge-rope.",
+    "exits": {
+      "down": 13103,
+      "north": 13107,
+      "east": 13108,
+      "west": 13110
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13106,
+    "name": "Canopy Hold — Carved-Stair Trunk",
+    "description": "A spiral staircase carved directly into the heartwood of the central sky-oak winds upward through the tree's massive trunk, emerging at intervals onto small landings that connect to the settlement's platform network. The stairs are Kovaka work — precise, geometric cuts reinforced with stone pegs that prevent the living wood from closing the passage. Bioluminescent moss cultivated in carved recesses provides a steady blue-green light, and the air inside the trunk is warm and resinous. The staircase is the oldest structure in Canopy Hold, carved by the first Kovaka settlers who refused to live in a tree they had not properly shaped.",
+    "exits": {
+      "down": 13104,
+      "up": 13115
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13107,
+    "name": "Canopy Hold — Guard Barracks",
+    "description": "The garrison barracks occupies three interconnected platforms spanning two sky-oaks, housing sixty Kovaka warriors in rotating shifts. Hammocks strung between stone-anchored posts sway gently in the canopy breeze, and each warrior's kit is stored in a stone-lined cubby beneath their sleeping position — armor, weapons, and a personal stone-ward totem. The barracks master maintains discipline with the quiet efficiency characteristic of Kovaka military culture, where orders are given once and disobedience is simply not a concept that occurs to anyone. A cooking platform extends from the barracks' eastern edge, its stone hearth set in a bed of fire-resistant clay.",
+    "exits": {
+      "south": 13105,
+      "east": 13109,
+      "north": 13111
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13108,
+    "name": "Canopy Hold — Weapon Rack Platform",
+    "description": "A dedicated armament platform serves as both arsenal and workshop for the garrison's weapon maintenance. Racks of spears, bows, machetes, and the distinctive Kovaka stone-headed war hammers line the platform's inner edge, while the outer edge holds workbenches where weaponsmiths repair and sharpen the garrison's equipment. The weapons here reflect the Kovaka adaptation to jungle warfare — lighter than their ancestral mountain gear, with stone-element enchantments that make blades hold their edge in the humid air. A vine-bridge connects east to the training platform where these weapons see daily use.",
+    "exits": {
+      "west": 13105,
+      "east": 13112
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13109,
+    "name": "Canopy Hold — Training Platform",
+    "description": "The largest single platform in Canopy Hold's mid-canopy level, this training ground is sixty paces across and reinforced with so many stone anchors that it barely moves in the wind. Kovaka warriors drill here in formations adapted for canopy warfare — bridge defense, platform assault, and the vertical combat techniques unique to arboreal settlements. Straw dummies hang from overhead branches at varying heights, and sections of bridge and platform have been reconstructed for practice assaults. The platform's surface is scarred by thousands of weapon impacts, and the air rings with the clash of practice blades.",
+    "exits": {
+      "west": 13107,
+      "south": 13112
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13110,
+    "name": "Canopy Hold — Patrol Staging Area",
+    "description": "The western edge of the mid-canopy level serves as the staging point for Canopy Hold's deep jungle patrols. Rope descent lines hang from reinforced anchor points, ready for rapid deployment, and a planning table carved from a single slab of ironwood holds the current patrol map — a living document updated by returning scouts. Kovaka patrol leaders brief their teams here before descending into the jungle below, their routes covering a territory that extends three days' march in every direction. Signal-horn stations at the platform's corners can relay warnings across the entire settlement in seconds.",
+    "exits": {
+      "east": 13105,
+      "north": 13113
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13111,
+    "name": "Canopy Hold — Healer's Station",
+    "description": "The garrison healer maintains a well-equipped station on a sheltered platform between two sky-oaks, its roof of woven fronds providing shade and rain protection. Stone basins hold clean water drawn up from the jungle floor, and shelves of medicinal herbs — both Kovaka traditional remedies and local jungle plants adopted over generations — line the interior walls. The healer here is trained in both Kovaka stone-ward medicine, which uses earth-element resonance to accelerate bone and tissue healing, and the practical jungle herbalism that treats the fevers, infections, and venomous bites that are the garrison's most common casualties.",
+    "exits": {
+      "south": 13107,
+      "east": 13114,
+      "west": 13113
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13112,
+    "name": "Canopy Hold — Mid-Canopy Bridge Crossing",
+    "description": "A long vine-bridge spans the gap between the weapon rack platform and the training ground, swaying gently one hundred and thirty feet above the jungle floor. The bridge is typical Kovaka construction — ironwood planks lashed to braided sky-oak rope, with stone anchor points at each end that could support ten times the bridge's rated load. Kovaka warriors cross at a jog without holding the rope railings, a casual display of the balance that canopy life demands. The view from the bridge's midpoint encompasses the full sweep of Canopy Hold's mid-canopy level, platforms and structures visible in every direction through gaps in the foliage.",
+    "exits": {
+      "north": 13109,
+      "west": 13108
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13113,
+    "name": "Canopy Hold — Patrol Healer's Post",
+    "description": "A small emergency station positioned near the patrol staging area provides immediate treatment for returning patrol members. A single healer and an apprentice maintain the post, which stocks anti-venoms, fever-reducing tinctures, and the Kovaka stone-poultice that draws infection from wounds using earth-element resonance. The post is deliberately austere — patrol warriors are expected to be tough, and lingering here longer than necessary earns pointed commentary from the healer. A vine-bridge connects east to the main healer's station for serious cases.",
+    "exits": {
+      "south": 13110,
+      "east": 13111
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13114,
+    "name": "Canopy Hold — Mid-Canopy Junction",
+    "description": "A broad junction platform connects the mid-canopy level to the upper canopy via a series of ascending bridges and ladder-stairs. This is one of the busiest points in Canopy Hold, where warriors heading to training, healers moving between stations, and civilians descending from the residential platforms above all converge. Stone directional markers carved with Kovaka glyphs indicate routes to major destinations. The junction platform is reinforced with double stone anchors and can serve as a defensive chokepoint if the upper canopy is threatened — arrow-slots are carved into the stone anchor posts.",
+    "exits": {
+      "west": 13111,
+      "north": 13115
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13115,
+    "name": "Canopy Hold — Upper Canopy Market Platform",
+    "description": "The market platform occupies the largest open space in Canopy Hold's upper canopy, a broad deck spanning four sky-oaks at one hundred and fifty feet. Kovaka merchants and visiting traders display goods on stone-topped tables arranged in concentric rings around a central well that drops through the platform to the levels below. Trade goods reflect the settlement's dual nature — Kovaka stone-worked tools and weapons alongside jungle products like sky-oak resin, medicinal herbs, and the iridescent feathers of canopy birds. The market operates on a barter system supplemented by Gilded Standard Company trade-tokens accepted throughout the Deepwater Marches.",
+    "exits": {
+      "down": 13106,
+      "north": 13116,
+      "east": 13118,
+      "west": 13120,
+      "south": 13114
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13116,
+    "name": "Canopy Hold — Elder's Council Hall",
+    "description": "The council hall is the most impressive structure in Canopy Hold — a circular chamber built into the crown of the settlement's oldest sky-oak, its walls formed by the tree's own growth trained over generations into smooth curves. Stone pillars imported from Kovaka ancestral quarries support a domed ceiling of woven branches, and the floor is polished ironwood inlaid with stone geometric patterns in the Kovaka tradition. The Elder Council of seven meets here to govern Canopy Hold's affairs, their stone-carved seats arranged in a half-circle facing the eastern window where the morning sun enters. The hall can seat two hundred for general assembly.",
+    "exits": {
+      "south": 13115,
+      "east": 13117,
+      "west": 13121
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13117,
+    "name": "Canopy Hold — Kovaka Stone-Ward Shrine",
+    "description": "The heart of Kovaka spiritual life in Canopy Hold, this shrine houses a rough-hewn earth altar brought from the ancestral mountain homeland when the settlement was founded. The altar is a single block of grey granite veined with copper, and it resonates with earth-element energy so strongly that even non-Elves can feel the hum through their feet. Kovaka warriors come here before patrol to touch the stone and renew their connection to the element that defines their sub-race. The shrine's walls are carved with the names of every Kovaka who has died defending Canopy Hold — a list that grows slowly but has never stopped growing in three centuries of jungle warfare.",
+    "exits": {
+      "west": 13116,
+      "south": 13118
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13118,
+    "name": "Canopy Hold — Eastern Residential Platforms",
+    "description": "A cluster of family platforms extends along the eastern edge of the upper canopy, each one a self-contained dwelling built around a sky-oak branch thick enough to support a stone hearth. Kovaka families live in these platforms in groups of eight to twelve, the extended-family structure that has defined Kovaka social organization since before the jungle migration. Children play on vine-nets strung between platforms, and elders sit in carved stone chairs watching the jungle canopy with the patient alertness of people who have lived their entire lives at height. The platforms sway gently in the wind, a motion as natural to residents as breathing.",
+    "exits": {
+      "west": 13115,
+      "north": 13117,
+      "east": 13119,
+      "south": 13133
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13119,
+    "name": "Canopy Hold — Scout Lookout",
+    "description": "The highest point in Canopy Hold, this observation platform sits one hundred and fifty feet above the jungle floor at the crown of the tallest sky-oak, above even the canopy layer. From here, the jungle extends in every direction to the horizon — an unbroken sea of green punctuated only by the distant glint of the Apelian Sea to the east and the haze of the Deepwood's interior to the west. Kovaka scouts maintain a continuous watch from this platform, their keen Elven eyes scanning for smoke, movement, or the distinctive canopy disturbance that indicates large creatures moving below. A signal-horn mounted on a stone post can be heard throughout the settlement.",
+    "exits": {
+      "west": 13118
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13120,
+    "name": "Canopy Hold — Bridge to Western Watch",
+    "description": "A long suspension bridge extends westward from the market platform toward the settlement's western perimeter watch station. The bridge spans nearly two hundred feet of open canopy, swaying noticeably in the wind, and is the most exposed crossing in Canopy Hold. Kovaka warriors use it without hesitation, but visitors often pause at the midpoint where the bridge dips lowest and the jungle floor is visible as a distant green darkness far below. Stone counterweights at each end keep the bridge taut, and maintenance crews inspect every rope and plank on a weekly rotation.",
+    "exits": {
+      "east": 13115,
+      "west": 13128
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13121,
+    "name": "Canopy Hold — Armory",
+    "description": "The settlement's main armory is built into a hollow in the central sky-oak's upper trunk, its entrance guarded by two Kovaka warriors at all times. Inside, stone-lined walls keep the humidity at bay, preserving the stored weapons and armor in fighting condition. The armory holds enough equipment to arm every adult in Canopy Hold — a Kovaka tradition dating to the mountain homeland where every citizen was expected to fight. Racks of stone-headed war hammers, ironwood longbows, and the distinctive Kovaka leaf-blade swords line the walls, along with stacks of stone-reinforced leather armor suited to canopy warfare.",
+    "exits": {
+      "east": 13116,
+      "south": 13122
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13122,
+    "name": "Canopy Hold — Provision Stores",
+    "description": "The upper canopy provision stores serve the residential platforms, holding preserved foods, fresh water in stone cisterns, and the daily necessities of a settlement of nearly four thousand. Kovaka efficiency is evident in every aspect — stone-sealed containers keep insects and moisture out, and an inventory system using carved tally-sticks tracks consumption with mathematical precision. The stores are resupplied by rope-lift from the ground level, and a dedicated team of provisioners manages the logistics of feeding an arboreal city. Smoked meat, dried fruit, jungle tubers, and the flat stone-baked bread that is the Kovaka staple fill the shelves.",
+    "exits": {
+      "north": 13121,
+      "west": 13124,
+      "south": 13123
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13123,
+    "name": "Canopy Hold — Southern Vine-Bridge Crossing",
+    "description": "A vine-bridge extends southward from the provision stores toward the settlement's southern residential cluster, crossing a gap between two massive sky-oaks. The bridge is newer construction — its ropes still pale and its planks unworn — built to accommodate the settlement's growing population. From the crossing's midpoint, the lower levels of Canopy Hold are visible through gaps in the foliage: the mid-canopy training platforms, the rope-lift mechanisms, and the dim green darkness of the jungle floor far below. Kovaka children use this bridge as a shortcut between the residential areas and the market, their laughter carrying across the canopy.",
+    "exits": {
+      "north": 13122,
+      "south": 13124,
+      "east": 13125
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13124,
+    "name": "Canopy Hold — Southern Residential Platforms",
+    "description": "The southern residential cluster mirrors its eastern counterpart — family platforms built around sky-oak branches, connected by vine-bridges and shared common spaces. This area houses the settlement's craftworkers and their families, and the platforms are cluttered with the tools of their trades: stone-carving implements, rope-braiding frames, woodworking benches, and the small forges where Kovaka smiths produce their distinctive stone-headed tools. The craftworkers' quarter has a busier, louder character than the eastern residences, with the sounds of hammering and sawing continuing from dawn to dusk.",
+    "exits": {
+      "north": 13123,
+      "east": 13122,
+      "south": 13126
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13125,
+    "name": "Canopy Hold — Northern Vine-Bridge Crossing",
+    "description": "This vine-bridge connects the central upper canopy to the northern residential and administrative platforms, crossing above one of the main rope-lift shafts. The bridge vibrates faintly when the lifts operate below, a sensation that residents use as a natural clock — morning supply lifts, midday personnel shifts, evening provision runs. Stone anchor points at each end bear carved Kovaka blessings invoking earth-element stability, and the bridge's rope railings are wound with living vine that has been trained to grip hands that reach for it. The view northward shows the Elder Council Hall rising above the surrounding platforms.",
+    "exits": {
+      "west": 13123,
+      "north": 13127
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13126,
+    "name": "Canopy Hold — Western Residential Platforms",
+    "description": "The western residential platforms house Canopy Hold's warrior families — those whose primary adults serve in the garrison or on patrol rotations. The platforms here are slightly more spartan than the craftworkers' quarter, reflecting the Kovaka warrior tradition of functional simplicity. Weapon racks stand beside family hearths, and children here learn to handle blades and bows alongside their letters. A communal platform at the cluster's center serves as gathering space, training ground for young warriors, and the site of the seasonal ceremonies that mark Kovaka military life — promotions, honors, and the naming of the fallen.",
+    "exits": {
+      "east": 13127,
+      "north": 13124
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13127,
+    "name": "Canopy Hold — Northern Administrative Platform",
+    "description": "The settlement's administrative functions occupy a cluster of small platforms north of the council hall, where the record-keepers, census-takers, and logistics officers who manage Canopy Hold's daily operations work with the methodical precision that defines Kovaka governance. Stone tablets and ironwood writing boards hold population records, patrol schedules, supply inventories, and the diplomatic correspondence that connects Canopy Hold to the wider Deepwater Marches political landscape. The platform's chief administrator serves the Elder Council directly and is considered one of the settlement's most important positions — the person who makes the council's decisions become reality.",
+    "exits": {
+      "south": 13125,
+      "west": 13126
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13128,
+    "name": "Canopy Hold — Western Watch Platform",
+    "description": "The western perimeter watch station stands at the edge of Canopy Hold's territorial boundary, a fortified platform with stone-reinforced walls and arrow-slits facing the deep jungle. Two Kovaka warriors maintain constant watch here, scanning the western approaches for any sign of incursion. The platform is equipped with signal horns, fire-arrows for night signaling, and a emergency descent line that reaches the jungle floor in seconds. From this vantage point, the jungle canopy stretches unbroken to the western horizon, and on clear days the faint shimmer of heat rising from the Deepwood's interior is visible as a distant haze.",
+    "exits": {
+      "east": 13120,
+      "south": 13129
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13129,
+    "name": "Canopy Hold — Eastern Approach Bridge",
+    "description": "A secondary access bridge extends from the western watch platform southward toward a concealed descent point, providing an alternate route into and out of Canopy Hold for scouts and patrol teams who need to bypass the main Rootwall Gate. The bridge is deliberately less maintained than the settlement's internal crossings — its vines left partially wild, its planks spaced wider — to discourage casual use. Only warriors with specific patrol authorization use this route, and its exit point on the jungle floor is known only to the garrison commander and active patrol leaders.",
+    "exits": {
+      "north": 13128,
+      "south": 13130
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13130,
+    "name": "Canopy Hold — Patrol Path",
+    "description": "A narrow canopy-level path follows a series of branches and vine-bridges through the trees south of the main settlement, used exclusively by patrol teams moving between watch stations without descending to the jungle floor. The path is marked by subtle Kovaka trail-signs — small stone chips embedded in bark, barely visible to anyone who does not know the system. Movement along this route requires the balance and agility that Kovaka warriors develop through a lifetime of canopy living, and even experienced non-Elf visitors find the journey challenging. The jungle sounds are louder here, away from the settlement's noise, and the sense of isolation is immediate.",
+    "exits": {
+      "north": 13129,
+      "east": 13131
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13131,
+    "name": "Canopy Hold — Deep Jungle Overlook",
+    "description": "A natural clearing in the canopy where a fallen sky-oak has left a gap provides an unobstructed view down to the jungle floor one hundred and fifty feet below. Kovaka scouts use this overlook to observe ground-level activity without descending, and a permanent observation blind has been constructed from woven branches and living vine. The view reveals the jungle's layered structure — the dark floor, the understory of ferns and shade-plants, the mid-canopy tangle of branches and vines, and the bright upper canopy where Canopy Hold's platforms catch the sun. Animal movement on the floor is visible as shadows passing through the green darkness.",
+    "exits": {
+      "west": 13130,
+      "south": 13132
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13132,
+    "name": "Canopy Hold — Emergency Descent",
+    "description": "The emergency descent point is Canopy Hold's last-resort evacuation route — a series of stone-anchored rope drops that can lower the entire settlement's population to the jungle floor in under an hour. The mechanism has been tested annually for three centuries and has been used in earnest twice, both times during storms that threatened the canopy structure. The descent ropes are maintained to the highest Kovaka standard, and stone-carved instructions at each drop point ensure that even panicked civilians can operate the mechanism without assistance. A vine-bridge connects back toward the main settlement to the north.",
+    "exits": {
+      "north": 13131
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13133,
+    "name": "Canopy Hold — Upper Canopy Garden",
+    "description": "A series of broad platforms between the residential clusters supports Canopy Hold's canopy gardens — raised beds of earth hauled up from the jungle floor by rope-lift and contained in stone-walled planters. Kovaka farmers cultivate medicinal herbs, cooking spices, and the hardy vegetables that tolerate the canopy's light and wind conditions. The gardens are tended primarily by elders and children, and the work has a meditative quality that contrasts with the garrison's martial rhythm. Stone channels direct rainwater from collection funnels into the planting beds, a Kovaka irrigation design adapted from their ancestral mountain terraces.",
+    "exits": {
+      "north": 13118,
+      "west": 13134
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13134,
+    "name": "Canopy Hold — Canopy Overlook Rest",
+    "description": "A quiet platform at the settlement's northern edge serves as a resting place for off-duty warriors and civilians seeking solitude. Stone benches carved in the Kovaka style — geometric, angular, surprisingly comfortable — face northward over the unbroken jungle canopy. The platform has no military function and exists solely because a Kovaka elder three generations ago declared that warriors who cannot find peace will eventually lose the ability to find enemies. The view is extraordinary — nothing but green canopy extending to the horizon, the sky above enormous and empty, and the wind carrying the clean scent of sky-oak and rain.",
+    "exits": {
+      "east": 13133
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 13140,
+    "name": "The Spur — Peninsula Road",
+    "description": "A narrow road of packed earth and broken stone follows the spine of a rocky peninsula jutting eastward into the Apelian Sea. The vegetation thins noticeably here — jungle gives way to salt-tolerant scrub, and the ground becomes increasingly rocky as the peninsula narrows. To the north and south, grey water stretches to the horizon, and the wind carries the salt-and-mineral smell of the Apelian. Ahead, at the peninsula's tip, a crumbling stone tower rises against the sky — apparently long abandoned, its upper floors open to the weather. Locals avoid this road, and even the jungle animals give the peninsula a wide berth.",
+    "exits": {
+      "north": 9300,
+      "east": 13141
+    },
+    "flags": []
+  },
+  {
+    "vnum": 13141,
+    "name": "The Spur — Rocky Shore",
+    "description": "The peninsula's shoreline is exposed here — flat shelves of dark stone extending into the Apelian's grey water, worn smooth by centuries of wave action. Tide pools hold small crabs and anemones, but the usual seabirds are absent, lending the shore an unsettling emptiness. The rock underfoot has an unusual blue-grey veining that does not correspond to any natural formation found elsewhere in the Deepwater Marches. The tower ahead grows larger with each step, its apparent decay becoming more detailed — missing stones, sagging window frames, vegetation growing from cracks in the walls. The wind off the sea is cold and steady.",
+    "exits": {
+      "west": 13140,
+      "east": 13142
+    },
+    "flags": []
+  },
+  {
+    "vnum": 13142,
+    "name": "The Spur — Tower Approach",
+    "description": "The road narrows to a rough path as it approaches the tower's outer perimeter, and something changes in the air. A subtle pressure builds behind the eyes, and the background awareness that Kin take for granted — the constant low hum of living things sensed through Kin-sense — begins to fade. The sensation is deeply unsettling, like going slowly deaf in a frequency no one else can hear. The tower's base is perhaps two hundred yards ahead, its crumbling walls stark against the grey sky. No birds sing here. No insects buzz. The only sounds are wind, waves, and footsteps on stone.",
+    "exits": {
+      "west": 13141,
+      "east": 13143
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "suppressed",
+        "message": "Your Kin-sense dims. Something ahead actively dampens resonance."
+      }
+    ]
+  },
+  {
+    "vnum": 13143,
+    "name": "The Spur — Crumbling Outer Wall",
+    "description": "A wall of mortared stone encircles the tower compound, breached in several places where weather and apparent neglect have toppled sections into rubble. The breaches look natural — the work of centuries of salt air and storm — but the blue-grey veined stone beneath the mortar is the same anomalous material found along the shoreline. The Kin-sense suppression deepens here, the background hum of living things fading to a whisper. Weeds grow through the wall's cracks, and a rusted iron gate hangs from one hinge at the compound's entrance. Everything about this place says abandoned. Everything about the feeling says otherwise.",
+    "exits": {
+      "west": 13142,
+      "east": 13144
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "suppressed",
+        "message": "Your Kin-sense dims. Something ahead actively dampens resonance."
+      }
+    ]
+  },
+  {
+    "vnum": 13144,
+    "name": "The Spur — Main Gate",
+    "description": "The main gate of the tower compound is a heavy ironbound door set into the outer wall, hanging ajar at an angle that suggests a broken hinge. Rust streaks run down its face, and the wood is weathered to a uniform grey. A casual observer would see nothing but an abandoned ruin too remote and unremarkable to investigate. The Kin-sense void here is complete — absolute silence in the frequency where life should register. The compound beyond the gate shows an overgrown courtyard with the tower rising from its center, apparently three stories of crumbling stone. The deception is masterful and has held for three hundred years.",
+    "exits": {
+      "west": 13143,
+      "north": 13145
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13145,
+    "name": "The Spur — Courtyard",
+    "description": "The tower's courtyard is deliberately overgrown — weeds, moss, and small shrubs cover every surface in a display of abandonment so thorough that it must be maintained. And indeed, close inspection reveals that the overgrowth follows careful patterns: pathways are subtly clear beneath the surface vegetation, and the 'rubble' piled against the walls conceals ventilation shafts and drainage systems in perfect working order. The Domnathar have spent three centuries perfecting this illusion. The tower rises from the courtyard's center, its three visible stories genuinely crumbling — the real structure extends downward, not upward.",
+    "exits": {
+      "south": 13144,
+      "east": 13146,
+      "west": 13148,
+      "north": 13149,
+      "down": 13151
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13146,
+    "name": "The Spur — Outer Wall Walk (East)",
+    "description": "A narrow walkway follows the interior of the eastern wall, accessible by stone steps that appear to crumble underfoot but are in fact structurally sound. The wall walk provides a view of the Apelian Sea to the east and the courtyard below, and serves as a patrol route for the Domnathar guards who maintain the compound's perimeter security. Guard posts are concealed in the wall's remaining 'towers' — positions that look like collapsed stonework but contain maintained observation slits and arrow loops. The Domnathar who patrol here move like predators, silent and economical, their void-signatures invisible to any Kin-sense that could penetrate this far.",
+    "exits": {
+      "west": 13145,
+      "north": 13147
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13147,
+    "name": "The Spur — Collapsed Tower (False)",
+    "description": "What appears to be the compound's northeastern tower, collapsed into a heap of rubble and overgrown with salt-tolerant vine, is in fact the primary entrance to the Spur's underground complex. The 'rubble' is a carefully constructed shell concealing a stone staircase that descends into the earth, its entrance hidden beneath a pivoting slab that looks exactly like a fallen lintel stone. The mechanism operates silently — Domnathar engineering maintained by hands that have three centuries of practice. From the outside, nothing distinguishes this ruin from any other collapsed coastal fortification in the Deepwater Marches.",
+    "exits": {
+      "south": 13146,
+      "down": 13153
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13148,
+    "name": "The Spur — Sea-Cliff Path",
+    "description": "A narrow path carved into the cliff face on the compound's western side descends from the courtyard toward the waterline, switchbacking down the peninsula's rocky flank. The path is exposed to the Apelian's weather and would be impassable in a storm, but in calm conditions it provides access to a small dock at the base of the cliff. The stonework here is older than the tower above — Domnathar construction from the original settlement period, its blue-grey veined stone worn but structurally perfect after nearly six centuries. The path is not disguised; the Domnathar consider the sea approach sufficiently defended by the cliff itself.",
+    "exits": {
+      "east": 13145,
+      "down": 13150
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13149,
+    "name": "The Spur — Outer Wall Walk (North)",
+    "description": "The northern wall walk overlooks the open Apelian Sea, where the peninsula ends in a sheer cliff dropping forty feet to the water. The view is bleak and magnificent — grey water to the horizon, unbroken by island or ship, and the constant wind carrying the salt spray that has weathered the compound's stones to their current state of apparent decay. A concealed signal station here can communicate with vessels approaching from the north, using a system of reflected light that is invisible to observers on shore. The Domnathar maintain at least one vessel in the Apelian at all times.",
+    "exits": {
+      "south": 13145
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13150,
+    "name": "The Spur — Old Dock",
+    "description": "A small stone dock extends from the base of the sea-cliff into the Apelian, its construction perfectly functional despite appearances suggesting centuries of disuse. Rusted iron mooring rings are set into the dock's surface, and seaweed grows along its edges in patterns that suggest regular disturbance — boats tie up here more often than the rust would indicate. The dock can accommodate two small vessels simultaneously, and a winch mechanism concealed in a natural-looking rock formation can haul supplies up the cliff path. The water here is deep enough for a draft vessel to approach within arm's reach of the dock.",
+    "exits": {
+      "up": 13148
+    },
+    "flags": [],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13151,
+    "name": "The Spur — Hidden Entrance",
+    "description": "Behind a section of courtyard wall that swings inward on concealed hinges, a passage descends into the earth beneath the tower. The transition from the deliberately ruined exterior to the maintained interior is jarring — within ten feet of the hidden door, the walls change from weathered stone to clean, smooth surfaces of blue-grey Domnathar alloy, lit by steady cold-burning lamps that have not flickered in three centuries. The air changes too, from salt wind to the cool, recycled atmosphere of an underground complex. This is the secondary entrance, used when the collapsed tower approach is being observed.",
+    "exits": {
+      "up": 13145,
+      "east": 13153
+    },
+    "flags": [
+      "indoor"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13152,
+    "name": "The Spur — Entry Hall",
+    "description": "The entry hall of the Spur's underground complex is a deliberate statement of power. Where the exterior cultivates decay, this space is immaculate — polished blue-grey stone floors, walls of the same material worked to a mirror finish, and a ceiling that arches twenty feet overhead supported by pillars carved with Domnathar geometric patterns. Cold-burning lamps in wall sconces cast steady, shadowless light. The hall is maintained with obsessive precision, every surface clean, every lamp burning evenly. The contrast with the ruins above is the point: this is what the Domnathar truly are, and the abandoned tower is what they want you to think they are.",
+    "exits": {
+      "west": 13153,
+      "east": 13154,
+      "south": 13155
+    },
+    "flags": [
+      "indoor"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13153,
+    "name": "The Spur — Guard Post",
+    "description": "The primary guard post controls access between the hidden entrances and the complex's interior. Four Domnathar guards maintain watch here in shifts, their presence detectable only by sight — in the Kin-sense void, they register as nothing, and their movements are trained to absolute silence. The guard post is equipped with mechanisms that can seal every entrance to the complex simultaneously, and an alarm system of vibrating wires connects to every occupied chamber below. The guards are among the youngest Domnathar here, a mere two centuries old, and they watch with the patient alertness of predators accustomed to waiting decades between meals.",
+    "exits": {
+      "east": 13152,
+      "up": 13147,
+      "west": 13151
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13154,
+    "name": "The Spur — Corridor",
+    "description": "A long corridor of polished blue-grey stone connects the entry hall to the complex's functional chambers, its walls lined with cold-burning lamps at precise intervals. The corridor is wide enough for three people abreast and high enough that the ceiling disappears in shadow above the lamplight. Doors of heavy Domnathar alloy line both sides, each one featureless except for a small geometric symbol that serves as identification. The corridor is silent except for footsteps, and the recycled air carries a faint metallic taste that is characteristic of Domnathar construction — the blue-grey alloy that blocks Kin-sense also has a subtle chemical presence.",
+    "exits": {
+      "west": 13152,
+      "north": 13156,
+      "south": 13157,
+      "east": 13158
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13155,
+    "name": "The Spur — Holding Cells",
+    "description": "Six cells line the walls of this chamber, each one a cube of blue-grey Domnathar alloy with a single barred opening at eye height. The cells are designed for both interrogation and long-term containment, and their construction ensures that no Kin-sense signal can escape — prisoners held here are effectively dead to anyone searching for them. The cells show evidence of recent use: water stains on the floors, scratch marks on the walls, and the lingering chemical smell of Domnathar cleaning agents. Whatever happens to people brought here, the Domnathar are meticulous about maintaining the facilities afterward.",
+    "exits": {
+      "north": 13152
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13156,
+    "name": "The Spur — War Room",
+    "description": "The Domnathar war room is the operational heart of the Spur, a chamber dominated by a massive stone table carved with a relief map of the entire Deepwater Marches region. The map is updated continuously — tiny markers indicate settlements, trade routes, military positions, and the locations of individuals the Domnathar consider strategically important. Three hundred years of intelligence gathering have produced a picture of the region more detailed than any single government possesses. Shelves along the walls hold bound volumes of operational records dating to the original invasion, and a second, smaller table holds current dispatches from Domnathar agents embedded throughout Orekan society.",
+    "exits": {
+      "south": 13154
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13157,
+    "name": "The Spur — Laboratory",
+    "description": "The laboratory is the most disturbing chamber in the Spur's upper level. Workbenches of blue-grey stone hold equipment whose purpose is not immediately clear but whose implications are deeply unsettling — devices for measuring Kin-sense resonance, containers holding biological samples preserved in Domnathar chemical solutions, and anatomical diagrams of Orekan races annotated in a script that predates the invasion. The Domnathar have spent three centuries studying how Kin-sense works in order to better subvert it, and the laboratory's records document experiments conducted with a clinical detachment that acknowledges no ethical boundary.",
+    "exits": {
+      "north": 13154
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13158,
+    "name": "The Spur — Library of Invasion Records",
+    "description": "Floor-to-ceiling shelves of blue-grey alloy hold the complete written record of the Domnathar presence in Oreka, from the initial invasion through every year of the three centuries since. The records are maintained in the Domnathar script — angular, geometric, written in a metallic ink that does not fade — and they document everything: military operations, intelligence assessments, cultural analysis, biological research, and the slow patient work of rebuilding from near-total defeat. A reading desk in the room's center holds the current year's volume, already thick with entries. The library is the Domnathar's institutional memory, and its loss would set their operations back by decades.",
+    "exits": {
+      "west": 13154,
+      "south": 13159
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13159,
+    "name": "The Spur — Commanders' Quarters",
+    "description": "The Domnathar commanders' quarters are spartan by any standard — narrow bunks of blue-grey alloy, personal storage compartments built into the walls, and a shared table for meals and briefings. The austerity is not poverty but ideology; the Domnathar who rebuilt here after the invasion's failure chose to live as soldiers rather than conquerors, and their quarters reflect three centuries of military discipline maintained without external authority. Personal effects are minimal — a few books, a weapon, the geometric totems that serve as Domnathar identity markers. Six commanders share this space, each one between four and five centuries old.",
+    "exits": {
+      "north": 13158,
+      "down": 13160
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13160,
+    "name": "The Spur — Descending Stairs",
+    "description": "A stone staircase descends from the commanders' quarters into the Spur's deep levels, carved from the living rock of the peninsula itself. The stairs are old — the oldest construction in the complex, dating to the invasion period — and the blue-grey alloy that lines the walls here is thicker than anywhere above, creating a resonance-null zone so complete that even the memory of Kin-sense seems to fade. The air grows colder with each step downward, and the cold-burning lamps are spaced farther apart, their light barely reaching from one to the next. Whatever is below was built to be hidden even from the Domnathar's own surface operations.",
+    "exits": {
+      "up": 13159,
+      "down": 13161
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13161,
+    "name": "The Spur — Underground Dock",
+    "description": "A natural sea-cave at the peninsula's waterline has been expanded and reinforced into a functional submarine dock, large enough to accommodate two vessels of moderate size. The cave's mouth opens below the cliff face, invisible from the surface, and the water inside is black and still. A stone quay provides mooring and cargo handling, and a winch system moves supplies to the upper levels. The dock is the Spur's primary logistics connection to the wider Domnathar network — agents, supplies, and intelligence move through here by sea, arriving and departing without any surface indication. The salt air mixes with the metallic taste of Domnathar alloy.",
+    "exits": {
+      "up": 13160,
+      "east": 13162
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13162,
+    "name": "The Spur — Resonance-Null Chamber",
+    "description": "The deepest and most heavily shielded chamber in the Spur, this room is lined entirely in blue-grey Domnathar alloy of extraordinary thickness — walls, floor, and ceiling forming a seamless shell that creates the most complete Kin-sense void known to exist in Oreka. The effect is physically painful to Kin-sensitive races: not merely silence but a howling absence, as though the sense itself is being crushed. The chamber serves as the Spur's most secure meeting room and its most effective interrogation space. Things discussed here cannot be overheard by any known means, natural or supernatural. Even the air feels dead.",
+    "exits": {
+      "west": 13161,
+      "north": 13163,
+      "south": 13164,
+      "east": 13166
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13163,
+    "name": "The Spur — Artifact Vault",
+    "description": "Behind a door of solid Domnathar alloy six inches thick lies the Spur's most carefully guarded space: a vault containing artifacts recovered from the original invasion force. Shelves of the ubiquitous blue-grey metal hold devices whose purposes range from the understood to the incomprehensible — resonance disruptors, communication crystals, weapons that manipulate Kin-sense frequencies, and sealed containers whose contents the current Domnathar leadership has not been able to identify. The vault represents the remnant of a technological civilization that crossed between worlds, and even the Spur's eldest inhabitants do not fully understand everything stored here.",
+    "exits": {
+      "south": 13162
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13164,
+    "name": "The Spur — Breeding Chamber",
+    "description": "The chamber that produced the Flamewargs — the Domnathar's most successful biological weapon — is still operational, though the current breeding program is smaller and more focused than the mass production of the invasion era. Stone-walled pens line the chamber's perimeter, and the chemical smell here is strongest, a complex mixture of biological preservatives and growth accelerants. The Flamewargs bred here are smarter and more controllable than their invasion-era predecessors, the product of three centuries of selective refinement. Records on the wall track bloodlines with the precision of a horse-breeder's stud book, each generation an incremental improvement in the Domnathar's design.",
+    "exits": {
+      "north": 13162,
+      "east": 13165
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13165,
+    "name": "The Spur — Escape Tunnel",
+    "description": "A narrow tunnel bored through the peninsula's bedrock extends from the deep levels to an exit point on the sea-cliff face thirty feet above the waterline, concealed behind a natural-looking rock formation. The tunnel is barely wide enough for a single person to pass, and its walls are rough-cut — the only space in the Spur that shows haste rather than precision in its construction. Emergency supply caches are set into wall niches at intervals, each containing rations, weapons, and sealed containers of Domnathar identity-concealment materials. The tunnel is the Spur's final contingency: if everything above falls, the leadership escapes to sea.",
+    "exits": {
+      "west": 13164
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13166,
+    "name": "The Spur — Ancient Gate Mechanism",
+    "description": "A massive device of blue-grey Domnathar alloy occupies the entirety of this chamber — the remnant of the gate mechanism that the original invasion force used to cross between worlds. The device is broken, its central column sheared cleanly through by forces that scarred the surrounding walls with blast marks still visible after five centuries. Domnathar engineers have studied the mechanism continuously since their defeat, their notes filling hundreds of volumes, but the technology required to repair it exceeds what this remnant population can produce. The gate is the Domnathar's greatest hope and greatest frustration: proof that return is theoretically possible, and proof that it is practically beyond their reach.",
+    "exits": {
+      "west": 13162,
+      "south": 13167
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13167,
+    "name": "The Spur — Deep Laboratory",
+    "description": "A secondary laboratory in the deep levels focuses on the gate mechanism research, its workbenches covered with fragments of Domnathar alloy, crystalline components, and hand-drawn diagrams attempting to reconstruct the gate's operating principles from surviving fragments. The work here has the quality of desperation refined into patience — generations of researchers each adding incrementally to understanding, knowing they will not live to see completion. The current lead researcher has worked in this room for one hundred and forty years. On the eastern wall, a door of unusual construction leads to the sanctum of the Spur's eldest inhabitant.",
+    "exits": {
+      "north": 13166,
+      "east": 13168
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13168,
+    "name": "The Spur — Approach to the Elder's Sanctum",
+    "description": "A short corridor of unusually thick Domnathar alloy connects the deep laboratory to the private sanctum of the Spur's eldest inhabitant — a Domnathar who crossed through the gate five hundred and ninety-eight years ago and has outlived every other member of the original invasion leadership. The corridor is guarded by two of the Spur's most experienced warriors, and their demeanor suggests that whatever lies beyond the door is treated with a deference that borders on reverence. The air here is different — colder, with a metallic sharpness that stings the nostrils. The door at the corridor's end is the heaviest in the complex.",
+    "exits": {
+      "west": 13167,
+      "east": 13169
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  },
+  {
+    "vnum": 13169,
+    "name": "The Spur — Elder's Sanctum",
+    "description": "The private chamber of the eldest living Domnathar in Oreka is unexpectedly spare — a single room of blue-grey alloy containing a narrow bed, a desk, a chair, and five hundred and ninety-eight years of accumulated patience. The desk holds the Elder's personal journal, written continuously since the invasion, its volumes filling a shelf that spans the entire northern wall. The Elder is the last surviving member of the original gate-crossing and the only living being who remembers the Domnathar homeworld. Every strategic decision made in the Spur for three centuries has originated from this desk. The room is the most dangerous place in the Deepwater Marches, and it looks like a monk's cell.",
+    "exits": {
+      "west": 13168
+    },
+    "flags": [
+      "indoor",
+      "dangerous"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "dead",
+        "message": "Your Kin-sense goes completely silent. The void here is absolute — this is Domnathar territory."
+      }
+    ]
+  }
+]

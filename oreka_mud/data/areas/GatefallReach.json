@@ -1,0 +1,2392 @@
+[
+  {
+    "vnum": 12000,
+    "name": "Hillwatch - Gap Road Gate",
+    "description": "The main gate of Hillwatch faces south along the Gap Road, its double doors of ironbound timber set into walls of Kovaka-dressed stone that rise twenty feet above the packed earth approach. The stonework is unmistakably Kovaka in craft but Mytrone in layout -- the wall curves in a broad arc that follows the garrison's wagon-wheel design rather than the angular bastions the Kovaka prefer in their own settlements. Wind-Rider pennants snap on iron poles atop the gate, and the duty guards maintain a traveler's log and current road-condition report on a board just inside the arch. The smell of horses and cook-smoke drifts through the open gate on the mountain wind.",
+    "exits": {
+      "south": 12019,
+      "north": 12001,
+      "northwest": 11100
+    },
+    "flags": [
+      "safe",
+      "gate"
+    ]
+  },
+  {
+    "vnum": 12001,
+    "name": "Hillwatch - Garrison Ring South",
+    "description": "The interior of Hillwatch's southern wall is lined with supply sheds, weapon racks, and the long timber barracks that house the garrison's standing complement of forty Wind-Riders and their support staff. The packed-earth road curves east and west along the wall's inner face, worn smooth by the constant passage of mounted patrols departing and returning on their circuits. Arrow slits in the wall cast narrow bars of light across the road at regular intervals. A duty roster board near the barracks entrance lists patrol assignments in Warden Ridgeborn's precise hand.",
+    "exits": {
+      "south": 12000,
+      "north": 12005,
+      "east": 12002,
+      "west": 12003
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12002,
+    "name": "Hillwatch - Garrison Ring East",
+    "description": "The eastern arc of the garrison ring houses the armory and the Wind-Rider equipment stores, both secured behind heavy doors that bear the Warden's seal. Racks of lances, short bows, and the distinctive curved sabers favored by mounted patrols line the armory's outer wall, visible through an iron-barred window. A Kovaka smith maintains a small repair forge here, the ring of hammer on steel a constant backdrop during daylight hours. The wall's eastern face looks out over the rolling grasslands that transition into forest two miles distant.",
+    "exits": {
+      "west": 12001,
+      "north": 12004,
+      "south": 12022,
+      "east": 12021
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12003,
+    "name": "Hillwatch - Garrison Ring West",
+    "description": "The western garrison ring holds the stables and paddock where the Wind-Riders' mounts are housed, trained, and cared for by a team of Mytrone horse-handlers whose expertise with cavalry animals is the quiet foundation on which Hillwatch's patrol network rests. The stables are Kovaka-built stone with timber roofing, warm in winter and cool in summer, and the horses are visibly well-maintained -- coats glossy, hooves recently shod, tack hanging in ordered rows. The smell of hay, leather, and horse is a permanent feature of this section of the garrison. A mounting block near the paddock gate serves as the departure point for every patrol.",
+    "exits": {
+      "east": 12001,
+      "north": 12006,
+      "west": 12020
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12004,
+    "name": "Hillwatch - Watchtower East",
+    "description": "A stone watchtower rises forty feet above the eastern wall, its observation platform providing an unobstructed view across the eastern forests and the distant line of Warden's Ridge. Signal-torch brackets ring the platform's railing, ready for the coded fire-messages that link Hillwatch to Redtrail Hollow and the outlying patrol camps. The tower's ground floor serves as a ready-room where off-duty watchers sleep on narrow cots, their boots on and weapons within reach. On clear days, the faint shimmer of the Silence Breach dead zone is visible as a discoloration on the southeastern horizon.",
+    "exits": {
+      "south": 12002,
+      "west": 12007
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12005,
+    "name": "Hillwatch - Gap Road Market",
+    "description": "The open-air market occupies a broad plaza at the center of Hillwatch's wagon-wheel layout, where the main roads converge around a circular trading ground paved with flat river-stone. Merchant stalls ring the plaza's perimeter, selling mountain herbs, patrol provisions, leather goods, and the stone tools that Kovaka artisans produce for trade with the forest settlements. The market operates on the informal schedule of a garrison town -- busiest at dawn when patrols provision before departure, and again at dusk when returning riders trade news along with coin. A central well provides the settlement's primary water supply, its stone rim carved with protective runes.",
+    "exits": {
+      "south": 12001,
+      "north": 12009,
+      "east": 12007,
+      "west": 12008,
+      "northeast": 12018
+    },
+    "flags": [
+      "safe",
+      "market"
+    ]
+  },
+  {
+    "vnum": 12006,
+    "name": "Hillwatch - Paddock and Training Yard",
+    "description": "A large open paddock serves as both grazing area and training ground for the garrison's horses, its fence of split timber enclosing nearly an acre of close-cropped grass. Young riders practice mounted archery on a short course at the paddock's northern end, the thud of arrows striking straw targets punctuating the morning air. Veterans supervise with the economy of instruction that comes from years of teaching the same essential skills -- seat, balance, release, recover. The paddock's western fence overlooks the grasslands beyond the wall, and horses not in training stand along it, watching the open steppe with the focused attention of animals bred for distance.",
+    "exits": {
+      "south": 12003,
+      "east": 12008
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12007,
+    "name": "Hillwatch - Patrol Staging Area",
+    "description": "The patrol staging area is where Wind-Rider units assemble before departing on their circuits through Gatefall Reach and the approaches to the Gap. A large map-board mounted on a timber frame displays the current patrol routes, marked with colored pins indicating active, overdue, and completed circuits. Supply caches for emergency resupply are stacked in weatherproof chests along the staging area's northern wall, each labeled with the patrol route it serves. The area has the organized energy of a military operation that runs on routine -- riders check in, receive updates, draw supplies, and depart with minimal ceremony.",
+    "exits": {
+      "west": 12005,
+      "east": 12004,
+      "south": 12027
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12008,
+    "name": "Hillwatch - Residential Quarter",
+    "description": "The residential quarter of Hillwatch houses the families of the garrison's permanent staff and the small civilian population that supports the settlement's daily operations -- smiths, cooks, tanners, and the Pasua herbalist whose clinic serves as Hillwatch's only medical facility. The homes are modest stone-and-timber structures arranged along curving lanes that follow the wagon-wheel layout, their doorsteps worn smooth by daily traffic. Kitchen gardens grow between the houses, tended primarily by the Kovaka residents whose skill with mountain soils produces surprising yields. Children play in the lanes with the easy familiarity of a community where everyone knows every face.",
+    "exits": {
+      "east": 12005,
+      "north": 12014,
+      "south": 12024,
+      "west": 12006
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12009,
+    "name": "Hillwatch - Ridgeborn's Hall",
+    "description": "Warden Kael Ridgeborn's longhouse dominates the northern quarter of Hillwatch, its construction a deliberate blend of Mytrone and Kovaka traditions -- timber-frame walls on a Kovaka stone foundation, with the long central hearth and high-beamed ceiling of a traditional Mytroan great hall. The hall serves as council chamber, war room, and the Warden's personal quarters, its walls hung with patrol maps and the mounted horns of steppe-elk taken during the Running War's final campaigns. A long oak table occupies the hall's center, scarred by years of council meetings and strategic planning sessions. Ridgeborn governs Hillwatch with a ranger's practical discipline, and the hall reflects his preference for function over display.",
+    "exits": {
+      "south": 12005,
+      "north": 12010,
+      "east": 12011,
+      "west": 12012,
+      "northwest": 12023
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12010,
+    "name": "Hillwatch - Vigil Stone",
+    "description": "The Vigil Stone stands at the highest point within Hillwatch's walls, a twelve-foot granite monolith veined with quartz that pulses with a slow amber warmth perceptible to Kin-sense as a deep, watchful attention. Unlike the Great Windstone of Tavranek, the Vigil Stone was placed here after the Deceivers' War as a ward against the Breach's influence, and its resonance carries an undertone of vigilance -- a sense of something listening outward rather than inward. Wind-Riders touch the stone before departing on patrol, a ritual that has no formal religious sanction but which every rider performs without exception. The stone's base is circled with small offerings -- polished pebbles, strips of leather, dried flowers -- left by residents seeking the Lord of Stone's continued attention.",
+    "exits": {
+      "south": 12009,
+      "north": 12028
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "amplified",
+        "message": "The Vigil Stone sharpens your Kin-sense. Every presence within the garrison rings clear."
+      }
+    ]
+  },
+  {
+    "vnum": 12011,
+    "name": "Hillwatch - Warden's War Room",
+    "description": "A smaller chamber adjoining Ridgeborn's Hall houses the operational nerve center of Gatefall Reach's defense network. A large sand-table occupies the room's center, sculpted to represent the Reach's terrain in miniature -- the Gap, Warden's Ridge, the crescent forests, and the settlements, with small wooden markers indicating known patrol positions and threat assessments. Intelligence reports from every patrol are compiled here, and the walls are covered with annotated maps showing Flamewarg sighting patterns, Sand Wraith activity near the Tomb of Kings, and the slowly shifting boundary of the Silence Breach dead zone. The room smells of ink, parchment, and the lamp oil that keeps the work going through long evenings.",
+    "exits": {
+      "west": 12009
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12012,
+    "name": "Hillwatch - North Wall Walk",
+    "description": "The walkway along the top of Hillwatch's northern wall provides the settlement's most commanding view of the surrounding terrain. To the north, the grasslands roll toward the distant shapes of mountains that mark the boundary with the Eternal Steppe. To the south, the Gap Road descends toward the mountain pass that gives the Reach its name and its purpose. Guards pace this wall in regular shifts, scanning the approaches with the patient attention of soldiers who know that the threat they watch for is real, if infrequent. The wind here is constant, carrying scents of grass and stone and the faint ozone tang that Wind-Riders associate with the Gap's proximity.",
+    "exits": {
+      "east": 12009,
+      "north": 12013,
+      "west": 12029
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12013,
+    "name": "Hillwatch - Signal Tower",
+    "description": "Hillwatch's primary signal tower rises from the northeastern corner of the wall, its platform equipped with the braziers, oil reserves, and coded signal-flags that form the Reach's communication network. Messages can be relayed from here to Redtrail Hollow's Signal Tower in under an hour using the fire-code system that Wind-Rider command developed during the Running War. The tower's keeper maintains a signal log recording every message sent and received, the accumulated records forming an operational history of the Reach's defense over the past decade. On windless nights, the faint amber glow of distant Windstones is visible from the platform, marking the settlements that ring the Reach like watchful eyes.",
+    "exits": {
+      "south": 12012
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12014,
+    "name": "Hillwatch - Herbalist's Clinic",
+    "description": "The Pasua herbalist Nyla Greenmantle maintains Hillwatch's only medical facility in a low stone building near the residential quarter, its interior fragrant with dried herbs hanging from every beam and shelf. Nyla's training combines Pasua forest-medicine with the practical field surgery that Wind-Rider patrols demand, and her clinic sees everything from arrow wounds to the persistent coughs that mountain weather produces. Clay jars of prepared remedies line the walls in careful order, each labeled in Nyla's precise hand. A treatment cot occupies the back room, and the herb garden outside the clinic's door is the most carefully tended plot in Hillwatch.",
+    "exits": {
+      "south": 12008
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12015,
+    "name": "Hillwatch - Gap Road North",
+    "description": "The Gap Road continues north from Hillwatch's gate toward the grasslands that connect the Reach to the wider steppe. The road here is well-maintained packed earth, its surface showing the regular passage of mounted patrols and the occasional merchant caravan. Scattered Windstone markers line the road at quarter-mile intervals, their quartz veins glowing faintly even in daylight -- navigational aids placed during the settlement's founding that have become landmarks in their own right. The grasslands open up on both sides of the road, the tall steppe-grass waving in patterns that experienced riders read for wind direction and weather prediction.",
+    "exits": {
+      "east": 12019,
+      "north": 12016,
+      "south": 12017
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12016,
+    "name": "Hillwatch - Gap Road Junction",
+    "description": "The Gap Road meets a crossroads here, with a well-worn track branching west toward Brayholt Crossing and the Eternal Steppe border, and another path curving east toward the forest edge and eventually Glimmerholt. A large Windstone marker stands at the junction's center, its carved faces indicating directions and approximate distances to the nearest settlements. Wind-Rider patrol markers -- small iron stakes driven into the ground and wrapped with colored cord -- indicate the current status of each route. The grass around the junction is trampled flat by the traffic of horses and foot travelers, forming a natural rest area.",
+    "exits": {
+      "south": 12015,
+      "west": 12230,
+      "north": 12240
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12017,
+    "name": "Hillwatch - Outer Watchtower",
+    "description": "A timber watchtower stands on a low rise half a mile south of Hillwatch's walls, providing an advance observation post that covers the Gap Road's southern approach. The tower is manned during daylight hours and sealed at night, its ground floor serving as a supply cache for patrols working the southern routes. From the platform, the observer can see the Gap's mouth clearly on good days -- a dark cleft in the mountain wall that frames the sky like a narrowed eye. The tower's signal-brazier can alert Hillwatch's main garrison in minutes if a threat is spotted approaching from the south.",
+    "exits": {
+      "north": 12015,
+      "east": 12026
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12018,
+    "name": "Hillwatch - Garrison Mess Hall",
+    "description": "The mess hall is the largest enclosed space in Hillwatch after the Warden's Hall, a long timber building where the garrison takes its meals communally in the Mytrone tradition. Three long tables seat sixty comfortably, and the kitchen at the hall's western end operates from before dawn until well after dark to accommodate the irregular schedules of returning patrols. The food is garrison fare -- hearty stews, fresh bread, dried meat, and the mountain-herb tea that every Wind-Rider develops a taste for. The walls are decorated with patrol pennants from every active circuit, a tradition that gives the mess hall the atmosphere of a regimental museum.",
+    "exits": {
+      "southwest": 12005
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12019,
+    "name": "Hillwatch - South Approach",
+    "description": "The approach to Hillwatch from the south follows the Gap Road up a gentle slope, the settlement's stone walls becoming visible above the grassline at a distance of half a mile. The road is flanked by cleared ground where the garrison maintains open sightlines -- no cover for an approaching force within bow-range of the walls. Small stone cairns mark the road's edges, placed at intervals that double as range-markers for the wall's archers. The air carries the garrison's scent -- horses, cook-smoke, and the mineral tang of Kovaka stonework -- long before the gate comes into view.",
+    "exits": {
+      "north": 12000,
+      "south": 12200,
+      "west": 12015
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12020,
+    "name": "Hillwatch - West Gate",
+    "description": "A secondary gate in Hillwatch's western wall provides direct access to the grasslands and the road toward Brayholt Crossing. The gate is smaller than the main southern entrance, sized for mounted riders rather than wagon traffic, and is used primarily by patrols departing on the western circuits. A small guardpost flanks the gate, its duty officer maintaining a departure log that tracks every rider leaving the settlement and their expected return time. The grasslands visible through the open gate stretch to the western horizon, an ocean of green and gold under the wide sky.",
+    "exits": {
+      "east": 12003,
+      "west": 12025
+    },
+    "flags": [
+      "safe",
+      "gate"
+    ]
+  },
+  {
+    "vnum": 12021,
+    "name": "Hillwatch - Kovaka Stoneworker's Yard",
+    "description": "A Kovaka master stoneworker maintains a yard near the eastern wall where the garrison's stone infrastructure is repaired and new construction is planned. Blocks of dressed granite are stacked in ordered rows, and the tools of the stoneworker's trade hang on a timber rack in precise arrangement. The Kovaka who work here brought their craft from the mountain holds, adapting it to the Reach's softer stone with a pragmatism that values function over the elaborate carved detail their homeland tradition prizes. The sound of chisel on stone is a constant here, and the dust coats everything within thirty feet of the yard in a fine grey film.",
+    "exits": {
+      "west": 12002
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12022,
+    "name": "Hillwatch - Barracks Interior",
+    "description": "The interior of the main barracks is a long open room lined with cots, footlockers, and weapon racks in the disciplined arrangement that marks a professional military installation. Each Wind-Rider's personal space is compact and identical -- cot, locker, hook for cloak and armor, and a narrow shelf for personal effects. The room smells of leather polish, wool blankets, and the pine-resin soap that the garrison laundry uses. Off-duty riders sleep, maintain equipment, or play the bone-dice games that pass the time between patrols with the ease of people long accustomed to communal living.",
+    "exits": {
+      "north": 12002
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12023,
+    "name": "Hillwatch - Merchant's Rest",
+    "description": "A small inn near the Gap Road Market serves the traveling merchants, messengers, and visitors who pass through Hillwatch on the way to or from the Gap. The common room has four tables and a hearth, and the innkeeper -- a retired Wind-Rider named Torben One-Eye -- serves ale, stew, and practical advice about road conditions with equal generosity. Two sleeping rooms upstairs accommodate guests who cannot or prefer not to sleep in the open, though in good weather most travelers camp outside the walls in the Mytrone fashion. Torben's stories of the Running War campaigns are a reliable evening entertainment.",
+    "exits": {
+      "southeast": 12009
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12024,
+    "name": "Hillwatch - Pasua Quarter",
+    "description": "A cluster of homes along the southeastern curve of Hillwatch's wall houses the settlement's Pasua population, their dwellings distinguished by the vine-work trellises and herb gardens that Pasua communities cultivate wherever they settle. The quarter is small -- perhaps thirty residents -- but its cultural presence is disproportionate, the sound of Pasua flute music drifting through the lanes on warm evenings and the scent of their distinctive herbal cooking carrying from kitchen to kitchen. The Pasua here serve as herbalists, scouts, and the interpreters who facilitate communication with the forest settlements to the east.",
+    "exits": {
+      "north": 12008
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12025,
+    "name": "Hillwatch - Outer Paddock",
+    "description": "An open paddock outside the western wall provides overflow grazing for the garrison's horses and staging area for visiting mounts. The grass here is cropped short by constant grazing, and the fence rails show the tooth-marks of horses with too much energy and too little exercise. A water trough fed by a diverted spring runs along the paddock's northern edge, and a small shelter provides shade during the midday heat. Wind-Rider remounts -- the reserve horses that allow patrol teams to maintain speed on long circuits -- are kept here in rotation.",
+    "exits": {
+      "east": 12020
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12026,
+    "name": "Hillwatch - Gap Road Overlook",
+    "description": "A natural rise south of Hillwatch provides a panoramic view of the Gap Road as it descends toward the mountain pass. The overlook is used by the garrison as an informal observation post and by residents as a gathering place on clear evenings when the sunset fills the Gap with amber light. Flat stones arranged in a rough semicircle provide seating, and the remains of many small campfires mark the spot as a popular rest point for travelers approaching the settlement. The Gap itself is visible from here as a dark notch in the southern mountains, its presence a constant reminder of Hillwatch's purpose.",
+    "exits": {
+      "west": 12017
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12027,
+    "name": "Hillwatch - East Road Departure",
+    "description": "The road east from Hillwatch follows a gradual descent from the settlement's elevated position toward the grassland-forest transition zone. The road is less maintained than the Gap Road -- packed earth with occasional stretches of gravel laid over soft spots -- but well-marked with Windstone posts and patrol-marker stakes. This route connects Hillwatch to Glimmerholt via the northern edge of the grasslands, passing through terrain that transitions from open steppe to scattered tree cover over several miles. Wind-Riders prefer this road for its visibility, which allows mounted patrols to maintain long sightlines.",
+    "exits": {
+      "north": 12007,
+      "east": 12220
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12028,
+    "name": "Hillwatch - Breach Dawn Plaza",
+    "description": "A small plaza near the Vigil Stone serves as the site of Hillwatch's annual Breach Dawn festival, when the garrison and civilian population gather to commemorate the Deceivers' War and renew their commitment to vigilance. The plaza's paving stones are inscribed with the names of every Wind-Rider who has died on patrol since the settlement's founding -- a list that grows by one or two names most years, a reminder that the Reach's defense exacts a quiet, ongoing cost. During the festival, lanterns are hung from every post and the names are read aloud in a ceremony that combines Mytrone oral tradition with Kovaka stone-remembrance.",
+    "exits": {
+      "south": 12010
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12029,
+    "name": "Hillwatch - Wall Walk West",
+    "description": "The western wall walk provides views across the grasslands toward Brayholt Crossing and the distant Eternal Steppe. The wall here is lower than the northern and southern faces, reflecting the garrison's assessment that the primary threat axis runs north-south through the Gap rather than from the relatively peaceful western approaches. Guards patrol this section less frequently, and the walk is sometimes used by off-duty residents as a place for quiet conversation or solitary contemplation. On clear days, the smoke of Brayholt Crossing's cookfires is visible as a faint smudge on the western horizon.",
+    "exits": {
+      "east": 12012
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12030,
+    "name": "Silkenbough - Forest Entrance",
+    "description": "The path into Silkenbough passes between two ancient sky-oaks whose canopies interlock sixty feet overhead, forming a living archway that marks the transition from open forest into the Pasua settlement's cultivated domain. Woven banners of wind-silk hang from the lower branches, their translucent fabric rippling in colors that shift with the light -- a visual signature that identifies Silkenbough from a distance to those who know what to look for. The air changes as you pass beneath the arch, becoming cooler and carrying the complex fragrance of a forest that has been tended rather than merely inhabited. The sound of distant singing drifts through the canopy, barely distinguishable from birdsong.",
+    "exits": {
+      "south": 12235,
+      "north": 12031,
+      "east": 12047,
+      "west": 12053
+    },
+    "flags": [
+      "safe",
+      "gate"
+    ]
+  },
+  {
+    "vnum": 12031,
+    "name": "Silkenbough - Village Circle",
+    "description": "The Pasua village circle is an open clearing at the heart of Silkenbough, its floor of packed earth surrounded by the elevated platforms and vine-draped dwellings that characterize Pasua forest architecture. The circle serves as gathering place, market ground, and performance space, its center marked by a low stone bearing a single rune that Kin-sense perceives as a note of belonging -- the Pasua equivalent of a hearth-marker. Elder Aelwyn Rootsong's dwelling overlooks the circle from a platform in the largest sky-oak, accessible by a spiraling wooden stairway that winds around the trunk. The circle is never truly empty; at all hours, someone is singing, weaving, or simply sitting in the company of the trees.",
+    "exits": {
+      "south": 12030,
+      "north": 12034,
+      "east": 12032,
+      "west": 12033,
+      "northeast": 12042,
+      "southeast": 12044
+    },
+    "flags": [
+      "safe",
+      "market"
+    ]
+  },
+  {
+    "vnum": 12032,
+    "name": "Silkenbough - Wind-Silk Yards",
+    "description": "The wind-silk yards are Silkenbough's primary production facility, a series of open-air workshops where Pasua weavers produce the settlement's most famous export. Frames of polished wood hold silk at various stages of completion, the fabric so fine that it is nearly transparent, catching the forest light and scattering it in prismatic patterns across the workshop floor. The process is laborious and largely secret -- the silk is harvested from a species of forest spider found only in the crescent forests, and the weaving technique has been passed through Pasua families for generations. The weavers work in companionable silence, their hands moving with the automatic precision of skills learned in childhood.",
+    "exits": {
+      "west": 12031,
+      "east": 12037,
+      "north": 12038,
+      "south": 12045
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12033,
+    "name": "Silkenbough - Herb Gardens",
+    "description": "Terraced gardens cascade down a gentle slope west of the village circle, their beds planted with the medicinal and culinary herbs that Pasua forest-medicine relies upon. The gardens are organized by use rather than species -- wound-herbs together, fever-herbs together, cooking-herbs nearest the kitchens -- a practical system that reflects generations of accumulated knowledge about what the forest provides and what cultivation can improve. The air is thick with fragrance, and the soil is dark and rich from years of careful composting. Halfling gardeners from the settlement's small Halfling community work alongside Pasua herbalists, their complementary skills producing yields that neither tradition could achieve alone.",
+    "exits": {
+      "east": 12031,
+      "west": 12039,
+      "south": 12048,
+      "north": 12054
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12034,
+    "name": "Silkenbough - Rootsong Archive",
+    "description": "The Rootsong Archive occupies a circular clearing north of the village circle, its perimeter defined by a ring of twelve sky-oaks whose branches have been trained over decades to form a natural amphitheater. The archive is not a building but a tradition -- the accumulated oral history of the Pasua people, maintained by a lineage of memory-keepers whose training begins in childhood and continues for a lifetime. Elder Aelwyn Rootsong is the current keeper, and her voice can hold an audience for hours as she recites histories that predate written records by centuries. The clearing's acoustics are remarkable, every word audible at the amphitheater's edge without the speaker raising her voice above a conversational tone.",
+    "exits": {
+      "south": 12031,
+      "east": 12035,
+      "west": 12036,
+      "north": 12043
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 12035,
+    "name": "Silkenbough - Archive Seating (East)",
+    "description": "The eastern arc of the Rootsong Archive's natural amphitheater is formed by a series of moss-covered stone ledges that provide seating for listeners during formal recitations. The stones were placed here by Kovaka masons during the settlement's early years, one of the few contributions that Silkenbough's small non-Pasua population made to the community's core institution. Carved niches in the surrounding trees hold small offerings left by visitors who have heard the Archive's histories and wish to honor the memory-keepers' work -- polished stones, woven bracelets, dried flowers. The forest canopy overhead filters the light into shifting patterns that create a contemplative atmosphere.",
+    "exits": {
+      "west": 12034,
+      "east": 12052
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12036,
+    "name": "Silkenbough - Archive Seating (West)",
+    "description": "The western arc of the archive amphitheater curves beneath the oldest sky-oak in Silkenbough, a tree whose trunk is wide enough that four people linking hands could not encircle it. The tree's lower branches have been carved with Pasua memory-runes -- not written language in the conventional sense, but mnemonic symbols that trained memory-keepers use to anchor specific histories in their recall. Each rune represents a complete narrative, and the tree bears hundreds of them, layered over generations like rings in the wood itself. The effect on Kin-sense is subtle but unmistakable -- a deep, resonant hum of accumulated memory, as if the stories themselves have become part of the forest's living fabric.",
+    "exits": {
+      "east": 12034
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12037,
+    "name": "Silkenbough - Dye Works",
+    "description": "The dye works adjoin the wind-silk yards, their facilities specializing in the natural pigments that give Silkenbough's textiles their distinctive colors. Clay vats line the workshop's open sides, filled with dye extracted from forest berries, bark, lichen, and the crushed shells of river-snails that produce the deep blue most prized in the trade. The smell is powerful and not entirely pleasant -- fermentation is a necessary step in several of the dye processes -- but the results are undeniable, the finished silk displaying colors that resist fading through years of wear. An apprentice Pasua dyer tends the vats with careful attention, monitoring temperatures and timing with the precision of an alchemist.",
+    "exits": {
+      "west": 12032
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12038,
+    "name": "Silkenbough - Canopy Walkway South",
+    "description": "A network of rope-and-plank walkways connects the upper platforms of Silkenbough's sky-oaks, providing an elevated transportation system that the Pasua use as naturally as ground-level paths. The walkway sways gently underfoot, its planks smooth from years of bare-footed traffic, and the rope rails are wrapped with vine for grip and decoration. From this height, the forest floor is visible thirty feet below as a dappled mosaic of leaf-shadow and sunlight, and the canopy opens views of the surrounding forest that the ground-level paths cannot provide. Na'wasua residents particularly favor the walkways, their comfort at height reflecting a cultural affinity for elevated spaces.",
+    "exits": {
+      "south": 12032,
+      "north": 12040,
+      "east": 12049
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12039,
+    "name": "Silkenbough - Halfling Quarter",
+    "description": "The Halfling community in Silkenbough occupies a cluster of ground-level dwellings on the settlement's western edge, their homes built in the Halfling tradition of earth-sheltered construction adapted to the forest environment. Low doorways open onto a communal courtyard where the Halflings conduct the small-scale commerce and social life that characterizes their culture everywhere they settle. The Halflings serve as Silkenbough's primary traders, their caravan connections linking the settlement's wind-silk production to markets across the Reach and beyond. The smell of Halfling cooking -- distinctive for its use of forest mushrooms and the tuber-based pastries that are a Halfling staple -- is a permanent feature of this quarter.",
+    "exits": {
+      "east": 12033
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12040,
+    "name": "Silkenbough - Canopy Walkway North",
+    "description": "The northern canopy walkway extends beyond the settled area into the old-growth forest, the trees here untouched by cultivation and growing in the dense, light-competitive patterns of undisturbed woodland. The walkway becomes narrower and less maintained as it pushes north, the planks replaced by trimmed branches lashed together with vine, and the views open onto forest that stretches unbroken to the horizon. Na'wasua scouts use this section of the walkway as a patrol route, their familiarity with the canopy allowing them to detect disturbances in the forest below that ground-level observers would miss entirely.",
+    "exits": {
+      "south": 12038,
+      "north": 12041
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12041,
+    "name": "Silkenbough - Moonweave Platform",
+    "description": "The Moonweave Platform is the Na'wasua community's spiritual center, a broad wooden platform built in the highest branches of an ancient sky-oak where a deliberate thinning of the surrounding canopy opens a window to the sky. A quartz altar stands at the platform's center, its surface polished to a mirror finish that catches moonlight and starlight with an intensity that seems to amplify rather than merely reflect. On clear nights, the altar glows with a soft violet light that Na'wasua practitioners describe as the sky's attention, and ceremonies conducted here are said to grant visions of unusual clarity. The platform's elevation creates a profound sense of separation from the forest floor, as if the mundane world has been left behind at the base of the tree.",
+    "exits": {
+      "south": 12040,
+      "north": 12046
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ]
+  },
+  {
+    "vnum": 12042,
+    "name": "Silkenbough - Instrument Maker's Workshop",
+    "description": "A Pasua craftsman maintains a workshop dedicated to the production of the musical instruments that are central to both Pasua cultural life and the bardic traditions taught in the Rootsong Archive. Flutes carved from sky-oak heartwood, drums skinned with forest-deer hide, and the distinctive Pasua wind-harps that produce melody from the breeze itself are displayed on the workshop walls in various stages of completion. The craftsman tests each instrument by playing it, and the workshop is consequently filled with snatches of music throughout the working day. The instruments are prized across Oreka, and orders from as far as Tavranek and the Deepwater Marches keep the workshop busy year-round.",
+    "exits": {
+      "southwest": 12031
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12043,
+    "name": "Silkenbough - Elder's Platform",
+    "description": "Elder Aelwyn Rootsong's dwelling occupies a broad platform in the largest sky-oak overlooking the village circle, accessible by the spiraling stairway that winds around the tree's massive trunk. The platform is open on all sides, with woven silk screens that can be lowered against rain or raised to admit the forest air. Rootsong's personal library of memory-aids -- carved rune-sticks, knotted cord records, and the few written documents the Pasua tradition employs -- fills shelves along the platform's inner wall. The Elder holds audiences here, and the platform's elevation gives conversations conducted in her presence a quality of perspective that visitors find either clarifying or unsettling.",
+    "exits": {
+      "south": 12034
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12044,
+    "name": "Silkenbough - Forest Path East",
+    "description": "A well-worn path leads east from Silkenbough into the deeper crescent forest, the canopy thickening overhead until the sky is visible only in fragments. The path is marked with Pasua trail-signs -- subtle cuts in bark, arrangement of stones, colored threads tied to branches -- that are invisible to the untrained eye but as clear as signposts to those who know the system. This path connects Silkenbough to the forest routes that link the Reach's eastern settlements, and is traveled regularly by messengers, traders, and the Pasua scouts who maintain the forest's informal communication network.",
+    "exits": {
+      "northwest": 12031,
+      "east": 12236
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12045,
+    "name": "Silkenbough - Spider Groves Approach",
+    "description": "The path toward the spider groves where Silkenbough's silk is harvested branches off the main forest trail, descending into a section of forest where the trees grow closer together and the understory is thick with the web-structures that the silk-producing spiders construct between trunks. The webs here are enormous -- some spanning forty feet between anchor points -- and shimmer with an iridescent quality that makes the grove look like a hall of translucent curtains. Harvest is conducted carefully and on a sustainable rotation, taking only a portion of each web and leaving the spiders undisturbed. The grove has a hushed quality, as if sound itself is dampened by the silk-laden air.",
+    "exits": {
+      "north": 12032
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12046,
+    "name": "Silkenbough - Na'wasua Dwellings",
+    "description": "The Na'wasua residents of Silkenbough maintain a small cluster of canopy-level dwellings near the Moonweave Platform, their homes built with an architectural style that favors height and openness over the enclosed comfort that ground-level cultures prefer. The dwellings are elegant constructions of woven branch and vine, their interiors visible through translucent walls that admit light while providing shelter. Quartz crystals hung at each entrance catch the light and scatter it in patterns that Na'wasua tradition reads as omens or blessings depending on the time of day. The community numbers perhaps forty individuals, their quiet presence lending the upper canopy an atmosphere of contemplative serenity.",
+    "exits": {
+      "south": 12041
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12047,
+    "name": "Silkenbough - Bloomweave Clearing",
+    "description": "A clearing south of the village circle serves as the site of Silkenbough's annual Bloomweave festival, when the community celebrates the forest's spring renewal with music, weaving demonstrations, and the ceremonial hanging of new wind-silk banners to replace those weathered during the previous year. The clearing's floor is carpeted with wildflowers in season, and the surrounding trees are permanently decorated with older banners that have been retired from the entrance arch -- a growing collection that turns the clearing into a gallery of the settlement's textile history. During the festival, Pasua bards perform histories from the Rootsong Archive, their voices carrying through the forest with remarkable clarity.",
+    "exits": {
+      "west": 12030,
+      "south": 12050
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12048,
+    "name": "Silkenbough - Mytrone Guest Quarters",
+    "description": "A cluster of ground-level structures near the village circle houses the settlement's small Mytrone population and serves as guest accommodation for the mounted patrols and steppe traders who visit regularly. The buildings are the only structures in Silkenbough built in the Mytrone fashion -- timber-frame with packed-earth floors, low ceilings, and the central hearth that defines Mytroan domestic architecture. The cultural contrast with the surrounding Pasua construction is striking but comfortable, the two styles coexisting in the forest clearing like different dialects of the same language. A small paddock behind the quarters accommodates visitors' horses.",
+    "exits": {
+      "north": 12033
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12049,
+    "name": "Silkenbough - Weaver's Bridge",
+    "description": "A broad rope bridge connects the canopy walkway system to an isolated platform where the most skilled weavers produce Silkenbough's finest work -- the charm-woven textiles that incorporate subtle Kin-sense patterns into the fabric itself. The process is not magic in the conventional sense, but rather a technique of weaving at specific tensions and patterns that create a resonance perceptible to those with developed Kin-sense, producing garments that carry a faint emotional signature of calm, courage, or alertness depending on the weave. The bridge sways noticeably underfoot, and the thirty-foot drop to the forest floor is visible through the gaps between the planks.",
+    "exits": {
+      "west": 12038,
+      "south": 12051
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12050,
+    "name": "Silkenbough - Southern Forest Path",
+    "description": "A path descends south from Silkenbough into the deeper forest, following the natural contours of the terrain toward the distant settlements of Briarshade and the wilderness beyond. The trail is less traveled than the eastern path, the undergrowth encroaching on both sides in places where maintenance has fallen behind. Pasua trail-signs mark the route at irregular intervals, and the forest here has a wilder character than the cultivated woodland surrounding the settlement -- older trees, denser undergrowth, and the occasional sound of large animals moving through the brush. The path toward Briarshade branches off to the southwest after several miles.",
+    "exits": {
+      "north": 12047,
+      "south": 12239
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12051,
+    "name": "Silkenbough - Charm-Weaver's Alcove",
+    "description": "Hidden within a natural alcove formed by the roots of an enormous sky-oak, a senior charm-weaver maintains a private workspace where the most delicate and time-consuming textile work is performed. The alcove is lined with finished and half-finished fabrics that shimmer with the characteristic iridescence of charm-woven silk, and the air hums faintly with the residual resonance of completed work. The weaver works by touch as much as sight, her fingers reading the tension and pattern of the threads with a sensitivity that borders on Kin-sense itself. Visitors are tolerated but not encouraged -- the work requires concentration that casual conversation disrupts.",
+    "exits": {
+      "north": 12049
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12052,
+    "name": "Silkenbough - Bardic Practice Grove",
+    "description": "A small grove east of the archive serves as an informal practice space for apprentice bards learning the traditions preserved in the Rootsong Archive. The sound of instruments and voices fills the grove during most daylight hours -- students working on the memorization techniques that the archive demands, their practice occasionally punctuated by the gentle corrections of senior bards who listen from nearby platforms. The grove's acoustics are naturally forgiving, its enclosure of close-growing trees softening errors while preserving clarity, an environment that encourages experimentation. Young Pasua and the occasional Mytrone student share the space with the easy familiarity of people united by a common discipline.",
+    "exits": {
+      "west": 12035
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12053,
+    "name": "Silkenbough - Trading Post",
+    "description": "A ground-level structure near the settlement's entrance serves as the trading post where Silkenbough's exports -- wind-silk, dyes, instruments, and forest herbs -- are exchanged for the goods the settlement cannot produce itself: metal tools, grain, leather, and the news from the wider world that the Halfling traders carry along with their merchandise. The trading post is managed by a Halfling factor whose connections to the broader trade network keep Silkenbough supplied despite its forest isolation. Samples of the settlement's finest work are displayed along the walls, their quality serving as both advertisement and proof of the craftsmanship that justifies Silkenbough's premium prices.",
+    "exits": {
+      "east": 12030
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12054,
+    "name": "Silkenbough - Night Garden",
+    "description": "A secluded garden on Silkenbough's western edge is planted with species that bloom at night -- pale moonflowers, silver-leaf ferns, and the luminescent moss that grows only in the crescent forests' oldest groves. The garden is tended by the Na'wasua community as a meditation space, its paths designed for slow, contemplative walking under starlight. On clear nights, the garden glows with a soft natural luminescence that casts no shadows, creating an atmosphere of otherworldly calm. The scent of the night-blooming flowers is complex and slightly intoxicating, and the silence is broken only by the calls of nocturnal birds and the distant sound of water.",
+    "exits": {
+      "south": 12033
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12055,
+    "name": "Glimmerholt - Ridge Road Approach",
+    "description": "The approach to Glimmerholt follows the crest of Warden's Ridge, the road climbing gradually through terrain where open grassland and scattered tree cover compete for dominance. The settlement becomes visible as a cluster of buildings straddling the ridgeline, smoke from the Amber Forge rising in a steady column that serves as a landmark visible for miles in every direction. The road here is well-maintained -- Glimmerholt's position as a trade hub ensures that the approaches are kept clear for wagon traffic -- and the verges are grazed by goats and the small, hardy cattle that the mixed community raises for meat and dairy. The air carries the mineral tang of forge-work and the smell of wood-smoke.",
+    "exits": {
+      "south": 12221,
+      "north": 12056,
+      "east": 12075
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12056,
+    "name": "Glimmerholt - Market Ridge",
+    "description": "Glimmerholt's market occupies the flat top of Warden's Ridge, a natural plateau that provides a trading ground with views in every direction. Stalls and semi-permanent structures ring the plateau's edge, selling the products of both forest and grassland -- Pasua herbs and textiles alongside Mytrone leather goods and the iron tools that the Amber Forge produces. The market is the Reach's busiest, its central position drawing traders from every settlement and the occasional merchant from the Eternal Steppe who has made the journey through Brayholt Crossing. The atmosphere is multilingual and multiethnic, the Reach's cultural diversity most visible in this single location.",
+    "exits": {
+      "south": 12055,
+      "north": 12058,
+      "east": 12057,
+      "west": 12059,
+      "northeast": 12076,
+      "northwest": 12072
+    },
+    "flags": [
+      "safe",
+      "market"
+    ]
+  },
+  {
+    "vnum": 12057,
+    "name": "Glimmerholt - Amber Forge",
+    "description": "The Amber Forge is the Reach's only permanent smithy, operated by the Kovaka smith Brondan Ironscar, whose craft supplies metal tools, weapons, and hardware to every settlement in Gatefall. The forge occupies a stone building on the market's eastern edge, its walls blackened by years of soot and its interior dominated by the forge-fire that burns continuously, fed by charcoal produced in the surrounding forests. Ironscar is a Kovaka exile who found a purpose in the Reach, and his work combines Kovaka precision with a practical understanding of what frontier communities need. The sound of his hammer is audible across the market, a rhythmic percussion that has become Glimmerholt's heartbeat.",
+    "exits": {
+      "west": 12056,
+      "east": 12060,
+      "south": 12064
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12058,
+    "name": "Glimmerholt - Speaker's Circle",
+    "description": "The Speaker's Circle is Glimmerholt's governing center, an open-air meeting ground on a natural stone platform north of the market. Speaker Maren Firebraid holds council here, the circle's lack of walls a deliberate statement about the transparency that Glimmerholt's mixed community demands of its leadership. Stone benches ring the platform's edge, and a central fire-pit provides warmth and light for evening assemblies. Disputes between the settlement's various communities are resolved here through the speaking tradition -- each party states their case, the Speaker mediates, and the circle's witness makes the resolution binding. The stone platform has been smoothed by generations of feet, its surface warm even on cool days.",
+    "exits": {
+      "south": 12056,
+      "north": 12061,
+      "east": 12068,
+      "west": 12070
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12059,
+    "name": "Glimmerholt - Timber Yards",
+    "description": "The timber yards on Glimmerholt's western slope process the logs harvested from the surrounding forests into the construction lumber, charcoal, and firewood that the settlement exports alongside its forge products. The work is organized by a Pasua forester whose knowledge of sustainable harvest ensures that the forest is not depleted faster than it can regrow -- a concern that the Pasua community monitors with the quiet persistence of people who think in generations rather than seasons. Stacked timber dries in ordered rows, and the sweet smell of fresh-cut wood mixes with the acrid scent of the charcoal kilns that operate on the yard's southern edge.",
+    "exits": {
+      "east": 12056,
+      "south": 12062,
+      "west": 12066
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12060,
+    "name": "Glimmerholt - Forge Quarter",
+    "description": "The quarter surrounding the Amber Forge houses the support operations that the smithy requires -- charcoal storage, ore processing, tool repair, and the apprentice quarters where Ironscar's small team of trainees learn the trade. The buildings here are uniformly stone-built in the Kovaka style, their construction standing out from the mixed timber-and-stone architecture of the rest of Glimmerholt. The heat from the forge makes this quarter warmer than the surrounding settlement even in winter, and the residents have adapted their daily routines around the forge's demands -- sleeping when the hammer is quiet, working when it rings. A storage yard holds raw iron brought by caravan from the Kovaka mountain holds.",
+    "exits": {
+      "west": 12057,
+      "north": 12063,
+      "south": 12074
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12061,
+    "name": "Glimmerholt - Firebraid's Shrine",
+    "description": "Speaker Firebraid maintains a druidic sanctuary north of the Speaker's Circle, built around a natural hot spring that surfaces through a crack in the ridge's stone. The spring produces a constant flow of warm, mineral-rich water that pools in a natural basin before overflowing down the ridge's northern slope. The shrine is a place of healing and contemplation, its warmth and the spring's mineral scent creating an atmosphere that visitors describe as deeply restorative. Firebraid conducts rituals here that honor the Lord of Stone and the Lord of Water simultaneously, the hot spring being a natural expression of both domains. Small offerings -- polished stones, dried flowers, vials of spring water -- are left on the basin's rim.",
+    "exits": {
+      "south": 12058,
+      "north": 12077
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 12062,
+    "name": "Glimmerholt - Charcoal Kilns",
+    "description": "The charcoal kilns occupy a cleared area downslope from the timber yards, their conical earth mounds smoldering continuously as wood is slowly converted to the fuel that powers the Amber Forge. The process requires constant attention -- too much air and the wood burns to ash, too little and it remains uncarbonized -- and the kiln-tenders maintain a round-the-clock watch. The smoke from the kilns is a permanent feature of Glimmerholt's western aspect, its acrid smell the price the settlement pays for its forge. A narrow path continues southwest through scattered woodland toward the grasslands beyond.",
+    "exits": {
+      "north": 12059,
+      "south": 12222
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12063,
+    "name": "Glimmerholt - Iron Store",
+    "description": "A secure stone building adjacent to the forge quarter serves as the repository for Glimmerholt's iron supply, the raw material that makes the Amber Forge possible. Iron is brought by caravan from the Kovaka mountain holds, a journey of several weeks, and the supply must be carefully managed to ensure the forge never runs dry between deliveries. The store is locked and guarded, its contents representing a significant investment of trade goods and transport effort. An inventory board near the door tracks current stocks and projected consumption, and Ironscar reviews it daily with the focused attention of a craftsman whose livelihood depends on raw materials he cannot produce locally.",
+    "exits": {
+      "south": 12060,
+      "north": 12078
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12064,
+    "name": "Glimmerholt - Mixed Residential (East)",
+    "description": "The eastern residential quarter of Glimmerholt houses the settlement's most diverse population, with Pasua vine-work homes, Mytrone timber longhouses, and Kovaka stone cottages standing side by side along winding lanes that follow the ridge's natural contours. The proximity has produced a distinctive local culture -- Pasua music performed around Mytrone hearth-fires, Kovaka stone-carving decorating Pasua doorways, children playing games that blend traditions from all three peoples. The quarter has the lived-in warmth of a community that has moved past tolerance into genuine integration, its diversity visible in every doorway and audible in every conversation.",
+    "exits": {
+      "north": 12057,
+      "east": 12069,
+      "south": 12065
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12065,
+    "name": "Glimmerholt - Tavern: The Amber Hearth",
+    "description": "The Amber Hearth is Glimmerholt's only tavern, a timber-and-stone building whose name references both the settlement's forge and the amber resin that the surrounding forests produce. The common room has a large central fireplace, eight tables, and a bar stocked with local ale, forest-berry wine, and the strong honey-mead that Mytrone culture prizes. The innkeeper, a Halfling named Pip Barleycroft, runs the establishment with the cheerful efficiency of someone who genuinely enjoys feeding people. The tavern serves as the settlement's social center, the place where traders, smiths, foresters, and farmers meet at the end of the working day.",
+    "exits": {
+      "north": 12064
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12066,
+    "name": "Glimmerholt - Western Slope",
+    "description": "The western slope of Warden's Ridge below Glimmerholt is a gradual descent through mixed grass and scattered trees toward the open grasslands that stretch to Brayholt Crossing and the Eternal Steppe beyond. The slope is used for grazing by the settlement's livestock, and the patchwork of cropped grass and wild growth creates a landscape that transitions from cultivated to wild over a short distance. A well-worn track descends the slope toward the grassland road, its surface rutted by wagon wheels from the trade caravans that supply the settlement.",
+    "exits": {
+      "east": 12059,
+      "west": 12079,
+      "south": 12231
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12067,
+    "name": "Glimmerholt - Eastern Forest Edge",
+    "description": "The eastern edge of Glimmerholt marks the transition from ridge-top settlement to forest, the trees thickening rapidly as the terrain descends from the ridge into the woodland that covers the Reach's eastern half. A path leads east into the forest toward Silkenbough and the other Pasua settlements, its entrance marked by a carved post bearing both Mytrone and Pasua trail-signs. The forest here is managed -- undergrowth cleared, dead trees removed, and the canopy thinned to admit light -- reflecting the Pasua influence on Glimmerholt's relationship with its woodland surroundings. The air is noticeably cooler and moister once the tree cover begins.",
+    "exits": {
+      "north": 12068,
+      "east": 12073,
+      "northwest": 12236
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12068,
+    "name": "Glimmerholt - Ridge Path North",
+    "description": "A path follows the crest of Warden's Ridge north from Glimmerholt, the terrain narrowing as the ridge ascends toward the higher ground that separates the Reach from the northern mountains. The path is used by Wind-Rider patrols on the north-south circuit and by foragers collecting the mountain herbs that grow on the ridge's exposed upper slopes. Views from the path are spectacular -- the grasslands stretching west, the forest canopy rolling east, and the distant shapes of the Giant's Teeth mountains visible on clear days to the north. The wind along the ridge is constant and strong, carrying scents from both grassland and forest.",
+    "exits": {
+      "west": 12058,
+      "south": 12067,
+      "east": 12071,
+      "north": 12223
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12069,
+    "name": "Glimmerholt - Amber Resin Collection",
+    "description": "A grove of amber-producing trees on Glimmerholt's eastern slope provides the raw material for one of the settlement's secondary exports. The trees are tapped in the Pasua fashion, small incisions made in the bark and collection cups hung beneath to catch the slow flow of golden resin. The accumulated amber is processed in a small workshop nearby, where it is clarified, shaped, and polished into the beads, ornaments, and preservation medium that finds a market across the Reach and beyond. The grove smells of pine and honey, the amber's fragrance carrying on the warm air that rises from the sun-heated slope.",
+    "exits": {
+      "west": 12064
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12070,
+    "name": "Glimmerholt - Preserved Meats Store",
+    "description": "A long, low building on the market's northern edge serves as the processing and storage facility for the preserved meats that Glimmerholt produces for trade and patrol supply. The technique combines Mytrone steppe-drying methods with Pasua forest-smoking, producing a preserved meat that is lighter and more flavorful than either tradition achieves alone. Racks of drying meat hang from the ceiling, and the smokehouse at the building's rear produces a continuous output of smoked venison, elk, and the small game that the forest provides. The store is a primary supplier for Wind-Rider patrol rations, and bulk orders from Hillwatch account for a significant portion of its output.",
+    "exits": {
+      "east": 12058
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12071,
+    "name": "Glimmerholt - Ridge Overlook",
+    "description": "A natural viewpoint at the ridge's highest point near Glimmerholt provides a panoramic vista that encompasses much of Gatefall Reach. To the west, the grasslands roll toward the Eternal Steppe in waves of green and gold. To the east, the crescent forest's canopy stretches like a dark green sea, broken only by the distant glimmer of Silkenbough's wind-silk banners. To the south, the lower ridgeline descends toward Redtrail Hollow, and on the clearest days the dark line of the Gap is visible as a notch in the southern mountains. Residents come here for the view, the quiet, and the perspective that elevation provides on the small, scattered communities they call home.",
+    "exits": {
+      "west": 12068
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12072,
+    "name": "Glimmerholt - Mytrone Quarter",
+    "description": "The Mytrone residential area occupies the western face of the ridge, its timber longhouses positioned to face the grasslands that the steppe-born residents consider their natural landscape. The homes are built in the traditional Mytrone style -- long, low, with central hearths and sleeping platforms along the walls -- adapted to the ridge's slope by Kovaka-built stone foundations that level the building sites. Horse-tack and riding equipment hang on every porch, and the small stable at the quarter's edge houses the personal mounts that Mytrone residents maintain regardless of whether their daily work requires riding. The evening smell of hearth-fire and horse is unmistakably Mytrone.",
+    "exits": {
+      "southeast": 12056
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12073,
+    "name": "Glimmerholt - Pasua Herbalist",
+    "description": "A Pasua herbalist maintains a practice near the eastern forest edge, her clinic serving the medical needs of a settlement too small to support a dedicated physician. The clinic occupies a timber building with a herb garden that overflows its boundaries into the surrounding forest edge, the cultivated plants gradually merging with wild growth. The herbalist's knowledge spans both Pasua forest-medicine and the practical trauma care that the Reach's frontier conditions demand, and her reputation draws patients from settlements across the Reach. Bundles of dried herbs hang from every rafter, their combined fragrance creating an atmosphere that patients describe as calming before any treatment begins.",
+    "exits": {
+      "west": 12067
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12074,
+    "name": "Glimmerholt - Kovaka Stone Circle",
+    "description": "A small Kovaka community maintains a stone circle on the ridge's northern slope, its twelve standing stones carved with the protective runes that Kovaka tradition places around every permanent settlement. The stones are modest by Kovaka standards -- six feet tall, undressed granite -- but their placement follows precise geometric principles that Ironscar explains with the quiet pride of someone who understands both the craft and its spiritual significance. The circle is used for Kovaka observances and as a quiet gathering place for the settlement's Kovaka minority, its stone presence a reminder of the mountain culture that built Hillwatch's walls and Glimmerholt's forge.",
+    "exits": {
+      "north": 12060
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "rune_circle",
+        "state": "dormant",
+        "attunement": "earth",
+        "power": "ward",
+        "study_dc": 18,
+        "activate_dc": 16
+      }
+    ]
+  },
+  {
+    "vnum": 12075,
+    "name": "Glimmerholt - South Road",
+    "description": "The road south from Glimmerholt follows Warden's Ridge toward Redtrail Hollow, descending gradually through terrain that alternates between exposed ridgeline and scattered tree cover. The road is maintained by the settlements it connects, each responsible for the section nearest their walls, and the quality varies accordingly -- Glimmerholt's section is well-graded and drained, while the stretches between settlements show the wear of weather and limited maintenance resources. Wind-Rider patrol markers line the road at regular intervals, their colored cords indicating the last patrol's date and findings.",
+    "exits": {
+      "west": 12055,
+      "south": 12224
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12076,
+    "name": "Glimmerholt - Grain Store",
+    "description": "Glimmerholt's grain store occupies a stone building near the market, its thick walls keeping the contents cool and dry through the seasonal temperature changes that make food preservation a constant concern. The settlement does not grow grain -- the ridge is unsuitable for cultivation on that scale -- but maintains a reserve supplied by trade with the grassland settlements and occasional imports from the Eternal Steppe. The store's contents represent the community's food security, and the Speaker monitors supply levels personally. Sacks of wheat, barley, and the hardy mountain grain called stone-millet are stacked to the ceiling in ordered rows.",
+    "exits": {
+      "southwest": 12056
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12077,
+    "name": "Glimmerholt - Hot Spring Pool",
+    "description": "Below Firebraid's Shrine, the hot spring's overflow collects in a natural rock pool that the settlement has developed into a communal bathing facility. The water is warm and mineral-rich, its surface steaming on cool mornings and carrying a faint sulfur scent that newcomers notice and residents have long since stopped detecting. The pool is a social space as much as a practical one -- residents gather here at the end of the working day, the warm water and open air encouraging the kind of relaxed conversation that strengthens community bonds. Smooth stones line the pool's edges, and someone has carved a bench into the rock on the pool's deepest side.",
+    "exits": {
+      "south": 12061
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 12078,
+    "name": "Glimmerholt - Apprentice Quarters",
+    "description": "A modest timber building near the forge houses Ironscar's apprentices, the three young people -- two Mytrone and one Pasua -- who are learning the smith's trade under his demanding instruction. The quarters are sparse but clean, equipped with cots, storage chests, and a study table where the apprentices practice the technical drawings that Ironscar requires before any piece is forged. The walls are decorated with the apprentices' early work -- simple hooks, hinges, and nails progressing to more complex tools as their skills develop. The quarters have the organized clutter of young people living communally under a strict teacher's supervision.",
+    "exits": {
+      "south": 12063
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12079,
+    "name": "Glimmerholt - Trade Road West",
+    "description": "The main trade road departs Glimmerholt's western slope, descending through grassland toward the network of paths that connect the Reach's settlements to each other and to the wider world. This is the route that trade caravans follow, and the road's width and grading reflect the wagon traffic it handles. Ruts from recent passage mark the packed earth surface, and a milestone carved by Kovaka hands marks the distance to Brayholt Crossing. The road's straightness across the open grassland means that approaching traffic is visible for miles, a feature that traders appreciate and Wind-Rider patrols rely on for early identification.",
+    "exits": {
+      "east": 12066,
+      "west": 12232
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12080,
+    "name": "Brayholt Crossing - Steppe Road Gate",
+    "description": "The western approach to Brayholt Crossing is marked not by a wall or gate but by a pair of tall Windstone pillars flanking the road, their quartz-veined surfaces glowing with the amber warmth that signals a Mytrone community's welcome. The Crossing has no fortifications -- its position on open grassland makes walls impractical, and its culture prizes openness over defense. The road between the pillars is wide enough for four horsemen abreast, worn smooth by the hooves of generations of steppe horses. Beyond the pillars, the settlement spreads across the grassland in the loose, camp-like arrangement that Mytrone communities prefer, with spaces between structures that allow the wind to pass through freely.",
+    "exits": {
+      "west": 12241,
+      "east": 12081,
+      "south": 12092,
+      "north": 12104
+    },
+    "flags": [
+      "safe",
+      "gate"
+    ]
+  },
+  {
+    "vnum": 12081,
+    "name": "Brayholt Crossing - Grassmane's Ring",
+    "description": "Headman Torven Grassmane's gathering circle occupies the center of Brayholt Crossing, a ring of flat stones surrounding a fire-pit that serves as the community's council chamber, dispute-resolution forum, and social gathering place. The ring follows the ancient Mytrone pattern -- no seat higher than another, the fire at the center where all can see and be seen. Grassmane governs with the direct, physical authority of a man who earned his position through demonstrated strength, horsemanship, and the respect of his neighbors. The ring is the first place visitors are brought, the Mytrone tradition of hospitality requiring that a traveler be offered fire and water before any business is discussed.",
+    "exits": {
+      "west": 12080,
+      "north": 12082,
+      "south": 12083,
+      "east": 12084,
+      "northeast": 12098,
+      "northwest": 12102,
+      "southeast": 12093
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12082,
+    "name": "Brayholt Crossing - Horse Fair Grounds",
+    "description": "The Horse Fair grounds occupy a vast open area north of the settlement, their expanse defined by rope fencing that is erected for the seasonal fairs and removed between events. When the fair is active, this ground hosts the largest gathering of horses in Gatefall Reach -- Mytrone steppe-breeds from the local camps, Kovaka draft animals from the mountain settlements, and occasionally the tall, lean mounts that Far Riders bring from Tavranek for trade. Between fairs, the ground serves as communal grazing and a practice area for the young riders who compete in the horsemanship contests that accompany every gathering. The grass is permanently cropped short by the traffic of hooves.",
+    "exits": {
+      "south": 12081,
+      "north": 12087,
+      "east": 12088,
+      "west": 12085,
+      "northeast": 12095
+    },
+    "flags": [
+      "safe",
+      "market"
+    ]
+  },
+  {
+    "vnum": 12083,
+    "name": "Brayholt Crossing - Halfling Quarter",
+    "description": "The Halfling community at Brayholt Crossing occupies the settlement's southern edge, their earth-sheltered homes built into the gentle slope of the terrain with the skill that Halfling construction applies to any landscape. The quarter is a miniature of the Halfling trading culture -- small warehouses, a communal kitchen larger than the homes it serves, and the broker's office where the Halfling traders who route goods through the Crossing conduct business. The Halflings here specialize in the steppe-to-forest trade, moving Mytrone leather and horses east and Pasua textiles and herbs west, taking a modest commission that accumulates into comfortable prosperity.",
+    "exits": {
+      "north": 12081,
+      "east": 12089,
+      "south": 12096,
+      "west": 12099,
+      "southwest": 12100
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12084,
+    "name": "Brayholt Crossing - East Road",
+    "description": "The road east from Brayholt Crossing leads toward Glimmerholt and the forest settlements beyond, crossing open grassland that gradually acquires scattered tree cover as the terrain rises toward Warden's Ridge. The road is the Crossing's primary trade link to the eastern Reach, and wagon ruts mark its surface in parallel tracks that testify to regular commerce. A Windstone marker at the road's departure point bears carved directions and the current road-condition assessment, updated by the last patrol to travel the route. The grassland on both sides of the road is notably taller than the central Eternal Steppe, reaching waist-height in late summer.",
+    "exits": {
+      "west": 12081,
+      "east": 12232,
+      "north": 12086,
+      "south": 12094
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12085,
+    "name": "Brayholt Crossing - Vitsa Yards",
+    "description": "The Visetri Dwarf wagon-trains -- vitsa -- maintain a semi-permanent camp on the Crossing's northern outskirts, their heavy wagons arranged in the defensive circle that Visetri tradition prescribes for any halt longer than a single night. The vitsa carry metalwork, tools, and the exotic trade goods that the Visetri acquire during their endless circuit of Oreka's settled regions, and their presence at the Crossing is a reliable indicator of the season -- they arrive with the spring thaw and depart before the first winter storms. The dwarves conduct business from their wagons, and the quality of their metalwork is a useful benchmark against which Ironscar measures his own output.",
+    "exits": {
+      "east": 12082,
+      "north": 12090,
+      "south": 12101
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12086,
+    "name": "Brayholt Crossing - Windstone",
+    "description": "A Windstone stands at the Crossing's eastern edge, its eight-foot height modest by the standards of Tavranek's Great Windstone but carrying the same amber-white resonance that Kin-sense perceives as the earth's patient attention. The stone was placed here during the Concordant era, marking the Crossing as an official waypoint on the steppe road network, and its presence gives the settlement a legitimacy that its informal layout might otherwise undermine. Riders touch the stone on arrival and departure in the universal Mytrone gesture of acknowledgment, and small offerings accumulate around its base -- polished pebbles, braided grass, the occasional coin. On windless nights, the stone's quartz veins glow faintly, visible from the settlement's every quarter.",
+    "exits": {
+      "south": 12084
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "amplified",
+        "message": "The Windstone amplifies your Kin-sense, extending your awareness across the grassland."
+      }
+    ]
+  },
+  {
+    "vnum": 12087,
+    "name": "Brayholt Crossing - Open Grazing North",
+    "description": "The grassland north of the Horse Fair grounds stretches toward the horizon in an unbroken expanse, the tall steppe-grass moving in waves under the constant wind. This is open grazing territory, shared by the Crossing's horse herds and the wild steppe-elk whose migration patterns bring them through the area in autumn. The grass here grows to chest height in late summer, dense enough to conceal a crouching rider, and Wind-Rider patrols navigate it by reading the grass-patterns rather than following visible paths. Scattered Windstone markers dot the landscape at intervals, their amber glow the only vertical features in an otherwise horizontal world.",
+    "exits": {
+      "south": 12082
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12088,
+    "name": "Brayholt Crossing - Tack and Leather Works",
+    "description": "A cluster of workshops on the Horse Fair's eastern edge produces the tack, saddles, and leather goods that are the Crossing's secondary industry after horse trading itself. Mytrone leatherworkers apply techniques refined over generations of steppe life, producing saddles and bridles designed specifically for the long-distance riding that the steppe demands -- lighter than settled-culture tack, with reinforced stress points and a design that distributes the rider's weight for maximum endurance. The smell of cured leather and the oils used in the finishing process is strong here, and the workshops are busy year-round preparing stock for the seasonal fairs.",
+    "exits": {
+      "west": 12082,
+      "south": 12091
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12089,
+    "name": "Brayholt Crossing - Broker's Office",
+    "description": "The Halfling broker's office is the commercial nerve center of Brayholt Crossing, a stone-floored building where the trade that flows through the settlement is organized, contracted, and financed. The broker, a Halfling named Dari Copperkettle, maintains ledgers that track the movement of goods between the Eternal Steppe and the Reach's settlements, and her commission rates are the de facto standard for trade in the western Reach. The office walls are covered with posted prices, trade agreements, and the road-condition reports that determine which routes are viable for wagon traffic. Copperkettle's intelligence network -- maintained through the Halfling caravan system -- makes her the best-informed person in the Crossing on matters of supply and demand.",
+    "exits": {
+      "west": 12083,
+      "south": 12103
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12090,
+    "name": "Brayholt Crossing - Visetri Forge Camp",
+    "description": "The Visetri wagon-train maintains a portable forge that operates whenever the vitsa is camped at the Crossing, its output supplementing the Amber Forge's production and introducing metalwork techniques that the Visetri have collected from settlements across the continent. The forge is built into a specially designed wagon, its chimney extending above the wagon's roofline and its anvil bolted to a stone slab that serves as the wagon's floor. The dwarven smith works with an efficiency born of limited space and materials, producing repairs, custom orders, and the small ornamental pieces that the Visetri sell alongside their heavier trade goods. The contrast between the wagon-forge and Ironscar's permanent facility is a study in the difference between nomadic and settled craft traditions.",
+    "exits": {
+      "south": 12085
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12091,
+    "name": "Brayholt Crossing - Stable Yards",
+    "description": "The stable yards serve the Crossing's working horses and the mounts of visiting riders, providing shelter, water, and feed in a facility that prioritizes function over aesthetics. The stables are open-sided timber shelters arranged around a central water trough, the design allowing horses to be housed communally in the Mytrone fashion rather than in individual stalls. A horse-handler maintains the facility year-round, and the quality of care is immediately apparent in the animals' condition -- glossy coats, alert ears, and the calm demeanor of horses accustomed to professional handling. The stable yards also serve as the unofficial gathering place for the Crossing's riders, who congregate here to exchange news and compare horseflesh.",
+    "exits": {
+      "north": 12088
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12092,
+    "name": "Brayholt Crossing - Wind Gathering Ground",
+    "description": "A broad open area on the Crossing's western edge is reserved for the Wind Gathering festival, the annual celebration shared with Eternal Steppe camps that brings riders from across the western grasslands for competitions, trade, and the renewal of alliances. The ground is marked with permanent stone circles where campfires are lit during the gathering, each circle assigned to a specific camp or settlement by tradition. The gathering is the Crossing's most important cultural event, reinforcing the bonds between the Reach's western settlements and the steppe culture from which they emerged. Between gatherings, the ground serves as overflow camping for large caravans.",
+    "exits": {
+      "north": 12080,
+      "west": 12097
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12093,
+    "name": "Brayholt Crossing - Dried Grass Works",
+    "description": "The dried grass works process the tall steppe-grass into the woven mats, baskets, rope, and animal feed that the Crossing exports alongside its horse trade. The techniques are traditional Mytrone, refined for the taller, more fibrous grass that grows in Gatefall Reach's wetter climate, and the products are prized for their durability. Workers strip, dry, and weave the grass under open-sided shelters, their hands moving with the automatic rhythm of a skill learned in childhood. The works produce the grass-rope that Wind-Rider patrols use for everything from hobbling horses to emergency field repairs, and bulk orders from Hillwatch keep the operation running year-round.",
+    "exits": {
+      "northwest": 12081
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12094,
+    "name": "Brayholt Crossing - Pasua Rest House",
+    "description": "A small rest house near the Crossing's eastern road provides lodging and provisions for Pasua travelers passing through the settlement on their way between the forest communities and the wider world. The building is a cultural hybrid -- Mytrone in construction but decorated with Pasua vine-work and furnished with the low cushions and herb-lamps that Pasua comfort traditions prefer. The rest house is maintained by a Pasua family that has lived in the Crossing for two generations, their presence a bridge between the settlement's Mytrone majority and the forest culture to the east.",
+    "exits": {
+      "north": 12084
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12095,
+    "name": "Brayholt Crossing - North Steppe Road",
+    "description": "The road north from Brayholt Crossing leads into the open grassland toward Hillwatch and the northern Reach. The road is a packed-earth track, its surface hardened by hooves and maintained by the patrol traffic that passes regularly between the two settlements. The grassland here is particularly tall, the stems reaching shoulder height on a mounted rider, and the road cuts through it like a corridor through a green wall. Windstone markers line the route at half-mile intervals, their glow a reassurance on overcast days when the featureless grassland offers no other navigational reference.",
+    "exits": {
+      "southwest": 12082,
+      "north": 12230
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12096,
+    "name": "Brayholt Crossing - Campfire Circle",
+    "description": "A permanent campfire circle on the settlement's southern edge serves as the nightly gathering place where the Crossing's residents share food, stories, and the news brought by the day's travelers. The circle is the social heart of the community, more important in daily life than Grassmane's formal council ring, and the conversation here ranges from livestock prices to weather predictions to the retelling of Running War stories that the elders never tire of sharing. The fire is lit at dusk and maintained until the last person retires, and the tradition is so deeply embedded that a night without the campfire circle would feel like a night without darkness.",
+    "exits": {
+      "north": 12083
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12097,
+    "name": "Brayholt Crossing - Western Steppe Outlook",
+    "description": "A low rise on the Crossing's western edge provides a view across the grassland toward the Eternal Steppe border, the horizon unbroken by any feature taller than the waving grass. On clear days, the shimmer of heat rising from the central steppe is visible as a faint distortion above the western horizon, and experienced riders claim they can smell the difference between the Reach's wetter grassland and the drier steppe beyond. This spot is favored by the Crossing's lookouts and by homesick steppe-born residents who come here to watch the west wind move through the grass in patterns that remind them of the open country they left behind.",
+    "exits": {
+      "east": 12092
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12098,
+    "name": "Brayholt Crossing - Mytrone Longhouse Row",
+    "description": "The main residential area of Brayholt Crossing consists of a row of Mytrone longhouses built along the settlement's eastern side, their long axes oriented to face the prevailing west wind in the traditional fashion. Each longhouse shelters an extended family unit, its central hearth and sleeping platforms accommodating parents, children, grandparents, and the unmarried relatives that Mytrone family structure absorbs. The spaces between longhouses serve as work areas where daily tasks are performed communally -- butchering, hide-tanning, gear repair, and the constant maintenance of horse equipment. The smell of hearth-smoke and the sound of family life define this quarter.",
+    "exits": {
+      "southwest": 12081
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12099,
+    "name": "Brayholt Crossing - Caravan Rest Area",
+    "description": "An area on the Crossing's southern approach provides a designated rest and staging area for the caravans that pass through on the steppe-to-forest trade route. The area has water troughs, tie-lines for draft animals, and flat ground suitable for wagon-circle camping, all maintained by the Halfling trading community as a service to the caravan traffic that sustains their brokerage business. Caravans from the Eternal Steppe arrive dusty and road-worn, their drivers grateful for the water and the opportunity to reorganize loads before the road east toward the forest settlements, which requires different packing for the narrower paths.",
+    "exits": {
+      "east": 12083
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12100,
+    "name": "Brayholt Crossing - South Road Junction",
+    "description": "A junction south of Brayholt Crossing marks where the road splits, one branch heading southeast toward the grasslands that connect to Glimmerholt and another continuing south toward the wider network of paths through the Reach. A carved stone post marks the junction with distance estimates and the colored-cord patrol markers that indicate route status. The junction is a common meeting point for travelers coordinating their routes, and a small shelter provides shade for those waiting. The grassland stretches in every direction, the tall grass hiding the paths until a traveler is nearly upon them.",
+    "exits": {
+      "northeast": 12083
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12101,
+    "name": "Brayholt Crossing - Dwarf Metalwork Display",
+    "description": "A covered stall near the Vitsa Yards displays the finest examples of Visetri metalwork for sale to the Crossing's visitors and residents. The display changes with each vitsa visit, but typically includes ornamental ironwork, copper vessels, silver jewelry, and the precision tools that Visetri smiths produce to standards that most settled forges cannot match. The quality differential between Visetri work and local production is significant enough that customers willingly pay premium prices, and the seasonal nature of the supply creates a market dynamic that rewards early buyers. The dwarf merchant who manages the display haggles with the cheerful persistence of someone who knows exactly what their goods are worth.",
+    "exits": {
+      "north": 12085
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12102,
+    "name": "Brayholt Crossing - Grassmane's Longhouse",
+    "description": "Headman Grassmane's personal longhouse is the largest in the Crossing, its construction reflecting the status of its occupant without the ostentation that Mytrone culture would consider poor leadership. The longhouse is thirty paces long, its interior organized in the traditional fashion -- the headman's quarters at the far end, guest accommodations along the sides, and the great hearth at the center where Grassmane hosts the communal feasts that punctuate the settlement's calendar. Trophy horns from steppe-elk hunts decorate the rafters, and a rack of weapons near the door includes the massive greataxe that earned Grassmane his reputation as a barbarian of considerable personal power.",
+    "exits": {
+      "southeast": 12081
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12103,
+    "name": "Brayholt Crossing - Water Well",
+    "description": "The Crossing's primary water supply comes from a deep well sunk into the grassland's water table, its stone-lined shaft drawing cold, clear water from an aquifer fed by rainfall across the western Reach. The well is the settlement's most critical piece of infrastructure, and its maintenance is a communal responsibility overseen by the headman personally. A Kovaka-dressed stone rim protects the well's mouth, and a windlass mechanism draws the water bucket on a rope of braided grass-fiber. The well's surroundings serve as an informal gathering point, and more casual conversation happens here than at any other single location in the Crossing.",
+    "exits": {
+      "north": 12089
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 12104,
+    "name": "Brayholt Crossing - Western Steppe Road",
+    "description": "The road west from Brayholt Crossing leads into the Eternal Steppe proper, the terrain transitioning from the Reach's taller, wetter grassland to the shorter, drier grass of the central steppe over a distance of several miles. This is the route that connects the Reach to Tavranek, the Asharen camps, and the wider Mytrone world, and its traffic defines the Crossing's identity as a border settlement. The road is ancient -- its course follows a route established during the Giant era and maintained by every culture that has occupied the steppe since. The wind along the road carries the dry, mineral scent of the open steppe, noticeably different from the greener air of the Reach.",
+    "exits": {
+      "south": 12080
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12105,
+    "name": "Redtrail Hollow - Ridge Approach",
+    "description": "The approach to Redtrail Hollow follows Warden's Ridge south from Glimmerholt, the ridge narrowing as it descends toward the depression where the settlement sits. The distinctive red clay that gives the settlement its name first appears underfoot here, staining the packed-earth road with streaks of rust-colored soil that have been deliberately worked into the path by generations of patrol traffic. The clay marks Wind-Rider routes throughout the area, its vivid color visible against the forest and grassland for miles -- a navigation system as practical as any map. The settlement's Signal Tower is visible ahead, rising above the treeline on the ridge's crest.",
+    "exits": {
+      "south": 12106,
+      "northwest": 12224
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12106,
+    "name": "Redtrail Hollow - North Gate",
+    "description": "Redtrail Hollow's northern entrance is a gap in the timber palisade that surrounds the settlement, its posts sharpened and angled outward in the practical defense style of a community that expects trouble from the forest rather than the steppe. The palisade is not a true fortification -- it would not withstand a determined assault -- but it deters wildlife and marks the boundary between settlement and wilderness with the clarity that the Reach's frontier conditions demand. Guards maintain a watch log at the gate, and the red clay of the trail is tracked through the entrance in patterns that show the constant passage of patrol boots and horse hooves.",
+    "exits": {
+      "north": 12105,
+      "south": 12107,
+      "east": 12120,
+      "west": 12128
+    },
+    "flags": [
+      "safe",
+      "gate"
+    ]
+  },
+  {
+    "vnum": 12107,
+    "name": "Redtrail Hollow - Main Path",
+    "description": "The main path through Redtrail Hollow runs north-south along the bottom of the natural depression that gives the settlement its name, connecting the gate to the various facilities that serve the community's dual function as residential village and forward patrol base. The path is lined with the red clay that patrol boots have ground into the soil, its color a constant reminder of the trails that radiate from this point into the surrounding wilderness. Buildings line both sides of the path -- small residences, the provisions store, and the barracks that houses the patrol detachment. Captain Sera Dawnwatch's command post is visible at the path's southern end, its flag bearing the Wind-Rider device.",
+    "exits": {
+      "north": 12106,
+      "south": 12109,
+      "east": 12108,
+      "west": 12110,
+      "northeast": 12114,
+      "northwest": 12115,
+      "southeast": 12119
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12108,
+    "name": "Redtrail Hollow - Signal Tower",
+    "description": "The Signal Tower rises from the eastern rim of the hollow, a forty-foot timber structure that provides Redtrail Hollow's primary link to the Reach's communication network. The tower commands views across the forest canopy to the east, along Warden's Ridge to the north and south, and across the grassland to the west, making it the most strategically positioned observation post in the eastern Reach. Signal braziers at the platform's four corners can relay coded messages to Hillwatch, Glimmerholt, and the outlying patrol camps within minutes. The tower is manned continuously, and the duty watchers maintain a detailed log of every observation -- movement in the forest, smoke, unusual animal behavior, and the subtle changes in atmospheric pressure that experienced watchers associate with Breach activity.",
+    "exits": {
+      "west": 12107,
+      "east": 12118,
+      "north": 12129,
+      "south": 12121
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12109,
+    "name": "Redtrail Hollow - Captain's Post",
+    "description": "Captain Sera Dawnwatch commands the Reach's eastern patrol operations from a timber building at the hollow's southern end, its interior combining the functions of command post, armory, and the Captain's personal quarters. Maps of the eastern Reach cover every wall, annotated with patrol routes, threat assessments, and the locations of the Tomb of Kings and Silence Breach approaches that Dawnwatch monitors with particular attention. The Captain is a Mytroan fighter of practical competence, her authority derived from demonstrated skill and the trust of the patrol riders who serve under her. Her desk holds a stack of patrol reports, and the lamp burns late most evenings as she reviews the intelligence that flows in from the field.",
+    "exits": {
+      "north": 12107,
+      "south": 12111,
+      "east": 12112,
+      "west": 12124,
+      "southwest": 12125
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12110,
+    "name": "Redtrail Hollow - Windmark's Hollow",
+    "description": "West of the main path, a natural depression within the larger hollow provides the setting for Windmark's Hollow, the ancient Pasua meeting ground that predates the current settlement by centuries. Pasua elder Thren Windmark maintains this space as a place of gathering and decision-making for the settlement's Pasua population, its sunken floor and natural earth walls creating an intimate amphitheater where voices carry with unusual clarity. The hollow's floor is carpeted with moss and the small white flowers that Pasua tradition associates with memory and truth. Windmark and Dawnwatch co-govern the settlement from their respective spaces, their partnership a model of the Mytrone-Pasua cooperation that defines the Reach's culture.",
+    "exits": {
+      "east": 12107,
+      "south": 12113,
+      "west": 12117,
+      "north": 12127,
+      "northwest": 12126
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12111,
+    "name": "Redtrail Hollow - Patrol Barracks",
+    "description": "The patrol barracks houses the Wind-Rider detachment assigned to the eastern Reach, a complement of twenty riders who rotate through patrol circuits covering the Tomb of Kings approach, the Silence Breach perimeter, and the forest paths that connect the eastern settlements. The barracks is a long timber building with cots, weapon racks, and the gear-maintenance stations where riders prepare for patrol. The atmosphere is more intense than Hillwatch's garrison -- the eastern patrols encounter the Reach's most dangerous threats, and the riders' equipment shows the wear of regular contact with hostile terrain and creatures. A casualty board near the entrance lists the names of riders lost on patrol, the most recent entry less than a year old.",
+    "exits": {
+      "north": 12109
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12112,
+    "name": "Redtrail Hollow - Red Trail Departure",
+    "description": "The red trails radiate from Redtrail Hollow's eastern gate into the surrounding forest and ridgeline, their distinctive clay-stained surfaces marking the patrol routes that Wind-Riders have maintained since the settlement's founding. Three major trails depart from this point: northeast along the ridge toward Glimmerholt, southeast toward the Tomb of Kings approach, and east into the forest toward the Silence Breach perimeter. Each trail is marked with the patrol-marker stakes that indicate current status -- colored cords showing the date and findings of the last patrol to travel the route. The red clay underfoot is deliberately maintained, fresh clay applied to the trails at regular intervals to preserve their visibility.",
+    "exits": {
+      "west": 12109,
+      "east": 12245
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12113,
+    "name": "Redtrail Hollow - Pasua Herb Cache",
+    "description": "A small structure near Windmark's Hollow serves as the storage and preparation facility for the medicines and herbal preparations that the settlement's Pasua population produces from the surrounding forest. The cache holds dried herbs, prepared poultices, and the bitter bark-tea that Wind-Rider patrols carry as a field remedy for fever and wound-infection. Windmark oversees the cache personally, her knowledge of forest medicine supplemented by a network of Pasua herbalists in the surrounding communities who share rare ingredients and techniques. The cache is an essential resource for the patrol operations, and its contents are tracked with the same precision that the armory applies to weapons.",
+    "exits": {
+      "north": 12110
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12114,
+    "name": "Redtrail Hollow - Provisions Store",
+    "description": "The provisions store occupies a central location between the barracks and the residential area, its contents supplying both the patrol operations and the settlement's daily needs. The store stocks dried meat, grain, salt, and the trail rations that patrol riders carry in standardized packs designed for maximum nutrition in minimum weight. Supplies arrive by caravan from Glimmerholt and Hillwatch on a regular schedule, and the storekeeper maintains inventory levels with the focused attention of someone who knows that a failed resupply could leave patrols without food in the field. The building smells of dried provisions and the cedar wood used for the storage shelves.",
+    "exits": {
+      "southwest": 12107,
+      "south": 12122
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12115,
+    "name": "Redtrail Hollow - Residential Lane",
+    "description": "A narrow lane branches off the main path toward the residential section of Redtrail Hollow, where the settlement's permanent population of families and non-patrol personnel live in modest timber homes. The homes are smaller and closer together than in the larger settlements, reflecting both the limited space in the hollow and the communal character of a community that exists primarily to support the patrol operations. Gardens between the homes produce vegetables and herbs, and the lane has the quiet domesticity of a neighborhood whose residents are accustomed to the daily rhythms of a military installation -- the departure and return of patrols, the signal tower's horn calls, the evening report to the Captain.",
+    "exits": {
+      "southeast": 12107,
+      "south": 12116
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12116,
+    "name": "Redtrail Hollow - Rider's Rest",
+    "description": "A small rest house at the residential lane's end provides lodging for visiting riders, messengers, and the occasional traveler who passes through Redtrail Hollow on the way to or from the eastern Reach. The rest house is maintained communally, its four cots and single common room offering basic comfort to people accustomed to sleeping in the field. The innkeeper is a retired patrol rider whose injuries ended her active service, and her knowledge of the surrounding terrain makes her an informal intelligence source for visitors planning routes through the eastern Reach. A hearth fire and hot stew are available at all hours, the settlement's hospitality reflecting the Mytrone tradition that no traveler sleeps cold or hungry.",
+    "exits": {
+      "north": 12115
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12117,
+    "name": "Redtrail Hollow - Stable Yard",
+    "description": "The patrol stables occupy the hollow's western slope, their timber shelters providing cover for the twenty-plus horses that the patrol detachment requires for continuous operations. The stables are larger and better-maintained than the settlement's modest appearance might suggest -- the horses are the foundation of the patrol network, and their care is a priority that overrides most other resource allocations. A farrier maintains a small forge for horseshoeing and tack repair, and the feed stores are kept fully supplied through arrangements with Brayholt Crossing's horse trade network. The horses here are working animals, lean and fit from constant patrol use, their calm demeanor evidence of thorough training.",
+    "exits": {
+      "east": 12110,
+      "west": 12123
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12118,
+    "name": "Redtrail Hollow - Signal Beacon Stores",
+    "description": "A locked outbuilding near the Signal Tower stores the materials for the beacon system that links Redtrail Hollow to the wider communication network -- oil, slow-match, signal-flags, and the colored smoke-pots that supplement the fire-code system in daylight. The stores are maintained with military precision, each item inventoried and replaced on schedule, because a failed signal could leave a patrol without support in hostile territory. The beacon-keeper inspects the stores daily and tests the signal equipment weekly, treating the maintenance with the gravity of someone who has seen the consequences of communication failure. A log book records every test and every message sent.",
+    "exits": {
+      "west": 12108
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12119,
+    "name": "Redtrail Hollow - Kovaka Repair Shop",
+    "description": "The settlement's small Kovaka population maintains a repair shop that handles the stone and metalwork that the patrol operations generate -- weapon repair, tool maintenance, and the structural upkeep that the hollow's timber buildings require. The shop is not a full forge -- serious smithing is sent to Glimmerholt's Amber Forge -- but it handles the day-to-day repairs that keep the settlement functional. The Kovaka craftsmen here apply their people's characteristic precision to work that is modest in scale but essential in effect, their attention to detail evident in the quality of every repaired tool and patched wall.",
+    "exits": {
+      "northwest": 12107
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12120,
+    "name": "Redtrail Hollow - Rider's Return Plaza",
+    "description": "A small plaza near the north gate serves as the site of the annual Rider's Return festival, when the settlement honors returning patrols and commemorates those lost in service. The plaza is paved with flat stones -- each inscribed with the name and patrol dates of a fallen rider -- creating a memorial that grows with each year's losses. During the festival, the stones are cleaned and flowers placed on each one, and the names are read aloud by the Captain in a ceremony that combines Mytrone honor-traditions with the practical grief of a community that loses people regularly. Between festivals, the plaza serves as a muster point for departing patrols, its memorial stones a silent reminder of the stakes.",
+    "exits": {
+      "west": 12106
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12121,
+    "name": "Redtrail Hollow - Forest Edge Lookout",
+    "description": "A cleared area on the hollow's eastern rim provides a lookout over the forest that stretches toward the Silence Breach dead zone. The trees here are old-growth hardwoods, their canopy dense enough to obscure the ground from above, and the lookout's value lies in what it reveals about the forest's health rather than what it shows directly. Experienced watchers read the canopy's color, the flight patterns of birds, and the behavior of the forest's edge-dwelling animals for signs of disturbance that might indicate movement from the Breach. The lookout has a permanently unsettling quality -- the forest to the east is healthy, but it borders something that is not, and the watchers know it.",
+    "exits": {
+      "north": 12108
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12122,
+    "name": "Redtrail Hollow - Tanning Racks",
+    "description": "Tanning racks line a cleared area south of the provisions store, where the hides brought in by hunting patrols are processed into the leather that supplements the settlement's supply chain. The work is done primarily by the Mytrone residents, who apply steppe-tanning techniques to the forest-deer and elk hides that are the area's most available raw material. The smell is powerful and carries downwind across the settlement, a fact that the tanners acknowledge with the cheerful indifference of people who stopped noticing it years ago. The finished leather is used locally for patrol gear and traded to Glimmerholt and Brayholt Crossing for goods the settlement cannot produce.",
+    "exits": {
+      "north": 12114
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12123,
+    "name": "Redtrail Hollow - Forager's Trail",
+    "description": "A trail descends from the hollow's western rim into the mixed forest and grassland where the settlement's foragers collect the wild foods, medicinal plants, and firewood that supplement the supply caravans. The trail is less formal than the red patrol routes, its course shifting with the seasons as different resources become available in different areas. Foragers work in pairs for safety, the eastern Reach's wildlife including species large enough to pose a threat to solitary gatherers. The trail is marked with Pasua forest-signs that indicate current resource locations -- a living map that is updated with each foraging trip.",
+    "exits": {
+      "east": 12117
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12124,
+    "name": "Redtrail Hollow - Dawnwatch's Quarters",
+    "description": "Captain Dawnwatch's personal quarters adjoin the command post, a small but well-organized room that reflects its occupant's practical character. The room contains a cot, a weapon rack holding the Captain's personal arms, a desk covered with patrol reports, and a map of the eastern Reach so heavily annotated that the original cartography is barely visible beneath the accumulated intelligence of years of patrol operations. Dawnwatch's personal effects are few -- a family blade, a Far Rider commendation, and a small stone from the Vigil Stone that she carries as a reminder of the oath she swore when she accepted command. The room has the austere comfort of a professional soldier's living space.",
+    "exits": {
+      "east": 12109
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12125,
+    "name": "Redtrail Hollow - South Trail",
+    "description": "A trail leads south from Redtrail Hollow into the forest, following the ridge's descent toward the deeper woodland where Briarshade lies. The trail is less traveled than the northern routes, its surface showing more forest encroachment and less patrol maintenance. The forest thickens rapidly south of the hollow, the canopy closing overhead and the understory growing dense with ferns and vine-wrapped saplings. Pasua trail-signs mark the route, their subtle indicators the only evidence of human passage in what otherwise appears to be unbroken wilderness. The air grows cooler and damper as the trail descends, carrying the deep forest smell of leaf-mold and moss.",
+    "exits": {
+      "northeast": 12109,
+      "west": 12237
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12126,
+    "name": "Redtrail Hollow - Western Grassland",
+    "description": "The grassland west of Redtrail Hollow stretches toward the lower sections of Warden's Ridge, an open area used by the settlement's residents for grazing and by patrol riders as a training ground for the cross-country riding that the eastern circuits demand. The grass here is knee-high and mixed with wildflowers, the terrain gently rolling in a way that provides natural obstacles for mounted practice. Scattered wind-eroded stones dot the grassland, some bearing traces of carving that suggest they were positioned deliberately in an earlier era -- perhaps Giant waypoints, perhaps pre-Concordant markers whose purpose has been forgotten.",
+    "exits": {
+      "southeast": 12110
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12127,
+    "name": "Redtrail Hollow - Windmark's Garden",
+    "description": "Pasua elder Thren Windmark maintains a garden adjacent to the hollow, its carefully tended beds producing both medicinal herbs and the food plants that supplement the settlement's diet. The garden is a Pasua creation in every detail -- companion-planted, mulched with forest leaf-litter, and organized according to principles that reflect generations of botanical knowledge. Windmark tends the garden personally each morning, the work serving as both practical agriculture and a meditative practice that she describes as listening to what the earth is willing to give. The garden's yield is disproportionate to its modest size, a testament to the Pasua approach of working with the land's natural tendencies rather than against them.",
+    "exits": {
+      "south": 12110
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12128,
+    "name": "Redtrail Hollow - Patrol Assembly Point",
+    "description": "A cleared area just inside the north gate serves as the muster point where patrol teams assemble before departure, receive their briefing from the duty officer, and check their equipment against the standardized patrol loadout. The area is sized for a full patrol team of four riders and their mounts, with space for the supplies that each team carries. A bulletin board displays the current threat assessment, weather forecast, and any special orders from the Captain. The assembly routine is practiced and efficient -- teams form up, receive their briefing, and depart within minutes, the precision reflecting a system refined by years of daily repetition.",
+    "exits": {
+      "east": 12106
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12129,
+    "name": "Redtrail Hollow - Memorial Cairn",
+    "description": "A stone cairn on the ridge above the hollow marks the site where the first Wind-Rider patrol was ambushed during the settlement's founding year, its stones piled by the survivors in the Kovaka tradition of honoring the dead through lasting construction. The cairn has grown over the years as subsequent losses have been commemorated, each addition carefully placed to maintain the structure's stability. The view from the cairn encompasses the full extent of Redtrail Hollow and the forest beyond, a reminder that the settlement exists to watch the approaches that the cairn's dead were the first to guard. Wind-Riders visiting the cairn leave a red clay handprint on the topmost stone, the marks weathering and accumulating like the settlement's history itself.",
+    "exits": {
+      "south": 12108
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12130,
+    "name": "Briarshade - Thornwall Gate",
+    "description": "The entrance to Briarshade is marked by a gap in the Thornwall, the cultivated briar ring that surrounds the settlement in a barrier of interwoven thorns ten feet high and six feet thick. The briars are not merely planted but actively shaped by druidic cultivation, their growth directed and maintained by Druid Lirael Thornveil's ongoing attention. The gap is narrow enough for single-file entry and flanked by briar walls whose thorns are long enough to discourage anything that does not enter on the path. Inside the gap, the forest changes character immediately -- the wild growth of the surrounding woodland giving way to the tended, purposeful arrangement of a Pasua community that has shaped its environment over generations.",
+    "exits": {
+      "north": 12238,
+      "south": 12131,
+      "east": 12146,
+      "west": 12153
+    },
+    "flags": [
+      "safe",
+      "gate"
+    ]
+  },
+  {
+    "vnum": 12131,
+    "name": "Briarshade - Root Council Path",
+    "description": "A path of packed earth and interlocking root leads from the Thornwall gate toward the center of Briarshade, the living root-work underfoot a preview of the architectural style that defines the settlement. The roots have been trained to grow in a flat, interlocking pattern that creates a natural pavement, their surface smooth and stable despite the organic irregularity of their arrangement. The forest here is old and dense, the sky-oaks overhead creating a canopy so thick that the light below has a permanent green-gold quality regardless of the time of day. The sound of birdsong and running water accompanies every step, and the air smells of forest loam and the distinctive spice of Pasua herb-gardens.",
+    "exits": {
+      "north": 12130,
+      "south": 12132,
+      "east": 12143,
+      "west": 12147
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12132,
+    "name": "Briarshade - Root Council Hall",
+    "description": "The Root Council Hall is Briarshade's governing center and its architectural masterpiece, a structure grown entirely from living vines and roots that have been shaped over decades into a building that is simultaneously organic and precisely functional. The hall's walls are woven root, its ceiling a canopy of trained vine, and its floor the same interlocking root-work that paves the settlement's paths. The interior is a single large chamber where Druid Lirael Thornveil holds council, the space lit by bioluminescent moss cultivated in wall-niches that cast a soft, steady green light. The hall has a living presence that Kin-sense perceives as deeply grounded -- the accumulated intention of generations of druidic shaping, the forest itself made habitable.",
+    "exits": {
+      "north": 12131,
+      "south": 12135,
+      "east": 12133,
+      "west": 12134,
+      "southwest": 12140,
+      "southeast": 12141
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 12133,
+    "name": "Briarshade - Herb Gardens East",
+    "description": "The eastern herb gardens of Briarshade produce the rare forest medicinals and alchemical reagents that are the settlement's most valuable exports. The gardens occupy a series of terraces carved into the forest floor, each level receiving a different amount of sunlight filtered through the canopy, allowing species with different light requirements to be cultivated in close proximity. The plants here include species found nowhere else in the Reach, their cultivation representing generations of Pasua botanical knowledge refined by Thornveil's druidic expertise. The air is thick with competing fragrances, some pleasant, some sharp, and some that produce a faint tingling sensation on the skin that the Pasua describe as the plants communicating their presence.",
+    "exits": {
+      "west": 12132,
+      "east": 12139,
+      "south": 12145
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12134,
+    "name": "Briarshade - Na'wasua Quarter",
+    "description": "The Na'wasua community occupies Briarshade's western quarter, their homes built on elevated platforms among the upper branches of a cluster of sky-oaks whose canopy has been thinned to admit more light than the surrounding forest allows. The platforms are connected by rope bridges and vine-wrapped walkways, creating an aerial neighborhood that the Na'wasua prefer over ground-level living. Quartz crystals hung from every platform catch the filtered light and scatter it in patterns that shift throughout the day, creating an ever-changing display of color that the Na'wasua regard as both aesthetic and spiritually significant. The quarter's presence gives the western side of Briarshade an ethereal quality that visitors find compelling.",
+    "exits": {
+      "east": 12132,
+      "south": 12136,
+      "north": 12144
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12135,
+    "name": "Briarshade - Druid Circle",
+    "description": "South of the Root Council Hall, a circular clearing surrounded by the twelve oldest trees in Briarshade serves as Druid Lirael Thornveil's primary working space. The clearing's floor is bare earth kept meticulously clean, its surface inscribed with concentric circles of druidic symbols that glow faintly when the Lord of Wood's attention is invoked. Thornveil conducts the rituals that maintain the Thornwall, shape the settlement's living architecture, and monitor the forest's health from this circle, her work a continuous conversation with the growing things that surround her. The circle has a palpable energy that even those without Kin-sense sometimes perceive -- a sense of vitality, of green things growing with directed purpose, of nature not wild but willing.",
+    "exits": {
+      "north": 12132,
+      "south": 12138,
+      "east": 12137,
+      "west": 12151
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "rune_circle",
+        "state": "active",
+        "attunement": "wind",
+        "power": "heal",
+        "study_dc": 16,
+        "activate_dc": 14
+      }
+    ]
+  },
+  {
+    "vnum": 12136,
+    "name": "Briarshade - Starlight Grove",
+    "description": "The Starlight Grove is Briarshade's most sacred space, a clearing where the Na'wasua community has deliberately thinned the canopy to create a window to the sky above a quartz altar whose polished surface reflects starlight with preternatural intensity. On clear nights, the grove glows with a soft violet luminescence that the Na'wasua describe as the sky reaching down, and ceremonies conducted here are said to grant visions of exceptional clarity and emotional depth. The altar stone was brought from the Giant's Teeth mountains, its quartz content unusually pure, and its resonance on Kin-sense is a sustained high note that some visitors find beautiful and others find unsettling. The grove is the deepest expression of Na'wasua mysticism in the Reach, a place where the boundary between perception and revelation becomes uncertain.",
+    "exits": {
+      "north": 12134,
+      "west": 12142,
+      "east": 12150,
+      "south": 12148
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "rune_circle",
+        "state": "damaged",
+        "attunement": "wind",
+        "power": "amplify",
+        "study_dc": 20,
+        "activate_dc": 18
+      }
+    ]
+  },
+  {
+    "vnum": 12137,
+    "name": "Briarshade - Alchemist's Workshop",
+    "description": "A Pasua alchemist maintains a workshop in a root-woven structure east of the druid circle, where the raw herbs and reagents from the gardens are processed into the preparations that Briarshade exports to the wider Reach. The workshop's interior is a careful arrangement of distillation equipment, drying racks, grinding stones, and the clay vessels in which finished preparations are stored. The work combines Pasua herbal knowledge with techniques borrowed from Kovaka mineral-processing and Na'wasua crystal-work, producing preparations that draw on all three traditions. The air in the workshop is heavy with competing scents, and the alchemist wears a cloth mask while working with the more volatile preparations.",
+    "exits": {
+      "west": 12135
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12138,
+    "name": "Briarshade - Southern Path",
+    "description": "A path leads south from the druid circle toward the deep forest that stretches between Briarshade and the Silence Breach dead zone. The path is narrow and poorly maintained, the forest closing in on both sides with an urgency that reflects the distance from Thornveil's shaping influence. The trees here are old and large, their trunks wrapped with vine and their roots creating a maze of obstacles that makes travel slow and uncertain. The path is used primarily by scouts monitoring the Breach's boundary, and their reports indicate that the forest's health degrades noticeably within a mile of the dead zone's edge. The atmosphere grows heavier as the path descends south, the birdsong fading and the air acquiring a stillness that feels deliberate.",
+    "exits": {
+      "north": 12135,
+      "east": 12149,
+      "south": 12248
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12139,
+    "name": "Briarshade - Reagent Processing",
+    "description": "A dedicated facility east of the herb gardens handles the initial processing of the alchemical reagents that Briarshade produces for trade. Raw materials are cleaned, sorted, dried, and prepared for either local use in the alchemist's workshop or packaging for export. The facility operates year-round, its output tracking the seasonal availability of different species, and the processed reagents command prices high enough to fund the settlement's modest import needs. Workers here are trained in the careful handling that some reagents demand -- certain forest species produce compounds that are toxic in their raw state and must be processed with specific techniques to render them safe for use.",
+    "exits": {
+      "west": 12133
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12140,
+    "name": "Briarshade - Thornveil's Dwelling",
+    "description": "Druid Lirael Thornveil's personal dwelling is a masterwork of living architecture, a structure grown from the trunk of a single massive sky-oak whose interior has been shaped into interconnected chambers by decades of patient druidic cultivation. The walls are smooth heartwood, the floor is living root, and the windows are gaps in the bark that frame views of the surrounding forest like living paintings. The dwelling reflects Thornveil's character -- deeply rooted, patient, and shaped by a relationship with nature that goes beyond cultivation into something approaching partnership. Her presence is felt throughout Briarshade in the health and directed growth of every living structure, but it is concentrated here in a space that is as much forest as home.",
+    "exits": {
+      "northeast": 12132
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12141,
+    "name": "Briarshade - Residential Platforms",
+    "description": "The main residential area of Briarshade consists of platforms built among the sky-oaks south of the Root Council Hall, each platform housing a family unit in structures woven from living vine and branch. The platforms are connected by walkways at varying heights, creating a three-dimensional neighborhood where residents move between levels as naturally as ground-dwellers move along streets. The dwellings are comfortable and well-maintained, their organic construction providing insulation and ventilation that adjusts with the seasons. Children move through the walkway network with the fearless agility of people raised above the ground, and the sound of their play filters through the canopy like birdsong.",
+    "exits": {
+      "northwest": 12132,
+      "north": 12151,
+      "south": 12152
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12142,
+    "name": "Briarshade - Starfall Vigil Plaza",
+    "description": "A clearing near the Starlight Grove serves as the site of Briarshade's annual Starfall Vigil, the festival when the community gathers through the night to observe the sky and honor the Na'wasua tradition of reading the stars for guidance. The plaza is paved with smooth river-stones set in patterns that mirror constellations, and during the Vigil, Na'wasua diviners conduct readings for any community member who requests guidance. The festival is the deepest expression of the alliance between Pasua and Na'wasua traditions that defines Briarshade's culture -- the forest people and the sky people sharing a night of contemplation that honors both the roots below and the stars above.",
+    "exits": {
+      "east": 12136
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12143,
+    "name": "Briarshade - Trading Hollow",
+    "description": "A small hollow near the Thornwall gate serves as Briarshade's trading facility, where the settlement's exports are exchanged for the goods that its isolation and specialization prevent it from producing locally. The trading hollow is modest -- Briarshade's trade volume is small compared to Glimmerholt or the Crossing -- but the value of its alchemical reagents and starlight-woven cloth ensures that traders make the journey despite the difficulty of reaching the settlement. A Kovaka factor manages the trade on Briarshade's behalf, his pragmatic approach complementing the Pasua community's preference for letting others handle the commercial details.",
+    "exits": {
+      "west": 12131
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 12144,
+    "name": "Briarshade - Weaving House",
+    "description": "The weaving house produces Briarshade's other notable export: starlight-woven cloth, a textile produced using techniques that combine Pasua weaving with Na'wasua crystal-work to create fabric that catches and holds light in a way that no purely mundane process can replicate. The cloth has a soft luminescence in darkness, a quality that makes it prized for ceremonial use across the Reach and beyond. The weaving is done on looms threaded with silk harvested from the local forest spiders, the same species that supplies Silkenbough's industry but worked here with additional steps that incorporate quartz dust and Na'wasua blessing-patterns into the weave.",
+    "exits": {
+      "south": 12134
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12145,
+    "name": "Briarshade - Forest Spring",
+    "description": "A natural spring surfaces in a mossy grotto east of the settlement, its clear water collecting in a stone basin before overflowing into a stream that winds through the forest toward the south. The spring provides Briarshade's primary water supply, and its preservation is one of Thornveil's ongoing druidic responsibilities. The water is cold and mineral-rich, with a clarity that makes the basin's stone bottom visible despite its depth. Residents collect water here in carved wooden vessels, and the grotto has become an informal gathering place where the day's first task -- fetching water -- is shared with conversation and the quiet pleasure of the forest's morning sounds.",
+    "exits": {
+      "north": 12133
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 12146,
+    "name": "Briarshade - Kovaka Stone Workshop",
+    "description": "Briarshade's small Kovaka population maintains a stone workshop in a clearing near the Thornwall, where they produce the stone tools, carved vessels, and runestone markers that the settlement uses and trades. The workshop is modest by Kovaka standards but essential to a community that otherwise lacks stone-working capability. The Kovaka here have adapted their techniques to the forest environment, working with river-stone and the granite boulders scattered through the woodland rather than the mountain quarry-stone their homeland tradition prefers. Their presence in Briarshade is a testament to the Reach's cultural diversity -- even the most isolated Pasua community benefits from Kovaka craft.",
+    "exits": {
+      "west": 12130
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12147,
+    "name": "Briarshade - Thornwall Walk",
+    "description": "A narrow path follows the inner perimeter of the Thornwall, allowing residents to inspect the barrier's condition and Thornveil to conduct the druidic maintenance that keeps the briars healthy and impenetrable. The walk provides a unique perspective on the Thornwall's construction -- from the inside, the interwoven branches and thorns form a dense lattice that admits light and air but nothing larger than a small bird. The briars bloom in spring with small white flowers that produce a honey-sweet fragrance, and the bees that pollinate them supply the settlement's modest honey production. The walk has a contemplative quality, the wall's organic presence a constant reminder of the druidic partnership that protects the community.",
+    "exits": {
+      "east": 12131,
+      "west": 12154
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12148,
+    "name": "Briarshade - Diviner's Platform",
+    "description": "A Na'wasua diviner maintains a platform in the canopy near the Starlight Grove, her elevated position providing the unobstructed sky-view that Na'wasua divination requires. The platform is equipped with a crystal array -- a set of quartz prisms arranged in patterns that the diviner adjusts based on the celestial configuration -- and a journal of observations that records her readings over years of practice. The diviner's services are available to any community member and to visitors who make the journey to Briarshade specifically for guidance. Her reputation for accuracy has made Briarshade a destination for those facing difficult decisions, and the waiting list for a formal reading often extends several weeks.",
+    "exits": {
+      "north": 12136
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12149,
+    "name": "Briarshade - Deep Forest Edge",
+    "description": "The path beyond Briarshade's southern boundary enters the deepest section of the crescent forest, where the trees are old enough that their canopy blocks most sunlight and the understory has thinned to a sparse ground-cover of shade-tolerant ferns and moss. The forest here has an ancient quality that Kin-sense registers as a deep, slow awareness -- not the directed attention of a Windstone but the diffuse consciousness of a living system that has persisted for centuries without significant disturbance. The path forward leads toward the Silence Breach approach, and the forest's character changes noticeably as the distance to the dead zone decreases -- fewer birds, less undergrowth, and a growing silence that is absence rather than peace.",
+    "exits": {
+      "west": 12138
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12150,
+    "name": "Briarshade - Nightbloom Garden",
+    "description": "A garden adjacent to the Starlight Grove cultivates the night-blooming species that the Na'wasua use in their ceremonies and that produce some of Briarshade's most valuable alchemical reagents. The garden is tended exclusively at night, its caretakers working by the soft glow of the Starlight Grove's quartz altar and the natural luminescence of the plants themselves. The moonflowers, star-moss, and luminous fungi that grow here require specific conditions of darkness and humidity that the deep forest naturally provides. During bloom season, the garden is a place of quiet wonder -- living light emerging from the darkness in patterns that seem to follow rhythms unrelated to any observable cycle.",
+    "exits": {
+      "west": 12136
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12151,
+    "name": "Briarshade - Root Bridge",
+    "description": "A bridge of living root spans a stream south of the Root Council Hall, its construction a demonstration of the druidic architecture that defines Briarshade. The roots have been trained to grow from both banks and interlock above the water, creating a span that is as strong as timber construction and as alive as the trees it grows from. The bridge's surface is smooth and level, showing the careful shaping that Thornveil's predecessors applied over decades. The stream below runs clear and cold, its banks lined with water-plants that the herbalists harvest for preparations. The bridge is one of several in the settlement, each grown by a different generation of druids, their varying styles creating an architectural record of the community's history.",
+    "exits": {
+      "east": 12135,
+      "south": 12141
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12152,
+    "name": "Briarshade - Pasua Song Circle",
+    "description": "A circle of smooth stones near the residential platforms serves as Briarshade's informal music and storytelling space, where the settlement's Pasua majority maintains the oral traditions that connect them to the wider Pasua culture. The circle is smaller and less formal than Silkenbough's Rootsong Archive, but the traditions practiced here are the same -- songs, histories, and the memory-keeping techniques that preserve knowledge without written records. Evening performances draw the entire community, the Na'wasua and Kovaka residents attending alongside the Pasua in a shared cultural experience that transcends ethnic boundaries.",
+    "exits": {
+      "north": 12141
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 12153,
+    "name": "Briarshade - Scout's Rest",
+    "description": "A small structure near the Thornwall gate provides rest and resupply for the scouts who patrol the southern forest and monitor the Silence Breach boundary. The rest house is basic -- cots, a cook-fire, and a supply of dried provisions -- but essential to the patrol operations that keep Briarshade informed about conditions in the deep forest. The scouts who use this facility are primarily Pasua and Na'wasua, their forest skills making them the natural choice for operations in terrain where mounted patrols cannot effectively operate. A log book records each scout's departure and return, and the entries paint a picture of the southern forest's gradually changing character as the Breach's influence extends.",
+    "exits": {
+      "east": 12130
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12154,
+    "name": "Briarshade - Eastern Thornwall",
+    "description": "The Thornwall's eastern face overlooks the deep forest that stretches toward the Silence Breach, the briars here grown slightly thicker and higher than elsewhere in response to the proximity of the dead zone. Thornveil monitors this section of the wall with particular attention, her druidic senses alert for any sign that the Breach's influence is affecting the wall's growth. The forest visible beyond the Thornwall is dense and dark, its canopy unbroken to the horizon, and the silence from the east is noticeable -- fewer birds, less wind in the branches, a stillness that grows more pronounced with each passing year. A small observation platform built into the Thornwall provides a lookout, its lonely vigil a quiet acknowledgment of the threat that Briarshade exists to watch.",
+    "exits": {
+      "east": 12147
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12200,
+    "name": "The Gap - Northern Approach",
+    "description": "The Gap Road descends from Hillwatch into the mountain pass that gives Gatefall Reach its name, the road's surface transitioning from packed earth to the worn stone of a Giant-era highway still partially intact after millennia. The mountains close in on both sides, their walls rising steeply to heights that narrow the sky to a bright strip overhead. The air changes as the pass deepens -- cooler, drier, with a faint ozone tang that Wind-Riders associate with the Breach's distant influence. Degraded Giant waypoint markers line the road at intervals, their carved surfaces weathered beyond legibility but their placement still marking the ancient road's course with precision. Animals encountered here are visibly uneasy, their movements jerky and their attention directed toward the pass's southern depths.",
+    "exits": {
+      "north": 12019,
+      "south": 12201
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12201,
+    "name": "The Gap - Narrows",
+    "description": "The Gap narrows to its tightest point here, the mountain walls pressing in until the road passes through a corridor barely wide enough for a wagon. The stone surfaces of the walls bear the tool-marks of Giant engineers who widened the natural cleft to create a passable road, and the precision of their work is still visible despite the erosion of ages. The ozone scent is stronger here, and the temperature drops noticeably even on warm days, the pass acting as a funnel for cold mountain air. The silence is oppressive -- sound seems to die quickly, absorbed by the stone walls, and even the wind produces an unsettling low moan as it passes through the narrows. This is the point where the Deceivers' army broke through, and the stone bears scars that predate natural erosion.",
+    "exits": {
+      "north": 12200,
+      "south": 12202
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12202,
+    "name": "The Gap - Central Passage",
+    "description": "The central passage of the Gap opens slightly from the Narrows, the road following a gradual descent between walls that show increasing evidence of ancient fortification -- cut stone platforms where defensive positions once stood, channels carved into the walls for the diversion of water or oil, and the remains of gate-housings that once held barriers across the road. The Giant builders designed this pass as a defensive chokepoint, and the engineering is still impressive even in ruin. The air here carries a metallic taste, and Kin-sense registers a faint, discordant vibration -- not the clean resonance of a Windstone but something damaged, like a bell that has been cracked. Patrol riders move through this section quickly, their horses requiring firm handling to maintain a steady pace.",
+    "exits": {
+      "north": 12201,
+      "south": 12203
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12203,
+    "name": "The Gap - Southern Descent",
+    "description": "The road begins its descent toward the Gap's southern mouth, the mountains widening as the pass opens toward the approaches to the Silence Breach and the Scar Road. The Giant waypoints here are in better condition than the northern ones, their carved surfaces still partially legible -- route markers, distance indicators, and what scholars believe are warnings in the Giant script. The vegetation returns on this side of the pass, scrubby mountain plants colonizing the gaps in the stone where soil has accumulated, but the growth is thin and unhealthy-looking, the leaves discolored and the stems brittle. The ozone scent persists, and the sense of unease that has built through the pass does not diminish as the sky widens overhead.",
+    "exits": {
+      "north": 12202,
+      "south": 12204
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12204,
+    "name": "The Gap - Southern Mouth",
+    "description": "The Gap opens onto the landscape south of the Reach, the mountains drawing back to reveal terrain that was once productive farmland and is now the scarred, partially recovered borderland between the living Reach and the Silence Breach dead zone. The road splits here -- the main route turning east toward the Breach approaches and the Scar Road branching southeast along the path the Deceiver army took during its invasion. A wind-eroded stone marker at the junction bears the Wind-Rider device and the words 'Beyond this point, patrol discipline applies' -- a formal reminder that the territory ahead is not safe. The view south is of broken ground, scattered ruins, and a horizon that shimmers with the faint distortion that marks the Breach's influence zone.",
+    "exits": {
+      "north": 12203,
+      "east": 12248,
+      "southeast": 12243
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12205,
+    "name": "Gate of Fire - Eastern Approach",
+    "description": "The road to the Gate of Fire climbs from the northwestern grasslands into the mountain pass that connects Gatefall Reach to the Eternal Steppe and the approaches to the Infinite Desert. The road here follows a Giant-era highway in remarkably good condition, its fitted stone surface still level and well-drained despite millennia of weather. The pass is wider and lower than the Gap, its character more of a broad valley between mountain ridges than a narrow cleft. The light changes as the road ascends, the sun striking the mountain walls at angles that produce the amber-red glow for which the pass is named. Wind-Rider patrols maintain this route as their primary connection to the steppe command structure.",
+    "exits": {
+      "west": 12206,
+      "south": 12240
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12206,
+    "name": "Gate of Fire - The Amber Corridor",
+    "description": "The Gate of Fire reaches its most dramatic expression here, where the mountain walls on both sides are composed of iron-rich stone that catches the light of sunrise and sunset in a display of amber, crimson, and gold that fills the pass with warm color. The effect is most intense at sunset, when the western light enters the corridor directly and the walls seem to glow with internal fire -- the phenomenon that gave the pass its name. The Giant road runs straight and level through the corridor, its builders having chosen this route for the same practical reasons that modern travelers appreciate: width, grade, and defensibility. The beauty of the light is an accidental benefit that has become the pass's defining characteristic.",
+    "exits": {
+      "east": 12205,
+      "west": 12207
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12207,
+    "name": "Gate of Fire - Wind-Rider Rest Station",
+    "description": "A small rest station maintained by the Wind-Rider patrol network occupies a widened section of the pass, its stone walls built into a natural alcove in the mountain face. The station provides shelter, a water cache, and a supply of emergency provisions for patrols traveling the Gate of Fire route. The station's log book records the passage of every patrol, creating a record of traffic through the pass that the command structure uses to track patterns and identify anomalies. The walls bear carved messages from generations of patrol riders -- names, dates, and the occasional piece of barracks humor that has survived because stone is more durable than the memory that created it.",
+    "exits": {
+      "east": 12206,
+      "west": 12208
+    },
+    "flags": [
+      "inn"
+    ]
+  },
+  {
+    "vnum": 12208,
+    "name": "Gate of Fire - Western Descent",
+    "description": "The road descends from the pass toward the western grasslands, the mountain walls drawing back as the terrain transitions from mountain pass to foothills. The fitted stone road surface remains intact through the descent, its engineering maintaining the gentle grade that made this pass the preferred route for wagon traffic between the Reach and the Steppe. The view west opens onto the vast grassland that stretches toward the Eternal Steppe, the horizon broken only by scattered windstones and the occasional dust-trail of a distant caravan. The temperature rises as the descent continues, the mountain coolness giving way to the warm grassland air that carries the scent of sun-heated earth and dry grass.",
+    "exits": {
+      "east": 12207,
+      "west": 12209
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12209,
+    "name": "Gate of Fire - Steppe Junction",
+    "description": "The road from the Gate of Fire reaches the grassland and meets the network of steppe tracks that connect to the Eternal Steppe's settlements. A large Windstone marker stands at the junction, its carved faces indicating the routes to the Asharen Camp, Dalan's Hold, and the Gate of Fire pass behind. Wind-Rider patrol markers at the stone's base show the current status of each route, and a fire-circle with a stone windbreak provides a regular camping spot for travelers crossing between the Reach and the Steppe. The grass here is shorter than inside the Reach, the transition to the drier central steppe visible in the vegetation's character. The wind carries the mineral scent of the open steppe, and the sky seems wider without the Reach's mountain frame.",
+    "exits": {
+      "east": 12208,
+      "west": 12300
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12220,
+    "name": "Grassland Road - Hillwatch to Glimmerholt West",
+    "description": "The road between Hillwatch and Glimmerholt crosses open grassland that gradually transitions from the flat terrain near Hillwatch to the rising ground that approaches Warden's Ridge. Scattered Windstone markers line the road at regular intervals, their amber glow visible even in overcast conditions, and the grassland on both sides is tall enough to conceal a crouching figure -- a fact that Wind-Rider patrols account for by riding in pairs with staggered positions. The road is well-traveled, its packed-earth surface showing the regular passage of horses, wagons, and foot traffic. Wildflowers bloom among the grass in season, adding color to a landscape that otherwise consists of green and gold stretching to the horizon.",
+    "exits": {
+      "west": 12027,
+      "east": 12221
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12221,
+    "name": "Grassland Road - Glimmerholt Approach",
+    "description": "The road ascends toward Glimmerholt as the terrain rises to meet Warden's Ridge, the grassland giving way to scattered trees that thicken as the elevation increases. The settlement's smoke-column is visible ahead, rising from the ridge-top in a steady plume that serves as a navigation marker for travelers on the open grassland. The transition from grassland to forest edge happens gradually, the trees appearing first as isolated specimens and then in groups that cast shade across the road. The temperature cools as the elevation increases, and the air acquires the mixed scent of grass and forest that characterizes Glimmerholt's position between two ecosystems.",
+    "exits": {
+      "north": 12055,
+      "west": 12220
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12222,
+    "name": "Warden's Ridge Road - South of Glimmerholt",
+    "description": "Warden's Ridge extends south from Glimmerholt in a gradual descent, the ridgeline providing a natural highway between the Reach's central and eastern settlements. The road follows the ridge's crest, its surface a mix of exposed stone and packed earth that centuries of traffic have worn smooth. Views extend in both directions from the ridge -- western grasslands rolling toward the steppe, eastern forests stretching toward the horizon. The wind along the ridge is persistent and clean, carrying scents from both landscapes and producing the constant background hum that gives the ridge its characteristic atmosphere. Patrol markers and Windstone posts line the road at intervals.",
+    "exits": {
+      "north": 12062,
+      "south": 12223
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12223,
+    "name": "Warden's Ridge Road - Central Ridge",
+    "description": "The central section of Warden's Ridge Road passes through terrain where the ridge is broad enough to support scattered tree growth, the road winding between stands of wind-shaped hardwoods that provide shade and shelter from the constant ridge-top wind. The trees here grow at angles sculpted by decades of prevailing wind, their trunks curved and their canopies streaming eastward like flags. A patrol rest station occupies a sheltered hollow between two rock outcrops, its stone windbreak and fire-circle providing a regular stopping point for riders on the north-south circuit. The views from the exposed sections of ridge are spectacular, encompassing most of the Reach's settled area.",
+    "exits": {
+      "south": 12068,
+      "north": 12222,
+      "west": 12224
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12224,
+    "name": "Warden's Ridge Road - Redtrail Junction",
+    "description": "The ridge road reaches a junction where a path descends east toward Redtrail Hollow, the settlement's Signal Tower visible on a lower section of the ridge to the southeast. The main road continues south along the ridge toward the higher ground that eventually connects to the Tomb of Kings approach, while the eastern branch descends through mixed forest and grassland to the patrol base. A Windstone marker at the junction bears carved directions and the red clay smear that identifies routes connected to Redtrail Hollow's patrol network. The junction is a natural meeting point for patrols on different circuits, and the trampled ground and old fire-circles show its regular use.",
+    "exits": {
+      "east": 12223,
+      "south": 12225,
+      "southeast": 12105,
+      "north": 12075
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12225,
+    "name": "Warden's Ridge Road - Southern Ridge",
+    "description": "The ridge road continues south beyond the Redtrail Junction, the terrain rising as the ridge approaches the mountain foothills where the Tomb of Kings lies. The road becomes less maintained here, the patrol traffic thinner and the exposed stone surfaces showing more weather damage and less repair. The forest on the eastern slope is old-growth, its canopy dense and dark, and the grassland on the western slope is higher and wilder than the settled grasslands to the north. The atmosphere grows heavier as the road ascends, the sense of age and weight that characterizes the Tomb approach beginning to assert itself in the landscape's character.",
+    "exits": {
+      "north": 12224,
+      "south": 12245
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12230,
+    "name": "Gatefall Grasslands - Western Road",
+    "description": "The western grassland road connects Hillwatch to Brayholt Crossing across open steppe terrain, the road following a course established by centuries of horse traffic between the two settlements. The grassland here is the tallest in the Reach, its stems reaching chest height on a mounted rider and waving in patterns that experienced riders read for wind direction and approaching weather. Scattered Windstones dot the landscape, their amber glow the only vertical features in a horizontal world. The road is a packed-earth track, its surface maintained by the hooves that travel it daily, and the grassland presses against its edges with the persistent energy of growth in fertile soil.",
+    "exits": {
+      "east": 12016,
+      "south": 12095,
+      "west": 12231
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12231,
+    "name": "Gatefall Grasslands - Central Crossroads",
+    "description": "A crossroads in the central grasslands marks the intersection of the east-west road between Brayholt and Glimmerholt with the north-south route between Hillwatch and the southern settlements. A large Windstone marker stands at the crossroads' center, its four carved faces indicating directions and distances to the nearest settlements. The crossroads is a natural rest point, its position equidistant from multiple settlements making it a regular meeting place for traders, patrols, and messengers. A stone-lined fire-pit and a shallow well provide the basics for overnight camping, and the trampled grass around the crossroads shows its constant use.",
+    "exits": {
+      "north": 12066,
+      "east": 12230,
+      "south": 12233
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12232,
+    "name": "Gatefall Grasslands - East-West Road",
+    "description": "The grassland road between Brayholt Crossing and Glimmerholt crosses the Reach's western grassland in a relatively straight line, its course following the flattest terrain between the two settlements. The road is the Reach's primary trade artery, carrying the wagon traffic that moves forest goods west and steppe goods east, and its surface is the best-maintained of any road in the Reach outside Hillwatch's immediate vicinity. Ruts from recent wagon traffic mark the packed earth, and the grassland on both sides has been grazed short by the livestock that accompanies slower caravans. The road provides excellent visibility, its straightness allowing travelers to spot approaching traffic from miles away.",
+    "exits": {
+      "west": 12084,
+      "east": 12079
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12233,
+    "name": "Gatefall Grasslands - Southern Road",
+    "description": "The grassland road continues south from the central crossroads, the terrain gradually transitioning from open steppe to the scattered woodland that marks the approach to the crescent forest. The grassland here is mixed with wildflowers and low shrubs, the vegetation reflecting the wetter climate of the southern Reach. The road is less traveled than the northern routes, its surface showing more grass encroachment and fewer fresh hoof-prints. A sense of increasing wildness accompanies the southern journey, the settlements' influence fading as the forest's presence grows. Wind-Rider patrol markers appear less frequently here, the southern routes receiving less coverage than the northern approaches.",
+    "exits": {
+      "north": 12231,
+      "south": 12234
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12234,
+    "name": "Gatefall Grasslands - Forest Transition",
+    "description": "The grassland gives way to scattered woodland as the road continues south, the trees appearing first as isolated specimens and then in groups that cast lengthening shadows across the path. The transition is gradual but unmistakable -- within a mile, the open grassland character has been replaced by the mixed grass-and-tree landscape that precedes the crescent forest proper. The air changes with the vegetation, becoming cooler and carrying the complex fragrance of forest leaf-litter and growing things. The road narrows as the trees close in, the wide wagon-track of the grasslands becoming a path suitable for riders and foot travelers but increasingly difficult for wheeled vehicles.",
+    "exits": {
+      "north": 12233,
+      "east": 12235
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12235,
+    "name": "Crescent Forest - Northern Path",
+    "description": "The crescent forest's northern edge is marked by the transition from scattered woodland to continuous canopy, the sky disappearing behind a roof of interlocking branches that filters the light into shifting green-gold patterns. The path is a forest trail, its surface soft earth and leaf-litter, its course winding between the massive trunks of old-growth sky-oaks and hardwoods. Pasua trail-signs mark the route with subtle indicators -- cut bark, arranged stones, colored threads -- that guide knowledgeable travelers while remaining invisible to casual observation. The forest is alive with sound, birdsong and insect-hum and the creak of branches in the canopy creating a complex acoustic landscape that changes with the time of day.",
+    "exits": {
+      "north": 12030,
+      "west": 12234
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12236,
+    "name": "Crescent Forest - Central Path",
+    "description": "The central forest path connects Silkenbough and Glimmerholt through the heart of the crescent forest, following a route that passes through some of the oldest woodland in the Reach. The trees here are enormous, their trunks wider than a horse-cart and their canopy so high that the light reaching the forest floor has a diffused, underwater quality. The path is well-maintained by the Pasua communities it connects, its surface cleared of fallen debris and marked with the trail-sign system that is the forest's equivalent of a road network. The forest's age is palpable, its silence the deep quiet of a living system that has operated undisturbed for centuries. Occasional clearings where storm-felled trees have opened gaps in the canopy provide rare views of the sky.",
+    "exits": {
+      "west": 12044,
+      "southeast": 12067
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12237,
+    "name": "Crescent Forest - Southern Deep Path",
+    "description": "The deep path through the crescent forest's southern reaches connects the northern settlements to Briarshade, descending through increasingly dense woodland as the terrain drops toward the southern lowlands. The forest here is darker and older than the northern reaches, the trees growing closer together and the understory thicker with shade-tolerant ferns and the vine-work that characterizes undisturbed old-growth. The path is narrow and sometimes difficult to follow, the Pasua trail-signs the only reliable guides through terrain where the forest floor looks identical in every direction. The air is heavy with moisture and the deep green smell of ancient forest, and the sound of water running through hidden streams is a constant companion.",
+    "exits": {
+      "east": 12125,
+      "north": 12239,
+      "south": 12238
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12238,
+    "name": "Crescent Forest - Briarshade Approach",
+    "description": "The path narrows as it approaches Briarshade, the forest growing denser and the air taking on the spicy fragrance of the herb gardens that the settlement cultivates in the surrounding woodland. The first sign of Briarshade's presence is the Thornwall, visible through the trees as a dark mass of interwoven briars that blocks further passage except through the gated entrance. The forest here shows the subtle signs of druidic management -- healthier growth, fewer dead trees, and a diversity of species that suggests active cultivation rather than natural succession. The path arrives at the Thornwall's gate, the briar barrier drawing a clear line between wild forest and cultivated community.",
+    "exits": {
+      "south": 12130,
+      "north": 12237
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12239,
+    "name": "Crescent Forest - Spider Web Gallery",
+    "description": "A section of the forest between Silkenbough and Briarshade is particularly dense with the webs of the silk-producing spiders that supply both settlements' textile industries. The webs span between trees in enormous sheets, their translucent surfaces catching the filtered light in iridescent patterns that turn the forest into a gallery of natural art. The spiders themselves are large but not aggressive, their bodies the size of a spread hand, and their webs strong enough to resist moderate wind without breaking. Pasua harvesters collect silk from the webs on a sustainable rotation, their careful approach ensuring that the spiders remain undisturbed and productive. Walking through this section of forest requires attention -- the webs are nearly invisible until a shaft of light catches them, and stumbling into one is a disorienting experience.",
+    "exits": {
+      "north": 12050,
+      "south": 12237
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12240,
+    "name": "Gate of Fire Road - Reach Interior",
+    "description": "The road to the Gate of Fire passes through the Reach's northwestern grasslands, climbing gradually from the interior toward the mountain pass. The terrain is open steppe with scattered Windstone markers, the road's course following the most gradual ascent available through the foothills. Wind-Rider patrols use this route frequently, their circuits connecting the Gate of Fire to Hillwatch and Brayholt Crossing in a triangle that covers the Reach's northwestern approaches. The road's surface is well-maintained packed earth, and the grassland on both sides shows the effects of regular grazing by patrol horses and the wild steppe-elk that share the landscape.",
+    "exits": {
+      "south": 12016,
+      "north": 12205
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12241,
+    "name": "Cross-Area Road - Western Steppe Approach",
+    "description": "The road west from Brayholt Crossing enters the transitional grassland between Gatefall Reach and the Eternal Steppe, the terrain gradually shifting from the Reach's taller, wetter grass to the shorter growth of the central steppe. Windstone markers become more frequent here, the steppe's navigation system asserting itself as the Reach's mountain-framed landscape gives way to the open horizon of the steppe proper. The road is ancient, its course following a route that predates the current settlements by centuries, and its surface bears the marks of the countless hooves and wheels that have traveled between the Reach and the steppe since the route was first established.",
+    "exits": {
+      "east": 12080,
+      "west": 12301
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12243,
+    "name": "Scar Road - Northern End",
+    "description": "The Scar Road begins at the Gap's southern mouth, branching southeast along the path the Deceiver army took during its invasion of the Reach. The road earned its name from the devastation the army left in its passage -- the soil is compacted to a hardness that resists plant growth decades after the event, and the grass along the road's edges is thin, yellow, and unhealthy. The air here carries a faint wrongness that Kin-sense registers as a dead spot -- not the active disruption of the Breach itself but the residual damage of an army that carried Breach-corruption in its ranks. Flamewarg sightings are most frequent along this road, the corrupted beasts drawn to the traces of their creators' passage.",
+    "exits": {
+      "northwest": 12204,
+      "south": 12244
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12244,
+    "name": "Scar Road - Ambush Hollow",
+    "description": "The Scar Road passes through a shallow depression where the terrain provides natural concealment on three sides, a feature that Flamewarg packs have learned to exploit. Wind-Rider patrols have lost riders in this hollow, and the patrol procedures now mandate full combat readiness when passing through. The ground here is particularly dead -- not merely compacted but actively resistant to growth, as if the soil itself has been poisoned by whatever the Deceiver army carried in its train. Scraps of rusted metal and fragments of equipment too corroded to identify protrude from the earth at intervals, the physical debris of an army that passed this way and left destruction in its wake. The silence here is absolute, and even wind seems reluctant to enter the hollow.",
+    "exits": {
+      "north": 12243,
+      "south": 12302
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12245,
+    "name": "Tomb of Kings Approach - Colonnade North",
+    "description": "The approach to the Tomb of Kings begins where the ridge road meets a road of fitted stone that descends southeast from Warden's Ridge toward the tomb complex. A double colonnade of forty-foot pillars lines the road, their surfaces carved with runes that glow amber on windless nights, the Giant-era construction still intact and still carrying the elemental charge that its builders imbued. The pillars' scale dwarfs human visitors, the road between them wide enough for ten riders abreast, its design meant for the Giants who built the Tomb as a monument to their fallen kings. The earth magic here is amplified, Kin-sense registering a deep, resonant hum that vibrates in the bones rather than the ears. The atmosphere is one of profound age and deliberate grandeur.",
+    "exits": {
+      "west": 12112,
+      "north": 12225,
+      "south": 12246
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12246,
+    "name": "Tomb of Kings Approach - Colonnade Central",
+    "description": "The central section of the colonnade road descends between pillars whose rune-circles are the best preserved in the complex, their amber glow visible even in daylight as a faint warmth that seems to emanate from inside the stone. The road's surface is fitted stone of extraordinary precision, its joints tight enough that a blade cannot be inserted between the blocks after millennia of weathering. Rune-circles inscribed in the road's surface at regular intervals pulse with the same amber light as the pillars, their patterns complex and clearly deliberate but following a symbolic language that no living scholar has fully decoded. Sand Wraith patrols have been reported along this stretch, the guardian constructs emerging from the sand that accumulates along the colonnade's base to challenge travelers who approach the Tomb without apparent purpose.",
+    "exits": {
+      "north": 12245,
+      "south": 12247
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12247,
+    "name": "Tomb of Kings Approach - Colonnade South",
+    "description": "The southern end of the colonnade road approaches the Tomb of Kings complex itself, the pillars here carved with increasingly elaborate figures that scholars believe represent the Giant rulers interred within. The road terminates at a massive stone threshold that marks the Tomb's outer boundary, its surface inscribed with rune-circles that glow with an intensity that makes the northern pillars seem dim by comparison. The amplified earth magic is at its strongest here, the resonance powerful enough to produce physical effects -- a vibration in the ground, a warmth in the air, and a sense of weight that makes movement feel like pushing through invisible resistance. Wind-Rider patrols do not pass beyond this point, their orders limiting approach to observation distance.",
+    "exits": {
+      "north": 12246
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12248,
+    "name": "Silence Breach Approach - Outer Perimeter",
+    "description": "The approach to the Silence Breach dead zone begins with a gradual degradation of the landscape that is more felt than seen. The forest thins, the grass grows sparse and discolored, and the normal sounds of wildlife -- birdsong, insect hum, the rustle of small animals -- fade toward an unsettling quiet. Kin-sense diminishes here, the elemental resonance that permeates the living Reach weakening like a signal losing strength. The rubble of collapsed Kovaka watchtowers is visible ahead, their stone foundations still standing but their upper works crumbled into debris piles that mark the perimeter the Kovaka once maintained against the Breach. The air carries a faint low-frequency hum that is felt in the chest rather than heard by the ears.",
+    "exits": {
+      "north": 12138,
+      "west": 12204,
+      "south": 12249
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12249,
+    "name": "Silence Breach Approach - Inner Perimeter",
+    "description": "The inner perimeter of the Breach approach is where the dead zone's effects become impossible to ignore. Kin-sense dies entirely -- the elemental resonance that every living person in Oreka perceives as a constant background vanishes, replaced by a silence that is not merely the absence of sound but the absence of connection. Nausea is common here, the body's reaction to the sudden loss of a sense it has always had, and visitors who are unprepared for the experience describe it as a kind of spiritual vertigo. The hum is louder, a subsonic vibration that produces headache and disorientation in those who remain too long. The Kovaka watchtower rubble is more extensive here, the towers having been built closer together as the builders' urgency increased. Nothing grows within sight, the ground a bare expanse of grey soil that looks as though it has never supported life.",
+    "exits": {
+      "north": 12248
+    },
+    "flags": []
+  },
+  {
+    "vnum": 12300,
+    "name": "Gate of Fire - Steppe Junction (Cross-Area)",
+    "description": "The junction where the Gate of Fire road meets the Eternal Steppe's track network marks the boundary between Gatefall Reach and the wider steppe. A large Windstone stands at the junction, its carved faces worn smooth by steppe wind and the hands of generations of riders who touch the stone in passing. The road east leads back through the Gate of Fire toward the Reach, while tracks fan out west and north toward the Asharen camps and Dalan's Hold. The air here is pure steppe -- dry, mineral-scented, carrying the warmth of sun on grass that extends unbroken to every horizon. Wind-Rider patrols from both the Reach and the Steppe use this junction as a rendezvous point, their overlapping circuits ensuring continuous coverage of the border territory.",
+    "exits": {
+      "east": 12209,
+      "west": 7244
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12301,
+    "name": "Gatefall Road - Steppe Border (Cross-Area)",
+    "description": "The road from Brayholt Crossing reaches the Eternal Steppe border here, the transition marked by a pair of weathered Windstone posts that have served as boundary markers since the Concordant era. The grassland changes character at the border -- the Reach's tall, green growth giving way to the Steppe's shorter, drier grass over a distance of less than a mile. The road continues west toward the Asharen Camp area, its course visible as a worn track through the grass that riders from both territories have maintained through generations of regular travel. The border is political rather than physical, recognized by tradition and treaty rather than wall or fence, but the change in vegetation makes the transition unmistakable to anyone who knows what to look for.",
+    "exits": {
+      "east": 12241,
+      "west": 7107
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 12302,
+    "name": "Southern Jungle Approach (Cross-Area)",
+    "description": "The Scar Road's southern terminus reaches the edge of the territory that transitions toward the Deepwater Marches, the terrain changing from the Reach's scarred grassland to the wetter, more overgrown landscape that precedes the southern jungles. The road itself has been largely reclaimed by vegetation here, the jungle's aggressive growth overwriting the Deceiver army's passage more effectively than the grassland's slower recovery to the north. The air is warmer and more humid, carrying the complex fragrance of tropical vegetation that signals the approaching change of biome. Wind-Rider patrols turn back at this point, the southern territory falling outside their operational mandate and into the domain of whatever authority governs the Deepwater Marches.",
+    "exits": {
+      "north": 12244
+    },
+    "flags": [
+      "road"
+    ]
+  }
+]

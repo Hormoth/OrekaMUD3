@@ -1,0 +1,11 @@
+[
+    {"id": "first_kill", "name": "First Blood", "description": "Defeat your first enemy", "title": "Blooded", "trigger": "kill_count", "threshold": 1},
+    {"id": "kill_10", "name": "Warrior", "description": "Defeat 10 enemies", "title": "Warrior", "trigger": "kill_count", "threshold": 10},
+    {"id": "kill_100", "name": "Slayer", "description": "Defeat 100 enemies", "title": "Slayer", "trigger": "kill_count", "threshold": 100},
+    {"id": "level_5", "name": "Adventurer", "description": "Reach level 5", "title": "Adventurer", "trigger": "level", "threshold": 5},
+    {"id": "level_10", "name": "Veteran", "description": "Reach level 10", "title": "Veteran", "trigger": "level", "threshold": 10},
+    {"id": "level_20", "name": "Hero", "description": "Reach level 20", "title": "Hero", "trigger": "level", "threshold": 20},
+    {"id": "rich", "name": "Wealthy", "description": "Accumulate 1000 gold", "title": "the Wealthy", "trigger": "gold", "threshold": 1000},
+    {"id": "crafter", "name": "Artisan", "description": "Craft your first item", "title": "Artisan", "trigger": "craft_count", "threshold": 1},
+    {"id": "explorer", "name": "Explorer", "description": "Visit 50 different rooms", "title": "Explorer", "trigger": "rooms_visited", "threshold": 50}
+]

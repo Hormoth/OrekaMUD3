@@ -234,6 +234,15 @@ class CombatInstance:
         """
         results = []
 
+        # Clear per-turn combat stance flags at start of this combatant's turn
+        if getattr(combatant, '_charging', False):
+            combatant._charging = False
+            # Remove temporary attack bonus applied during charge
+            if getattr(combatant, 'temp_attack_bonus', 0) >= 2:
+                combatant.temp_attack_bonus = max(0, combatant.temp_attack_bonus - 2)
+        if getattr(combatant, '_total_defense', False):
+            combatant._total_defense = False
+
         # Check if combatant can act
         if hasattr(combatant, 'can_act') and not combatant.can_act():
             return f"{combatant.name} cannot act due to their condition!"
@@ -245,6 +254,20 @@ class CombatInstance:
                 action_type, action_name, action_args = action
 
                 if action_type == 'spell' and command_parser:
+                    # Concentration check if interrupted (took damage since last turn)
+                    if hasattr(combatant, 'was_interrupted') and combatant.was_interrupted():
+                        # D&D 3.5: Concentration DC = 10 + damage taken + spell level
+                        conc_dc = 10 + getattr(combatant, '_last_damage_taken', 0)
+                        conc_check = combatant.skill_check("Concentration") if hasattr(combatant, 'skill_check') else random.randint(1, 20)
+                        if isinstance(conc_check, str) or conc_check < conc_dc:
+                            results.append(f"{combatant.name}'s spell is disrupted! (Concentration {conc_check} vs DC {conc_dc})")
+                            if hasattr(combatant, 'clear_interrupted'):
+                                combatant.clear_interrupted()
+                            return "\n".join(results) if results else "Spell disrupted."
+                        else:
+                            results.append(f"{combatant.name} maintains concentration! ({conc_check} vs DC {conc_dc})")
+                        if hasattr(combatant, 'clear_interrupted'):
+                            combatant.clear_interrupted()
                     # Cast the queued spell
                     spell_args = action_name
                     if action_args:
@@ -294,19 +317,104 @@ class CombatInstance:
 
                 return "\n".join(results) if results else "Action executed."
 
+        # Wimpy auto-flee check
+        wimpy_threshold = getattr(combatant, 'wimpy', 0)
+        if wimpy_threshold > 0 and hasattr(combatant, 'max_hp') and combatant.max_hp > 0:
+            hp_pct = (combatant.hp / combatant.max_hp) * 100
+            if hp_pct <= wimpy_threshold:
+                # Auto-flee
+                room = getattr(combatant, 'room', None)
+                if room and hasattr(room, 'exits') and room.exits:
+                    import random as _rng
+                    direction = _rng.choice(list(room.exits.keys()))
+                    results.append(f"{combatant.name} panics and flees {direction}! (wimpy)")
+                    self.remove_combatant(combatant)
+                    if hasattr(combatant, 'state'):
+                        from src.character import State
+                        combatant.state = State.EXPLORING
+                    if hasattr(combatant, 'clear_combat_target'):
+                        combatant.clear_combat_target()
+                    return "\n".join(results)
+
+        # Tick conditions for this combatant's turn
+        if hasattr(combatant, 'tick_conditions'):
+            expired = combatant.tick_conditions()
+            if expired:
+                results.append(f"{combatant.name}: {', '.join(expired)} expired")
+
+        # Poison damage tick
+        if hasattr(combatant, 'has_condition') and combatant.has_condition('poisoned'):
+            if 'poison' not in getattr(combatant, 'immunities', []):
+                poison_dmg = random.randint(1, 4)
+                combatant.hp = max(0, combatant.hp - poison_dmg)
+                results.append(f"{combatant.name} takes {poison_dmg} poison damage!")
+                # Fort save DC 15 to end poison
+                success, _, save_desc = roll_saving_throw(combatant, SaveType.FORTITUDE, 15)
+                if success:
+                    if hasattr(combatant, 'remove_condition'):
+                        combatant.remove_condition('poisoned')
+                    results.append(f"{combatant.name} resists the poison! (Fort save succeeded)")
+                else:
+                    results.append(f"{combatant.name} fails to resist the poison.")
+
         # Auto-attack if enabled and has target
         auto_attack_on = getattr(combatant, 'auto_attack_enabled', True)
         target = getattr(combatant, 'combat_target', None)
 
-        # For mobs, find a player target if they don't have one
+        # For mobs, use AI to decide action
         if not hasattr(combatant, 'xp'):  # It's a mob
-            if not target or not getattr(target, 'hp', 0) > 0:
-                # Target a random alive player
-                alive_players = [s.combatant for s in self.initiative_order
-                                if hasattr(s.combatant, 'xp') and getattr(s.combatant, 'hp', 0) > 0]
-                if alive_players:
-                    import random
-                    target = random.choice(alive_players)
+            from src import ai as ai_module
+
+            alive_players = [s.combatant for s in self.initiative_order
+                            if hasattr(s.combatant, 'xp') and getattr(s.combatant, 'hp', 0) > 0]
+            alive_allies = [s.combatant for s in self.initiative_order
+                           if not hasattr(s.combatant, 'xp') and s.combatant != combatant
+                           and getattr(s.combatant, 'alive', True) and getattr(s.combatant, 'hp', 0) > 0]
+
+            if alive_players:
+                action = ai_module.get_combat_action_detailed(
+                    combatant, alive_players, alive_allies, self
+                )
+
+                if action.action_type == "flee":
+                    results.append(action.message or f"{combatant.name} attempts to flee!")
+                    self.remove_combatant(combatant)
+                    return "\n".join(results)
+
+                elif action.action_type == "maneuver" and action.target:
+                    target = action.target
+                    results.append(action.message or f"{combatant.name} uses {action.maneuver}!")
+                    from src import maneuvers
+                    maneuver_func = getattr(maneuvers, action.maneuver, None)
+                    if maneuver_func:
+                        maneuver_result = maneuver_func(combatant, target)
+                        results.append(maneuver_result)
+                    combatant_state = self.combatants.get(combatant)
+                    if combatant_state:
+                        combatant_state.use_action(ActionType.STANDARD)
+                    return "\n".join(results)
+
+                elif action.action_type == "special" and action.target:
+                    target = action.target if not isinstance(action.target, list) else action.target[0]
+                    results.append(action.message or f"{combatant.name} uses {action.ability}!")
+                    if target and hasattr(target, 'hp'):
+                        result = attack(combatant, target)
+                        results.append(result)
+                    return "\n".join(results)
+
+                elif action.action_type == "attack" and action.target:
+                    target = action.target
+
+                elif action.action_type == "wait":
+                    results.append(f"{combatant.name} waits.")
+                    return "\n".join(results)
+            else:
+                target = None
+
+        # Total Defense: forfeit attacks this round
+        if getattr(combatant, '_total_defense', False):
+            results.append(f"{combatant.name} is fighting on total defense (+4 AC)!")
+            return "\n".join(results) if results else "Total defense."
 
         if auto_attack_on and target:
             # Check if target is still valid
@@ -319,6 +427,15 @@ class CombatInstance:
                 if hasattr(combatant, 'clear_combat_target'):
                     combatant.clear_combat_target()
             else:
+                # System 19: Sneak Attack from hidden state (before normal attack)
+                if getattr(combatant, 'hidden', False):
+                    if hasattr(combatant, 'char_class') and combatant.char_class == "Rogue":
+                        sneak_dice = (getattr(combatant, 'level', 1) + 1) // 2
+                        sneak_dmg = sum(random.randint(1, 6) for _ in range(max(1, sneak_dice)))
+                        target.hp = max(0, target.hp - sneak_dmg)
+                        results.append(f"{combatant.name} strikes from the shadows! (+{sneak_dmg} sneak attack)")
+                    combatant.hidden = False
+
                 # Execute auto-attack
                 result = attack(combatant, target)
                 results.append(result)
@@ -484,6 +601,23 @@ def roll_saving_throw(entity, save_type: SaveType, dc: int, modifiers: int = 0) 
     else:
         base_save = 0
 
+    # If base_save is still 0 and entity has class data, calculate from save_progression
+    if base_save == 0 and hasattr(entity, 'char_class') and hasattr(entity, 'level'):
+        from src.classes import CLASSES
+        class_data = CLASSES.get(entity.char_class, {})
+        save_prog = class_data.get('save_progression', {})
+        save_key_map = {
+            SaveType.FORTITUDE: 'fort',
+            SaveType.REFLEX: 'ref',
+            SaveType.WILL: 'will',
+        }
+        prog = save_prog.get(save_key_map[save_type], 'poor')
+        lvl = entity.level
+        if prog == 'good':
+            base_save = 2 + lvl // 2
+        else:  # poor
+            base_save = lvl // 3
+
     # Add ability modifier
     ability_map = {
         SaveType.FORTITUDE: "Con",
@@ -502,13 +636,50 @@ def roll_saving_throw(entity, save_type: SaveType, dc: int, modifiers: int = 0) 
     else:
         condition_penalty = -cond.calculate_condition_modifiers(entity, 'save_penalty')
 
-    total = roll + base_save + ability_mod + modifiers + condition_penalty + feat_bonus
+    # Paladin Divine Grace: add CHA modifier to all saves at level 2+
+    divine_grace_bonus = 0
+    if (hasattr(entity, 'char_class') and entity.char_class == "Paladin"
+            and getattr(entity, 'class_level', getattr(entity, 'level', 1)) >= 2):
+        divine_grace_bonus = (getattr(entity, 'cha_score', 10) - 10) // 2
+
+    total = roll + base_save + ability_mod + modifiers + condition_penalty + feat_bonus + divine_grace_bonus
     success = total >= dc
 
     result = "SUCCESS" if success else "FAILURE"
     desc = f"{entity.name} {save_type.value} save: d20({roll}) + {base_save} + {ability_mod} = {total} vs DC {dc} - {result}"
 
     return success, total, desc
+
+
+SIZE_MODIFIERS = {
+    "Fine": 8,
+    "Diminutive": 4,
+    "Tiny": 2,
+    "Small": 1,
+    "Medium": 0,
+    "Large": -1,
+    "Huge": -2,
+    "Gargantuan": -4,
+    "Colossal": -8,
+}
+
+
+def get_size_modifier(entity) -> int:
+    """Return size modifier for attack rolls and AC based on entity size."""
+    if hasattr(entity, 'char_class'):
+        # Character: look up size from race data
+        from src.races import get_race
+        race_data = get_race(getattr(entity, 'race', '')) or {}
+        size = race_data.get('size', 'Medium')
+    else:
+        # Mob: use size attribute directly
+        size = getattr(entity, 'size', 'Medium')
+    # Normalise capitalisation
+    if size:
+        size = size[0].upper() + size[1:].lower() if len(size) > 1 else size.upper()
+    else:
+        size = 'Medium'
+    return SIZE_MODIFIERS.get(size, 0)
 
 
 def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
@@ -523,13 +694,13 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
     if hasattr(attacker, 'char_class'):
         from src.classes import CLASSES
         class_data = CLASSES.get(attacker.char_class, {})
-        bab_type = class_data.get('bab', 'medium')
+        bab_type = class_data.get('bab_progression', '3/4')
         if bab_type == 'full':
             bab = level
-        elif bab_type == 'medium':
-            bab = (level * 3) // 4
-        else:  # poor
+        elif bab_type == '1/2':
             bab = level // 2
+        else:  # '3/4' or any other value
+            bab = (level * 3) // 4
     else:
         bab = (level * 3) // 4  # Default for monsters
 
@@ -576,13 +747,60 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
             if combat and combat.is_flanking(attacker, target):
                 flanking_bonus = 2
 
-    return bab + stat_mod - power_attack_penalty + feat_bonus + condition_penalty + condition_bonus + flanking_bonus
+    # Paladin Smite Evil: bonus to attack roll
+    smite_bonus = 0
+    if getattr(attacker, '_smite_active', False):
+        smite_bonus = (getattr(attacker, 'cha_score', 10) - 10) // 2
+
+    # Inspire Courage attack bonus from Bard buff
+    inspire_atk = getattr(attacker, 'active_buffs', {}).get('inspire_attack', 0)
+
+    # Size modifier (Small/Tiny attacker gets bonus; Large attacker gets penalty)
+    size_mod = get_size_modifier(attacker)
+
+    # Temp attack bonus (from charge, spells, etc.)
+    temp_attack = getattr(attacker, 'temp_attack_bonus', 0)
+
+    # Fighting defensively penalty (-4 to attack)
+    fd_penalty = 4 if getattr(attacker, '_fighting_defensively', False) else 0
+
+    return (bab + stat_mod - power_attack_penalty + feat_bonus + condition_penalty
+            + condition_bonus + flanking_bonus + smite_bonus + inspire_atk
+            + size_mod + temp_attack - fd_penalty)
 
 
-def calculate_damage(attacker, is_crit: bool = False) -> int:
+def calculate_damage(attacker, is_crit: bool = False, target=None) -> int:
     """Calculate damage for an attack"""
-    # Get damage dice
-    if hasattr(attacker, 'damage_dice'):
+    # Get damage dice — check equipped weapon first, then damage_dice, then default
+    # If disarmed (cannot_use_weapon), skip weapon and fall through to unarmed
+    weapon = None
+    if not cond.has_effect(attacker, 'cannot_use_weapon'):
+        if hasattr(attacker, 'get_equipped_weapon'):
+            weapon = attacker.get_equipped_weapon()
+
+    if weapon and getattr(weapon, 'damage', None):
+        dice = weapon.damage
+        num_dice, die_size, bonus = dice[0], dice[1], dice[2] if len(dice) > 2 else 0
+    elif not weapon and cond.has_effect(attacker, 'cannot_use_weapon'):
+        # Disarmed: use unarmed damage 1d4
+        num_dice, die_size, bonus = 1, 4, 0
+    elif (not weapon and hasattr(attacker, 'char_class')
+          and attacker.char_class == "Monk"):
+        # Monk unarmed damage progression (D&D 3.5)
+        monk_lvl = getattr(attacker, 'class_level', getattr(attacker, 'level', 1))
+        if monk_lvl <= 3:
+            num_dice, die_size, bonus = 1, 6, 0
+        elif monk_lvl <= 7:
+            num_dice, die_size, bonus = 1, 8, 0
+        elif monk_lvl <= 11:
+            num_dice, die_size, bonus = 1, 10, 0
+        elif monk_lvl <= 15:
+            num_dice, die_size, bonus = 2, 6, 0
+        elif monk_lvl <= 19:
+            num_dice, die_size, bonus = 2, 8, 0
+        else:
+            num_dice, die_size, bonus = 2, 10, 0
+    elif hasattr(attacker, 'damage_dice'):
         dice = attacker.damage_dice
         num_dice, die_size, bonus = dice[0], dice[1], dice[2] if len(dice) > 2 else 0
     else:
@@ -611,6 +829,24 @@ def calculate_damage(attacker, is_crit: bool = False) -> int:
     else:
         condition_penalty = cond.calculate_condition_modifiers(attacker, 'damage_penalty')
     damage -= condition_penalty
+
+    # Ranger Favored Enemy bonus damage
+    if (target is not None and hasattr(attacker, 'favored_enemies')
+            and attacker.favored_enemies):
+        target_type = getattr(target, 'type_', '') or getattr(target, 'mob_type', '')
+        if target_type and any(fe.lower() in target_type.lower()
+                               for fe in attacker.favored_enemies):
+            damage += 2
+
+    # Paladin Smite Evil: bonus damage on next attack
+    if getattr(attacker, '_smite_active', False):
+        paladin_level = getattr(attacker, 'class_level', getattr(attacker, 'level', 1))
+        damage += paladin_level
+        attacker._smite_active = False  # consume the smite
+
+    # Inspire Courage bonus damage from Bard buff
+    inspire_dmg = getattr(attacker, 'active_buffs', {}).get('inspire_damage', 0)
+    damage += inspire_dmg
 
     # Critical hit multiplier (simplified: x2)
     if is_crit:
@@ -652,6 +888,9 @@ def calculate_ac(defender, attacker=None, is_touch: bool = False, is_flat_footed
     if loses_dex:
         if hasattr(defender, 'has_feat') and defender.has_feat("Uncanny Dodge"):
             pass  # Keep Dex bonus
+        elif (hasattr(defender, 'char_class') and defender.char_class == "Rogue"
+              and getattr(defender, 'class_level', getattr(defender, 'level', 1)) >= 4):
+            pass  # Rogue Uncanny Dodge by class level
         else:
             dex_mod = 0
 
@@ -682,7 +921,25 @@ def calculate_ac(defender, attacker=None, is_touch: bool = False, is_flat_footed
         # Attackers get bonus, so we subtract from defender's AC
         melee_bonus_against = cond.calculate_condition_modifiers(defender, 'melee_attack_bonus_against')
 
-    return base_ac + armor_bonus + max(0, dex_mod) + dodge_bonus + feat_ac_bonus - condition_penalty - melee_bonus_against
+    # Size modifier (smaller creatures are harder to hit)
+    size_mod = get_size_modifier(defender)
+
+    # Temp AC bonus (from spells, total defense, etc.)
+    temp_ac = getattr(defender, 'temp_ac_bonus', 0)
+
+    # Fighting defensively: +2 dodge bonus to AC (not if flat-footed)
+    fd_ac_bonus = 0
+    if not loses_dex and getattr(defender, '_fighting_defensively', False):
+        fd_ac_bonus = 2
+
+    # Total defense: +4 dodge bonus to AC (not if flat-footed)
+    td_ac_bonus = 0
+    if not loses_dex and getattr(defender, '_total_defense', False):
+        td_ac_bonus = 4
+
+    return (base_ac + armor_bonus + max(0, dex_mod) + dodge_bonus + feat_ac_bonus
+            - condition_penalty - melee_bonus_against
+            + size_mod + temp_ac + fd_ac_bonus + td_ac_bonus)
 
 
 def trigger_aoo(defender, attacker, reason: str) -> Optional[str]:
@@ -817,10 +1074,17 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
 
     # Determine number of attacks
     num_attacks = 1
+    flurry_penalty = 0
     if is_full_attack:
         # Calculate iterative attacks based on BAB
         bab = calculate_attack_bonus(attacker, target)
         num_attacks = max(1, (bab + 5) // 5)  # +6/+1 = 2 attacks, +11/+6/+1 = 3, etc.
+
+    # Flurry of Blows (Monk): extra attack at -2 penalty to all attacks this round
+    if getattr(attacker, '_flurry_active', False):
+        num_attacks += 1
+        flurry_penalty = -2
+        attacker._flurry_active = False  # consume the flag
 
     all_targets = list(room.mobs) + list(room.players) if room else [target]
 
@@ -830,7 +1094,7 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
 
         # Roll attack
         roll = random.randint(1, 20)
-        attack_bonus = calculate_attack_bonus(attacker, target) + iterative_penalty
+        attack_bonus = calculate_attack_bonus(attacker, target) + iterative_penalty + flurry_penalty
         ac = calculate_ac(target, attacker, is_flat_footed=is_flat_footed)
 
         # Natural 1 always misses
@@ -848,7 +1112,54 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
 
         # Check hit
         if roll == 20 or roll + attack_bonus >= ac:
-            damage = calculate_damage(attacker, is_crit)
+            # Check keen critical threat (19-20 instead of just 20)
+            weapon_for_props = attacker.get_equipped_weapon() if hasattr(attacker, 'get_equipped_weapon') else None
+            weapon_props = list(getattr(weapon_for_props, 'properties', []))
+            if not is_crit and roll == 19 and 'keen' in weapon_props:
+                confirm_roll = random.randint(1, 20)
+                if confirm_roll + attack_bonus >= ac:
+                    is_crit = True
+
+            # Vorpal on natural 20 confirmed crit: instant kill
+            vorpal_kill = False
+            if is_crit and roll == 20 and 'vorpal' in weapon_props:
+                vorpal_kill = True
+
+            damage = calculate_damage(attacker, is_crit, target=target)
+
+            # --- Fix 44: Special Weapon Properties (elemental damage) ---
+            weapon_bonus_msgs = []
+            elemental_damage_total = 0
+            if weapon_props:
+                target_alignment = getattr(target, 'alignment', '') or ''
+                target_resists = getattr(target, 'resistances', {}) or {}
+
+                for prop in weapon_props:
+                    if prop == 'flaming':
+                        raw = sum(random.randint(1, 6) for _ in range(1))
+                        reduced = max(0, raw - target_resists.get('fire', 0))
+                        elemental_damage_total += reduced
+                        weapon_bonus_msgs.append(f"+{reduced} fire")
+                    elif prop == 'frost':
+                        raw = sum(random.randint(1, 6) for _ in range(1))
+                        reduced = max(0, raw - target_resists.get('cold', 0))
+                        elemental_damage_total += reduced
+                        weapon_bonus_msgs.append(f"+{reduced} cold")
+                    elif prop == 'shock':
+                        raw = sum(random.randint(1, 6) for _ in range(1))
+                        reduced = max(0, raw - target_resists.get('electricity', 0))
+                        elemental_damage_total += reduced
+                        weapon_bonus_msgs.append(f"+{reduced} electricity")
+                    elif prop == 'holy' and 'evil' in target_alignment.lower():
+                        raw = sum(random.randint(1, 6) for _ in range(2))
+                        elemental_damage_total += raw
+                        weapon_bonus_msgs.append(f"+{raw} holy")
+                    elif prop == 'unholy' and 'good' in target_alignment.lower():
+                        raw = sum(random.randint(1, 6) for _ in range(2))
+                        elemental_damage_total += raw
+                        weapon_bonus_msgs.append(f"+{raw} unholy")
+
+            damage += elemental_damage_total
 
             # Sneak Attack damage (Rogue)
             sneak_damage = 0
@@ -858,11 +1169,50 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
                     sneak_damage = sum(random.randint(1, 6) for _ in range(sneak_dice))
                     damage += sneak_damage
 
+            # --- Fix 43: Damage Reduction ---
+            dr = 0
+            # Check explicit damage_reduction attribute
+            dr = getattr(target, 'damage_reduction', 0)
+            # Barbarian class DR: (class_level - 4) // 3 at level 7+
+            if (not dr and hasattr(target, 'char_class')
+                    and target.char_class == "Barbarian"):
+                bar_level = getattr(target, 'class_level', getattr(target, 'level', 1))
+                if bar_level >= 7:
+                    dr = (bar_level - 4) // 3
+            dr_msg = ""
+            if dr > 0:
+                absorbed = min(dr, damage)
+                damage = max(0, damage - dr)
+                if absorbed > 0:
+                    dr_msg = f"\n{target.name}'s damage reduction absorbs {absorbed} damage!"
+
             target.hp = max(0, target.hp - damage)
+
+            # Flag target as interrupted for concentration checks
+            if hasattr(target, 'set_interrupted'):
+                target.set_interrupted()
+                target._last_damage_taken = damage
 
             crit_msg = " CRITICAL HIT!" if is_crit else ""
             sneak_msg = f" (+{sneak_damage} sneak attack)" if sneak_damage else ""
-            hit_msg = f"{attacker.name} hits {target.name} for {damage} damage!{crit_msg}{sneak_msg}"
+            elem_msg = f" ({', '.join(weapon_bonus_msgs)})" if weapon_bonus_msgs else ""
+
+            # Vorpal instant kill message
+            if vorpal_kill:
+                target.hp = 0
+                if hasattr(target, 'alive'):
+                    target.alive = False
+                hit_msg = (f"{attacker.name}'s vorpal blade decapitates {target.name}! "
+                           f"Instant kill!{elem_msg}")
+                results.append(hit_msg)
+                if combat:
+                    ended, end_msg = combat.check_combat_end()
+                    if ended:
+                        results.append(end_msg)
+                        end_combat(room)
+                continue
+
+            hit_msg = f"{attacker.name} hits {target.name} for {damage} damage!{crit_msg}{sneak_msg}{elem_msg}{dr_msg}"
 
             # Check for death
             if target.hp <= 0:
@@ -871,7 +1221,7 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
 
                 # Award XP
                 xp_award = award_xp(attacker, target)
-                loot_msg = generate_loot(target, room)
+                loot_msg = generate_loot(target, room, attacker)
 
                 hit_msg = f"{attacker.name} defeats {target.name}!"
                 if xp_award:
@@ -912,6 +1262,33 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
                     end_combat(room)
         else:
             results.append(f"{attacker.name} attacks {target.name} - MISS ({roll}+{attack_bonus}={roll+attack_bonus} vs AC {ac})")
+
+    # Dual wield: off-hand attack if equipped and has TWF feat
+    if hasattr(attacker, 'equipment'):
+        off_hand = attacker.equipment.get('off_hand')
+        if off_hand and getattr(off_hand, 'damage', None) and hasattr(attacker, 'has_feat') and attacker.has_feat("Two-Weapon Fighting"):
+            is_light = getattr(off_hand, 'weight', 99) <= 2
+            off_penalty = -2 if is_light else -4
+            off_roll = random.randint(1, 20)
+            off_attack_bonus = calculate_attack_bonus(attacker, target) + off_penalty
+            off_ac = calculate_ac(target, attacker, is_flat_footed=is_flat_footed)
+            if off_roll == 1:
+                results.append(f"{attacker.name} (off-hand) attacks {target.name} - MISS (natural 1)")
+            elif off_roll == 20 or off_roll + off_attack_bonus >= off_ac:
+                off_dmg = sum(random.randint(1, off_hand.damage[1]) for _ in range(off_hand.damage[0]))
+                if len(off_hand.damage) > 2:
+                    off_dmg += off_hand.damage[2]
+                str_mod = get_ability_mod(attacker, "Str")
+                off_dmg += max(0, str_mod // 2)
+                off_dmg = max(1, off_dmg)
+                target.hp = max(0, target.hp - off_dmg)
+                results.append(f"{attacker.name} (off-hand) hits {target.name} for {off_dmg} damage!")
+                if target.hp <= 0:
+                    if hasattr(target, 'alive'):
+                        target.alive = False
+                    results.append(f"{target.name} has been slain!")
+            else:
+                results.append(f"{attacker.name} (off-hand) attacks {target.name} - MISS")
 
     return "\n".join(results)
 
@@ -957,13 +1334,16 @@ def award_xp(attacker, target) -> int:
     xp_award = xp_table.get(diff, 0)
     attacker.xp += xp_award
 
+    if hasattr(attacker, 'kill_count'):
+        attacker.kill_count = getattr(attacker, 'kill_count', 0) + 1
+
     if hasattr(attacker, 'save'):
         attacker.save()
 
     return xp_award
 
 
-def generate_loot(target, room) -> str:
+def generate_loot(target, room, attacker=None) -> str:
     """Generate loot from a defeated target"""
     cr = getattr(target, 'cr', None)
     if cr is None:
@@ -984,12 +1364,14 @@ def generate_loot(target, room) -> str:
     ]
 
     loot_msgs = []
+    corpse_gold = 0
+    corpse_items = []
 
     for min_cr, max_cr, gold_dice, item_chance, item_type in loot_table:
         if min_cr <= cr_val <= max_cr:
             # Gold drop
-            gold = sum(random.randint(1, gold_dice[1]) for _ in range(gold_dice[0])) + gold_dice[2]
-            loot_msgs.append(f"Loot: {gold} gp")
+            corpse_gold = sum(random.randint(1, gold_dice[1]) for _ in range(gold_dice[0])) + gold_dice[2]
+            loot_msgs.append(f"Loot: {corpse_gold} gp")
 
             # Item drop
             if random.random() < item_chance:
@@ -1000,11 +1382,24 @@ def generate_loot(target, room) -> str:
                     else:
                         item = itemdb.get_random_item(magical=True)
                     if item and room:
+                        corpse_items.append(item)
                         room.items.append(item)
                         loot_msgs.append(f"{item.name} drops to the ground!")
                 except:
                     pass
             break
+
+    # Auto-gold and auto-loot
+    if attacker is not None:
+        if hasattr(attacker, 'auto_gold') and attacker.auto_gold and corpse_gold > 0:
+            attacker.gold = getattr(attacker, 'gold', 0) + corpse_gold
+            loot_msgs.append(f"[Auto-gold] You receive {corpse_gold} gold.")
+        if hasattr(attacker, 'auto_loot') and attacker.auto_loot and corpse_items:
+            for item in list(corpse_items):
+                if item in room.items:
+                    room.items.remove(item)
+                attacker.inventory.append(item)
+            loot_msgs.append(f"[Auto-loot] You receive: {', '.join(i.name for i in corpse_items)}")
 
     return " ".join(loot_msgs)
 
@@ -1119,8 +1514,24 @@ def spell_attack(caster, target, spell_data: dict) -> str:
             if negates_on_save:
                 return f"{caster.name} casts {spell_name}!\n{save_desc}\n{target.name} resists the spell!"
             elif half_on_save:
+                # Rogue Evasion: successful Reflex save -> take 0 instead of half
+                if (save_type == SaveType.REFLEX
+                        and hasattr(target, 'char_class')
+                        and target.char_class == "Rogue"
+                        and getattr(target, 'class_level', getattr(target, 'level', 1)) >= 2):
+                    damage = 0
+                    results.append(f"{target.name} evades completely! (Evasion)")
+                else:
+                    damage = damage // 2
+                    results.append(f"{target.name} takes half damage!")
+        else:
+            # Rogue Improved Evasion (level 10+): failed Reflex save -> take half
+            if (half_on_save and save_type == SaveType.REFLEX
+                    and hasattr(target, 'char_class')
+                    and target.char_class == "Rogue"
+                    and getattr(target, 'class_level', getattr(target, 'level', 1)) >= 10):
                 damage = damage // 2
-                results.append(f"{target.name} takes half damage!")
+                results.append(f"{target.name} partially evades! (Improved Evasion)")
 
     # Apply damage
     if damage > 0:

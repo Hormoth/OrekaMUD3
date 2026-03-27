@@ -5,42 +5,126 @@
   "level": 1,
   "char_class": "Cleric",
   "class_level": 1,
-  "class_features": [
-    "Turn or Rebuke Undead",
-    "Domains (2)",
-    "Aura"
+  "class_features": [],
+  "spells_known": [
+    "Cure Light Wounds"
   ],
-  "spells_known": {
-    "1": [
-      "Cure Light Wounds"
-    ]
-  },
-  "spells_per_day": {
-    "1": 1
-  },
+  "spells_per_day": {},
   "hp": 10,
   "max_hp": 10,
   "ac": 10,
   "room_vnum": 1000,
   "quests": [],
-  "state": "COMBAT",
+  "state": "EXPLORING",
   "is_ai": false,
   "is_immortal": false,
-  "elemental_affinity": null,
-  "str_score": 13,
-  "dex_score": 7,
+  "elemental_affinity": "fire",
+  "str_score": 17,
+  "dex_score": 12,
   "con_score": 15,
-  "int_score": 12,
-  "wis_score": 16,
-  "cha_score": 12,
-  
-  
+  "int_score": 11,
+  "wis_score": 10,
+  "cha_score": 19,
   "move": 100,
   "max_move": 100,
   "xp": 0,
   "show_all": false,
-  "inventory": [],
+  "inventory": [
+    {
+      "vnum": 60000,
+      "name": "Mace",
+      "item_type": "weapon",
+      "weight": 8,
+      "value": 12,
+      "damage": [
+        1,
+        8,
+        0
+      ],
+      "material": "steel",
+      "slot": "main_hand",
+      "description": "A heavy steel mace."
+    },
+    {
+      "vnum": 60001,
+      "name": "Scale Mail",
+      "item_type": "armor",
+      "weight": 30,
+      "value": 50,
+      "ac_bonus": 4,
+      "material": "steel",
+      "slot": "body",
+      "description": "Armor of overlapping metal scales."
+    },
+    {
+      "vnum": 60002,
+      "name": "Heavy Wooden Shield",
+      "item_type": "shield",
+      "weight": 10,
+      "value": 7,
+      "ac_bonus": 2,
+      "material": "wood",
+      "slot": "off_hand",
+      "description": "A large wooden shield."
+    },
+    {
+      "vnum": 60003,
+      "name": "Holy Symbol",
+      "item_type": "focus",
+      "weight": 0,
+      "value": 25,
+      "description": "A silver holy symbol of your deity."
+    },
+    {
+      "vnum": 60004,
+      "name": "Healer's Kit",
+      "item_type": "tools",
+      "weight": 1,
+      "value": 50,
+      "description": "Bandages, salves, and splinting materials. 10 uses."
+    },
+    {
+      "vnum": 60005,
+      "name": "Waterskin",
+      "item_type": "drink",
+      "weight": 4,
+      "value": 1,
+      "description": "A leather waterskin filled with water."
+    },
+    {
+      "vnum": 60006,
+      "name": "Trail Rations",
+      "item_type": "food",
+      "weight": 1,
+      "value": 0.5,
+      "description": "A day's worth of dried food."
+    },
+    {
+      "vnum": 60007,
+      "name": "Trail Rations",
+      "item_type": "food",
+      "weight": 1,
+      "value": 0.5,
+      "description": "A day's worth of dried food."
+    }
+  ],
+  "gold": 100,
   "alignment": "Chaotic Good",
-  "deity": "Tarvek Wen, Doombringer",
-  "hashed_password": "4ff859344107d76238dd150f7015691d59796f435835eb43b50b24583a3d5d19"
+  "deity": "Dagdan, The United Sun",
+  "domains": [
+    "Magic",
+    "Strength"
+  ],
+  "hashed_password": "b836fe4887e0d8bb52854c59789dc22c776aff24049ea334360933f89e87d32c",
+  "skills": {
+    "Heal": 2,
+    "Search": 2,
+    "Spellcraft": 2,
+    "Spot": 2
+  },
+  "feats": [
+    "Improved Initiative",
+    "Power Attack"
+  ],
+  "chosen_path": null
 }

@@ -1,0 +1,401 @@
+{
+  "treasure_per_encounter": {
+    "1": 300, "2": 600, "3": 900, "4": 1200, "5": 1600,
+    "6": 2000, "7": 2600, "8": 3400, "9": 4500, "10": 5800,
+    "11": 7500, "12": 9800, "13": 13000, "14": 17000, "15": 22000,
+    "16": 28000, "17": 36000, "18": 47000, "19": 61000, "20": 80000
+  },
+  "gems": [
+    {"d_percent_low": 1, "d_percent_high": 25, "value_dice": "4d4", "value_multiplier": 1, "average_gp": 10, "examples": ["banded agate", "eye agate", "moss agate", "azurite", "blue quartz", "hematite", "lapis lazuli", "malachite", "obsidian", "rhodochrosite", "tiger eye", "turquoise", "freshwater pearl"]},
+    {"d_percent_low": 26, "d_percent_high": 50, "value_dice": "2d4", "value_multiplier": 10, "average_gp": 50, "examples": ["bloodstone", "carnelian", "chalcedony", "chrysoprase", "citrine", "iolite", "jasper", "moonstone", "onyx", "peridot", "rock crystal", "sard", "sardonyx", "zircon"]},
+    {"d_percent_low": 51, "d_percent_high": 70, "value_dice": "4d4", "value_multiplier": 10, "average_gp": 100, "examples": ["amber", "amethyst", "chrysoberyl", "coral", "garnet", "jade", "jet", "pearl", "red spinel", "tourmaline"]},
+    {"d_percent_low": 71, "d_percent_high": 90, "value_dice": "2d4", "value_multiplier": 100, "average_gp": 500, "examples": ["alexandrite", "aquamarine", "violet garnet", "black pearl", "deep blue spinel", "golden yellow topaz"]},
+    {"d_percent_low": 91, "d_percent_high": 99, "value_dice": "4d4", "value_multiplier": 100, "average_gp": 1000, "examples": ["emerald", "white opal", "black opal", "fire opal", "blue sapphire", "corundum", "star sapphire", "star ruby"]},
+    {"d_percent_low": 100, "d_percent_high": 100, "value_dice": "2d4", "value_multiplier": 1000, "average_gp": 5000, "examples": ["bright green emerald", "diamond", "jacinth"]}
+  ],
+  "art_objects": [
+    {"d_percent_low": 1, "d_percent_high": 10, "value_dice": "1d10", "value_multiplier": 10, "average_gp": 55, "examples": ["silver ewer", "carved bone statuette", "finely wrought small gold bracelet"]},
+    {"d_percent_low": 11, "d_percent_high": 25, "value_dice": "3d6", "value_multiplier": 10, "average_gp": 105, "examples": ["cloth of gold vestments", "black velvet mask with citrines", "silver chalice with lapis lazuli"]},
+    {"d_percent_low": 26, "d_percent_high": 40, "value_dice": "1d6", "value_multiplier": 100, "average_gp": 350, "examples": ["large wool tapestry", "brass mug with jade inlays"]},
+    {"d_percent_low": 41, "d_percent_high": 50, "value_dice": "1d10", "value_multiplier": 100, "average_gp": 550, "examples": ["silver comb with moonstones", "silver-plated longsword with jet jewel"]},
+    {"d_percent_low": 51, "d_percent_high": 60, "value_dice": "2d6", "value_multiplier": 100, "average_gp": 700, "examples": ["carved harp of exotic wood with ivory inlay", "solid gold idol"]},
+    {"d_percent_low": 61, "d_percent_high": 70, "value_dice": "3d6", "value_multiplier": 100, "average_gp": 1050, "examples": ["gold dragon comb with garnet eye", "gold and topaz bottle stopper", "ceremonial electrum dagger with star ruby"]},
+    {"d_percent_low": 71, "d_percent_high": 80, "value_dice": "4d6", "value_multiplier": 100, "average_gp": 1400, "examples": ["eyepatch with sapphire and moonstone", "fire opal pendant on gold chain", "old masterpiece painting"]},
+    {"d_percent_low": 81, "d_percent_high": 85, "value_dice": "5d6", "value_multiplier": 100, "average_gp": 1750, "examples": ["embroidered silk and velvet mantle with moonstones", "sapphire pendant on gold chain"]},
+    {"d_percent_low": 86, "d_percent_high": 90, "value_dice": "1d4", "value_multiplier": 1000, "average_gp": 2500, "examples": ["embroidered and bejeweled glove", "jeweled anklet", "gold music box"]},
+    {"d_percent_low": 91, "d_percent_high": 95, "value_dice": "1d6", "value_multiplier": 1000, "average_gp": 3500, "examples": ["golden circlet with aquamarines", "string of small pink pearls"]},
+    {"d_percent_low": 96, "d_percent_high": 99, "value_dice": "2d4", "value_multiplier": 1000, "average_gp": 5000, "examples": ["jeweled gold crown", "jeweled electrum ring"]},
+    {"d_percent_low": 100, "d_percent_high": 100, "value_dice": "2d6", "value_multiplier": 1000, "average_gp": 7000, "examples": ["gold and ruby ring", "gold cup set with emeralds"]}
+  ],
+  "treasure_by_cr": {
+    "1": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 14, "type": "none"},
+        {"d_percent_low": 15, "d_percent_high": 29, "coin": "cp", "dice": "1d6", "multiplier": 1000},
+        {"d_percent_low": 30, "d_percent_high": 52, "coin": "sp", "dice": "1d8", "multiplier": 100},
+        {"d_percent_low": 53, "d_percent_high": 95, "coin": "gp", "dice": "2d8", "multiplier": 10},
+        {"d_percent_low": 96, "d_percent_high": 100, "coin": "pp", "dice": "1d4", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 90, "type": "none"},
+        {"d_percent_low": 91, "d_percent_high": 95, "type": "gem", "count": "1"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "art", "count": "1"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 71, "type": "none"},
+        {"d_percent_low": 72, "d_percent_high": 95, "type": "mundane", "count": "1"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "minor", "count": "1"}
+      ]
+    },
+    "2": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 13, "type": "none"},
+        {"d_percent_low": 14, "d_percent_high": 23, "coin": "cp", "dice": "1d10", "multiplier": 1000},
+        {"d_percent_low": 24, "d_percent_high": 43, "coin": "sp", "dice": "2d10", "multiplier": 100},
+        {"d_percent_low": 44, "d_percent_high": 95, "coin": "gp", "dice": "4d10", "multiplier": 10},
+        {"d_percent_low": 96, "d_percent_high": 100, "coin": "pp", "dice": "2d8", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 81, "type": "none"},
+        {"d_percent_low": 82, "d_percent_high": 95, "type": "gem", "count": "1d3"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "art", "count": "1d3"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 49, "type": "none"},
+        {"d_percent_low": 50, "d_percent_high": 85, "type": "mundane", "count": "1"},
+        {"d_percent_low": 86, "d_percent_high": 100, "type": "minor", "count": "1"}
+      ]
+    },
+    "3": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 11, "type": "none"},
+        {"d_percent_low": 12, "d_percent_high": 21, "coin": "cp", "dice": "2d10", "multiplier": 1000},
+        {"d_percent_low": 22, "d_percent_high": 41, "coin": "sp", "dice": "4d8", "multiplier": 100},
+        {"d_percent_low": 42, "d_percent_high": 95, "coin": "gp", "dice": "1d4", "multiplier": 100},
+        {"d_percent_low": 96, "d_percent_high": 100, "coin": "pp", "dice": "1d10", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 77, "type": "none"},
+        {"d_percent_low": 78, "d_percent_high": 95, "type": "gem", "count": "1d3"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "art", "count": "1d3"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 49, "type": "none"},
+        {"d_percent_low": 50, "d_percent_high": 79, "type": "mundane", "count": "1d3"},
+        {"d_percent_low": 80, "d_percent_high": 100, "type": "minor", "count": "1"}
+      ]
+    },
+    "4": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 11, "type": "none"},
+        {"d_percent_low": 12, "d_percent_high": 21, "coin": "cp", "dice": "3d10", "multiplier": 1000},
+        {"d_percent_low": 22, "d_percent_high": 41, "coin": "sp", "dice": "4d12", "multiplier": 1000},
+        {"d_percent_low": 42, "d_percent_high": 95, "coin": "gp", "dice": "1d6", "multiplier": 100},
+        {"d_percent_low": 96, "d_percent_high": 100, "coin": "pp", "dice": "1d8", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 70, "type": "none"},
+        {"d_percent_low": 71, "d_percent_high": 95, "type": "gem", "count": "1d4"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "art", "count": "1d3"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 42, "type": "none"},
+        {"d_percent_low": 43, "d_percent_high": 62, "type": "mundane", "count": "1d4"},
+        {"d_percent_low": 63, "d_percent_high": 100, "type": "minor", "count": "1"}
+      ]
+    },
+    "5": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 10, "type": "none"},
+        {"d_percent_low": 11, "d_percent_high": 19, "coin": "cp", "dice": "1d4", "multiplier": 10000},
+        {"d_percent_low": 20, "d_percent_high": 38, "coin": "sp", "dice": "1d6", "multiplier": 1000},
+        {"d_percent_low": 39, "d_percent_high": 95, "coin": "gp", "dice": "1d8", "multiplier": 100},
+        {"d_percent_low": 96, "d_percent_high": 100, "coin": "pp", "dice": "1d10", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 60, "type": "none"},
+        {"d_percent_low": 61, "d_percent_high": 95, "type": "gem", "count": "1d4"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "art", "count": "1d4"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 57, "type": "none"},
+        {"d_percent_low": 58, "d_percent_high": 67, "type": "mundane", "count": "1d4"},
+        {"d_percent_low": 68, "d_percent_high": 100, "type": "minor", "count": "1d3"}
+      ]
+    },
+    "6": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 10, "type": "none"},
+        {"d_percent_low": 11, "d_percent_high": 18, "coin": "cp", "dice": "1d6", "multiplier": 10000},
+        {"d_percent_low": 19, "d_percent_high": 37, "coin": "sp", "dice": "1d8", "multiplier": 1000},
+        {"d_percent_low": 38, "d_percent_high": 95, "coin": "gp", "dice": "1d10", "multiplier": 100},
+        {"d_percent_low": 96, "d_percent_high": 100, "coin": "pp", "dice": "1d12", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 56, "type": "none"},
+        {"d_percent_low": 57, "d_percent_high": 92, "type": "gem", "count": "1d4"},
+        {"d_percent_low": 93, "d_percent_high": 100, "type": "art", "count": "1d4"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 54, "type": "none"},
+        {"d_percent_low": 55, "d_percent_high": 59, "type": "mundane", "count": "1d4"},
+        {"d_percent_low": 60, "d_percent_high": 99, "type": "minor", "count": "1d3"},
+        {"d_percent_low": 100, "d_percent_high": 100, "type": "medium", "count": "1"}
+      ]
+    },
+    "7": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 11, "type": "none"},
+        {"d_percent_low": 12, "d_percent_high": 18, "coin": "cp", "dice": "1d10", "multiplier": 10000},
+        {"d_percent_low": 19, "d_percent_high": 35, "coin": "sp", "dice": "1d12", "multiplier": 1000},
+        {"d_percent_low": 36, "d_percent_high": 93, "coin": "gp", "dice": "2d6", "multiplier": 100},
+        {"d_percent_low": 94, "d_percent_high": 100, "coin": "pp", "dice": "3d4", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 48, "type": "none"},
+        {"d_percent_low": 49, "d_percent_high": 88, "type": "gem", "count": "1d4"},
+        {"d_percent_low": 89, "d_percent_high": 100, "type": "art", "count": "1d4"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 51, "type": "none"},
+        {"d_percent_low": 52, "d_percent_high": 97, "type": "minor", "count": "1d3"},
+        {"d_percent_low": 98, "d_percent_high": 100, "type": "medium", "count": "1"}
+      ]
+    },
+    "8": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 10, "type": "none"},
+        {"d_percent_low": 11, "d_percent_high": 15, "coin": "cp", "dice": "1d12", "multiplier": 10000},
+        {"d_percent_low": 16, "d_percent_high": 29, "coin": "sp", "dice": "2d6", "multiplier": 1000},
+        {"d_percent_low": 30, "d_percent_high": 87, "coin": "gp", "dice": "2d8", "multiplier": 100},
+        {"d_percent_low": 88, "d_percent_high": 100, "coin": "pp", "dice": "3d6", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 45, "type": "none"},
+        {"d_percent_low": 46, "d_percent_high": 85, "type": "gem", "count": "1d6"},
+        {"d_percent_low": 86, "d_percent_high": 100, "type": "art", "count": "1d4"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 48, "type": "none"},
+        {"d_percent_low": 49, "d_percent_high": 96, "type": "minor", "count": "1d4"},
+        {"d_percent_low": 97, "d_percent_high": 100, "type": "medium", "count": "1"}
+      ]
+    },
+    "9": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 10, "type": "none"},
+        {"d_percent_low": 11, "d_percent_high": 15, "coin": "cp", "dice": "2d6", "multiplier": 10000},
+        {"d_percent_low": 16, "d_percent_high": 29, "coin": "sp", "dice": "2d8", "multiplier": 1000},
+        {"d_percent_low": 30, "d_percent_high": 85, "coin": "gp", "dice": "5d4", "multiplier": 100},
+        {"d_percent_low": 86, "d_percent_high": 100, "coin": "pp", "dice": "2d12", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 40, "type": "none"},
+        {"d_percent_low": 41, "d_percent_high": 80, "type": "gem", "count": "1d8"},
+        {"d_percent_low": 81, "d_percent_high": 100, "type": "art", "count": "1d4"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 43, "type": "none"},
+        {"d_percent_low": 44, "d_percent_high": 91, "type": "minor", "count": "1d4"},
+        {"d_percent_low": 92, "d_percent_high": 100, "type": "medium", "count": "1"}
+      ]
+    },
+    "10": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 10, "type": "none"},
+        {"d_percent_low": 11, "d_percent_high": 24, "coin": "sp", "dice": "2d10", "multiplier": 1000},
+        {"d_percent_low": 25, "d_percent_high": 79, "coin": "gp", "dice": "6d4", "multiplier": 100},
+        {"d_percent_low": 80, "d_percent_high": 100, "coin": "pp", "dice": "5d6", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 35, "type": "none"},
+        {"d_percent_low": 36, "d_percent_high": 79, "type": "gem", "count": "1d8"},
+        {"d_percent_low": 80, "d_percent_high": 100, "type": "art", "count": "1d6"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 40, "type": "none"},
+        {"d_percent_low": 41, "d_percent_high": 88, "type": "minor", "count": "1d4"},
+        {"d_percent_low": 89, "d_percent_high": 99, "type": "medium", "count": "1"},
+        {"d_percent_low": 100, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "11": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 8, "type": "none"},
+        {"d_percent_low": 9, "d_percent_high": 14, "coin": "sp", "dice": "3d10", "multiplier": 1000},
+        {"d_percent_low": 15, "d_percent_high": 75, "coin": "gp", "dice": "4d8", "multiplier": 100},
+        {"d_percent_low": 76, "d_percent_high": 100, "coin": "pp", "dice": "4d10", "multiplier": 10}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 24, "type": "none"},
+        {"d_percent_low": 25, "d_percent_high": 74, "type": "gem", "count": "1d10"},
+        {"d_percent_low": 75, "d_percent_high": 100, "type": "art", "count": "1d6"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 31, "type": "none"},
+        {"d_percent_low": 32, "d_percent_high": 84, "type": "minor", "count": "1d4"},
+        {"d_percent_low": 85, "d_percent_high": 98, "type": "medium", "count": "1"},
+        {"d_percent_low": 99, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "12": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 8, "type": "none"},
+        {"d_percent_low": 9, "d_percent_high": 14, "coin": "sp", "dice": "3d12", "multiplier": 1000},
+        {"d_percent_low": 15, "d_percent_high": 75, "coin": "gp", "dice": "1d4", "multiplier": 1000},
+        {"d_percent_low": 76, "d_percent_high": 100, "coin": "pp", "dice": "1d4", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 17, "type": "none"},
+        {"d_percent_low": 18, "d_percent_high": 70, "type": "gem", "count": "1d10"},
+        {"d_percent_low": 71, "d_percent_high": 100, "type": "art", "count": "1d8"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 27, "type": "none"},
+        {"d_percent_low": 28, "d_percent_high": 82, "type": "minor", "count": "1d6"},
+        {"d_percent_low": 83, "d_percent_high": 97, "type": "medium", "count": "1"},
+        {"d_percent_low": 98, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "13": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 8, "type": "none"},
+        {"d_percent_low": 9, "d_percent_high": 75, "coin": "gp", "dice": "1d4", "multiplier": 1000},
+        {"d_percent_low": 76, "d_percent_high": 100, "coin": "pp", "dice": "1d10", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 11, "type": "none"},
+        {"d_percent_low": 12, "d_percent_high": 66, "type": "gem", "count": "1d12"},
+        {"d_percent_low": 67, "d_percent_high": 100, "type": "art", "count": "1d10"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 19, "type": "none"},
+        {"d_percent_low": 20, "d_percent_high": 73, "type": "minor", "count": "1d6"},
+        {"d_percent_low": 74, "d_percent_high": 95, "type": "medium", "count": "1"},
+        {"d_percent_low": 96, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "14": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 8, "type": "none"},
+        {"d_percent_low": 9, "d_percent_high": 75, "coin": "gp", "dice": "1d6", "multiplier": 1000},
+        {"d_percent_low": 76, "d_percent_high": 100, "coin": "pp", "dice": "1d12", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 11, "type": "none"},
+        {"d_percent_low": 12, "d_percent_high": 66, "type": "gem", "count": "2d8"},
+        {"d_percent_low": 67, "d_percent_high": 100, "type": "art", "count": "2d6"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 19, "type": "none"},
+        {"d_percent_low": 20, "d_percent_high": 58, "type": "minor", "count": "1d6"},
+        {"d_percent_low": 59, "d_percent_high": 92, "type": "medium", "count": "1"},
+        {"d_percent_low": 93, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "15": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 3, "type": "none"},
+        {"d_percent_low": 4, "d_percent_high": 74, "coin": "gp", "dice": "1d8", "multiplier": 1000},
+        {"d_percent_low": 75, "d_percent_high": 100, "coin": "pp", "dice": "3d4", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 9, "type": "none"},
+        {"d_percent_low": 10, "d_percent_high": 65, "type": "gem", "count": "2d10"},
+        {"d_percent_low": 66, "d_percent_high": 100, "type": "art", "count": "2d8"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 11, "type": "none"},
+        {"d_percent_low": 12, "d_percent_high": 46, "type": "minor", "count": "1d10"},
+        {"d_percent_low": 47, "d_percent_high": 90, "type": "medium", "count": "1"},
+        {"d_percent_low": 91, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "16": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 3, "type": "none"},
+        {"d_percent_low": 4, "d_percent_high": 74, "coin": "gp", "dice": "1d12", "multiplier": 1000},
+        {"d_percent_low": 75, "d_percent_high": 100, "coin": "pp", "dice": "3d4", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 7, "type": "none"},
+        {"d_percent_low": 8, "d_percent_high": 64, "type": "gem", "count": "4d6"},
+        {"d_percent_low": 65, "d_percent_high": 100, "type": "art", "count": "2d10"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 40, "type": "none"},
+        {"d_percent_low": 41, "d_percent_high": 46, "type": "minor", "count": "1d10"},
+        {"d_percent_low": 47, "d_percent_high": 90, "type": "medium", "count": "1d3"},
+        {"d_percent_low": 91, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "17": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 3, "type": "none"},
+        {"d_percent_low": 4, "d_percent_high": 68, "coin": "gp", "dice": "3d4", "multiplier": 1000},
+        {"d_percent_low": 69, "d_percent_high": 100, "coin": "pp", "dice": "2d10", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 4, "type": "none"},
+        {"d_percent_low": 5, "d_percent_high": 63, "type": "gem", "count": "4d8"},
+        {"d_percent_low": 64, "d_percent_high": 100, "type": "art", "count": "3d8"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 33, "type": "none"},
+        {"d_percent_low": 34, "d_percent_high": 83, "type": "medium", "count": "1d3"},
+        {"d_percent_low": 84, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "18": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 2, "type": "none"},
+        {"d_percent_low": 3, "d_percent_high": 65, "coin": "gp", "dice": "3d6", "multiplier": 1000},
+        {"d_percent_low": 66, "d_percent_high": 100, "coin": "pp", "dice": "5d4", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 4, "type": "none"},
+        {"d_percent_low": 5, "d_percent_high": 54, "type": "gem", "count": "3d12"},
+        {"d_percent_low": 55, "d_percent_high": 100, "type": "art", "count": "3d10"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 24, "type": "none"},
+        {"d_percent_low": 25, "d_percent_high": 80, "type": "medium", "count": "1d4"},
+        {"d_percent_low": 81, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "19": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 2, "type": "none"},
+        {"d_percent_low": 3, "d_percent_high": 65, "coin": "gp", "dice": "3d8", "multiplier": 1000},
+        {"d_percent_low": 66, "d_percent_high": 100, "coin": "pp", "dice": "3d10", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 3, "type": "none"},
+        {"d_percent_low": 4, "d_percent_high": 50, "type": "gem", "count": "6d6"},
+        {"d_percent_low": 51, "d_percent_high": 100, "type": "art", "count": "6d6"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 4, "type": "none"},
+        {"d_percent_low": 5, "d_percent_high": 70, "type": "medium", "count": "1d4"},
+        {"d_percent_low": 71, "d_percent_high": 100, "type": "major", "count": "1"}
+      ]
+    },
+    "20": {
+      "coins": [
+        {"d_percent_low": 1, "d_percent_high": 2, "type": "none"},
+        {"d_percent_low": 3, "d_percent_high": 65, "coin": "gp", "dice": "4d8", "multiplier": 1000},
+        {"d_percent_low": 66, "d_percent_high": 100, "coin": "pp", "dice": "4d10", "multiplier": 100}
+      ],
+      "goods": [
+        {"d_percent_low": 1, "d_percent_high": 2, "type": "none"},
+        {"d_percent_low": 3, "d_percent_high": 38, "type": "gem", "count": "4d10"},
+        {"d_percent_low": 39, "d_percent_high": 100, "type": "art", "count": "7d6"}
+      ],
+      "items": [
+        {"d_percent_low": 1, "d_percent_high": 25, "type": "none"},
+        {"d_percent_low": 26, "d_percent_high": 65, "type": "medium", "count": "1d4"},
+        {"d_percent_low": 66, "d_percent_high": 100, "type": "major", "count": "1d3"}
+      ]
+    }
+  }
+}

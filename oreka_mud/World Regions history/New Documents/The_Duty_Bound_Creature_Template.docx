@@ -1,0 +1,312 @@
+**OREKA: ECHOES OF THE ELEMENTAL DAWN**
+
+**Creature Template**
+
+—
+
+**The Duty-Bound**
+
+*An Acquired Template for Any Kin*
+
+*"**They did not choose to remain. Their loyalty chose for them,*
+
+*and the dark magic made the lock.**"*
+
+D&D 3.5e Compatible • Oreka Campaign Setting
+
+OGL content used under Open Game License v1.0a.
+
+**The Duty-Bound**
+
+*"**The Kin-sense reads them and flinches. Fire-affinity—but cold. Like hearing a song you know played in a key that makes your teeth ache. The duty is there. The anger is there. But underneath it, holding it all in place, is something that is not of the Kin at all.**"*
+
+The Duty-Bound are not ghosts, not standard undead, and not willful revenants. They are Kin—elves, dwarves, humans, halflings—who died at the precise intersection of two forces: an overwhelming sense of duty or devotion at the moment of death, and the presence of Dómnathar dark magic saturating the area where they fell. The dark magic seized their dying devotion and twisted it into a binding. Their souls could not depart. Their duty became a chain. Their rage became a wall.
+
+They exist in a dormant state tied to the medium of their death—liquid beneath volcanic glass, frozen within ice walls, entombed in root-choked earth, suspended in still water. They do not think. They do not remember. They are prisoners of their own loyalty, held in place by alien magic that has no interest in them as people and every interest in them as barriers.
+
+When disturbed—by Kin-sense resonance, by physical disruption of their resting medium, by the presence of Dómnathar corruption, or by any intrusion into the space they died defending—they manifest. The dormant medium solidifies, reshapes, and rises in a skeletal approximation of the person they were. They attack anything they read as a threat to the place they are bound to defend. They cannot be reasoned with through speech. They cannot be commanded. They are not intelligent undead—they are echoes of a final moment, endlessly repeated.
+
+But they can be released. Because the binding is not theirs—it is the Dómnathar magic’s. If the trapped soul can be shown, through resonance or symbol, that the duty is fulfilled—that the thing they died protecting still exists, that the Kin survived, that the war ended—the binding cracks. The soul recognizes completion. And it lets go.
+
+**Creating a Duty-Bound**
+
+"Duty-Bound" is an acquired template that can be added to any Kin creature (referred to hereafter as the base creature). The base creature must have been a living Kin—any of the recognized peoples of Oreka: elf, dwarf, human, or halfling of any subrace—who died while meeting both of the following conditions:
+
+- The creature died while experiencing an overwhelming sense of duty, devotion, loyalty, or protective obligation toward a specific place, object, person, or cause.
+
+- The creature died in an area actively saturated with Dómnathar dark magic, Abyssal corruption, or False Silence effects.
+
+Neither condition alone is sufficient. Kin who die with great devotion in clean ground pass normally. Kin who die in Dómnathar-corrupted areas without strong emotional anchoring also pass normally (or rise as conventional undead if other necromantic forces are present). The Duty-Bound are created only when the dark magic has something to grab—a soul that will not leave, caught mid-oath, mid-prayer, mid-defiance—and uses that refusal as the mechanism of binding.
+
+The Duty-Bound does not use the base creature’s class levels, spellcasting, or skill ranks. The binding strips away everything except the physical echo and the emotional core. A 15th-level fighter and a 1st-level commoner bound by the same forces produce Duty-Bound of similar capability—the template’s CR is based on the binding itself, not the life that preceded it.
+
+**Template Stat Block Modifications**
+
+Apply the following changes to the base creature’s statistics. Where a value replaces the base creature’s, it is noted. Where a value modifies the base creature’s, the modifier is given.
+
+| **CORE STATISTICS** |
+| --- |
+
+| **Size and Type** | Type changes to Undead. Size remains unchanged. Gains the (Augmented Humanoid, Kin) subtypes. Does not gain standard undead immunities to mind-affecting effects (see Bound Will below). |
+| --- | --- |
+| **Hit Dice** | All current Hit Dice become d12s. The Duty-Bound does not gain bonus hit points from Constitution (it has no Con score), but gains bonus HP from Charisma modifier × HD (representing the strength of the binding emotion). Minimum HP: base creature’s original HD × 6. |
+| **Initiative** | Base creature’s Dexterity modifier −2 (the solidification process is sluggish). Minimum +0. |
+| **Speed** | Base creature’s speed −10 ft. (minimum 10 ft.). No fly speed regardless of base creature. The Duty-Bound moves with grinding, deliberate purpose. |
+| **Armor Class** | Natural armor improves by +4 (solidified medium—slag, ice,ite, root-mass—forms a shell). Loses any armor or shield bonus from equipment unless the equipment was part of the dormant medium. |
+| **Base Attack/Grapple** | Unchanged from base creature. |
+
+| **ATTACKS** |
+| --- |
+
+| **Attack / Full Attack** | The Duty-Bound attacks with whatever weapons solidified with it (if any) or with two slam attacks. Slam damage is based on size: Small 1d4, Medium 1d6, Large 1d8. Weapons deal their normal damage. |
+| --- | --- |
+| **Special Note** | If the base creature’s weapon was part of the dormant medium (e.g., a dwarf’s axe melted into the same pool), the weapon reforms with the Duty-Bound and is treated as part of its body. It cannot be disarmed. |
+
+| **SPECIAL ATTACKS** |
+| --- |
+
+**Bound Fury (Su)**
+
+Once per encounter, when the Duty-Bound is first engaged in melee combat, it may make a single extra attack at its highest base attack bonus as a free action. This represents the explosive moment of manifestation—the instant the dormant form solidifies mid-strike. This attack deals an additional 1d6 points of elemental damage matching the base creature’s Kin elemental affinity (fire for dwarves, cold/water for Eruskans, electricity/air for Hasura, acid/earth for Oreans, etc.).
+
+**Resonance Scream (Su)**
+
+Upon manifesting, the Duty-Bound emits a burst of corrupted Kin-sense in a 30-foot radius. This is not sound—it is felt through Kin-sense. All Kin creatures within range must make a Will save (DC 10 + 1/2 HD + Cha modifier) or be shaken for 1d4 rounds. Creatures with active Kin-sense take a −2 penalty on this save (their sensitivity works against them). Creatures without Kin-sense are immune. Silentborn are immune.
+
+**Elemental Medium (Su)**
+
+The Duty-Bound’s body retains properties of the medium it solidified from. All melee attacks (natural and weapon) deal an additional 1d4 points of elemental damage based on the dormant medium: fire (molten slag/glass), cold (ice/frost), acid (earth/root-matter), or electricity (water/mineral suspension). This damage applies on every hit, including attacks of opportunity.
+
+| **SPECIAL QUALITIES** |
+| --- |
+
+**Dormant State (Ex)**
+
+Before manifesting, the Duty-Bound exists as an inert pool, deposit, or mass of its dormant medium. It is undetectable by mundane observation (appears to be a natural feature of the environment). Kin-sense detects it as a faint, wrong-feeling resonance—the base creature’s elemental affinity is present but distorted, like a familiar voice heard underwater. A successful Kin-sense focus check (DC 20) identifies the resonance as Kin rather than environmental. Detect magic reveals faint necromancy and moderate abjuration (the binding). True seeing reveals a ghostly Kin silhouette beneath the surface.
+
+**Manifestation Trigger (Su)**
+
+The Duty-Bound manifests (transitions from dormant to active state) when any of the following occurs within 30 feet of its dormant form: a living Kin creature enters the area it is bound to protect; the dormant medium is physically disrupted (cracked, melted, excavated); Dómnathar magic or Abyssal Silence is actively used; or the bound location is damaged or desecrated. Manifestation takes 1 full round. During this round, the medium visibly shifts—liquid rises, ice cracks outward, earth heaves—but the Duty-Bound cannot act until the following round.
+
+**Reforming (Su)**
+
+When reduced to 0 hit points, the Duty-Bound collapses back into its dormant medium. It reforms in 2d6 minutes with full hit points unless the dormant medium is destroyed, removed from the bound location, or the Duty-Bound is released (see Release Conditions). The dormant medium has hardness 5 and 30 hit points per Duty-Bound it contains. Destroying the medium permanently destroys the Duty-Bound but does not release the soul—it traps it in fragments (see Destroying vs. Releasing below).
+
+**Bound Will (Su)**
+
+The Duty-Bound is immune to Turn/Rebuke Undead, Command Undead, and all compulsion and charm effects. The binding is not necromantic animation—it is a soul-chain forged from the creature’s own devotion and sealed by Dómnathar corruption. No mortal necromancer has authority over it. The Duty-Bound is also immune to banishment, dismissal, and similar effects (it is not an outsider or summoned creature; it is a Kin soul that never left).
+
+**Damage Reduction (Su)**
+
+DR 5/—. The solidified medium is supernaturally hard. This DR cannot be overcome by any weapon material or alignment. It can only be bypassed by dealing elemental damage opposed to the Duty-Bound’s dormant medium (cold bypasses fire-medium DR, fire bypasses cold-medium DR, etc.).
+
+**Corrupted Kin-Sense Signature (Su)**
+
+The Duty-Bound registers on Kin-sense as the base creature’s original elemental affinity, but wrong. The resonance is present but overlaid with something alien—a hollow undertone that experienced Kin describe as ‘silence wearing a face.’ This is the Dómnathar binding showing through. A DC 25 Knowledge (arcana) or Knowledge (the planes) check identifies the corruption as Abyssal in origin. A DC 20 Kin-sense focus check identifies the base creature’s original race and elemental affinity beneath the distortion.
+
+**Elemental Resistances**
+
+The Duty-Bound has resistance 10 to the element matching its dormant medium (fire resistance 10 for slag/glass-bound, cold resistance 10 for ice-bound, etc.) and vulnerability to the opposed element (takes 50% extra damage from cold if fire-medium, etc.).
+
+| **ABILITIES, SAVES, AND SKILLS** |
+| --- |
+
+| **Abilities** | Str +4, Dex −4 (minimum 6), Con — (undead), Int — (mindless), Wis remains unchanged, Cha +2 (the binding emotion strengthens the soul’s presence even as it strips away the mind). |
+| --- | --- |
+| **Saves** | Fort: — (immune, as undead). Ref: base creature’s Reflex save −2. Will: base creature’s Will save +4 (the binding reinforces resistance to external will, even as it overrides the creature’s own). |
+| **Skills** | The Duty-Bound retains no skills. It acts on instinct and echo, not knowledge. |
+| **Feats** | The Duty-Bound retains no feats. If it reformed with a weapon, it is proficient with that weapon only. |
+
+| **ENVIRONMENT, ORGANIZATION, AND CR** |
+| --- |
+
+| **Environment** | Any location where the base creature died while meeting both binding conditions. The Duty-Bound cannot leave the bound location. Its maximum range from its dormant medium is 60 feet. If forced beyond this range, it immediately collapses and reforms at its dormant point. |
+| --- | --- |
+| **Organization** | Solitary, pair, or watch (3–8). Duty-Bound that died together in the same event often share a dormant medium and manifest simultaneously. |
+| **Challenge Rating** | Base creature’s CR +2 (minimum CR 3). The Reforming ability, elemental damage, and release-or-destroy dynamic significantly increase effective difficulty. |
+| **Treasure** | None (standard). Occasionally the dormant medium contains fragments of the base creature’s original equipment, recoverable after release or destruction. |
+| **Alignment** | Always neutral. The Duty-Bound has no moral agency. It is a mechanism, not a person. |
+| **Advancement** | By HD increase (the binding can grow stronger over centuries, particularly in locations with ongoing Dómnathar activity). |
+| **Level Adjustment** | — (not applicable, not playable). |
+
+**Release Conditions**
+
+*"**Fighting them is beating on prisoners. The real encounter is figuring out how to open the cell.**"*
+
+The Duty-Bound can be released—permanently and peacefully dissipated—by breaking the Dómnathar binding that holds the soul in place. The binding is sustained by the soul’s own unresolved devotion. If the soul can be shown, through resonance or symbolic proof, that the duty is complete, the binding loses its anchor and dissolves. The soul departs. The dormant medium goes still and does not reform.
+
+Release does not require combat. A party that understands what the Duty-Bound are can release them without dealing a single point of damage. However, the Duty-Bound will attack anyone in their bound area, so achieving release conditions while under assault is the true challenge.
+
+**Release Methods**
+
+| **Method** | **Description** | **Effect** |
+| --- | --- | --- |
+| A Thing of the Kin | Present a symbol, object, or act that proves the Kin the Duty-Bound died to protect still exist and endure. Examples: a Vestri legionnaire speaking a dwarven oath of honor near an Aldenheim Duty-Bound; a Hasura elf singing a grove-blessing near an elven one; displaying a living Kin-forged weapon or cultural artifact. | The Duty-Bound freezes mid-action for 1 round. Will save DC 15 to resist release. On failure, the Duty-Bound dissipates peacefully. On success, it hesitates for 1d4 rounds (does not attack, but does not dissipate), then resumes. Each subsequent attempt reduces the DC by 2. |
+| A Thing of the Giants | Present a Giant artifact, fragment of creation-stone, or object carrying the resonance of the original makers of Oreka. Giant resonance predates the Dómnathar and overwrites Abyssal corruption directly. | No save. The Duty-Bound dissipates immediately. The binding cannot hold against resonance older than itself. This method releases all Duty-Bound within 60 feet simultaneously. |
+| Multi-Kin Resonance | Three or more Kin of different elemental affinities stand within 30 feet and simultaneously focus their Kin-sense on the Duty-Bound (full-round action for each participant). The combined resonance of multiple Kin branches echoes the original harmony of the Concordance—the unity the Duty-Bound died wishing for. | Will save DC 10 + number of participating Kin. On failure, release. On success, all participants feel a surge of the Duty-Bound’s final emotion (grief, rage, defiance) and must make a DC 12 Will save or be stunned for 1 round. Can be repeated. |
+| Sanctification | A cleric or druid of 7th level or higher casts consecrate or hallow on the bound area, combined with a spoken acknowledgment of the Duty-Bound’s sacrifice (a free action, but must be sincere—the DM adjudicates). | Will save DC 15 + caster’s Wisdom modifier. On failure, release. Affects all Duty-Bound within the spell’s area. |
+| Destroying the Binding | A character with Knowledge (the planes) 10 ranks or Knowledge (arcana) 12 ranks can attempt to identify and sever the Dómnathar binding directly. Requires 10 minutes of uninterrupted ritual work, a DC 25 check, and expenditure of a 4th-level or higher spell slot (or equivalent supernatural ability). | On success, the binding is severed and the Duty-Bound is released. On failure by 5 or more, the caster takes 2d6 psychic damage from backlash. Can be reattempted. |
+
+**Destroying vs. Releasing**
+
+It is possible to permanently destroy a Duty-Bound by destroying its dormant medium. This prevents reforming, but it does not release the soul. The soul fragments and disperses into the bound location, becoming a lingering psychic residue—an area of permanent unease, cold spots, Kin-sense distortion, and disturbing dreams for anyone who sleeps nearby. The location effectively becomes minor haunted ground. A destroyed Duty-Bound cannot be released after the fact except by hallowing the entire bound area (a significant expenditure of resources).
+
+This distinction matters narratively: players who hack through Duty-Bound without understanding what they are may solve the immediate combat problem but create a long-term spiritual contamination in a location that may be sacred, strategically important, or emotionally significant to NPCs.
+
+**What Release Looks Like**
+
+*This section is for the DM. Read it before the encounter. The release moment is the emotional payoff of the entire encounter—don’t rush it.*
+
+When a Duty-Bound is released, the following occurs in sequence:
+
+- The Duty-Bound freezes. Whatever it was doing—mid-swing, mid-charge, mid-scream—it stops. Not because it chose to. Because the binding cracked.
+
+- The ember-pits (or ice-lights, or root-veins, or water-glow) in its eyes flicker. For one moment—just one—they burn clear. The color is right. The resonance is clean. Every Kin in the room with active Kin-sense feels it: this was a person. This was one of them.
+
+- The body loses cohesion. Not violently. Gently. The slag softens. The ice melts. The roots unclench. The water stills. The shape that was a person flows back into the medium it came from.
+
+- The Kin-sense signature fades. Not into silence—into peace. The elemental affinity is there for one last heartbeat, clean and clear and unmistakably what it always was, and then it’s gone. The medium goes still. The pool does not move again.
+
+If multiple Duty-Bound are released simultaneously (via Giant artifact or area sanctification), the effect compounds. Each soul’s final clean resonance harmonizes with the others. For a brief moment, the room fills with the combined Kin-sense of everyone who died there, all at once, all clear, all at peace. It is the most beautiful and the most terrible thing the party will feel in the entire campaign. Then silence. Real silence. Not False Silence—true quiet. The sound of a room that is finally empty.
+
+**Kin Variant Table**
+
+The following table provides quick-reference guidelines for adapting the Duty-Bound template to different Kin origins. The dormant medium, manifestation appearance, and elemental signature all change based on the base creature’s people and the circumstances of their death.
+
+| **Kin Origin** | **Dormant Form** | **Manifestation** | **Elemental Signature** |
+| --- | --- | --- | --- |
+| Aldenheim Dwarf | Molten pool beneath volcanic glass | Skeletal slag frame with molten lines at joints; ember-pit eyes; reforms with fused weapons | Fire. Slam/weapon deals +1d4 fire. Resist fire 10, vulnerable to cold. |
+| Vestri Dwarf | Stone-encased mass in collapsed tunnel | Granite-skinned figure with crystal-vein fractures; eyes like quartz lit from within | Earth. Slam/weapon deals +1d4 acid. Resist acid 10, vulnerable to electricity. |
+| Rarozhki Dwarf | Embersteel slag fused to forge floor | Black-iron skeleton wreathed in ember-glow; molten joints; superheated weapon | Fire (intense). Slam/weapon deals +1d6 fire. Resist fire 15, vulnerable to cold. |
+| Pekakarlik Dwarf | Mineral sediment in still river pool | Smoothed riverstone figure with water streaming from joints; deep green eyes | Water. Slam/weapon deals +1d4 cold. Resist cold 10, vulnerable to fire. |
+| Hasura Elf | Frozen sap within a dead or petrified tree | Bark-and-amber skeleton; wind hums through hollow bones; pale silver eyes | Air. Slam/weapon deals +1d4 electricity. Resist electricity 10, vulnerable to acid. |
+| Kovaka Elf | Root-choked earth mound in deep forest | Living-wood frame wrapped in dead vines; moss fills the skull; green-gold eyes | Earth. Slam/weapon deals +1d4 acid. Resist acid 10, vulnerable to electricity. |
+| Pasura Elf | Calcified resin on wind-carved cliff face | Crystalline frame with sand-scoured surfaces; eyes like desert stars | Air/Fire. Alternates +1d4 fire and electricity. Resist fire 5, resist elec. 5. |
+| Eruskan Human | Still water in sealed cistern or well | Translucent water-and-mineral frame; perpetually dripping; calm blue eyes | Water. Slam/weapon deals +1d4 cold. Resist cold 10, vulnerable to fire. |
+| Orean Human | Packed earth beneath foundation stones | Dense stone-and-clay figure; heavy; deliberate; deep brown eyes like buried gems | Earth. Slam/weapon deals +1d4 acid. Resist acid 10, vulnerable to electricity. |
+| Taraf-Imro Human | Ash and ember in collapsed hearth/forge | Charred skeleton wreathed in heat-shimmer; cracked skin glows orange beneath; fierce red eyes | Fire. Slam/weapon deals +1d4 fire. Resist fire 10, vulnerable to cold. |
+| Mytroan Human | Wind-dried remains in sand or dust | Desiccated frame trailing sand and static; hollow, whistling voice; pale electric eyes | Air. Slam/weapon deals +1d4 electricity. Resist electricity 10, vulnerable to acid. |
+| Halfling (Riverfolk) | Silt bed in shallow, still water | Small, smooth river-clay figure; gentle current visible in translucent limbs; kind, sad eyes | Water. Slam deals +1d4 cold. Resist cold 10, vulnerable to fire. Note: Halfling Duty-Bound are extremely rare and deeply disturbing to encounter—halflings are the Kin least associated with war. |
+| Halfling (Landbound) | Root tangle beneath hearth-stone | Small earthen figure woven with grass roots; warm-toned; gentle; sorrowful amber eyes | Earth. Slam deals +1d4 acid. Resist acid 10, vulnerable to electricity. Same rarity note. |
+
+**Encounter Design Notes**
+
+**Narrative Role**
+
+The Duty-Bound are not standard combat encounters. They are moral puzzles with teeth. The party can fight them—and may have to, at least initially—but the encounter is designed to reward understanding over violence. The ideal arc: the party fights, the Vestri dwarf (or equivalent Kin member) notices something wrong about the Kin-sense read, someone makes a Knowledge check, the party realizes what these are, and they shift from combat to release. The DM should plan for this arc and have the Kin-sense information ready before the session.
+
+**Scaling**
+
+- Low-level parties (ECL 3–5): 1–2 Duty-Bound, base creature was a commoner or 1st-level warrior. CR 3–4. Reforming once before the party figures out the release.
+
+- Mid-level parties (ECL 6–9): 3–6 Duty-Bound from a shared dormant medium, base creatures were warriors or soldiers. CR 5–7. The party is fighting a unit that died together and manifests together.
+
+- High-level parties (ECL 10+): A Duty-Bound that was a commander, champion, or spellcaster in life. CR 10+. The binding is centuries old and reinforced by active Dómnathar corruption. Release DCs are higher. The bound location is a place of historical significance. The emotional resonance of the release is proportionally greater.
+
+**The Haunted Weapon Interaction**
+
+If the party includes a character wielding a parasitic weapon (such as the black axe described in the Aldenheim undercity campaign), the weapon’s reaction to Duty-Bound should be dramatic and confusing. The axe feeds on life force—but these have none. They’re dead. The axe may vibrate, pull toward them, try to feed and fail, or react with something like frustration. This is a useful signal to observant players that the Duty-Bound are not standard undead.
+
+**Emotional Calibration**
+
+The release moment is the encounter’s payoff. DMs should calibrate the emotional weight based on context. In the Aldenheim undercity, these are Aldenheim dwarves—the extinct heroes of Oreka’s greatest tragedy—and releasing them is an act of mercy three hundred years overdue. In other contexts (a Hasura grove burned during the Deceivers’ War, an Eruskan river-fort overrun by Dómnathar), the weight shifts but the structure remains: these were people, they suffered, and the party can end that suffering.
+
+**Sample Entry: Forge Revenant (Aldenheim Duty-Bound)**
+
+*This sample demonstrates the template applied to an Aldenheim Dwarf warrior who died defending the World Forge during the fall of Aldenheim.*
+
+| **FORGE REVENANT** |
+| --- |
+
+**Medium Undead **(Augmented Humanoid, Kin, Fire)
+
+**Hit Dice: **4d12+4 (30 hp)
+
+**Initiative: **+0
+
+**Speed: **10 ft.
+
+**Armor Class: **18 (+4 natural, +4 solidified slag shell), touch 10, flat-footed 18
+
+**Base Attack/Grapple: **+3/+7
+
+**Attack: **Slag-fused waraxe +7 melee (1d8+4 plus 1d4 fire)
+
+**Full Attack: **Slag-fused waraxe +7 melee (1d8+4 plus 1d4 fire)
+
+**Space/Reach: **5 ft./5 ft.
+
+**Special Attacks: **Bound Fury, Resonance Scream (DC 13), Elemental Medium (fire)
+
+**Special Qualities: **Dormant State, Manifestation Trigger, Reforming (2d6 min), Bound Will, DR 5/— (bypassed by cold), Corrupted Kin-Sense Signature, fire resistance 10, vulnerability to cold, darkvision 60 ft.
+
+**Saves: **Fort —, Ref +0, Will +6
+
+**Abilities: **Str 18, Dex 10, Con —, Int —, Wis 12, Cha 12
+
+**Skills: **—
+
+**Feats: **Proficient with waraxe
+
+**Environment: **Aldenheim undercity, World Forge level
+
+**Organization: **Watch (3–8, manifesting from shared molten pool)
+
+**Challenge Rating: **5
+
+**Treasure: **None (fragments of Aldenheim-forged equipment may be recovered from dormant medium after release)
+
+**Alignment: **Neutral
+
+**Advancement: **5–8 HD (Medium)
+
+**Level Adjustment: **—
+
+| **Flavor Text** |
+| --- |
+
+The pool of dark liquid beneath the cracked volcanic glass shudders. Something rises—not quickly, not with purpose, but with the terrible inevitability of heat expanding through stone. A shape forms: broad shoulders, thick limbs, a skull-like head crowned with slag. Molten lines trace the joints like veins of dying fire. In its right hand, an axe that was never put down. The ember-pits where its eyes should be fix on you, and you feel it through your Kin-sense before you see it move—fire-affinity, unmistakably dwarven, but wrong. Cold where it should be warm. Silent where it should sing. Whatever this was, it died three hundred years ago and no one told it.
+
+| **Combat** |
+| --- |
+
+Forge Revenants do not employ tactics. They stand up and they fight whatever is in the forge. If multiple intruders are present, they engage the nearest. They do not pursue beyond 60 feet of their dormant pool. If reduced to 0 HP, they collapse into the pool and reform in 2d6 minutes. They fight until released or until all intruders leave the bound area.
+
+| **Oreka-Specific Elements** |
+| --- |
+
+**Kin-Sense Signature: **Fire (corrupted). Registers as Aldenheim dwarven resonance overlaid with Dómnathar Abyssal distortion. A DC 20 Kin-sense focus check reveals the original identity; a DC 25 Knowledge (the planes) check identifies the Abyssal binding.
+
+**Elemental Affinity: **Fire (primary), with Abyssal corruption undertone.
+
+**Cultural Significance: **These are the dead of Aldenheim—the greatest martyrs in Oreka’s history. Releasing them is not a combat victory. It is a sacred act. Any dwarf in the party should understand this immediately. Any Kin with knowledge of the Lament of Kings should understand within one round of sensing them. Destroying them without attempting release is not evil, but it is a tragedy.
+
+**DM Quick Reference**
+
+| **Building a Duty-Bound in 5 Steps** |
+| --- |
+
+- Choose the base creature (any Kin, any subrace, any level). Note its race, elemental affinity, and the circumstances of its death.
+
+- Determine the dormant medium based on how the creature died and the environment (consult the Kin Variant Table for defaults).
+
+- Apply the template stat modifications: type to Undead, HD to d12, Str +4, Dex −4, Con —, Int —, Cha +2, +4 natural armor, speed −10 ft. Add all special attacks and qualities.
+
+- Determine the bound location (where the creature died and what it was protecting). Set the 60-foot range limit.
+
+- Plan the release. What Thing of the Kin would crack the binding? What would the party need to say, show, or do? Write a one-sentence description of what release looks like for this specific Duty-Bound.
+
+| **Key Reminders** |
+| --- |
+
+- They are prisoners, not guards. The Dómnathar magic is the cage. Their own loyalty is the lock.
+
+- They reform unless the medium is destroyed or they are released. Fighting is temporary. Understanding is permanent.
+
+- Destroying is not releasing. Destroyed Duty-Bound leave haunted ground. Released Duty-Bound leave peace.
+
+- The Kin-sense read is the first clue. Make sure at least one PC has active Kin-sense before the encounter begins.
+
+- A Giant artifact releases all Duty-Bound in range with no save. This is intentionally powerful—it represents the oldest magic in the world overwriting the newest corruption.
+
+- The release moment is the encounter’s emotional climax. Describe it with care. Give each player a beat to feel it through their character’s Kin-sense.

@@ -1,0 +1,517 @@
+[
+    {
+        "name": "Iron Dagger",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 12,
+        "materials": [{"name": "iron ingot", "qty": 1}],
+        "result_vnum": null,
+        "result_item": {
+            "name": "Iron Dagger",
+            "item_type": "weapon",
+            "weight": 1,
+            "value": 2,
+            "damage": [1, 4, 0],
+            "material": "iron",
+            "description": "A simple iron dagger."
+        },
+        "time": 1
+    },
+    {
+        "name": "Leather Armor",
+        "skill": "Craft (leatherworking)",
+        "dc": 12,
+        "materials": [{"name": "leather hide", "qty": 2}],
+        "result_item": {
+            "name": "Leather Armor",
+            "item_type": "armor",
+            "weight": 15,
+            "value": 10,
+            "ac_bonus": 2,
+            "material": "leather",
+            "description": "Armor crafted from leather."
+        },
+        "time": 2
+    },
+    {
+        "name": "Healing Potion",
+        "skill": "Craft (alchemy)",
+        "dc": 15,
+        "materials": [{"name": "healing herb", "qty": 2}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Healing Potion",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 50,
+            "stats": {"healing": 8},
+            "description": "A potion that heals 1d8 HP."
+        },
+        "time": 1
+    },
+    {
+        "name": "Iron Longsword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 15,
+        "materials": [{"name": "iron ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Iron Longsword",
+            "item_type": "weapon",
+            "weight": 4,
+            "value": 15,
+            "damage": [1, 8, 0],
+            "material": "iron",
+            "description": "A sturdy iron longsword."
+        },
+        "time": 2
+    },
+    {
+        "name": "Steel Shield",
+        "skill": "Craft (armorsmithing)",
+        "dc": 15,
+        "materials": [{"name": "steel ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Steel Shield",
+            "item_type": "shield",
+            "weight": 6,
+            "value": 9,
+            "ac_bonus": 1,
+            "material": "steel",
+            "description": "A round steel shield."
+        },
+        "time": 2
+    },
+    {
+        "name": "Steel Longsword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 15,
+        "materials": [{"name": "steel ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Steel Longsword",
+            "item_type": "weapon",
+            "weight": 4,
+            "value": 15,
+            "damage": [1, 8, 0],
+            "material": "steel",
+            "description": "A well-forged steel longsword."
+        },
+        "time": 2
+    },
+    {
+        "name": "Steel Greatsword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 17,
+        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Steel Greatsword",
+            "item_type": "weapon",
+            "weight": 8,
+            "value": 50,
+            "damage": [2, 6, 0],
+            "material": "steel",
+            "description": "A heavy two-handed steel greatsword."
+        },
+        "time": 3
+    },
+    {
+        "name": "Embersteel Longsword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 20,
+        "materials": [{"name": "embersteel ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Embersteel Longsword",
+            "item_type": "weapon",
+            "weight": 4,
+            "value": 2500,
+            "damage": [1, 8, 1],
+            "material": "embersteel",
+            "properties": ["fire_crit_1d4"],
+            "description": "A longsword of embersteel that radiates faint heat. Scorch marks trail where it rests."
+        },
+        "time": 4
+    },
+    {
+        "name": "Embersteel Warhammer",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 20,
+        "materials": [{"name": "embersteel ingot", "qty": 3}],
+        "result_item": {
+            "name": "Embersteel Warhammer",
+            "item_type": "weapon",
+            "weight": 5,
+            "value": 2800,
+            "damage": [1, 8, 1],
+            "material": "embersteel",
+            "properties": ["fire_crit_1d4"],
+            "description": "A warhammer forged from embersteel, its head glowing a dull red-orange."
+        },
+        "time": 4
+    },
+    {
+        "name": "Volcanic Glass Dagger",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 14,
+        "materials": [{"name": "volcanic glass shard", "qty": 1}],
+        "result_item": {
+            "name": "Volcanic Glass Dagger",
+            "item_type": "weapon",
+            "weight": 1,
+            "value": 200,
+            "damage": [1, 4, 0],
+            "material": "volcanic glass",
+            "properties": ["improved_crit_range"],
+            "description": "A razor-sharp dagger knapped from black volcanic glass. Beautiful and deadly, but fragile."
+        },
+        "time": 1
+    },
+    {
+        "name": "Moonwhisper Short Sword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 16,
+        "materials": [{"name": "steel ingot", "qty": 1}, {"name": "moonwhisper silver", "qty": 1}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Moonwhisper Short Sword",
+            "item_type": "weapon",
+            "weight": 2,
+            "value": 400,
+            "damage": [1, 6, 0],
+            "material": "moonwhisper silver",
+            "properties": ["cold_damage_vs_fey_undead"],
+            "description": "A short sword bonded with moonwhisper silver, gleaming faintly in low light."
+        },
+        "time": 2
+    },
+    {
+        "name": "Chain Shirt",
+        "skill": "Craft (armorsmithing)",
+        "dc": 14,
+        "materials": [{"name": "steel ingot", "qty": 3}],
+        "result_item": {
+            "name": "Chain Shirt",
+            "item_type": "armor",
+            "weight": 25,
+            "value": 100,
+            "ac_bonus": 4,
+            "material": "steel",
+            "description": "A shirt of interlocking steel rings."
+        },
+        "time": 3
+    },
+    {
+        "name": "Steel Breastplate",
+        "skill": "Craft (armorsmithing)",
+        "dc": 18,
+        "materials": [{"name": "steel ingot", "qty": 4}, {"name": "leather strip", "qty": 2}],
+        "result_item": {
+            "name": "Steel Breastplate",
+            "item_type": "armor",
+            "weight": 30,
+            "value": 200,
+            "ac_bonus": 5,
+            "material": "steel",
+            "description": "A solid steel breastplate with leather fittings."
+        },
+        "time": 4
+    },
+    {
+        "name": "Embersteel Breastplate",
+        "skill": "Craft (armorsmithing)",
+        "dc": 22,
+        "materials": [{"name": "embersteel ingot", "qty": 4}, {"name": "leather strip", "qty": 2}],
+        "result_item": {
+            "name": "Embersteel Breastplate",
+            "item_type": "armor",
+            "weight": 30,
+            "value": 5500,
+            "ac_bonus": 5,
+            "material": "embersteel",
+            "properties": ["fire_resist_5"],
+            "description": "A breastplate of embersteel that radiates warmth. The metal glows faintly near open flame."
+        },
+        "time": 6
+    },
+    {
+        "name": "Steel Tower Shield",
+        "skill": "Craft (armorsmithing)",
+        "dc": 16,
+        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Steel Tower Shield",
+            "item_type": "shield",
+            "weight": 45,
+            "value": 30,
+            "ac_bonus": 4,
+            "material": "steel",
+            "description": "A massive steel tower shield providing substantial cover."
+        },
+        "time": 3
+    },
+    {
+        "name": "Giant-bone Shield",
+        "skill": "Craft (armorsmithing)",
+        "dc": 18,
+        "materials": [{"name": "giant-bone fragment", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Giant-bone Shield",
+            "item_type": "shield",
+            "weight": 12,
+            "value": 1500,
+            "ac_bonus": 3,
+            "material": "giant-bone",
+            "properties": ["earth_focus"],
+            "description": "A shield carved from fossilized giant-bone, ancient runes faintly visible on its surface."
+        },
+        "time": 3
+    },
+    {
+        "name": "Studded Leather",
+        "skill": "Craft (leatherworking)",
+        "dc": 14,
+        "materials": [{"name": "leather hide", "qty": 3}, {"name": "iron ingot", "qty": 1}],
+        "result_item": {
+            "name": "Studded Leather",
+            "item_type": "armor",
+            "weight": 20,
+            "value": 25,
+            "ac_bonus": 3,
+            "material": "leather",
+            "description": "Leather armor reinforced with iron studs."
+        },
+        "time": 2
+    },
+    {
+        "name": "Riding Gear",
+        "skill": "Craft (leatherworking)",
+        "dc": 12,
+        "materials": [{"name": "leather hide", "qty": 2}, {"name": "iron buckle", "qty": 1}],
+        "result_item": {
+            "name": "Riding Gear",
+            "item_type": "equipment",
+            "weight": 10,
+            "value": 20,
+            "description": "A set of leather riding gear including saddle and bridle."
+        },
+        "time": 2
+    },
+    {
+        "name": "Wind-silk Lined Cloak",
+        "skill": "Craft (leatherworking)",
+        "dc": 16,
+        "materials": [{"name": "leather hide", "qty": 1}, {"name": "wind-silk bolt", "qty": 1}],
+        "result_item": {
+            "name": "Wind-silk Lined Cloak",
+            "item_type": "armor",
+            "weight": 2,
+            "value": 600,
+            "ac_bonus": 1,
+            "material": "wind-silk",
+            "properties": ["movement_bonus_5"],
+            "description": "A leather cloak lined with wind-silk that billows gently even in still air."
+        },
+        "time": 3
+    },
+    {
+        "name": "Amber-sap Elixir",
+        "skill": "Craft (alchemy)",
+        "dc": 15,
+        "materials": [{"name": "amber sap", "qty": 2}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Amber-sap Elixir",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 75,
+            "stats": {"healing": 12},
+            "description": "A golden elixir brewed from amber sap that heals 2d6 HP."
+        },
+        "time": 1
+    },
+    {
+        "name": "Fire Resistance Potion",
+        "skill": "Craft (alchemy)",
+        "dc": 18,
+        "materials": [{"name": "salamander scale", "qty": 1}, {"name": "glass vial", "qty": 1}, {"name": "healing herb", "qty": 1}],
+        "result_item": {
+            "name": "Fire Resistance Potion",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 150,
+            "stats": {"fire_resist": 10},
+            "description": "A potion that grants fire resistance 10 for a short duration."
+        },
+        "time": 2
+    },
+    {
+        "name": "Antitoxin",
+        "skill": "Craft (alchemy)",
+        "dc": 14,
+        "materials": [{"name": "healing herb", "qty": 2}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Antitoxin",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 50,
+            "stats": {"poison_resist": 5},
+            "description": "A bitter draught that bolsters resistance to poison."
+        },
+        "time": 1
+    },
+    {
+        "name": "Starlight Elixir",
+        "skill": "Craft (alchemy)",
+        "dc": 20,
+        "materials": [{"name": "starlight essence", "qty": 1}, {"name": "moonwhisper silver dust", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Starlight Elixir",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 300,
+            "stats": {"all_saves_bonus": 2},
+            "description": "A luminous silver elixir that grants +2 to all saving throws for a short duration."
+        },
+        "time": 3
+    },
+    {
+        "name": "Desert Survival Draught",
+        "skill": "Craft (alchemy)",
+        "dc": 15,
+        "materials": [{"name": "cactus water", "qty": 2}, {"name": "salt crystal", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Desert Survival Draught",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 60,
+            "stats": {"heat_resist": 10},
+            "description": "A briny draught that protects against extreme heat and dehydration."
+        },
+        "time": 1
+    },
+    {
+        "name": "Wind-silk Cloak",
+        "skill": "Craft (weaving)",
+        "dc": 18,
+        "materials": [{"name": "raw wind-silk", "qty": 3}],
+        "result_item": {
+            "name": "Wind-silk Cloak",
+            "item_type": "armor",
+            "slot": "back",
+            "weight": 1,
+            "value": 2200,
+            "ac_bonus": 1,
+            "material": "wind-silk",
+            "properties": ["movement_bonus_5", "spell_failure_reduction_15"],
+            "description": "A luminous cloak of wind-silk that flows and billows with a life of its own."
+        },
+        "time": 4
+    },
+    {
+        "name": "Wind-silk Robe",
+        "skill": "Craft (weaving)",
+        "dc": 20,
+        "materials": [{"name": "raw wind-silk", "qty": 5}, {"name": "dye", "qty": 1}],
+        "result_item": {
+            "name": "Wind-silk Robe",
+            "item_type": "armor",
+            "slot": "body",
+            "weight": 2,
+            "value": 3500,
+            "ac_bonus": 2,
+            "material": "wind-silk",
+            "properties": ["movement_bonus_5", "spell_failure_reduction_15"],
+            "description": "A flowing robe of wind-silk, lighter than linen and stronger than leather. Favored by arcane casters."
+        },
+        "time": 6
+    },
+    {
+        "name": "Charm-woven Textile",
+        "skill": "Craft (weaving)",
+        "dc": 16,
+        "materials": [{"name": "raw wind-silk", "qty": 2}, {"name": "charm thread", "qty": 1}],
+        "result_item": {
+            "name": "Charm-woven Textile",
+            "item_type": "equipment",
+            "weight": 1,
+            "value": 500,
+            "properties": ["charisma_bonus_1"],
+            "description": "A length of enchanted textile woven with charm threads that enhance the wearer's presence."
+        },
+        "time": 3
+    },
+    {
+        "name": "Riverstone Amulet",
+        "skill": "Craft (jewelrycrafting)",
+        "dc": 16,
+        "materials": [{"name": "riverstone", "qty": 1}, {"name": "silver wire", "qty": 1}],
+        "result_item": {
+            "name": "Riverstone Amulet",
+            "item_type": "jewelry",
+            "slot": "neck",
+            "weight": 0.5,
+            "value": 700,
+            "material": "riverstone",
+            "properties": ["water_focus"],
+            "description": "A smooth blue-grey riverstone set in silver wire. Cool to the touch, condensation beads on its surface."
+        },
+        "time": 2
+    },
+    {
+        "name": "Gem-cut Pendant",
+        "skill": "Craft (jewelrycrafting)",
+        "dc": 14,
+        "materials": [{"name": "uncut gem", "qty": 1}, {"name": "silver wire", "qty": 1}],
+        "result_item": {
+            "name": "Gem-cut Pendant",
+            "item_type": "jewelry",
+            "slot": "neck",
+            "weight": 0.5,
+            "value": 200,
+            "description": "A carefully cut gemstone set in a silver wire pendant."
+        },
+        "time": 2
+    },
+    {
+        "name": "Runic Ring",
+        "skill": "Craft (jewelrycrafting)",
+        "dc": 18,
+        "materials": [{"name": "mithral wire", "qty": 1}, {"name": "gem dust", "qty": 1}],
+        "result_item": {
+            "name": "Runic Ring",
+            "item_type": "jewelry",
+            "slot": "finger",
+            "weight": 0.1,
+            "value": 500,
+            "magical": true,
+            "properties": ["minor_spell_resistance"],
+            "description": "A delicate ring of mithral wire inscribed with tiny runes, infused with gem dust."
+        },
+        "time": 3
+    },
+    {
+        "name": "Rune-carved Focus",
+        "skill": "Craft (runic crafting)",
+        "dc": 20,
+        "materials": [{"name": "giant-bone fragment", "qty": 1}, {"name": "gem dust", "qty": 1}],
+        "result_item": {
+            "name": "Rune-carved Focus",
+            "item_type": "spell_focus",
+            "weight": 2,
+            "value": 800,
+            "material": "giant-bone",
+            "properties": ["earth_focus", "caster_level_bonus_1"],
+            "description": "A spell focus carved from giant-bone, inscribed with ancient rune-circles that pulse with earth-element resonance."
+        },
+        "time": 4
+    },
+    {
+        "name": "Deep Marker Stone",
+        "skill": "Craft (runic crafting)",
+        "dc": 22,
+        "materials": [{"name": "riverstone", "qty": 1}, {"name": "giant-bone fragment", "qty": 1}, {"name": "rune ink", "qty": 1}],
+        "result_item": {
+            "name": "Deep Marker Stone",
+            "item_type": "equipment",
+            "weight": 3,
+            "value": 1200,
+            "properties": ["kin_sense_amplify"],
+            "description": "A riverstone fused with giant-bone fragments and inscribed with rune ink. Amplifies the bearer's Kin-sense."
+        },
+        "time": 5
+    }
+]

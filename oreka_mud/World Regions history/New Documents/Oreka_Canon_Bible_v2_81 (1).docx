@@ -1,0 +1,1643 @@
+**OREKA**
+
+*Echoes of the Elemental Dawn*
+
+**THE CANON BIBLE**
+
+Definitive Campaign Setting Reference — Version 2.7
+
+*Compatible with D**&**D 3.5e Open Game License*
+
+March 2026
+
+## **1. THE WORLD OF OREKA — COSMOLOGICAL FOUNDATIONS**
+
+Oreka is a land-dominant spherical world with no oceans and no traditional continents. It has two moons. It was forged from the Primordial Chaos by the four Elemental Lords: the Lord of Stone, the Lady of Fire, the Lady of the Sea (Lady Tempest), and the Youngest Brother (the Wind Lord / Trickster). The world’s only major bodies of water are two colossal inland freshwater seas—the Kailian Sea in the north and the Apelian Sea in the south—connected by the Sea Falls.
+
+The Kailian Sea is cold and storm-wracked with stony cliffs, while the Apelian Sea is warm and sediment-rich.
+
+The world was shaped through divine collaboration: the Lady of Fire ignited light, the Sea quenched fury with cooling waters, the Wind breathed life into the world’s rotation, and the Lord of Stone laid down the earth’s bones. From their cooperation, Oreka was born—radiant, fertile, and alive with elemental potential. This collaborative origin means that every biome, landform, and creature in Oreka carries the fingerprints of multiple elements, never just one.
+
+### **The Elemental Lords**
+
+**Lord**  |  **Element**  |  **Domain**  |  **Role in Creation**  |  **Current Status**
+
+Lord of Stone  |  Earth  |  Mountains, deep earth, stability  |  Laid the world’s foundations  |  COMATOSE — side effect of the second assault gate (even the Dómnathar do not know this is happening)
+
+Lady of Fire  |  Fire  |  Volcanoes, forges, passion  |  Ignited light and warmth; created Dwarves  |  ACTIVE — holding back the Abyss Circle and working to destroy the first gate
+
+Lady of the Sea / Lady Tempest  |  Water  |  Rivers, seas, tides, change  |  Shaped waterways; created Halflings  |  ACTIVE — holding back the Abyss Circle alongside the Lady of Fire
+
+Youngest Brother / Wind Lord / Trickster  |  Air/Wind  |  Sky, storms, art, freedom  |  Breathed life; created Elves; blessed the creation of Humans  |  EXILED — kicked out of Oreka in the past; currently trying to find a way back
+
+**DM NOTE:***The Elemental Lords’ current status is DM-facing information. Most Kin do not know what happened to their creators. The Lord of Stone’s coma is caused by a second assault gate—a separate gate from the Silence Breach—and even the Dómnathar are unaware of this side effect. The Lady of Fire and Lady of Water are engaged in an active cosmic struggle against the Abyss Circle while simultaneously destroying the first gate. The Youngest Brother was expelled from Oreka at some point in the past and is actively seeking return. There is NO connection between the Elemental Lords and the Abyss Circle—they are entirely separate cosmologies from different planes.*
+
+### **The Ascended Gods**
+
+Following the Fall of Aldenheim, mortal Kin who performed acts of extraordinary sacrifice or consequence ascended to godhood. Apotheosis was not possible before the Fall of Aldenheim—it is a new phenomenon in Oreka, barely 300 years old. The Ascended are not creator-gods—they are apotheosed mortals. Most are human, which is itself a theological mystery acknowledged in-world among theologians.
+
+**The Ascended Gods are full gods.** Mechanically, they have the same abilities as any god in any D&D setting. They grant spells to clerics, answer prayers, and wield divine power. They are not diminished or lesser deities—they are the real thing.
+
+**Apotheosis is morally neutral.** It responds to the magnitude and consequence of the act, not the moral character of the actor. This principle is proven by Hareem, the only evil Ascended God.
+
+**Apotheosis requires attunement to all four elements.** This is not limited to Orekan attunement—any being with full four-element attunement qualifies. Pure Dómnathar, who possess no connection to elemental power, cannot ascend. This constraint is the foundation of the Dómnathar apotheosis plot (see Chapter 7).
+
+**God**  |  **Origin**  |  **Portfolio**  |  **Alignment**
+
+Cinvarin, the Five Witnesses  |  Five druids at Aldenheim  |  Unity, elements, sacrifice  |  Neutral Good
+
+Hareem, the Golden Rose  |  Bard who slew the Twelve Kings  |  Revenge, music, justice  |  Chaotic Evil
+
+Tarvek Wen, Doombringer  |  Liberator  |  Justice, oaths, protection  |  Lawful Good
+
+Ludus Galerius, Stone’s Hand  |  Warden of ruins  |  Earth, endurance, travel  |  Neutral Good
+
+Apela Kelsoe, Windrider  |  Sky pathfinder  |  Air, travel, luck  |  Chaotic Good
+
+Kaile’a, Mistress of Waves  |  Mariner-saint  |  Water, trade, community  |  Neutral Good
+
+Gonmareck Ritler, Gunny  |  Smith-warrior  |  Metal, honor, tactics  |  Lawful Good
+
+Semyon, the Hearth Mother  |  Healer  |  Family, healing, hearth  |  Neutral Good
+
+The Hand Unanswered  |  Dying child of Aldenheim  |  Compassion, martyrdom  |  Neutral Good
+
+The Unnamed Warrior King  |  Contested  |  War, kingship  |  Disputed (intentionally ambiguous)
+
+Cinvarin is the first Ascended God. Hareem is the second. Hareem is the only evil Ascended God. All others are Good-aligned; the Unnamed Warrior King is deliberately “Disputed.”
+
+**Hareem’s Chaotic Evil alignment recontextualizes her portfolio:** “Revenge, music, justice” under CE becomes retributive justice—the kind that shatters worlds. She is worshipped by the wronged, the desperate, angry bards, and grieving parents. The theological question of whether evil acts can produce gods exists as an active debate among in-world theologians and connects directly to the Dómnathar apotheosis plot.
+
+**Monster Manual Implication:***Creatures that serve, guard, or are corrupted by Ascended Gods should reflect mortal themes—sacrifice, grief, memory, consequence—rather than primordial elemental force. Hareem-linked creatures should evoke rage, grief, and retribution.*
+
+## **2. THE ELEMENTAL FRAMEWORK — HOW ELEMENTS SHAPE ALL LIFE**
+
+Every living thing native to Oreka exists in relationship to the four elements: Earth/Stone, Fire, Water/Ice, and Wind/Sky. This is not metaphorical—it is a tangible, supernatural reality that shapes biology, magic, and ecology.
+
+**Important exception:** Not all beings exist within the elemental framework. The Dómnathar possess no connection to elemental power whatsoever (see Chapter 7). Breach-origin peoples (goblins, wargs, hobgoblins, orcs, ogres, kobolds) arrived from another world and exist outside Oreka’s native elemental harmony. However, Breach-origin peoples can and do gain elemental attunement over several generations of living in Oreka. This has profound implications for free goblin and warg communities that have been in Oreka for 300 years.
+
+### **The Four Elements**
+
+**Element**  |  **Opposed Element**  |  **Energy Type**  |  **Associated Terrain**  |  **Associated Kin**
+
+Earth/Stone  |  Wind/Sky  |  Acid  |  Mountains, caves, plains  |  Visetri Dwarves, Orean Humans, Giants
+
+Fire  |  Water/Ice  |  Fire  |  Volcanoes, forges, deserts  |  Rarozhki Dwarves, Taraf-Imro Humans
+
+Water/Ice  |  Fire  |  Cold  |  Rivers, seas, coasts, marshes  |  Pekakarlik Dwarves, Eruskan Humans, Halflings
+
+Wind/Sky  |  Earth/Stone  |  Electricity  |  Forests, skies, high passes  |  All Elves, Mytroan Humans
+
+### **Elemental Attunement in Creatures**
+
+All Kin possess Elemental Tolerance: Resistance 2 against energy damage from their primary element. This is intentionally spiritual and symbolic—a marker of elemental identity, not a scaling combat mechanic. It does not increase with level. Giants and Half-Giants, with All-Element Concord, gain Resistance 2 to all four types. Kin spellcasters gain +1 caster level for spells aligned with their element and −1 for opposed-element spells.
+
+**Monster Manual Implication:***Every creature entry should specify its Elemental Affinity. For Dómnathar: “**Elemental Affinity: None — Extraplanar.**” The “**Elemental Infused**” template (see Chapter 11) allows standard OGL creatures to be made Oreka-native.*
+
+## **3. KIN-SENSE — THE RESONANCE SYSTEM**
+
+Kin-sense is the most important metaphysical concept in Oreka and the single most critical system for creature design. It is a supernatural resonance shared by all Kin peoples, functioning like a sixth sense that identifies “who belongs.” It operates within 60 feet normally (30 feet in elemental disturbance, 120 feet in deep calm), passes through barriers up to 5 feet thick, and cannot be suppressed by the Kin character except through the Deceiver’s Feat.
+
+Kin-sense blockers: lead, worked Dómnathar metal, and False Silence block it entirely. **Kin-sense is NOT magic.** It cannot be dispelled, counterspelled, or suppressed by antimagic field. Inside an anti-magic zone, spells fail and magic items go dark, but Kin-sense still works. Only False Silence and related Dómnathar effects can suppress Kin-sense. This makes the Dómnathar categorically different from any other threat—they reach deeper than magic.
+
+### **What Kin-Sense Reveals**
+
+**Harmonic (Kin) resonance conveys:** what the person is (elf, human, dwarf, etc.) and their elemental attunement. It functions like a voice—those who know you personally can recognize your individual signature, just as you recognize a friend’s voice in a crowd. Strangers register as their race and element; familiar individuals are identifiable.
+
+### **Resonance Categories**
+
+**Category**  |  **What It Feels Like**  |  **What Registers This Way**
+
+Harmonic (Kin)  |  Warm presence; race and element readable; individual recognition possible  |  All true Kin: Elves, Dwarves, Halflings, Humans, Half-Giants
+
+Wild Static  |  Present, alive, but fundamentally different  |  Tanuki, native Oreka animals, beasts (Oreka-native only)
+
+Warm Static  |  Faint, unreadable background noise  |  Simple animals, insects, plants with minimal awareness
+
+Breach Static  |  Alien, unsettling — a wrong note in the harmony  |  All Breach-origin peoples: Goblins, Wargs, Hobgoblins, Orcs, Ogres, Kobolds (diminishes over generations as attunement develops)
+
+Null Resonance (Silent)  |  A wound; absence that hurts to perceive  |  Silentborn, Severed, Oath-Broken Kin
+
+Void / Absolute Silence  |  Deliberate, predatory wrongness — unsettling gap  |  Dómnathar, true Deceivers (no check required to detect)
+
+No Registration  |  Simply absent, like furniture  |  Undead (except ghosts: faint flicker, DC 20), Constructs, Farborn, Kin using Deceiver’s Feat
+
+Raw Static  |  Overwhelming, painful at close range  |  Pure elementals (Will DC 15 within 10 ft or dazzled 1 rd)
+
+**Breach Static diminishes over generations.** Breach-origin peoples can and do gain elemental attunement over several generations of living in Oreka. Free goblin and warg communities that have been in Oreka for 300 years are already changing. This makes the Breach Static category a transitional state, not a permanent brand—though the process is slow enough that most current Breach-origin individuals still trigger it.
+
+### **The Three-Layer Supernatural Framework**
+
+Oreka’s supernatural reality operates on three independent layers:
+
+**Layer**  |  **Source**  |  **Nature**  |  **Suppressed By**  |  **Voluntary Suppress**
+
+Layer 1: Soul Resonance (Kin-Sense)  |  Elemental framework, embedded in Kin souls at creation  |  Not magic. Cannot be dispelled or suppressed by anti-magic  |  False Silence, worked Dómnathar metal, Void energy, lead  |  Deceiver’s Feat (only)
+
+Layer 2: Elemental Power (Magi Magic)  |  Direct elemental framework channel  |  Magic, but draws from elemental forces directly  |  Anti-magic zones, counterspells, dispel effects  |  N/A
+
+Layer 3: Standard Magic (Arcane/Divine)  |  Varies (study, divine patron, innate)  |  Magic  |  Anti-magic zones, counterspells  |  N/A
+
+### **Interaction Matrix**
+
+**Scenario**  |  **Kin-Sense**  |  **Magi Magic**  |  **Standard Magic**
+
+Inside anti-magic zone  |  ✔ YES  |  ✘ NO  |  ✘ NO
+
+Inside False Silence  |  ✘ NO  |  ✔ YES  |  ✔ YES
+
+In Dómnathar tunnel  |  ✘ NO (suppressed)  |  ✔ YES  |  ✔ YES
+
+Both anti-magic + False Silence  |  ✘ NO  |  ✘ NO (anti-magic)  |  ✘ NO (anti-magic)
+
+Normal conditions  |  ✔ YES  |  ✔ YES  |  ✔ YES
+
+**Standard magic is NOT affected by Dómnathar presence.** Only Kin-sense (Layer 1) is suppressed by False Silence and Dómnathar effects. Both Magi magic (Layer 2) and standard arcane/divine magic (Layer 3) function normally in Dómnathar tunnels, False Silence zones, and resonance-dead corridors. The Dómnathar’s weapon is soul-level, not magical.
+
+### **False Silence (Personal Cloak Mechanics)**
+
+**False Silence is a supernatural ability (Su).** It is a personal cloak on ONE Dómnathar—soul-level interference that cannot be dispelled and cannot be detected by detect magic. It is NOT a zone effect. The cloaked Deceiver simply doesn’t register—a hole shaped like a person.
+
+**DC:** 10 + Deceiver’s HD + Charisma modifier. **Duration:** CHA mod × 10 minutes per use. **Uses/day:** HD ÷ 3 (minimum 1). **Concentration:** Required. If damaged: Concentration check (DC 10 + damage) or cloak drops.
+
+Only masks Kin-sense. Does NOT grant invisibility, silence, or mundane disguise. Does not suppress Magi magic or standard magic. Infiltration is a layered operation.
+
+### **Kin-Sense Detection DCs and Racial Bonuses**
+
+**Race**  |  **Bonus**  |  **Reasoning**
+
+Half-Giants  |  +4  |  All-Element Concord; broadest resonance
+
+Elves  |  +2  |  Secondborn; deeply attuned; long-lived
+
+Dwarves  |  +2  |  Thirdborn; strong elemental identity
+
+Halflings  |  +1  |  Fourthborn; perceptive but less intense
+
+Humans  |  +0  |  Fifthborn; variable; baseline
+
+**Passive detection:** d20 + WIS mod + Racial bonus vs. DC, with −10 penalty. Vague unease only. **Active detection:** Move action. d20 + WIS mod + Racial bonus vs. DC. Full check.
+
+### **Tiered Success (vs. False Silence)**
+
+**Beat DC By**  |  **Result**  |  **Mechanical Effect**
+
+0–4  |  Something feels off. Can’t localize.  |  Know False Silence is active; not which individual
+
+5–9  |  Wrongness localizes to an area.  |  Approximate location (within 10 ft)
+
+10+  |  Cloak cracks. Void bleeds through.  |  Pinpoint individual; true signature revealed
+
+### **Situational Modifiers**
+
+**Condition**  |  **Modifier**
+
+Deep calm  |  +2 to check
+
+Elemental disturbance  |  −2 to check
+
+Deceiver within 10 ft  |  +4 to check
+
+Deceiver at edge of range  |  −2 to check
+
+Prior False Silence experience  |  +2 to check
+
+Multiple Kin scanning simultaneously  |  +1 per extra scanner
+
+Deceiver emotional or injured  |  −2 to False Silence DC
+
+Worked Dómnathar metal area  |  +2 to False Silence DC
+
+### **Special Cases**
+
+**Half-Dómnathar**
+
+Register as “cracked” or “discordant” Kin—wrong but alive. Detecting the specific nature requires active concentration (move action) and a Kin-sense check.
+
+**Disguised Creatures**
+
+Mundane disguises do not fool Kin-sense (a human in dwarf armor still reads as human). Magical disguises create false resonance; active Kin-sense check vs. spell DC or Disguise check to detect the discrepancy.
+
+### **The Deceiver’s Feat**
+
+**Type:** General Feat. **Prerequisites:** WIS 15, character level 6th, must have been exposed to Void Silence or Null Resonance. Must find a teacher (person to person, in secret). Cannot be taken at character creation except by DM approval.
+
+**Benefit:** Standard action: suppress Kin-sense signature. Register as No Registration (absent, like furniture). NOT Void Silence.
+
+**Cost — Bidirectional blindness:** While suppressed, you cannot sense others via Kin-sense. Going dark means going blind.
+
+**Scope — Personal only.** The Deceiver’s Feat suppresses the user’s own Kin-sense signature. It cannot be projected onto, extended to, or used to mask other creatures, mounts, companions, or objects. A Deceiver riding a horse does not mask the horse. A Deceiver standing next to a friend does not mask the friend.
+
+**Magi exception:** A Magi using the Deceiver’s Feat loses Kin-sense (Layer 1) but retains Magi magic (Layer 2). Invisible to soul-perception, armed with elemental magic. Uniquely dangerous.
+
+**Reactivation:** Standard action. Brief flicker: anyone within 30 ft actively scanning gets a free check (DC 15) to notice someone appeared.
+
+**Social consequences:** The name is the punishment. Discovery means exile, horror, or violence. The technique is ancient and Kin-born—it predates the Shattering of Man. Factions that train it: Anacrusis, Silent Concord, Shrouded Court, Dómnathar handlers.
+
+### **Etymology of ‘Deceiver’**
+
+The word “Deceiver” existed BEFORE the Dómnathar arrived. It referred to Kin who suppressed their own Kin-sense—spies, assassins, or outcasts who could go dark. Kin Deceivers were active during the Shattering of Man, adding an espionage dimension to that civil war. When the Dómnathar arrived registering as Absolute Silence, the Kin used the darkest word they already had. “Deceiver” is a slur with layers—comparing the Dómnathar to the worst traitors in Kin history.
+
+## **4. THE PEOPLES OF OREKA — RACES, CULTURES, AND CREATURE INTERACTIONS**
+
+Understanding who lives in Oreka is essential for creature design. Monsters exist in relationship to the peoples who encounter them—as predators, guardians, sacred beings, corrupted remnants, or alien threats.
+
+### **The Order of Creation (True Kin)**
+
+**Order**  |  **Race**  |  **Creator**  |  **Element**  |  **Subraces**
+
+Firstborn (extinct)  |  Giants  |  All four Lords  |  All four  |  None (unified race); 20–30 ft tall; immortal but unable to reproduce
+
+Secondborn  |  Elves  |  Giants (sculptors) + Youngest Brother (breath of life)  |  Wind primary  |  Hasura (artists/lightweavers), Pasua (storytellers/charmers), Na’wasua (stargazers/seers), Kovaka (stonebound warriors)
+
+Thirdborn  |  Dwarves  |  Lady of Fire  |  Earth/Fire  |  Visetri (stone-forged traditionalists), Pekakarlik (river engineers, Small-sized, webbed fingers/toes, mossy green skin), Rarozhki (volcanic smiths), Aldenheim (extinct)
+
+Fourthborn  |  Halflings  |  Lady of the Sea (Tempest)  |  Water  |  Four subraces exist. All are expressions of the same element and closely enough related that other Kin cannot tell them apart. Halflings do not discuss the differences with outsiders. The subraces are a closely guarded cultural matter. See Halfling Subraces below.
+
+Fifthborn  |  Humans  |  A Giant and an Elf, with the Youngest Brother’s blessing  |  All (varies by culture)  |  Eruskan (mariners), Mytroan (nomads), Taraf-Imro (smiths/warriors), Orean (farmers/builders)
+
+Giants eventually crumbled to dust in a process the Elves called Thalorien (“the stone’s sleep”). Kharazhad, a fortress-forge in a caldera, is the greatest Rarozhki hold.
+
+### **Creation Myths of the Kin**
+
+These are the stories Kin cultures tell to explain where they came from. They are not dry cosmological fact — they are living myths, told around fires and at festivals, carried in the bones of every race that walks Oreka.
+
+**The Elves: Beauty Given Breath**
+
+The Giants carved statues in their own image — tall and beautiful, wrought from the finest stone they could find. When the work was finished and the Giants stood back and looked upon what they had made, the Youngest Brother walked among the figures and breathed. The Elves opened their eyes. They were art made living, and they carried that truth ever after in the way they moved through the world.
+
+**The Dwarves: What Fire Makes**
+
+When the Lady of Fire saw the Elves she wanted to do the same. She took her own stone and shaped it carefully, but fire is not wind — the heat pressed inward, shrinking and hardening the forms as she worked. What stepped down from her hands was shorter, denser, tougher than she had imagined. Not what she had planned. But when she looked at them she did not see a failure. She saw something the Elves were not. The Dwarves have always known this about themselves.
+
+**The Halflings: The First Jest and the Price of It**
+
+Lady Tempest had watched the Elves born from stone and breath, and the Dwarves born from fire and compression, and neither of them truly saw her. The great seas, the pull of the tides, the cold deep places — no one looked to the water and felt what she felt. So she went alone to the edge of the sea where the water meets the sand, and she took the silt and the sand and the sea water together, and she asked the Youngest Brother for his blessing — giving her three elements to work with. She shaped her creation in the open heat of the sun. But the sea is never still, and as she worked, pieces of the clay kept slipping back into the water. She pressed on. This is why Halflings will tell you, when asked why they are so short, that part of every Halfling belongs to the sea.
+
+When she was finished, the first Halfling opened his eyes and looked up at Lady Tempest. He saw immediately that she was unhappy — a loneliness so old and deep it had become the tide itself. So he did what came naturally. He danced. He sang. He told her jokes. He performed with everything he had, spinning and tumbling at the water’s edge until a smile broke through her face like sun through storm clouds.
+
+In his enthusiasm he caught the Lady’s necklace and sent the beads scattering across the wet sand toward the sea.
+
+She gasped and bent to catch them.
+
+The first Halfling, never one to let a moment pass, reached out and pinched the Lady Tempest on her backside.
+
+She straightened in an instant. The sea went flat. The sky went still. And then, in shock and fury, she swung.
+
+The first Halfling died as he had lived — mid-joke, at the edge of the water, having made his goddess smile.
+
+He went to the Palace of Waters, and he is there still. And if you listen at the edge of the sea on very quiet nights, the Halflings say you can hear her laughing.
+
+She has been making more of them ever since. She cannot seem to stop.
+
+### **The Four Halfling Subraces**
+
+**[DM-FACING]**
+
+All four Halfling subraces share the same water element and are close enough in appearance, manner, and speech that no other Kin can reliably distinguish between them. This is not a failure of Kin-sense or perception. It is simply that the differences are subtle, internal, and meaningful only to those who carry them. Halflings do not correct outsiders who fail to notice. They do not explain.
+
+Each subrace carries a different shade of what Lady Tempest felt when she made them. Loneliness is not one thing.
+
+**The Water Halflings — The Ones Who Stay**
+
+They tend the great Giant-forged ships. The most invisible work on Oreka. The ship earns the legend. The captain earns the glory. The cargo earns the destination. The Water Halflings keep the whole thing alive and no one thinks of them until something breaks. They are the ones who serve without recognition, who maintain without acknowledgment, who make sure everyone else arrives safely. Tempest made them from the part of herself that gave and gave and went unseen for it. They feel most at home on open water, close to her.
+
+**The Wind Halflings — The Ones Who Cannot Arrive**
+
+They travel more than any other subrace. No fixed home. No settled place. To outside eyes they are the most recognizable expression of what people think Halflings are — cheerful wanderers, quick with a joke, never staying long. But underneath that ease is the oldest ache Tempest knew. The horizon always ahead. Connection always brief. Roots that never quite take hold. They carry the loneliness of always moving and never arriving, and they have made it into something that looks like freedom.
+
+**The Fire Halflings — The Ones Who Are Too Much**
+
+Daring. Bold. The ones who do the thing nobody else will. Made from the part of Tempest that was so full of feeling it had nowhere to put itself. Fire Halflings burn bright in every space they enter and sometimes that heat pushes people back without meaning to. They reach for connection through action — through the jest, the risk, the grand gesture — because stillness feels like disappearing. Of all the subraces they are the most recognizable as kin to the first Halfling. He was one of theirs.
+
+**The Earth Halflings — The Ones Who Wait**
+
+They travel on land, slowly and deliberately, through every region and every culture Oreka holds. They are the most patient of the four, the most present, the most willing to sit with another person in silence and simply be there. They have almost made peace with the long quiet between moments of connection. Almost. The great overland pilgrimage belongs most naturally to them — the long walk across the whole world, the slow arrival at the far sea, the standing at the edge of what the first Halfling never reached.
+
+**[PLAYER-FACING]**
+
+Halflings have four subraces. Other Kin cannot tell them apart, and Halflings do not discuss the differences with outsiders. What is visible to any observer is that some Halflings are drawn to ships, some to the open road, some to daring and risk, and some to the long patient journey overland. Halflings will smile if you ask them about it and change the subject.
+
+**The Humans: Three Made One**
+
+The youngest race was made by the oldest hands — and the most desperate.
+
+As the Giants grew visibly fewer, the Kin who loved them looked at the world they had built and felt the first tremor of a fear that had no name yet. Without the Giants, who would hold it all together? The Giants had been the guiding hand — beings of all four elements in perfect harmony, the still center around which Kin civilization turned. And now the still center was fading.
+
+So the Giants, aided most often by the Elves but with help from all Kin, attempted something that had never been done. They would make a successor race. A people who carried all four elements as the Giants did. A people who could grow in number where the Giants could not. A people who would lead the Kin into a permanent age of peace.
+
+What they did not understand — what no one understood until it was far too late — was the difference between balance and contrast.
+
+The Giants held all four elements in harmony. The kind wind. The soft rain. The gentle warmth. The embracing earth. All four resting together, still and whole, the way a chord holds its notes without any of them moving.
+
+Humans received all four elements in tension. The wind of change. The rain of renewal. The fire of passion. The earth moving beneath the feet of a living thing going somewhere.
+
+Giants were the held chord. Humans were the song.
+
+The Kin who made them wanted successors who would hold civilization steady. What they got were people who would drive civilization forward whether it held or not. The Giants kept peace by being the stillness at the center. Humans could not be the center if they tried. They are the edges. The motion. The change.
+
+No other race required three participants in its creation. The Elves have spent three thousand years wondering if one more might have made the difference.
+
+### **The Great Shame of the Elves**
+
+**[DM-FACING]**
+
+The Elves do not speak of this openly. They may not even speak of it to each other. But it lives in them, quiet and permanent, the way old grief does — not sharp anymore, just always there.
+
+They helped make Humans. They were the older siblings, the ones who had been raised by Giants, who understood what Giants were trying to build. They took on the responsibility of guidance. And they did not understand what they had made until Humans had already spread across the world and made it theirs.
+
+When the Dómnathar came and the world burned, every Elf heard the same voice in the same place: *we made them and we did not prepare them and this is what that cost.*
+
+Not the Dómnathar's fault. Not the Humans' fault. Theirs.
+
+This shame explains more about Elven behavior than any other single fact in Orekan history. It is why Elves are patient with Humans even when Humans are reckless. Why they never fully withdraw from the world even when they could. Why they teach and advise long past when they have been asked to. Why an Elf watching a Human make a terrible decision will rarely walk away.
+
+They are still trying to do the job they believe they failed at.
+
+The unbearable part is that Humans do not carry the same wound. Humans feel befriended by Elves. Loved by them. They have no idea they are also being quietly, eternally shepherded by people who have never forgiven themselves.
+
+**[PLAYER-FACING]**
+
+Elves love all Kin, but they hold a particular tenderness for Humans that other races sometimes find puzzling. Ask an Elf about it and they will say something gracious about Human potential or Human spirit. They will not say the rest.
+
+### **Canon Ruling: Mixed Heritage**
+
+**Children of two different Kin races are born as one race or the other, never a hybrid.** No half-elves exist in Oreka. A child of a human and an elf is either human or elf—the elemental framework does not permit blended Kin souls. This is a fundamental law of Orekan metaphysics.
+
+**This rule applies only to Kin.** The Farborn are not Kin—they are humans from another world whose metaphysics operated differently. The Gilded Standard Company included half-orcs, half-elves, and other hybrids that are products of their home world’s different rules. These individuals exist in Oreka as living anomalies: their hybrid heritage is real but could not have been produced here. See the Farborn sidebar (Chapter 4a) for details.
+
+### **Hybrid Peoples**
+
+**People**  |  **Origin**  |  **Kin-Sense**  |  **Notes**
+
+Half-Giants  |  Rites binding Giant essence into mortal lines  |  Full Kin (All-Element Concord)  |  LA +1; “Cousin” is a slur; +4 Kin-sense racial bonus makes them the best Dómnathar detectors; ideal apotheosis vessel (DM-facing)
+
+Silentborn  |  Child of Kin and Deceiver  |  Null Resonance (wound-like absence)  |  Feared, tragic; Silent Concord faction; apotheosis candidate (DM-facing)
+
+Half-Dómnathar  |  Dómnathar/Kin hybrid  |  Cracked/discordant Kin  |  LA +0; darkvision 60 ft, sleep immunity, light sensitivity, ‘foreign soul’ trait; used as assassins, infiltrators; apotheosis candidate (DM-facing)
+
+### **Non-Kin Peoples**
+
+**People**  |  **Origin**  |  **Status**  |  **Kin-Sense / Notes**
+
+Farborn (Gilded Standard Company)  |  Foreign humans from another plane  |  Settled near Lone Titan, Deepwater Marches; Neutral Good; ~28,000 population  |  No Registration (invisible). Farborn are isolated at the Titan; Kin interaction occurs primarily during trade meets. 300 years of good trading and helping Kin has built trust. Farborn are slowly, tentatively becoming a fifth human kin.
+
+Goblins  |  Deceiver auxiliaries; broke free at Dark Dawn  |  Free tribes in Deepwater Marches  |  Breach Static (diminishing over generations as attunement develops)
+
+Wargs  |  Deceiver war-beasts; broke free at Dark Dawn  |  Independent faction; highly intelligent  |  Breach Static. NOT mounts—sentient; ride only by consent.
+
+Hobgoblins  |  Deceiver NCOs; some freed  |  Iron Tribes (free) vs. Deceiver-aligned  |  Breach Static. Disciplined, Iron Law culture.
+
+Orcs  |  Deceiver auxiliaries  |  Mostly still Deceiver-aligned  |  Breach Static. Brutal, relentless; scattered warbands.
+
+Tanuki  |  Forest spirits; native to Oreka  |  Kin-adjacent  |  Wild Static (NOT Breach—they are Oreka-native). Raccoon-folk; shapeshifters, illusionists.
+
+Ogres  |  Deceiver shock troops  |  Remnant warbands  |  Breach Static. Towering brutes; feared.
+
+**Monster Manual Implication:***Post-Dark Dawn non-Kin peoples are NOT monolithic evil races. Include variants for free vs. Deceiver-aligned. Breach-origin peoples gain attunement over generations—free goblin tribes 300 years in are transitioning.*
+
+### **4a. FARBORN: HUMANS BUT NOT KIN**
+
+The Farborn represent a unique category in Oreka’s metaphysics. They are biologically human—indistinguishable from Kin humans in appearance, physiology, and lifespan—but they are not Kin. They were not created by the Elemental Lords, they carry no elemental attunement, and they register as No Registration on Kin-sense: simply absent, like furniture.
+
+**Farborn vs. Kin Humans — Key Differences**
+
+**Trait**  |  **Kin Humans (Eruskan, Mytroan, Taraf-Imro, Orean)**  |  **Farborn Humans**
+
+**Origin**  |  Created by a Giant and an Elf with the Youngest Brother’s blessing  |  Foreign-born; arrived through the Silence Breach as Deceiver auxiliaries
+
+**Elemental Attunement**  |  Yes — varies by culture (Water, Wind, Fire, Earth)  |  None at birth. Emerging attunement after 300 years in Oreka (the “Titanbreed Paragon” phenomenon)
+
+**Kin-Sense Registration**  |  Harmonic (Kin) — race and element readable  |  No Registration — invisible, absent
+
+**Elemental Tolerance**  |  Resistance 2 to primary element  |  None
+
+**Caster Level Modifier**  |  +1 aligned / −1 opposed element  |  None
+
+**Mixed Heritage Rule**  |  Children of two Kin races are one or the other, never hybrid  |  Farborn home world permitted hybrids; half-elves and half-orcs exist among original Farborn stock
+
+**Apotheosis Eligibility**  |  Yes (if all four elements attained)  |  Not currently — no elemental attunement. The emerging Titanbreed Paragon could change this
+
+**Cultural Status**  |  Full Kin; recognized by all  |  Slowly, tentatively becoming a fifth human kin after 300 years of trust-building
+
+The original Gilded Standard Company included half-orcs, half-elves, and a small cadre of foreign dwarves—hybrids and non-humans that are products of their home world’s different metaphysical rules. Three centuries of intermarriage within the Farborn community and occasional unions with Kin humans have diluted these foreign bloodlines, but individuals with clearly non-Kin features still appear. These are curiosities, not scandals—the Farborn do not share Oreka’s metaphysical prohibition on hybrids because they were never subject to it.
+
+**DM NOTE:***The emerging “**Titanbreed Paragon**” phenomenon—faint elemental resonance appearing in Farborn children raised on the Lone Titan—is a metaphysical event with campaign-altering implications. If Farborn can develop elemental attunement, they may eventually register on Kin-sense, qualify for apotheosis, and fully integrate into Orekan metaphysics. This is a slow process, not yet confirmed, and deeply interesting to the Dómnathar.*
+
+## **4b. DEATH, THE ACCOUNTING, AND THE REBIRTH CYCLE**
+
+### **The Architecture of Death in Oreka**
+
+When a Kin person dies their spirit crosses to the Summer Lands. Their spirit body appears whole — no wounds, no age, no pain. This is the first gift. Whatever the body endured, the soul arrives complete.
+
+From there the spirit is drawn toward the Great Palace aligned with their element. This is not a choice exactly. It is more like the way water finds its level. The soul simply goes where it belongs.
+
+What waits there is not what most Kin expect. The Lords themselves do not receive the dead. The Lords have other work — holding the world, maintaining the planes, fighting the battles the living cannot see. Instead each Lord has three Aspects: avatars that are simultaneously part of the Lord and separate from them. The Kin on the world below have no knowledge these Aspects exist. They know their Lord. They do not know their Lord has three faces waiting for them on the other side of death.
+
+**[DM-FACING]**
+
+The Three Aspects attend every soul that arrives. They are the same across all four Lords though each takes a form appropriate to their element.
+
+**The One Who Listens** receives the soul first. There is no evaluation here. No interruption. No judgment. Everything the soul was and did and felt and chose across their entire life is witnessed completely. Most souls find this the most overwhelming part of the accounting — to be fully heard, perhaps for the first time.
+
+**The One Who Judges** does not judge in the way the living fear. There is no punishment waiting. There is no reward being calculated. The Judge looks at two things only: intent and action. Did this soul mean to serve — their people, their element, the world? And did their actions follow from that intent or betray it? A soul that acted with cruelty in service of genuine purpose is judged differently than a soul that acted with cruelty for its own pleasure. The measure is not perfection. It is direction.
+
+**The One Who Teaches** shows the soul the full tapestry of their life. Every choice and its consequence. Every thread that decision pulled. Every place where their action served the world and every place where it turned back and cost something real. The soul sees itself completely — not as they imagined themselves but as they actually were. This is not delivered as condemnation. It is delivered as truth, by something that loves the soul enough to show it clearly.
+
+### **Rebirth**
+
+After the accounting the soul chooses — or is guided toward — rebirth. They do not carry their memories forward. The life just lived does not come with them consciously.
+
+But the soul is colored by what it was. The habits built across a lifetime, the patterns worn into the self, the instincts developed through ten thousand choices — these bleed through. A soul that lived with courage finds courage comes naturally in the next life without knowing why. A soul that lived with cruelty finds in the next life an inexplicable aversion to it — not because they remember being cruel but because the Teacher showed them exactly what cruelty costs, and the soul carried that knowledge forward below the level of memory.
+
+This is not a punishment and reward system. It is a maturation system. The Elemental Lords knew they had built a young world full of young souls. The accounting was never designed to condemn. It was designed to teach one life at a time until the soul becomes more fully itself.
+
+### **What This Means for Kin Culture**
+
+Kin societies that have cycled through this system for thousands of years carry a collective wisdom nobody can fully explain. Certain things feel wrong before anyone has reasoned out why. Certain instincts are nearly universal across cultures that have never met. That is not coincidence. That is thousands of years of souls teaching themselves and bringing the lessons back.
+
+A Kin person who feels inexplicable recognition meeting a stranger for the first time may be feeling something real. Not past life memory. Something older and quieter. A resonance between souls that have met before in lives neither of them remembers.
+
+### **Death Across the Kin Races**
+
+Each Kin race experiences death, grief, and crossing differently. These are not just customs. They are expressions of who each people are at their deepest level — shaped by their elemental nature, their history, and the coloring of thousands of lifetimes.
+
+**The Elves — The Crossing**
+
+Elves do not die the way other races do. As an Elf approaches the end of their life their body begins to fade — not from illness or decay but from a gradual dissolving of the boundary between Oreka and the Summer Lands. The body is given into the elemental magic of the world itself. The spirit walks directly through the veil. There is no remains to tend. No grave to mark. The Elf simply becomes less present over time and then one day is gone.
+
+The work of an Elven death begins months or sometimes years beforehand. The Elf spends that time finding the right homes for every beloved possession — not distributing by sentiment or family obligation but by considered judgment. Who is the right next chapter for this object? Who will do the best with it? Who needs what this thing carries? Each object is handed forward deliberately to the person best suited to carry it onward.
+
+To receive a crossing gift from an Elf elder is considered one of the great honors in Kin society. It is not merely generosity. It is a statement. The Elf looked at you clearly enough to know what you needed or what you were capable of becoming and trusted you with something they spent centuries alongside.
+
+The people who love an Elf know what it means when the giving begins. They have to receive those gifts and smile and say thank you while understanding that each one is a quiet goodbye. The grief of loving an Elf is learning to receive beautifully.
+
+**[DM-FACING]**
+
+Elven objects that have passed through multiple hands via crossing gifts carry a layered history that skilled Kin-sense readers can sometimes detect as a deep harmonic resonance — not elemental attunement exactly, but a kind of accumulated witness. Some scholars believe objects handled with great intention across centuries develop a faint presence of their own.
+
+**The Dwarves — The Masterwork and the Long Crossing**
+
+A Dwarf prepares for death not by giving things away but by making one final thing that could not have been made earlier. The masterwork is the culmination of everything learned across an entire life — every technique mastered, every mistake understood, every year of accumulated knowledge poured into a single object. It is testimony. Proof the life happened. The object says: I understood something about craft and material and patience that I could not have understood younger. I had to live the whole life to be capable of this.
+
+When the Dwarf dies their most respected apprentice takes the master’s ashes and folds them into a memorial work — forged in honor of the life. The master does not merely leave the work behind. The master becomes part of the next work. Every strike of that apprentice’s hammer afterward is partly the master’s.
+
+Dwarves grieve by speaking names and keeping lineage. As long as someone tells the story and knows the line the Dwarf has not fully left. The tale is the grave marker, the monument, and the prayer all at once.
+
+**The Halflings — The Welcome Home**
+
+Halflings find life ephemeral and joyful in equal measure. They do not cling to it and they do not fear losing it. Where other races take time to process death the Halflings believe you can learn through quick repetition — move back into the cycle fast, live fully again, learn what the last life was teaching through the living of the next one rather than the contemplation of the last.
+
+They do not own much. They love their family and their neighbors with identical passion — to a Halfling the neighbor is family. This means a Halfling death is felt by everyone nearby, not just the bloodline.
+
+A Halfling funeral is a party. It is a celebration of life. It is a welcome home. The community cooks the food the person loved, tells the stories that made them laugh, makes sure the neighbors are there because the Halfling would have wanted the neighbors there. Standing around weeping for someone who is already bored in the Summer Lands and looking for the fastest way back would be an insult to their memory. The Halfling community knows this without being taught it.
+
+The welcome home is the most important element. Not welcome to death. Welcome back to the cycle. We will see you soon. We will know you when we find you.
+
+**The Humans — Four Cultures, Four Deaths**
+
+Humans are the youngest Kin race and the most scattered. Four distinct cultures express the same elemental inheritance in four completely different ways. What they share underneath all of it is the wound of the Shattering — four peoples who blame each other for the worst thing that ever happened to the world and have never fully healed it.
+
+Humans are the Wind of change, the Rain of renewal, the Passionate fire, and the Earth moving beneath walking feet. Each of the four Human cultures experiences death through a different elemental truth. What they share is the weight of the Shattering still unhealed between them — four peoples who blame each other for the worst thing that ever happened to the world and have never fully made it right.
+
+**The Orean — The Long Procession and the Grand Meet**
+
+The Orean are the most scattered of the Human cultures — living wherever the earth is open enough to nestle a small village. They are not a people of great kingdoms or empires. Their lives and their death traditions are built around the same three things: family, home, and hearth.
+
+The Orean bury their dead in shared cemeteries — not one cemetery per village but shared ground belonging to an entire network of interconnected and in most cases interrelated villages called a Gathering. The dead of many villages rest together. Whatever small differences existed between settlements dissolve at the cemetery gate. In death the confederation becomes literal.
+
+When an Orean dies runners are dispatched the day before the funeral to every village in the Gathering. Each village sends a gift of food to the grieving family. Every Meet in the Gathering acknowledges the death formally. The loss of a village person is felt not just by family and village but by the entire local confederation — because the Orean understand that every person is threaded through everything around them and when that thread pulls out nothing is quite the same shape.
+
+The funeral itself is marked by a long procession from the family home to the shared cemetery. The community walks together, carrying the person one last time through the world they belonged to. Every step passes something they knew. The village says goodbye to them in every place they ever lived simultaneously.
+
+**Orean governance — the Gathering, the Justice, and the Grand Meet:**
+
+Every village has a Headman. Every Gathering — the network of interconnected villages — has a Justice. The Justice is not a king or a lord. They are given authority specifically for the moments when the Gathering must act as one: to judge disputes and to lead in a fight. That authority exists but does not operate constantly. It activates when needed.
+
+The Justice attends every funeral in their Gathering. Not as ruler but as witness. No Orean dies unwitnessed at the highest level the confederation possesses.
+
+On rare occasions when many Gatherings must act together all Justices convene. They find among themselves the one person everyone trusts to judge what comes next. That person leads until the crisis is resolved. Then the authority dissolves and everyone goes home.
+
+This is the Grand Meet. It has no permanent structure, no standing army, no treasury. It exists only in the moment it is needed and only as long as it is needed. It cannot be corrupted because it does not persist long enough to be.
+
+**The Eruskan — The Weighted Raft and the Deep Harmony**
+
+The Eruskan are divided into two groups that share the same theology and the same burial rite but live completely different lives.
+
+The Shore Eruskan are farmers, fishermen, chain tenders, and barge workers — rooted people who live along the great inland seas and man the Mithril Chains. They maintain close relationships with Orean communities and many Oreans live among them. Water and Earth sit at the center of their worship, which is older and more complete than anything the Ascended Gods offer. They have nominal regional lords and strong city structures with a Lord Mayor in every city, town, and hamlet — a remnant of the Eke Concordant that never fully dissolved. Independent minded as a people, they are hard to move as a group but will unify in times of urgency.
+
+The Trader Eruskan live on their ships. Port to port, season to season, some families barely walking on land for years at a stretch. Their home is the ship. Their neighborhood is every harbor on Oreka. Their children are born on the water and learn to walk on a deck before they learn to walk on ground. They are the blood moving through Oreka’s arterial waterways — carrying news, goods, stories, and relationships across distances no land route can match.
+
+Both groups worship primarily the Lady of Water and the Lord of Stone — the two elements that meet in the cold deep places where the world’s oldest harmony lives. The burial rite reflects this completely.
+
+**The burial:** When an Eruskan dies the extended family gathers for a three day vigil. Three days is the tide cycle honored in the body before it means anything in the mind. The person who has passed rests on a raft. On the third day the young men of the community row the raft out by boat past the last point of the great chains. The extended family gives prayers until the raft is set afloat, then weighted and sunk to the bottom of the sea.
+
+Not scattered on the surface. Not burned and given to air. Sent down. Given back to the deep where the Lady of Water and the Lord of Stone meet in the cold and dark where neither element dominates but both hold together in the pressure of depth. That is harmony — not the sunlit harmony of the surface world but the ancient harmony of the deep places where the world was made.
+
+The young men who row do not come back the same. Something in them is different after carrying their dead past the chains and returning without them. This is not incidental. It is the rite working as intended.
+
+**The Trader Eruskan burial:** When a Trader Eruskan dies far from home waters the ship becomes the vigil space for three days. The captain holds the rite at sea. The young men of the crew row. The prayers are said. The raft is weighted and sunk. The chains do not mark the boundary for Trader Eruskan. The horizon does. The Lady of Water is everywhere the water is and the deep receives the dead wherever the depth is sufficient.
+
+**[DM-FACING]**
+
+Of all Oreka’s peoples the Eruskan live closest to the theology of the rebirth cycle without naming it as such. The tides come in and go out. The crops grow and are harvested. The chains run and the barges move and the sea gives and takes in the same motion. Birth and death and rebirth are not doctrine to the Eruskan. They are the rhythm of every single day. The idea of harmony lives most closely with the Eruskan of all Oreka’s peoples because they experience it as a physical fact before they experience it as a belief.
+
+The closeness between Eruskan and Orean communities is elemental as much as cultural. Water and Earth complete each other. The Eruskan bring what the sea provides. The Orean tend what the land grows. This is not integration by policy. It is two elements recognizing they make each other whole.
+
+**[DM-FACING]**
+
+What looks like disconnection from the outside is a network that can unify faster than any kingdom can mobilize. The runners are already trained. The Meets are already practiced. Every Justice already knows every other Justice from the funerals they have attended together. Other peoples have mistaken Orean scatter for weakness exactly once per region and paid for it badly every time.
+
+The person chosen to lead a Grand Meet is never the strongest or wealthiest Justice. It is always the one everyone trusts — the one who has shown up consistently, sent the gift, walked the processions, attended enough Meets to be known by everyone in the room. That trust cannot be manufactured. It can only be earned one funeral at a time.
+
+**The Mytroan — Keening and the Open Plain**
+
+The Mytroan are a people of open plains, beautiful horses, and big families. They want for nothing more than those three things. When one of them dies they feel it at every level simultaneously and they do not hide it.
+
+The family keens. The grief is expressed through vocal exaltation — not crying, not wailing from helplessness, but the voice doing what words cannot. Something too large for language released through pure sound into the open plain. A people who live under open sky with no walls let their grief go into the world itself. The wind takes it. The plain receives it. The elements that took the body take the grief too.
+
+The body is burned and offered back to the four component elements. Heat to fire. Ash to earth. Smoke to wind. The last moisture of a life to water. The Mytroan do not put their dead in the ground because the ground holds things still and the Mytroan move. Fire leaves nothing that needs tending. The grave they leave behind is the open sky above where the fire burned.
+
+The camp grieves communally, loudly, and completely. Then it moves. Because they are the Wind of change and staying too long in one place — even in grief — goes against something fundamental in them. The mourning is real and full. And then the camp moves.
+
+**Horses and the family line:** A Mytroan’s horse passes from father to son and mother to daughter — not to the best rider but to the most similar soul. The horse goes to the child who moves like the parent, thinks like them, carries something the animal already recognizes from a lifetime of knowing that bloodline. The bond continues through the family because the family carries what the horse loved. When the horse itself grows old the family tends it through its own crossing with the same care given to their human dead. You do not abandon something that loved your father. That final act of stewardship is a last expression of love for the person already gone.
+
+**The teaching:** Only what can travel gets written down. Everything else lives in hands and voices and the relationship between master and apprentice. The knowledge that matters most is demonstrated, watched, repeated, corrected, and internalized across a lifetime of working alongside someone. The writing is the backup. The person is the primary source. Losing a master before the teaching is complete is a genuine wound to the tribe — not just grief but a gap in what they collectively know how to do.
+
+**[DM-FACING]**
+
+Halflings return through rebirth faster than any other race. They are the only Kin who treat the accounting as something to move through rather than sit with. The One Who Listens hears a life lived at full speed with full heart. The One Who Judges finds very little to untangle in a soul whose compass was always pointed toward connection. The One Who Teaches shows the tapestry and the Halfling is already leaning forward asking which part comes next.
+
+They return carrying the coloring of lives lived with joy and trust. A Halfling child who has never been told the theology somehow already trusts the wheel. That is not innocence. That is a soul that has felt the cycle enough times to know it keeps turning.
+
+The Halfling faith in the cycle is the deepest in Oreka — not because they have the most doctrine but because they have the most repetitions.
+
+**[DM-FACING]**
+
+Of all the Kin races Dwarves wait the longest to cross back through rebirth. They arrive in the Summer Lands and they are in no hurry whatsoever. The One Who Teaches was not expecting students who arrive with a list of questions. A Dwarf who spent a lifetime mastering stone wants to understand the mechanics of their own tapestry — why this choice produced that consequence, what the underlying elemental principle was, how the laws of the world actually function at the level living Kin never see.
+
+They treat the afterlife as an apprenticeship. When a Dwarf finally chooses rebirth after months or years with the Teachers they return the most thoroughly educated soul on Oreka. The coloring that bleeds through is not just instinct. It surfaces as deep craft knowledge — a Dwarf child who picks up a hammer for the first time and already knows something about how to hold it. Not taught. Known.
+
+### **The Farborn and the Cycle**
+
+**The Taraf-Imro — The Voice of the Dead and the Hill Fire**
+
+The Taraf-Imro were the heart of the Eke Concordant — the people chosen to lead not out of pride but because of their deep well of love for life and for people. That love is the center of everything they do, including how they die.
+
+A Taraf-Imro spends their entire life building toward their own funeral. Not morbidly — deliberately. Every year they write a letter called the Voice of the Dead: not a farewell written in the shadow of approaching death but a living document updated annually by someone fully alive. The Voice is always about the people in their life — how each person brought them joy, cared for them, impacted them. It is a celebration of the happiness they received and a specific, named thank you to every person who gave it.
+
+It is the goal of every Taraf-Imro to build enough that when they pass every person in their village or town goes home with something to remember them by while their family is still cared for by what they built. The distribution of possessions at death is not generosity in the moment. It is the culmination of a life deliberately constructed toward that moment. The greatest of needs among the village receives the most.
+
+The deceased is dressed in their finest, armed with the tools of their trade, and laid at the top of a hill. The Voice of the Dead and all farewell letters from friends and family are read aloud to the assembled mourners — every name spoken, every debt of joy acknowledged. Then the letters are tucked around the pyre. The fire is lit.
+
+While the body and the words burn at the top of the hill the living feast at the bottom, talking long into the night about good times. The fire is visible to everyone at the feast. The feast is visible to anyone who looks down from the hill. The dead person’s light illuminates the gathering of everyone they loved one last time.
+
+**[DM-FACING]**
+
+The Taraf-Imro understanding of death is completion not loss. A life well lived — built with enough love and enough provision that everyone goes home with something — makes death into a final gift. The Voice of the Dead is the most powerful expression of this. Every person who hears their name read from it receives proof that they were seen, that they mattered, that the person who died chose to say so in front of everyone.
+
+This is why the Taraf-Imro were chosen to lead the Eke Concordant. Not because they were the strongest. Because a people who loves this deliberately and this openly generates trust that cannot be manufactured or coerced. You cannot buy what the Taraf-Imro give freely every year into a letter that will outlast them.
+
+**[DM-FACING]**
+
+The rebirth cycle is not locked to Oreka's native races. The Three Aspects do not turn away souls from other worlds. The Farborn have been choosing to enter the cycle generation by generation — not because anyone required it but because something in the Summer Lands felt true to them in a way their old world's theology did not.
+
+After three hundred years and six or seven generations the soul-coloring is beginning to show. Kin-sense flickers on in some Farborn children of this generation because enough lifetimes have accumulated to begin resonating with Oreka's elemental framework. The Farborn did not become Kin through blood or magic. They are becoming Kin through the slow patient work of the accounting. The Three Aspects have been teaching them Oreka one life at a time.
+
+In time the Farborn will become the first Kin not of Oreka — the Fifth House of Human Kin.
+
+### **The Dómnathar and the Refusal**
+
+**[DM-FACING]**
+
+The Dómnathar reject the rebirth cycle entirely. They die and return as traditional undead rather than crossing to the Summer Lands. This means they never sit with the One Who Listens. They never face the One Who Judges. They never receive the teaching of the One Who Teaches.
+
+Every life they live the consequences of their choices never get shown to them in full. The patterns that cost them something never get examined. The cruelty never gets traced to its consequence. They accumulate lifetimes without ever learning from them at the soul level.
+
+A Dómnathar leader a thousand years old is not a thousand years wise. They are a thousand years *fixed*. Every calcified belief, every wound that was never examined, every pattern of behavior that the Teacher would have shown them — still there. Still driving decisions. A soul that has never been shown its own tapestry keeps weaving the same mistakes without knowing it is doing so.
+
+Why the Dómnathar refuse the cycle — what they were told or what they decided that made the Summer Lands something to be avoided — is one of the great unanswered questions of Orekan theology. The answer is reserved for campaign development.
+
+## **4e. TRADE, CURRENCY, AND THE HEARTBEAT OF OREKA**
+
+### **The Foundation — Village to City**
+
+Trade in Oreka is not a system imposed from above. It is a living thing that grew from the bottom up — from the farmer taking surplus to market, the blacksmith traveling to regional fairs, the woodcutter swapping with neighbors. Every person has something and needs something. That exchange is the heartbeat of the world.
+
+Village markets, town fairs, local swap meets, and regional gatherings are the foundation. The great merchant networks and guild structures of the cities float on top of ten thousand small daily exchanges between ordinary people. Merchant guilds exist in every city, most large towns, and some smaller ones — but they are the formal expression of what the village market does informally. Same human impulse. Different scale.
+
+### **The Four Pillars of Long-Distance Trade**
+
+Four peoples carry the weight of Orekan trade at the largest scale. Each controls a different part of the network and none of the four can be replaced by the others.
+
+**The Halflings — Lords of the Open Water**
+
+The Halflings are the undisputed masters of the great inland seas. Their ships move cargo in volume across the Kailian and Apelian seas on schedule and on contract. Other Kin may find Halfling humor unpredictable in a personal setting but everyone knows the cargo arrives. That reputation — built across thousands of years of reliable delivery — is worth more than any guild charter or royal commission. You do not joke about a Halfling’s freight.
+
+**The Eruskan — Lords of the Rivers and Waterways**
+
+The Eruskan own the connection between open water and the interior. Shore to land. River mouth to upriver market. The intricate web of waterways that deep-water ships cannot reach. The Eruskan know every current, every sandbar, every seasonal flood pattern on every river in their region. Goods that arrive at an inland sea port move inland through Eruskan hands.
+
+**The Pekakarlik — The Link Between**
+
+The Pekakarlik are the pillar nobody thinks about until something breaks. They build the ships. They maintain the hydraulic infrastructure. They know where the water goes and why. The Halflings sail the ships and the Eruskan navigate the rivers but the Pekakarlik built the vessels and keep the channels open. Every trade route on water runs on Pekakarlik engineering whether anyone acknowledges it or not.
+
+**The Visetri — Lords of the Land Routes**
+
+The Visetri caravans reach everywhere the water cannot. Landlocked regions, mountain passes, the spaces between rivers — the bright colored wagons with their mithril-plated sides cross the length and breadth of Oreka moving the goods of the world from one end to the other. Every city, every large town, and most small ones see Visetri caravans on a regular circuit. Where the water trade ends the Visetri begin.
+
+### **Currency — The Giant Standard**
+
+Oreka runs on gold, silver, and copper. The weight standard was set by the Giants in the deep past and has never been improved upon. The original Giant weights still exist — the oldest and most trusted in the world — and every honest merchant carries weights traced back to Giant-era originals. Counterfeit coins are caught not by inspectors but by brass weights that have outlasted every kingdom on Oreka.
+
+Nobody had to agree on the standard. It was already there when the Kin arrived. The Giants made it and it worked and nobody has changed it in three thousand years.
+
+**The three coins:**
+
+**The Titan** — gold. The rarest and most valuable coin on Oreka. Named for the Giants themselves. When you hand someone a Titan you are handing them something that carries the weight of the oldest history in the world. Rare enough that it is always called by its full name.
+
+**The Stone** — silver. The working currency of Oreka. Most commerce runs on Stone. Named for what the Giants built with and what the Lord of Stone holds. In common speech often shortened to simply “a stone” — *that’ll cost you three stone.*
+
+**The Shard** — copper. Common, fundamental, the coin that changes hands at every village market and dock and swap meet on Oreka. Named for what’s left when you break something larger. The world actually runs on Shards at the ground level.
+
+**[DM-FACING]**
+
+Kharazhad produces the most trusted coinage on Oreka. Rarozhki Dwarves minting coins against Giant-era weights in a fortress-forge that the Lady of Fire herself spoke at — that coin carries institutional trust going back before Kin civilization existed. A Kharazhad-minted coin is accepted without question anywhere in the world. Other mints exist and their coins circulate freely but a Kharazhad mint mark is the gold standard of gold standards.
+
+The four trade pillars are interdependent in ways that create both alliance and tension. The Halflings need the Pekakarlik’s ships. The Eruskan need the Halflings’ sea routes. The Visetri need the river ports the Eruskan run. Pull one pillar and the others feel it. This interdependence is one of the strongest forces for Kin cooperation in the post-Shattering world — not ideology or alliance but the simple fact that everyone’s livelihood is connected to everyone else’s.
+
+## **4d. COMING OF AGE — EDUCATION AND THE THREE PATHS**
+
+### **How Kin Raise Their Young**
+
+Every Kin culture on Oreka teaches its children the same way. Not by coincidence or agreement — by inheritance. The Giants raised every Kin race through the same sequential, generational process. The Elves learned it from the Giants. The Dwarves learned it from the Elves. The Halflings from those who came before. Humans last. The educational philosophy that every Kin parent uses today is the Giants’ longest legacy — older than the ruins, older than the chains, carried forward by people who no longer know where it came from.
+
+**The stages:**
+
+From birth the child belongs to the mother. Language, values, daily prayers, the first understanding of the world through the person closest to it. This is where elemental identity first stirs — the mother teaching the child to say thank you to the earth, the water, the wind, the fire as naturally as she teaches them to speak.
+
+Then the father. The practical years — how things work, how to move through the world, what the family does and why. Hands and tools and the knowledge that passes through demonstration rather than instruction.
+
+At seven or eight summers the child goes to the community school. They stop belonging only to the family and begin belonging to the broader Kin world. The community has a stake in who this child is becoming and the school is how that stake is expressed.
+
+**The divergence at thirteen:**
+
+At thirteen the path divides into three and none of the three is lesser than the others.
+
+Those who show promise are guided toward the larger cities — and from there possibly to the great schools in the Giant ruins or the Elven cities of learning. These become scholars, Magi, healers, architects, and keepers of the deep knowledge. They return home to make local education richer or they stay in those august institutions to push the work further. Both outcomes are honored equally. Coming home is not failure. It is the cycle completing.
+
+Those who do not take the city path return home to learn the family craft. The farm, the forge, the boat, the wagon. This is not the path for those who could not do better. It is the path for those who look at what their family built and decide it is worth continuing. That requires its own wisdom.
+
+Those who choose the apprentice path leave to study under a master in a field they feel called toward — not necessarily the family’s craft. This path requires the most courage at thirteen because it means leaving family without institutional support. The bond between master and apprentice in Kin culture carries the weight of a second family.
+
+**What all three paths share:**
+
+Every Kin child at thirteen is being asked the same question in three different forms. What do you love enough to give your life to? The answer to that question is the true coming of age. Not a ceremony. Not a single appointed moment. The moment of choosing.
+
+**The birthday:**
+
+The coming of age is not marked by a separate ritual. The birthday itself is the ceremony — every year from birth. The community gathers to say: you are here, you are growing, we see you becoming. The birthday at seven or eight marks the school threshold. The birthday at thirteen marks the divergence of paths. Each one celebrated because the community has a stake in who this person is and who they are choosing to be.
+
+**[DM-FACING]**
+
+The shared educational structure across all Kin cultures is one of the deepest unifying threads in Orekan society — more fundamental than politics, more durable than alliances. A Kovaka Elf scholar and an Orean farmer’s child went through the same stages with the same rhythms. They have more in common than either of them knows.
+
+The Giant cities and Elven cities of learning that serve as the highest tier of Kin education are among the most significant institutions on Oreka. Students who pass through them carry something back to every region they return to. The knowledge these places hold is the accumulated scholarship of three thousand years of Kin civilization — and in some cases, the surviving records of the Giants themselves.
+
+## **4c. RELIGION IN DAILY LIFE — THE LORDS, THE SHRINES, AND THE SOLSTICE GATHERINGS**
+
+### **The Three Tiers of Orekan Religious Practice**
+
+The religion of Oreka is not held by an institution. It is held by every person who ever said thank you to the earth under their feet. There are no permanent temple hierarchies governing daily practice because daily practice does not need them. The Lords are not distant gods visited once a week. They are the texture of every moment.
+
+**The Daily — A Million Little Thank Yous**
+
+When a Kin person wakes in the morning they stand and give thanks for the earth beneath their feet. They give thanks for the breath they take. They walk outside and thank the morning. As they wash they thank the Lady of Water. When they work the earth they give thanks to the Lord of Stone. When they hunt the bird they give thanks to the Lord of Wind. When they fish they give thanks to the Lady of Water.
+
+The Lords are present in every act of every day and the Kin notice and say so. Not grand prayers. Not formal liturgy. Small specific acknowledgments woven into the motion of living.
+
+*Lord of Stone, grant me black earth and little rock.*
+
+*Lady Tempest, sleep well and push a good harvest school to me.*
+
+*Youngest Brother, bring shade clouds or blow away the dark clouds.*
+
+*Lady of Flame, take the wet when it has rained too long.*
+
+A million little thank yous and worships from waking to sleeping. Personal. Constant. No priest required. Just a person moving through the world noticing what the Lords provide and saying so.
+
+**The Local — Shrines**
+
+Every place where an element is present and a person passes regularly becomes a site of relationship. Small cairns of stone at the brook where the family fetches water. A little shelf in the garden with a carved figure and a handful of seeds. A bundle of feathers hung at the forest edge where the wind moves through the trees. A smooth river stone placed just so at the water’s edge. Shrines at brooks, in gardens, at rivers and lakes and seas, at forest edges, at aviaries — wherever the element is present and life brings a person close.
+
+The family that uses the brook tends its shrine. The farmer tends the garden shrine. The fisherman places something at the water’s edge before launching the boat. The child who plays in the forest knows which trees have shrines and why. No priest holds this. Everyone holds it together.
+
+The location of a shrine is not chosen by doctrine. It grows from use. A place where someone said thank you enough times becomes a shrine. A place where something important happened at the water’s edge becomes a shrine. The religion maps itself onto the land through the accumulated gratitude of ordinary people going about ordinary lives.
+
+**The Seasonal — Solstice Gatherings**
+
+At the solstices the community gathers. These are the turning points of the year when the elements are most visibly in transition and the theology requires more than a personal thank you. The gatherings are always held outside — in the fields, on the shore, around a bonfire, on the windy hills. Always in the element being honored. You do not honor the earth by going indoors. You do not honor the wind from behind walls. The location is the altar. The element itself is the temple.
+
+A water solstice on the Kailian Sea shore is nothing like an earth solstice in an Orean valley field. A fire solstice bonfire in Kharazhad with volcanic peaks behind it is nothing like a fire solstice bonfire on the open steppe under open sky. Same theology. Completely different experience. The element shapes the ceremony because the element is the ceremony.
+
+The gatherings are led by the local Magi — scholars of the divine who study the gods and understand the deeper cosmological architecture that daily practice does not require. The Magi know what the turning of the year actually means at the theological level. What is being marked. What is being asked. What the right words are when the whole community speaks together. The Magi who leads an earth gathering does not stand at the front. They stand in the middle. Everyone present is already inside the temple the moment they walked out their door and crossed the soil to gather.
+
+**[DM-FACING]**
+
+Three hundred years ago the Lord of Wind was exiled. The Lord of Stone went comatose. The Lady of Fire and Tempest are holding the planar door shut on the other side of the Breach.
+
+For three hundred years the Kin have been saying thank you to Lords who cannot fully hear them anymore. The daily practice did not stop. The shrines are still tended. The solstice gatherings still happen. The Magi still leads them. But something in every prayer feels like a letter that might not be getting through. The farmer who presses his hand to the earth every morning and says the Lord of Stone’s name feels something slightly less certain than his grandfather felt. The fisherman asking Tempest for a good school notices the water does not feel quite the same way it used to.
+
+The wind shrines in particular are still meticulously maintained despite everything. Three hundred years of offerings to someone whose presence has been different since the exile. A player who looks closely at a well-tended wind shrine on a road where nobody lives nearby might feel something that does not have a clean name.
+
+## **5. HISTORY THAT SHAPES MONSTERS — KEY EVENTS AND THEIR AFTERMATH**
+
+### **The Age of Giants (Deep Past)**
+
+The Giants built the first civilizations along the Great River and in the Infinite Desert. They were immortal but could not reproduce, and eventually crumbled to dust (Thalorien). Their ruins fill the Infinite Desert, haunted by Sand Wraiths. Each of the seven regions of Oreka contains a Tomb of Kings—a great Giant burial site.
+
+**Monster Manual Implication:***Giant-era ruins contain guardian constructs, rune-bound elementals, and creatures sustained by ancient elemental circles still functioning millennia later. Ember Drakes nest in their volcanic forges. River Serpents guard their water temples.*
+
+### **Pre-War Kin Deceivers (Pre-Shattering)**
+
+Before the Dómnathar ever arrived, Kin who learned to suppress their own Kin-sense existed in Oreka. The Deceiver’s Feat is older than the Shattering of Man. These pre-war Deceivers—spies, assassins, or outcasts who could go dark—were feared and reviled. The word “Deceiver” was the darkest label a Kin could bear, and it was a Kin-born word for a Kin-born sin.
+
+### **The Shattering of Man (~150 KC)**
+
+Oreka saw four Keepers in all: the Pre-Keeper, a leader before the formal crowning; the First Crowned Keeper and the Second Crowned Keeper, who ruled wisely; and the Third Crowned Keeper, who proved the weakest and most foolish of them all. The Third Crowned Keeper was too weak and foolish to hold his realm. Lords of the four human kin argued over who should rule and a war broke out. The elves chose sides in what would be their greatest shame, the failure to guide man. Aldenheim, the Visetri, and the Rarozhki joined with the Taraf-Imro as loyalists. The Pekakarlik joined the rebellion. Kin Deceivers were active on both sides of the conflict, adding an espionage dimension. Many cities were burned to ruins and the Kin separated as so many siblings who had argued over a now broken toy. Each of the four human Kin blame the others for the Shattering—the Eruskans blame the Taraf-Imro, the Taraf-Imro blame the Oreans, the Oreans blame everyone, and the Mytrone consider it proof that centralized governance was always doomed to fail. No human subrace accepts responsibility, and the mutual recrimination has never healed.
+
+### **The Deceivers’ War (~430–452 KC)**
+
+The most monster-generating event in Oreka’s history. A foreign mercenary army led by the Dómnathar arrived through a misfired Assault Gate—the Silence Breach (Dorrach Kael, “The Conquest Door”)—in the southeastern foothills of the Gatefall Reach. The Dómnathar did not know Oreka existed until they had been here six months. The Breach was truly accidental.
+
+The army included Dómnathar commanders, foreign elves, dwarves, humans, goblins, orcs, ogres, hobgoblins, kobolds, war-beasts, and creatures magical and monstrous. The host marched north through the Gap, across the Gatefall Reach and the Eternal Steppe, and into the Infinite Desert. While crossing the desert, one-third of the host—the Lost Third—reversed course and marched back south through the Gate of Fire into the Gatefall Reach, then west onto the Eternal Steppe (see Chapter 14 for the full account). The remaining two-thirds continued north, devastating Hillmeet, Foxfen, Whistlebank, and Mossgrove, and ultimately besieging Aldenheim. After the Fall of Aldenheim, the northern survivors scattered westward.
+
+### **The Siege and Fall of Aldenheim (~450 KC)**
+
+The dwarves of Aldenheim stood alone after the Twelve Kings of Man universally refused aid and the elven armies arrived too late.
+
+**Player-facing history:** The Deceiver host used false giants—constructs or illusions that appeared to be the legendary Firstborn—to trick the Aldenheim dwarves into opening their gates. The gates were breached on day 10. The city fell on day 42.
+
+**DM NOTE:***DM truth: The siege continued underground for 100 days after the surface city’s destruction, totaling 142 days. The Aldenheim dwarves fought a grinding subterranean war even after the city above was lost. Five druids sacrificed themselves in a ritual that melted the mountain, destroyed the Deceiver host, and created the Lament of Kings—a blasted plain sitting atop the flattened ruins of Aldenheim, where Kin-sense is permanently unstable. The five druids became Cinvarin, the first Ascended God.*
+
+### **The Lament of Kings (451 KC)**
+
+The bard Hareem, enraged by the kings’ refusal to aid Aldenheim, killed all twelve human monarchs by drawing the air from the chamber—suffocating them with her own breath as the final offering. Hareem died in the act and ascended as the second Ascended God: the Golden Rose, Chaotic Evil. This act shattered the old political order forever.
+
+### **The Reckoning (450–452 KC)**
+
+The chaotic period encompassing the Fall of Aldenheim, the Lament of Kings, and the Battle of Dark Dawn. The old world ends; a new one begins.
+
+### **Wars of the Shattered Host (1–300 AL)**
+
+For 300 years, surviving Dómnathar houses and Deceiver fragments have fought each other in Oreka’s shadows. Not all Deceiver creatures are allies—they may fight each other.
+
+### **5a. THE OREKA DATING SYSTEM ****&**** MASTER TIMELINE**
+
+**Old Calendar — Keeper Crowned (KC)**
+
+Begins with the crowning of the first Keeper by the last living Giant. Today, only scholars and long-lived elves use KC dates.
+
+**Current Calendar — After the Lament (AL)**
+
+Begins with the first Lament Games. Year 1 AL ≈ 452 KC. Campaign present: Year 300 AL (≈ 752 KC).
+
+### **Master Timeline**
+
+**Date**  |  **Event**
+
+Pre-KC  |  Age of Giants. Tombs of Kings built in each of the seven regions.
+
+Year 1 KC  |  First Keeper crowned by the last Giant.
+
+Pre-Shattering  |  The Deceiver’s Feat is developed. Kin Deceivers exist as spies and assassins.
+
+~150 KC  |  The Shattering of Man. Third Crowned Keeper too weak and foolish to hold the realm. Succession dispute, civil war. Kin Deceivers active on both sides. Cities burned. Kin separated.
+
+~430 KC  |  Deceivers’ War begins. Dómnathar arrive through misfired Assault Gate (Silence Breach). They did not know Oreka existed until 6 months in.
+
+~430–450 KC  |  Host marches north. One-third (the Lost Third) splits off in the desert—disillusionment and suspicion combined with the belief that the desert had no end. They march south through the Gate of Fire and west onto the Eternal Steppe.
+
+~450 KC  |  Fall of Aldenheim. Gates breached day 10 via false giants. City falls day 42. Underground fighting continues 100 more days. Five druids melt the mountain. Cinvarin ascends. Northern survivors scatter westward.
+
+451 KC  |  Hareem kills the Twelve Kings. The Lament of Kings. Second apotheosis.
+
+450–452 KC  |  The Reckoning. Running War and Battle of Dark Dawn on the Eternal Steppe. Goblin and warg troops break free. Old world ends.
+
+Year 1 AL (~452 KC)  |  First Lament Games. New era begins.
+
+Year 300 AL (~752 KC)  |  Campaign present.
+
+*Elves who are 400+ years old were alive during the KC era and personally experienced the calendar changing.*
+
+## **6. THE SEVEN REGIONS — ENVIRONMENT AND ECOLOGY GUIDE**
+
+**#**  |  **Region**  |  **Position**  |  **Terrain**  |  **Key Creature Niches**  |  **Tomb of Kings Location**
+
+1  |  Twin Rivers  |  Northwest  |  River valleys, forests, hills  |  River Serpents, forest spirits, Tanuki, trade-route predators  |  Present (specific site TBD)
+
+2  |  Kinsweave  |  North-Central  |  Plains, lakes, rugged mountains, river valleys, volcanic zones, border kingdoms  |  Plains predators, Border Kingdom monsters, Lament of Kings creatures, Scorchspires fauna  |  Present (specific site TBD)
+
+3  |  Tidebloom Reach  |  Northeast  |  Lakeside, tidal forests, marshes  |  Tidal creatures, Kailian Sea beasts, haunted ruins  |  Present — located in the far north near Hillmeet ruins
+
+4  |  The Infinite Desert  |  Central Band  |  Equatorial desert, Giant ruins  |  Sand Wraiths, Ember Drakes, guardian constructs  |  Present (specific site TBD)
+
+5  |  Deepwater Marches  |  Southwest  |  Dense jungle, Apelian Sea shore  |  Jungle predators, free goblin/warg creatures, Deceiver remnants, Flamewarg cult raiders  |  Present (specific site TBD)
+
+6  |  Eternal Steppe  |  South-Central  |  Vast grasslands, nomadic territory  |  Steppe predators, herd beasts, Mytroan monsters  |  Present (specific site TBD)
+
+7  |  Gatefall Reach  |  Southeast  |  Mixed forest, prairie, Silence Breach  |  Breach-warped creatures, Deceiver warbands, frontier beasts  |  Tomb of Kings (Gatefall Remnant base of operations)
+
+The Infinite Desert functionally separates the northern and southern tiers like an ocean would.
+
+### **Regional Detail: The Infinite Desert**
+
+Once the heart of the Giant empire. Flanked by the Emberfangs, Scorchspires, and Ashen Crown ranges. Ancient oases maintained by Pekakarlik Dwarves and Kovaka Elves sustain life—the Pekakarlik managing hydraulic systems and underground channels, the Kovaka tending stone structures and rune-circles. During the age of the Eke Concordant, the Na’wasua worked with the Taraf-Imro to raise great observatories into the skies above the desert. The desert earned its name—the Lost Third turned back because they did not believe it had an end, their disillusionment and suspicion crystallizing into betrayal. Dual elemental patronage is practiced at some desert settlements, reflecting the cooperative nature of survival in this harsh environment.
+
+### **Regional Detail: Deepwater Marches**
+
+Transformed by the Dark Dawn scatter into a contested wildland. Dense jungle around the Apelian Sea hosts Kin conclaves, free goblin tribes, wargbond communities, Deceiver remnants, and the Farborn at the Lone Titan. The Dómnathar tower on the southern sea spur is their hidden stronghold in the region—quietly rebuilding for 300 years. Flamewarg cults, originally descended from Gatefall Remnant cavalry, spread westward into the Marches over the centuries, drawn by the terrain’s suitability for their fire-and-ambush tactics and the region’s lack of centralized authority to oppose them.
+
+### **Regional Detail: Tidebloom Reach**
+
+Burned ruins of Hillmeet, Foxfen, Whistlebank, and Mossgrove haunted by the northern campaign. Ghost-like creatures, war-damaged undead, and beasts adapted to tainted soil.
+
+### **Regional Detail: Gatefall Reach**
+
+The southeastern frontier where the Silence Breach opened and the Deceiver army first entered Oreka. Three centuries later, the Breach scar persists as a Kin-sense dead zone. The region’s terrain transitions from open steppe grasslands in the west and northwest through the crescent forests of the center and east to the mountain foothills framing the Gap in the southeast. Key landmarks include the Scar Road (the compacted path of the original Deceiver march), the Burnt Warrens (underground burrow-forts built by scattered Deceiver warbands after Dark Dawn), and the Windstone Circle (a ring of five Giant-era standing stones on the Gatefall Grasslands, shared by Mytrone and Pasua for joint ceremonies). The Gatefall Remnant—half of the Lost Third’s scattered forces—established operations centered on the Tomb of Kings.
+
+### **Major Geographic Features**
+
+**Giant’s Teeth:** Two parallel mountain ranges that flank either side of the Infinite Desert and wrap all the way around the world, touching all seven regions. They are the most prominent continental-scale landform in Oreka, serving as natural barriers, trade route corridors, and monuments to the Age of Giants.
+
+**Scorchspires:** A volcanic mountain range rich in minerals and heat, located where the Kinsweave region meets the Infinite Desert. Home to Rarozhki holds including Kharazhad. Ember Drakes nest in their forges.
+
+**Northern Lament Range:** A mountain range north of the Giant’s Teeth in Kinsweave, extending from the ruins of Pyree and Andrio to Rivertop and Highridge. Scarred by the Deceivers’ War and the Lament of Kings, it influences the Great River’s course and bears deep historical significance.
+
+**Kailian Sentinels:** Isolated mountains along the Kailian Sea coast in Kinsweave, separating Lakeshore Bay and Lakewell Cove. Composed of basalt and limestone, they feature tidal caves and serve as navigational landmarks.
+
+**Mistveil Ridges:** Mountains south of the Seaspray Lagoon in Kinsweave, adjacent to the Sundrift Veil. Made of sandstone and basalt, shrouded in mist. Tied to legends of protection during past wars.
+
+**Seaspray Lagoon:** A small offshoot of the Kailian Sea south of Lakeshore in Kinsweave, a shallow bay formed by tidal and river influences. Used for fishing and trade, enhanced by water spirit rituals.
+
+## **7. THE DÓMNATHAR ****&**** THE ABYSS CIRCLE — THE HIDDEN ENEMY**
+
+### **7a. Dómnathar-Zhuan — The World They Come From**
+
+**[DM-FACING]**
+
+The Dómnathar come from a world of vast and deep underground. Their civilization exists beneath the surface in unrelated city-states bound together by nothing except mutual rivalry — and that rivalry is the only thing that keeps individual cities from tearing themselves apart from within. The external enemy redirects the internal hunger that would otherwise consume them.
+
+The population structure of every Dómnathar city is the same. The Dómnathar themselves form the upper class. Half-breeds — children of Dómnathar and enslaved peoples — form a second class that is simultaneously cherished and despised by their Dómnathar parents. Loved because they carry Dómnathar blood. Looked down upon because they carry something else as well. The rest are slaves. Not a minority of slaves. The vast majority of every city's population exists in bondage, providing the labor and elemental attunement the Dómnathar lack.
+
+Every member of a house is expected to work for the betterment of the house — its wealth, its trade, its numbers, its glory. And every member is simultaneously expected to try to seize power for themselves within the ever-living, ever-growing game of who is best and should lead. These two expectations are not in conflict. They are the same expectation expressed at different scales.
+
+The Dómnathar worship the Abyssal 9 not out of love or devotion but out of a clear-eyed calculation — power is the only protection that has ever existed on Dómnathar-Zhuan and the Abyssal 9 have power. The gods of hope exist only in whispers among the slaves because hope requires safety and safety has never been available to anyone without power. Other gods of that world exist as stories — kept alive in secret by the downtrodden who know they are next upon the altar.
+
+The Dómnathar have raided the surface of their own world extensively. In many places they are the night-born lords and ladies of both the underground and the surface. They understand conquest. They understand extraction. What they do not understand is a world built on something other than fear and hunger and the endless game of dominance.
+
+### **7b. The Accident That Changed Everything**
+
+The invasion of Oreka was not a planned military campaign. It was an accident of ambition and expendability.
+
+The minor lords and ladies of the great houses — those whose ambition was an inconvenience rather than an asset, too dangerous to keep close but too Dómnathar to simply eliminate — were given soldiers, resources, and a direction. The unspoken understanding was clear: bring home glory and coin, or do not come back. Make the house stronger through success or make it stronger through your absence.
+
+They found the Assault Gate by accident. The Silence Breach was a misfired gate that opened onto Oreka rather than their intended destination. They did not know Oreka existed until they had been here six months.
+
+What they found was extraordinary. A world with a sky. Clean water. Growing things. Four elements in genuine relationship with each other. A population that died and came back and grew wiser across lifetimes. A world that actually worked — in ways Dómnathar-Zhuan had never worked and could never work given what it was built on.
+
+The outcasts and expendables pushed through because they had nothing to lose and everything to gain. The invasion that nearly broke Kin civilization was not the best the Dómnathar had. It was the ones willing to risk everything because they had nothing left to risk.
+
+Then the Elemental Lords slammed the gate shut behind them.
+
+### **7c. Cut Off**
+
+The army that was supposed to be the first wave became the only wave. Every soldier, commander, and house representative who crossed through has been on their own for three hundred years. No resupply. No reinforcement. No way home.
+
+The Abyssal 9 have heard prayers filtering through the planar barrier but they have never touched Oreka directly. They have never felt it. Never seen it. They are answering letters from a place they cannot reach — because the Lady of Fire and Tempest are holding the planar door shut from the other side of the Breach. The Dómnathar on Oreka do not know exactly why their gods cannot manifest here. They have theories. None are fully correct.
+
+The ones who died and came back as undead did not return to Dómnathar-Zhuan. They came back on Oreka. In a world built on elemental harmony they cannot feel, sustained by gods who cannot reach them, cut off from the civilization that sent them to die.
+
+### **7d. What Three Hundred Years Has Not Changed**
+
+Every Dómnathar on Oreka considers themselves Dómnathar. Without exception. Without question. It is better to be a dead Dómnathar than a living lesser. Three hundred years on Oreka has not changed this. Not because they cannot see what Oreka is — some of them have had centuries to watch the Kin and their rebirth cycle and their elemental harmony and their Lords who built the world with love. Some have felt something flicker in the half-breeds born here. Some have sat in the dark of Spur Tower and heard the wind shrines being tended.
+
+And they are still Dómnathar.
+
+Because the alternative is not becoming Kin. The alternative is becoming nothing. On Dómnathar-Zhuan you are your house or you are a slave. The concept of becoming something else through choice and growth across lifetimes does not exist in their framework. The rebirth cycle is the thing they cannot comprehend and cannot accept — not because they are evil but because a soul that changes across lifetimes is a soul that stops being what it was. To a Dómnathar that is not enlightenment. That is annihilation.
+
+They would rather be a dead Dómnathar than a living something-else. That is the tragedy at the heart of everything they are.
+
+**[DM-FACING — CAMPAIGN IMPLICATIONS]**
+
+The Abyssal 9 cannot manifest on Oreka as long as the Lady of Fire and Tempest hold the planar door. The moment that door opens — whether through their exhaustion, defeat, or distraction — the Abyssal 9 do not merely send another army. They arrive in a world they have never touched. Three hundred years of Dómnathar preparation on the ground, combined with gods suddenly present in a world without defenses against them. This is what the current Dómnathar leadership has been building toward. Not another frontal assault. A door opening.
+
+The original outcasts who led the first invasion — still alive as undead, still on Oreka — are the most valuable and most dangerous figures in current Dómnathar politics. The houses back home know what those expendables found. They have spent three hundred years trying to claim it. The original survivors know Oreka in ways the houses do not and they use that knowledge carefully. Some of them have watched the Kin for so long that something has shifted in them that they will never admit and cannot name.
+
+The Dómnathar are not preparing another Deceivers’ War. They are preparing to receive their gods.
+
+The Dómnathar are obsidian-skinned, white-haired deep elves from another world entirely—NOT fallen Kin, NOT native to Oreka. They are extraplanar outsiders whose souls are tuned to the Abyss Circle rather than Oreka’s elemental harmony. To Kin-sense they register as Absolute Silence. Their capital, Dómnathar-Zhuan, is on their home world, not in Oreka.
+
+**The Dómnathar did not know Oreka existed until they had been here six months.** The Silence Breach was a misfired Assault Gate. Their invasion was opportunistic, not planned.
+
+### **Dómnathar Lifespan and Society**
+
+**Dómnathar can live up to 1,000 years.** The pre-invasion house leaders (aged 187–298 at the time of the Breach) are still alive in the campaign present. They have personal memory of their home world and 300 years of experience in Oreka. This gives the Dómnathar villain faction deep personal continuity.
+
+Dómnathar society is matrilineal (Motherlines) but NOT strictly matriarchal—either sex can rule. Eleven Great Houses: 10 peer Houses (Circle of Knives) + 1 Paramount (Vael’domin, intentionally left as DM’s choice).
+
+### **Dómnathar Elemental Disconnection**
+
+**The Dómnathar possess no Elemental Affinity.** Their souls are attuned to the Abyss Circle rather than to Oreka’s elemental framework, and their primary magical traditions draw upon that connection. However, lacking an Elemental Affinity does not bar the Dómnathar from wielding elemental magic—they are simply less powerful in it than Kin races, who carry an innate resonance that the Dómnathar do not share. A Dómnathar sorcerer can command fire or bend water, but will never match a Kin caster of equal skill working within their native element. Stat blocks: “Elemental Affinity: None — Extraplanar.” This disadvantage, rather than an absolute prohibition, is what drives their civilization—they enslave elementally-attuned beings across worlds to compensate for their own lesser attunement.
+
+### **The Eleven Great Houses**
+
+**House**  |  **Theme**  |  **Patron**  |  **Creature Implications**
+
+Vaalor  |  Terror, killing gaze  |  Oczur-Vaal (One Gaze)  |  Gaze-attack creatures, eye-mutant soldiers
+
+Aelathar  |  Seduction, enchantment  |  Vaelissar (Gilded Rot)  |  Charm-based creatures, illusory predators
+
+Domnethra  |  Birth cult, breeding  |  Myrnaazhul (Abyssal Womb)  |  Brood creatures, spawning horrors
+
+Tethrakh  |  Demon-forges, venom metal  |  Tethzhaar (Iron Serpent)  |  Living weapons, venom constructs
+
+Morkath  |  Berserk rage, storms  |  Morkhaz (Red Tempest)  |  Storm-mad beasts, blood-frenzy creatures
+
+Indorach  |  Disciplined war, sieges  |  NONE — nihilistic atheists by Dómnathar standards  |  War constructs, siege beasts, slave soldiers
+
+Kethloryn  |  Spider prophecy, venom  |  Ssyraeth (Venom-Seer)  |  Spider-type monsters, venom creatures
+
+Bressarai  |  Aesthetic cruelty, poison  |  Vaelissar (Gilded Rot)  |  Poison creatures, torture constructs
+
+Buarath  |  Flesh-warping, grafts  |  Buaress (Many-Mask)  |  Flesh golems, mutated aberrations, grafted horrors
+
+Lokhlannar  |  Winter, frost, despair  |  Lokhruun (Winter Dirge)  |  Frost demons, ice undead, cold elementals
+
+Firvarg  |  Slavery, chains  |  Firkaan (Shackler King)  |  Chain-bound horrors, enslaved beasts, collar constructs
+
+Konaeth (fallen)  |  Crystal, tyranny  |  Unknown  |  Crystal undead, living crystal hazards, cursed ruins
+
+House Indorach is unique among the Dómnathar in having no Abyss Circle patron. They are nihilistic and atheist by Dómnathar standards—they believe in discipline, force, and their own capability rather than dark gods. This is deliberate and intentional.
+
+### **The Abyss Circle (Nine Patrons)**
+
+**Dómnathar Name**  |  **Orekan Epithet**  |  **Themes**  |  **House(s)**
+
+Myrnaazhul  |  The Abyssal Womb  |  Hunger, birth, reproduction  |  Domnethra
+
+Ssyraeth  |  The Venom-Seer  |  Spiders, prophecy, insanity  |  Kethloryn
+
+Lokhruun  |  The Winter Dirge  |  Eternal winter, despair, frozen souls  |  Lokhlannar
+
+Vaelissar  |  The Gilded Rot  |  Beauty, seduction, subtle killing  |  Aelathar, Bressarai
+
+Oczur-Vaal  |  The One Gaze  |  Killing gaze, ocular omens  |  Vaalor
+
+Morkhaz  |  The Red Tempest  |  Berserk rage, joyful slaughter  |  Morkath
+
+Tethzhaar  |  The Iron Serpent  |  Cursed forges, venom-metal  |  Tethrakh
+
+Buaress  |  The Many-Mask  |  Mutation, grafting, body horror  |  Buarath
+
+Firkaan  |  The Shackler King  |  Slavery, broken wills, chains  |  Firvarg
+
+### **Dómnathar Creature Design Principles**
+
+Creatures associated with the Dómnathar should feel: calm, intelligent, patient, inescapable, and morally alien. They are “the absence after the scream.” Their tunnels are resonance-dead corridors that suppress Kin-sense and induce dread and isolation. The Dómnathar Are Horror, Not Action.
+
+### **The Dómnathar Apotheosis Plot (DM-FACING ONLY)**
+
+**DM NOTE:***Apotheosis is morally neutral (Hareem proved it) → requires attunement to all four elements → pure Dómnathar can’t ascend → they need an elementally-attuned being loyal to them. They’ve studied Hareem’s act for 300 years. Candidates: Half-Giants (All-Element Concord, ideal) **>** Half-Dómnathar **>** Silentborn **>** Corrupted Kin.*
+
+### **The Dómnathar Gate Plot (DM-FACING ONLY)**
+
+**DM NOTE:***SEPARATE FROM THE APOTHEOSIS PLOT. The Dómnathar are actively trying to capture or use a high-powered Magi to help start a new gate—a way to reopen a passage to their home world or bring reinforcements. The Magi tradition is the one power system the Dómnathar cannot naturally counter (immune to False Silence), which makes a Magi both their greatest enemy and their most coveted asset. They have spent 300 years quietly targeting and eliminating Magi lineages to reduce the threat, while simultaneously searching for a sufficiently powerful Magi they can control. This is a NEW active plot in the campaign present.*
+
+**DM NOTE:***CRITICAL HIDDEN INFORMATION: There is a SECOND assault gate that the Dómnathar themselves do not know about. This second gate is causing a side effect: the Lord of Stone is comatose. Meanwhile, the Lady of Fire and Lady of Water are actively holding back the Abyss Circle and destroying the first gate.*
+
+## **8. FACTIONS AND FORCES — WHO COMMANDS WHAT**
+
+### **Kin-Aligned Factions**
+
+**Faction**  |  **Alignment**  |  **Role**  |  **Creature Connections**
+
+Golden Roses  |  Varies  |  Hosts the Lament Games. Counter-Deceiver operatives. Branches: Petals (healers), Thorns (warriors), Vines (messengers).  |  Employ/train unusual beasts; track Deceiver creatures
+
+Anacrusis  |  Varies  |  Cross-Kin corruption-hunting scholars. Hierarchy: The Baton → Prime Choirs → Verses/Choruses → Library of Echoes. Trains the Deceiver’s Feat.  |  Study Deceiver creatures
+
+Silent Concord  |  Varies  |  Silentborn ‘third path’ organization. Hierarchy: Stillwater Council → Voice → Choirs (Veil, Hearth, Warden, Memory, Dawn) → Lanterns (cells) → Candles. Trains the Deceiver’s Feat.  |  Lantern cells vs. Dómnathar. Veil Choir: counter-infiltration.
+
+Trade Houses  |  Neutral  |  Merchant organizations  |  Transport exotic beasts; road-side encounters
+
+Chainless Legion  |  Varies  |  Former Firvarg slave-soldiers, settled west of Twin Rivers. Enclaves: Clifftide, Saltrest Haven, Redcurrent Strand.  |  Former war-beasts now independent
+
+Starwind Blades  |  Varies  |  Na’wasua Elf blade-adepts from the Great Forests. Minor faction.  |  Seek cosmic and elemental clues in ancient sites; occasional presence in Kinsweave and desert-edge regions.
+
+Mithril Legion  |  Lawful Good  |  The military brotherhood of the Visetri Dwarves. The oldest active fighting force in Oreka. Organized into shield companies. Well-known player-facing faction. See The Mithril Legion section below.  |  None specific
+
+Steelward Host  |  Lawful Good  |  The defenders of Aldenheim. Extinct — destroyed at the Fall. Mostly forgotten outside scholarly circles. One of the Three Military Orders.  |  None
+
+Stone Covenant  |  Lawful Good  |  Kin-wide standing army headquartered at Kharazhad. Public knows it exists but not its connection to the other two Orders. Full connection revealed only at full membership. Call signs: “We Stand for the Host” / “the stone remembers.”  |  None
+
+### **The Three Military Orders**
+
+The Mithril Legion, the Steelward Host, and the Stone Covenant are the Three Military Orders of Oreka. They share a hidden connection revealed only to full members. The Mithril Legion is well-known and player-facing. The Steelward Host is extinct and mostly forgotten. The Stone Covenant is known to exist but its connection to the other two is not public knowledge.
+
+### **The Mithril Legion**
+
+**[PLAYER-FACING]**
+
+The Mithril Legion is the wandering brotherhood of the Visetri Dwarves — the oldest active fighting force on Oreka and one of the most recognized military organizations in the world. They travel in brightly painted caravans, laugh loudly, trade freely, and are known for their warmth and their fierce loyalty to whoever earns it. Other Kin sometimes mistake them for simple merchants or wandering performers. That mistake is not corrected until it is too late.
+
+The Legion seeks the hottest fights — the battles where others measure the odds and find them wanting. When every other force is calculating retreat the Mithril Legion is already moving forward. They do not negotiate with the present. They advance the moment when the outcome becomes inevitable. They are organized into shield companies. They smile going in.
+
+**[DM-FACING]**
+
+The Visetri solved the problem of having no fortress by becoming one. Every wagon in a Visetri caravan is plated in mithril on the left-facing side. When threatened, the caravans circle. What looked like a traveling caravan an hour ago becomes a mithril-walled fortress that armies have broken themselves against. The transition from traveling to defended takes minutes and has been practiced ten thousand times before any enemy ever tested it.
+
+The Legion’s doctrine has two inseparable halves. The shield companies advance into the hottest fighting, drawing every eye and every weapon. While the enemy is entirely focused on the brotherhood walking toward them, the caravans are circling. By the time the enemy considers retreat the fortress is already behind them. The Legion was never just advancing. They were buying minutes. And the Visetri only need minutes.
+
+The cheerfulness is not a mask. The Visetri have no fortress, no hold, no mountain at their backs. They built their entire civilization on the road, on movement, on the next camp and the next face around the fire. When you live that way the people in front of you right now are everything. You love them loud and bright because tomorrow the road takes you somewhere else. When those people are threatened the smile steps aside — and underneath is a Dwarf. Enduring. Patient. The undeniable future.
+
+The Legion smiles going in because they know what is coming behind them. The caravans circle for the Legion without being asked because the Legion walked forward for them without hesitating. You cannot infiltrate something built on that kind of trust. Nothing is worse than the Legion holding long enough for a Visetri caravan to circle and prepare. The Legion was never the weapon. They were the door closing.
+
+**Connection to the Stone Covenant:** The Covenant is the institution. The Mithril Legion is the spirit the institution was built to honor. The shared name with the Mithril Chains is an intentional red herring — there is no connection between the two.
+
+### **Post-Dark Dawn Evil Factions**
+
+**Faction**  |  **Alignment**  |  **Origin**  |  **Creature Types**
+
+Ash-Chain Brotherhood  |  Lawful Evil  |  Freed slave-enforcers turned masters  |  Chain-bound humanoids, disciplined war-beasts
+
+Bloodridge Coven  |  Chaotic Evil  |  Fleshcrafters, war-witches  |  Mutated creatures, flesh-warped aberrations
+
+Black-Maw Legion  |  Neutral Evil  |  Goblin/warg supremacists  |  Trained wargs, goblin war-machines
+
+The Shrouded Court  |  LN/NE  |  Dómnathar assassin-kings. Trains Deceiver’s Feat.  |  Silence-wielding creatures, shadow beasts
+
+Flamewarg Cults  |  Chaotic Evil  |  Gatefall Remnant descendants; spread westward into the Deepwater Marches over the centuries  |  Fire-infused wargs, flame elementals
+
+### **The Farborn (Gilded Standard Company)**
+
+Neutral Good settled community of ~28,000 near the Lone Titan on the Deepwater Marches’ eastern edge. ~50 pure Titanborne horses, ~900 Titanbreed hybrids. Originally a neutral mercenary outfit from another plane, the Gilded Standard Company was led by Captain Ralven Duskharrow, styled as Duke of the Company. Founded as a Farborn settlement after Duskharrow’s defection during the Running War—only one in ten of the original Company survived. The Farborn are isolated at the Titan and interact with Kin primarily during trade meets. Three centuries of fair dealing have built trust. They register as No Registration on Kin-sense—invisible—but this has not prevented a functional relationship. The Farborn are tentatively, slowly becoming a fifth human kin.
+
+**Titanbreed Horse Pricing:** Titanbreed hybrid cavalry mounts command 8,000–15,000 gp depending on training, bloodline proximity, and temperament. Titanborne purebloods (~50 in existence) are never sold—they are sacred to the Farborn and serve as breeding stock and ceremonial mounts only.
+
+*Other mentioned breakaway factions (Ashen Menders, Ember-Slack Goblins, Free-Banner Ogres, Veil-Orphans, Sundered Hand) need further development.*
+
+## **9. CREATURE CATEGORIES — THE THREE-TIER BESTIARY SYSTEM**
+
+**Tier 1: Oreka Originals**
+
+Creatures invented specifically for Oreka, born from its elemental forces, history, and cultures. Most detailed lore, cultural significance, and regional placement.
+
+**Tier 2: Mythological Adaptations**
+
+Creatures drawn from global mythology (Persian, Slavic, Japanese, African, Polynesian, Norse, Celtic, Greek, Mesoamerican, and more), adapted to Oreka’s framework.
+
+**Tier 3: OGL Creatures (3.5e Adapted)**
+
+Standard SRD/OGL creatures given Oreka-specific context. Must have Kin-Sense Signature, Elemental Affinity, Regional Placement, and Cultural Significance.
+
+## **10. OREKA-SPECIFIC DESIGN FIELDS**
+
+**Field**  |  **Required?**  |  **Description**
+
+Kin-Sense Signature  |  REQUIRED  |  Category (Harmonic, Wild Static, Breach Static, Warm Static, Null, Void, None, Raw Static) plus descriptive sensory text.
+
+Elemental Affinity  |  REQUIRED  |  Primary/secondary attunement. Dómnathar: “None — Extraplanar.”
+
+Cultural Significance  |  REQUIRED  |  How specific Kin cultures relate to this creature.
+
+Regional Placement  |  REQUIRED  |  Which of the Seven Regions; population density and habitat.
+
+Lore (Knowledge Check)  |  Recommended  |  Tiered DC 10/15/20/25/30 results per MM III format.
+
+Strategies and Tactics  |  Recommended  |  Combat behavior, preferred terrain, group tactics.
+
+Faction Alignment  |  If applicable  |  Which faction(s) the creature serves.
+
+Historical Origin  |  If applicable  |  Which event created or introduced it.
+
+## **11. TEMPLATES — ELEMENTAL INFUSED, SILENCE-TOUCHED, AND MORE**
+
+### **Elemental Infused (Established Canon)**
+
+**Element**  |  **Damage Bonus**  |  **Resistance**  |  **Additional Traits**
+
+Earth/Stone  |  +1d6 acid on natural attacks  |  Resist acid 10  |  +2 natural armor, tremorsense 30 ft
+
+Fire  |  +1d6 fire on natural attacks  |  Resist fire 10  |  Immunity to nonmagical fire, body emits heat
+
+Water/Ice  |  +1d6 cold on natural attacks  |  Resist cold 10  |  Swim speed +20, breathe underwater
+
+Wind/Sky  |  +1d6 electricity on natural attacks  |  Resist electricity 10  |  Fly speed +20 (if applicable), feather fall at will
+
+### **Proposed Templates (Not Yet Finalized)**
+
+**Template**  |  **Source**  |  **Effect**  |  **Typical Subjects**
+
+Silence-Touched  |  Dómnathar corruption  |  Suppresses Kin-sense within 30 ft; Void signature  |  Beasts/humanoids exposed to False Silence
+
+Void-Born  |  Abyss Circle energy  |  Extraplanar traits; immune to Kin-sense; SR 10+HD  |  Dómnathar pit-bred creatures
+
+Rune-Bound  |  Giant-era enchantment  |  Construct-like; follows ancient directives; eternal  |  Giant ruin guardians
+
+Shattering-Warped  |  Shattering fallout  |  Unstable dual-element abilities  |  Creatures near old fault lines
+
+Lament-Touched  |  Lament proximity  |  Erratic Kin-sense; pain aura; fear effects  |  Undead/beasts near the Lament
+
+House-Bred  |  Dómnathar house breeding  |  Varies by house themes  |  War-beasts, assassin creatures, siege monsters
+
+Ascended-Blessed  |  Ascended God favor  |  Varies by god; mortal themes  |  Sacred beasts, temple guardians
+
+## **12. EXISTING CANON CREATURES**
+
+**Creature**  |  **CR**  |  **Type**  |  **Region**  |  **Cultural Ties**
+
+Sand Wraith  |  5  |  Undead (Incorporeal)  |  Infinite Desert (primary); also found near Giant ruins in other regions  |  Born from the spirits of Kin who died in great anguish or violence. Found wherever sites of great death persist, including Giant-era ruins, the Lament of Kings, and the Ashen Hollows of Tidebloom. Sand Wraiths are Kin spirits, NOT Giant spirits.
+
+Ember Drake  |  3  |  Dragon  |  Scorchspires  |  Revered by Rarozhki; nest near forges
+
+River Serpent  |  4  |  Magical Beast  |  Great River / Twin Rivers  |  Sacred to Pekakarlik; boat-blessing rituals
+
+Storm Wisp  |  2  |  Elemental (Air)  |  Great Forests  |  Tied to Wind Lord; Hasura/Pasua rites
+
+Ash Elemental  |  Varies  |  Elemental (Fire/Earth)  |  Scorchspires  |  Semi-sapient; favored by Rarozhki smiths
+
+Forest Spirits  |  Varies  |  Fey  |  Great Forests  |  Nature guardians; Hasura/Pasua traditions
+
+River Spirits  |  Varies  |  Fey (Water)  |  Rivers/Coasts  |  Adored by Eruskan; courted by Halflings
+
+Wind Sylphs  |  Varies  |  Elemental (Air)  |  Everywhere (rare)  |  Born of Youngest Brother’s breath
+
+Non-Kin peoples (Goblins, Wargs, Hobgoblins, Orcs, Ogres, Kobolds, Tanuki) all require entries reflecting moral complexity of free vs. Deceiver-aligned populations.
+
+## **13. DESIGN PHILOSOPHY — PRINCIPLES FOR NEW CREATURE CREATION**
+
+**1. Elemental Identity Is Non-Negotiable**
+
+Every creature must have an elemental affinity. *Exception: Dómnathar use “None — Extraplanar.” Breach-origin peoples are addressed via Breach Static.
+
+**2. Kin-Sense Defines the Encounter**
+
+Write the Kin-Sense Signature as sensory description. “Wild Static: a prickling warmth like sunlight through fog” beats “Wild Static.”
+
+**3. History Creates Monsters**
+
+Every creature’s presence should feel justified by history.
+
+**4. Moral Complexity Over Alignment Shortcuts**
+
+No “Always Chaotic Evil.” A goblin trader is different from a goblin raider serving House Firvarg.
+
+**5. Cultural Significance Adds Depth**
+
+A creature “considered sacred by Pekakarlik dwarves, who believe its appearance signals an ancient Giant well” is more interesting than “a predator in the desert.”
+
+**6. The Dómnathar Are Horror, Not Action**
+
+Psychological horror. Calm, patient, inescapable. Not loud and flashy.
+
+**7. Stat Block Format**
+
+23-field MM v.3.5 standard + Lore tiers (MM III) + Tactics (MM III–V) + four Oreka-specific fields.
+
+## **14. THE LOST THIRD — THE SOUTHERN WAR**
+
+The Lost Third is not a mystery. It is resolved history—though most Kin outside the southern regions do not know the full story.
+
+### **The Reversal**
+
+When the full Deceiver host crossed the Infinite Desert heading north, one of the three sub-commanders broke away and turned the force back south. **The reason was twofold: they did not believe the desert had an end, and disillusionment had festered into suspicion and betrayal among the ranks.** The Infinite Desert earned its name. Weeks without battle or end to the sands eroded confidence, and the sub-commander’s growing distrust of the other commanders crystallized into a deliberate military decision—not a rout or desertion, but a calculated break.
+
+### **The March South**
+
+The Lost Third marched south out of the desert, through the Gate of Fire—the navigable pass between the Infinite Desert and the Eternal Steppe—and back into the Gatefall Reach. From there they turned west onto the Eternal Steppe.
+
+### **The Running War**
+
+The Wind-Riders—known to the Pasua as Far Riders and to the Mytrone of the steppe as Wind-Riders—are an ancient brotherhood of Mytroan lancers and Pasua mounted archers whose traditions predate the Deceivers’ War. They were the finest light cavalry Oreka had ever seen. When the Lost Third entered the Gatefall Reach heading south and then west, the Wind-Riders intercepted them. The Running War began in the Gatefall Reach and escalated across the Eternal Steppe as the brotherhood harried the Deceiver column, turning the open grasslands into a killing ground over nine days. Had the Deceiver commanders not called for the Scattering, the Wind-Riders would have crushed the Lost Third entirely.
+
+### **The Gilded Company’s Betrayal**
+
+The Gilded Standard Company was a neutral mercenary outfit from another plane, led by Captain Ralven Duskharrow, styled as Duke of the Company. During the Running War, the Company’s soldiers saw firsthand who they were fighting alongside—Dómnathar commanders, enslaved auxiliaries, and creatures born of the Abyss Circle—and who they were fighting against—Kin peoples defending their homeland. They did not like what they saw. When the Deceiver commanders ordered the Gilded Company to serve as a sacrificial screening force, Duskharrow refused. He contacted the Mytrone directly and the Company defected to the Kin side, joining the Wind-Riders for the final engagement. Only one in ten of the Gilded Company survived the Running War and the Battle of Dark Dawn.
+
+### **The Battle of Dark Dawn**
+
+The combined forces broke the Lost Third on the Steppe. The Deceiver captains ordered a deliberate scatter—the only alternative to total annihilation at the hands of the Wind-Riders.
+
+### **The Scatter: Two Fates**
+
+**The Gatefall Remnant**
+
+Half fled southeast to the Gatefall Reach, eventually reuniting at the Tomb of Kings (one of seven Giant burial sites). Flamewarg cults descend from them. Underground warrens—the Burnt Warrens—connect to Dómnathar remnant operations beneath the southeastern foothills and crescent forests.
+
+**The Deepwater Remnant**
+
+The other half fled into the Deepwater Marches. Goblin and warg servitors broke free, forming independent communities. The Dómnathar core established a hidden stronghold on the southern sea spur of the Apelian—the tower visible from the water is theirs, quietly rebuilt over 300 years into a fortified base of operations. Flamewarg cult elements originally associated with the Gatefall Remnant spread westward into the Marches over the centuries, drawn by the dense terrain’s suitability for fire-and-ambush tactics and the absence of any centralized authority to oppose them.
+
+### **The Aftermath**
+
+The Gilded Company settled at the Lone Titan and became the Farborn. Northern scholars never learned the full story—the Wind-Riders remember through Pasua song and Mytroan oral tradition, not written records.
+
+## **15. MAGI MAGIC — THE OLDEST SPELLCASTING TRADITION**
+
+The Magi is Oreka’s oldest and most fundamental spellcasting tradition, predating all other casters. Three Chosen Paths, including the Path of the Seer (Wisdom).
+
+### **Critical Ruling: Magi Magic Independence**
+
+**Magi magic is elemental but NOT channeled through Kin-sense.** Affected by anti-magic zones. NOT affected by False Silence, Void energy, worked Dómnathar metal, or resonance-dead zones. This overturns the earlier ruling (Canon Audit Q128).
+
+Magi become the most valuable caster against Dómnathar. A Magi with the Deceiver’s Feat is uniquely dangerous: invisible to soul-perception but armed with elemental magic.
+
+**DM NOTE:***The Dómnathar have spent 300 years quietly eliminating Magi lineages because Magi magic is the one weapon they cannot naturally counter. The Dómnathar Gate Plot involves capturing a high-powered Magi to help start a new gate. This makes every surviving Magi both a strategic target and a campaign-critical asset.*
+
+## **16. ECONOMY ****&**** EQUIPMENT**
+
+Oreka uses the standard OGL 3.5e currency and equipment system: gold pieces (gp), silver pieces (sp), copper pieces (cp). Standard PHB equipment tables and pricing apply.
+
+**Titanbreed Horse Pricing:** Titanbreed hybrid cavalry mounts command 8,000–15,000 gp depending on training, bloodline proximity, and temperament. Titanborne purebloods (~50 in existence) are never sold. For comparison, a standard heavy warhorse costs 400 gp under OGL rules—a Titanbreed mount represents a king’s ransom and a strategic asset, not merely a purchase.
+
+Regional trade goods, exports, cultural pricing variations, and Trade House commerce details still need development.
+
+## **17. SETTLEMENTS — NAMED LOCATIONS**
+
+**Twin Rivers**
+
+Custos do Aeternos (Sylaraeth), Greenford, Forkmeet, Stoneharbor, Highspire, Timberdeep, Liraveth, Aerithal, Sylarien.
+
+**Kinsweave**
+
+Living: Stonefall, Rivertop, Lakeshore, Lakewell, Highridge. Fallen: Kalite, Thrush, Hylen, Mytro. Border Kingdoms: Pyree, Andrio, Thrush. The Lament of Kings site is here, sitting atop the flattened ruins of Aldenheim. The Border Kingdoms were part of the Twelve Kingdoms.
+
+**Tidebloom Reach**
+
+Living: Velathenor, Branmill Cove, Tiravel, Myruvane, Darnavar. Burned: Hillmeet, Foxfen, Whistlebank, Mossgrove.
+
+**Eternal Steppe**
+
+Tavranek (Mytroan capital): wagon-wheel pattern around the largest Windstone, governed by ‘The Boss’ with 7 Headmen.
+
+**Deepwater Marches**
+
+Tidewell, Canopy Hold, Thornwall, Titan’s Rest, Murtavah Root. The Lone Titan (Farborn home). Dómnathar tower/stronghold on southern sea spur. The Deceiver’s Refuge at the base of the Spur.
+
+**Gatefall Reach**
+
+Living settlements: Hillwatch, Silkenbough, Glimmerholt, Brayholt Crossing, Redtrail Hollow, Briarshade. Total regional population: ~15,000, with perhaps another 2,000 riders and foresters on seasonal circuits. The Gap (southeastern mountain pass, Giant-engineered). The Gate of Fire (the navigable pass between the Infinite Desert and the Eternal Steppe; the route through which the Lost Third returned south). The Tomb of Kings (Gatefall Remnant base of operations). The Silence Breach (Dorrach Kael). The Scar Road (the path of the original Deceiver march, still visible after 300 years; compacted soil and thin grass mark the route from the Breach northwest through the Gap). The Burnt Warrens (underground burrow-forts built by scattered Deceiver warbands after Dark Dawn; extend beneath the southeastern foothills and crescent forests; multiple Dómnathar Houses maintain hidden strongholds in the deepest levels). The Windstone Circle (a ring of five Giant-era standing stones on the Gatefall Grasslands, arranged around a central pillar with a cracked but functional rune-circle; shared by Mytrone and Pasua for joint ceremonies). The Warden’s Ridge (north-south ridge separating western grasslands from eastern forests).
+
+**Other**
+
+Chainless Legion enclaves: Clifftide, Saltrest Haven, Redcurrent Strand (west of Twin Rivers). Kharazhad (greatest Rarozhki fortress-forge, in a caldera).
+
+## **18. CLASSES ****&**** PRESTIGE CLASSES**
+
+15 OGL prestige classes + 7 Oreka-original:
+
+**Oreka-Original Prestige Class**  |  **Notes**
+
+Elemental Savant  |  Elemental specialist
+
+River Warden  |  Water/river guardian
+
+Forge Mystic  |  Fire/earth mystical smith
+
+Wind Dancer  |  Air/wind combat specialist
+
+Golden Cantor  |  Tied to Anacrusis/Golden Roses
+
+Sand Warden  |  Desert guardian specialist; favored by Pekakarlik Dwarves and Orean Humans operating in the Infinite Desert and arid regions near Giant ruins
+
+Wind-Rider  |  The Wind-Riders (called Far Riders by the Pasua and Wind-Riders by the Mytrone of the steppe) are an ancient brotherhood of Mytroan lancers and Pasua mounted archers whose traditions predate the Deceivers’ War. They operate from the Gatefall Reach through the Eternal Steppe. The Wind-Riders intercepted the Lost Third in the Gatefall Reach and prosecuted the Running War across the steppe, remaining the elite mounted military force of the southern regions. Both names are canonical and interchangeable.
+
+*The Staff Concord is a competitive SPORT at the Lament Games (Event #12), NOT a faction.*
+
+## **APPENDIX A: REMAINING OPEN QUESTIONS**
+
+**#**  |  **Question**  |  **Notes**
+
+1  |  Can a trained operative distinguish the Deceiver’s Feat (No Registration) from False Silence (Void)?  |  Both hide from Kin-sense but feel different. What DC?
+
+2  |  Rebellion identity in the Shattering — to be fleshed out in the future if needed.  |  Proto-Twelve Kingdoms lords confirmed as rebels.
+
+3  |  Full names of all Twelve Kingdoms?  |  The Border Kingdoms (Pyree, Andrio, Thrush) were part of the Twelve Kingdoms. Full list to be developed.
+
+4  |  Specific locations of six non-Gatefall Tombs of Kings?  |  One per region confirmed. Exact sites TBD.
+
+5  |  Halfling subrace names and distinctions?  |  Four subraces exist; outsiders can’t tell them apart; Halflings do not discuss. Details TBD.
+
+6  |  Magi Chosen Paths — full names for all three?  |  Path of the Seer (Wisdom) confirmed. Other two need names.
+
+7  |  When exactly was the Youngest Brother expelled from Oreka?  |  Affects Wind-element lore and elf theology.
+
+8  |  What triggered the second assault gate?  |  Side effect is comatose Lord of Stone. Origin unclear.
+
+## **APPENDIX B: WORLDBUILDING GAPS**
+
+**#**  |  **Gap**
+
+1  |  Kin-Sense ‘cannot be suppressed’ social implications — every Kin broadcasts at all times. Espionage, criminals, Anacrusis network.
+
+2  |  Youngest Brother made Elves; Humans were created by a Giant and an Elf with the Youngest Brother’s blessing. Lord of Stone made nothing alone. Theological debate potential remains — why did human creation require three participants?
+
+3  |  Anacrusis/Silent Concord framing of the Deceiver’s Feat — how do they justify using their civilization’s oldest shame?
+
+4  |  Half-Giant social role as detectors (+4 bonus) — creates social pressure and Dómnathar targeting interest.
+
+5  |  Hareem’s cult — CE god of revenge. Worshippers, organized worship, suppression?
+
+6  |  Human Ascended theological mystery — humans produce best AND worst. In-world acknowledgment needed.
+
+7  |  Dómnathar targeting of Magi — 300 years of eliminating lineages (now confirmed). Details of campaign.
+
+8  |  Second assault gate — who or what triggered it? How does it relate to the Gate Plot?
+
+9  |  Wind Lord’s exile — when, why, and what happened to wind-element power in Oreka during his absence?
+
+## **APPENDIX C: RPG PRODUCTION GAPS (EDITOR’S CHECKLIST)**
+
+**#**  |  **Gap**  |  **Status**
+
+1  |  Player-Facing vs. DM-Facing separation  |  Needed
+
+2  |  Character Creation Chapter  |  Needed
+
+3  |  Magic Chapter (spell/element interactions, Abyss Circle, Magi vs. other casters)  |  Needed
+
+4  |  Maps With Scale  |  Needed
+
+5  |  Economy Detail (regional trade goods, exports)  |  Partially Resolved (base OGL currency confirmed; Titanbreed pricing established)
+
+6  |  Language List  |  Needed
+
+7  |  Kin-Sense Character Sheet Presence  |  Needed
+
+8  |  Caster Level Bonus Edge Cases  |  Needed
+
+9  |  Oath-Broken / Severed Rules  |  Needed
+
+10  |  Afterlife / Cosmology  |  Needed
+
+11  |  Seasons / Calendar Detail  |  Needed
+
+12  |  Food / Agriculture / Survival  |  Needed
+
+13  |  Legal Systems  |  Needed
+
+14  |  Low-Level Creature List  |  Needed
+
+15  |  Living NPCs  |  Needed
+
+16  |  Cosmology Beyond Material (planes, Dómnathar homeworld)  |  Needed
+
+17  |  Regional Encounter Tables  |  Needed
+
+18  |  Writer’s Style Guide  |  Needed
+
+19  |  Introductory Adventure  |  Needed
+
+## **APPENDIX D: ALL CHANGES APPLIED IN THIS DOCUMENT**
+
+This Canon Bible v2.5 incorporates all prior corrections plus the following changes from the February 2026 Deepwater Marches editorial session, the March 2026 Eternal Steppe editorial session, and the March 2026 Gatefall Reach editorial session:
+
+**Change**  |  **Source**
+
+Hareem’s alignment: CG → CE  |  Update Tracker
+
+Kin-Sense: 7 → 8 categories (Breach Static added)  |  Update Tracker
+
+Goblins/Wargs/etc: Wild Static → Breach Static  |  Update Tracker
+
+Dómnathar elemental disconnection stated explicitly  |  Update Tracker
+
+Apotheosis: morally neutral + requires all-four-element attunement  |  Update Tracker + Author Ruling
+
+Dómnathar apotheosis plot added  |  Update Tracker
+
+Dómnathar Gate Plot added (Magi capture)  |  Author Ruling (NEW)
+
+Etymology of ‘Deceiver’ — pre-war Kin term  |  Update Tracker
+
+Deceiver’s Feat: full mechanics  |  Update Tracker
+
+Magi independence (overturns Q128)  |  Update Tracker
+
+Three-layer supernatural framework  |  Update Tracker
+
+False Silence: personal cloak, not zone  |  Update Tracker
+
+Kin-sense DCs, racial bonuses, tiered success  |  Update Tracker
+
+Kin-sense immune to anti-magic  |  Update Tracker
+
+Standard magic NOT affected by Dómnathar  |  Author Ruling
+
+Grammar/spelling corrected in Shattering passages  |  Update Tracker
+
+Varkis narrative removed from Shattering  |  Update Tracker
+
+OGL 3.5e currency confirmed  |  Update Tracker
+
+Design Philosophy Principle #1: Dómnathar/Breach exception  |  Update Tracker
+
+World is spherical with two moons  |  Author Ruling
+
+Elemental Lords current status (comatose/active/exiled)  |  Author Ruling (MAJOR NEW CANON)
+
+Second assault gate exists (DM-facing)  |  Author Ruling (MAJOR NEW CANON)
+
+No connection between Elemental Lords and Abyss Circle  |  Author Ruling
+
+Ascended Gods: only possible since Fall of Aldenheim; full gods mechanically  |  Author Ruling
+
+Dómnathar lifespan: up to 1,000 years; pre-invasion leaders alive  |  Author Ruling
+
+Dómnathar did not know Oreka existed until 6 months in  |  Author Ruling
+
+Harmonic Kin-sense: reads race + element; individual recognition like a voice  |  Author Ruling
+
+Breach-origin peoples gain attunement over generations  |  Author Ruling
+
+Breach Static diminishes over generations  |  Author Ruling
+
+Deceiver’s Feat: older than the Shattering  |  Author Ruling
+
+Kin Deceivers active during the Shattering  |  Author Ruling
+
+False giants at Aldenheim gates: CANON  |  Author Ruling
+
+Siege of Aldenheim: dual timeline (player: 42 days; DM: 142 days total)  |  Author Ruling
+
+Farborn: confirmed Lone Titan, Deepwater Marches (Stoneharbor was error)  |  Author Ruling
+
+Farborn: tentatively becoming 5th human kin  |  Author Ruling
+
+Farborn: isolated at Titan, Kin contact via trade meets  |  Author Ruling
+
+Lost Third motivation: desert seemed infinite  |  Author Ruling
+
+Giants: 20–30 ft range confirmed  |  Author Ruling
+
+Halflings: 4 subraces, outsiders cannot tell, Halflings don’t discuss  |  Author Ruling
+
+House Indorach: nihilistic atheists, no patron intentional  |  Author Ruling
+
+Tombs of Kings: one in each of the seven regions  |  Author Ruling
+
+Elemental Tolerance (Resistance 2): intentionally spiritual, does not scale  |  Author Ruling
+
+Dómnathar 300-year Magi elimination campaign: confirmed  |  Author Ruling
+
+Dómnathar-Zhuan: on home world, not in Oreka  |  Author Ruling
+
+Lament of Kings sits atop flattened ruins of Aldenheim  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Mytro added to Kinsweave fallen cities  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Border Kingdoms (Pyree, Andrio, Thrush) are part of the Twelve Kingdoms  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Giant’s Teeth: world-spanning mountain range flanking Infinite Desert, wraps around world  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Kinsweave terrain: northern portion is rugged mountains, river valleys, volcanic zones  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Scorchspires confirmed in Kinsweave region  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Northern Lament Range, Mistveil Ridges, Kailian Sentinels, Seaspray Lagoon: canon Kinsweave geographic features  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Sand Wraiths: Kin spirits (NOT Giant spirits). Found near Giant ruins and sites of great death, including Ashen Hollows  |  Author Ruling (Feb 2026 Tidebloom session)
+
+Human creation: a Giant and an Elf with the Youngest Brother’s blessing  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Sand Warden prestige class added  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Starwind Blades minor faction added  |  Author Ruling (Feb 2026 Kinsweave session)
+
+All Ascended Gods worshiped in Kinsweave  |  Author Ruling (Feb 2026 Kinsweave session)
+
+Mithril Chains: Giant creation forged at the World Forge. Visetri Dwarves and Eruskan Humans maintain and operate them.  |  Author Ruling (Feb 2026 Tidebloom session)
+
+Tidebloom Tomb of Kings: located in the far north near Hillmeet ruins  |  Author Ruling (Feb 2026 Tidebloom session)
+
+Dómnathar refugees: encampment near Hillmeet/Tomb of Kings in far north Tidebloom  |  Author Ruling (Feb 2026 Tidebloom session)
+
+Keeper: Orekan word for Emperor  |  Author Ruling (Feb 2026 Tidebloom session)
+
+Keeper lineage formalized: Pre-Keeper, First Crowned Keeper, Second Crowned Keeper, Third Crowned Keeper. Third was weak and foolish.  |  Author Ruling (Feb 2026 Infinite Desert session)
+
+Lost Third motivation expanded: did not believe desert had an end AND disillusionment/suspicion/betrayal among ranks. Both true.  |  Author Ruling (Feb 2026 Infinite Desert session)
+
+Na’wasua and Taraf-Imro built observatories in the Infinite Desert during the Eke Concordant era  |  Author Ruling (Feb 2026 Infinite Desert session)
+
+Pekakarlik Dwarves and Kovaka Elves are co-stewards of functioning Giant oasis cities in the Infinite Desert  |  Author Ruling (Feb 2026 Infinite Desert session)
+
+Dual elemental patronage at settlements is valid (e.g. Dunewell: Lady of the Sea / Lady of Fire)  |  Author Ruling (Feb 2026 Infinite Desert session)
+
+**Deceiver’s Feat: personal only — cannot mask other creatures, mounts, or companions**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Farborn humans vs. Kin humans sidebar added (Chapter 4a) — clarifies hybrid rules for non-Kin**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Spur Tower confirmed as the Dómnathar hidden stronghold in the Deepwater Marches**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Flamewarg cults: spread from Gatefall Remnant westward into Deepwater Marches over centuries**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Titanbreed horse pricing established: 8,000–15,000 gp (hybrids); purebloods never sold**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Flamewarg Cults faction entry updated: Gatefall origin, spread to Deepwater Marches**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Deepwater Marches settlements added to Chapter 17**  |  **Author Ruling (Feb 2026 Deepwater Marches session)**
+
+**Visetri Dwarves: confirmed as canonical spelling (replaces “Vestri” throughout Bible)**  |  **Author Ruling (Mar 2026 Eternal Steppe session)**
+
+**Each human Kin blames the others for the Shattering of Man — mutual recrimination, no subrace accepts responsibility**  |  **Author Ruling (Mar 2026 Eternal Steppe session)**
+
+**Gilded Standard Company expanded: neutral merc outfit, leader styled as Duke, defected during Running War after Deceivers ordered them as sacrificial screen, contacted Mytrone, flipped to Kin side, 1 in 10 survived**  |  **Author Ruling (Mar 2026 Eternal Steppe session)**
+
+**Gate of Fire: canonical name for the navigable pass in the Gatefall Reach between the desert and the Eternal Steppe**  |  **Author Ruling (Mar 2026 Eternal Steppe session)**
+
+**Wind-Rider / Far Rider dual naming: Pasua call them Far Riders, Mytrone call them Wind-Riders. Both names are canonical and interchangeable for the same ancient brotherhood of Mytroan lancers and Pasua mounted archers.**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Running War: started in the Gatefall Reach when the Wind-Riders intercepted the Lost Third returning south, then escalated across the Eternal Steppe**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**The Scattering was ordered because the Wind-Riders would have crushed the Lost Third entirely without it**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Lost Third march route clarified: north through Oreka with the host, south through Gate of Fire back into Gatefall Reach, then west onto the Eternal Steppe**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Northern two-thirds of host: continued north, devastated Tidebloom settlements, besieged Aldenheim; survivors scattered westward after the Fall**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Scar Road: canonical Gatefall Reach landmark — the path of the original Deceiver march, still visible after 300 years**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Burnt Warrens: canonical Gatefall Reach landmark — underground burrow-forts built by scattered Deceiver warbands after Dark Dawn, extending beneath southeastern foothills and crescent forests**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Windstone Circle: canonical Gatefall Reach landmark — ring of five Giant-era standing stones on the Gatefall Grasslands, shared Mytroan-Pasua sacred site**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Kovaka watchtower destruction reconciled: towers flanking the Silence Breach were destroyed by radial force from the Breach event itself; towers along the Gap and southeastern approaches were destroyed by the advancing Deceiver army**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Gatefall Reach settlements added to Chapter 17 with full detail**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Gatefall Reach Regional Detail section added to Chapter 6**  |  **Author Ruling (Mar 2026 Gatefall Reach session)**
+
+**Flamewarg presence on Eternal Steppe: confirmed consistent — grassland transition zones are part of the steppe region**  |  **Author Ruling (Mar 2026 Eternal Steppe session)**
+
+**Domnathar Elemental Disconnection rewritten: Domnathar possess no Elemental Affinity but are NOT barred from using elemental magic. They are weaker in it than Kin races, not prohibited. Primary magic derives from Abyss Circle. Previous wording replaced.**  |  **Author Ruling (Mar 2026 Canon Bible audit session)**
+
+**Death, Accounting, and Rebirth cycle: full canon section added as Chapter 4b. Three Aspects established — The One Who Listens, The One Who Judges, The One Who Teaches. Aspects are part of each Elemental Lord but separate; unknown to living Kin. Judgment measures intent and action, not outcome. No punishment/reward system — a maturation system. Soul carries forward colored instincts not memories. Cruelty not condemned but shown its full consequence so the soul self-corrects across lifetimes.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Farborn rebirth canon: Farborn have been voluntarily entering the rebirth cycle for 300 years / 6-7 generations. Soul-coloring now producing first Kin-sense flickers in current generation. Will become Fifth House of Human Kin in time. The Three Aspects accept souls from other worlds.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Dómnathar civilization expanded: Chapter 7 now includes 7a (Dómnathar-Zhuan — underground city-states, house rivalry as stabilizer, slave majority population, half-breed second class cherished and despised simultaneously, Abyssal 9 propitiated not loved, gods of hope exist only in slave whispers), 7b (the invasion was an accident — minor lords and ladies sent to die for glory stumbled through a misfired Assault Gate), 7c (cut off — Elemental Lords slammed the gate, Abyssal 9 cannot reach Oreka because Lady of Fire and Tempest hold the door, no reinforcement for 300 years), 7d (every Dómnathar considers themselves Dómnathar without exception — better dead than lesser, concept of soul-growth through rebirth is annihilation to them, tragedy at their core). Campaign implication: they are preparing to receive their gods, not launch another army.**  |  **Author Ruling (Mar 2026 Dómnathar Civilization session)**
+
+**Trade and Currency: Chapter 4e added. Four pillars of long-distance trade — Halflings (open water, undisputed lords of the seas), Eruskan (rivers and waterways, shore to interior), Pekakarlik (shipbuilders and hydraulic infrastructure, the unacknowledged foundation), Visetri (overland routes, everywhere water cannot reach). Village market foundation underlies all. Currency: Titan (gold), Stone (silver), Shard (copper). Giant-era weight standard still in use — never improved upon. Kharazhad produces most trusted coinage. Four pillars are interdependent — one of the strongest forces for post-Shattering Kin cooperation.**  |  **Author Ruling (Mar 2026 Trade session)**
+
+**Coming of Age and education: Chapter 4d added. All Kin share the same educational structure inherited from the Giants through the relay system. Stages: mother (birth to ~7), father (practical years), community school (~7-8), then at 13 three paths — city schools and great institutions, family craft, or apprenticeship. None lesser than others. Birthday is the ceremony — celebrated every year, marks each threshold. The moment of choosing at 13 is the true coming of age. Giant cities and Elven cities of learning are the highest tier. The shared structure is the deepest unifying thread across all Kin cultures.**  |  **Author Ruling (Mar 2026 Coming of Age session)**
+
+**Religion in daily life: Chapter 4c added. Three tiers of practice — (1) Daily: million little thank yous woven into every act from waking to sleeping, no priest required, personal and constant. (2) Local shrines: at brooks, gardens, rivers, lakes, seas, forest edges, aviaries — tended by whoever uses that place, not by clergy. Shrines grow from accumulated gratitude not doctrine. (3) Seasonal solstice gatherings: always held outside in the element being honored — fields, shorelines, bonfires, windy hills. Led by local Magi who study the gods. Element is the temple. DM-facing: three hundred years of prayers to Lords who cannot fully hear them. The wind shrines are still meticulously tended. Something in every prayer feels like a letter that might not be getting through.**  |  **Author Ruling (Mar 2026 Lords in Daily Life session)**
+
+**Taraf-Imro death customs: Taraf-Imro spend their lives building toward their own funeral. Annual Voice of the Dead letter — updated every year while alive, always about how specific people brought them joy and cared for them, read aloud at the funeral so every name is spoken publicly. Deceased dressed in finest, armed with tools of trade. Possessions distributed to those of greatest need so everyone goes home with something. Pyre lit at top of a hill with Voice and farewell letters tucked around it. Feast at the bottom of the hill while fire burns above. Death as completion not loss. Chosen to lead the Eke Concordant because deliberate open love generates trust that cannot be manufactured.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Eruskan culture and death customs: Two groups — Shore Eruskan (farmers, fishermen, chain tenders, close to Oreans, Lord Mayor city structure, remnant of Eke Concordant) and Trader Eruskan (live on ships, port to port, years without land). Both worship Lady of Water and Lord of Stone primarily. Burial: three day vigil, young men row raft past last chain point, raft weighted and sunk to the deep where Water and Earth meet in harmony. Trader version performed at sea with the horizon as the boundary. The young men who row do not come back unchanged. Of all Oreka’s peoples the Eruskan live closest to the rebirth cycle theology without naming it — they experience harmony as daily physical fact.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Orean death customs and governance: Orean are most scattered Human culture — small villages networked into Gatherings. Shared cemeteries across village networks. Runners dispatched day before funeral to entire Gathering. Each Meet sends food gift to grieving family. Long procession from home to cemetery. Every village has a Headman. Every Gathering has a Justice — authority activates only when needed, not permanent. Justice attends every funeral as witness. Grand Meet = all Justices convene in rare crises, choose one trusted person to lead until resolved, then dissolves. Trust earned one funeral at a time. Cannot be corrupted because it does not persist.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Mytroan death customs: Mytroan keen for the dead through vocal exaltation — grief released as pure sound into the open plain. Bodies burned and returned to the four elements. Horses pass father to son, mother to daughter — to the most similar soul not the best rider. Family tends aging horses through their own crossing. Only knowledge that can travel gets written down; everything else passes master to apprentice by demonstration. Camp grieves fully then moves because the Mytroan are the Wind of change.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Halfling death customs: Halflings see death as ephemeral and trust the cycle completely. Funerals are celebrations of life — parties with food the person loved, stories that made them laugh, neighbors invited same as family. The closing sentiment is “welcome home” not farewell. Halflings return through rebirth faster than any other race. Their faith in the cycle is the deepest in Oreka not because of doctrine but because of accumulated repetitions across many lifetimes.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Elven death customs: Elves fade physically as they approach death — body dissolves into Oreka’s elemental magic, spirit walks directly through the veil. No remains. In the months/years beforehand Elves distribute all beloved possessions to whoever is best suited to carry them forward. Receiving a crossing gift from an Elf elder is a great honor — it means the Elf saw you clearly. The grief of loving an Elf is learning to receive beautifully.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Dwarf death customs: Dwarves spend their final years creating a masterwork — the culmination of everything learned across a lifetime. Top apprentice folds master’s ashes into a memorial work after death. Dwarves grieve by speaking names and keeping lineage. In the Summer Lands Dwarves wait longest of all Kin before rebirth — they treat the accounting as an apprenticeship and question the Teachers extensively. Return with deep craft knowledge that surfaces as inexplicable intuition in the next life.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Dómnathar refusal canon: Dómnathar reject the rebirth cycle and return as undead. They never receive the Three Aspects’ teaching. A thousand-year-old Dómnathar is not wise — they are fixed. Patterns never examined, consequences never shown. Why they refuse is reserved for campaign development.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Wind Lord theology: the Youngest Brother is the quiet architect behind Kin civilization. Present at every creation act but never the named creator. Made the Stone Lord believe the succession plan (raising Kin races to replace Giants) was the Stone Lord’s own idea. Not malicious — the Wind Lord genuinely seeks harmony. His exile was a genuine mistake, not a plan. He is the trickster who finally tricked himself.**  |  **Author Ruling (Mar 2026 Death and Grief session)**
+
+**Mytroan adjective standardized: Mytroan is the canonical adjective form (e.g., Mytroan capital, Mytroan lancers). Mytrone remains correct as a noun referring to the people (e.g., the Mytrone).**  |  **Author Ruling (Mar 2026 Canon Bible audit session)**
+
+**Canon Bible version bumped to v2.6**  |  **Author Ruling (Mar 2026 Canon Bible audit session)**
+
+**Creation myth of the Elves updated: Giants carved the statues; the Youngest Brother (Wind Lord) breathed life into them. Both are co-creators. Creation table updated accordingly.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Creation myth of the Dwarves: Lady of Fire attempted the same process as the Giants but fire compressed and shrank the forms, producing Dwarves. Not a failed Elf — a new thing.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Creation myth of the Halflings: The First Jest and the Price of It — full canon myth added to Chapter 2. Lady Tempest created from loneliness using silt, sand, water, and the Youngest Brother’s blessing. First Halfling died mid-joke having made his goddess smile. Now resides in the Palace of Waters. Explains Halfling humor, short stature, and devotion to making others smile.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Dwarf cultural split: Pekakarlik estrangement from Rarozhki and Visetri originated in a trade dispute involving Aldenheim. Visetri caught in the middle through delayed loyalty. Full details reserved for adventure development. A crack in the lore — do not elaborate beyond “something went wrong” in player-facing documents.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Kin migration framework established: all Kin races were raised to sustainable population levels in the Infinite Desert beside the Giants before migrating to elemental home zones. This is why Giant reverence persists across all Kin cultures. Each race migrated sequentially — Elves near-departed before Dwarves were born; a small number of Elves helped raise Dwarves. Same relay pattern continued through Halflings. Humans came last after a long gap.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Human creation expanded: Humans were designed as Giant successors as Thalorien began. Giants and Elves (with help from all Kin) attempted to create a race carrying all four elements who could guide Kin civilization. The critical distinction: Giants were elemental harmony (the held chord); Humans are elemental contrast (the song). Wind of change, rain of renewal, passionate fire, moving earth. They were not what their creators intended — and no one understood this until it was too late.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**The Great Shame of the Elves: DM-facing canon. Elves believe they failed in their duty to guide Humans, and that the suffering of the Dómnathar war is partly their responsibility. This shame drives Elven behavior toward Humans to this day — the patience, the guidance, the refusal to withdraw. Humans are unaware of this. Player-facing: Elves hold a particular unexplained tenderness for Humans. DM-facing: they are still trying to finish a job they believe they failed.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Halfling subraces defined: four subraces, all water element, indistinguishable to outside Kin. Each carries a different shade of Tempest’s loneliness at the time of creation. Water Halflings — tend Giant-forged ships, serve without recognition, loneliness of being unseen. Wind Halflings — travel most, never arrive, loneliness of perpetual motion. Fire Halflings — daring and bold, too much for the room, loneliness of feeling too deeply. Earth Halflings — travel overland, patient, loneliness of waiting. The pilgrimage belongs most naturally to the Earth Halflings.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Halfling pilgrimage canon expanded: the once-in-a-lifetime overland pilgrimage from one sea to the other is a gift to the first Halfling, who died before he could cross the world. Halflings walk overland (not through the Sea Falls) because the pilgrimage goes across the world Tempest spans, not through her domain. It is an act of showing her what the world looks like from the ground.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Mithril Legion full entry added to factions section: Visetri wandering brotherhood, oldest active fighting force on Oreka, organized into shield companies. Left side of every wagon plated in mithril — caravans circle to form a fortress when threatened. Legion doctrine: shield companies advance into hottest fights drawing all attention while caravans circle behind the enemy. Cheerfulness is genuine not a mask — born from road culture where the people in front of you right now are everything. Nothing is worse than the Legion holding long enough for a caravan to circle and prepare. The Legion was never the weapon. They were the door closing.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Three Military Orders formalized in factions section: Mithril Legion (Visetri brotherhood, well-known, player-facing), Steelward Host (Aldenheim defenders, extinct, mostly forgotten), Stone Covenant (Kin-wide army at Kharazhad, public knows it exists but not its connection to the others). Full connection revealed only at full membership.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Kin migration from the Infinite Desert: Elves left first by elemental pull — Kovaka into desert mountains, Na'wasua upward to floating islands, Pasua onto the Eternal Steppe grasslands, Hasura toward rivers and coasts (pushed into canopy by dangerous fauna). Pasua stayed longest to help raise Dwarves, joined by some Hasura and a few Na'wasua. Kovaka visited but did not stay. The relay pattern: each race helped raise the next before fully migrating.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**
+
+**Dwarf elemental origin and culture: Dwarves absorbed Earth and Water influences during their raising (primarily by Pasua and Hasura Elves). This produced the stoic endurance that defines all three Dwarf cultures. Even the wandering Visetri express this as immovable loyalty and the Legion's forward advance — endurance made mobile.**  |  **Author Ruling (Mar 2026 Migration and Mythology session)**

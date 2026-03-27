@@ -380,5 +380,38 @@ CLASSES = {
             14: ["Bonus Feat"],
             20: ["Bonus Feat"]
         }
+    },
+    "Magi": {
+        "alignment": "Any",
+        "hit_die": 6,
+        "skill_points": 4,
+        "class_skills": [
+            "Concentration", "Craft (any)", "Decipher Script", "Knowledge (arcana)", "Knowledge (history)",
+            "Knowledge (nature)", "Knowledge (the planes)", "Profession (any)", "Spellcraft", "Diplomacy"
+        ],
+        "bab_progression": "3/4",
+        "save_progression": {"fort": "poor", "ref": "poor", "will": "good"},
+        "spellcasting": {
+            "type": "arcane",
+            "ability": "Int",
+            "start_level": 1,
+            "spells_per_day": {
+                1: {0: 5, 1: 3},
+                2: {0: 6, 1: 4},
+                3: {0: 6, 1: 4, 2: 3},
+                4: {0: 6, 1: 5, 2: 4},
+                5: {0: 6, 1: 5, 2: 4, 3: 3}
+            }
+        },
+        "features": {
+            1: ["Chosen Path", "Elemental Attunement"],
+            3: ["Path Ability I"],
+            5: ["Elemental Resistance +2"],
+            7: ["Path Ability II"],
+            10: ["Elemental Mastery"],
+            13: ["Path Ability III"],
+            15: ["Greater Elemental Resistance +5"],
+            20: ["Elemental Transcendence"]
+        }
     }
 }

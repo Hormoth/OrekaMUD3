@@ -113,6 +113,12 @@ def send_tell(sender, recipient, message):
     if getattr(recipient, 'is_ai', False):
         return False, f"{recipient.name} cannot receive tells."
 
+    # Check if recipient has the sender on ignore (System 39)
+    ignored = getattr(recipient, 'ignored_players', [])
+    if sender.name.lower() in [n.lower() for n in ignored]:
+        # Silently succeed from sender's perspective; recipient doesn't see it
+        return True, f"{COLORS['tell']}[Tell] You -> {recipient.name}: {message}{COLORS['reset']}"
+
     writer = get_player_writer(recipient)
     if not writer:
         return False, f"{recipient.name} is not connected."
@@ -123,6 +129,15 @@ def send_tell(sender, recipient, message):
 
     # Store last tell sender for 'reply' command
     recipient.last_tell_from = sender.name
+
+    # System 40: AFK auto-reply
+    if getattr(recipient, 'afk', False):
+        afk_msg = getattr(recipient, 'afk_message', '')
+        reply_text = f"{recipient.name} is AFK."
+        if afk_msg:
+            reply_text += f" ({afk_msg})"
+        afk_formatted = f"{COLORS['tell']}[Tell] {recipient.name} is AFK: {afk_msg or 'Away from keyboard.'}{COLORS['reset']}"
+        send_to_player(sender, afk_formatted)
 
     return True, f"{COLORS['tell']}[Tell] You -> {recipient.name}: {message}{COLORS['reset']}"
 
@@ -163,6 +178,11 @@ def format_guild(speaker, guild_name, message):
 def format_admin(speaker, message):
     """Format an admin broadcast message."""
     return f"{COLORS['admin']}[ADMIN] {speaker.name}: {message}{COLORS['reset']}"
+
+
+def format_newbie(speaker, message):
+    """Format a newbie channel message."""
+    return f"\033[1;32m[Newbie] {speaker.name}: {message}{COLORS['reset']}"
 
 
 # Helper to find a player by name

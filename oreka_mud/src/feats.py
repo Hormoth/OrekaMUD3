@@ -455,6 +455,29 @@ def effect_deadly_aim(user, context=None, **kwargs):
     return value
 
 
+def effect_weapon_finesse(user, context=None, **kwargs):
+    """Weapon Finesse: Use Dex instead of Str for attack rolls with light weapons.
+    The actual Dex-vs-Str substitution is handled directly in calculate_attack_bonus().
+    This effect function exists for completeness."""
+    return kwargs.get('value', 0)
+
+
+def effect_two_weapon_defense(user, context=None, **kwargs):
+    """Two-Weapon Defense: +1 shield bonus to AC when wielding two weapons."""
+    value = kwargs.get('value', 0)
+    if context == 'ac':
+        if hasattr(user, 'equipment'):
+            off_hand = user.equipment.get('off_hand')
+            if off_hand and getattr(off_hand, 'damage', None):  # Off-hand is a weapon
+                return value + 1
+    return value
+
+
+def effect_improved_unarmed_strike(user, context=None, **kwargs):
+    """Improved Unarmed Strike: Unarmed attacks don't provoke AoO — checked via has_feat() in combat."""
+    return kwargs.get('value', 0)
+
+
 def effect_two_weapon_fighting(user, context=None, **kwargs):
     """Two-Weapon Fighting: Reduce two-weapon penalties."""
     value = kwargs.get('value', 0)
@@ -777,6 +800,47 @@ def effect_trample(user, context=None, **kwargs):
     return value
 
 
+def effect_far_shot(user, context=None, **kwargs):
+    """Far Shot: Marker for reduced range penalty (50% longer range increment for projectiles)."""
+    value = kwargs.get('value', 0)
+    if context == 'range_increment':
+        return int(value * 1.5)
+    if context == 'far_shot':
+        return True
+    return value
+
+
+def effect_improved_precise_shot(user, context=None, **kwargs):
+    """Improved Precise Shot: Marker for ignoring less-than-total cover/concealment."""
+    value = kwargs.get('value', 0)
+    if context == 'ignore_cover':
+        return True
+    return value
+
+
+def effect_mounted_archery(user, context=None, **kwargs):
+    """Mounted Archery: Halve penalty for ranged attacks while mounted."""
+    value = kwargs.get('value', 0)
+    if context == 'mounted_ranged_penalty':
+        return value // 2
+    return value
+
+
+def effect_enlarge_spell(user, context=None, **kwargs):
+    """Enlarge Spell: Marker for doubled spell range."""
+    value = kwargs.get('value', 0)
+    if context == 'spell_range':
+        return value * 2
+    if context == 'enlarge_spell':
+        return True
+    return value
+
+
+def effect_item_creation(user, context=None, **kwargs):
+    """Item creation feat: No runtime effect — prerequisite only."""
+    return kwargs.get('value', 0)
+
+
 # =============================================================================
 # The FEATS Dictionary
 # =============================================================================
@@ -1051,7 +1115,7 @@ FEATS: Dict[str, Feat] = {
         "Weapon Finesse",
         "Use Dex instead of Str for attack rolls with light weapons.",
         prerequisites=[{'bab': 1}],
-        effect=None,  # Handled in attack calculations
+        effect=effect_weapon_finesse,
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1138,7 +1202,7 @@ FEATS: Dict[str, Feat] = {
         "Improved Unarmed Strike",
         "Unarmed attacks deal lethal damage, no AoO provoked.",
         prerequisites=[],
-        effect=None,
+        effect=effect_improved_unarmed_strike,
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1188,7 +1252,7 @@ FEATS: Dict[str, Feat] = {
         "Improved Precise Shot",
         "Ignore less than total cover/concealment.",
         prerequisites=[{'ability': ('Dex', 19)}, {'feat': 'Precise Shot'}, {'bab': 11}],
-        effect=None,
+        effect=effect_improved_precise_shot,
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1212,7 +1276,7 @@ FEATS: Dict[str, Feat] = {
         "Shot on the Run",
         "Move before and after ranged attack.",
         prerequisites=[{'ability': ('Dex', 13)}, {'feat': 'Point Blank Shot'}, {'feat': 'Dodge'}, {'feat': 'Mobility'}, {'bab': 4}],
-        effect=None,
+        effect=lambda user, **kw: kw.get('value', 0),
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1220,7 +1284,7 @@ FEATS: Dict[str, Feat] = {
         "Far Shot",
         "Increase range increment by 50% (projectile) or 100% (thrown).",
         prerequisites=[{'feat': 'Point Blank Shot'}],
-        effect=None,
+        effect=effect_far_shot,
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1254,7 +1318,7 @@ FEATS: Dict[str, Feat] = {
         "Two-Weapon Defense",
         "+1 shield bonus to AC when wielding two weapons.",
         prerequisites=[{'feat': 'Two-Weapon Fighting'}],
-        effect=None,
+        effect=effect_two_weapon_defense,
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1282,7 +1346,7 @@ FEATS: Dict[str, Feat] = {
         "Mounted Archery",
         "Halve penalty for ranged attacks while mounted.",
         prerequisites=[{'skill': ('Ride', 1)}, {'feat': 'Mounted Combat'}],
-        effect=None,
+        effect=effect_mounted_archery,
         feat_type="combat",
         is_fighter_bonus=True
     ),
@@ -1353,7 +1417,7 @@ FEATS: Dict[str, Feat] = {
         "Enlarge Spell",
         "Double spell range (+1 spell level).",
         prerequisites=[],
-        effect=None,
+        effect=effect_enlarge_spell,
         feat_type="metamagic"
     ),
     "Extend Spell": Feat(
@@ -1411,56 +1475,56 @@ FEATS: Dict[str, Feat] = {
         "Brew Potion",
         "Create potions of spells up to 3rd level.",
         prerequisites=[{'caster_level': 3}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Craft Magic Arms and Armor": Feat(
         "Craft Magic Arms and Armor",
         "Create magic weapons, armor, and shields.",
         prerequisites=[{'caster_level': 5}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Craft Rod": Feat(
         "Craft Rod",
         "Create magic rods.",
         prerequisites=[{'caster_level': 9}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Craft Staff": Feat(
         "Craft Staff",
         "Create magic staves.",
         prerequisites=[{'caster_level': 12}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Craft Wand": Feat(
         "Craft Wand",
         "Create wands.",
         prerequisites=[{'caster_level': 5}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Craft Wondrous Item": Feat(
         "Craft Wondrous Item",
         "Create miscellaneous magic items.",
         prerequisites=[{'caster_level': 3}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Forge Ring": Feat(
         "Forge Ring",
         "Create magic rings.",
         prerequisites=[{'caster_level': 12}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
     "Scribe Scroll": Feat(
         "Scribe Scroll",
         "Create scrolls of known spells.",
         prerequisites=[{'caster_level': 1}],
-        effect=None,
+        effect=effect_item_creation,
         feat_type="item_creation"
     ),
 
@@ -1476,7 +1540,7 @@ FEATS: Dict[str, Feat] = {
         "Extra Turning",
         "+4 turn/rebuke undead attempts per day.",
         prerequisites=[{'class_feature': 'Turn Undead'}],
-        effect=None,
+        effect=lambda user, **kw: kw.get('value', 0) + (4 if kw.get('context') == 'turn_attempts' else 0),
         feat_type="general",
         stackable=True
     ),
@@ -1484,7 +1548,7 @@ FEATS: Dict[str, Feat] = {
         "Improved Turning",
         "+1 effective level for turning undead.",
         prerequisites=[{'class_feature': 'Turn Undead'}],
-        effect=None,
+        effect=lambda user, **kw: kw.get('value', 0) + (1 if kw.get('context') == 'turn_level' else 0),
         feat_type="general"
     ),
 }

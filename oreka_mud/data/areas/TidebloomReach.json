@@ -1,0 +1,2982 @@
+[
+  {
+    "vnum": 6000,
+    "name": "Tidequay Market",
+    "description": "The broad stone plaza of Tidequay Market bustles with the commerce of Branmill Cove, its cobblestones worn smooth by generations of boots and barrow-wheels. Stalls of grain, dried fish, and Riverstone Amulets crowd the space, and the scent of salt and fresh-baked bread mingles in the air. Merchants call out prices in three languages while Pekakarlik Dwarves haul chain-rigged crates from the dockside below. The Mithril Chain anchor-posts rise at the plaza's southern edge, rune-inscribed iron gleaming even on overcast days.",
+    "exits": {
+      "north": 6001,
+      "east": 6002,
+      "south": 6003,
+      "west": 6004,
+      "northeast": 6011,
+      "northwest": 6026
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6001,
+    "name": "Concordant Hall - Entrance",
+    "description": "Tall stone doors carved with waves and sheaves of grain mark the entrance to Concordant Hall, the seat of Branmill Cove's three-Reeve council. The lintel bears the motto of the Eke Concordant in worn High Kin script: 'One Chain, Many Hands.' Two civic guards stand at their posts with the practiced stillness of those who have heard every argument twice. The hall's facade is imposing but not unwelcoming, its stone pale and dressed with the precision that marks Pekakarlik work.",
+    "exits": {
+      "south": 6000,
+      "in": 6002
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6002,
+    "name": "Concordant Hall - Council Chamber",
+    "description": "The main chamber of Concordant Hall rises two stories, its walls covered in murals depicting the Eke Concordant era: Halflings and Dwarves working the tidal fields together, barges riding high-water storms along the Mithril Chains, and the great Tide Turn harvest. On the east wall, a new mosaic added since the Deceivers' War shows Cinvarin's five witnesses, their sacrifice rendered in gold and crimson tile. Three oak chairs face a gallery where citizens may speak, and every word spoken here echoes with the weight of what disunity cost this region.",
+    "exits": {
+      "out": 6001,
+      "north": 6005,
+      "south": 6029
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6003,
+    "name": "Runedock - Chain Anchorage",
+    "description": "The Runedock smells of iron, brine, and the distinctive mineral tang of active rune-work. Massive Mithril Chain links as thick as a dwarf's forearm descend from iron stanchions into the Kailian's shallows, each link inscribed with elemental runes that have held fast since the Age of Giants. Pekakarlik engineers move along the dock in small groups, checking tension gauges and rubbing maintenance oil into the rune-channels. A shrine to Gonmareck Ritler stands between two forge-stations, a hammer-and-chain motif carved into its base.",
+    "exits": {
+      "north": 6000,
+      "east": 6006,
+      "west": 6007,
+      "south": 6034
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 6004,
+    "name": "Seawind Spire - Base",
+    "description": "The square base of Seawind Spire is built from the same pale stone as Concordant Hall, its corners reinforced with iron brackets stamped with wave-patterns. A duty roster is chalked on a board beside the door, and a rack of signal horns hangs inside the entrance passage. The spire overlooks the lake approaches and the chain-fields to the north, and the watchmen stationed here take their work seriously \u00e2\u20ac\u201d a dead-Kin-sense report from any direction triggers an immediate alert to the Reeve Council.",
+    "exits": {
+      "east": 6000,
+      "up": 6008,
+      "west": 6022
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6005,
+    "name": "Concordant Hall - Records Annex",
+    "description": "Shelves of bound ledgers and rolled wind-silk scrolls line every wall of the Records Annex, organized by year and season according to the tidal calendar. The annex smells of lamp oil and old vellum, and a single archivist works at a slanted desk by the window, cross-referencing chain-maintenance logs with harvest yield figures. Old maps of the Kailian chain-field positions are pinned to a cork board, some showing anchor points that have since been lost or shifted. The oldest records, sealed behind glass, date to the first generation after the Eke Concordant.",
+    "exits": {
+      "south": 6002
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6006,
+    "name": "Runedock - Eastern Quay",
+    "description": "Planting barges sit in their low-water berths along the eastern quay, their flat hulls designed to ride the Mithril Chains down to the exposed seabed when the Kailian recedes. The chain-guides \u00e2\u20ac\u201d iron rings bolted to each barge's hull \u00e2\u20ac\u201d are inspected daily, and any that show wear are replaced before the next Tide Turn. A group of Eruskan field-workers is loading seed-sacks into a barge's hold, calling measurements to a Pekakarlik engineer who tallies on a wax tablet.",
+    "exits": {
+      "west": 6003,
+      "south": 6009
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 6007,
+    "name": "Runedock - Western Quay",
+    "description": "The western quay handles the heavier freight: grain sacks, fish barrels, and the large crates of Riverstone Amulets that represent Branmill Cove's most valuable export. A crane operated by a chain-and-counterweight system lifts loads from barges to the dock-level warehouse behind. The crane's mechanism bears Pekakarlik maker-marks three generations old, maintained and repaired but never replaced. The rune-anchor for Chain Seven rises from the water here, its inscriptions worn but still faintly glowing with earth-energy.",
+    "exits": {
+      "east": 6003,
+      "south": 6010
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 6008,
+    "name": "Seawind Spire - Watchtower",
+    "description": "From the top of Seawind Spire, the full expanse of the northern Kailian stretches out under open sky. On clear days the far shore is just visible as a dark line, and the tidal flats to the northwest shine silver when the water is low. The watchman on duty sweeps the horizon with a brass glass, noting the position of chain-barges and any vessel moving without the standard flag-pattern. A wind-gauge and rain-gauge are mounted on the parapet, their readings logged every two hours. The view is commanding, and the wind up here is constant.",
+    "exits": {
+      "down": 6004
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6009,
+    "name": "Tidequay Fishers' Row",
+    "description": "A narrow lane behind the eastern quay where the fishing families of Branmill Cove keep their tackle, their mending frames, and their drying racks. Nets hung between posts create a canopy that filters the light into shifting green patterns. The smell of fish and rope-tar is overwhelming here, but the fishers themselves seem not to notice, working with the swift economy of people who have done this work since childhood. A small hearth-niche in the lane's end wall holds a clay figure of Semyon the Hearth Mother, wreathed in dried flowers.",
+    "exits": {
+      "north": 6006
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6010,
+    "name": "Runedock Warehouse",
+    "description": "The warehouse behind the western quay is a long, low building with thick stone walls that keep the interior cool even in summer. Aisles of stacked crates and barrels run its length, organized by cargo type. A night-watch roster is posted at the door, and the padlocks on the high-value storage room are Pekakarlik work \u00e2\u20ac\u201d triple-tumbler mechanisms that a common thief would struggle with. Dockhands work through the day in organized shifts, their movements coordinated by a Halfling foreman who tracks inventory on a hanging abacus.",
+    "exits": {
+      "north": 6007
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6011,
+    "name": "Branmill Cove - Harbor Street",
+    "description": "Harbor Street runs along the waterfront, connecting the Runedock to the Tidequay Market and the fishing quarter beyond. The street is broad enough for two loaded carts to pass, its surface paved with flat lake-stones fitted tightly together. Lamp-posts at regular intervals burn fish-oil through the night, and benches set against the low sea-wall give off-duty dockhands a place to watch the lake. The Mithril Chains are visible where they enter the water, and children sometimes dare each other to climb the chain-stanchions.",
+    "exits": {
+      "north": 6000,
+      "east": 6012,
+      "west": 6013,
+      "down": 6021,
+      "south": 6036
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6012,
+    "name": "Branmill Cove - East Quarter",
+    "description": "The east quarter of Branmill Cove is a residential neighborhood of stone-and-timber houses with slate roofs, their gardens facing narrow lanes that run perpendicular to the lake. Hasura Elf residents keep window-boxes of flowering herbs, and the lanes here smell of rosemary and woodsmoke in the evening. A small school occupies a converted warehouse at the quarter's center, and the sound of children reciting the tidal calendar in unison drifts through its open windows on still mornings.",
+    "exits": {
+      "west": 6011,
+      "north": 6014
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6013,
+    "name": "Branmill Cove - West Quarter",
+    "description": "The west quarter hugs the base of the bluffs where the Kailian's old high-water mark has stained the stone a dark mineral grey. The houses here are older than elsewhere in the city, their walls thick and their windows small \u00e2\u20ac\u201d built in the era when storms off the lake were worse and the high-water season flooded the lower lanes. A community well stands at the quarter's center, its stonework carved with the names of families who have drawn water here for five generations. The smell of good ale drifts from a taproom on the corner.",
+    "exits": {
+      "east": 6011,
+      "north": 6015
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6014,
+    "name": "Branmill Cove - North Lane",
+    "description": "North Lane angles away from the lake toward the higher ground where the city's wealthier residents built their homes. The lane is shaded by mature linden trees whose roots have buckled sections of the paving, and the houses behind their garden walls are larger and more decorated than those near the dock. A stone fountain at the lane's midpoint depicts a barge riding a chain in stylized relief, the water flowing from a pipe cut to look like a rune-anchor. At Tidemill Festival, this fountain is garlanded with flowers and grain.",
+    "exits": {
+      "south": 6012,
+      "west": 6015,
+      "north": 6016
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6015,
+    "name": "Branmill Cove - Reeve's Walk",
+    "description": "A broad, tree-lined promenade that connects the Concordant Hall quarter to the residential north, Reeve's Walk is where the citizens of Branmill Cove take their evening air and where informal political business has been conducted for generations. Carved stone benches bear dedications to past Reeves, and a bulletin board near the walk's center posts civic announcements, trade regulations, and festival schedules. In the days before the Deceivers' War, three of the notices still pinned here were posted by the previous generation of Reeves and left up as a reminder.",
+    "exits": {
+      "east": 6014,
+      "south": 6013,
+      "north": 6017,
+      "west": 6032
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6016,
+    "name": "Branmill Cove - Temple Row",
+    "description": "A short street lined with three modest temples: one to the Lady of the Sea, one to Kaile'a Mistress of Waves, and one to Cinvarin the Five Witnesses, all built within a generation of each other. The architecture of all three is similar \u00e2\u20ac\u201d pale stone, arched windows, and iron door-rings shaped like waves or chains \u00e2\u20ac\u201d reflecting a community that honors its new Ascended Gods without abandoning the old Elemental Lords. A shared garden between the temples is tended by a rotating roster of novices, its beds planted with lake-iris and salt-grass.",
+    "exits": {
+      "south": 6014,
+      "east": 6018,
+      "west": 6042
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6017,
+    "name": "Branmill Cove - Grain Market",
+    "description": "A secondary market north of the main Tidequay Plaza, the Grain Market specializes in the processed products of the tidal harvest: flour, dried grain, barley malt, and the pressed oil extracted from lake-side seed plants. The smell is warm and dusty, and the scales here are certified by the Reeve Council every season. Eruskan Human merchants dominate this market, their families having worked the tidal fields since the Concordant era. Several have posted their Tide Turn harvest pledges on a board, a public commitment that holds real social weight.",
+    "exits": {
+      "south": 6015,
+      "east": 6016
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6018,
+    "name": "Branmill Cove - Aleworks",
+    "description": "The aleworks district sits on the city's northeast edge where the prevailing wind carries its yeasty smell away from the residential quarters. Three breweries operate here, their copper kettles and fermentation vats visible through open warehouse doors. Branmill Cove's lake-barley ale is exported westward through Kinsweave, and the head brewer of the largest brewery is a Halfling woman whose family has held the recipe for six generations. Empty barrels stamped with the Branmill mark wait in stacks outside, ready for the next caravan departure.",
+    "exits": {
+      "west": 6016,
+      "south": 6019
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6019,
+    "name": "Branmill Cove - Smiths' Quarter",
+    "description": "The ring of forges and workshops that occupies the city's northeast corner produces the iron fittings, chain-links, and rune-maintenance tools that keep the Mithril Chain system functional. The Pekakarlik smiths here are not the Giants who forged the original chains \u00e2\u20ac\u201d no living smith could replicate that work \u00e2\u20ac\u201d but they are expert maintainers, and their repair-links and anchor-brackets keep the ancient system running. A forge-master's board outside the main workshop lists the day's jobs and the estimated completion times.",
+    "exits": {
+      "north": 6018,
+      "west": 6020
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6020,
+    "name": "Branmill Cove - Market Square Annex",
+    "description": "An overflow market space on the Tidequay Market's western side, the Annex handles the seasonal glut of goods that won't fit the main plaza. At peak Tide Turn, this space is so densely packed with stalls that movement requires patience and elbow-work. At other times it is quieter, hosting a twice-weekly livestock market and a daily gathering of traveling merchants who cannot afford permanent stall space. The Reeve Council taxes the Annex at a lower rate than the main market, making it a proving ground for new traders.",
+    "exits": {
+      "east": 6000,
+      "north": 6019
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6021,
+    "name": "Branmill Cove - Lakeside Steps",
+    "description": "Wide stone steps cut into the lakeside bluff descend from Harbor Street to the water's edge, where the Kailian laps at the stone with a soft, steady sound. Fishing boats tie up at iron rings set into the steps, and at low water the dark silt of the tidal flats is visible below, already marked with the groove-lines left by chain-guided barges. The steps are old \u00e2\u20ac\u201d Giant-old, some say, though they have been repaired and extended by every generation since. At dawn and dusk they are a gathering place for those who want to watch the light on the water.",
+    "exits": {
+      "up": 6011,
+      "east": 6039
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6022,
+    "name": "Branmill Cove - Halfling Quarter",
+    "description": "A cluster of lower-ceilinged buildings near the market's western edge, the Halfling Quarter is the most cheerfully decorated neighborhood in Branmill Cove. Window boxes overflow with bright flowers, and the lane is strung with colored paper lanterns that sway in the lake breeze. The tavern here \u00e2\u20ac\u201d the Tidemill Arms \u00e2\u20ac\u201d is famous for its pie and its noise, and the sound of singing on festival nights carries across half the city. Halfling children race through the lanes with the confidence of people who have never worried much about the height of a doorframe.",
+    "exits": {
+      "east": 6004,
+      "north": 6023
+    },
+    "flags": [
+      "safe",
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 6023,
+    "name": "Tidemill Arms Tavern",
+    "description": "The Tidemill Arms is everything a waterfront tavern ought to be: loud, warm, slightly too crowded, and smelling of excellent food. Low beams force taller patrons to duck, and the tables are scarred by generations of drink-rings and knife-games. A painted mural of the first Tidemill Festival covers the back wall, showing Halflings and Dwarves dancing on a grain-covered barge while the Mithril Chains gleam in painted moonlight. The innkeeper, a broad-shouldered Halfling woman, runs the room with cheerful authority and an excellent memory for who still owes a tab.",
+    "exits": {
+      "south": 6022,
+      "up": 6024,
+      "east": 6025
+    },
+    "flags": [
+      "safe",
+      "tavern",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6024,
+    "name": "Tidemill Arms - Common Room Loft",
+    "description": "The loft above the Tidemill Arms' main room is where traveling merchants and off-duty sailors sleep when the weather is bad or the rooms are full. Straw pallets are lined up along the slanted walls, and pegs for hanging gear are spaced every few feet. A small window faces the lake, and on clear nights the distant glow of the Runedock lanterns is visible. The loft is not comfortable exactly, but it is dry, and the noise from below fades after the second hour of ale.",
+    "exits": {
+      "down": 6023
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6025,
+    "name": "Branmill Cove - Chapel of the Concordant",
+    "description": "A modest civic chapel maintained by the Reeve Council, the Chapel of the Concordant serves those who hold to no specific faith but honor the idea of unity that the Eke Concordant once represented. Simple wooden benches face an altar decorated with four elemental symbols and the chain-link device of the Concordant. The chapel is open at all hours, and it is not unusual to find citizens here at midnight, sitting in the dark with the lamp burning low, working through problems that have no easy answer.",
+    "exits": {
+      "west": 6023,
+      "south": 6022
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6026,
+    "name": "Branmill Cove - Merchant Row",
+    "description": "A street of permanent shops facing the Tidequay Market's north side, Merchant Row is where Branmill Cove's most established traders keep their premises. Goods from across the Kailian region are available here: wind-silk from Tiravel, woodwind instruments from Myruvane, river-spears from Darnavar, and the Riverstone Amulets that are the region's most recognized export. The shopfronts are well-maintained, their signs freshly painted each spring, and the merchants who own them have council connections that keep their licenses current.",
+    "exits": {
+      "south": 6000,
+      "east": 6027,
+      "west": 6028,
+      "north": 6038
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6027,
+    "name": "Branmill Cove - Amulet Workshop",
+    "description": "The workshop where Branmill Cove's Riverstone Amulets are crafted occupies a converted boathouse near the Runedock. A Pekakarlik artisan and two Eruskan apprentices work at stone-cutting and rune-inscription benches, shaping the smooth lake-pebbles into amulets and pressing them with the elemental rune-patterns that give them their minor magical properties. The floor is covered in stone-dust and the air smells of mineral oil. Finished amulets dry on wooden racks before being packaged for export, and the best pieces \u00e2\u20ac\u201d those with particularly clear rune-inscription \u00e2\u20ac\u201d are set aside for direct sale.",
+    "exits": {
+      "west": 6026
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6028,
+    "name": "Branmill Cove - Cartographer's Office",
+    "description": "A narrow but well-organized office maintained by the Reeve Council's official cartographer, this space holds copies of every map of the Kailian chain-fields, tidal approaches, and regional trade routes produced in Branmill Cove's history. The cartographer, an elderly Hasura Elf with ink-stained fingers, charges a modest fee for copies and a higher one for updates reflecting recent chain-anchor shifts. The oldest map on the wall, framed behind glass, shows four more chain-anchor points than are currently in service \u00e2\u20ac\u201d the ones sabotaged or lost in the Deceivers' War.",
+    "exits": {
+      "east": 6026
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6029,
+    "name": "Branmill Cove - Council Courtyard",
+    "description": "The open courtyard behind Concordant Hall is used for public assemblies when the chamber inside is too small for the crowd. A raised speaking-stone at the courtyard's center is worn smooth where generations of citizens and Reeves have stood to address the gathered community. The courtyard is also used for the public posting of Reeve decisions, trade regulations, and tax notices, and on Tidemill Festival the space is cleared for dancing that goes until the fish-oil lamps run dry. Ivy covers the hall's rear wall, its tendrils framing a carved relief of the original nine Concordant settlements.",
+    "exits": {
+      "north": 6002,
+      "east": 6030
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6030,
+    "name": "Branmill Cove - Healer's Hall",
+    "description": "Branmill Cove's healers maintain a combined clinic and apothecary in a long building adjacent to the Concordant Hall courtyard. The front room handles day-to-day injuries and illness; the back, screened by a heavy curtain, is used for surgical work and recovery. The healers are a mixed group \u00e2\u20ac\u201d a Hasura Elf herbalist, two Eruskan Human clerics, and a Pekakarlik physic whose specialty is treating the crush-injuries common to dock work. The scent of medicinal herbs and clean linen pervades the space.",
+    "exits": {
+      "west": 6029,
+      "north": 6031
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6031,
+    "name": "Branmill Cove - Armorer's Lane",
+    "description": "A short lane between the Healer's Hall and the city wall where three armorers and a weaponsmith keep their shops. The work here is practical rather than ornate \u00e2\u20ac\u201d ring-mail and scale suits for dock-guards and chain-watchmen, with spare capacity for adventurers who need a quick repair. A sign in the weaponsmith's window reads 'River Spears \u00e2\u20ac\u201d Commissioned from Darnavar, inquire within,' and a crate of chain-maintenance tools sits ready for collection by the Runedock.",
+    "exits": {
+      "south": 6030
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6032,
+    "name": "Branmill Cove - City Gate - North",
+    "description": "The north gate of Branmill Cove is built into a section of old wall that predates the current city by at least two centuries, its stones larger and more crudely fitted than the dressed work around it. A guard post on each side is staffed by two civic guards who check the travel-tokens of those entering and log departures in a road-book. The gate road leads north toward the Whispering Tidewoods and, eventually, to the approaches of the Ashen Hollows beyond.",
+    "exits": {
+      "south": 6015,
+      "north": 6300
+    },
+    "flags": [
+      "gate"
+    ]
+  },
+  {
+    "vnum": 6033,
+    "name": "Branmill Cove - City Gate - East",
+    "description": "The east gate faces the trade road that connects Branmill Cove to Velathenor along the southern Kailian shore. The gate is busier than the north, and a small customs shed beside it is staffed by a Reeve-appointed assessor who levies the incoming goods tax. Outbound caravans check out here, their manifests stamped with the Branmill seal. The view east along the road shows the first patches of Whispering Tidewood canopy, the forest's humid breath visible as a faint haze in warm weather.",
+    "exits": {
+      "west": 6012,
+      "east": 6045
+    },
+    "flags": [
+      "gate"
+    ]
+  },
+  {
+    "vnum": 6034,
+    "name": "Branmill Cove - Dockmaster's Office",
+    "description": "A two-room building at the Runedock's landward end, the Dockmaster's office handles berth assignments, chain-maintenance scheduling, and the barge-use permits that every planting-season operator must hold. The Dockmaster is a practical Eruskan Human in her fifties, a former barge operator who ran the chain-fields for fifteen years before taking the desk job. Her wall holds a tide calendar of the next two years and a list of every chain-anchor point with its last inspection date marked in red for overdue and black for current.",
+    "exits": {
+      "north": 6003,
+      "east": 6035,
+      "south": 6043
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6035,
+    "name": "Branmill Cove - Chain-Keeper's Lodge",
+    "description": "The residence and working quarters of the senior Pekakarlik chain-keeper, a hereditary position that has passed through the Splitlock family for four generations. The lodge smells of metal polish and rune-chalk, and its shelves hold hand-copied diagrams of every chain-anchor in the Branmill section of the Mithril Chain system. Corvin Splitlock, the current keeper, is a compact Dwarf with callused hands and a permanent squint from working in close light. He does not welcome interruptions, but those who arrive with a genuine chain-maintenance problem find him generous with his time.",
+    "exits": {
+      "west": 6034
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6036,
+    "name": "Branmill Cove - Tidal Fields Overlook",
+    "description": "A raised embankment at the city's southern edge overlooks the tidal fields \u00e2\u20ac\u201d the exposed Kailian seabed where the harvest is sown each season. At low water, the dark silt is furrowed in long parallel rows by the barge-mounted plows guided along the Mithril Chains, and the green of early grain shoots is visible from here when the season advances. At high water, the same ground is invisible beneath the lake, and the barges sit above it like patient birds. The Tide Turn ceremony is observed from this embankment by the whole city.",
+    "exits": {
+      "north": 6011,
+      "east": 6037,
+      "south": 6044
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6037,
+    "name": "Branmill Cove - South Shore Path",
+    "description": "A footpath along the lake's southern shore connects the Tidal Fields Overlook to the Runedock via the lakeside steps, passing through a stretch of reed-beds where the chain-anchor foundations are visible at low water. The path is narrow and sometimes muddy, and the reeds screen it from the city above, making it a favored route for those who want to move without being observed. The Mithril Chains pass directly overhead at one point, and on windy days the great links shift and hum with a low resonance that seems to come from the rune-inscriptions themselves.",
+    "exits": {
+      "west": 6036,
+      "east": 6021,
+      "north": 6328
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6038,
+    "name": "Branmill Cove - Guild Hall",
+    "description": "The Merchant and Craft Guild of Branmill Cove occupies a substantial stone building set between Merchant Row and the Council Courtyard. The guildhall serves as a dispute-resolution center, a contract registry, and a gathering space for the city's organized trades. Membership plaques for every guild branch line the entrance hall, and a locked room at the back holds the guild's arbitration records going back to the Concordant era. The Guild-master, a Halfling named Perrin Saltworth, is elected by member vote every three years and has held the position for nine.",
+    "exits": {
+      "north": 6026,
+      "west": 6029
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6039,
+    "name": "Branmill Cove - Fishmonger's Wharf",
+    "description": "The fishmonger's wharf extends from the lakeside steps eastward, its stone surface perpetually slick with water and fish-scales. The morning catch is unloaded here before dawn, sorted on long gutting tables, and either salted for export, sold fresh to market-buyers, or sent to the smoke-houses on the east shore. The smell is powerful and honest, and the gulls that follow the fishing boats inland wheel overhead in screaming competition. A posted price-board shows the day's fish rates by species, updated as each boat comes in.",
+    "exits": {
+      "west": 6021,
+      "north": 6009,
+      "south": 6040
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6040,
+    "name": "Branmill Cove - Smoke-Houses",
+    "description": "Three long smoke-houses on the city's eastern shore process the surplus fish catch for export and long-term storage. The buildings are low, windowless, and constantly wreathed in aromatic smoke from the alder-wood fires inside. Fish hang on iron hooks in long rows, their preservation a skilled trade that the Eruskan families who run these operations have refined over generations. The smoke-masters are identifiable by their grey-tinged hair and clothing; no amount of washing fully removes the alder scent from skin or fabric.",
+    "exits": {
+      "south": 6039,
+      "north": 6041
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6041,
+    "name": "Branmill Cove - East Shore Road",
+    "description": "A road running along the city's eastern edge connects the smoke-houses and fishers' quarter to the East Gate and the trade road beyond. Cart-ruts are cut deep into the surface where loaded fish-barrels roll to market each morning, and the road is wide enough here to allow loaded carts to turn. A row of Eruskan Human houses faces the road, their backyard fences bordering the reed-beds at the water's edge. Children fish from the fence-posts with improvised rods, pulling out the small silver fish that gather in the reed-shallows.",
+    "exits": {
+      "south": 6040,
+      "north": 6033
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6042,
+    "name": "Branmill Cove - Hasura Quarter",
+    "description": "The Hasura Elf community of Branmill Cove occupies a cluster of taller buildings near the city center, their upper floors connected by wooden bridges that allow movement between residences without descending to street level. Wind-chimes hang from every balcony, and the faint scent of wind-silk dye \u00e2\u20ac\u201d a sweet, resinous smell \u00e2\u20ac\u201d drifts from the upper workshops. The Hasura here are thirty percent of the city's population, descendants of those who stayed after the Concordant era rather than retreating to the forest, and they are woven as tightly into Branmill Cove's civic life as any Eruskan or Halfling.",
+    "exits": {
+      "east": 6016,
+      "south": 6026
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6043,
+    "name": "Branmill Cove - Pekakarlik Quarter",
+    "description": "The Pekakarlik Dwarf community clusters near the Runedock, their low-ceilinged residences and workshops forming a dense, practical neighborhood where everything is organized for function first. Workshop doors open directly onto the lane, and the sound of hammering and rune-chalk grinding is constant during working hours. The dwarves here are the chain-keepers, the forge-workers, and the precision craftsmen without whom the Mithril Chain system would fail, and they know their worth. A community meeting-house at the quarter's center doubles as a shrine to Gonmareck Ritler.",
+    "exits": {
+      "north": 6034,
+      "east": 6003
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6044,
+    "name": "Branmill Cove - Harbor Overlook",
+    "description": "A wide stone platform jutting from the blufftop above the Runedock provides the best view of the full chain-field operation. From here, the Mithril Chains can be traced from their anchor-posts on the dock down into the water and, at low tide, across the exposed seabed to the distant barges. During planting season the view is spectacular: a dozen flat-hulled barges moving in slow formation along the chain-lines, their crews small figures against the dark silt. The platform's railing is worn smooth where generations of residents have stood watching the tide-work that feeds the region.",
+    "exits": {
+      "south": 6036,
+      "west": 6004,
+      "north": 6000
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6045,
+    "name": "Chaindock Plaza",
+    "description": "The heart of Velathenor's trade is this wide stone plaza where the Mithril Chains anchor their western barges. The chains here are older than those at Branmill Cove, their links thicker and more deeply inscribed with elemental runes, and the anchor-posts are set into foundations that may be Giant-era work. Fish, grain, Riverstone Amulets, and trade-cloth change hands at the ring of stalls that lines the plaza. The smell of the lake is strong here \u00e2\u20ac\u201d damp stone, fresh water, and the faint mineral scent of the rune-anchors doing their slow, patient work.",
+    "exits": {
+      "north": 6046,
+      "east": 6047,
+      "south": 6048,
+      "west": 6049,
+      "northeast": 6073
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6046,
+    "name": "Seaspray Shrine",
+    "description": "The Seaspray Shrine is built on a low platform above the tideline where spray from the Kailian's storms reaches the stone walls and leaves white salt-lines at varying heights, each one recording a different season's high water. The shrine is dedicated to the Lady of the Sea, and water magic cast here is amplified \u00e2\u20ac\u201d the air hums faintly when a caster draws on water-elemental energy. A smaller alcove on the shrine's north side is dedicated to Kaile'a, Mistress of Waves, added since the Deceivers' War. The two devotions coexist without friction; the Lady of the Sea created the water, and Kaile'a walks upon it.",
+    "exits": {
+      "south": 6045,
+      "east": 6050
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6047,
+    "name": "Velathenor - East Market Lane",
+    "description": "A lane of permanent market stalls extending east from the Chaindock Plaza, this stretch specializes in the net and rope trade that keeps the fishing fleet operational. Pekakarlik rope-workers and Halfling net-menders share the lane, their complementary crafts making this a natural pairing. Spools of lake-reed fiber and imported hemp crowd the stalls, and finished nets in various mesh sizes hang overhead like geometric foliage. A battered scale hangs from a post at the lane's center for settling disputes about weight.",
+    "exits": {
+      "west": 6045,
+      "north": 6051,
+      "east": 6066
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6048,
+    "name": "Velathenor - South Dock",
+    "description": "The south dock of Velathenor faces the Kailian's calmer waters and handles the fishing fleet rather than the chain-barges. Smaller boats are drawn up on a graveled beach beside the dock, their hulls patched and repainted in the bright colors that Halfling fishers favor. The dock itself is timber-built, replaced section by section as the lake's water levels shift, and it creaks companionably underfoot. A fish-cleaning station at the dock's end is always in use during the morning hours, seagulls wheeling overhead in permanent competition.",
+    "exits": {
+      "north": 6045,
+      "east": 6052,
+      "south": 6074,
+      "west": 6077
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6049,
+    "name": "Stiltmarket",
+    "description": "The Stiltmarket extends over the tideline on a network of wooden piles driven into the Kailian's shallow margin, the stalls built on platforms that rise and fall with the lake's seasonal cycle. The structure creaks and shifts underfoot as the water moves beneath it, and the sound of water lapping against the piles is constant. Halfling vendors run most of the stalls, selling fresh fish, woven-reed baskets, lake pearls, and the small dried flower bundles that are a Velathenor specialty. At the market's center, a modest hearth-shrine to Semyon the Hearth Mother is decorated with the day's first and last fish of the catch.",
+    "exits": {
+      "east": 6045,
+      "north": 6053,
+      "south": 6082
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6050,
+    "name": "Velathenor - Shrine Courtyard",
+    "description": "The small courtyard behind the Seaspray Shrine is used for the water-blessing ceremonies held at the start of each fishing season and at Tide Turn. A stone basin at the courtyard's center is fed by a pipe that draws directly from the Kailian, and the water in it is always cold and clear regardless of the season. Offerings left at the basin \u00e2\u20ac\u201d small stones, dried flowers, scales from the first catch \u00e2\u20ac\u201d accumulate until the novices clean them away each week and return them to the lake. The courtyard's walls are carved with wave-patterns and the names of fishing families who have offered here for generations.",
+    "exits": {
+      "west": 6046,
+      "south": 6054,
+      "east": 6064
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6051,
+    "name": "Velathenor - Pearl Traders' Row",
+    "description": "A short lane connecting the east market to the Wavewatch Spire road, Pearl Traders' Row is where Velathenor's lake-pearl dealers keep their booths. Lake pearls from the Kailian are smaller and less uniform than sea pearls, but they carry a distinctive blue-grey luster that commands good prices in Kinsweave and the Twin Rivers. The traders here are mostly Halflings with one or two Eruskan Human dealers who moved in after the Deceivers' War. The security arrangements are visible \u00e2\u20ac\u201d iron bars on the booth windows and a hired guard at the lane's entrance.",
+    "exits": {
+      "south": 6047,
+      "east": 6055
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6052,
+    "name": "Velathenor - Fisher's Quarter",
+    "description": "The Halfling majority of Velathenor is most visible in the Fisher's Quarter, where the houses are scaled to shorter residents and the lanes are friendly and communicative rather than direct. Children dart between the houses and through the narrow gaps in garden fences, and the smell of cooking fish and dried herbs drifts from every window. The community here maintained Velathenor's fishing operation through the worst years after the Deceivers' War, when the city's population swelled with refugees from the burned settlements and every boat had to work twice its normal range.",
+    "exits": {
+      "west": 6048,
+      "north": 6056,
+      "south": 6072
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6053,
+    "name": "Velathenor - Stiltmarket Back Quay",
+    "description": "The rear of the Stiltmarket faces deeper water where the chain-barges are moored between seasons. The barges here are Velathenor's rather than Branmill Cove's \u00e2\u20ac\u201d slightly smaller, built for the shallower waters of the western Kailian \u00e2\u20ac\u201d and their flat hulls bear the wave-chevron mark of Velathenor's barge-masters. A repair crane serves both the Stiltmarket's structure and the barges, and a workshop on the quay's edge smells of caulking compound and fresh timber. Mayor Corda Whitewave is known to walk this quay in the early morning, checking the chain-barges' condition before the city wakes.",
+    "exits": {
+      "south": 6049,
+      "east": 6057,
+      "north": 6076,
+      "west": 6083
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 6054,
+    "name": "Velathenor - Mayor's Hall",
+    "description": "Mayor Corda Whitewave governs Velathenor from a modest hall near the Seaspray Shrine, its entrance marked by a carved lintel showing a navigation chart of the Kailian chain-fields. The hall is functional rather than grand \u00e2\u20ac\u201d Velathenor's civic ambitions run to keeping the barges seaworthy and the catch profitable, not to architectural display. Whitewave's office is off the main hall, its walls covered in navigational charts, trade ledgers, and the list of ship losses from the Deceivers' War that the Mayor keeps posted as a reminder of the cost of complacency.",
+    "exits": {
+      "north": 6050,
+      "east": 6058,
+      "south": 6069,
+      "west": 6078
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6055,
+    "name": "Wavewatch Spire - Base",
+    "description": "The stone base of the Wavewatch Spire is broader than Branmill Cove's Seawind Spire, reflecting the greater exposure of Velathenor's position on the Kailian's western shore where storm-fetch can be severe. Iron shutters on the base windows can be closed and bolted when lake storms drive spray inland, and the door is set back in a recessed arch that breaks the wind. A plaque beside the door lists the names of four watchmen who died during the Deceivers' War holding their posts to give the city time to evacuate civilians.",
+    "exits": {
+      "west": 6051,
+      "up": 6059
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6056,
+    "name": "Velathenor - Barge-Master's Quarter",
+    "description": "The barge-masters who operate Velathenor's chain-barge fleet live in a cluster of solid houses near the Fisher's Quarter, their yards equipped with the models and plans used for training new crew. The barge-masters are a close-knit group \u00e2\u20ac\u201d most have family connections spanning three or four generations of the chain-field operation \u00e2\u20ac\u201d and their informal authority over the planting season operation rivals the Mayor's civic authority on matters relating to the lake. A model barge in the quarter's common yard is used to demonstrate chain-guide procedures to apprentice crews.",
+    "exits": {
+      "south": 6052,
+      "north": 6060
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6057,
+    "name": "Velathenor - Baysong Festival Ground",
+    "description": "A wide, flat space near the north dock is reserved year-round for the Baysong Festival, Velathenor's greatest civic event. At festival time the ground is covered with temporary stages, lantern-posts, and the mooring stakes for the decorated parade-barges that process along the Kailian shore. During the festival, the Seaspray Shrine's blessing ceremony is performed here under open sky, with the Mayor leading the city in the traditional Tide-Call that marks the start of the planting season. The rest of the year the space serves as a practice field for the barge-crews and a gathering place for the Fisher's Quarter community.",
+    "exits": {
+      "west": 6053,
+      "north": 6061,
+      "east": 6080
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6058,
+    "name": "Velathenor - Trade Registrar's Office",
+    "description": "The trade registrar handles the documentation that Velathenor's merchants depend on: cargo manifests, chain-field use permits, export certifications, and the disputed-goods ledger that records every trade disagreement brought before the Mayor's office in the past two decades. The registrar is an Eruskan Human with a clerk and two assistants, and their work is the administrative backbone of a city whose entire economy moves with the tidal calendar. A board outside the office posts the current week's barge-schedule and the registered cargo manifests for any vessel using the chain-field.",
+    "exits": {
+      "west": 6054,
+      "north": 6062
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6059,
+    "name": "Wavewatch Spire - Tower",
+    "description": "From the tower of the Wavewatch Spire, the full western Kailian shore is visible in both directions, and in clear weather the Stonewind Plains are a brown-gold line to the southwest. Storm-watch is the primary duty here \u00e2\u20ac\u201d the Kailian's high-water storms can raise waves that threaten the Stiltmarket and the lower docks, and three hours' warning is what the watch is meant to provide. A signal-mirror on the east parapet communicates with Branmill Cove's Seawind Spire. The watchman currently on duty is tracking a bank of dark cloud forming over the northern lake.",
+    "exits": {
+      "down": 6055
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6060,
+    "name": "Velathenor - North Road",
+    "description": "The north road of Velathenor leads away from the lake into the lower margin of the Whispering Tidewoods, its surface changing from lake-stone paving to packed earth within a hundred yards of the city gate. The trees close in quickly \u00e2\u20ac\u201d the Tidewoods are dense and humid, and the canopy begins before the road has left the city's outer buildings behind. Signs nailed to trees mark the path to Tiravel and warn of the approaches to the Ashen Hollows further north. The road is patrolled twice daily by a pair of civic guards who check for Kin-sense anomalies along the first mile.",
+    "exits": {
+      "south": 6056,
+      "north": 6310
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 6061,
+    "name": "Velathenor - Rope-Walk",
+    "description": "A long, narrow building where the heaviest ropes used by the chain-barge fleet are laid and twisted, the rope-walk runs parallel to the north dock. The building is always occupied during working hours by teams walking backward while twisting fiber strands \u00e2\u20ac\u201d the traditional method that produces rope with superior breaking strength. The floor is covered in loose fiber and the air is dense with plant-dust. Finished rope is coiled in great loops against the walls, waiting for inspection and sale. The rope-walk also produces the hawsers used to secure the Stiltmarket to its pile-foundations during high-water storms.",
+    "exits": {
+      "south": 6057,
+      "east": 6063
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6062,
+    "name": "Velathenor - Halfling Enclave",
+    "description": "The densest concentration of Halfling residents in Velathenor occupies a warren of lanes near the trade registrar's office, their houses smaller and more cheerfully decorated than Eruskan structures nearby. Painted door-frames, window-boxes, and garden trellises covered in climbing flowers make the enclave the most colorful quarter of the city. The community well in the enclave's center is surrounded by benches where older residents sit and talk through the afternoon, and the smell of baking bread and drying fish is omnipresent. This community's ancestors hosted the riverside feasts of the Concordant era, and that tradition of generosity has not been lost.",
+    "exits": {
+      "south": 6058,
+      "west": 6061
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6063,
+    "name": "Velathenor - East Gate",
+    "description": "The east gate of Velathenor opens onto the lake-shore road to Branmill Cove, a well-maintained route that hugs the Kailian's southern margin for most of its length. The gate itself is modest \u00e2\u20ac\u201d a pair of timber doors set in a low stone wall \u00e2\u20ac\u201d but the guardhouse is solidly built and permanently staffed. A board by the gate posts the current tidal level and forecast, since travelers caught on the low-shore road at high water can find sections flooded. The duty guard notes departures and arrivals and reports anything unusual to the Wavewatch every evening.",
+    "exits": {
+      "west": 6061,
+      "east": 6033,
+      "north": 6068,
+      "south": 6070,
+      "northeast": 6084
+    },
+    "flags": [
+      "gate"
+    ]
+  },
+  {
+    "vnum": 6064,
+    "name": "Velathenor - Healers' Cottage",
+    "description": "A small but well-equipped healer's cottage near the shrine courtyard serves Velathenor's medical needs. The healer, a Halfling woman trained in both conventional medicine and water-elemental remedies, treats the cuts, infections, and waterborne illnesses common to a lake-shore community. Her herb garden behind the cottage is organized with the precision of someone who has treated every type of injury the Kailian can produce, and her cabinet of prepared remedies is rarely less than full. The cottage has a second room for patients who need overnight rest, its window facing the lake.",
+    "exits": {
+      "west": 6050,
+      "south": 6065
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6065,
+    "name": "Velathenor - Merchant Hostel",
+    "description": "A clean, functional hostel for merchants visiting Velathenor on trade business, the Merchant Hostel occupies a converted warehouse near the Chaindock Plaza. Private rooms with locking doors are available by the night or the tenday, and the common dining room serves simple food at reasonable prices. The hostel-keeper maintains a message board where merchants can post buying and selling notices, and a locked strong-room is available for valuables by arrangement. Most guests are chain-barge operators or grain-traders, and the dinner conversation is primarily about tidal forecasts and Riverstone Amulet prices.",
+    "exits": {
+      "north": 6064,
+      "east": 6045
+    },
+    "flags": [
+      "safe",
+      "indoor",
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 6066,
+    "name": "Velathenor - Net-Menders' Hall",
+    "description": "A cooperative workspace where the city's net-menders work on commission repairs and their own stock production, the Net-Menders' Hall is a social as much as an economic institution. Large tables allow multiple workers to spread nets for repair work, and the hall is almost always occupied, with workers of varying ages sharing techniques and gossip in equal measure. The hall maintains a lending library of net-patterns and a record of the fishing grounds' current conditions contributed by the skippers who bring in repair work. The oldest pattern in the library dates to three generations before the Deceivers' War.",
+    "exits": {
+      "west": 6047,
+      "south": 6067
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6067,
+    "name": "Velathenor - South Shore",
+    "description": "The southern shore of Velathenor's lakefront is quieter than the Stiltmarket side, its reed-beds thick and undisturbed except where the path to the Tidal Fields approaches. Herons stand motionless in the shallows, and the cries of waterfowl are constant. At low tide, the dark silt of the chain-field furrows is visible here, and the nutrient-rich smell of exposed lake-bottom rises on warm days. A stone bench near the path's beginning is worn smooth; this is where the city's old fishers come to watch the tidal levels and predict the coming season's harvest.",
+    "exits": {
+      "north": 6066,
+      "east": 6048,
+      "south": 6081
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6068,
+    "name": "Velathenor - Grain Storage",
+    "description": "Three large stone granaries near the east gate hold Velathenor's tidal harvest surplus. The granaries are built with thick walls, ventilated floors, and iron doors to protect against moisture, vermin, and fire. A full-time granary-keeper and two assistants manage the stores, rotating stock to prevent spoilage and maintaining the records that tell the Mayor exactly how many months of reserve the city holds at any given time. The current reserve, posted on a board at the granary entrance, represents about eight months of city consumption \u00e2\u20ac\u201d normal for this point in the tidal cycle.",
+    "exits": {
+      "west": 6063,
+      "north": 6047,
+      "east": 6079
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6069,
+    "name": "Velathenor - Community Hall",
+    "description": "Velathenor's community hall is a large, single-story building near the Mayor's Hall where town meetings, festivals, and community celebrations are held. The floor is polished timber, the ceiling beamed with lake-oak, and the walls hung with fishing nets, carved paddles, and a large painted map of the Kailian and its chain-fields. At Baysong Festival the hall is the center of the indoor celebrations, its floor cleared for dancing and its tables laden with the best of the harvest. The hall is also available for hire by families for celebrations, and is booked months in advance for the prime festival dates.",
+    "exits": {
+      "west": 6054,
+      "south": 6065
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6070,
+    "name": "Velathenor - Outer Ward",
+    "description": "The outer ward of Velathenor encompasses the area between the city wall and the first ring of buildings, a buffer zone where carts load and unload, livestock is temporarily penned, and travelers' camps are permitted within sight of the gate guards. The ward is never empty and rarely quiet \u00e2\u20ac\u201d the commerce of a city of 6,500 generates constant traffic \u00e2\u20ac\u201d and the smells shift as the wind changes between fish from the docks, grain from the market, and woodsmoke from the houses. A public well serves the outer ward, its stone trough also used as a livestock watering point.",
+    "exits": {
+      "south": 6063,
+      "west": 6067
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6071,
+    "name": "Velathenor - Tidewoods Trail Head",
+    "description": "At the northern edge of Velathenor, the city yields to the Whispering Tidewoods without ceremony. The last houses give way to garden plots, the garden plots give way to scrub, and the scrub to tall canopy within fifty yards. The trailhead here is marked with a carved post noting distances to Tiravel and cautioning travelers about the condition of the trail. Kin-sense should be maintained at all times beyond this point, the carving advises \u00e2\u20ac\u201d a warning that would have seemed excessive before the Deceivers' War and now seems merely prudent.",
+    "exits": {
+      "south": 6060,
+      "north": 6311
+    },
+    "flags": [
+      "road",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6072,
+    "name": "Velathenor - Dye-House Lane",
+    "description": "A short lane near the Fisher's Quarter where three dyers work with the lake-plant pigments that produce Velathenor's characteristic blue and green fabrics. Fabric hangs on lines between the buildings in various stages of drying, creating a shifting canopy of color above the lane. The dye-vats are outside when the weather permits \u00e2\u20ac\u201d the smell is pungent enough to require it \u00e2\u20ac\u201d and the dyers' hands and forearms are permanently stained to the elbow. The dyed fabric is sold to garment-makers throughout the region and is a minor but reliable export.",
+    "exits": {
+      "east": 6052,
+      "north": 6056
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6073,
+    "name": "Velathenor - The Wavecrest Inn",
+    "description": "The Wavecrest Inn is Velathenor's primary accommodation for travelers and visiting merchants, a rambling timber building near the Chaindock Plaza whose rooms look out over the lake. The inn was named for Captain Marin Wavecrest, who covered Whistlebank's evacuation during the Deceivers' War with fog magic before a D\u00c3\u00b3mnathar spell sank her ship. A carved relief of a ship in fog marks the inn's sign, and the naming is both memorial and a statement of what this city remembers. The innkeeper serves a good table and keeps a record of all guests at the Mayor's request.",
+    "exits": {
+      "west": 6045,
+      "south": 6049,
+      "north": 6075
+    },
+    "flags": [
+      "safe",
+      "tavern",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6074,
+    "name": "Velathenor - Pekakarlik Workshop",
+    "description": "The Pekakarlik population of Velathenor is smaller than at Branmill Cove, but their workshop near the Runedock equivalent handles the precision work that no one else can do: chain-guide ring replacement, rune-anchor maintenance, and the manufacturing of the iron fittings that keep the Stiltmarket's pile-structure sound. The workshop is smaller than Branmill Cove's Smiths' Quarter but no less precise, and the head smith here has a collegial relationship with Corvin Splitlock at Branmill Cove, exchanging technical notes by barge every season.",
+    "exits": {
+      "north": 6048,
+      "west": 6053
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6075,
+    "name": "Velathenor - Old Wall Walk",
+    "description": "A narrow walkway along the top of Velathenor's oldest wall section provides a different perspective on the city and the lake. The wall here predates the current construction, its stones larger and cruder, and sections have been repaired so many times that the patchwork is its own history. The walk is used by guards on rounds and by residents who come here for the view and the wind, which is stronger along the wall-top than in the lanes below. On stormy days the lake spray reaches here, coating the stones with a fine salt-haze that dries white in the sun.",
+    "exits": {
+      "south": 6073,
+      "east": 6059
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6076,
+    "name": "Velathenor - Barge-Crew Barracks",
+    "description": "The barge-crew barracks house the seasonal workers who come to Velathenor for the planting and harvest periods but do not keep permanent residences in the city. The building is functional \u00e2\u20ac\u201d dormitory-style rooms, a common kitchen, and a secure storage room for equipment \u00e2\u20ac\u201d and the seasonal workers who use it are a mix of Eruskan Humans, Halflings, and occasional Pekakarlik Dwarves who have worked the chain-fields for years. The barracks' common room has a reputation for lively card-games in the evenings, and the barracks-master turns a blind eye to a reasonable amount of noise after dark.",
+    "exits": {
+      "north": 6053,
+      "east": 6057
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6077,
+    "name": "Velathenor - Lake Road South",
+    "description": "The southern continuation of Velathenor's main lake road leads toward the Sundrift Veil and eventually to the connections between Tidebloom Reach and Kinsweave. The road is paved for the first mile, then transitions to a maintained gravel track. Milestones \u00e2\u20ac\u201d smooth lake-stones carved with distances and directional indicators \u00e2\u20ac\u201d mark the route every quarter-mile. Two supply-depot posts along this road are maintained by Velathenor's civic authority for the use of travelers and official messengers.",
+    "exits": {
+      "north": 6048,
+      "south": 6315
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 6078,
+    "name": "Velathenor - Civic Garden",
+    "description": "A formal garden beside the Mayor's Hall provides Velathenor with its only purely aesthetic public space. The garden is maintained by civic volunteers and planted with the lake-shore plants that are native to the Kailian margin: lake-iris, reed-grass, water-mint, and the small blue flowers that bloom at Tide Turn and are gathered for the Baysong Festival garlands. A fountain at the garden's center uses a pipe from the lake supply, and the sound of water running over carved stone is a constant gentle presence. Benches allow residents to sit in the garden, and the Mayor's Hall windows look out over it.",
+    "exits": {
+      "north": 6054,
+      "west": 6069
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6079,
+    "name": "Velathenor - East Warehouse District",
+    "description": "A cluster of warehouses near the east gate handles the bulk storage of imported goods \u00e2\u20ac\u201d iron fittings from the Pekakarlik quarters, timber from the Tidewoods, and the trade goods arriving from Branmill Cove and beyond. The warehouses are owned by a Halfling consortium that charges storage fees and provides security, their guards equipped with the lake-iron weapons that Velathenor's smiths produce. The district is busy during the active trade season and quiet between Tide Turns when the chain-barges are out of service.",
+    "exits": {
+      "west": 6068,
+      "south": 6063
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6080,
+    "name": "Velathenor - Shrine of the Wave-Martyr",
+    "description": "A small outdoor shrine near the Baysong Festival ground commemorates the Kin who died when the Starwave \u00e2\u20ac\u201d the great Halfling vessel \u00e2\u20ac\u201d was sunk by Deceiver magic during the war. Names are carved into a low stone wall that curves around a shallow pool fed by the lake, and small boat-shaped offerings float on the pool's surface, set there by families who lost someone on the Starwave or in the broader chaos of the war's lake-phase. The pool is always clean; Velathenor's children learn early that disturbing the shrine is one of the few things that will unite the entire community against them.",
+    "exits": {
+      "west": 6057,
+      "south": 6078
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6081,
+    "name": "Velathenor - Armorer and Supply",
+    "description": "A combined armorer and general supply shop near the Fisher's Quarter serves the working needs of the city's residents and the occasional adventurer. The armorer's section handles light armor \u00e2\u20ac\u201d padded, leather, and occasional ring-mail \u00e2\u20ac\u201d along with the short, broad lake-knives that Halfling fishers favor. The supply section stocks rope, lantern oil, preserved food, and the small luxuries \u00e2\u20ac\u201d dried fruit, quality thread, good paper \u00e2\u20ac\u201d that a city of 6,500 generates steady demand for. The proprietor, an Eruskan Human woman, runs both sections without help and knows where everything is.",
+    "exits": {
+      "north": 6067,
+      "east": 6065
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6082,
+    "name": "Velathenor - Lakeside Promenade",
+    "description": "A stone-paved walk along the Kailian shore north of the Stiltmarket, the Lakeside Promenade is Velathenor's social gathering place. Residents walk here at dawn and dusk, watching the lake's light change and keeping informal watch on the chain-field conditions. Benches face the water at intervals, and the promenade's railing is hung with wind-bells whose sound carries across the city when the breeze picks up. At Baysong Festival the promenade is decorated with lanterns and flowers, and the parade-barges pass close enough to shore that the crews can throw flowers to the crowd.",
+    "exits": {
+      "south": 6049,
+      "east": 6080,
+      "north": 6071
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6083,
+    "name": "Velathenor - Harbor Master's Office",
+    "description": "The Harbor Master's Office coordinates all vessel traffic on Velathenor's section of the Kailian, from the chain-barges to the fishing fleet to the occasional trade-vessel from Branmill Cove. A large water-level gauge visible from the office window drives the scheduling decisions that determine when chain-barge operations are safe to conduct, and the Harbor Master's logs go back four generations, providing a detailed record of the lake's seasonal behavior that is invaluable for predicting flood and drought. The current Harbor Master is a Halfling man who inherited the position from his mother and grandmother before him.",
+    "exits": {
+      "west": 6053,
+      "south": 6076
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6084,
+    "name": "Velathenor - Trade Road Junction",
+    "description": "The main road through Velathenor meets the lake-shore road and the Tidewoods trail here at a three-way junction marked by a carved stone waypost. Distances to Branmill Cove, Tiravel, and the Stonewind Plains are inscribed on the post's faces, and the post itself is old enough that moss has grown into the carved lettering, making it easier to read than when it was first cut. A small shelter beside the junction provides rain cover for travelers waiting for companions or reading the waypost in foul weather.",
+    "exits": {
+      "west": 6063,
+      "north": 6071,
+      "south": 6077
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6085,
+    "name": "Skyspire Vaults - Main Archive",
+    "description": "The Skyspire Vaults occupy the upper chambers of Tiravel's tallest sky-oak, the archive accessible only by a series of rope bridges and climbing platforms that test the nerve of those unfamiliar with canopy travel. Inside, the humidity is carefully managed by Hasura Elf air-shaping techniques, keeping the wind-silk scrolls and vellum records in the precise conditions required for preservation. Lore-Keeper Sylara Windbloom moves through the stacks with the ease of someone born among these records, her fingers trailing across scroll-cases as she navigates by memory and touch. The oldest records here date to the first generation after the Eke Concordant's founding.",
+    "exits": {
+      "out": 6086,
+      "east": 6087
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6086,
+    "name": "Skyspire Vaults - Entrance Platform",
+    "description": "A broad wooden platform at canopy level serves as the entrance point to the Skyspire Vaults, its railings carved with the wind-scroll motifs that identify Hasura Elf craftwork. Starwind Blades guard the platform in pairs, their attention sweeping the canopy approaches and the forest floor far below. The platform sways slightly in the wind \u00e2\u20ac\u201d a sensation that residents find comforting and visitors find alarming \u00e2\u20ac\u201d and the view through the canopy gaps is one of the best in Tiravel: the Kailian's silver surface to the south and west, the darker mass of the Tidewoods to the north. A notice board posts current access permissions and research protocols.",
+    "exits": {
+      "in": 6085,
+      "down": 6088,
+      "north": 6108
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6087,
+    "name": "Skyspire Vaults - Song Archive",
+    "description": "A secondary archive chamber off the main Vaults, the Song Archive holds the wind-silk scrolls that record Hillmeet's songs \u00e2\u20ac\u201d the musical tradition of the burned city, preserved by those Hasura Elves who escaped with their instruments and their memory. Lore-Keeper Windbloom has spent a decade reconstructing the full song-cycle of Hillmeet from fragments, oral accounts, and the partial scrolls recovered from the Ashen Hollows. A glass case near the center holds what she believes is a fragment of Aerith Windweave's notation \u00e2\u20ac\u201d the last song the bard composed before the burning. Access requires the Lore-Keeper's personal authorization.",
+    "exits": {
+      "west": 6085
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6088,
+    "name": "Tiravel - Canopy Lane",
+    "description": "Tiravel exists on two levels: the forest floor and the canopy. Canopy Lane is the sky-oak platform network that connects the upper-level residences, workshops, and public spaces that the Hasura Elf majority inhabits by preference. Rope bridges link the platforms, their surfaces non-slip and their railings solid, and the lanes between the platforms are wide enough for two people to pass. The air at canopy level is cleaner and windier than on the forest floor, and the sound of wind-chimes from every platform creates a layered music that is the sound of Tiravel to those who know the city.",
+    "exits": {
+      "up": 6086,
+      "east": 6089,
+      "west": 6090,
+      "north": 6091,
+      "south": 6106
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6089,
+    "name": "Windweave Market",
+    "description": "Set on a broad platform in Tiravel's canopy, the Windweave Market is the principal trading floor for the wind-silk and woven-net exports that define the city's economy. Wind-silk comes in bolts and as finished garments, its surface catching light in ways that plain cloth does not. Wind Cloaks \u00e2\u20ac\u201d the most prized item sold here, enchanted to add ten feet to the wearer's fly speed \u00e2\u20ac\u201d are kept in a locked case behind the market-master's booth and sold only by appointment. The smell of fresh dye and sizing agent mingles with the forest air, and the wind across the platform keeps the hanging fabric in constant, gentle motion.",
+    "exits": {
+      "west": 6088,
+      "south": 6092,
+      "north": 6111
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6090,
+    "name": "Tiravel - Weaving Hall",
+    "description": "The largest platform in Tiravel's canopy network houses the Weaving Hall, where Hasura Elf weavers work the wind-silk looms that are the city's primary productive capacity. The looms themselves are sophisticated instruments, their frames made from sky-oak and their shuttle mechanisms guided by subtle air-shaping that allows the weavers to work at speeds and precision levels impossible with purely manual technique. The finished wind-silk has a characteristic translucent quality that comes from the air-infusion process, and fabric from Tiravel can be identified by a faint shimmer visible in direct light.",
+    "exits": {
+      "east": 6088,
+      "south": 6093,
+      "west": 6102,
+      "north": 6105
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6091,
+    "name": "Canopy Watch Platform",
+    "description": "The northernmost platform of Tiravel's canopy network serves as the Canopy Watch post, a surveillance station with the most direct view of the northern Tidewoods where the approaches to the Tomb of Kings and the Ashen Hollows lie. Na'wasua Starwind Blades staff this post at all times, their Kin-sense extended and active during their watches. The post's log records every anomaly reported in the northern forest, and the pattern of dead-zone sightings near the Tomb of Kings has accumulated over years into something that looks less like coincidence and more like a systematic presence. The log is reviewed by Lore-Keeper Windbloom monthly.",
+    "exits": {
+      "south": 6088,
+      "north": 6312
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6092,
+    "name": "Tiravel - Sky-Oak Residences, East",
+    "description": "The eastern cluster of residential platforms house the families of Tiravel's weavers and market-workers, their sky-oak chambers furnished with the spare elegance that Hasura Elves prefer. Each residence has a wind-garden \u00e2\u20ac\u201d a small platform off the living space where wind-sensitive plants are grown in purpose-built containers that capture and redirect breezes. The gardens are also used for meditation and for the small personal ritual-markings that Hasura Elves observe privately. The eastern residences are newer than the western ones, rebuilt after the Deceivers' War to house Hillmeet's refugees.",
+    "exits": {
+      "north": 6089,
+      "west": 6093
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6093,
+    "name": "Tiravel - Sky-Oak Residences, West",
+    "description": "The western residential platforms are older than the eastern ones, their timbers weathered to a dark silver-grey that the Hasura consider a mark of quality. Some of these platforms were here when Tiravel was a small Hasura outpost before the Eke Concordant, and their construction techniques \u00e2\u20ac\u201d mortise and tenon without iron hardware, knot-bindings that tighten under stress \u00e2\u20ac\u201d represent a traditional approach that the newer platforms replaced with iron brackets and rope. The Hasura families who live here maintain the old techniques, repairing and replacing platform members using the same methods their ancestors used.",
+    "exits": {
+      "north": 6090,
+      "east": 6092,
+      "south": 6094
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6094,
+    "name": "Starlit Glade",
+    "description": "Below the canopy network, in a clearing where the sky-oaks stand back and the sky is visible in a broad circle, lies the Starlit Glade: Tiravel's ritual site and its most emotionally layered space. Air magic cast here is amplified, the gust of wind effect powerful enough to require a Fort save of DC 14 to resist. Since the Deceivers' War, the Glade has become a place of remembrance as much as ritual \u00e2\u20ac\u201d stone markers for Hillmeet's dead stand among the roots, and offerings to Cinvarin and quiet prayers to Harreem are left in the shadows of the sky-oak boles. The Harreem prayers are never spoken aloud, but everyone knows they are there.",
+    "exits": {
+      "north": 6093,
+      "east": 6095
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6095,
+    "name": "Tiravel - Forest Floor - Main Path",
+    "description": "The main path at Tiravel's forest floor level connects the city's ground-level buildings and the base-stairs of the canopy platforms. Most of the city's non-Elf visitors and the Halfling minority who prefer ground-level living use this path for daily movement. The forest floor here is carpeted with orchid-laden undergrowth, the canopy above so thick that the light is permanently filtered green. The sound of the Tidewoods is ever-present: bird calls, the rustle of small animals in the undergrowth, and the creak of sky-oaks moving in the wind high above. The air is humid and smells of rich earth and growing things.",
+    "exits": {
+      "north": 6096,
+      "south": 6097,
+      "east": 6098,
+      "west": 6094,
+      "northeast": 6103,
+      "northwest": 6112
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6096,
+    "name": "Tiravel - Ground-Level Market",
+    "description": "A smaller market on the forest floor serves the ground-level population and handles bulk goods too heavy to move easily to the canopy. Grain, timber, rope, and iron fittings are traded here, along with the fresh-caught fish brought up from the Kailian shore by carriers who make the round trip twice daily. The market is smaller and louder than the Windweave Market above, and the traders here are more likely to be Halflings and the occasional Eruskan Human than the Hasura Elves who dominate the canopy economy. A cooperation between the two markets is essential and functional, if not always harmonious.",
+    "exits": {
+      "south": 6095,
+      "east": 6099
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6097,
+    "name": "Tiravel - Halfling Quarter",
+    "description": "The ground-level Halfling community in Tiravel is smaller and more recent than the Halfling presence in the lake-shore cities, most of its residents descendants of the refugees who came when Whistlebank and Mossgrove burned. Their houses are built against the bases of sky-oaks, using the great roots as partial walls \u00e2\u20ac\u201d a practical adaptation that required some adjustment to Halfling building tradition but produced structures that are warm, dry, and remarkably solid. A communal kitchen serves the quarter, its fire never going out, and the smell of food cooking drifts north to the main path at most hours.",
+    "exits": {
+      "north": 6095,
+      "east": 6100,
+      "south": 6113
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6098,
+    "name": "Tiravel - Lore-Keeper's Lodge",
+    "description": "Lore-Keeper Sylara Windbloom maintains her personal residence and working space in a sky-oak chamber at the canopy's lower edge, accessible from both the canopy network and the forest floor by different stair-routes. The lodge is cluttered with the organized disorder of an active scholar \u00e2\u20ac\u201d open scrolls, reference texts, ink bottles, and the long-handled quills preferred for wind-silk work. A current project on Windbloom's desk relates to the Kin-sense dead-zones near the Tomb of Kings, cross-referenced with reports from the Canopy Watch and the adventure hooks that her scouts have brought back. She receives visitors by appointment and is known to be direct, even when what she has to say is difficult.",
+    "exits": {
+      "west": 6095,
+      "up": 6085,
+      "east": 6104
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6099,
+    "name": "Tiravel - Starwind Blade Barracks",
+    "description": "The Na'wasua Starwind Blades who guard Tiravel's archives and watch the northern approaches maintain their barracks on the forest floor's eastern side. The barracks is spare and functional \u00e2\u20ac\u201d weapon racks, training dummies, individual cells for rest \u00e2\u20ac\u201d with the particular neatness of a military community that spends its alert time on the canopy platforms. Off-duty Blades practice in a cleared area outside the barracks, working through forms that combine blade-work with the air-shaping techniques that make the Na'wasua particularly effective forest fighters. Visitors are not discouraged, but idle socializing with the guards on duty is.",
+    "exits": {
+      "west": 6096,
+      "north": 6101,
+      "south": 6107
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6100,
+    "name": "Tiravel - Forest Trail to Kailian Shore",
+    "description": "A trail from Tiravel's southern edge descends through the Tidewoods toward the Kailian shore, used by the carriers who bring fish from the lake and by residents who want access to the water without using the main road. The trail is marked with Hasura way-signs \u00e2\u20ac\u201d carved bark and bent branch configurations that are clear to anyone taught to read them and invisible to those who are not. The forest is thicker on this trail than on the main path, the canopy unbroken and the undergrowth requiring attention to navigate, but the trail is well-maintained and the distance to the shore is less than a mile.",
+    "exits": {
+      "west": 6097,
+      "south": 6313
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6101,
+    "name": "Tiravel - East Gate and Road",
+    "description": "Tiravel's east gate is little more than a marked gap in the low earthwork that delineates the city's boundary, the Tidewoods continuing on both sides without interruption. The gate is staffed by two Starwind Blades who check for unusual items and maintain the log of entrances. The road east leads toward the Stonewind Plains, where the trees thin and the sky opens up \u00e2\u20ac\u201d a transition that Tiravel's Hasura Elf residents rarely make willingly, preferring the canopy's shelter to the open prairie. The road is used mainly by traders bringing iron and stone goods from the west and by the occasional party of adventurers heading toward the Ashen Hollows.",
+    "exits": {
+      "south": 6099,
+      "east": 6314,
+      "north": 6114
+    },
+    "flags": [
+      "gate",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6102,
+    "name": "Tiravel - Wind-Silk Dye Works",
+    "description": "On the forest floor below the Weaving Hall, the dye works processes the plant and mineral pigments that give Tiravel's wind-silk its distinctive colors. The dyeing process takes advantage of the Tidewoods' native plants \u00e2\u20ac\u201d lake-iris extract for blue, bark-tannin for grey, and a complex preparation of forest mushroom for the deep green that is most associated with Tiravel's exports. The dye-master, a Hasura Elf who trained at both Tiravel and the lost Foxfen grove, uses techniques inherited from both communities. The smell of the dye works is sharp and distinctive, detectable from the canopy above.",
+    "exits": {
+      "east": 6090,
+      "south": 6095
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6103,
+    "name": "Tiravel - Hillmeet Memorial",
+    "description": "A small memorial grove at Tiravel's northern edge honors the Hasura Elves of Hillmeet. The grove is planted with sky-oak saplings \u00e2\u20ac\u201d descendants of seeds salvaged from Hillmeet's burned canopy \u00e2\u20ac\u201d and each sapling bears a small carved marker with a name from the lost city. Lord Pryce Skysong's name is not among them: Tiravel does not honor the king whose arrogance cost his people everything, but neither is he formally condemned here. The grove is a place for grief, not politics. Bard Aerith Windweave's name is carved on the largest stone, and fresh flowers are almost always present.",
+    "exits": {
+      "south": 6095,
+      "east": 6096
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6104,
+    "name": "Tiravel - Healer's Treehouse",
+    "description": "A healer's facility built into the lower canopy of a large sky-oak provides medical services to both the canopy and forest-floor populations. The healer is a Hasura Elf with training in both conventional healing and the wind-elemental remedies that are Tiravel's medical specialty \u00e2\u20ac\u201d preparations that use the amplified air magic of the Starlit Glade to enhance recovery times and reduce fever. The treehouse clinic has six patient berths, a preparation room, and a herb-drying space on an outdoor platform. Hillmeet refugee survivors gave this clinic its endowment, and it has operated without interruption since the first refugees arrived.",
+    "exits": {
+      "west": 6098,
+      "south": 6094
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6105,
+    "name": "Tiravel - Apprentice Weavers' Hall",
+    "description": "Young weavers learning the wind-silk craft train in a dedicated hall below the main Weaving Hall, its looms simpler and its atmosphere more forgiving of mistakes. Instruction is provided by senior weavers on a rotating basis, and the training pieces produced here \u00e2\u20ac\u201d technically wind-silk but lacking the precise air-infusion of master work \u00e2\u20ac\u201d are sold at reduced prices in the ground-floor market. The hall also teaches the net-weaving techniques that are Tiravel's secondary export, the patterns learned from Whistlebank's surviving weavers integrated into the curriculum after the Deceivers' War.",
+    "exits": {
+      "north": 6090,
+      "west": 6104
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6106,
+    "name": "Tiravel - Singing Platform",
+    "description": "A platform in the canopy reserved for the musical traditions that are central to Hasura Elf culture. The Singing Platform is where Lore-Keeper Windbloom teaches Hillmeet's reconstructed song-cycle, where the Starweave Festival's performance events take place, and where individual musicians come to practice with the benefit of the canopy's natural acoustics. Wind instruments respond differently at this height \u00e2\u20ac\u201d the ambient air-elemental energy adds harmonics that cannot be reproduced at ground level \u00e2\u20ac\u201d and players who learn their instruments here sometimes struggle to adjust to the comparative flatness of indoor performance.",
+    "exits": {
+      "east": 6088,
+      "south": 6089
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6107,
+    "name": "Tiravel - Tomb Road Patrol Station",
+    "description": "A small garrison building near Tiravel's northern edge, the Tomb Road Patrol Station houses the rotating watch that monitors the forest road to the Tomb of Kings. Four Starwind Blades are stationed here at all times, and the patrol rota is posted inside the door alongside the standing orders regarding Kin-sense anomaly reporting. The station log records every patrol report going back three years, and the accumulation of dead-zone sightings in the Tomb's vicinity has become a matter of quiet concern that is discussed at patrol briefings but not publicly. The door is always unlocked and the tea always hot.",
+    "exits": {
+      "south": 6099,
+      "west": 6101
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6108,
+    "name": "Tiravel - Wind-Reader's Post",
+    "description": "A tall platform at canopy-top where Tiravel's wind-readers \u00e2\u20ac\u201d Hasura Elves trained to interpret the elemental messages carried in the Tidewoods' air currents \u00e2\u20ac\u201d maintain their observation. The post is exposed to the full force of whatever wind moves through the forest, and the wind-readers have developed a physical toughness to match their metaphysical sensitivity. Their reports inform the agricultural planning for the chain-fields below, the storm-watch for the Kailian shore, and the monitoring of the North Wind for the Kin-sense fluctuations that sometimes precede disturbances near the Tomb. A set of bronze wind-tools hangs from the post's rail, their functions decipherable only to the trained.",
+    "exits": {
+      "south": 6086,
+      "east": 6091,
+      "north": 6110
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6109,
+    "name": "Tiravel - South Road",
+    "description": "The road south from Tiravel leads to the Kailian shore and eventually connects to the routes between Velathenor and Branmill Cove. The Tidewoods thin gradually as the lake approaches, the canopy lowering and the undergrowth opening into the reed-beds and tidal flats of the shore. Tiravel's residents use this road for the fish-carrying trade and for the occasional journey to the lake-shore cities, though most Hasura Elves prefer the forest trails and the canopy connections to the open road. The first mile is marked with Hasura way-signs; beyond that, regular carved posts serve travelers of all cultures.",
+    "exits": {
+      "north": 6095,
+      "south": 6316
+    },
+    "flags": [
+      "road",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6110,
+    "name": "Tiravel - Na'wasua Quarter",
+    "description": "The fifteen percent of Tiravel's population that is Na'wasua Elf lives in a distinct but integrated quarter of the canopy, their platforms slightly higher than the Hasura residential cluster and connected by a separate but linked bridge network. Na'wasua architecture favors clean lines and minimal decoration, a contrast to the Hasura preference for carved detail. The Starwind Blades who guard the Vaults and the Watch platform are mostly drawn from this quarter, and the training forms they practice in the early morning are visible from the platforms below. Relations between Hasura and Na'wasua in Tiravel are respectful and close, shaped by shared loss.",
+    "exits": {
+      "west": 6108,
+      "south": 6086
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6111,
+    "name": "Tiravel - Spellinkers' Hall",
+    "description": "A small hall where Tiravel's spell-ink trade is organized and conducted, the Spellinkers' Hall connects the city's scholarly production with its mercantile needs. Spell-ink \u00e2\u20ac\u201d prepared from Tidewoods plants using techniques requiring air-elemental attunement \u00e2\u20ac\u201d is one of Tiravel's more valuable exports, used in enchantment work throughout Tidebloom Reach and traded west to Kinsweave. The hall maintains quality standards for ink production and handles export contracts. A display case holds examples of the best current production, and buyers can order custom blends by specification.",
+    "exits": {
+      "east": 6089,
+      "north": 6106
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6112,
+    "name": "Tiravel - Community Fire Pit",
+    "description": "At the base of the largest sky-oak in Tiravel's center, an ancient fire pit provides the ground-level equivalent of the community gathering that happens on the canopy. The fire here is kept burning from the first cold night of autumn to the last of spring, and it serves as a gathering point for the forest-floor community \u00e2\u20ac\u201d Halflings, non-resident visitors, and those Hasura who simply prefer the ground on a given evening. Stories told around this fire are expected to be true or acknowledged as legend; Tiravel's cultural tradition does not distinguish formally between the two categories, only between the honest teller and the dishonest one.",
+    "exits": {
+      "east": 6095,
+      "south": 6097
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6113,
+    "name": "Tiravel - Storage and Provisions",
+    "description": "A network of covered storage structures at the forest floor handles the bulk goods that Tiravel's canopy-based economy requires: food stores, workshop supplies, the imported iron and stone that sky-oak construction needs for its fittings. The provisioner who manages this network is a Halfling with a dry sense of humor and an exact knowledge of every item in stock, and she guards the storage master-key with the same vigilance that the Starwind Blades bring to the Skyspire Vaults. Access to the secured stores requires authorization and is logged; the unsecured area is open to residents during daylight.",
+    "exits": {
+      "north": 6097,
+      "east": 6100
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6114,
+    "name": "Tiravel - Tidewoods Trailhead - North",
+    "description": "The northern trailhead of Tiravel opens onto the deeper Tidewoods and the forest roads that lead eventually to the Tomb of Kings and the ruins of Hillmeet. The trail is marked with Starwind Blade patrol signs and warning indicators that change based on the current security assessment. Today the signs indicate caution \u00e2\u20ac\u201d the Canopy Watch has logged two Kin-sense anomaly reports in the northern sector this week, both in the same approximate location. Travelers heading north are expected to register at the Tomb Road Patrol Station. The forest is quiet here, the Tidewoods' sounds normal, but the quiet has a watchful quality that experienced travelers learn to respect.",
+    "exits": {
+      "south": 6101,
+      "north": 6317
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6115,
+    "name": "Silksong Aviary",
+    "description": "The Silksong Aviary is Myruvane's most celebrated landmark, a great dome of living sky-oak branches woven together over three generations into a seamless vault. Inside, thousands of silk-moths circulate through a controlled environment of temperature, humidity, and carefully managed air-elemental currents. At festival time the Aviary blooms with bioluminescence \u00e2\u20ac\u201d the moths' natural response to the ceremonial chants that the Hasura Elf attendants perform, their bodies producing a soft amber-and-blue light that transforms the interior into something between a forest and a dream. The silk the moths produce here is finer than standard wind-silk, and its production is Myruvane's most closely guarded craft secret.",
+    "exits": {
+      "north": 6116,
+      "east": 6117,
+      "south": 6118,
+      "west": 6119,
+      "northeast": 6131
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6116,
+    "name": "Myruvane - Aviary Gardens",
+    "description": "The gardens surrounding the Silksong Aviary supply the food plants and temperature-regulating vegetation that keep the moth population healthy. Pasua Elf gardeners tend these beds with a combination of conventional horticulture and the gentle nature-shaping that is their particular skill, encouraging a complex micro-ecosystem that has been in balance since the aviary was first established. The smell of the gardens is rich and complicated \u00e2\u20ac\u201d flower pollen, leaf-mold, and the slightly sweet exhalation of the moths that drift from the aviary's ventilation openings. Visitors are welcome in the outer gardens but directed away from the moth-habitat sections.",
+    "exits": {
+      "south": 6115,
+      "east": 6120
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6117,
+    "name": "Melody Hollow",
+    "description": "An oak-walled chamber at the base of a great sky-oak, Melody Hollow is both a workshop and a cultural heart. Instrument-makers \u00e2\u20ac\u201d primarily flute-crafters \u00e2\u20ac\u201d work here by day, their pieces shaped from the sky-oak timber that gives Myruvane's instruments their distinctive warm tone. Air magic cast within Melody Hollow is amplified; sound burst effects are noticeably more powerful here, and performers training in the Hollow develop a sensitivity to harmonic nuance that stays with them in performance elsewhere. Harreem's influence is quietly acknowledged here: bards who craft instruments in the Hollow sometimes say that the Golden Rose was a musician first, and that her rage began as grief. They do not say it loudly.",
+    "exits": {
+      "west": 6115,
+      "north": 6121
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6118,
+    "name": "Tideweave Bridge",
+    "description": "The Tideweave Bridge is Myruvane's engineering marvel \u00e2\u20ac\u201d a span of woven silk-rope and sky-oak planks stretching across the inlet where the Kailian's water reaches deepest into the forest, connecting the canopy platforms of the south district to the barge-landing below. The silk weave of the bridge is not merely structural: it is enchanted, maintaining a tension that adapts to load and weather with a flexibility that rigid timber could not achieve. The Balance DC for the bridge is 12, and experienced locals cross it without looking. The bridge is used by barge-crew and silk-traders dozens of times a day, the foot-traffic creating a gentle rhythmic bounce that newcomers find unnerving.",
+    "exits": {
+      "north": 6115,
+      "south": 6122,
+      "east": 6123
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6119,
+    "name": "Starbloom Shrine",
+    "description": "The Starbloom Shrine stands at the western edge of Myruvane's forest clearing, its circular form defined by twelve sky-oak posts supporting a platform open to the sky. Air magic performed here is amplified for gust of wind (Fort DC 14), and the shrine is used for both religious ceremony and practical air-shaping work. Since the Deceivers' War, the shrine also honors Apela Kelsoe the Windrider, whose portfolio of air, travel, and luck speaks to a people twice displaced. Pasua Elf wind-dancers perform here at the Silksong Festival, their movements combining physical dance with elemental shaping in a form that is both art and offering.",
+    "exits": {
+      "east": 6115,
+      "north": 6124,
+      "south": 6133
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6120,
+    "name": "Myruvane - Windspeaker's Lodge",
+    "description": "Windspeaker Caelith Greenveil governs Myruvane from a lodge adjacent to the Aviary Gardens, its walls of living sky-oak still growing, the branches woven into structural form rather than cut. The lodge is a demonstration of the Pasua and Hasura collaboration that defines Myruvane \u00e2\u20ac\u201d the architecture is Pasua in concept, the decorative work Hasura in execution. Greenveil receives petitioners here in the morning and spends afternoons in the Aviary overseeing silk production. Their approach to governance is as much mediation as administration, reflecting the delicate balance of two Elf peoples and a significant Halfling minority in a city defined by cooperation.",
+    "exits": {
+      "west": 6116,
+      "south": 6125,
+      "up": 6138
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6121,
+    "name": "Myruvane - Flute Artisans' Row",
+    "description": "A lane of small workshops near Melody Hollow where the makers of Myruvane's most valued export \u00e2\u20ac\u201d woodwind instruments crafted from sky-oak \u00e2\u20ac\u201d keep their premises. The instruments produced here are sold throughout Tidebloom Reach and exported to Kinsweave and the Twin Rivers; the best pieces find their way to performers in the most prestigious institutions on the continent. The artisans are Hasura Elves of the Foxfen refugee lineage, many of them inheriting craft traditions that were nearly lost when their ancestors' city burned. The sound of flutes being tested drifts from the workshops at all hours, and no one in Myruvane considers it a nuisance.",
+    "exits": {
+      "south": 6117,
+      "east": 6126,
+      "north": 6136
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6122,
+    "name": "Myruvane - Barge Landing",
+    "description": "The barge landing at the base of the Tideweave Bridge handles the goods flow between Myruvane's lake-shore trade and the canopy-level markets. The landing is a timber platform on the Kailian's inlet, its surface kept in good repair because the entire economy of the silk-moth trade depends on the safe unloading of food supplies and the equally safe loading of finished silk for export. Chain-guides connect the landing to the outer chain-field system, and a small chain-keeper's post here maintains the anchor ring that is Myruvane's contribution to the Mithril Chain network \u00e2\u20ac\u201d smaller than Branmill Cove's or Velathenor's, but carefully maintained.",
+    "exits": {
+      "north": 6118,
+      "east": 6127
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6123,
+    "name": "Myruvane - East Market",
+    "description": "Myruvane's east-side market handles the goods that flow in and out of the city by the land routes \u00e2\u20ac\u201d the dyed fabrics, finished instruments, and raw silk going west, and the iron fittings, preserved foods, and trade goods coming in. The market is smaller than those of the lake-shore cities but well-organized, its stalls separated by trade type and governed by a Halfling market-master whose assessments of fair value are accepted by all parties without much argument. The Halflings of Myruvane's minority community are most visible here, their commercial instincts valued in a city where most residents would rather be weaving or playing than trading.",
+    "exits": {
+      "west": 6118,
+      "north": 6128
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6124,
+    "name": "Myruvane - Shrine Approach Path",
+    "description": "The path leading to the Starbloom Shrine from the north is maintained as a formal processional route, its surface of smooth bark-chips replaced each spring and its border plantings of starbloom flowers (a sky-oak forest flower that opens only at night) kept meticulously. Processional lanterns on carved posts are lit for ceremonies and for the nightly meditation walk that some of Myruvane's residents practice. The path feels apart from the city even when it is clearly within it \u00e2\u20ac\u201d the plantings create a visual and auditory buffer that makes the shrine feel more remote than it is.",
+    "exits": {
+      "south": 6119,
+      "east": 6129
+    },
+    "flags": [
+      "safe",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6125,
+    "name": "Myruvane - Community Gathering Hall",
+    "description": "The main community space of Myruvane sits between the Windspeaker's Lodge and the Starbloom Shrine, a circular platform large enough to hold several hundred people for festival gatherings. The Silksong Festival's main events take place here, with the moth-bioluminescence display viewed from the platform's edge and the musical performances staged at the center. The platform's timber is swept and maintained to a standard that reflects the pride Myruvane takes in this space \u00e2\u20ac\u201d it is the city's face to visitors, and the Silksong Festival draws travelers from across Tidebloom Reach. Benches around the perimeter are used for informal community meetings throughout the year.",
+    "exits": {
+      "north": 6120,
+      "east": 6123,
+      "south": 6132
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6126,
+    "name": "Myruvane - Pasua Quarter",
+    "description": "The Pasua Elf community of Myruvane occupies a section of the canopy north of Melody Hollow, their platforms distinguished by the vine-draped living structures that Pasua architecture favors. The Pasua here are primarily the descendants of those who sheltered Foxfen's Hasura refugees after the burning and subsequently joined the new settlement at Myruvane. Their relationship with the Hasura majority is close and long-established, and the cultural cross-pollination between the two communities \u00e2\u20ac\u201d visible in music, in art, and in the shared ceremonies at the Starbloom Shrine \u00e2\u20ac\u201d represents exactly the kind of Kin cooperation that the Deceivers' War made urgently necessary.",
+    "exits": {
+      "west": 6121,
+      "south": 6130
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6127,
+    "name": "Myruvane - Lake Trail",
+    "description": "A trail from the barge landing along the Kailian inlet connects Myruvane to the main lake-shore road system. The trail is overhung with Tidewoods vegetation and frequently wet from the lake's humidity, its surface maintained with cut timber laid crosswise over the muddiest sections. Herons and kingfishers are constant companions along the trail, and the inlet's still water reflects the canopy in clear conditions. The trail is used for the fish-carrier traffic and for the occasional visitor who arrives by water rather than by road.",
+    "exits": {
+      "west": 6122,
+      "south": 6318,
+      "north": 6135
+    },
+    "flags": [
+      "forest",
+      "water",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6128,
+    "name": "Myruvane - North Gate and Road",
+    "description": "The north gate of Myruvane opens onto the deeper Tidewoods, the road beyond following the sky-oak canopy's edge toward Tiravel and the northern approaches. The gate is staffed by Pasua Elf wardens whose Kin-sense monitoring is particularly acute \u00e2\u20ac\u201d a reflection of Myruvane's awareness that it sits between the living cities and the haunted northeast. Outbound travelers are advised of current patrol reports; inbound travelers are assessed with the thoroughness that a city built by refugees applies to its borders. The road north is the fastest overland route between the southern settlements and Tiravel.",
+    "exits": {
+      "north": 6319,
+      "east": 6139
+    },
+    "flags": [
+      "gate",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6129,
+    "name": "Myruvane - Foxfen Memorial Grove",
+    "description": "Behind the Starbloom Shrine, shielded from the main paths by a screen of living trees that Pasua Elf gardeners have shaped over thirty years, the Foxfen Memorial Grove is Myruvane's most private public space. Awakened tree-stumps from Foxfen's burned grove have been symbolically replanted here as saplings, their growth encouraged by the same nature-shaping that saved a handful of Foxfen's people before the flames consumed Druid Sylvara Greenbough. Greenbough's name is carved at the grove's entrance on a simple stone marker, and the vine-wrapped stone in the grove's center is said to be a fragment of the vine barrier she wove in her final moments.",
+    "exits": {
+      "west": 6124,
+      "south": 6119
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6130,
+    "name": "Myruvane - Artisan Market",
+    "description": "A market for the finished artistic goods that Myruvane's craftspeople produce: instruments, dyed fabrics, silk garments, and the small decorative moth-wing pieces \u00e2\u20ac\u201d preserved in resin \u00e2\u20ac\u201d that are a Myruvane specialty and a popular trade item. The artisan market is smaller and higher-priced than the east market, its goods positioned for buyers with specific taste and adequate funds. The market is staffed by the makers themselves rather than by agents, which makes the transactions more personal and the price negotiation more interesting. A commissioned instrument from a Myruvane maker takes six to twelve weeks and costs accordingly.",
+    "exits": {
+      "north": 6126,
+      "west": 6125
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 6131,
+    "name": "Myruvane - Silk Processing Hall",
+    "description": "The silk processing hall converts raw silk-moth output into finished thread and then into fabric, a sequence of operations requiring the precise management of humidity, temperature, and the air-elemental currents that are Myruvane's industrial advantage. Workers here are specialists trained over years, and the processing sequence they follow was developed collaboratively by Hasura and Pasua weavers after the Silksong Festival of the first post-war generation. The hall runs two shifts and produces enough finished silk to meet domestic demand and a significant export quota. Waste silk fibers are composted into the Aviary Gardens' soil.",
+    "exits": {
+      "east": 6115,
+      "north": 6117,
+      "south": 6134
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6132,
+    "name": "Myruvane - Halfling Community House",
+    "description": "The ten percent Halfling minority of Myruvane maintains a community house at the forest floor level, a space that serves as hostel for visiting Halflings, gathering place for the local community, and informal embassy for Halfling interests in the Windspeaker's governance. The house is furnished in a combination of Halfling comfort-traditions and the practical constraints of sky-oak forest living, and the result is pleasant rather than compromised. The community's connection to Semyon the Hearth Mother is maintained here through a small shrine in the kitchen that is the house's most consistently warm room.",
+    "exits": {
+      "south": 6125,
+      "east": 6131
+    },
+    "flags": [
+      "safe",
+      "indoor",
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 6133,
+    "name": "Myruvane - Herb-Dye Garden",
+    "description": "A hillside garden terraced into the forest margin south of the Aviary produces the plant-based dyes that give Myruvane's fabrics their distinctive palette. The terraces are arranged by color family \u00e2\u20ac\u201d blue and green plants above, red and yellow below \u00e2\u20ac\u201d and the garden is arranged so that water flows downhill through channels carved into the terrace walls, watering the lower sections with the nutrient-rich runoff from above. The garden is maintained by a joint Hasura-Pasua team whose botanical knowledge is impressive in its depth and whose willingness to experiment has produced several new dye colors in the past decade.",
+    "exits": {
+      "north": 6119,
+      "east": 6129
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6134,
+    "name": "Myruvane - Storage Lofts",
+    "description": "The storage lofts of Myruvane are elevated platforms in the canopy where dried and packaged goods are kept above the forest floor humidity. The lofts store finished silk awaiting export, dried instruments wrapped in preserving cloth, and the food and raw material reserves that give the city its buffer against trade disruptions. The loft system is managed by a Halfling logistics coordinator whose spatial memory and organizational instinct are considered city assets by the Windspeaker. Access to the secure lofts requires authorization; the common storage areas are accessible to residents during daylight.",
+    "exits": {
+      "west": 6131,
+      "south": 6132
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6135,
+    "name": "Myruvane - Lakeside Dock",
+    "description": "Myruvane's main dock on the Kailian shore handles the seasonal exchange of goods that supplements the barge-landing at the Tideweave Bridge. At Tide Turn, when traffic is highest, additional barge berths are staked out from the dock's ends. The dock is timber, built on a stone foundation, and the Pekakarlik maintenance contract is renewed annually. A signal-post at the dock's end communicates with the watch at Velathenor and Darnavar by flag, and the dock-master coordinates chain-field access with the harbor masters of both neighboring cities to prevent scheduling conflicts during the critical planting and harvest periods.",
+    "exits": {
+      "east": 6127,
+      "north": 6122
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6136,
+    "name": "Myruvane - Bard's Corner",
+    "description": "A platform in the canopy's mid-level, Bard's Corner has no official status but considerable cultural weight. It is where Myruvane's musicians gather informally after the day's work, where instruments are tested and compared, where songs in progress are workshopped, and where the oral tradition that records Tidebloom's history is maintained and extended. The atmospheric quality of air-elemental amplification near the Aviary makes this a particularly good performance space, and the informal concerts that happen here on warm evenings draw audiences from across the city. Harreem's influence is felt here too \u00e2\u20ac\u201d not all the songs are cheerful.",
+    "exits": {
+      "south": 6121,
+      "west": 6126
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6137,
+    "name": "Myruvane - South Road",
+    "description": "The south road from Myruvane descends through the thinning Tidewoods toward the Kailian shore and the trade connections to Darnavar and the wider region. The road is maintained by both Myruvane and Darnavar, their shared interest in commerce overcoming any political differences. Milestones mark the route, and a supply cache maintained by both cities is stocked at the midpoint. The road is safe by day and patrolled; by night it is recommended to camp rather than travel, as the Tidewoods' nocturnal character changes in ways that experienced travelers respect.",
+    "exits": {
+      "north": 6115,
+      "south": 6320
+    },
+    "flags": [
+      "road",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6138,
+    "name": "Myruvane - Windspeaker's Overlook",
+    "description": "A platform at the top of Myruvane's tallest sky-oak, accessible only by the senior canopy staff and by Windspeaker Greenveil's invitation, the Overlook provides the broadest view available in the city. On clear days both Velathenor to the north and Darnavar to the south-east are visible as breaks in the forest canopy where the Kailian shore reflects light. The Overlook is used for the Windspeaker's air-shaping meditations and for the weather assessments that inform Myruvane's agricultural planning. Greenveil finds the isolation necessary \u00e2\u20ac\u201d the governance of a city built by two generations of refugees requires spaces where the weight of that history can be held without audience.",
+    "exits": {
+      "down": 6120
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6139,
+    "name": "Myruvane - Gate Road Junction",
+    "description": "The junction at Myruvane's eastern boundary where the forest trails meet the lake-shore road and the road to the north gate converge into a single point. A waypost here is more heavily carved than most \u00e2\u20ac\u201d both Hasura and Pasua directional notation are used, making it readable to both canopy and forest communities. The junction is also where travelers from Darnavar arrive and where outbound caravans form up before departure. A small fire-ring at the junction is maintained for travelers caught out after dark, and the local community checks it weekly to ensure the fire-making supplies are stocked.",
+    "exits": {
+      "west": 6128,
+      "north": 6123,
+      "south": 6127
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6140,
+    "name": "Floatmarket",
+    "description": "The Floatmarket is Darnavar's most distinctive institution and the most unusual market in Tidebloom Reach: a network of rafted stalls tethered to the Mithril Chain anchor-posts on the Kailian's surface, rising and falling with the lake's seasonal cycle. The stalls sell nets, lake pearls, Riverstone Amulets, fish, and the dried-reed goods that the Eruskan Human majority of Darnavar has specialized in since the Concordant era. The market is busiest in the morning when the fishing boats return, and the sound of trade calls, chain-metal striking wood, and the ever-present lapping water creates a din that residents find comfortable and visitors find overwhelming.",
+    "exits": {
+      "north": 6141,
+      "east": 6142,
+      "south": 6143,
+      "west": 6144,
+      "northeast": 6163
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "market",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6141,
+    "name": "Reedtemple",
+    "description": "The Reedtemple is built from the bundled and shaped reed-grass of the Kailian's margin, its walls and roof a dense weave that is surprisingly weather-resistant and beautifully textured. The temple amplifies water magic \u00e2\u20ac\u201d create water cast here is noticeably more powerful, the flow fuller and the purity greater. The temple has expanded significantly since the Deceivers' War, now including a full sanctuary to Kaile'a, Mistress of Waves, alongside the older Lady of the Sea dedication. In Darnavar, where water, trade, and community define daily life, Kaile'a's combination of wave-mastery and practical divine assistance is the most personally resonant theology the city has encountered.",
+    "exits": {
+      "south": 6140,
+      "east": 6145
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6142,
+    "name": "Boatwright Quay",
+    "description": "The eastern end of Darnavar's waterfront is occupied by the Boatwright Quay, where the Pekakarlik Dwarf boatwrights who are fifteen percent of the city's population build and repair the riverboats and fishing craft that the Kailian community depends on. The Quay smells of fresh timber, caulking compound, and the particular resinous tang of the Tidewoods timber used for boat construction. River Spears \u00e2\u20ac\u201d weapons that grant a +2 attack bonus in water \u00e2\u20ac\u201d are made here and sold from a workshop at the Quay's landward end; Tarvek Wen's oath-mark is carved above the main slipway, honoring the god of justice and craftsmanship whose principles the Pekakarlik hold as professional standards.",
+    "exits": {
+      "west": 6140,
+      "north": 6146
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6143,
+    "name": "Darnavar - South Shore",
+    "description": "The southern shore of Darnavar's Kailian frontage is where the city's tidal fields begin. At low water, the dark silt of the exposed seabed is visible here, and the chain-guides from the Mithril Chain anchor-posts lead directly to the chain-driven planting platforms that operate these fields. Mayor Teven Saltmark has made the southern fields a priority for the post-war recovery \u00e2\u20ac\u201d the drowned ruins of Mossgrove lie below the water's surface not far to the south, and the mayor's plan to use Mira Seadancer's staff (if it can be recovered) to strengthen these water defenses is not publicly stated but widely understood.",
+    "exits": {
+      "north": 6140,
+      "east": 6147
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6144,
+    "name": "Lakemist Spire - Base",
+    "description": "The Lakemist Spire takes its name from the morning mist that forms over the Kailian at this latitude and rolls inland over the low-shore buildings in the cold months, wrapping the spire's base in grey. The tower is built on a stone foundation that extends into the lake itself, its base reinforced against the high-water season storms by iron buttressing added after the Deceivers' War. The tower's watch role is doubled: it monitors both lake approaches and the submerged southern margin where the drowned ruins of Mossgrove lie below the surface, the occasional unnatural shimmer from those depths a subject of watchman reports that the Mayor reviews personally.",
+    "exits": {
+      "east": 6140,
+      "up": 6148,
+      "west": 6160
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6145,
+    "name": "Darnavar - Shrine Quarter",
+    "description": "The block between the Reedtemple and the Boatwright Quay holds the cluster of smaller shrines that serve Darnavar's religious diversity. Shrines to the Lady of the Sea, Kaile'a, and Tarvek Wen anchor the quarter, alongside smaller alcoves for Semyon the Hearth Mother and the Halfling community's private devotions. The most recent addition is a carved marker for Mira Seadancer, the sorcerer who died guiding Mossgrove's last barges to safety; it is not a formal temple, but the candles left at its base and the small waterproof tokens placed against the carving make its status clear. The shrine quarter is the quietest part of Darnavar at any hour.",
+    "exits": {
+      "west": 6141,
+      "north": 6149
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 6146,
+    "name": "Darnavar - Boatwright Workshop",
+    "description": "The main boat-construction workshop of the Boatwright Quay is a long, high-ceilinged building where hulls in various stages of completion sit on construction frames. The Pekakarlik master boatwright presides over a team of four journeymen and two apprentices, the work organized so that multiple boats are always in progress at once \u00e2\u20ac\u201d the region's demand for replacement craft never fully catches up with the supply. The designs used here have been refined over five generations, and the current plans represent the accumulated experience of every Kailian storm, every tidal challenge, and every repair job that has taught the boatwrights what the lake requires.",
+    "exits": {
+      "south": 6142,
+      "east": 6150
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6147,
+    "name": "Darnavar - Chain-Field Landing",
+    "description": "The landing platform at Darnavar's southern chain-field access point handles the coordination between the city's barge operations and the main Mithril Chain network. A chain-keeper's post here reports directly to Mayor Saltmark's office on the condition of the anchor-rings and the status of the planting-season barge schedule. The post maintains a log of chain-anchor maintenance records that complements the Branmill Cove and Velathenor records, creating a comprehensive picture of the whole system's health. The most recent entries note three anchor-points showing unusual wear \u00e2\u20ac\u201d an item flagged for priority inspection before the next Tide Turn.",
+    "exits": {
+      "west": 6143,
+      "north": 6151
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 6148,
+    "name": "Lakemist Spire - Watchtower",
+    "description": "From the top of the Lakemist Spire, the southern Kailian is visible on clear days all the way to the submerged outline of Mossgrove's old waterfront \u00e2\u20ac\u201d a dark smudge below the lake's surface that has never fully faded despite a generation of silt accumulation. The watchman on duty here is trained to report any unusual light from those depths, any movement of the unnatural kind that the post's standing orders describe in terms careful enough to avoid the word 'haunted' while meaning exactly that. The view north shows Darnavar's full extent and the Floatmarket's rafts on the lake surface, ordinary and reassuring.",
+    "exits": {
+      "down": 6144
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6149,
+    "name": "Darnavar - Mayor's Hall",
+    "description": "Mayor Teven Saltmark \u00e2\u20ac\u201d Eruskan Human, Sorcerer 6, the man who united Darnavar's post-war refugees into a functioning community \u00e2\u20ac\u201d governs from a hall that is more comfortable than ceremonial. The hall's central room serves as both reception space and council chamber, its walls hung with charts of the Kailian's southern reaches and a large map showing both the living city and the drowned outline of Mossgrove below. Saltmark's desk holds a copy of the traveling bard's report about Mira Seadancer's staff and three different draft plans for recovering it, each with a different risk assessment. The Mayor is direct, pragmatic, and acutely aware that Darnavar's post-war resilience is not guaranteed.",
+    "exits": {
+      "south": 6145,
+      "east": 6152
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6150,
+    "name": "Darnavar - Pekakarlik Quarter",
+    "description": "The Pekakarlik community of Darnavar is centered near the Boatwright Quay, their neighborhood's low-ceilinged houses and precision-organized workshops clustering together in the practical way of Dwarven settlements everywhere. The Pekakarlik here are primarily boatwrights and chain-maintenance workers, their skills essential to the city's lake-dependent economy. The quarter has a shrine-forge to Gonmareck Ritler at its center \u00e2\u20ac\u201d a combination smithy and worship space that is distinctly Pekakarlik in its theology, since the god of craftsmanship is understood here as best honored through excellent work. The quality of tools produced in this quarter is regional standard.",
+    "exits": {
+      "west": 6146,
+      "north": 6153
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6151,
+    "name": "Darnavar - Net-Maker's Yard",
+    "description": "An open-air yard on the Kailian's edge where Darnavar's net production takes place. Woven nets \u00e2\u20ac\u201d fishing nets, the finer mesh used for the chain-field planting platforms, and the heavy cargo nets used by the Floatmarket's loading cranes \u00e2\u20ac\u201d are produced here by a workforce that is mostly Eruskan Human women, a tradition going back to the Concordant era when net-making was one of the few skilled trades accessible to all Kin equally. The yard has a distinctive rhythmic sound \u00e2\u20ac\u201d the wooden shuttle-blocks and the pull-and-tie of knotwork \u00e2\u20ac\u201d that carries over the water on calm days and is part of the aural texture of Darnavar.",
+    "exits": {
+      "south": 6147,
+      "east": 6154
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6152,
+    "name": "Darnavar - Market Street",
+    "description": "The main commercial street of Darnavar runs from the Mayor's Hall to the Floatmarket landing, lined with the permanent shops and trading offices that serve the city's daily needs. Provisions, rope, lamp oil, and sailing hardware share the street with cloth merchants, food-sellers, and the Halfling traders who stock items brought in from Velathenor and Branmill Cove. The street is paved with Pekakarlik-laid lake-stone and wide enough for loaded carts, and the shop-signs are mostly painted timber rather than carved stone \u00e2\u20ac\u201d functional, easy to replace, and repainted frequently enough that the street stays bright despite the constant lake humidity.",
+    "exits": {
+      "west": 6149,
+      "south": 6155,
+      "north": 6162
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 6153,
+    "name": "Darnavar - Community Hall",
+    "description": "Darnavar's community hall was built in the first years after the Deceivers' War specifically to house the refugee community that had more than doubled the city's population. It is larger than a city of 4,200 would normally require and reflects the priorities of a community that had just watched disunity cost four cities everything. The hall is used for civic assemblies, for the Reedwave Festival's indoor events, and for the regular dinners that Mayor Saltmark hosts for the different community groups \u00e2\u20ac\u201d a practice that started as political necessity and became genuine social tradition. The hall is fully accessible at street level, its design specifically chosen to be welcoming to all body types.",
+    "exits": {
+      "south": 6150,
+      "west": 6149
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6154,
+    "name": "Darnavar - Eruskan Quarter",
+    "description": "The Eruskan Human majority of Darnavar occupies the city's inland quarter, their houses and workshops organized along practical straight lanes. The Eruskan families here include both the original Darnavar population and the Whistlebank and Mossgrove refugees who swelled the city after the burnings, and three decades have blended the communities to the point where most residents know both lineages. The cultural markers that distinguish Mossgrove from Whistlebank from original Darnavar are mainly visible in festival customs and old-family cooking traditions rather than in any social division. The city that grief built has worked at unity with a determination that less-haunted places rarely match.",
+    "exits": {
+      "west": 6151,
+      "south": 6156
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6155,
+    "name": "Darnavar - Halfling Quarter",
+    "description": "The Halfling community of Darnavar \u00e2\u20ac\u201d ten percent of the population \u00e2\u20ac\u201d maintains its quarter near the Floatmarket, their connections to the lake trade giving them economic centrality that their numbers alone would not. The quarter is the city's most cheerfully decorated, a community tradition that serves partly as aesthetic preference and partly as a deliberate counterweight to the grief that marks Darnavar's collective memory. The Reedwave Festival's preparations always begin in this quarter, and the flower-weaving, lantern-making, and food preparation that precede the festival are community events that draw participation from all of Darnavar's groups.",
+    "exits": {
+      "north": 6152,
+      "east": 6157
+    },
+    "flags": [
+      "safe",
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 6156,
+    "name": "Darnavar - East Gate",
+    "description": "The east gate of Darnavar opens onto the road that follows the Kailian shore east toward the Sundrift Veil and the trade routes connecting Tidebloom Reach to Kinsweave and the wider west. The gate is the most active of Darnavar's exits, handling the caravan traffic that is the city's commercial lifeline. A customs post here assesses incoming goods and records departures, and the duty officer maintains the watch log that feeds into the Mayor's security briefings. The view east shows the lake shore opening up as the Tidewoods thin, and on clear days the Sundrift Veil's lighter canopy is visible as a pale smudge on the horizon.",
+    "exits": {
+      "west": 6154,
+      "east": 6321
+    },
+    "flags": [
+      "gate"
+    ]
+  },
+  {
+    "vnum": 6157,
+    "name": "Darnavar - Healer's House",
+    "description": "Darnavar's healing facility is well-resourced relative to the city's size, a legacy of the post-war period when the influx of traumatized refugees created medical needs beyond what conventional civic provision could handle. The current staff of three healers \u00e2\u20ac\u201d one Eruskan Human cleric of Tarvek Wen, one Pekakarlik physic, and a young Halfling apothecary's apprentice \u00e2\u20ac\u201d can manage most medical emergencies and provide the therapeutic conversations that trauma survivors sometimes need alongside physical treatment. The healer's house has a small library of medical texts and a garden of medicinal plants maintained by the apothecary's apprentice.",
+    "exits": {
+      "west": 6155,
+      "north": 6158
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6158,
+    "name": "Darnavar - Armorer and Supply",
+    "description": "A combined armor and equipment shop near the Halfling Quarter serves both the city's resident population and travelers passing through on the lake-shore trade route. The armorer carries practical gear \u00e2\u20ac\u201d leather, ring-mail, river-knives \u00e2\u20ac\u201d and the supply section has a strong inventory of sailing and water-travel equipment. River Spears from the Boatwright Quay are available for purchase here, and the shopkeeper maintains a commission arrangement with the Pekakarlik boatwrights for custom weapon orders. The shop stays open later than most Darnavar businesses, serving the evening traffic from the Floatmarket.",
+    "exits": {
+      "south": 6157,
+      "west": 6159
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6159,
+    "name": "Darnavar - Floatmarket Landing",
+    "description": "The stone ramp at the Floatmarket's landward edge allows goods to flow between the lake surface and the city's inland market street. Carts are loaded here from the crane that lifts cargo from the rafted stalls below, and the ramp is always occupied during trading hours with the traffic of the city's commercial metabolism. A small office at the ramp's top handles the Floatmarket's stall assignments and the security arrangements that keep the lake-surface market viable. Mayor Saltmark's office receives a daily report from this post on unusual activity near the Floatmarket, since the stalls' proximity to the Mossgrove approach makes them a potential entry point for anything that might rise from the drowned ruins.",
+    "exits": {
+      "east": 6158,
+      "south": 6140
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 6160,
+    "name": "Darnavar - Reed Harvesting Dock",
+    "description": "A dedicated dock on the city's western margin handles the seasonal harvest of the reed-grass that is used in net-making, building construction, and the Reedtemple's maintenance. Teams go out in flat-bottomed boats at the appropriate season and harvest the reeds that grow in the Kailian's marginal shallows, returning to this dock for processing and distribution. The dock has a drying yard attached where harvested reeds are spread and turned until they reach the flexibility and strength required for working. The smell of drying reed is pleasant and distinctive, and the dock is an informal gathering place for workers during the harvest season.",
+    "exits": {
+      "east": 6144,
+      "north": 6161
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6161,
+    "name": "Darnavar - Tidal Fields Observation Point",
+    "description": "A raised earthwork on Darnavar's southern edge gives citizens and chain-field workers a clear view of the planting fields and the barge operations below. The observation point is used for both agricultural monitoring and as the vantage for the Reedwave Festival's Tide Turn ceremony, at which Mayor Saltmark leads the city's thanks for the harvest. From here, the submerged outline of Mossgrove is visible on calm days as a dark pattern in the lake's southern margin \u00e2\u20ac\u201d the city that drowned when Lord Rakahda hesitated and Mira Seadancer paid the price. Darnavar does not look away from that outline. They keep it visible on purpose.",
+    "exits": {
+      "south": 6160,
+      "east": 6143,
+      "north": 6164
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 6162,
+    "name": "Darnavar - Caravaner's Inn",
+    "description": "The Caravaner's Inn at Darnavar's market street junction serves the merchant traffic that moves along the Kailian shore road, its rooms designed for the practical needs of people who spend most of their lives traveling. Secure storage, a stable-yard, and a common room where route information is freely exchanged make this the most commercially useful accommodation on the southern Kailian circuit. The innkeeper is a former Kinsweave caravan-master who settled in Darnavar after the war and knows every road condition and bandit report on the routes between here and the western cities. Her common room noticeboards are more current than most official sources.",
+    "exits": {
+      "north": 6152,
+      "west": 6159
+    },
+    "flags": [
+      "safe",
+      "tavern",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 6163,
+    "name": "Darnavar - North Road to Myruvane",
+    "description": "The road north from Darnavar passes through the Tidewoods' southern fringe and eventually connects to Myruvane, the route used by silk-traders and instrument-buyers as well as the chain-maintenance teams who service the network between the two cities. The road is maintained jointly and is in good repair, its surface of packed gravel adequate for loaded carts in most weather. The Tidewoods close in quickly north of the city, and the comfortable openness of Darnavar's lake-shore position gives way to the filtered green light and layered sounds of the forest within a quarter-mile of the gate.",
+    "exits": {
+      "south": 6140,
+      "north": 6320
+    },
+    "flags": [
+      "road",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6164,
+    "name": "Darnavar - Mossgrove Approach Shore",
+    "description": "The southernmost accessible point of Darnavar's shoreline, this stretch of the Kailian margin is where the lake deepens toward the drowned ruins of Mossgrove. The water here is always slightly cooler than the northern shore, and the reeds are sparser and less healthy, as if the lake itself is affected by what lies below. On moonless nights, some residents report seeing a dim glow from the depths \u00e2\u20ac\u201d the reawakening of Mira Seadancer's staff, if the traveling bard's report is correct. The shore is not restricted, but it is not comfortable, and the people of Darnavar who walk here do so with a particular quiet purposefulness, as if they are paying a visit rather than taking a walk.",
+    "exits": {
+      "north": 6161,
+      "west": 6144
+    },
+    "flags": [
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6200,
+    "name": "Hillmeet - Charred Gateway",
+    "description": "What was once a sky-oak arch marking the entrance to Hillmeet has burned to a pair of blackened stumps, their surfaces fused by the D\u00c3\u00b3mnathar sorcery that turned the Wind Lord's own air into fire. The char goes deep \u00e2\u20ac\u201d not surface burn, but structural destruction that no natural fire produces. Ash has settled into every crevice and the ground between the stumps is grey rather than dark, as if even the soil has been changed. A faint smell of burning lingers here even after decades, and the wind that passes through the stumps makes a sound somewhere between a whisper and a moan.",
+    "exits": {
+      "south": 6317,
+      "north": 6201,
+      "east": 6202
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6201,
+    "name": "Hillmeet - Fallen Canopy Platform",
+    "description": "The great canopy platform that once served as Hillmeet's main gathering space has fallen, its sky-oak supports burned through at the base, the platform itself lying at an angle against two of the surviving stumps. The wood is black and hard, fire-preserved in an ironic way \u00e2\u20ac\u201d the burning that destroyed it has made the surviving timber impervious to further decay. Sand Wraiths are drawn to this platform, the largest of the burned structures; their forms flicker at the edges of vision, grief made tangible, reaching toward anything that carries elemental warmth. The air here is perceptibly colder than the surrounding forest.",
+    "exits": {
+      "south": 6200,
+      "east": 6203
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6202,
+    "name": "Hillmeet - Bard's Platform Ruins",
+    "description": "The platform where Bard Aerith Windweave made her last stand is identifiable by the unusual burn pattern \u00e2\u20ac\u201d the wood here burned not outward from below but inward from above, as if the fire came down from the sky. Her flute's final note is said to have echoed here for three days after the burning, heard by refugees miles away. The platform's remains hold a faint harmonic resonance that air magic perceives as a sustained low tone. Searchers who have come looking for the flute itself have found nothing, though disturbed debris suggests others have searched before them. The resonance intensifies near the platform's center.",
+    "exits": {
+      "west": 6200,
+      "north": 6204
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6203,
+    "name": "Hillmeet - Storm Wisp Warren",
+    "description": "The collapsed lower level of the Hillmeet archive hall has become a nesting site for Storm Wisps, the CR 2 electrical spirits that are a byproduct of the unnatural burning. Their blue-white flickers are visible in the debris at all hours, and those who approach too closely find the air crackling with static charge. The Wisps are not malicious in the way the Sand Wraiths are \u00e2\u20ac\u201d they appear to be more confused than angry, their behavior suggesting something trapped rather than something hunting. Lore-Keeper Windbloom's notes suggest the Wisps may be bound to a specific artifact still buried in the archive debris.",
+    "exits": {
+      "west": 6201,
+      "south": 6205
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6204,
+    "name": "Hillmeet - Lord Skysong's Spire Base",
+    "description": "The base of Lord Pryce Skysong's personal tower \u00e2\u20ac\u201d the seat from which he declared the war 'not a battle we needs to see' \u00e2\u20ac\u201d is the most intact structure in Hillmeet, an accidental monument to the arrogance that cost the city everything. The stone base survived the burning that took the sky-oak upper levels, and the rooms within are scorched but accessible. Sand Wraiths are more concentrated here than anywhere else in the ruins, as if the restless dead hold the location of their lord's failure in particular contempt. The walls of the base bear his fire-damaged banner, its device no longer readable.",
+    "exits": {
+      "south": 6202,
+      "east": 6206
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6205,
+    "name": "Hillmeet - Flooded Cellar Archive",
+    "description": "Beneath the collapsed archive, water from decades of rain has pooled in the cellar, creating a shallow indoor lake among the fallen shelves and burned scroll-cases. Some items have survived in the water \u00e2\u20ac\u201d wind-silk is nearly indestructible in immersion \u00e2\u20ac\u201d but retrieving them requires wading through the dark, cold pool while Sand Wraiths circle overhead. A search of the cellar (Search DC 20) reveals a sealed scroll-case with its contents intact: partial wind-silk scrolls from Hillmeet's song archive, the kind that Lore-Keeper Windbloom has spent a decade reconstructing from fragments.",
+    "exits": {
+      "north": 6203
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6206,
+    "name": "Hillmeet - Tomb of Kings Approach",
+    "description": "The northeastern edge of Hillmeet's ruins gives way to the deeper forest that leads to the Tomb of Kings, the ancient Giant burial site that predates the Kin by uncounted centuries. The transition is marked by a change in the forest's character \u00e2\u20ac\u201d the Tidewoods undergrowth thins and the trees grow larger and older, their bark patterned with the pale lichen that seems to grow only near sites of significant elemental density. The Kin-sense anomalies reported by Tiravel's Canopy Watch are most pronounced in this area, the dead-zone patches forming a loose corridor toward the Tomb that no patrol has yet been willing to follow to its terminus.",
+    "exits": {
+      "west": 6204,
+      "north": 6207
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6207,
+    "name": "Hillmeet - Tomb of Kings - Outer Precinct",
+    "description": "The outer boundary of the Tomb of Kings is marked by standing stones twice the height of a tall human, each one inscribed with Giant rune-work so deeply carved that the characters cast shadows even in overcast light. The stones are spaced to form a rough circle, and the ground within is clear of undergrowth \u00e2\u20ac\u201d not burned clear, but simply absent, as if the turf has chosen not to grow here. The Hasura of Tiravel consider this sacred ground and the stonework here shows evidence of recent careful tending. Guardian constructs \u00e2\u20ac\u201d described in patrol reports as 'stone forms that move' \u00e2\u20ac\u201d have been seen near the outer standing stones at night.",
+    "exits": {
+      "south": 6206
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6215,
+    "name": "Foxfen - Vine-Strangled Gate",
+    "description": "What was once Foxfen's grove entrance \u00e2\u20ac\u201d a living arch of awakened trees that greeted visitors with the warmth of genuine consciousness \u00e2\u20ac\u201d is now a tangle of dead and re-growing vegetation, the original awakened trees killed by the alien fire that defied the Lady of Fire's natural harmony. The dead trunks are thick with parasitic growth, their wood supporting a new, unconscious ecosystem that has slowly reclaimed the physical space if not the spiritual character. The air smells of rot and new growth in uneasy combination, and Storm Wisps drift between the dead trunks in the grey light.",
+    "exits": {
+      "south": 6319,
+      "north": 6216,
+      "east": 6217
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6216,
+    "name": "Foxfen - Druid's Last Stand",
+    "description": "The clearing where Druid Sylvara Greenbough wove her vine barrier is marked by the remains of that barrier \u00e2\u20ac\u201d long dead now, but preserved in the same strange way that some things in the Ashen Hollows are preserved, as if the elemental power of the act has maintained a physical echo. The vines are bleached white and hard as bone, their curves still tracing the arc of the barrier that saved a handful of Foxfen's people. A Sand Wraith of unusual intensity haunts this clearing, its behavior suggesting something more purposeful than the grief-driven wandering of the other Wraiths in the ruins. It does not attack immediately, but it watches.",
+    "exits": {
+      "south": 6215,
+      "north": 6218
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6217,
+    "name": "Foxfen - Ogre-Burned Grove",
+    "description": "The section of Foxfen that was set ablaze by ogres and evil humans shows a different character from the D\u00c3\u00b3mnathar sorcery burns \u00e2\u20ac\u201d this fire behaved like fire should, consuming and leaving ash, rather than the structural destruction of alien magic. What remains is a wide clearing of black soil, regrowing slowly with the pioneer plants that colonize burned ground first: fireweed, ash-grass, and the small yellow flowers that the Hasura call 'Foxfen blooms' in wry memorial. The clearing is oddly peaceful compared to the rest of the ruins, as if the natural fire has settled whatever spirit it disturbed.",
+    "exits": {
+      "west": 6215,
+      "north": 6219
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6218,
+    "name": "Foxfen - Deceiver Orb Chamber",
+    "description": "The center of Foxfen's collapsed main grove-hall, accessible through a collapse-gap in the dead-fall timber, holds the remains of the alien magic that the Deceivers used here. A shadow-etched orb \u00e2\u20ac\u201d Lord Verith's bane, a Deceiver artifact \u00e2\u20ac\u201d is described in Tiravel's patrol reports as still present, still emitting a faint dark shimmer that disrupts Kin-sense in a ten-foot radius. Storm Wisps cluster around it, apparently attracted to or imprisoned by its residual power. Retrieving the orb (Search DC 20, Disable Device DC 18 to contain the Kin-sense disruption) would require disabling or dispersing the Wisps first, and the effect on the Foxfen ruins if the orb is removed is unknown.",
+    "exits": {
+      "south": 6216,
+      "east": 6220
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6219,
+    "name": "Foxfen - Regrown Margin",
+    "description": "The eastern edge of Foxfen's ruins is the furthest from the original burning and shows the most natural recovery, the Tidewoods' normal vegetation slowly reasserting itself among the dead stumps. Trees are growing back \u00e2\u20ac\u201d not sky-oaks yet, but the pioneer species that prepare soil for sky-oak establishment over decades. The margin is not safe \u00e2\u20ac\u201d Sand Wraiths range this far from the ruins' center \u00e2\u20ac\u201d but it is the least oppressive part of Foxfen, and the birdsong here is almost normal. Almost. The birds fall silent at irregular intervals in a pattern that corresponds, for those tracking it, with the Sand Wraith patrol patterns.",
+    "exits": {
+      "south": 6217,
+      "east": 6221
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6220,
+    "name": "Foxfen - Lord Verith's Hall Ruins",
+    "description": "The ruins of Lord Verith's hall \u00e2\u20ac\u201d from which he declared he would defend only his own walls \u00e2\u20ac\u201d are the most substantial surviving structure in Foxfen. Stone foundation walls still stand to head height, the sky-oak upper stories long since burned. The interior is exposed to the sky, filled with dead-fall and decades of leaf-accumulation. A Sand Wraith of strong intensity haunts the hall specifically, its behavior suggesting it may be associated with a resident who died here defending the walls that Verith claimed he would protect and then failed to defend. Personal items partially visible in the debris include a melted silver chain that might be recoverable.",
+    "exits": {
+      "west": 6218
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6221,
+    "name": "Foxfen - Eastern Trail",
+    "description": "The trail that once connected Foxfen to the wider forest road system is overgrown but passable, its path still visible as a slightly depressed line through the regrown vegetation. The trail is used occasionally by Tiravel's long-range patrols, who regard reaching it as the outer limit of responsible patrol range given the current Kin-sense anomaly situation. Kin-sense is unreliable along this trail \u00e2\u20ac\u201d not dead, but flickering, as if something is moving at the edge of perception. The trail connects north to the deeper forest and east toward the Stonewind Plains' edge.",
+    "exits": {
+      "west": 6219,
+      "north": 6222
+    },
+    "flags": [
+      "dangerous",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6222,
+    "name": "Foxfen - Northern Ruins",
+    "description": "The northernmost structures of Foxfen are the least documented and the least visited of the Ashen Hollows ruins. Whatever stood here \u00e2\u20ac\u201d residential platforms, storage structures, or community spaces \u00e2\u20ac\u201d has been reduced to undifferentiated debris by burning and decades of weather. The undergrowth has advanced furthest here, the ruins more absorbed into the forest matrix than elsewhere. Sand Wraiths appear less frequently in this section, which patrol reports attribute either to less intense grief-anchor here or to the Kin-sense disruption being strong enough to confuse even the Wraiths' orientation.",
+    "exits": {
+      "south": 6221
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6230,
+    "name": "Whistlebank - Silted Harbor",
+    "description": "The harbor of Whistlebank was choked by D\u00c3\u00b3mnathar magic that turned the Kailian's own silt against the city, filling the channel until the barges were stranded and the city's evacuation route was compromised. Decades later, the harbor is still silted \u00e2\u20ac\u201d a broad, shallow delta of accumulated sediment where the water barely covers the old dock foundations. The Mithril Chain that served this harbor is still here, its end anchor buried under fifteen feet of silt, one of the missing chain-points visible on old Branmill Cove charts. Sand Wraiths wade through the silted shallows at night, their forms incomplete where they intersect with the accumulated sediment.",
+    "exits": {
+      "south": 6316,
+      "north": 6231,
+      "east": 6232
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6231,
+    "name": "Whistlebank - Stranded Barge Row",
+    "description": "Several chain-barges from Whistlebank's fleet were stranded by the silting and left where they sat when the evacuation completed and no one came back. They are still here, their flat hulls settled deep into the silt, their chain-guide rings rusted to the Mithril Chain links they were attached to when the harbor clogged. The barges have become platforms for the sand-grass that grows in tidal shallows, their surfaces covered in vegetation that gives them a ghostly organic appearance. Marin Wavecrest covered the evacuation from these decks before her fog-conjuring drew the D\u00c3\u00b3mnathar's attention and the killing spell that sank her ship.",
+    "exits": {
+      "south": 6230,
+      "east": 6233
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6232,
+    "name": "Whistlebank - Market Quarter Ruins",
+    "description": "Whistlebank was a thriving Eruskan port, and its market quarter's ruins reflect that prosperity in the scale of what was destroyed. Stone building foundations line the lane at regular intervals, the buildings they supported burned but the foundations intact, creating a grid of knee-high stone walls that maps the city's commercial layout exactly. A searching party (Search DC 18) might find trade-goods sealed in the old storage cellars \u00e2\u20ac\u201d salted fish, preserved grain, trade-cloth \u00e2\u20ac\u201d still protected by the same stone construction that saved the foundations. The Sand Wraiths here move with a purposeful desperation that makes them more dangerous than their counterparts in other ruins.",
+    "exits": {
+      "west": 6230,
+      "north": 6234
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6233,
+    "name": "Whistlebank - Captain's Quay",
+    "description": "The quay where Marin Wavecrest staged her fog-magic defense has a different feel from the rest of Whistlebank's ruins \u00e2\u20ac\u201d not less dangerous, but charged with a different emotional quality. The sand wraiths here are calmer, less frantic, as if the memory of someone who acted with clarity and purpose has a stabilizing effect even on grief-formed undead. A Riverstone Amulet with an unusual sea-green luster is embedded in the quay's weathered stone near the bollard where Wavecrest is recorded as having taken her last stand. Removing it (Search DC 20) would require close contact with that space and whatever it remembers.",
+    "exits": {
+      "west": 6231,
+      "north": 6235
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6234,
+    "name": "Whistlebank - Residential Ruins",
+    "description": "The residential quarter of Whistlebank was built close to the market for the convenience of the fishing families who worked both. The houses were timber-framed over stone foundations, and the timbers burned completely, leaving only the foundations in a dense pattern that makes navigation difficult. The fog that Wavecrest conjured to cover the evacuation never fully lifted from this part of the ruins \u00e2\u20ac\u201d or rather, something that looks like fog persists here, cold and unnatural, reducing visibility to thirty feet even in clear weather. The fog does not obstruct Kin-sense, but it muffles sound and makes distance-judgment difficult.",
+    "exits": {
+      "south": 6232,
+      "east": 6236
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6235,
+    "name": "Whistlebank - Harbor Master's Ruins",
+    "description": "The Harbor Master's office, where Lord Alprenter received the reports of the Deceiver advance and dismissed them as 'unlikely,' is one of the more substantial ruins in Whistlebank. The stone walls stand to window-height, and the interior still holds the remains of the Harbor Master's equipment: a rusted tide-gauge, the corroded remnants of a mirror-signal system, and a board where the last shipping manifest was posted and never taken down. The manifest is still partially legible on the weather-preserved wood: vessels cleared for departure, the morning of the city's last day.",
+    "exits": {
+      "south": 6233,
+      "west": 6234
+    },
+    "flags": [
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6236,
+    "name": "Whistlebank - Eastern Ruins",
+    "description": "The eastern margin of Whistlebank's ruins is where the D\u00c3\u00b3mnathar magic hit first, and the character of the destruction here is different from the harbor section \u00e2\u20ac\u201d more intense, less explicable by conventional understanding of fire and flood. The stone is discolored in patterns that no natural process produces, and the silt that accumulated in the harbor extends inland here, as if the silting was not merely hydraulic but intentional, the earth and water conspiring under direction. Sand Wraiths in this section show agitation rather than grief, their movements suggesting fresh disturbance rather than settled haunting.",
+    "exits": {
+      "west": 6234
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6245,
+    "name": "Mossgrove - Drowned Approach",
+    "description": "The road to Mossgrove disappears under water before the old city boundary is reached \u00e2\u20ac\u201d the unnatural tides summoned by D\u00c3\u00b3mnathar sorcerers that overwhelmed the lake-town never fully receded, leaving the outer reaches permanently submerged. The water here is shallow enough to wade (Swim DC 10), but the footing is uncertain and the visibility below the surface poor. Drowned vegetation from the original inundation still stands in the shallower sections, its dead branches reaching upward through the water like a forest of intentions. Sand Wraiths move here in their underwater form, their touch desiccating even in immersion.",
+    "exits": {
+      "north": 6322,
+      "south": 6246,
+      "east": 6247
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6246,
+    "name": "Mossgrove - Submerged Market Square",
+    "description": "Three feet of water covers what was once Mossgrove's main market square, the lake-stone paving visible through the murky water when the light is right. Stall foundations stand as underwater obstacles at irregular intervals, and the goods that did not float away \u00e2\u20ac\u201d stone weights, iron tools, the heavier trade goods \u00e2\u20ac\u201d lie where they fell when the water rose. A glow visible on moonless nights from the southern part of the square is consistent with reports of Mira Seadancer's staff reawakening; the staff's last known position was near the market square's well, which still stands to chest height above the waterline.",
+    "exits": {
+      "north": 6245,
+      "west": 6248
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6247,
+    "name": "Mossgrove - Partially Submerged Docks",
+    "description": "The eastern dock of Mossgrove is partially above water, its pilings standing but its surface rotten and unreliable underfoot. The dock extends over deeper water than the rest of the submerged ruins, and in the depths below the outer dock sections, the silhouettes of Mossgrove's sunken barges are visible in clear water. Sorcerer Mira Seadancer's last known route took her along this dock, guiding the last barges out as the unnatural tide rose around her. A Deceiver relic (Search DC 20) is visible from the dock's end, lodged in the sunken barge nearest the dock \u00e2\u20ac\u201d whatever it was that reacted to the staff's reawakening.",
+    "exits": {
+      "west": 6245,
+      "south": 6249
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6248,
+    "name": "Mossgrove - Lord Rakahda's Hall - Flooded",
+    "description": "The hall where Lord Rakahda questioned why the races were being pushed 'beyond the brink' and then did nothing is now waist-deep in the unnatural water that his inaction allowed to rise. The flood-level inside the hall is higher than outside, a physical impossibility that continues to baffle those who have investigated \u00e2\u20ac\u201d the water inside is maintained at a higher level by whatever D\u00c3\u00b3mnathar magic was anchored here, as if the hall is being deliberately kept in judgment. Sand Wraiths are densest around this hall, and they behave with an urgency in this location that suggests the memory of a specific failure rather than generalized grief.",
+    "exits": {
+      "east": 6246,
+      "north": 6250
+    },
+    "flags": [
+      "dangerous",
+      "water",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 6249,
+    "name": "Mossgrove - Eastern Shore - Submerged",
+    "description": "The eastern shore of Mossgrove is among the deepest drowned sections, requiring actual swimming (Swim DC 15) to navigate. The bottom here is covered in the mosswork that gave the city its name, still growing under the unnatural conditions of the permanent inundation \u00e2\u20ac\u201d a dark, thick carpet of aquatic moss that covers the original paving entirely. Shapes visible in the moss include the outlines of items from the flooding: furniture, equipment, personal possessions of the residents who evacuated without time to gather everything. A careful search (Search DC 18) might recover any of dozens of items, and most of them are in better condition than they have any right to be.",
+    "exits": {
+      "north": 6247,
+      "west": 6250
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6250,
+    "name": "Mossgrove - The Staff's Location",
+    "description": "The well at Mossgrove's market square stands at the waterline, its stone rim barely above the lake's surface in the current season. Below the water, clearly visible to anyone who swims down to look (Swim DC 12), Mira Seadancer's staff rests wedged between the well's interior stones, its lower end touching the aquifer. The amber glow that residents of Darnavar occasionally see from the southern shore emanates from here. The staff's magical resonance is strong enough to feel from the surface with active Kin-sense. A Deceiver relic (Search DC 20 from below) has apparently settled near the staff, the two objects reacting to each other across a few feet of drowned stone.",
+    "exits": {
+      "south": 6248,
+      "east": 6249
+    },
+    "flags": [
+      "dangerous",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6300,
+    "name": "Tidewoods - North Road from Branmill",
+    "description": "The road north from Branmill Cove enters the Whispering Tidewoods within a quarter-mile of the city gate, the transition from open lakeside to dense forest canopy happening quickly. The road is well-maintained in its first mile \u00e2\u20ac\u201d civic maintenance responsibility extends this far \u00e2\u20ac\u201d and the way-markers are freshly painted. The humidity of the Tidewoods is immediate and distinctive, the air thickening and the sounds of the lake fading behind the forest's layered voices. Patrol boot-prints in the soft shoulders of the road show regular use by Branmill Cove's watchmen.",
+    "exits": {
+      "south": 6032,
+      "north": 6301,
+      "west": 6325,
+      "southwest": 4132
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6301,
+    "name": "Tidewoods - Northern Trail Junction",
+    "description": "A forest junction where the road from Branmill Cove splits \u00e2\u20ac\u201d northwest toward the Stonewind Plains and the approaches to the Tomb of Kings, northeast toward the Ashen Hollows. A carved post at the junction marks both directions, the northeastern arm bearing an additional warning: 'Ashen Hollows \u00e2\u20ac\u201d Sand Wraith Territory \u00e2\u20ac\u201d Proceed with Caution.' The western branch is cleaner and more traveled, the northeastern one showing signs of hesitation in boot-tracks that approach and stop, approach and stop. The forest here is at its most typical: sky-oaks filtering jade-green light, orchid-laden undergrowth, the distant call of a lake-heron.",
+    "exits": {
+      "south": 6300,
+      "northwest": 6302,
+      "northeast": 6303
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6302,
+    "name": "Tidewoods - Western Trail to Stonewind Plains",
+    "description": "The western trail from the forest junction follows the transition zone between the Tidewoods and the Stonewind Plains, the canopy thinning and the undergrowth changing from orchid-and-moss to the harder, drier vegetation of savannah. The transition takes several miles, and this stretch is in the middle of it \u00e2\u20ac\u201d tall trees still overhead but sparser, and the wind off the plains detectable as a different quality of air underneath the forest's humid breath. Grazing animals from the plains sometimes venture into this margin for the forest's shade and water, and their trails crisscross the road.",
+    "exits": {
+      "southeast": 6301,
+      "west": 6304
+    },
+    "flags": [
+      "forest",
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6303,
+    "name": "Tidewoods - Ashen Hollows Approach Road",
+    "description": "The road northeast toward the Ashen Hollows narrows as it goes, the forest closing in as the maintained portion gives way to the unmanaged growth. The smell of the Tidewoods is still present but mixed with something else \u00e2\u20ac\u201d the faint ghost of ash that the Ashen Hollows never fully lose, carried south on the air even in good weather. Kin-sense is reliable here but the experienced traveler keeps it active: the first dead-zone patches begin within a mile of this point, the earliest warning that the haunted northeast is near. The light is slightly different in this direction, greyer even when the sun is high.",
+    "exits": {
+      "southwest": 6301,
+      "northeast": 6305,
+      "south": 6326
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6304,
+    "name": "Stonewind Plains - Western Edge",
+    "description": "The Stonewind Plains begin here as the Tidewoods end, the abrupt transition from forest to open savannah creating a landscape edge as dramatic as a shoreline. The warm, steady breeze off the plains is a shock after the forest's humid stillness, and the smell changes from rich organic complexity to dry grass and far-off stone. The Giant's Teeth are visible as a smudged line to the west on clear days, and the sky above is larger here than in the Tidewoods \u00e2\u20ac\u201d genuinely large, horizon-to-horizon, with the high weather patterns visible from miles away. Trade routes to Kinsweave follow this edge westward.",
+    "exits": {
+      "east": 6302,
+      "west": 6306,
+      "south": 11130
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6305,
+    "name": "Tidewoods - Mist Edge",
+    "description": "The heavy mist of the Ashen Hollows begins to be noticeable here, the cold grey vapor flowing south from the ruins along the forest floor. The temperature drops several degrees and the light acquires the flat, directionless quality of heavy overcast even when the sky above the canopy is clear. Veteran travelers orient by sound rather than sight in mist this thick: bird-calls, the drip of condensation from leaves, and the direction of the Kailian's smell, which carries even through the mist. Sand Wraiths have been sighted in this sector; the patrol boundary for Branmill Cove's watchmen ends half a mile back.",
+    "exits": {
+      "southwest": 6303,
+      "north": 6307
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6306,
+    "name": "Stonewind Plains - Road to Kinsweave",
+    "description": "The trade road that links Tidebloom Reach to Kinsweave runs through the Stonewind Plains' southern margin, its surface maintained by both regions' joint commercial interest. The road is broad enough for two laden wagons, its surface compacted gravel over packed earth. Milestone posts marked with both the Branmill Cove chainlink device and the Kinsweave tower-and-road symbol line the route at quarter-mile intervals. In good weather the plains here are beautiful \u00e2\u20ac\u201d rolling golden grass under an enormous sky \u00e2\u20ac\u201d and in bad weather they are correspondingly exposed, with no shelter between the forest edge and the next waystation.",
+    "exits": {
+      "east": 6304,
+      "west": 6308,
+      "southwest": 11055
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6307,
+    "name": "Tidewoods - Deep Forest Crossing",
+    "description": "The deepest section of the Tidewoods between the Ashen Hollows and the lake-shore settlements is rarely visited except by forest patrols and the determined. The sky-oaks here are among the largest in the Tidewoods \u00e2\u20ac\u201d old growth untouched by the Deceivers' War's southern fires \u00e2\u20ac\u201d and their canopy is thick enough to reduce midday to a comfortable dimness. The undergrowth is dense with moisture-dependent plants, and small watercourses cross the path in multiple places, their banks covered in the moss and liverwort that need the constant seep to survive. The forest feels genuinely ancient here in a way that the settled margins do not.",
+    "exits": {
+      "south": 6305,
+      "north": 6309,
+      "east": 6310,
+      "west": 6311,
+      "northeast": 6330
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6308,
+    "name": "Stonewind Plains - Waystation",
+    "description": "A small waystation maintained jointly by Branmill Cove and Kinsweave provides shelter, water, and emergency supplies at the midpoint of the plains crossing. The station is a stone building with a stable-yard and a cistern fed by a rooftop rain-collection system, staffed by a solitary keeper who manages the horses that the station maintains for message-relay and emergency transport. The keeper is characteristically self-sufficient, the isolation breeding a pragmatism that visitors either find refreshing or alarming depending on their disposition. The station log records every traveler who passes and any unusual observations on the plains.",
+    "exits": {
+      "east": 6306,
+      "west": 6309
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 6309,
+    "name": "Tidewoods - Forest Road North",
+    "description": "The north-south forest road that connects the Tidebloom settlements runs through this section of the Tidewoods, linking Tiravel to Myruvane via the interior rather than the lake shore. The road is used by those who prefer the forest's shelter to the shore's exposure, and it carries a steady if modest traffic of silk-traders and instrument-merchants. The Tidewoods sound is different here than near the settlements \u00e2\u20ac\u201d deeper, more layered, with the calls of birds that are rarely seen closer to human habitation. The road is safe during daylight and carries patrol marks from both Tiravel and Myruvane's regular routes.",
+    "exits": {
+      "east": 6308,
+      "north": 6311,
+      "south": 6312
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6310,
+    "name": "Tidewoods - Velathenor North Trail",
+    "description": "The trail from Velathenor's north gate runs through this section of the Tidewoods on its way toward the forest interior and Tiravel. The trail is narrower than the main road \u00e2\u20ac\u201d single file in places where the undergrowth is thick \u00e2\u20ac\u201d but well-marked with the carved bark signs that Hasura Elf navigation uses. The humidity is constant and the going is slower than on the road; boots sink slightly into the soft forest floor, and the mud after rain can make sections genuinely difficult. The calls of forest birds overhead track the traveler's progress \u00e2\u20ac\u201d some species in the Tidewoods appear to follow movement through the canopy, their calls alerting each other to passage below.",
+    "exits": {
+      "west": 6307,
+      "south": 6071
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6311,
+    "name": "Tidewoods - Tiravel Forest Road South",
+    "description": "The road south from Tiravel runs through the Tidewoods' interior, the canopy unbroken above and the forest floor clear of major obstacles on the maintained section. The road connects to both the interior forest routes and, via junction, to the coast road and the Ashen Hollows approaches. Tiravel's Starwind Blade patrols cover this section regularly, and patrol marks on the trees \u00e2\u20ac\u201d small carved symbols that update with each patrol \u00e2\u20ac\u201d give experienced travelers a current read on the security situation. The morning of the current patrol is carved on the nearest marker in the Hasura date notation: three days ago.",
+    "exits": {
+      "north": 6088,
+      "south": 6307,
+      "east": 6309
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6312,
+    "name": "Tidewoods - Canopy Watch Patrol Route",
+    "description": "This section of the Tidewoods north of Tiravel is the Canopy Watch's primary patrol corridor, the approach most directly toward the Tomb of Kings and the Kin-sense anomaly zone that has been building in patrol reports. The forest here is normal in appearance but the Kin-sense attunement is noticeably fluctuating \u00e2\u20ac\u201d not dead, but uncertain, like a compass near a magnetic anomaly. Experienced Kin-sense practitioners feel it as a kind of interference rather than absence. The patrol marks on the trees here are more frequent than on the southern routes, and the most recent one is from this morning.",
+    "exits": {
+      "south": 6091,
+      "north": 6313
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6313,
+    "name": "Tidewoods - Myruvane-Tiravel Path",
+    "description": "A forest path connecting Myruvane to the Tiravel approaches, used by the inter-city silk and instrument trade as well as the cultural exchanges between the two Elf-majority settlements. The path is narrower than the main road but more direct, and Pasua Elf wardens maintain it along the Myruvane section. The forest here has a quality of being watched \u00e2\u20ac\u201d not threatening, but aware \u00e2\u20ac\u201d that visitors unfamiliar with the Tidewoods sometimes find uncomfortable and that Hasura and Pasua residents consider simply normal. The forest is aware. It has always been aware. This is not a problem unless someone makes it one.",
+    "exits": {
+      "south": 6100,
+      "north": 6312
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6314,
+    "name": "Tidewoods - Tiravel East Trail",
+    "description": "The east trail from Tiravel leads toward the Stonewind Plains, the forest thinning gradually as the sky-oak canopy gives way to the mixed-woodland transition zone. Tiravel residents rarely use this trail voluntarily \u00e2\u20ac\u201d the Hasura preference for canopy over open sky is strong \u00e2\u20ac\u201d but it serves the trade traffic bringing iron and stone goods in from the Stonewind Plains' western merchants. The trail is marked at regular intervals, and a Starwind Blade checkpoint is maintained at the forest edge where the trail meets the plains margin.",
+    "exits": {
+      "west": 6101,
+      "east": 6304
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6315,
+    "name": "Kailian Shore - South of Velathenor",
+    "description": "The Kailian shore road south of Velathenor runs between the lake's reedy margin and the Sundrift Veil's lighter woodland, the two ecosystems running parallel for several miles. The road is pleasant in good weather \u00e2\u20ac\u201d the lake to the east, the trees to the west, the sound of birds and water constant \u00e2\u20ac\u201d and used by both merchants and travelers seeking a more gradual transition than the forest roads offer. The Sundrift Veil's sunlit canopy and sandy undergrowth are visible through occasional gaps in the roadside vegetation, giving the impression of a more enchanted landscape just behind the trees.",
+    "exits": {
+      "north": 6077,
+      "south": 6316
+    },
+    "flags": [
+      "road",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6316,
+    "name": "Kailian Shore - Forest South Road Junction",
+    "description": "A road junction on the Kailian shore where the lake-shore road meets the forest trails leading north toward Whistlebank's ruins and south toward Mossgrove's drowned margin. The junction post is notable for its negative directions: both forest routes carry warnings, the northern for Sand Wraiths and the southern for submerged sections and the same hazard. The junction is used as a reference point by chain-field coordinators planning barge operations in the central Kailian section, and it appears on every navigational chart of the region's southern quarter. A small rest shelter provides rain cover.",
+    "exits": {
+      "north": 6315,
+      "east": 6230,
+      "south": 6245,
+      "west": 6109
+    },
+    "flags": [
+      "road",
+      "water"
+    ]
+  },
+  {
+    "vnum": 6317,
+    "name": "Tidewoods - Hillmeet Approach Trail",
+    "description": "The trail from Tiravel north toward Hillmeet's ruins diverges from the main patrol road here, its surface still showing the marks of regular patrol traffic but narrowing to single-file width. The ash-smell of the Ashen Hollows is detectable from this point on fair-weather days, a ghost-scent that has persisted for decades without diminishing. The forest on both sides of the trail is normal Tidewoods but carries a watchful quality that increases as the ruins approach. Patrol markers here are more closely spaced than elsewhere and include a distinctive double-slash that means 'report anomaly here specifically if seen.'",
+    "exits": {
+      "south": 6107,
+      "north": 6200
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6318,
+    "name": "Kailian Shore - Myruvane Approach",
+    "description": "The lake-shore path approaching Myruvane from the south passes through the reed-beds where the Kailian's inlet reaches into the forest margin. The path is partially elevated on timber piers across the wettest sections, and the boards are well-maintained \u00e2\u20ac\u201d Myruvane's commercial traffic depends on this path being passable year-round. The sound of the forest and the lake overlap here in a pleasant acoustic blend, and the light through the reed-heads at dawn creates the kind of display that landscape-minded travelers remember. The Tideweave Bridge is visible from this path once the reeds thin, its silk-weave catching the light.",
+    "exits": {
+      "north": 6127,
+      "south": 6316
+    },
+    "flags": [
+      "water",
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6319,
+    "name": "Tidewoods - Myruvane-Foxfen Trail Junction",
+    "description": "The trail north from Myruvane toward Foxfen's ruins diverges here from the main inter-city path. The junction is clearly marked \u00e2\u20ac\u201d the Foxfen direction bears the same double-slash warning as the Hillmeet approach, and the Pasua wardens from Myruvane's north gate include this junction in their patrol reports. The trail north is less traveled than the main path and the undergrowth more assertive, requiring occasional ducking under low branches. The Foxfen memorial grove is two hours' travel north at moderate pace, and the full ruins perhaps three. The forest is quiet in this direction in a particular way.",
+    "exits": {
+      "south": 6128,
+      "north": 6215
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6320,
+    "name": "Tidewoods - Myruvane-Darnavar Road",
+    "description": "The road between Myruvane and Darnavar runs through the southern Tidewoods, maintained jointly by both cities. This stretch is in the middle of the maintained section, its surface better than the forest trails but not as good as the stone-paved streets of either settlement. The forest here is less dense than near Tiravel, the canopy lower and the undergrowth more open, reflecting the southern Tidewoods' drier micro-climate. Trade traffic between the two cities is regular enough that a worn secondary path has developed alongside the main road where cart-ruts make the surface unpleasant for foot travel.",
+    "exits": {
+      "north": 6137,
+      "south": 6163
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6321,
+    "name": "Kailian Shore - Darnavar East Road",
+    "description": "The trade road east from Darnavar follows the Kailian's southern shore toward the Sundrift Veil and the connections to Kinsweave. This stretch is the most commercially active road in Tidebloom Reach, its surface heavily used and maintained to a standard that reflects its importance to regional trade. Milestone posts here carry both distances and the water-level indicators that warn travelers when the low-shore sections are at risk of flooding during high-water season. The road is wide enough for two loaded wagons and has passing-places at regular intervals.",
+    "exits": {
+      "west": 6156,
+      "east": 6322
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 6322,
+    "name": "Sundrift Veil - Forest Margin",
+    "description": "The Sundrift Veil begins here where the Tidewoods' dense canopy gives way to the lighter, sun-dappled woodland that defines the region south of the Kailian. Sandy soil shows through the sparse undergrowth, and the trees \u00e2\u20ac\u201d shorter and more widely spaced than the sky-oaks \u00e2\u20ac\u201d allow direct sunlight to reach the forest floor, creating a warm, golden quality of light that is a dramatic change from the Tidewoods' green dimness. The air smells of warm pine-resin and the lake-breeze from the north, and the sound of birdsong is different \u00e2\u20ac\u201d more open-country species among the forest species, reflecting the transitional ecology.",
+    "exits": {
+      "west": 6321,
+      "south": 6245,
+      "east": 6323
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6323,
+    "name": "Sundrift Veil - Trade Road",
+    "description": "The trade road through the Sundrift Veil connects the Kailian shore settlements to the routes heading west toward Kinsweave and south toward the larger trade networks. The road is well-maintained by the traffic of merchants who prefer this route's gentler landscape to the mountain approaches. The Sundrift Veil's enchanted quality \u00e2\u20ac\u201d sometimes described as dreamlike, its light having a quality that experienced travelers say makes distances seem shorter and the mood lighter \u00e2\u20ac\u201d has generated a modest tourism of its own, with merchants planning this leg of their journey for the rest it provides after harder road. A waystation is maintained at the road's midpoint.",
+    "exits": {
+      "west": 6322,
+      "east": 6324
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6324,
+    "name": "Sundrift Veil - Southern Edge",
+    "description": "The southern edge of the Sundrift Veil marks the boundary of the Tidebloom Reach region proper. Beyond here the forest transitions to the mixed terrain that connects this region to the wider continent. The landscape is still beautiful at this edge \u00e2\u20ac\u201d the golden light of the Veil lingers here longer than seems natural, the last trees of the Veil standing at the road's edge with a deliberate grace \u00e2\u20ac\u201d and travelers who have walked the full length of Tidebloom Reach often pause at this point to look back north before continuing. The road south is the route by which Tidebloom Reach connects to the rest of Oreka.",
+    "exits": {
+      "west": 6323
+    },
+    "flags": [
+      "forest",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6325,
+    "name": "Tidewoods - Western Patrol Circuit",
+    "description": "The western patrol circuit of the Tidewoods connects the Stonewind Plains margin to the Branmill Cove and Velathenor north roads, providing a patrol loop that can be walked in a single day by a fit patrol team. This section runs through undisturbed Tidewoods that has been under patrol for long enough that the wildlife accepts human presence without alarm \u00e2\u20ac\u201d a useful baseline indicator that Kin-sense practitioners rely on. When the animals react to the patrol, something other than the patrol is in the area. The forest here has an old, settled quality that the eastern ruins sections entirely lack.",
+    "exits": {
+      "east": 6300,
+      "north": 6302,
+      "south": 6315
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6326,
+    "name": "Tidewoods - Northern Mist Zone",
+    "description": "The mist of the Ashen Hollows extends further south in some seasons than others, and this section of forest represents its maximum reach in bad years. In mist years, the cold grey fog reduces visibility to twenty feet and makes Kin-sense unreliable at range, creating the conditions that forced Branmill Cove's patrol boundary to be pulled south. The trees here show moisture stress from the mist \u00e2\u20ac\u201d their bark darker than normal, lichens growing that prefer cold and damp \u00e2\u20ac\u201d and the undergrowth is sparser, the orchids and warmth-loving plants absent. Sand Wraith sightings have been logged in this section twice in the past three years.",
+    "exits": {
+      "north": 6303,
+      "south": 6301,
+      "east": 6327
+    },
+    "flags": [
+      "forest",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 6327,
+    "name": "Tidewoods - Intermediate Forest",
+    "description": "A stretch of the Tidewoods between the Ashen Hollows mist-zone and the Kailian shore serves as the buffer zone between the haunted northeast and the living settlements. Patrols from Branmill Cove and Tiravel overlap here, their shared presence keeping the intermediate forest reasonably safe during daylight. At night, neither patrol stays in this section, their standing orders being to make the last waypoint before dark. The forest is beautiful and undisturbed-looking, which is the point \u00e2\u20ac\u201d it is supposed to look safe enough to cross quickly, and it usually is, and occasionally it is not.",
+    "exits": {
+      "west": 6326,
+      "south": 6307,
+      "east": 6305
+    },
+    "flags": [
+      "forest"
+    ]
+  },
+  {
+    "vnum": 6328,
+    "name": "Tidewoods - Northern Shore Trail",
+    "description": "The trail along the Kailian's northern shore connects the chain-field approaches between Branmill Cove and Darnavar via the northern margin, an alternative to the interior forest routes used when the shore is navigable. In high-water season the trail is partially submerged and impassable; in low-water season it offers the fastest route between the two cities, passing through reed-beds and open shore sections that give excellent views of the chain-fields in operation. The Mithril Chains are visible here entering the water at regular intervals, their anchor-posts marking the trail with more precision than any waypost.",
+    "exits": {
+      "east": 6037,
+      "west": 6329
+    },
+    "flags": [
+      "water",
+      "road"
+    ]
+  },
+  {
+    "vnum": 6329,
+    "name": "Kailian Shore - Chain-Field View",
+    "description": "A stretch of the Kailian shore where the chain-fields are at their most visible and productive, this section is the operational center of the Mithril Chain system in the middle section between Branmill Cove and Velathenor. At planting season the barges are visible in formation here, moving slowly along the chains, their crews small figures against the dark silt. The Mithril Chain anchor-posts are spaced every fifty yards along this shore, their rune-inscriptions visible at low water \u00e2\u20ac\u201d the closest thing Tidebloom Reach has to a monument, the practical infrastructure that keeps the region fed. The Lord of Stone's rune-work and the Lady of the Sea's water seem to cooperate most naturally here.",
+    "exits": {
+      "east": 6328,
+      "west": 6036
+    },
+    "flags": [
+      "water"
+    ]
+  },
+  {
+    "vnum": 6330,
+    "name": "Tidewoods - Northfade Margin",
+    "description": "The Northfade Veil begins here where the Tidewoods' forest tapers toward the Stonewind Plains' northern approach. The trees are shorter and more widely spaced than the dense Tidewoods interior, their canopy allowing the Stonewind Plains' light to filter through. A light shimmering haze characteristic of the Northfade \u00e2\u20ac\u201d subtle elemental magic from the Lord of Stone and Wind Lord interaction in this transition zone \u00e2\u20ac\u201d is sometimes visible on warm afternoons, giving the marginal forest a quality that artists have been trying to capture for generations without quite succeeding. The haze is not dangerous, but Kin-sense practitioners find the combination of elemental signatures here interesting.",
+    "exits": {
+      "south": 6307,
+      "east": 6312,
+      "west": 6302
+    },
+    "flags": [
+      "forest",
+      "plains"
+    ]
+  }
+]

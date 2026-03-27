@@ -1916,15 +1916,66 @@ def get_ability_modifier(entity, ability: str) -> int:
     return (score - 10) // 2
 
 
-def calculate_caster_level(caster, class_name: str) -> int:
-    """Calculate effective caster level."""
+def calculate_caster_level(caster, class_name: str, spell=None) -> int:
+    """Calculate effective caster level, including elemental affinity and room resonance bonuses.
+
+    Oreka Elemental Rules:
+    - Matching element (caster affinity matches spell damage type): +1 caster level
+    - Opposing element (fire vs cold, earth vs electricity): -1 caster level
+    - Room elemental resonance matching caster's affinity: additional +1
+    """
     base_level = getattr(caster, 'level', 1)
 
     # Half-casters (Paladin, Ranger) have caster level = class level - 3
     if class_name in ("Paladin", "Ranger"):
-        return max(1, base_level - 3)
+        base_level = max(1, base_level - 3)
 
-    return base_level
+    # --- Elemental Affinity Bonus/Penalty ---
+    affinity = getattr(caster, 'elemental_affinity', None)
+    if affinity and spell:
+        # Map affinity to energy type
+        element_to_energy = {"earth": "acid", "fire": "fire", "water": "cold", "wind": "electricity"}
+        caster_energy = element_to_energy.get(affinity)
+
+        # Get spell's damage type from spell dict or Spell object
+        spell_damage_type = None
+        if isinstance(spell, dict):
+            spell_damage_type = spell.get("damage_type", "")
+            descriptors = spell.get("descriptors", [])
+        else:
+            spell_damage_type = getattr(spell, 'damage_type', '') or ''
+            descriptors = getattr(spell, 'descriptors', []) or []
+
+        # Also check descriptors for element match
+        if not spell_damage_type:
+            descriptor_map = {"Acid": "acid", "Fire": "fire", "Cold": "cold", "Electricity": "electricity"}
+            for d in descriptors:
+                if d in descriptor_map:
+                    spell_damage_type = descriptor_map[d]
+                    break
+
+        if caster_energy and spell_damage_type:
+            # Matching element: +1
+            if caster_energy == spell_damage_type:
+                base_level += 1
+            # Opposing elements: fire<>cold, earth(acid)<>electricity(wind)
+            opposites = {"fire": "cold", "cold": "fire", "acid": "electricity", "electricity": "acid"}
+            if opposites.get(caster_energy) == spell_damage_type:
+                base_level -= 1
+
+    # --- Room Elemental Resonance Bonus ---
+    room = getattr(caster, 'room', None)
+    if room and affinity:
+        try:
+            from src.location_effects import get_location_effects
+            le = get_location_effects()
+            room_element, room_bonus = le.get_elemental_resonance(room)
+            if room_element and room_element == affinity:
+                base_level += room_bonus
+        except Exception:
+            pass
+
+    return max(1, base_level)
 
 
 def calculate_spell_damage(caster, damage_dice: str, class_name: str = None) -> Tuple[int, str]:

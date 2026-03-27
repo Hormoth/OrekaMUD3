@@ -1,0 +1,821 @@
+# OREKA
+
+*Echoes of the Elemental Dawn*
+
+## THE CANON BIBLE
+
+Definitive Campaign Setting Reference — Version 2.6
+
+*Merged from Worldbuilding Guide, Canon Audit, Update Tracker v3.1, and** **Author Rulings*
+
+Compatible with D&D 3.5e Open Game License
+
+March 2026
+
+## 1. THE WORLD OF OREKA — COSMOLOGICAL FOUNDATIONS
+
+Oreka is a land-dominant spherical world with no oceans and no traditional continents. It has two moons. It was forged from the Primordial Chaos by the four Elemental Lords: the Lord of Stone, the Lady of Fire, the Lady of the Sea (Lady Tempest), and the Youngest Brother (the Wind Lord / Trickster). The world’s only major bodies of water are two colossal inland freshwater seas—the Kailian Sea in the north and the Apelian Sea in the south—connected by the Sea Falls.
+
+The Kailian Sea is cold and storm-wracked with stony cliffs, while the Apelian Sea is warm and sediment-rich.
+
+The world was shaped through divine collaboration: the Lady of Fire ignited light, the Sea quenched fury with cooling waters, the Wind breathed life into the world’s rotation, and the Lord of Stone laid down the earth’s bones. From their cooperation, Oreka was born—radiant, fertile, and alive with elemental potential. This collaborative origin means that every biome, landform, and creature in Oreka carries the fingerprints of multiple elements, never just one.
+
+### The Elemental Lords
+
+| **Lord** | **Element** | **Domain** | **Role in**** ****Creation** | **Current**** ****Status** |
+| --- | --- | --- | --- | --- |
+| Lord of Stone | Earth | Mountains, deep earth, stability | Laid the world’s foundations | COMATOSE — side effect of the second assault gate (even the Dómnathar do not know this is happening) |
+| Lady of Fire | Fire | Volcanoes, forges, passion | Ignited light and warmth; created Dwarves | ACTIVE — holding back the Abyss Circle and working to destroy the first gate |
+| Lady of the Sea / Lady Tempest | Water | Rivers, seas, tides, change | Shaped waterways; created Halflings | ACTIVE — holding back the Abyss Circle alongside the Lady of Fire |
+| Youngest Brother / Wind Lord / Trickster | Air/Wind | Sky, storms, art, freedom | Breathed life; created Elves; blessed the creation of Humans | EXILED — kicked out of Oreka in the past; currently trying to find a way back |
+
+**DM NOTE:** *The Elemental Lords’ current status is DM-facing** **information. Most Kin do not know what happened to their creators. The** **Lord of Stone’s coma is caused by a second assault gate—a separate** **gate from the Silence Breach—and even the Dómnathar are unaware of** **this side effect. The Lady of Fire and Lady of Water are engaged in an** **active cosmic struggle against the Abyss Circle while simultaneously** **destroying the first gate. The Youngest Brother was expelled from** **Oreka at some point in the past and is actively seeking return. There** **is NO connection between the Elemental Lords and the Abyss** **Circle—they are entirely separate cosmologies from different** **planes.*
+
+### The Ascended Gods
+
+Following the Fall of Aldenheim, mortal Kin who performed acts of extraordinary sacrifice or consequence ascended to godhood. Apotheosis was not possible before the Fall of Aldenheim—it is a new phenomenon in Oreka, barely 300 years old. The Ascended are not creator-gods—they are apotheosed mortals. Most are human, which is itself a theological mystery acknowledged in-world among theologians.
+
+**The Ascended Gods are full gods.** Mechanically, they have the same abilities as any god in any D&D setting. They grant spells to clerics, answer prayers, and wield divine power. They are not diminished or lesser deities—they are the real thing.
+
+**Apotheosis is morally neutral.** It responds to the magnitude and consequence of the act, not the moral character of the actor. This principle is proven by Hareem, the only evil Ascended God.
+
+**Apotheosis requires attunement to all four elements.** This is not limited to Orekan attunement—any being with full four-element attunement qualifies. Pure Dómnathar, who possess no connection to elemental power, cannot ascend. This constraint is the foundation of the Dómnathar apotheosis plot (see Chapter 7).
+
+| **God** | **Origin** | **Portfolio** | **Alignment** |
+| --- | --- | --- | --- |
+| Cinvarin, the Five Witnesses | Five druids at Aldenheim | Unity, elements, sacrifice | Neutral Good |
+| Hareem, the Golden Rose | Bard who slew the Twelve Kings | Revenge, music, justice | Chaotic Evil |
+| Tarvek Wen, Doombringer | Liberator | Justice, oaths, protection | Lawful Good |
+| Ludus Galerius, Stone’s Hand | Warden of ruins | Earth, endurance, travel | Neutral Good |
+| Apela Kelsoe, Windrider | Sky pathfinder | Air, travel, luck | Chaotic Good |
+| Kaile’a, Mistress of Waves | Mariner-saint | Water, trade, community | Neutral Good |
+| Gonmareck Ritler, Gunny | Smith-warrior | Metal, honor, tactics | Lawful Good |
+| Semyon, the Hearth Mother | Healer | Family, healing, hearth | Neutral Good |
+| The Hand Unanswered | Dying child of Aldenheim | Compassion, martyrdom | Neutral Good |
+| The Unnamed Warrior King | Contested | War, kingship | Disputed (intentionally ambiguous) |
+
+Cinvarin is the first Ascended God. Hareem is the second. Hareem is the only evil Ascended God. All others are Good-aligned; the Unnamed Warrior King is deliberately “Disputed.”
+
+**Hareem’s Chaotic Evil alignment recontextualizes her portfolio:** “Revenge, music, justice” under CE becomes retributive justice—the kind that shatters worlds. She is worshipped by the wronged, the desperate, angry bards, and grieving parents. The theological question of whether evil acts can produce gods exists as an active debate among in-world theologians and connects directly to the Dómnathar apotheosis plot.
+
+**Monster Manual Implication:** *Creatures that serve, guard, or are** **corrupted by Ascended Gods should reflect mortal themes—sacrifice,** **grief, memory, consequence—rather than primordial elemental force.** **Hareem-linked creatures should evoke rage, grief, and retribution.*
+
+## 2. THE ELEMENTAL FRAMEWORK — HOW ELEMENTS SHAPE ALL LIFE
+
+Every living thing native to Oreka exists in relationship to the four elements: Earth/Stone, Fire, Water/Ice, and Wind/Sky. This is not metaphorical—it is a tangible, supernatural reality that shapes biology, magic, and ecology.
+
+**Important exception:** Not all beings exist within the elemental framework. The Dómnathar possess no connection to elemental power whatsoever (see Chapter 7). Breach-origin peoples (goblins, wargs, hobgoblins, orcs, ogres, kobolds) arrived from another world and exist outside Oreka’s native elemental harmony. However, Breach-origin peoples can and do gain elemental attunement over several generations of living in Oreka. This has profound implications for free goblin and warg communities that have been in Oreka for 300 years.
+
+### The Four Elements
+
+| **Element** | **Opposed**** ****Element** | **Energy**** ****Type** | **Associated**** ****Terrain** | **Associated**** ****Kin** |
+| --- | --- | --- | --- | --- |
+| Earth/Stone | Wind/Sky | Acid | Mountains, caves, plains | Visetri Dwarves, Orean Humans, Giants |
+| Fire | Water/Ice | Fire | Volcanoes, forges, deserts | Rarozhki Dwarves, Taraf-Imro Humans |
+| Water/Ice | Fire | Cold | Rivers, seas, coasts, marshes | Pekakarlik Dwarves, Eruskan Humans, Halflings |
+| Wind/Sky | Earth/Stone | Electricity | Forests, skies, high passes | All Elves, Mytroan Humans |
+
+### Elemental Attunement in Creatures
+
+All Kin possess Elemental Tolerance: Resistance 2 against energy damage from their primary element. This is intentionally spiritual and symbolic—a marker of elemental identity, not a scaling combat mechanic. It does not increase with level. Giants and Half-Giants, with All-Element Concord, gain Resistance 2 to all four types. Kin spellcasters gain +1 caster level for spells aligned with their element and −1 for opposed-element spells.
+
+**Monster Manual Implication:** *Every creature entry should specify** **its Elemental Affinity. For Dómnathar:** **“**Elemental Affinity: None —** **Extraplanar.**”** **The** **“**Elemental Infused**”** **template (see Chapter 11) allows** **standard OGL creatures to be made Oreka-native.*
+
+## 3. KIN-SENSE — THE RESONANCE SYSTEM
+
+Kin-sense is the most important metaphysical concept in Oreka and the single most critical system for creature design. It is a supernatural resonance shared by all Kin peoples, functioning like a sixth sense that identifies “who belongs.” It operates within 60 feet normally (30 feet in elemental disturbance, 120 feet in deep calm), passes through barriers up to 5 feet thick, and cannot be suppressed by the Kin character except through the Deceiver’s Feat.
+
+Kin-sense blockers: lead, worked Dómnathar metal, and False Silence block it entirely. **Kin-sense is NOT magic.** It cannot be dispelled, counterspelled, or suppressed by antimagic field. Inside an anti-magic zone, spells fail and magic items go dark, but Kin-sense still works. Only False Silence and related Dómnathar effects can suppress Kin-sense. This makes the Dómnathar categorically different from any other threat—they reach deeper than magic.
+
+### What Kin-Sense Reveals
+
+**Harmonic (Kin) resonance conveys:** what the person is (elf, human, dwarf, etc.) and their elemental attunement. It functions like a voice—those who know you personally can recognize your individual signature, just as you recognize a friend’s voice in a crowd. Strangers register as their race and element; familiar individuals are identifiable.
+
+### Resonance Categories
+
+| **Category** | **What It Feels Like** | **What Registers This**** ****Way** |
+| --- | --- | --- |
+| Harmonic (Kin) | Warm presence; race and element readable; individual recognition possible | All true Kin: Elves, Dwarves, Halflings, Humans, Half-Giants |
+| Wild Static | Present, alive, but fundamentally different | Tanuki, native Oreka animals, beasts (Oreka-native only) |
+| Warm Static | Faint, unreadable background noise | Simple animals, insects, plants with minimal awareness |
+| Breach Static | Alien, unsettling — a wrong note in the harmony | All Breach-origin peoples: Goblins, Wargs, Hobgoblins, Orcs, Ogres, Kobolds (diminishes over generations as attunement develops) |
+| Null Resonance (Silent) | A wound; absence that hurts to perceive | Silentborn, Severed, Oath-Broken Kin |
+| Void / Absolute Silence | Deliberate, predatory wrongness — unsettling gap | Dómnathar, true Deceivers (no check required to detect) |
+| No Registration | Simply absent, like furniture | Undead (except ghosts: faint flicker, DC 20), Constructs, Farborn, Kin using Deceiver’s Feat |
+| Raw Static | Overwhelming, painful at close range | Pure elementals (Will DC 15 within 10 ft or dazzled 1 rd) |
+
+**Breach Static diminishes over generations.** Breach-origin peoples can and do gain elemental attunement over several generations of living in Oreka. Free goblin and warg communities that have been in Oreka for 300 years are already changing. This makes the Breach Static category a transitional state, not a permanent brand—though the process is slow enough that most current Breach-origin individuals still trigger it.
+
+### The Three-Layer Supernatural Framework
+
+Oreka’s supernatural reality operates on three independent layers:
+
+| **Layer** | **Source** | **Nature** | **Suppressed**** ****By** | **Voluntary**** ****Suppress** |
+| --- | --- | --- | --- | --- |
+| Layer 1: Soul Resonance (Kin-Sense) | Elemental framework, embedded in Kin souls at creation | Not magic. Cannot be dispelled or suppressed by anti-magic | False Silence, worked Dómnathar metal, Void energy, lead | Deceiver’s Feat (only) |
+| Layer 2: Elemental Power (Magi Magic) | Direct elemental framework channel | Magic, but draws from elemental forces directly | Anti-magic zones, counterspells, dispel effects | N/A |
+| Layer 3: Standard Magic (Arcane/Divine) | Varies (study, divine patron, innate) | Magic | Anti-magic zones, counterspells | N/A |
+
+### Interaction Matrix
+
+| **Scenario** | **Kin-Sense** | **Magi Magic** | **Standard**** ****Magic** |
+| --- | --- | --- | --- |
+| Inside anti-magic zone | ✔ YES | ✘ NO | ✘ NO |
+| Inside False Silence | ✘ NO | ✔ YES | ✔ YES |
+| In Dómnathar tunnel | ✘ NO (suppressed) | ✔ YES | ✔ YES |
+| Both anti-magic + False Silence | ✘ NO | ✘ NO (anti-magic) | ✘ NO (anti-magic) |
+| Normal conditions | ✔ YES | ✔ YES | ✔ YES |
+
+**Standard magic is NOT affected by Dómnathar presence.** Only Kin-sense (Layer 1) is suppressed by False Silence and Dómnathar effects. Both Magi magic (Layer 2) and standard arcane/divine magic (Layer 3) function normally in Dómnathar tunnels, False Silence zones, and resonance-dead corridors. The Dómnathar’s weapon is soul-level, not magical.
+
+### False Silence (Personal Cloak Mechanics)
+
+**False Silence is a supernatural ability (Su).** It is a personal cloak on ONE Dómnathar—soul-level interference that cannot be dispelled and cannot be detected by detect magic. It is NOT a zone effect. The cloaked Deceiver simply doesn’t register—a hole shaped like a person.
+
+**DC:** 10 + Deceiver’s HD + Charisma modifier. **Duration:** CHA mod × 10 minutes per use. **Uses/day:** HD ÷ 3 (minimum 1). **Concentration:** Required. If damaged: Concentration check (DC 10 + damage) or cloak drops.
+
+Only masks Kin-sense. Does NOT grant invisibility, silence, or mundane disguise. Does not suppress Magi magic or standard magic. Infiltration is a layered operation.
+
+### Kin-Sense Detection DCs and Racial Bonuses
+
+| **Race** | **Bonus** | **Reasoning** |
+| --- | --- | --- |
+| Half-Giants | +4 | All-Element Concord; broadest resonance |
+| Elves | +2 | Secondborn; deeply attuned; long-lived |
+| Dwarves | +2 | Thirdborn; strong elemental identity |
+| Halflings | +1 | Fourthborn; perceptive but less intense |
+| Humans | +0 | Fifthborn; variable; baseline |
+
+**Passive detection:** d20 + WIS mod + Racial bonus vs. DC, with −10 penalty. Vague unease only. **Active detection:** Move action. d20 + WIS mod + Racial bonus vs. DC. Full check.
+
+### Tiered Success (vs. False Silence)
+
+| **Beat DC By** | **Result** | **Mechanical Effect** |
+| --- | --- | --- |
+| 0–4 | Something feels off. Can’t localize. | Know False Silence is active; not which individual |
+| 5–9 | Wrongness localizes to an area. | Approximate location (within 10 ft) |
+| 10+ | Cloak cracks. Void bleeds through. | Pinpoint individual; true signature revealed |
+
+### Situational Modifiers
+
+| **Condition** | **Modifier** |
+| --- | --- |
+| Deep calm | +2 to check |
+| Elemental disturbance | −2 to check |
+| Deceiver within 10 ft | +4 to check |
+| Deceiver at edge of range | −2 to check |
+| Prior False Silence experience | +2 to check |
+| Multiple Kin scanning simultaneously | +1 per extra scanner |
+| Deceiver emotional or injured | −2 to False Silence DC |
+| Worked Dómnathar metal area | +2 to False Silence DC |
+
+### Special Cases
+
+**Half-Dómnathar**
+
+Register as “cracked” or “discordant” Kin—wrong but alive. Detecting the specific nature requires active concentration (move action) and a Kin-sense check.
+
+**Disguised Creatures**
+
+Mundane disguises do not fool Kin-sense (a human in dwarf armor still reads as human). Magical disguises create false resonance; active Kin-sense check vs. spell DC or Disguise check to detect the discrepancy.
+
+### The Deceiver’s Feat
+
+**Type:** General Feat. **Prerequisites:** WIS 15, character level 6th, must have been exposed to Void Silence or Null Resonance. Must find a teacher (person to person, in secret). Cannot be taken at character creation except by DM approval.
+
+**Benefit:** Standard action: suppress Kin-sense signature. Register as No Registration (absent, like furniture). NOT Void Silence.
+
+**Cost — Bidirectional blindness:** While suppressed, you cannot sense others via Kin-sense. Going dark means going blind.
+
+**Scope — Personal only.** The Deceiver’s Feat suppresses the user’s own Kin-sense signature. It cannot be projected onto, extended to, or used to mask other creatures, mounts, companions, or objects. A Deceiver riding a horse does not mask the horse. A Deceiver standing next to a friend does not mask the friend.
+
+**Magi exception:** A Magi using the Deceiver’s Feat loses Kin-sense (Layer 1) but retains Magi magic (Layer 2). Invisible to soul-perception, armed with elemental magic. Uniquely dangerous.
+
+**Reactivation:** Standard action. Brief flicker: anyone within 30 ft actively scanning gets a free check (DC 15) to notice someone appeared.
+
+**Social consequences:** The name is the punishment. Discovery means exile, horror, or violence. The technique is ancient and Kin-born—it predates the Shattering of Man. Factions that train it: Anacrusis, Silent Concord, Shrouded Court, Dómnathar handlers.
+
+### Etymology of ‘Deceiver’
+
+The word “Deceiver” existed BEFORE the Dómnathar arrived. It referred to Kin who suppressed their own Kin-sense—spies, assassins, or outcasts who could go dark. Kin Deceivers were active during the Shattering of Man, adding an espionage dimension to that civil war. When the Dómnathar arrived registering as Absolute Silence, the Kin used the darkest word they already had. “Deceiver” is a slur with layers—comparing the Dómnathar to the worst traitors in Kin history.
+
+## 4. THE PEOPLES OF OREKA — RACES, CULTURES, AND CREATURE INTERACTIONS
+
+Understanding who lives in Oreka is essential for creature design. Monsters exist in relationship to the peoples who encounter them—as predators, guardians, sacred beings, corrupted remnants, or alien threats.
+
+### The Order of Creation (True Kin)
+
+| **Order** | **Race** | **Creator** | **Element** | **Subraces** |
+| --- | --- | --- | --- | --- |
+| Firstborn (extinct) | Giants | All four Lords | All four | None (unified race); 20–30 ft tall; immortal but unable to reproduce |
+| Secondborn | Elves | Youngest Brother (Wind) | Wind primary | Hasura (artists/lightweavers), Pasua (storytellers/charmers), Na’wasua (stargazers/seers), Kovaka (stonebound warriors) |
+| Thirdborn | Dwarves | Lady of Fire | Earth/Fire | Visetri (stone-forged traditionalists), Pekakarlik (river engineers, Small-sized, webbed fingers/toes, mossy green skin), Rarozhki (volcanic smiths), Aldenheim (extinct) |
+| Fourthborn | Halflings | Lady of the Sea | Water | Four subraces exist, but outsiders cannot distinguish between them and Halflings do not discuss the differences. The subraces are a closely guarded cultural matter. |
+| Fifthborn | Humans | A Giant and an Elf, with the Youngest Brother’s blessing | All (varies by culture) | Eruskan (mariners), Mytroan (nomads), Taraf-Imro (smiths/warriors), Orean (farmers/builders) |
+
+Giants eventually crumbled to dust in a process the Elves called Thalorien (“the stone’s sleep”). Kharazhad, a fortress-forge in a caldera, is the greatest Rarozhki hold.
+
+### Canon Ruling: Mixed Heritage
+
+**Children of two different Kin races are born as one race or the other,**** ****never a hybrid.** No half-elves exist in Oreka. A child of a human and an elf is either human or elf—the elemental framework does not permit blended Kin souls. This is a fundamental law of Orekan metaphysics.
+
+**This rule applies only to Kin.** The Farborn are not Kin—they are humans from another world whose metaphysics operated differently. The Gilded Standard Company included half-orcs, half-elves, and other hybrids that are products of their home world’s different rules. These individuals exist in Oreka as living anomalies: their hybrid heritage is real but could not have been produced here. See the Farborn sidebar (Chapter 4a) for details.
+
+### Hybrid Peoples
+
+| **People** | **Origin** | **Kin-Sense** | **Notes** |
+| --- | --- | --- | --- |
+| Half-Giants | Rites binding Giant essence into mortal lines | Full Kin (All-Element Concord) | LA +1; “Cousin” is a slur; +4 Kin-sense racial bonus makes them the best Dómnathar detectors; ideal apotheosis vessel (DM-facing) |
+| Silentborn | Child of Kin and Deceiver | Null Resonance (wound-like absence) | Feared, tragic; Silent Concord faction; apotheosis candidate (DM-facing) |
+| Half-Dómnathar | Dómnathar/Kin hybrid | Cracked/discordant Kin | LA +0; darkvision 60 ft, sleep immunity, light sensitivity, ‘foreign soul’ trait; used as assassins, infiltrators; apotheosis candidate (DM-facing) |
+
+### Non-Kin Peoples
+
+| **People** | **Origin** | **Status** | **Kin-Sense /**** ****Notes** |
+| --- | --- | --- | --- |
+| Farborn (Gilded Standard Company) | Foreign humans from another plane | Settled near Lone Titan, Deepwater Marches; Neutral Good; ~28,000 population | No Registration (invisible). Farborn are isolated at the Titan; Kin interaction occurs primarily during trade meets. 300 years of good trading and helping Kin has built trust. Farborn are slowly, tentatively becoming a fifth human kin. |
+| Goblins | Deceiver auxiliaries; broke free at Dark Dawn | Free tribes in Deepwater Marches | Breach Static (diminishing over generations as attunement develops) |
+| Wargs | Deceiver war-beasts; broke free at Dark Dawn | Independent faction; highly intelligent | Breach Static. NOT mounts—sentient; ride only by consent. |
+| Hobgoblins | Deceiver NCOs; some freed | Iron Tribes (free) vs. Deceiver-aligned | Breach Static. Disciplined, Iron Law culture. |
+| Orcs | Deceiver auxiliaries | Mostly still Deceiver-aligned | Breach Static. Brutal, relentless; scattered warbands. |
+| Tanuki | Forest spirits; native to Oreka | Kin-adjacent | Wild Static (NOT Breach—they are Oreka-native). Raccoon-folk; shapeshifters, illusionists. |
+| Ogres | Deceiver shock troops | Remnant warbands | Breach Static. Towering brutes; feared. |
+
+**Monster Manual Implication:** *Post-Dark Dawn non-Kin peoples are** **NOT monolithic evil races. Include variants for free** **vs. Deceiver-aligned. Breach-origin peoples gain attunement over** **generations—free goblin tribes 300 years in are transitioning.*
+
+### 4a. FARBORN: HUMANS BUT NOT KIN
+
+The Farborn represent a unique category in Oreka’s metaphysics. They are biologically human—indistinguishable from Kin humans in appearance, physiology, and lifespan—but they are not Kin. They were not created by the Elemental Lords, they carry no elemental attunement, and they register as No Registration on Kin-sense: simply absent, like furniture.
+
+**Farborn vs. Kin Humans — Key Differences**
+
+| **Trait** | **Kin Humans (Eruskan,**** ****Mytroan, Taraf-Imro,**** ****Orean)** | **Farborn Humans** |
+| --- | --- | --- |
+| **Origin** | Created by a Giant and an Elf with the Youngest Brother’s blessing | Foreign-born; arrived through the Silence Breach as Deceiver auxiliaries |
+| **Elemental**** ****Attunement** | Yes — varies by culture (Water, Wind, Fire, Earth) | None at birth. Emerging attunement after 300 years in Oreka (the “Titanbreed Paragon” phenomenon) |
+| **Kin-Sense**** ****Registration** | Harmonic (Kin) — race and element readable | No Registration — invisible, absent |
+| **Elemental Tolerance** | Resistance 2 to primary element | None |
+| **Caster Level**** ****Modifier** | +1 aligned / −1 opposed element | None |
+| **Mixed Heritage Rule** | Children of two Kin races are one or the other, never hybrid | Farborn home world permitted hybrids; half-elves and half-orcs exist among original Farborn stock |
+| **Apotheosis**** ****Eligibility** | Yes (if all four elements attained) | Not currently — no elemental attunement. The emerging Titanbreed Paragon could change this |
+| **Cultural Status** | Full Kin; recognized by all | Slowly, tentatively becoming a fifth human kin after 300 years of trust-building |
+
+The original Gilded Standard Company included half-orcs, half-elves, and a small cadre of foreign dwarves—hybrids and non-humans that are products of their home world’s different metaphysical rules. Three centuries of intermarriage within the Farborn community and occasional unions with Kin humans have diluted these foreign bloodlines, but individuals with clearly non-Kin features still appear. These are curiosities, not scandals—the Farborn do not share Oreka’s metaphysical prohibition on hybrids because they were never subject to it.
+
+**DM NOTE:** *The emerging** **“**Titanbreed Paragon**”** **phenomenon—faint** **elemental resonance appearing in Farborn children raised on the Lone** **Titan—is a metaphysical event with campaign-altering implications.** **If Farborn can develop elemental attunement, they may eventually** **register on Kin-sense, qualify for apotheosis, and fully integrate** **into Orekan metaphysics. This is a slow process, not yet confirmed,** **and deeply interesting to the Dómnathar.*
+
+## 5. HISTORY THAT SHAPES MONSTERS — KEY EVENTS AND THEIR AFTERMATH
+
+### The Age of Giants (Deep Past)
+
+The Giants built the first civilizations along the Great River and in the Infinite Desert. They were immortal but could not reproduce, and eventually crumbled to dust (Thalorien). Their ruins fill the Infinite Desert, haunted by Sand Wraiths. Each of the seven regions of Oreka contains a Tomb of Kings—a great Giant burial site.
+
+**Monster Manual Implication:** *Giant-era ruins contain guardian** **constructs, rune-bound elementals, and creatures sustained by ancient** **elemental circles still functioning millennia later. Ember Drakes nest** **in their volcanic forges. River Serpents guard their water temples.*
+
+### Pre-War Kin Deceivers (Pre-Shattering)
+
+Before the Dómnathar ever arrived, Kin who learned to suppress their own Kin-sense existed in Oreka. The Deceiver’s Feat is older than the Shattering of Man. These pre-war Deceivers—spies, assassins, or outcasts who could go dark—were feared and reviled. The word “Deceiver” was the darkest label a Kin could bear, and it was a Kin-born word for a Kin-born sin.
+
+### The Shattering of Man (~150 KC)
+
+Oreka saw four Keepers in all: the Pre-Keeper, a leader before the formal crowning; the First Crowned Keeper and the Second Crowned Keeper, who ruled wisely; and the Third Crowned Keeper, who proved the weakest and most foolish of them all. The Third Crowned Keeper was too weak and foolish to hold his realm. Lords of the four human kin argued over who should rule and a war broke out. The elves chose sides in what would be their greatest shame, the failure to guide man. Aldenheim, the Visetri, and the Rarozhki joined with the Taraf-Imro as loyalists. The Pekakarlik joined the rebellion. Kin Deceivers were active on both sides of the conflict, adding an espionage dimension. Many cities were burned to ruins and the Kin separated as so many siblings who had argued over a now broken toy. Each of the four human Kin blame the others for the Shattering—the Eruskans blame the Taraf-Imro, the Taraf-Imro blame the Oreans, the Oreans blame everyone, and the Mytrone consider it proof that centralized governance was always doomed to fail. No human subrace accepts responsibility, and the mutual recrimination has never healed.
+
+### The Deceivers’ War (~430–452 KC)
+
+The most monster-generating event in Oreka’s history. A foreign mercenary army led by the Dómnathar arrived through a misfired Assault Gate—the Silence Breach (Dorrach Kael, “The Conquest Door”)—in the southeastern foothills of the Gatefall Reach. The Dómnathar did not know Oreka existed until they had been here six months. The Breach was truly accidental.
+
+The army included Dómnathar commanders, foreign elves, dwarves, humans, goblins, orcs, ogres, hobgoblins, kobolds, war-beasts, and creatures magical and monstrous. The host marched north through the Gap, across the Gatefall Reach and the Eternal Steppe, and into the Infinite Desert. While crossing the desert, one-third of the host—the Lost Third—reversed course and marched back south through the Gate of Fire into the Gatefall Reach, then west onto the Eternal Steppe (see Chapter 14 for the full account). The remaining two-thirds continued north, devastating Hillmeet, Foxfen, Whistlebank, and Mossgrove, and ultimately besieging Aldenheim. After the Fall of Aldenheim, the northern survivors scattered westward.
+
+### The Siege and Fall of Aldenheim (~450 KC)
+
+The dwarves of Aldenheim stood alone after the Twelve Kings of Man universally refused aid and the elven armies arrived too late.
+
+**Player-facing history:** The Deceiver host used false giants—constructs or illusions that appeared to be the legendary Firstborn—to trick the Aldenheim dwarves into opening their gates. The gates were breached on day 10. The city fell on day 42.
+
+**DM NOTE:** *DM truth: The siege continued underground for 100 days** **after the surface city’s destruction, totaling 142 days. The Aldenheim** **dwarves fought a grinding subterranean war even after the city above** **was lost. Five druids sacrificed themselves in a ritual that melted** **the mountain, destroyed the Deceiver host, and created the Lament of** **Kings—a blasted plain sitting atop the flattened ruins of Aldenheim,** **where Kin-sense is permanently unstable. The five druids became** **Cinvarin, the first Ascended God.*
+
+### The Lament of Kings (451 KC)
+
+The bard Hareem, enraged by the kings’ refusal to aid Aldenheim, killed all twelve human monarchs by drawing the air from the chamber—suffocating them with her own breath as the final offering. Hareem died in the act and ascended as the second Ascended God: the Golden Rose, Chaotic Evil. This act shattered the old political order forever.
+
+### The Reckoning (450–452 KC)
+
+The chaotic period encompassing the Fall of Aldenheim, the Lament of Kings, and the Battle of Dark Dawn. The old world ends; a new one begins.
+
+### Wars of the Shattered Host (1–300 AL)
+
+For 300 years, surviving Dómnathar houses and Deceiver fragments have fought each other in Oreka’s shadows. Not all Deceiver creatures are allies—they may fight each other.
+
+### 5a. THE OREKA DATING SYSTEM & MASTER TIMELINE
+
+**Old Calendar — Keeper Crowned (KC)**
+
+Begins with the crowning of the first Keeper by the last living Giant. Today, only scholars and long-lived elves use KC dates.
+
+**Current Calendar — After the Lament (AL)**
+
+Begins with the first Lament Games. Year 1 AL ≈ 452 KC. Campaign present: Year 300 AL (≈ 752 KC).
+
+### Master Timeline
+
+| **Date** | **Event** |
+| --- | --- |
+| Pre-KC | Age of Giants. Tombs of Kings built in each of the seven regions. |
+| Year 1 KC | First Keeper crowned by the last Giant. |
+| Pre-Shattering | The Deceiver’s Feat is developed. Kin Deceivers exist as spies and assassins. |
+| ~150 KC | The Shattering of Man. Third Crowned Keeper too weak and foolish to hold the realm. Succession dispute, civil war. Kin Deceivers active on both sides. Cities burned. Kin separated. |
+| ~430 KC | Deceivers’ War begins. Dómnathar arrive through misfired Assault Gate (Silence Breach). They did not know Oreka existed until 6 months in. |
+| ~430–450 KC | Host marches north. One-third (the Lost Third) splits off in the desert—disillusionment and suspicion combined with the belief that the desert had no end. They march south through the Gate of Fire and west onto the Eternal Steppe. |
+| ~450 KC | Fall of Aldenheim. Gates breached day 10 via false giants. City falls day 42. Underground fighting continues 100 more days. Five druids melt the mountain. Cinvarin ascends. Northern survivors scatter westward. |
+| 451 KC | Hareem kills the Twelve Kings. The Lament of Kings. Second apotheosis. |
+| 450–452 KC | The Reckoning. Running War and Battle of Dark Dawn on the Eternal Steppe. Goblin and warg troops break free. Old world ends. |
+| Year 1 AL (~452 KC) | First Lament Games. New era begins. |
+| Year 300 AL (~752 KC) | Campaign present. |
+
+*Elves who are 400+ years old were alive during the KC era and** **personally experienced the calendar changing.*
+
+## 6. THE SEVEN REGIONS — ENVIRONMENT AND ECOLOGY GUIDE
+
+| **#** | **Region** | **Position** | **Terrain** | **Key Creature**** ****Niches** | **Tomb of**** ****Kings**** ****Location** |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Twin Rivers | Northwest | River valleys, forests, hills | River Serpents, forest spirits, Tanuki, trade-route predators | Present (specific site TBD) |
+| 2 | Kinsweave | North-Central | Plains, lakes, rugged mountains, river valleys, volcanic zones, border kingdoms | Plains predators, Border Kingdom monsters, Lament of Kings creatures, Scorchspires fauna | Present (specific site TBD) |
+| 3 | Tidebloom Reach | Northeast | Lakeside, tidal forests, marshes | Tidal creatures, Kailian Sea beasts, haunted ruins | Present — located in the far north near Hillmeet ruins |
+| 4 | The Infinite Desert | Central Band | Equatorial desert, Giant ruins | Sand Wraiths, Ember Drakes, guardian constructs | Present (specific site TBD) |
+| 5 | Deepwater Marches | Southwest | Dense jungle, Apelian Sea shore | Jungle predators, free goblin/warg creatures, Deceiver remnants, Flamewarg cult raiders | Present (specific site TBD) |
+| 6 | Eternal Steppe | South-Central | Vast grasslands, nomadic territory | Steppe predators, herd beasts, Mytroan monsters | Present (specific site TBD) |
+| 7 | Gatefall Reach | Southeast | Mixed forest, prairie, Silence Breach | Breach-warped creatures, Deceiver warbands, frontier beasts | Tomb of Kings (Gatefall Remnant base of operations) |
+
+The Infinite Desert functionally separates the northern and southern tiers like an ocean would.
+
+### Regional Detail: The Infinite Desert
+
+Once the heart of the Giant empire. Flanked by the Emberfangs, Scorchspires, and Ashen Crown ranges. Ancient oases maintained by Pekakarlik Dwarves and Kovaka Elves sustain life—the Pekakarlik managing hydraulic systems and underground channels, the Kovaka tending stone structures and rune-circles. During the age of the Eke Concordant, the Na’wasua worked with the Taraf-Imro to raise great observatories into the skies above the desert. The desert earned its name—the Lost Third turned back because they did not believe it had an end, their disillusionment and suspicion crystallizing into betrayal. Dual elemental patronage is practiced at some desert settlements, reflecting the cooperative nature of survival in this harsh environment.
+
+### Regional Detail: Deepwater Marches
+
+Transformed by the Dark Dawn scatter into a contested wildland. Dense jungle around the Apelian Sea hosts Kin conclaves, free goblin tribes, wargbond communities, Deceiver remnants, and the Farborn at the Lone Titan. The Dómnathar tower on the southern sea spur is their hidden stronghold in the region—quietly rebuilding for 300 years. Flamewarg cults, originally descended from Gatefall Remnant cavalry, spread westward into the Marches over the centuries, drawn by the terrain’s suitability for their fire-and-ambush tactics and the region’s lack of centralized authority to oppose them.
+
+### Regional Detail: Tidebloom Reach
+
+Burned ruins of Hillmeet, Foxfen, Whistlebank, and Mossgrove haunted by the northern campaign. Ghost-like creatures, war-damaged undead, and beasts adapted to tainted soil.
+
+### Regional Detail: Gatefall Reach
+
+The southeastern frontier where the Silence Breach opened and the Deceiver army first entered Oreka. Three centuries later, the Breach scar persists as a Kin-sense dead zone. The region’s terrain transitions from open steppe grasslands in the west and northwest through the crescent forests of the center and east to the mountain foothills framing the Gap in the southeast. Key landmarks include the Scar Road (the compacted path of the original Deceiver march), the Burnt Warrens (underground burrow-forts built by scattered Deceiver warbands after Dark Dawn), and the Windstone Circle (a ring of five Giant-era standing stones on the Gatefall Grasslands, shared by Mytrone and Pasua for joint ceremonies). The Gatefall Remnant—half of the Lost Third’s scattered forces—established operations centered on the Tomb of Kings.
+
+### Major Geographic Features
+
+**Giant’s Teeth:** Two parallel mountain ranges that flank either side of the Infinite Desert and wrap all the way around the world, touching all seven regions. They are the most prominent continental-scale landform in Oreka, serving as natural barriers, trade route corridors, and monuments to the Age of Giants.
+
+**Scorchspires:** A volcanic mountain range rich in minerals and heat, located where the Kinsweave region meets the Infinite Desert. Home to Rarozhki holds including Kharazhad. Ember Drakes nest in their forges.
+
+**Northern Lament Range:** A mountain range north of the Giant’s Teeth in Kinsweave, extending from the ruins of Pyree and Andrio to Rivertop and Highridge. Scarred by the Deceivers’ War and the Lament of Kings, it influences the Great River’s course and bears deep historical significance.
+
+**Kailian Sentinels:** Isolated mountains along the Kailian Sea coast in Kinsweave, separating Lakeshore Bay and Lakewell Cove. Composed of basalt and limestone, they feature tidal caves and serve as navigational landmarks.
+
+**Mistveil Ridges:** Mountains south of the Seaspray Lagoon in Kinsweave, adjacent to the Sundrift Veil. Made of sandstone and basalt, shrouded in mist. Tied to legends of protection during past wars.
+
+**Seaspray Lagoon:** A small offshoot of the Kailian Sea south of Lakeshore in Kinsweave, a shallow bay formed by tidal and river influences. Used for fishing and trade, enhanced by water spirit rituals.
+
+## 7. THE DÓMNATHAR & THE ABYSS CIRCLE — THE HIDDEN ENEMY
+
+The Dómnathar are obsidian-skinned, white-haired deep elves from another world entirely—NOT fallen Kin, NOT native to Oreka. They are extraplanar outsiders whose souls are tuned to the Abyss Circle rather than Oreka’s elemental harmony. To Kin-sense they register as Absolute Silence. Their capital, Dómnathar-Zhuan, is on their home world, not in Oreka.
+
+**The Dómnathar did not know Oreka existed until they had been here six**** ****months.** The Silence Breach was a misfired Assault Gate. Their invasion was opportunistic, not planned.
+
+### Dómnathar Lifespan and Society
+
+**Dómnathar can live up to 1,000 years.** The pre-invasion house leaders (aged 187–298 at the time of the Breach) are still alive in the campaign present. They have personal memory of their home world and 300 years of experience in Oreka. This gives the Dómnathar villain faction deep personal continuity.
+
+Dómnathar society is matrilineal (Motherlines) but NOT strictly matriarchal—either sex can rule. Eleven Great Houses: 10 peer Houses (Circle of Knives) + 1 Paramount (Vael’domin, intentionally left as DM’s choice).
+
+### Dómnathar Elemental Disconnection
+
+**The Dómnathar possess no Elemental Affinity.** Their souls are attuned to the Abyss Circle rather than to Oreka’s elemental framework, and their primary magical traditions draw upon that connection. However, lacking an Elemental Affinity does not bar the Dómnathar from wielding elemental magic—they are simply less powerful in it than Kin races, who carry an innate resonance that the Dómnathar do not share. A Dómnathar sorcerer can command fire or bend water, but will never match a Kin caster of equal skill working within their native element. Stat blocks: “Elemental Affinity: None — Extraplanar.” This disadvantage, rather than an absolute prohibition, is what drives their civilization—they enslave elementally-attuned beings across worlds to compensate for their own lesser attunement.
+
+### The Eleven Great Houses
+
+| **House** | **Theme** | **Patron** | **Creature**** ****Implications** |
+| --- | --- | --- | --- |
+| Vaalor | Terror, killing gaze | Oczur-Vaal (One Gaze) | Gaze-attack creatures, eye-mutant soldiers |
+| Aelathar | Seduction, enchantment | Vaelissar (Gilded Rot) | Charm-based creatures, illusory predators |
+| Domnethra | Birth cult, breeding | Myrnaazhul (Abyssal Womb) | Brood creatures, spawning horrors |
+| Tethrakh | Demon-forges, venom metal | Tethzhaar (Iron Serpent) | Living weapons, venom constructs |
+| Morkath | Berserk rage, storms | Morkhaz (Red Tempest) | Storm-mad beasts, blood-frenzy creatures |
+| Indorach | Disciplined war, sieges | NONE — nihilistic atheists by Dómnathar standards | War constructs, siege beasts, slave soldiers |
+| Kethloryn | Spider prophecy, venom | Ssyraeth (Venom-Seer) | Spider-type monsters, venom creatures |
+| Bressarai | Aesthetic cruelty, poison | Vaelissar (Gilded Rot) | Poison creatures, torture constructs |
+| Buarath | Flesh-warping, grafts | Buaress (Many-Mask) | Flesh golems, mutated aberrations, grafted horrors |
+| Lokhlannar | Winter, frost, despair | Lokhruun (Winter Dirge) | Frost demons, ice undead, cold elementals |
+| Firvarg | Slavery, chains | Firkaan (Shackler King) | Chain-bound horrors, enslaved beasts, collar constructs |
+| Konaeth (fallen) | Crystal, tyranny | Unknown | Crystal undead, living crystal hazards, cursed ruins |
+
+House Indorach is unique among the Dómnathar in having no Abyss Circle patron. They are nihilistic and atheist by Dómnathar standards—they believe in discipline, force, and their own capability rather than dark gods. This is deliberate and intentional.
+
+### The Abyss Circle (Nine Patrons)
+
+| **Dómnathar**** ****Name** | **Orekan**** ****Epithet** | **Themes** | **House(s)** |
+| --- | --- | --- | --- |
+| Myrnaazhul | The Abyssal Womb | Hunger, birth, reproduction | Domnethra |
+| Ssyraeth | The Venom-Seer | Spiders, prophecy, insanity | Kethloryn |
+| Lokhruun | The Winter Dirge | Eternal winter, despair, frozen souls | Lokhlannar |
+| Vaelissar | The Gilded Rot | Beauty, seduction, subtle killing | Aelathar, Bressarai |
+| Oczur-Vaal | The One Gaze | Killing gaze, ocular omens | Vaalor |
+| Morkhaz | The Red Tempest | Berserk rage, joyful slaughter | Morkath |
+| Tethzhaar | The Iron Serpent | Cursed forges, venom-metal | Tethrakh |
+| Buaress | The Many-Mask | Mutation, grafting, body horror | Buarath |
+| Firkaan | The Shackler King | Slavery, broken wills, chains | Firvarg |
+
+### Dómnathar Creature Design Principles
+
+Creatures associated with the Dómnathar should feel: calm, intelligent, patient, inescapable, and morally alien. They are “the absence after the scream.” Their tunnels are resonance-dead corridors that suppress Kin-sense and induce dread and isolation. The Dómnathar Are Horror, Not Action.
+
+### The Dómnathar Apotheosis Plot (DM-FACING ONLY)
+
+**DM NOTE:** *Apotheosis is morally neutral (Hareem proved it) →** **requires attunement to all four elements → pure Dómnathar can’t ascend** **→ they need an elementally-attuned being loyal to them. They’ve** **studied Hareem’s act for 300 years. Candidates: Half-Giants** **(All-Element Concord, ideal) **>** Half-Dómnathar **>** Silentborn **>** **Corrupted Kin.*
+
+### The Dómnathar Gate Plot (DM-FACING ONLY)
+
+**DM NOTE:** *SEPARATE FROM THE APOTHEOSIS PLOT. The Dómnathar are** **actively trying to capture or use a high-powered Magi to help start a** **new gate—a way to reopen a passage to their home world or bring** **reinforcements. The Magi tradition is the one power system the** **Dómnathar cannot naturally counter (immune to False Silence), which** **makes a Magi both their greatest enemy and their most coveted asset.** **They have spent 300 years quietly targeting and eliminating Magi** **lineages to reduce the threat, while simultaneously searching for a** **sufficiently powerful Magi they can control. This is a NEW active plot** **in the campaign present.*
+
+**DM NOTE:** *CRITICAL HIDDEN INFORMATION: There is a SECOND assault** **gate that the Dómnathar themselves do not know about. This second gate** **is causing a side effect: the Lord of Stone is comatose. Meanwhile,** **the Lady of Fire and Lady of Water are actively holding back the Abyss** **Circle and destroying the first gate.*
+
+## 8. FACTIONS AND FORCES — WHO COMMANDS WHAT
+
+### Kin-Aligned Factions
+
+| **Faction** | **Alignment** | **Role** | **Creature**** ****Connections** |
+| --- | --- | --- | --- |
+| Golden Roses | Varies | Hosts the Lament Games. Counter-Deceiver operatives. Branches: Petals (healers), Thorns (warriors), Vines (messengers). | Employ/train unusual beasts; track Deceiver creatures |
+| Anacrusis | Varies | Cross-Kin corruption-hunting scholars. Hierarchy: The Baton → Prime Choirs → Verses/Choruses → Library of Echoes. Trains the Deceiver’s Feat. | Study Deceiver creatures |
+| Silent Concord | Varies | Silentborn ‘third path’ organization. Hierarchy: Stillwater Council → Voice → Choirs (Veil, Hearth, Warden, Memory, Dawn) → Lanterns (cells) → Candles. Trains the Deceiver’s Feat. | Lantern cells vs. Dómnathar. Veil Choir: counter-infiltration. |
+| Trade Houses | Neutral | Merchant organizations | Transport exotic beasts; road-side encounters |
+| Chainless Legion | Varies | Former Firvarg slave-soldiers, settled west of Twin Rivers. Enclaves: Clifftide, Saltrest Haven, Redcurrent Strand. | Former war-beasts now independent |
+| Starwind Blades | Varies | Na’wasua Elf blade-adepts from the Great Forests. Minor faction. | Seek cosmic and elemental clues in ancient sites; occasional presence in Kinsweave and desert-edge regions. |
+
+### Post-Dark Dawn Evil Factions
+
+| **Faction** | **Alignment** | **Origin** | **Creature Types** |
+| --- | --- | --- | --- |
+| Ash-Chain Brotherhood | Lawful Evil | Freed slave-enforcers turned masters | Chain-bound humanoids, disciplined war-beasts |
+| Bloodridge Coven | Chaotic Evil | Fleshcrafters, war-witches | Mutated creatures, flesh-warped aberrations |
+| Black-Maw Legion | Neutral Evil | Goblin/warg supremacists | Trained wargs, goblin war-machines |
+| The Shrouded Court | LN/NE | Dómnathar assassin-kings. Trains Deceiver’s Feat. | Silence-wielding creatures, shadow beasts |
+| Flamewarg Cults | Chaotic Evil | Gatefall Remnant descendants; spread westward into the Deepwater Marches over the centuries | Fire-infused wargs, flame elementals |
+
+### The Farborn (Gilded Standard Company)
+
+Neutral Good settled community of ~28,000 near the Lone Titan on the Deepwater Marches’ eastern edge. ~50 pure Titanborne horses, ~900 Titanbreed hybrids. Originally a neutral mercenary outfit from another plane, the Gilded Standard Company was led by Captain Ralven Duskharrow, styled as Duke of the Company. Founded as a Farborn settlement after Duskharrow’s defection during the Running War—only one in ten of the original Company survived. The Farborn are isolated at the Titan and interact with Kin primarily during trade meets. Three centuries of fair dealing have built trust. They register as No Registration on Kin-sense—invisible—but this has not prevented a functional relationship. The Farborn are tentatively, slowly becoming a fifth human kin.
+
+**Titanbreed Horse Pricing:** Titanbreed hybrid cavalry mounts command 8,000–15,000 gp depending on training, bloodline proximity, and temperament. Titanborne purebloods (~50 in existence) are never sold—they are sacred to the Farborn and serve as breeding stock and ceremonial mounts only.
+
+*Other mentioned breakaway factions (Ashen Menders, Ember-Slack Goblins,** **Free-Banner Ogres, Veil-Orphans, Sundered Hand) need further** **development.*
+
+## 9. CREATURE CATEGORIES — THE THREE-TIER BESTIARY SYSTEM
+
+**Tier 1: Oreka Originals**
+
+Creatures invented specifically for Oreka, born from its elemental forces, history, and cultures. Most detailed lore, cultural significance, and regional placement.
+
+**Tier 2: Mythological Adaptations**
+
+Creatures drawn from global mythology (Persian, Slavic, Japanese, African, Polynesian, Norse, Celtic, Greek, Mesoamerican, and more), adapted to Oreka’s framework.
+
+**Tier 3: OGL Creatures (3.5e Adapted)**
+
+Standard SRD/OGL creatures given Oreka-specific context. Must have Kin-Sense Signature, Elemental Affinity, Regional Placement, and Cultural Significance.
+
+## 10. OREKA-SPECIFIC DESIGN FIELDS
+
+| **Field** | **Required?** | **Description** |
+| --- | --- | --- |
+| Kin-Sense Signature | REQUIRED | Category (Harmonic, Wild Static, Breach Static, Warm Static, Null, Void, None, Raw Static) plus descriptive sensory text. |
+| Elemental Affinity | REQUIRED | Primary/secondary attunement. Dómnathar: “None — Extraplanar.” |
+| Cultural Significance | REQUIRED | How specific Kin cultures relate to this creature. |
+| Regional Placement | REQUIRED | Which of the Seven Regions; population density and habitat. |
+| Lore (Knowledge Check) | Recommended | Tiered DC 10/15/20/25/30 results per MM III format. |
+| Strategies and Tactics | Recommended | Combat behavior, preferred terrain, group tactics. |
+| Faction Alignment | If applicable | Which faction(s) the creature serves. |
+| Historical Origin | If applicable | Which event created or introduced it. |
+
+## 11. TEMPLATES — ELEMENTAL INFUSED, SILENCE-TOUCHED, AND MORE
+
+### Elemental Infused (Established Canon)
+
+| **Element** | **Damage Bonus** | **Resistance** | **Additional**** ****Traits** |
+| --- | --- | --- | --- |
+| Earth/Stone | +1d6 acid on natural attacks | Resist acid 10 | +2 natural armor, tremorsense 30 ft |
+| Fire | +1d6 fire on natural attacks | Resist fire 10 | Immunity to nonmagical fire, body emits heat |
+| Water/Ice | +1d6 cold on natural attacks | Resist cold 10 | Swim speed +20, breathe underwater |
+| Wind/Sky | +1d6 electricity on natural attacks | Resist electricity 10 | Fly speed +20 (if applicable), feather fall at will |
+
+### Proposed Templates (Not Yet Finalized)
+
+| **Template** | **Source** | **Effect** | **Typical**** ****Subjects** |
+| --- | --- | --- | --- |
+| Silence-Touched | Dómnathar corruption | Suppresses Kin-sense within 30 ft; Void signature | Beasts/humanoids exposed to False Silence |
+| Void-Born | Abyss Circle energy | Extraplanar traits; immune to Kin-sense; SR 10+HD | Dómnathar pit-bred creatures |
+| Rune-Bound | Giant-era enchantment | Construct-like; follows ancient directives; eternal | Giant ruin guardians |
+| Shattering-Warped | Shattering fallout | Unstable dual-element abilities | Creatures near old fault lines |
+| Lament-Touched | Lament proximity | Erratic Kin-sense; pain aura; fear effects | Undead/beasts near the Lament |
+| House-Bred | Dómnathar house breeding | Varies by house themes | War-beasts, assassin creatures, siege monsters |
+| Ascended-Blessed | Ascended God favor | Varies by god; mortal themes | Sacred beasts, temple guardians |
+
+## 12. EXISTING CANON CREATURES
+
+| **Creature** | **CR** | **Type** | **Region** | **Cultural**** ****Ties** |
+| --- | --- | --- | --- | --- |
+| Sand Wraith | 5 | Undead (Incorporeal) | Infinite Desert (primary); also found near Giant ruins in other regions | Born from the spirits of Kin who died in great anguish or violence. Found wherever sites of great death persist, including Giant-era ruins, the Lament of Kings, and the Ashen Hollows of Tidebloom. Sand Wraiths are Kin spirits, NOT Giant spirits. |
+| Ember Drake | 3 | Dragon | Scorchspires | Revered by Rarozhki; nest near forges |
+| River Serpent | 4 | Magical Beast | Great River / Twin Rivers | Sacred to Pekakarlik; boat-blessing rituals |
+| Storm Wisp | 2 | Elemental (Air) | Great Forests | Tied to Wind Lord; Hasura/Pasua rites |
+| Ash Elemental | Varies | Elemental (Fire/Earth) | Scorchspires | Semi-sapient; favored by Rarozhki smiths |
+| Forest Spirits | Varies | Fey | Great Forests | Nature guardians; Hasura/Pasua traditions |
+| River Spirits | Varies | Fey (Water) | Rivers/Coasts | Adored by Eruskan; courted by Halflings |
+| Wind Sylphs | Varies | Elemental (Air) | Everywhere (rare) | Born of Youngest Brother’s breath |
+
+Non-Kin peoples (Goblins, Wargs, Hobgoblins, Orcs, Ogres, Kobolds, Tanuki) all require entries reflecting moral complexity of free vs. Deceiver-aligned populations.
+
+## 13. DESIGN PHILOSOPHY — PRINCIPLES FOR NEW CREATURE CREATION
+
+**1. Elemental Identity Is Non-Negotiable***
+
+Every creature must have an elemental affinity. *Exception: Dómnathar use “None — Extraplanar.” Breach-origin peoples are addressed via Breach Static.
+
+**2. Kin-Sense Defines the Encounter**
+
+Write the Kin-Sense Signature as sensory description. “Wild Static: a prickling warmth like sunlight through fog” beats “Wild Static.”
+
+**3. History Creates Monsters**
+
+Every creature’s presence should feel justified by history.
+
+**4. Moral Complexity Over Alignment Shortcuts**
+
+No “Always Chaotic Evil.” A goblin trader is different from a goblin raider serving House Firvarg.
+
+**5. Cultural Significance Adds Depth**
+
+A creature “considered sacred by Pekakarlik dwarves, who believe its appearance signals an ancient Giant well” is more interesting than “a predator in the desert.”
+
+**6. The Dómnathar Are Horror, Not Action**
+
+Psychological horror. Calm, patient, inescapable. Not loud and flashy.
+
+**7. Stat Block Format**
+
+23-field MM v.3.5 standard + Lore tiers (MM III) + Tactics (MM III–V) + four Oreka-specific fields.
+
+## 14. THE LOST THIRD — THE SOUTHERN WAR
+
+The Lost Third is not a mystery. It is resolved history—though most Kin outside the southern regions do not know the full story.
+
+### The Reversal
+
+When the full Deceiver host crossed the Infinite Desert heading north, one of the three sub-commanders broke away and turned the force back south. **The reason was twofold: they did not believe the desert had an**** ****end, and disillusionment had festered into suspicion and betrayal among**** ****the ranks.** The Infinite Desert earned its name. Weeks without battle or end to the sands eroded confidence, and the sub-commander’s growing distrust of the other commanders crystallized into a deliberate military decision—not a rout or desertion, but a calculated break.
+
+### The March South
+
+The Lost Third marched south out of the desert, through the Gate of Fire—the navigable pass between the Infinite Desert and the Eternal Steppe—and back into the Gatefall Reach. From there they turned west onto the Eternal Steppe.
+
+### The Running War
+
+The Wind-Riders—known to the Pasua as Far Riders and to the Mytrone of the steppe as Wind-Riders—are an ancient brotherhood of Mytroan lancers and Pasua mounted archers whose traditions predate the Deceivers’ War. They were the finest light cavalry Oreka had ever seen. When the Lost Third entered the Gatefall Reach heading south and then west, the Wind-Riders intercepted them. The Running War began in the Gatefall Reach and escalated across the Eternal Steppe as the brotherhood harried the Deceiver column, turning the open grasslands into a killing ground over nine days. Had the Deceiver commanders not called for the Scattering, the Wind-Riders would have crushed the Lost Third entirely.
+
+### The Gilded Company’s Betrayal
+
+The Gilded Standard Company was a neutral mercenary outfit from another plane, led by Captain Ralven Duskharrow, styled as Duke of the Company. During the Running War, the Company’s soldiers saw firsthand who they were fighting alongside—Dómnathar commanders, enslaved auxiliaries, and creatures born of the Abyss Circle—and who they were fighting against—Kin peoples defending their homeland. They did not like what they saw. When the Deceiver commanders ordered the Gilded Company to serve as a sacrificial screening force, Duskharrow refused. He contacted the Mytrone directly and the Company defected to the Kin side, joining the Wind-Riders for the final engagement. Only one in ten of the Gilded Company survived the Running War and the Battle of Dark Dawn.
+
+### The Battle of Dark Dawn
+
+The combined forces broke the Lost Third on the Steppe. The Deceiver captains ordered a deliberate scatter—the only alternative to total annihilation at the hands of the Wind-Riders.
+
+### The Scatter: Two Fates
+
+**The Gatefall Remnant**
+
+Half fled southeast to the Gatefall Reach, eventually reuniting at the Tomb of Kings (one of seven Giant burial sites). Flamewarg cults descend from them. Underground warrens—the Burnt Warrens—connect to Dómnathar remnant operations beneath the southeastern foothills and crescent forests.
+
+**The Deepwater Remnant**
+
+The other half fled into the Deepwater Marches. Goblin and warg servitors broke free, forming independent communities. The Dómnathar core established a hidden stronghold on the southern sea spur of the Apelian—the tower visible from the water is theirs, quietly rebuilt over 300 years into a fortified base of operations. Flamewarg cult elements originally associated with the Gatefall Remnant spread westward into the Marches over the centuries, drawn by the dense terrain’s suitability for fire-and-ambush tactics and the absence of any centralized authority to oppose them.
+
+### The Aftermath
+
+The Gilded Company settled at the Lone Titan and became the Farborn. Northern scholars never learned the full story—the Wind-Riders remember through Pasua song and Mytroan oral tradition, not written records.
+
+## 15. MAGI MAGIC — THE OLDEST SPELLCASTING TRADITION
+
+The Magi is Oreka’s oldest and most fundamental spellcasting tradition, predating all other casters. Three Chosen Paths, including the Path of the Seer (Wisdom).
+
+### Critical Ruling: Magi Magic Independence
+
+**Magi magic is elemental but NOT channeled through Kin-sense.** Affected by anti-magic zones. NOT affected by False Silence, Void energy, worked Dómnathar metal, or resonance-dead zones. This overturns the earlier ruling (Canon Audit Q128).
+
+Magi become the most valuable caster against Dómnathar. A Magi with the Deceiver’s Feat is uniquely dangerous: invisible to soul-perception but armed with elemental magic.
+
+**DM NOTE:** *The Dómnathar have spent 300 years quietly eliminating** **Magi lineages because Magi magic is the one weapon they cannot** **naturally counter. The Dómnathar Gate Plot involves capturing a** **high-powered Magi to help start a new gate. This makes every surviving** **Magi both a strategic target and a campaign-critical asset.*
+
+## 16. ECONOMY & EQUIPMENT
+
+Oreka uses the standard OGL 3.5e currency and equipment system: gold pieces (gp), silver pieces (sp), copper pieces (cp). Standard PHB equipment tables and pricing apply.
+
+**Titanbreed Horse Pricing:** Titanbreed hybrid cavalry mounts command 8,000–15,000 gp depending on training, bloodline proximity, and temperament. Titanborne purebloods (~50 in existence) are never sold. For comparison, a standard heavy warhorse costs 400 gp under OGL rules—a Titanbreed mount represents a king’s ransom and a strategic asset, not merely a purchase.
+
+Regional trade goods, exports, cultural pricing variations, and Trade House commerce details still need development.
+
+## 17. SETTLEMENTS — NAMED LOCATIONS
+
+**Twin Rivers**
+
+Custos do Aeternos (Sylaraeth), Greenford, Forkmeet, Stoneharbor, Highspire, Timberdeep, Liraveth, Aerithal, Sylarien.
+
+**Kinsweave**
+
+Living: Stonefall, Rivertop, Lakeshore, Lakewell, Highridge. Fallen: Kalite, Thrush, Hylen, Mytro. Border Kingdoms: Pyree, Andrio, Thrush. The Lament of Kings site is here, sitting atop the flattened ruins of Aldenheim. The Border Kingdoms were part of the Twelve Kingdoms.
+
+**Tidebloom Reach**
+
+Living: Velathenor, Branmill Cove, Tiravel, Myruvane, Darnavar. Burned: Hillmeet, Foxfen, Whistlebank, Mossgrove.
+
+**Eternal Steppe**
+
+Tavranek (Mytroan capital): wagon-wheel pattern around the largest Windstone, governed by ‘The Boss’ with 7 Headmen.
+
+**Deepwater Marches**
+
+Tidewell, Canopy Hold, Thornwall, Titan’s Rest, Murtavah Root. The Lone Titan (Farborn home). Dómnathar tower/stronghold on southern sea spur. The Deceiver’s Refuge at the base of the Spur.
+
+**Gatefall Reach**
+
+Living settlements: Hillwatch, Silkenbough, Glimmerholt, Brayholt Crossing, Redtrail Hollow, Briarshade. Total regional population: ~15,000, with perhaps another 2,000 riders and foresters on seasonal circuits. The Gap (southeastern mountain pass, Giant-engineered). The Gate of Fire (the navigable pass between the Infinite Desert and the Eternal Steppe; the route through which the Lost Third returned south). The Tomb of Kings (Gatefall Remnant base of operations). The Silence Breach (Dorrach Kael). The Scar Road (the path of the original Deceiver march, still visible after 300 years; compacted soil and thin grass mark the route from the Breach northwest through the Gap). The Burnt Warrens (underground burrow-forts built by scattered Deceiver warbands after Dark Dawn; extend beneath the southeastern foothills and crescent forests; multiple Dómnathar Houses maintain hidden strongholds in the deepest levels). The Windstone Circle (a ring of five Giant-era standing stones on the Gatefall Grasslands, arranged around a central pillar with a cracked but functional rune-circle; shared by Mytrone and Pasua for joint ceremonies). The Warden’s Ridge (north-south ridge separating western grasslands from eastern forests).
+
+**Other**
+
+Chainless Legion enclaves: Clifftide, Saltrest Haven, Redcurrent Strand (west of Twin Rivers). Kharazhad (greatest Rarozhki fortress-forge, in a caldera).
+
+## 18. CLASSES & PRESTIGE CLASSES
+
+15 OGL prestige classes + 7 Oreka-original:
+
+| **Oreka-Original Prestige Class** | **Notes** |
+| --- | --- |
+| Elemental Savant | Elemental specialist |
+| River Warden | Water/river guardian |
+| Forge Mystic | Fire/earth mystical smith |
+| Wind Dancer | Air/wind combat specialist |
+| Golden Cantor | Tied to Anacrusis/Golden Roses |
+| Sand Warden | Desert guardian specialist; favored by Pekakarlik Dwarves and Orean Humans operating in the Infinite Desert and arid regions near Giant ruins |
+| Wind-Rider | The Wind-Riders (called Far Riders by the Pasua and Wind-Riders by the Mytrone of the steppe) are an ancient brotherhood of Mytroan lancers and Pasua mounted archers whose traditions predate the Deceivers’ War. They operate from the Gatefall Reach through the Eternal Steppe. The Wind-Riders intercepted the Lost Third in the Gatefall Reach and prosecuted the Running War across the steppe, remaining the elite mounted military force of the southern regions. Both names are canonical and interchangeable. |
+
+*The Staff Concord is a competitive SPORT at the Lament Games (Event** **#12), NOT a faction.*
+
+## APPENDIX A: REMAINING OPEN QUESTIONS
+
+| **#** | **Question** | **Notes** |
+| --- | --- | --- |
+| 1 | Can a trained operative distinguish the Deceiver’s Feat (No Registration) from False Silence (Void)? | Both hide from Kin-sense but feel different. What DC? |
+| 2 | Rebellion identity in the Shattering — to be fleshed out in the future if needed. | Proto-Twelve Kingdoms lords confirmed as rebels. |
+| 3 | Full names of all Twelve Kingdoms? | The Border Kingdoms (Pyree, Andrio, Thrush) were part of the Twelve Kingdoms. Full list to be developed. |
+| 4 | Specific locations of six non-Gatefall Tombs of Kings? | One per region confirmed. Exact sites TBD. |
+| 5 | Halfling subrace names and distinctions? | Four subraces exist; outsiders can’t tell them apart; Halflings do not discuss. Details TBD. |
+| 6 | Magi Chosen Paths — full names for all three? | Path of the Seer (Wisdom) confirmed. Other two need names. |
+| 7 | When exactly was the Youngest Brother expelled from Oreka? | Affects Wind-element lore and elf theology. |
+| 8 | What triggered the second assault gate? | Side effect is comatose Lord of Stone. Origin unclear. |
+
+## APPENDIX B: WORLDBUILDING GAPS
+
+| **#** | **Gap** |
+| --- | --- |
+| 1 | Kin-Sense ‘cannot be suppressed’ social implications — every Kin broadcasts at all times. Espionage, criminals, Anacrusis network. |
+| 2 | Youngest Brother made Elves; Humans were created by a Giant and an Elf with the Youngest Brother’s blessing. Lord of Stone made nothing alone. Theological debate potential remains — why did human creation require three participants? |
+| 3 | Anacrusis/Silent Concord framing of the Deceiver’s Feat — how do they justify using their civilization’s oldest shame? |
+| 4 | Half-Giant social role as detectors (+4 bonus) — creates social pressure and Dómnathar targeting interest. |
+| 5 | Hareem’s cult — CE god of revenge. Worshippers, organized worship, suppression? |
+| 6 | Human Ascended theological mystery — humans produce best AND worst. In-world acknowledgment needed. |
+| 7 | Dómnathar targeting of Magi — 300 years of eliminating lineages (now confirmed). Details of campaign. |
+| 8 | Second assault gate — who or what triggered it? How does it relate to the Gate Plot? |
+| 9 | Wind Lord’s exile — when, why, and what happened to wind-element power in Oreka during his absence? |
+
+## APPENDIX C: RPG PRODUCTION GAPS (EDITOR’S CHECKLIST)
+
+| **#** | **Gap** | **Status** |
+| --- | --- | --- |
+| 1 | Player-Facing vs. DM-Facing separation | Needed |
+| 2 | Character Creation Chapter | Needed |
+| 3 | Magic Chapter (spell/element interactions, Abyss Circle, Magi vs. other casters) | Needed |
+| 4 | Maps With Scale | Needed |
+| 5 | Economy Detail (regional trade goods, exports) | Partially Resolved (base OGL currency confirmed; Titanbreed pricing established) |
+| 6 | Language List | Needed |
+| 7 | Kin-Sense Character Sheet Presence | Needed |
+| 8 | Caster Level Bonus Edge Cases | Needed |
+| 9 | Oath-Broken / Severed Rules | Needed |
+| 10 | Afterlife / Cosmology | Needed |
+| 11 | Seasons / Calendar Detail | Needed |
+| 12 | Food / Agriculture / Survival | Needed |
+| 13 | Legal Systems | Needed |
+| 14 | Low-Level Creature List | Needed |
+| 15 | Living NPCs | Needed |
+| 16 | Cosmology Beyond Material (planes, Dómnathar homeworld) | Needed |
+| 17 | Regional Encounter Tables | Needed |
+| 18 | Writer’s Style Guide | Needed |
+| 19 | Introductory Adventure | Needed |
+
+## APPENDIX D: ALL CHANGES APPLIED IN THIS DOCUMENT
+
+This Canon Bible v2.5 incorporates all prior corrections plus the following changes from the February 2026 Deepwater Marches editorial session, the March 2026 Eternal Steppe editorial session, and the March 2026 Gatefall Reach editorial session:
+
+| **Change** | **Source** |
+| --- | --- |
+| Hareem’s alignment: CG → CE | Update Tracker |
+| Kin-Sense: 7 → 8 categories (Breach Static added) | Update Tracker |
+| Goblins/Wargs/etc: Wild Static → Breach Static | Update Tracker |
+| Dómnathar elemental disconnection stated explicitly | Update Tracker |
+| Apotheosis: morally neutral + requires all-four-element attunement | Update Tracker + Author Ruling |
+| Dómnathar apotheosis plot added | Update Tracker |
+| Dómnathar Gate Plot added (Magi capture) | Author Ruling (NEW) |
+| Etymology of ‘Deceiver’ — pre-war Kin term | Update Tracker |
+| Deceiver’s Feat: full mechanics | Update Tracker |
+| Magi independence (overturns Q128) | Update Tracker |
+| Three-layer supernatural framework | Update Tracker |
+| False Silence: personal cloak, not zone | Update Tracker |
+| Kin-sense DCs, racial bonuses, tiered success | Update Tracker |
+| Kin-sense immune to anti-magic | Update Tracker |
+| Standard magic NOT affected by Dómnathar | Author Ruling |
+| Grammar/spelling corrected in Shattering passages | Update Tracker |
+| Varkis narrative removed from Shattering | Update Tracker |
+| OGL 3.5e currency confirmed | Update Tracker |
+| Design Philosophy Principle #1: Dómnathar/Breach exception | Update Tracker |
+| World is spherical with two moons | Author Ruling |
+| Elemental Lords current status (comatose/active/exiled) | Author Ruling (MAJOR NEW CANON) |
+| Second assault gate exists (DM-facing) | Author Ruling (MAJOR NEW CANON) |
+| No connection between Elemental Lords and Abyss Circle | Author Ruling |
+| Ascended Gods: only possible since Fall of Aldenheim; full gods mechanically | Author Ruling |
+| Dómnathar lifespan: up to 1,000 years; pre-invasion leaders alive | Author Ruling |
+| Dómnathar did not know Oreka existed until 6 months in | Author Ruling |
+| Harmonic Kin-sense: reads race + element; individual recognition like a voice | Author Ruling |
+| Breach-origin peoples gain attunement over generations | Author Ruling |
+| Breach Static diminishes over generations | Author Ruling |
+| Deceiver’s Feat: older than the Shattering | Author Ruling |
+| Kin Deceivers active during the Shattering | Author Ruling |
+| False giants at Aldenheim gates: CANON | Author Ruling |
+| Siege of Aldenheim: dual timeline (player: 42 days; DM: 142 days total) | Author Ruling |
+| Farborn: confirmed Lone Titan, Deepwater Marches (Stoneharbor was error) | Author Ruling |
+| Farborn: tentatively becoming 5th human kin | Author Ruling |
+| Farborn: isolated at Titan, Kin contact via trade meets | Author Ruling |
+| Lost Third motivation: desert seemed infinite | Author Ruling |
+| Giants: 20–30 ft range confirmed | Author Ruling |
+| Halflings: 4 subraces, outsiders cannot tell, Halflings don’t discuss | Author Ruling |
+| House Indorach: nihilistic atheists, no patron intentional | Author Ruling |
+| Tombs of Kings: one in each of the seven regions | Author Ruling |
+| Elemental Tolerance (Resistance 2): intentionally spiritual, does not scale | Author Ruling |
+| Dómnathar 300-year Magi elimination campaign: confirmed | Author Ruling |
+| Dómnathar-Zhuan: on home world, not in Oreka | Author Ruling |
+| Lament of Kings sits atop flattened ruins of Aldenheim | Author Ruling (Feb 2026 Kinsweave session) |
+| Mytro added to Kinsweave fallen cities | Author Ruling (Feb 2026 Kinsweave session) |
+| Border Kingdoms (Pyree, Andrio, Thrush) are part of the Twelve Kingdoms | Author Ruling (Feb 2026 Kinsweave session) |
+| Giant’s Teeth: world-spanning mountain range flanking Infinite Desert, wraps around world | Author Ruling (Feb 2026 Kinsweave session) |
+| Kinsweave terrain: northern portion is rugged mountains, river valleys, volcanic zones | Author Ruling (Feb 2026 Kinsweave session) |
+| Scorchspires confirmed in Kinsweave region | Author Ruling (Feb 2026 Kinsweave session) |
+| Northern Lament Range, Mistveil Ridges, Kailian Sentinels, Seaspray Lagoon: canon Kinsweave geographic features | Author Ruling (Feb 2026 Kinsweave session) |
+| Sand Wraiths: Kin spirits (NOT Giant spirits). Found near Giant ruins and sites of great death, including Ashen Hollows | Author Ruling (Feb 2026 Tidebloom session) |
+| Human creation: a Giant and an Elf with the Youngest Brother’s blessing | Author Ruling (Feb 2026 Kinsweave session) |
+| Sand Warden prestige class added | Author Ruling (Feb 2026 Kinsweave session) |
+| Starwind Blades minor faction added | Author Ruling (Feb 2026 Kinsweave session) |
+| All Ascended Gods worshiped in Kinsweave | Author Ruling (Feb 2026 Kinsweave session) |
+| Mithril Chains: Giant creation forged at the World Forge. Visetri Dwarves and Eruskan Humans maintain and operate them. | Author Ruling (Feb 2026 Tidebloom session) |
+| Tidebloom Tomb of Kings: located in the far north near Hillmeet ruins | Author Ruling (Feb 2026 Tidebloom session) |
+| Dómnathar refugees: encampment near Hillmeet/Tomb of Kings in far north Tidebloom | Author Ruling (Feb 2026 Tidebloom session) |
+| Keeper: Orekan word for Emperor | Author Ruling (Feb 2026 Tidebloom session) |
+| Keeper lineage formalized: Pre-Keeper, First Crowned Keeper, Second Crowned Keeper, Third Crowned Keeper. Third was weak and foolish. | Author Ruling (Feb 2026 Infinite Desert session) |
+| Lost Third motivation expanded: did not believe desert had an end AND disillusionment/suspicion/betrayal among ranks. Both true. | Author Ruling (Feb 2026 Infinite Desert session) |
+| Na’wasua and Taraf-Imro built observatories in the Infinite Desert during the Eke Concordant era | Author Ruling (Feb 2026 Infinite Desert session) |
+| Pekakarlik Dwarves and Kovaka Elves are co-stewards of functioning Giant oasis cities in the Infinite Desert | Author Ruling (Feb 2026 Infinite Desert session) |
+| Dual elemental patronage at settlements is valid (e.g. Dunewell: Lady of the Sea / Lady of Fire) | Author Ruling (Feb 2026 Infinite Desert session) |
+| **Deceiver’s Feat: personal only —**** ****cannot mask other creatures, mounts,**** ****or companions** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Farborn humans vs. Kin humans**** ****sidebar added (Chapter 4a) —**** ****clarifies hybrid rules for non-Kin** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Spur Tower confirmed as the**** ****Dómnathar hidden stronghold in the**** ****Deepwater Marches** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Flamewarg cults: spread from**** ****Gatefall Remnant westward into**** ****Deepwater Marches over centuries** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Titanbreed horse pricing**** ****established: 8,000–15,000 gp**** ****(hybrids); purebloods never sold** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Flamewarg Cults faction entry**** ****updated: Gatefall origin, spread to**** ****Deepwater Marches** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Deepwater Marches settlements**** ****added to Chapter 17** | **Author Ruling (Feb 2026 Deepwater**** ****Marches session)** |
+| **Visetri Dwarves: confirmed as**** ****canonical spelling (replaces**** ****“****Vestri****”**** ****throughout Bible)** | **Author Ruling (Mar 2026 Eternal**** ****Steppe session)** |
+| **Each human Kin blames the others**** ****for the Shattering of Man — mutual**** ****recrimination, no subrace accepts**** ****responsibility** | **Author Ruling (Mar 2026 Eternal**** ****Steppe session)** |
+| **Gilded Standard Company expanded:**** ****neutral merc outfit, leader styled**** ****as Duke, defected during Running War**** ****after Deceivers ordered them as**** ****sacrificial screen, contacted**** ****Mytrone, flipped to Kin side, 1 in**** ****10 survived** | **Author Ruling (Mar 2026 Eternal**** ****Steppe session)** |
+| **Gate of Fire: canonical name for**** ****the navigable pass in the Gatefall**** ****Reach between the desert and the**** ****Eternal Steppe** | **Author Ruling (Mar 2026 Eternal**** ****Steppe session)** |
+| **Wind-Rider / Far Rider dual**** ****naming: Pasua call them Far Riders,**** ****Mytrone call them Wind-Riders. Both**** ****names are canonical and**** ****interchangeable for the same ancient**** ****brotherhood of Mytroan lancers and**** ****Pasua mounted archers.** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Running War: started in the**** ****Gatefall Reach when the Wind-Riders**** ****intercepted the Lost Third returning**** ****south, then escalated across the**** ****Eternal Steppe** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **The Scattering was ordered because**** ****the Wind-Riders would have crushed**** ****the Lost Third entirely without it** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Lost Third march route clarified:**** ****north through Oreka with the host,**** ****south through Gate of Fire back into**** ****Gatefall Reach, then west onto the**** ****Eternal Steppe** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Northern two-thirds of host:**** ****continued north, devastated**** ****Tidebloom settlements, besieged**** ****Aldenheim; survivors scattered**** ****westward after the Fall** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Scar Road: canonical Gatefall**** ****Reach landmark — the path of the**** ****original Deceiver march, still**** ****visible after 300 years** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Burnt Warrens: canonical Gatefall**** ****Reach landmark — underground**** ****burrow-forts built by scattered**** ****Deceiver warbands after Dark Dawn,**** ****extending beneath southeastern**** ****foothills and crescent forests** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Windstone Circle: canonical**** ****Gatefall Reach landmark — ring of**** ****five Giant-era standing stones on**** ****the Gatefall Grasslands, shared**** ****Mytroan-Pasua sacred site** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Kovaka watchtower destruction**** ****reconciled: towers flanking the**** ****Silence Breach were destroyed by**** ****radial force from the Breach event**** ****itself; towers along the Gap and**** ****southeastern approaches were**** ****destroyed by the advancing Deceiver**** ****army** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Gatefall Reach settlements added**** ****to Chapter 17 with full detail** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Gatefall Reach Regional Detail**** ****section added to Chapter 6** | **Author Ruling (Mar 2026 Gatefall**** ****Reach session)** |
+| **Flamewarg presence on Eternal**** ****Steppe: confirmed consistent —**** ****grassland transition zones are part**** ****of the steppe region** | **Author Ruling (Mar 2026 Eternal**** ****Steppe session)** |
+| **Domnathar Elemental Disconnection**** ****rewritten: Domnathar possess no**** ****Elemental Affinity but are NOT**** ****barred from using elemental magic.**** ****They are weaker in it than Kin**** ****races, not prohibited. Primary**** ****magic derives from Abyss Circle.**** ****Previous wording replaced.** | **Author Ruling (Mar 2026 Canon**** ****Bible audit session)** |
+| **Mytroan adjective standardized:**** ****Mytroan is the canonical adjective**** ****form (e.g., Mytroan capital,**** ****Mytroan lancers). Mytrone remains**** ****correct as a noun referring to the**** ****people (e.g., the Mytrone).** | **Author Ruling (Mar 2026 Canon**** ****Bible audit session)** |
+| **Canon Bible version bumped to**** ****v2.6** | **Author Ruling (Mar 2026 Canon**** ****Bible audit session)** |

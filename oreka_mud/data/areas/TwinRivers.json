@@ -1,0 +1,2299 @@
+[
+  {
+    "vnum": 10000,
+    "name": "Greenford - North Gate",
+    "description": "The North Gate of Greenford is a wide timber arch flanked by grain-silo towers, their whitewashed walls bright against the rolling green hills beyond. A steady stream of ox-carts and foot traffic passes through, the smell of fresh flour and river mud mingling in the warm air. Guards in roughspun tabards wave farmers through with familiar nods, checking only strangers' packs. The Great River Road stretches north toward Custos do Aeternos, its ruts worn deep by generations of grain barges turned overland.",
+    "exits": {
+      "south": 10001,
+      "north": 10403
+    },
+    "flags": [
+      "gate",
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 10001,
+    "name": "Greenford - Mill Street North",
+    "description": "Mill Street runs south from the North Gate, its packed-earth surface dusted with a perpetual film of flour. The clatter of millstones is audible from every direction, a rhythmic grinding that forms the heartbeat of Greenford. Halfling children chase each other between the legs of passing draft horses, and the aroma of baking bread from the ovens of Talia Wendrow's Great Mill to the south fills the street. Hasura Elves in flour-dusted aprons lean in doorways, exchanging gossip with Human millers.",
+    "exits": {
+      "north": 10000,
+      "south": 10002,
+      "east": 10010,
+      "west": 10015,
+      "northwest": 10022
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10002,
+    "name": "Greenford - The Great Mill",
+    "description": "Talia Wendrow's Great Mill dominates this stretch of Mill Street, its water wheel turning ceaselessly in a channel diverted from the Great River. The three-story timber structure groans and rumbles with the work of grinding the region's wheat into the fine white flour that feeds half of Twin Rivers. Sacks stamped with Talia's seal lean against every wall, and mill hands move with the efficient urgency of harvest season. On Kin-sense the mill radiates the distinctly Human resonance of its owner: variable, warm, buzzing with restless productive energy.",
+    "exits": {
+      "north": 10001,
+      "south": 10003,
+      "east": 10011
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10003,
+    "name": "Greenford - Market Square",
+    "description": "Greenford's market square is a broad flagstone expanse where the daily commerce of the region's breadbasket plays out in shouted prices and the thud of grain sacks. Stalls overflow with golden wheat, dark rye, river vegetables, and the famous Forkmeader dark ale sold by the barrel. Pekakarlik Dwarves haggle over timber prices with Hasura merchants, their Kin-sense signatures mingling in a warm hum of elemental diversity. A carved stone fountain at the square's center depicts a sheaf of wheat held by clasped hands of different races.",
+    "exits": {
+      "north": 10002,
+      "south": 10004,
+      "east": 10012,
+      "west": 10016,
+      "southeast": 10020
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10004,
+    "name": "Greenford - Mill Street South",
+    "description": "The southern stretch of Mill Street curves gently toward the river docks, the sound of millstones giving way to the creak of barge rigging and the calls of dockhands. Timber-framed buildings lean close on either side, their upper stories hung with drying river-weed and bundles of herbs. A Halfling street vendor sells river rolls fresh from the griddle, the yeasty smell drawing a constant queue. The cobblestones here are slick with river moisture carried inland by the breeze.",
+    "exits": {
+      "north": 10003,
+      "south": 10005,
+      "west": 10017
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10005,
+    "name": "Greenford - River Docks",
+    "description": "The docks of Greenford stretch along the Great River's southern bank, a maze of timber jetties and loading platforms where grain barges and timber rafts jostle for space. Pekakarlik dockhands operate clever hydraulic cranes that swing sacks of flour from warehouse to barge deck with practiced ease. The river is wide here, its surface silver-brown and busy with traffic heading north to Custos or south to Forkmeet. Barge captains shout navigational warnings across the water, their voices competing with the splashing of oars and the groan of mooring ropes.",
+    "exits": {
+      "north": 10004,
+      "east": 10006,
+      "west": 10007
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10006,
+    "name": "Greenford - Eastern Dock",
+    "description": "The eastern dock handles primarily grain shipments, its warehouses stacked floor to ceiling with flour sacks bearing the stamps of Greenford's twelve mills. A long loading ramp extends into the Great River, where flat-bottomed grain barges queue three deep during harvest season. The Pekakarlik-engineered pulleys and counterweights that manage the loading never seem to rest, their rhythmic clacking a constant backdrop. The smell of wet grain and river water is thick enough to taste.",
+    "exits": {
+      "west": 10005,
+      "south": 10008
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10007,
+    "name": "Greenford - Timber Dock",
+    "description": "The western dock is reserved for timber operations, where great rafts of logs from upriver are lashed to iron bollards and sectioned for sale. Sawdust carpets the planking, and the sharp resinous scent of freshly cut hardwood mixes with the river's wet-earth smell. Human raftsmen with sun-weathered faces share pipes with Hasura woodworkers who test each log with a knowing tap, listening for quality. The timber here will become houses, barges, and mill parts across all of Twin Rivers.",
+    "exits": {
+      "east": 10005,
+      "south": 10009
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10008,
+    "name": "Greenford - Barge Loading Yard",
+    "description": "A broad yard of compacted earth and timber planking where barges are loaded and unloaded in organized chaos. Stacks of grain sacks, timber bundles, and barrels of Forkmeader ale await transport. Tally-clerks with wax tablets mark each load, their sharp eyes catching any discrepancy. The yard connects to the eastern docks via a series of ramps that the Pekakarlik designed at precisely the right grade for efficient hauling.",
+    "exits": {
+      "north": 10006,
+      "west": 10009
+    },
+    "flags": [
+      "safe",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 10009,
+    "name": "Greenford - Riverside Walk",
+    "description": "A pleasant walkway follows the riverbank west of the docks, where willows trail their branches in the current and the frantic pace of commerce gives way to quieter rhythms. Fishermen mend nets on the grassy bank, and children skip stones across the Great River's broad surface. The walk offers a view of the river traffic stretching in both directions, grain barges riding low in the water heading north, empty hulls returning south. On calm evenings the Aetherial Veil paints the river surface in shimmering bands of violet and gold.",
+    "exits": {
+      "north": 10007,
+      "east": 10008,
+      "northwest": 10017
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10010,
+    "name": "Greenford - Reeve Hall Plaza",
+    "description": "A formal plaza of river-smoothed flagstone fronts the Reeve Hall, Greenford's seat of governance. The hall itself is a solid two-story structure of local timber and stone, its facade carved with the symbols of the Reeve Council: a wheat sheaf, a mill wheel, and a river barge. Talia Wendrow's office windows overlook the plaza from the second floor, and locals say she can spot a short-weight grain sack from that distance. Notices pinned to a board by the entrance announce market regulations, river closures, and the schedule of council meetings.",
+    "exits": {
+      "west": 10001,
+      "south": 10011,
+      "east": 10013,
+      "northeast": 10021
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10011,
+    "name": "Greenford - Council Street",
+    "description": "Council Street connects the Reeve Hall to the market square, its cobblestones cleaner and better-maintained than the rest of Greenford's roads. Professional offices line both sides: grain assessors, barge insurers, and the offices of the Chainless Legion trade envoys who manage commerce with the western enclaves. A pair of Hasura Elves in embroidered vests discuss water rights in the soft, musical cadence of their people, their Kin-sense flickering with Wind-bright attentiveness.",
+    "exits": {
+      "north": 10010,
+      "west": 10002,
+      "south": 10012
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10012,
+    "name": "Greenford - East Market Row",
+    "description": "The eastern edge of the market square extends into a row of permanent shops and trading houses. A Pekakarlik smith operates a forge specializing in mill parts and barge fittings, the ring of his hammer punctuating the market noise. Beside him, a Halfling chandler sells candles scented with river lavender, and a Human leather-worker displays harnesses for draft animals. The buildings here are solidly built with stone foundations and timber upper stories, their eaves close enough to nearly touch overhead.",
+    "exits": {
+      "west": 10003,
+      "north": 10011,
+      "east": 10014
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10013,
+    "name": "Greenford - Hasura Quarter",
+    "description": "The Hasura Quarter occupies Greenford's eastern district, its buildings distinguished by the flowing organic lines of elven architecture. Living wood has been coaxed into archways and window frames, and wind chimes of crystal and silver fill the air with a delicate music that shifts with the breeze. Hasura artisans work in open-fronted studios, weaving wind-silk and painting river scenes with luminous pigments. Their Kin-sense resonance carries the bright, quicksilver quality of Wind-attuned folk, a pleasant contrast to the heavier Human energy of the mill district.",
+    "exits": {
+      "west": 10010,
+      "south": 10014
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10014,
+    "name": "Greenford - Hasura Market Lane",
+    "description": "A narrow lane where Hasura merchants sell specialty goods: wind-silk scarves dyed in river colors, carved wooden jewelry, and elven-recipe honey cakes that melt on the tongue. The lane connects the Hasura Quarter to the broader market, serving as a cultural bridge between communities. Hasura children practice their wind-calling in the alley behind the stalls, sending tiny whirlwinds of flower petals spinning between the buildings. Human and Halfling customers browse with the comfortable familiarity of long-established neighbors.",
+    "exits": {
+      "north": 10013,
+      "west": 10012
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10015,
+    "name": "Greenford - Pekakarlik Quarter",
+    "description": "The Pekakarlik Quarter is built lower and sturdier than the rest of Greenford, its basalt-block buildings half-sunk into the earth in the dwarven fashion. Water channels run along every street, connecting to the river through an ingenious system of locks and sluices that the Pekakarlik maintain with quiet pride. The quarter is cool and damp, smelling of mineral water and the earthy fungal brews the dwarves favor. Workshops here produce the hydraulic mechanisms that power Greenford's mills and dock cranes.",
+    "exits": {
+      "east": 10001,
+      "south": 10016,
+      "northeast": 10023
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10016,
+    "name": "Greenford - Pekakarlik Workshops",
+    "description": "The heart of the Pekakarlik Quarter is dominated by workshops where dwarf engineers build and repair the water-powered machinery that makes Greenford prosperous. Gears of brass and iron turn in demonstration models, and apprentices practice fitting pipe joints under the watchful eyes of master hydraulicists. The constant sound of flowing water through the quarter's channels provides a soothing undercurrent to the metallic clang of tools. A shrine to Gonmareck Ritler occupies a niche in the workshop wall, its anvil-symbol polished bright by reverent hands.",
+    "exits": {
+      "north": 10015,
+      "east": 10003
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "elemental_resonance",
+        "element": "water",
+        "bonus": 1,
+        "message": "Pekakarlik water-engineering fills this space with cool water resonance."
+      }
+    ]
+  },
+  {
+    "vnum": 10017,
+    "name": "Greenford - Halfling Quarter",
+    "description": "The Halfling Quarter occupies a gentle rise between Mill Street and the riverside, its round-doored homes built into the hillside in the traditional style. Smoke rises from chimneys at all hours, carrying the scent of stew, fresh bread, and pipe-weed. Window boxes overflow with herbs and bright flowers, and the narrow lanes are swept clean twice daily by residents who take fierce pride in their neighborhood. The Halflings of Greenford serve as the town's bakers, innkeepers, and river-roll vendors, feeding the community with cheerful efficiency.",
+    "exits": {
+      "east": 10004,
+      "southeast": 10009,
+      "north": 10018
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10018,
+    "name": "Greenford - The Millstone Inn",
+    "description": "The Millstone Inn is Greenford's largest tavern, a rambling timber structure built around an ancient millstone that serves as the common room's central table. Forkmeader dark ale flows freely from taps behind a bar of polished river-oak, and the innkeeper, a stout Halfling named Bramble Goodbarrel, keeps platters of river rolls and smoked fish circulating at all hours. Travelers bound for Custos or Forkmeet share tables with local mill hands, trading news and gossip over the warm amber glow of tallow candles. Rooms upstairs are clean, affordable, and rarely empty.",
+    "exits": {
+      "south": 10017,
+      "west": 10019
+    },
+    "flags": [
+      "safe",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 10019,
+    "name": "Greenford - South Road",
+    "description": "The road south from Greenford follows the Great River toward Forkmeet, passing through fields of golden wheat that stretch to the horizon on both sides. Grain wagons trundle along the packed-earth surface, and the river is visible to the east as a broad silver ribbon beyond the willows. The road is well-maintained by the Reeve Council, with milestone markers carved by Pekakarlik masons at regular intervals. The wind carries the mingled scents of ripe grain and river water.",
+    "exits": {
+      "east": 10018,
+      "south": 10404
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 10020,
+    "name": "Greenford - Grain Exchange",
+    "description": "The Grain Exchange is a large open-sided pavilion where Greenford's grain merchants conduct their most important business. Blackboards display current prices for wheat, rye, barley, and the premium flour that is Talia Wendrow's specialty. Brokers representing buyers from Custos to Stoneharbor crowd the floor during trading hours, their shouted bids echoing off the timber roof. The Exchange also serves as the primary contact point for trade with Chainless Legion enclaves to the west, and a discreet office in the rear handles those sensitive negotiations.",
+    "exits": {
+      "northwest": 10003,
+      "north": 10021
+    },
+    "flags": [
+      "safe",
+      "market"
+    ]
+  },
+  {
+    "vnum": 10021,
+    "name": "Greenford - Brewers' Row",
+    "description": "A short street lined with the breweries and ale-houses that produce Greenford's famous Forkmeader dark ale. The air is thick with the yeasty, malty aroma of fermenting grain, and copper brewing kettles gleam through open doorways. Halfling and Human brewmasters work side by side in a tradition that predates the Reeve Council itself. Barrels stamped with each brewery's mark line the street, awaiting transport to the docks and markets across Twin Rivers.",
+    "exits": {
+      "south": 10020,
+      "southwest": 10010
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10022,
+    "name": "Greenford - Timber Yard",
+    "description": "A sprawling yard where timber rafts from upriver are broken down and sorted for sale. Logs of oak, ash, and the prized ironwood from the Windweave forests are stacked in orderly rows, each marked with quality grades. Human and Hasura sawyers work in teams, their saws singing through wood in practiced rhythm. The yard smells of sawdust and resin, and the ground is carpeted in wood chips that crunch underfoot. This is one of the main overland supply points for timber destined for construction across the region.",
+    "exits": {
+      "southeast": 10001,
+      "south": 10023
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10023,
+    "name": "Greenford - Outer Residences",
+    "description": "Beyond the commercial heart of Greenford, modest homes of timber and thatch spread across the gentle hills. Mill workers, farmers, and dock laborers live here in a comfortable if unremarkable neighborhood. Kitchen gardens and small livestock pens occupy the spaces between houses, and the sound of children playing mingles with the ever-present grinding of distant mill wheels. The neighborhood has the lived-in warmth of a community that works hard and sleeps well.",
+    "exits": {
+      "north": 10022,
+      "southwest": 10015
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10030,
+    "name": "Forkmeet - North Approach",
+    "description": "The road from Greenford crests a final rise and the town of Forkmeet spreads below, built on the wedge of land where the Great River and the Highwater River converge. The sound of two rivers meeting is audible even from here: a deep, constant rush that water-attuned Kin describe as intoxicating. Timber yards and raft-building docks line both banks, and the town's buildings cluster around the confluence point like spectators watching the rivers merge. The smell of wet wood and river spray fills the air.",
+    "exits": {
+      "north": 10405,
+      "south": 10031
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 10031,
+    "name": "Forkmeet - Main Street",
+    "description": "Forkmeet's main street runs from the northern approach down to the confluence overlook, its surface a mix of river gravel and packed earth that drains quickly after rain. Timber-framed buildings of local oak line both sides, their facades showing the influence of both Human practicality and Hasura artistry in their carved lintels and living-wood trim. Mayor Soren Raftbinder's office sits prominently on the east side, marked by a carved raft-pole over the door. The sound of sawing wood and hammering from the raft yards is a constant accompaniment.",
+    "exits": {
+      "north": 10030,
+      "south": 10032,
+      "east": 10038,
+      "west": 10042
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10032,
+    "name": "Forkmeet - Confluence Overlook",
+    "description": "A broad stone platform extends over the point where the Great River and Highwater River merge, offering a breathtaking view of the two waters becoming one. The Great River flows broad and slow from the north while the Highwater rushes cold and fast from the east, and their meeting creates a churning line of white water that gradually resolves into a single powerful current heading south. Water-attuned Kin report feeling profoundly more awake here, as if the doubled water resonance amplifies their connection to the elemental currents. The overlook is Forkmeet's spiritual heart, and locals come here to think, to argue, and to make important decisions.",
+    "exits": {
+      "north": 10031,
+      "east": 10033,
+      "west": 10036
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10033,
+    "name": "Forkmeet - Highwater Docks",
+    "description": "The docks along the Highwater River are rougher and more industrial than those on the Great River side, built for handling the heavy timber that comes downriver from the forests near Stoneharbor. Log booms corral floating timber in the shallows, and raft-builders wade knee-deep in the cold current to lash logs together with Hasura-woven rope. The water here is noticeably colder than the Great River, fed by mountain snowmelt, and the spray throws rainbow mist in the afternoon sun. Pekakarlik engineers maintain the dock pilings against the Highwater's fierce spring floods.",
+    "exits": {
+      "west": 10032,
+      "north": 10034,
+      "south": 10035,
+      "east": 10043
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10034,
+    "name": "Forkmeet - Raft-Building Yard",
+    "description": "Soren Raftbinder's yard is the largest of Forkmeet's three raft-building operations, where skilled raftsmen construct the timber rafts that carry goods up and down the Twin Rivers. Half-finished rafts sit on skids along the riverbank, their frames showing the crosshatch lashing technique that Soren perfected. The mayor himself can often be found here rather than in his office, his Ranger's instinct more comfortable among trees and water than behind a desk. Apprentices learn the trade under the supervision of both Human and Hasura masters, the two traditions blending into something stronger than either alone.",
+    "exits": {
+      "south": 10033,
+      "west": 10038
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10035,
+    "name": "Forkmeet - Riverbank South",
+    "description": "The southern riverbank below the confluence is a marshy stretch where the merged rivers spread wide and slow before finding their unified channel. Reed beds rustle with waterfowl, and Pekakarlik fishermen set their nets in the quieter pools where fish congregate after the turbulent merger. A small shrine of river-smoothed stones marks a spot where, locals say, the Water element is so concentrated that even those without Kin-sense can feel its cool presence on their skin. Willows line the bank, their roots drinking deep from the enriched water.",
+    "exits": {
+      "north": 10033,
+      "west": 10037
+    },
+    "flags": [
+      "water"
+    ]
+  },
+  {
+    "vnum": 10036,
+    "name": "Forkmeet - Great River Docks",
+    "description": "The Great River docks handle most of Forkmeet's commercial traffic, receiving grain barges from Greenford and sending timber rafts north to Custos. The docks are built of ironwood pilings that resist rot, and Pekakarlik-designed bollards grip mooring ropes with mechanical precision. Dock workers move cargo with the efficient choreography of daily practice, and a harbormaster's shack near the water's edge maintains schedules and manifests. The Great River is broad and calm here, its surface reflecting the sky like hammered silver.",
+    "exits": {
+      "east": 10032,
+      "south": 10037,
+      "north": 10042
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10037,
+    "name": "Forkmeet - Southern Waterfront",
+    "description": "The southern waterfront curves along the merged river below the confluence, a quieter stretch where the commercial bustle of the docks gives way to residential riverside. Small boats are pulled up on the muddy bank, and rope swings hang from the willow branches for swimming in summer. The sound of the two rivers merging upstream provides a constant deep vibration that seems to travel through the ground itself. This is where Forkmeet's residents come to fish, to relax, and to watch the river traffic pass.",
+    "exits": {
+      "north": 10036,
+      "east": 10035
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10038,
+    "name": "Forkmeet - Mayor's Hall",
+    "description": "Mayor Soren Raftbinder's hall is a practical building of river-oak and stone, its main room dominated by a large table where the Elf-Human Accord's terms are displayed under glass. Maps of the river system and logging territories cover the walls, marked with the careful annotations of a Ranger who knows every bend and shallow. The Accord that Soren helps maintain is the fragile peace between elven forest stewards and human timber interests, and the tension of that balance is visible in the careful neutrality of the hall's decor. A carved raft-pole above the door serves as both sign of office and personal emblem.",
+    "exits": {
+      "west": 10031,
+      "east": 10034,
+      "south": 10039
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10039,
+    "name": "Forkmeet - Accord Hall",
+    "description": "The Accord Hall is a joint venture between Forkmeet's Human and Hasura communities, built to house the negotiations and arbitrations that keep the logging peace. Its architecture is deliberately hybrid: Human post-and-beam construction wrapped in Hasura living-wood, the two styles growing together over decades into something inseparable. Inside, a circular chamber holds seating for representatives of both peoples, with a water feature at its center that draws from both rivers. When disputes over logging rights arise, they are settled here rather than in the forest with axes.",
+    "exits": {
+      "north": 10038,
+      "southwest": 10040
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10040,
+    "name": "Forkmeet - Market Plaza",
+    "description": "Forkmeet's market is smaller than Greenford's but livelier, its stalls selling rafting gear, hardwood crafts, and the meadow barley that grows in the fertile soil between the two rivers. Hasura woodcarvers display intricate work alongside Human rope-makers and Pekakarlik tool-sellers. The plaza doubles as a gathering place where raft crews celebrate successful runs with barrels of Forkmeader ale purchased from Greenford's brewers. A notice board near the center posts river conditions, raft schedules, and the occasional bounty for river pirates who trouble the southern stretches.",
+    "exits": {
+      "northeast": 10039,
+      "east": 10042,
+      "south": 10041
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10041,
+    "name": "Forkmeet - Whispering Slopes Road",
+    "description": "A well-worn trail leads south from the market toward the Whispering Slopes and, beyond them, Highspire. The road climbs gently as it leaves Forkmeet, the river sounds fading and the wind picking up as the terrain begins its transition from river valley to foothills. Locals warn travelers to keep to the marked path through the Slopes, where murmurs of ancient Giant wisdom can lead the unwary astray. Pack animals stand for hire at a small stable near the trailhead.",
+    "exits": {
+      "north": 10040,
+      "south": 10420
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 10042,
+    "name": "Forkmeet - Riverside Residences",
+    "description": "A neighborhood of modest but well-built homes occupies the gentle slope between the main street and the Great River docks. Timber workers, raft builders, and river pilots live here with their families, their homes adorned with carved river-motifs and the occasional Hasura wind chime. Kitchen gardens grow the herbs and vegetables that supplement a diet of river fish and meadow barley. The community is tight-knit, bound by the shared rhythms of river life and the seasonal cycles of timber and flood.",
+    "exits": {
+      "east": 10031,
+      "south": 10036,
+      "west": 10040
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10043,
+    "name": "Forkmeet - Highwater Road East",
+    "description": "The road east from Forkmeet follows the Highwater River toward Stoneharbor, climbing gradually as the river valley narrows between increasingly rocky hills. The Highwater runs fast and clear beside the road, its cold mountain water a stark contrast to the Great River's warmer, silty flow. Stands of river birch and alder line the banks, their leaves catching the light in flickering patterns. The road is maintained jointly by Forkmeet and Stoneharbor, with milestone markers showing distance to both towns.",
+    "exits": {
+      "west": 10033,
+      "east": 10410
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10060,
+    "name": "Stoneharbor - River Bluff Gate",
+    "description": "The entrance to Stoneharbor is carved directly into the river bluffs that rise forty feet above the Highwater River, a great stone archway flanked by torch-bearing statues of Pekakarlik miners. The gate's iron-banded doors stand open during daylight, revealing a tunnel that leads into the bluff-side settlement beyond. The Highwater runs deep and cold below, its surface dark with the reflection of the stone walls above. Guards in smelter's leather check incoming cargo for contraband, their eyes bright in the torchlight.",
+    "exits": {
+      "west": 10412,
+      "east": 10061
+    },
+    "flags": [
+      "gate",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10061,
+    "name": "Stoneharbor - Bluff Passage",
+    "description": "A broad tunnel carved through living rock connects the River Bluff Gate to the heart of Stoneharbor. Pekakarlik lanterns set into iron brackets cast a warm amber glow along walls that show the tool marks of master miners. The air is cool and smells of stone dust and distant forge-smoke. Channels cut into the tunnel floor carry water from underground springs, their flow maintained by the same hydraulic engineering that powers the city's smelting works. The combined Kin-sense here is like standing inside a mountain that breathes.",
+    "exits": {
+      "west": 10060,
+      "east": 10062,
+      "north": 10070
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10062,
+    "name": "Stoneharbor - Central Square",
+    "description": "Stoneharbor's central square is an open space carved from the bluff top, half-roofed by natural stone overhangs and half-open to the sky. The square serves as the town's civic heart, where Mayor Thargrim Ironvein holds public audiences and the daily rhythm of mining, smelting, and river trade is coordinated. Buildings of dressed basalt and iron-reinforced timber rise on every side, their facades bearing the insignia of the mining guilds and smelting houses. The sound of hammers on anvils echoes from the Viaduct Quarter to the south, a metallic heartbeat that never truly ceases.",
+    "exits": {
+      "west": 10061,
+      "north": 10063,
+      "south": 10066,
+      "east": 10068,
+      "southwest": 10072
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10063,
+    "name": "Stoneharbor - Mayor's Hall",
+    "description": "Mayor Thargrim Ironvein's hall is built in the Pekakarlik tradition: low-ceilinged, solidly constructed, and decorated with examples of the finest metalwork the smelters produce. Iron chandeliers hold crystal lanterns, and the walls display ingots of iron, copper, and silver arranged like trophies. Thargrim governs with a smelter's directness, and his reputation as a fair but unyielding administrator keeps Stoneharbor's diverse population in productive cooperation. A map of the mine network covers one entire wall, its tunnels marked in different colors for different ores.",
+    "exits": {
+      "south": 10062,
+      "east": 10064,
+      "northeast": 10075
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10064,
+    "name": "Stoneharbor - Guild Registry",
+    "description": "The Guild Registry maintains records of every mining claim, smelting contract, and forge license in Stoneharbor. Shelves of iron-bound ledgers line the walls, and a Pekakarlik clerk with half-moon spectacles manages the bureaucracy with meticulous precision. Prospectors seeking new claims queue alongside established smelters renewing licenses, and the occasional Kovaka Elf arrives to register a stonework commission. The registry is the administrative backbone of Stoneharbor's economy, and its records are backed up in a sealed vault deep in the bluffs.",
+    "exits": {
+      "west": 10063,
+      "south": 10068
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10065,
+    "name": "Stoneharbor - Smelter's Guild Hall",
+    "description": "The Smelter's Guild Hall is the largest single building in Stoneharbor, its cavernous interior heated by the banked fires of six great furnaces. Gonmareck Ritler's anvil-altar dominates the hall's eastern wall, the largest shrine to the Gunny in all of Twin Rivers, its iron surface worn smooth by the touch of thousands of reverent hands. Guild members gather here for ceremonies, disputes, and the annual Smelting Festival when the furnaces burn white-hot and the finest ingots are blessed at the altar. The heat and the smell of molten metal give the hall an almost sacred intensity.",
+    "exits": {
+      "north": 10066,
+      "east": 10073,
+      "west": 10074
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "elemental_resonance",
+        "element": "fire",
+        "bonus": 1,
+        "message": "The forge-fires carry strong fire-element resonance."
+      }
+    ]
+  },
+  {
+    "vnum": 10066,
+    "name": "Stoneharbor - Viaduct Quarter North",
+    "description": "The Viaduct Quarter takes its name from the Pekakarlik-built stone viaducts that carry water from mountain springs to the smelting furnaces below. This northern section connects the central square to the Guild Hall, its street lined with forges and metalworking shops that produce everything from mining tools to decorative ironwork. The heat from the forges makes the air shimmer, and the clang of hammer on anvil creates a syncopated rhythm that Pekakarlik residents call the Stoneharbor Song. Sparks drift upward like orange fireflies in the perpetual forge-dusk.",
+    "exits": {
+      "north": 10062,
+      "south": 10065,
+      "east": 10067
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10067,
+    "name": "Stoneharbor - Forge Row",
+    "description": "Forge Row is a narrow street where independent smiths work iron, copper, and silver into finished goods. Each forge has its own character: a Pekakarlik weapon-smith produces mining picks of legendary durability, while a Human blacksmith next door specializes in barge fittings and river anchors. A Kovaka Elf operates a precision forge for decorative stonework mountings, her pieces as much art as function. The street is hot, loud, and permanently sooty, and the smiths would not have it any other way.",
+    "exits": {
+      "west": 10066,
+      "south": 10073,
+      "north": 10075
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10068,
+    "name": "Stoneharbor - Market Terrace",
+    "description": "A series of stone terraces carved into the bluff face serve as Stoneharbor's marketplace, each level specializing in different goods. The upper terrace sells raw ore and ingots, the middle displays finished metalwork and stone, and the lowest offers food, supplies, and the imported goods that arrive by river barge. Steep stone stairs connect the levels, and Pekakarlik-engineered lifts carry heavy cargo between them. The terrace offers a stunning view of the Highwater River below, its dark surface reflecting the glow of the forge-fires above.",
+    "exits": {
+      "west": 10062,
+      "north": 10064,
+      "south": 10069
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10069,
+    "name": "Stoneharbor - Lower Market",
+    "description": "The lowest terrace of the market overlooks the river docks directly, and the commerce here is oriented toward the river trade. Barge captains negotiate cargo rates with smelting house agents, and imported goods from Custos and Greenford are displayed: grain, cloth, wind-silk, and the luxury items that Stoneharbor's miners spend their wages on. A Halfling food vendor sells hot pies filled with river fish and mountain mushrooms, doing brisk business among the dock workers and market-goers. The spray from the Highwater reaches this terrace on windy days.",
+    "exits": {
+      "north": 10068,
+      "south": 10076,
+      "west": 10072
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10070,
+    "name": "Stoneharbor - Upper Mine Entrance",
+    "description": "A broad tunnel mouth opens in the bluff face above the central square, its lintel carved with the crossed-picks emblem of the Mining Guild. Iron rails set into the stone floor carry ore carts from the deep tunnels to the surface, their wheels squealing on the curves. The air flowing from the mine is cool and metallic, carrying the scent of raw ore and the distant echo of picks striking stone. Lantern-equipped miners move in and out in shift rotations that run day and night. Safety ropes and emergency supply caches line the entrance passage.",
+    "exits": {
+      "south": 10061,
+      "north": 10071
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10071,
+    "name": "Stoneharbor - Mine Gallery",
+    "description": "A network of mine tunnels branches off from this central gallery, their openings marked with guild symbols and ore-type designations. Iron-bearing tunnels run north, copper veins to the east, and the prized silver seam to the northwest. The gallery serves as a staging area where full ore carts are switched for empty ones and miners take water breaks between shifts. Pekakarlik-engineered ventilation shafts keep the air breathable, and runestone lanterns provide steady light. The rock walls glitter with flecks of unextracted mineral, a reminder that Stoneharbor's wealth lies literally beneath its feet.",
+    "exits": {
+      "south": 10070
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10072,
+    "name": "Stoneharbor - River Dock",
+    "description": "Stoneharbor's main dock is built on a narrow shelf at the base of the bluffs, accessible by a zigzagging stone stairway carved into the cliff face. Heavy-duty cranes powered by Pekakarlik counterweight systems lower ingots and stone blocks to waiting barges. The Highwater River runs fast and deep here, and barge captains must navigate carefully to avoid the submerged rocks that give the harbor its name. Despite the difficulty, the dock handles a constant flow of mineral wealth heading downriver to Forkmeet and Custos. The Tomb of Kings is rumored to lie somewhere beneath these docks, sealed behind ancient stonework.",
+    "exits": {
+      "northeast": 10062,
+      "east": 10069
+    },
+    "flags": [
+      "safe",
+      "dock",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10073,
+    "name": "Stoneharbor - Kovaka Quarter",
+    "description": "The Kovaka Quarter occupies a section of the bluffs where the natural stone has been shaped rather than merely carved, the elven stoneworkers coaxing the living rock into organic forms that flow like frozen water. Buildings here have rounded walls and arched doorways that seem to grow from the cliff face, their surfaces polished to a warm glow. Kovaka artisans work with a quiet intensity that their Kin-sense mirrors: deep, patient, resonant with Earth-element stillness. Their stonework commands premium prices throughout Twin Rivers, and commissions from as far as Custos are common.",
+    "exits": {
+      "north": 10067,
+      "west": 10065,
+      "south": 10077
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10074,
+    "name": "Stoneharbor - Residential Bluffs West",
+    "description": "The western residential district is carved into the bluff face in tiers, with stone staircases and rope-railed walkways connecting the levels. Homes here are modest but comfortable, their interiors warm with forge-heat that rises through natural chimney formations in the rock. Pekakarlik and Human families share the district amicably, their children playing on the walkways and terraces. Laundry lines stretch between the bluff tiers, colorful garments fluttering in the updraft from the river far below. The view from the upper tiers encompasses the Highwater valley and the distant peaks of the Giant's Teeth.",
+    "exits": {
+      "east": 10065,
+      "north": 10078
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10075,
+    "name": "Stoneharbor - Residential Bluffs East",
+    "description": "The eastern residential tiers house many of Stoneharbor's Hasura Elf population, who have adapted their preference for open air and living wood to the bluff environment with characteristic creativity. Wind chimes of hammered metal and polished stone hang from every ledge, and window boxes hold hardy mountain flowers that brighten the grey basalt. Hasura residents have planted climbing vines that soften the rock faces with green, creating an unexpected garden atmosphere in this industrial town. The blend of Hasura artistry and Pekakarlik engineering gives this district a unique character found nowhere else in Twin Rivers.",
+    "exits": {
+      "south": 10067,
+      "southwest": 10063
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10076,
+    "name": "Stoneharbor - River Walk",
+    "description": "A narrow path follows the base of the bluffs along the Highwater River, connecting the docks to the eastern approach road. The path is carved into the rock face at water level, and in spring flood it becomes impassable, forcing travelers to use the upper bluff routes. In calmer seasons it offers a dramatic walk with the cliff rising sheer on one side and the dark river rushing past on the other. Moss and river-fern cling to the damp stone, and the air is filled with the Highwater's cold, clean scent.",
+    "exits": {
+      "north": 10069,
+      "east": 10077
+    },
+    "flags": [
+      "water"
+    ]
+  },
+  {
+    "vnum": 10077,
+    "name": "Stoneharbor - Eastern Approach",
+    "description": "The eastern approach to Stoneharbor follows the Highwater upstream, where the river narrows between increasingly steep bluffs. The road here is cut into the cliff face, wide enough for two carts abreast but with a precipitous drop to the river on one side. Stone barriers carved by Kovaka masons provide some security, their flowing organic forms both beautiful and functional. This road leads eventually to the Riverwind Heights and the trade routes beyond, and the mountain air grows noticeably cooler with each mile east.",
+    "exits": {
+      "west": 10076,
+      "north": 10073,
+      "east": 10413
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10078,
+    "name": "Stoneharbor - Smelting Terrace",
+    "description": "A broad stone terrace on the bluff's western face serves as the primary smelting area, where raw ore from the mines is heated in furnaces built into the cliff face. The heat here is intense, and the air shimmers with forge-glow that paints the night sky orange for miles around. Pekakarlik smelters in heavy leather aprons tend the furnaces in careful shifts, pouring molten metal into ingot molds with the steady hands of long practice. Channels cut into the terrace floor carry cooling water from the mountain springs above, creating plumes of steam that rise from the bluff like the mountain's own breath.",
+    "exits": {
+      "south": 10074
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10100,
+    "name": "Highspire - Mountain Gate",
+    "description": "Highspire's gate is carved into a natural stone arch where the mountain spur meets the pass road, its keystone bearing the Tower Warden's seal: a flame atop a peak. The gate is narrow by design, admitting only foot traffic and small carts, a defensive necessity in this exposed position where the Whispering Slopes meet the Giant's Teeth. Wind howls through the gap with a voice that those with Kin-sense perceive as fragments of ancient speech. Guards in wool-lined mountain cloaks stand watch over the approaches, their eyes trained to spot trouble from miles away on the clear mountain air.",
+    "exits": {
+      "south": 10101,
+      "west": 10423
+    },
+    "flags": [
+      "gate",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10101,
+    "name": "Highspire - Terrace Road",
+    "description": "A road carved into the mountain spur climbs through Highspire in a series of switchbacks, each turn revealing a broader view of the river valleys spread far below. Buildings of dressed mountain stone cling to the slope on either side, their foundations anchored deep into the bedrock by Pekakarlik engineering. The thin alpine air carries the scent of pine resin and the faint acrid tang of fire-powder from the alchemists' workshops above. Prayer flags in Kovaka earth-tones and Hasura wind-colors flutter from rooftop poles, snapping in the persistent mountain breeze.",
+    "exits": {
+      "north": 10100,
+      "south": 10102,
+      "east": 10106
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10102,
+    "name": "Highspire - Market Terrace",
+    "description": "Highspire's market occupies a broad terrace carved into the mountainside, sheltered from the worst winds by the peak above but open to the spectacular view of the Twin Rivers basin stretching to the western horizon. Vendors sell mountain specialties: the famous Spire-cheese aged in alpine caves, fire-powders mixed by Pekakarlik alchemists, feather tokens carved by Kovaka artisans, and wool textiles woven from the highland sheep that graze the slopes above. The market is smaller than lowland settlements but commands premium prices for its unique goods. On clear days, the distant shimmer of the Aetherial Veil is visible as a band of luminescence across the sky.",
+    "exits": {
+      "north": 10101,
+      "south": 10103,
+      "west": 10108
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10103,
+    "name": "Highspire - Central Switchback",
+    "description": "The terrace road makes its sharpest turn here, doubling back on itself as it climbs toward the Sky-Flame Tower visible against the sky above. A stone retaining wall built by Kovaka masons supports the road, its surface carved with abstract patterns that channel rainwater into collection cisterns below. Residents pause at the turn to catch their breath and admire the view, and an enterprising Halfling has set up a tea stall that does steady business with climbers and visitors alike. The wind is stronger at this height, and the temperature noticeably cooler than the lowlands.",
+    "exits": {
+      "north": 10102,
+      "south": 10104,
+      "east": 10110
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10104,
+    "name": "Highspire - Sky-Flame Plaza",
+    "description": "A circular plaza of polished mountain granite surrounds the base of the Sky-Flame Tower, Highspire's most prominent landmark. The tower rises another hundred feet above the plaza, its crystal-capped peak designed to hold the signal fire that can warn every settlement in Twin Rivers of approaching danger. The plaza is Highspire's gathering place, where Mayor Veyra Skysong addresses the populace and the seasonal festivals are celebrated with bonfires that echo the tower's flame. Stone benches ring the plaza's edge, positioned for the unmatched panoramic view.",
+    "exits": {
+      "north": 10103,
+      "east": 10105,
+      "west": 10109,
+      "south": 10112
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10105,
+    "name": "Highspire - Sky-Flame Tower",
+    "description": "The Sky-Flame Tower is a tapering column of reinforced stone that rises from the mountain spur's highest point, built in the years following the Deceivers' War as an early-warning system for the Twin Rivers region. A spiral staircase inside leads to the beacon chamber, where alchemical fire-powders can produce a flame visible from Custos do Aeternos on a clear night. Mayor Veyra Skysong maintains the tower personally, her Ranger's vigilance making her an ideal Tower Warden. At the base, the cairn of Ludus Galerius stands watch: a pyramid of battle-worn stones honoring the fallen, its presence a solemn reminder of why the tower was built.",
+    "exits": {
+      "west": 10104
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ]
+  },
+  {
+    "vnum": 10106,
+    "name": "Highspire - Upper Residences",
+    "description": "The upper residential terraces of Highspire house the town's Kovaka and Hasura population, who have adapted to the alpine environment with characteristic ingenuity. Kovaka homes are carved into the mountain stone with flowing organic precision, their interiors warm despite the altitude. Hasura residents have planted wind-resistant gardens in sheltered alcoves, coaxing color from the grey rock. The two communities share a deep respect for the mountain's moods and a pragmatic cooperation that defines Highspire's character. From these terraces, the watchtower paths leading into the Giant's Teeth are visible, winding upward into cloud and stone.",
+    "exits": {
+      "west": 10101,
+      "south": 10107
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10107,
+    "name": "Highspire - Weavers' Terrace",
+    "description": "A sheltered terrace where Highspire's weavers work the highland wool into the textiles that are the town's primary export after cheese and fire-powder. Looms click and shuttle in a covered workshop open on one side to the mountain view, and skeins of dyed wool hang from drying racks in every color the mountain plants can produce. The weavers are predominantly Hasura and Human, their craft blending elven color sense with Human production efficiency. The textiles they produce are prized across Twin Rivers for their warmth and the subtle patterns that seem to shift in changing light.",
+    "exits": {
+      "north": 10106,
+      "west": 10110
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10108,
+    "name": "Highspire - Alchemist's Workshop",
+    "description": "The fire-powder workshops are built into a shallow cave on the mountain's western face, their position chosen for both the natural ventilation and the safety of having solid rock between the volatile materials and the rest of the town. Pekakarlik alchemists mix the compounds that fuel the Sky-Flame Tower's beacon and produce the smaller fire-powders sold for mining blasting and festival celebrations. The air here smells of sulfur and ground crystal, and the alchemists work with the careful deliberation of people who know exactly what happens when their materials are handled carelessly.",
+    "exits": {
+      "east": 10102
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10109,
+    "name": "Highspire - Mayor's Office",
+    "description": "Veyra Skysong's office is a modest room in a stone building near the Sky-Flame Tower, its windows offering an unobstructed view of the approaches from every direction. Maps and weather charts cover the walls, annotated in the Kovaka Ranger's precise hand. A rack of signal flags and a fire-powder signal kit stand ready by the door, and a heavy mountain cloak hangs from a peg for the Tower Warden's frequent inspections. Veyra governs Highspire with a Ranger's watchfulness: quiet, attentive, and ready to act decisively when danger approaches.",
+    "exits": {
+      "east": 10104
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10110,
+    "name": "Highspire - Lower Residences",
+    "description": "The lower residential terraces of Highspire house its Pekakarlik and Human population, their homes built from dressed mountain stone with the solid practicality that marks both peoples' architecture. Root cellars carved into the mountain store the aged Spire-cheese that is Highspire's culinary pride, and communal bread ovens serve clusters of homes. The terraces are connected by stone stairs that switchback down the slope, and residents have planted hardy mountain herbs in every available crevice. Children play a game involving rolling stones down precise channels carved into the terrace edges.",
+    "exits": {
+      "west": 10103,
+      "east": 10107
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10111,
+    "name": "Highspire - Feather Token Workshop",
+    "description": "A small but renowned workshop where Kovaka artisans carve the feather tokens that Highspire exports throughout Twin Rivers. Each token is a masterwork of miniature stonecraft, carved from mountain crystal and imbued with a whisper of Wind-element that the Kovaka channel through their Earth-attuned Kin-sense. The tokens are said to bring safe passage through mountains and protection from falling, and travelers heading into the Giant's Teeth consider them essential equipment. The master carver, an elderly Kovaka woman with steady hands, works in silence broken only by the soft rasp of crystal on stone.",
+    "exits": {
+      "east": 10112
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10112,
+    "name": "Highspire - Mountain Pass Road",
+    "description": "The road south from Highspire climbs steeply toward the Giant's Teeth, entering true mountain territory where the air thins and the wind carries the bite of eternal snow. Stone cairns mark the path where winter drifts might otherwise obscure it, and the road narrows to a ledge cut into the cliff face. The view behind encompasses all of Highspire and the river valleys beyond, a patchwork of green and silver stretching to the horizon. Ahead, the peaks of the Giant's Teeth rise jagged against the sky, and the road winds between them toward the eastern pass.",
+    "exits": {
+      "west": 10111,
+      "north": 10104,
+      "south": 10440
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10125,
+    "name": "Timberdeep - Forest Edge",
+    "description": "The boundary between open farmland and the Windweave Forest is as sharp as a drawn line: one step you stand in sunlight among meadow grasses, the next you enter a world of towering sky-oaks whose canopy filters the light to a green-gold twilight. Timberdeep begins here, where the first buildings appear among the ancient trees, their walls of living wood grown rather than cut. The air changes immediately, becoming cooler, damper, and rich with the scent of moss, bark, and the amber sap that is one of the town's primary products. On Kin-sense the forest edge hums with a blended resonance: Wind-bright Hasura intertwined with earthier Kovaka undertones, like the sound of roots reaching for rain.",
+    "exits": {
+      "west": 10433,
+      "east": 10126
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10126,
+    "name": "Timberdeep - Amber Lane",
+    "description": "The main path through Timberdeep is Amber Lane, a walkway of compacted earth and living root that winds between the massive sky-oaks. Amber-sap collection stations dot the route, their copper taps inserted into the bark with careful precision by Hasura druids who monitor each tree's health. The sap flows slowly, thick and golden, into carved wooden bowls that are emptied each morning. Residents move along the lane with the easy familiarity of people who know every root and branch, pausing to exchange greetings or check the sap levels with practiced eyes.",
+    "exits": {
+      "west": 10125,
+      "east": 10127,
+      "north": 10131,
+      "south": 10135
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10127,
+    "name": "Timberdeep - Town Center",
+    "description": "Timberdeep's center is a clearing among the sky-oaks where the canopy has been coaxed open to admit a shaft of natural light. Mayor Aeloria Sapwhisper's hall occupies the clearing's eastern edge, a structure of living wood that appears to have grown rather than been built. A market area fills the clearing's center, where wood-shaped goods and amber-sap products are traded alongside more conventional supplies. The clearing serves as gathering place, market, and council ground, its boundaries marked by a ring of the oldest sky-oaks in the forest, their trunks wider than houses.",
+    "exits": {
+      "west": 10126,
+      "east": 10128,
+      "north": 10132,
+      "south": 10137,
+      "southeast": 10134
+    },
+    "flags": [
+      "safe",
+      "market"
+    ]
+  },
+  {
+    "vnum": 10128,
+    "name": "Timberdeep - Mayor's Hall",
+    "description": "Aeloria Sapwhisper's hall is a masterwork of Hasura wood-shaping, a building that is simultaneously architecture and living tree. Walls of woven branch and hardened sap enclose chambers that smell of fresh wood and the herbal infusions the Druid mayor favors. Aeloria governs Timberdeep with the patient wisdom of her druidic training, balancing the town's timber industry against the forest's need to regenerate. Her hall houses both the municipal office and a greenhouse where she experiments with new wood-shaping techniques, coaxing trees into forms that serve without harm.",
+    "exits": {
+      "west": 10127,
+      "north": 10129
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10129,
+    "name": "Timberdeep - Wood-Shaping Yards",
+    "description": "The wood-shaping yards are Timberdeep's primary industry, where Hasura craftspeople use a blend of druidic magic and traditional skill to form living wood into finished products without felling a single tree. Branches are guided into furniture shapes over seasons, and amber-sap is hardened into a crystal-clear varnish that preserves the wood's living warmth. The process is slow by Human standards but produces goods of extraordinary quality and beauty. Pekakarlik apprentices have begun studying the techniques, finding surprising parallels with their own tradition of working with natural materials. The yards smell of fresh-cut wood and warm amber.",
+    "exits": {
+      "south": 10128,
+      "east": 10130
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10130,
+    "name": "Timberdeep - Rune-Carving Studio",
+    "description": "In a quiet workshop beneath the canopy, Pekakarlik and Hasura artisans collaborate on rune-carved artifacts that combine dwarven precision with elven naturalism. The runes are carved into living wood and hardened amber-sap, creating items that resonate on Kin-sense with a warmth distinct from stone-carved runes. This fusion craft is unique to Timberdeep, and its products command high prices in Custos and beyond. The studio is filled with works in progress: staffs, amulets, and decorative panels that seem to pulse with a gentle inner light.",
+    "exits": {
+      "west": 10129
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10131,
+    "name": "Timberdeep - Circle of Deeproot Grove",
+    "description": "A sacred grove within Timberdeep where the Circle of Deeproot, the regional druidic order, maintains their primary gathering place. The sky-oaks here are the oldest in the forest, their trunks scarred with centuries of growth rings and their roots intertwined in a living network that the druids say connects every tree in the Windweave. Stone seats shaped by Kovaka hands circle a central pool of clear water that reflects the canopy above like a green mirror. The Kin-sense here is thick with Earth and Water resonance, a deep slow pulse that speaks of the forest's ancient vitality. Druid deep markers carved into the trees ward the grove against corruption.",
+    "exits": {
+      "south": 10126,
+      "east": 10132
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "rune_circle",
+        "state": "active",
+        "attunement": "earth",
+        "power": "heal",
+        "study_dc": 16,
+        "activate_dc": 12
+      }
+    ]
+  },
+  {
+    "vnum": 10132,
+    "name": "Timberdeep - Deeproot Path",
+    "description": "A winding path connects the Circle of Deeproot grove to the town center, its surface a carpet of moss that springs back after each footstep. The trees along this path bear druid-carved markers that serve as both wayfindings and protective wards, their symbols glowing faintly green in the forest twilight. Druids and their apprentices use this path for contemplative walks, and the quiet here is profound: even the birds seem to sing more softly. The path passes through a section of forest where the canopy is so thick that rain rarely reaches the ground, creating a dry haven even in the heaviest downpours.",
+    "exits": {
+      "west": 10131,
+      "south": 10127
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10133,
+    "name": "Timberdeep - Singing Ridges Approach",
+    "description": "The path east from Timberdeep climbs gradually through thinning forest toward the Singing Ridges, where quartz-veined hills once hummed with melodic resonance attributed to ancient Giant craftsmanship. The sky-oaks give way to smaller trees and eventually to the wind-scoured ridge vegetation. Those with Kin-sense report that the ambient elemental resonance shifts here, the forest's blended harmony thinning to something more singular and wind-dominated. Recent reports suggest the Singing Ridges have fallen silent, a change that troubles the Circle of Deeproot greatly.",
+    "exits": {
+      "north": 10137,
+      "northeast": 10430
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10134,
+    "name": "Timberdeep - Canopy Lift Station",
+    "description": "A remarkable feat of combined Hasura and Pekakarlik engineering, the Canopy Lift Station houses the counterweight-powered platforms that carry passengers and cargo three hundred feet up to the canopy cities above. The lift mechanism is a Pekakarlik design of gears, cables, and water-powered counterweights, while the platform itself is Hasura living-wood that flexes safely with the wind. The station is busy at all hours, with traders, messengers, and residents moving between ground and canopy levels. Looking up from here, the underside of the canopy platforms is visible as a dark lattice against the filtered sky.",
+    "exits": {
+      "northwest": 10127,
+      "up": 10503
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10135,
+    "name": "Timberdeep - Tree-Home District",
+    "description": "The residential heart of Timberdeep is a neighborhood of homes built into and among the sky-oaks, each one a unique expression of the wood-shaping craft. Some are platforms nestled in branch crooks twenty feet up, reached by spiral staircases grown from the tree itself. Others are ground-level structures woven from living root and branch, their interiors lit by bioluminescent moss that the Hasura cultivate. Kovaka residents have contributed stone foundations and hearths, creating a blend of wood and stone architecture found nowhere else. Rope bridges and branch walkways connect the upper homes in a secondary street network above the forest floor.",
+    "exits": {
+      "north": 10126,
+      "east": 10137,
+      "south": 10136
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10136,
+    "name": "Timberdeep - Exotic Hardwood Yard",
+    "description": "Unlike the wood-shaping yards that work with living trees, this yard handles the exotic hardwoods harvested under strict druidic supervision from naturally fallen or diseased trees. Ironwood, sky-oak heartwood, and the rare crimson bloodbark are sorted and seasoned here, their value measured in gold pieces per plank. Pekakarlik carpenters work alongside Hasura specialists to convert the raw timber into structural components, ship parts, and the dense building material that ground-level settlements require. The Circle of Deeproot sends an inspector weekly to verify that harvesting limits are respected.",
+    "exits": {
+      "north": 10135
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10137,
+    "name": "Timberdeep - Eastern Path",
+    "description": "The eastern path from Timberdeep splits at a massive sky-oak scarred by lightning, one fork leading south toward the Singing Ridges and the other continuing east into the deeper forest where the canopy cities rise above. Trail markers carved into the trees show distances to Liraveth and the Singing Ridges, and a water cache is maintained here for travelers. The forest is thicker along this path, the canopy lowering until the walker moves through a tunnel of green with only occasional shafts of light penetrating to the forest floor.",
+    "exits": {
+      "west": 10135,
+      "north": 10127,
+      "south": 10133,
+      "east": 10434
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10200,
+    "name": "Liraveth - Canopy Arrival Platform",
+    "description": "The lift from the forest floor deposits travelers onto a broad platform of living wood and wind-silk lattice, three hundred feet above the ground. The first sensation is the wind: constant, gentle, carrying the scent of sky-oak flowers and the faint ozone tang of the Aetherial Veil overhead. Liraveth spreads in every direction, a city of interconnected platforms, graceful bridges, and buildings grown from the living canopy of the greatest sky-oaks in the Windweave. The forest floor is a green darkness far below, visible through gaps in the lattice work. Hasura attendants welcome arrivals and direct them toward the city's many districts.",
+    "exits": {
+      "down": 10503,
+      "north": 10201,
+      "east": 10210,
+      "west": 10220
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10201,
+    "name": "Liraveth - Grand Promenade",
+    "description": "The Grand Promenade is Liraveth's main thoroughfare, a broad walkway of interwoven living branches reinforced with wind-silk netting that stretches between the crowns of the mightiest sky-oaks. The promenade sways gently with the wind, a motion that residents find soothing but newcomers may find alarming. On either side, shops and residences are built into the tree crowns themselves, their facades of shaped wood and translucent amber-sap panels that glow gold in sunlight. Forest spirits drift through the branches at dusk, their presence a warm green hum on Kin-sense that Liraveth's inhabitants greet with quiet familiarity.",
+    "exits": {
+      "south": 10200,
+      "north": 10202,
+      "east": 10211,
+      "west": 10221
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10202,
+    "name": "Liraveth - Tri-Leaf Conclave Hall",
+    "description": "The seat of Liraveth's government is built within the crown of the oldest sky-oak in the city, a tree so vast that its trunk houses three full stories of chambers within living wood walls. The Tri-Leaf Conclave governs through consensus of its three branches: civic, spiritual, and scholarly, each represented by a leaf-shaped emblem mounted above their respective chamber doors. Sylvara Quillwind's office as Lore-Keeper occupies the uppermost level, where windows of polished amber-sap frame the sky. The hall's Kin-sense resonance is uniquely Hasura: Wind-bright, layered, alive with the energy of a people who have lived among these trees for centuries.",
+    "exits": {
+      "south": 10201,
+      "east": 10203,
+      "north": 10204,
+      "northwest": 10223
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10203,
+    "name": "Liraveth - Council Platform",
+    "description": "An open-air platform extending from the Conclave Hall, where the Tri-Leaf Conclave holds public sessions and addresses the citizenry. Seating carved from living wood accommodates several hundred observers, arranged in concentric arcs around a central speaking platform. The platform offers an unobstructed view of the canopy stretching to the horizon, and on clear days the distant peaks of the Giant's Teeth are visible above the tree line. Wind-silk banners bearing the three-leaf emblem flutter from poles at the platform's corners, their colors shifting with the wind's direction.",
+    "exits": {
+      "west": 10202
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10204,
+    "name": "Liraveth - Library Approach",
+    "description": "A graceful bridge of woven living-wood arcs northward from the Conclave Hall to the Grand Library, its railings carved with an unbroken line of script in High Kin that recounts the founding of Liraveth. The bridge passes through a canopy of flowering sky-oak branches that shower white petals on windy days. Below, the Grand Promenade is visible as a ribbon of activity, and above, the Library's distinctive spire-like structures rise into the upper canopy. Scholars and students cross this bridge at all hours, their arms laden with scrolls and the distinctive leather-bound sky-charts that Liraveth produces.",
+    "exits": {
+      "south": 10202,
+      "north": 10205
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10205,
+    "name": "Liraveth - Grand Library",
+    "description": "The Grand Library of Liraveth is the largest repository of knowledge in all of Twin Rivers, housed in a cluster of sky-oak crowns connected by enclosed bridges. Its collections include sky-charts mapping the stars as seen from the canopy, spell-ink manuscripts dating to before the Shattering, and pre-Shattering texts preserved in amber-sap cases that maintain them in perfect condition. Sylvara Quillwind's personal collection occupies a restricted upper chamber, but the main reading halls are open to all who treat the materials with respect. The smell of old paper, amber-sap preservative, and ink fills the air, and the quiet is broken only by the scratch of quills and the whisper of turned pages.",
+    "exits": {
+      "south": 10204,
+      "east": 10206,
+      "west": 10207
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10206,
+    "name": "Liraveth - Sky-Chart Gallery",
+    "description": "A long gallery within the library complex dedicated to Liraveth's famous sky-charts: detailed maps of stellar positions observed from the canopy level across centuries. The charts are drawn on wind-silk in luminous inks that glow faintly in dim light, making the gallery a constellation in miniature when the lanterns are lowered. Astronomers from across Twin Rivers, including Aerithal's Na'wasua observers, consult these records to track celestial changes. Recent additions to the collection show anomalous stellar movements that have prompted urgent correspondence between Liraveth and Aerithal's observatory.",
+    "exits": {
+      "west": 10205
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10207,
+    "name": "Liraveth - Scroll Archives",
+    "description": "The western wing of the Grand Library houses the scroll archives, where the oldest and most fragile documents are stored in temperature-controlled chambers maintained by Pekakarlik environmental engineering. Rows of crystal-sealed cases contain scrolls of pre-Shattering origin whose contents are still being cataloged and translated. Hasura archivists work with painstaking care, unrolling ancient texts under magnifying lenses and copying their contents onto new wind-silk for wider distribution. The archive's Kin-sense resonance carries an echo of the knowledge stored here: faint, complex, layered with centuries of accumulated wisdom.",
+    "exits": {
+      "east": 10205
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10210,
+    "name": "Liraveth - Wind-Silk Quarter",
+    "description": "The eastern district of Liraveth is devoted to the production of wind-silk, the lightweight fabric woven from sky-oak pollen fibers that is the canopy cities' most distinctive export. Looms of living wood fill open-sided workshops where Hasura weavers create cloth that is simultaneously strong, light, and responsive to Wind-element resonance. The wind-silk catches the breeze in bolts hung from display poles, billowing in iridescent waves that make the quarter shimmer like a living rainbow. The craft requires both skill and Kin-sense attunement, and the best weavers are said to sing to their looms.",
+    "exits": {
+      "west": 10200,
+      "north": 10211,
+      "east": 10212,
+      "south": 10214
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10211,
+    "name": "Liraveth - Wind-Silk Market",
+    "description": "The market platform where finished wind-silk goods are sold is one of the busiest spots in Liraveth, drawing buyers from every settlement in Twin Rivers. Bolts of cloth in every color shimmer on display racks, and finished garments flutter on mannequins, their fabric responding to the wind with an almost sentient fluidity. Prices are high but fair, set by the guild that regulates production to maintain quality. Human and Pekakarlik buyers from ground-level settlements browse alongside Hasura customers, and the occasional Tanuki trader attempts to negotiate bulk discounts with theatrical flair.",
+    "exits": {
+      "south": 10210,
+      "west": 10201
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10212,
+    "name": "Liraveth - Lattice Workshops",
+    "description": "Workshops devoted to living-wood latticework occupy a cluster of platforms on the city's eastern edge, where artisans weave branches and vines into the structural frameworks that form Liraveth's buildings, bridges, and platforms. The craft is part architecture, part sculpture, and part druidic practice, requiring the artisan to communicate with the living wood through a combination of Kin-sense attunement and physical shaping. Apprentices spend years learning to feel the wood's grain and growth direction before they are trusted with structural work. The workshops produce the building components that keep the canopy city growing and self-repairing.",
+    "exits": {
+      "west": 10210,
+      "south": 10213
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10213,
+    "name": "Liraveth - Observation Platform East",
+    "description": "A viewing platform extending beyond the eastern edge of the canopy offers a breathtaking panorama of the Windweave Forest stretching to the horizon, an unbroken sea of green broken only by the silver glint of rivers and the occasional clearing. On clear days the Singing Ridges are visible to the southeast, and Aerithal's observatory spire can be spotted to the northeast above the canopy line. The platform is popular at sunset when the Aetherial Veil catches the dying light and paints the sky in bands of violet, gold, and deep amber. Wind-silk banners mark the platform's edge, snapping in the high-altitude breeze that carries the clean scent of sky-oak and cloud moisture.",
+    "exits": {
+      "north": 10212,
+      "west": 10214
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10214,
+    "name": "Liraveth - Tanuki Quarter",
+    "description": "The Tanuki Quarter is instantly recognizable by its creative chaos: buildings adorned with impossible sculptures, walkways painted in clashing colors that somehow harmonize, and the faint crackle of Wild Static that Tanuki residents carry as their distinctive Kin-sense signature. The Tanuki population is integral to Liraveth's cultural identity, their trickster-artisan tradition cherished rather than merely tolerated. Shops here sell curiosities, clever mechanical toys, and art objects that defy easy categorization. The Wild Static is experienced by other Kin-sense users as a pleasant disruption, like laughter interrupting a solemn lecture, and Liraveth's Hasura consider it a vital part of the city's ambient resonance.",
+    "exits": {
+      "north": 10210,
+      "east": 10213,
+      "west": 10215,
+      "south": 10216
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10215,
+    "name": "Liraveth - Tanuki Workshop",
+    "description": "A particularly inventive Tanuki workshop occupies a platform that seems to defy structural logic, its walls at odd angles and its roof sporting a chimney that bends in three directions. Inside, Tanuki artisans create their signature works: mechanical puzzles, shape-shifting sculptures, and the illusion-touched trinkets that are equal parts art and jest. The Wild Static here is strong enough to make candle flames dance and wind chimes ring without breeze. Despite the apparent disorder, the craftsmanship is exquisite, each piece revealing new details and hidden mechanisms on closer inspection.",
+    "exits": {
+      "east": 10214
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10216,
+    "name": "Liraveth - Southern Residential Platform",
+    "description": "A broad residential platform on the city's southern edge, where families live in homes grown from the canopy's living wood. The homes are airy and open, with walls that can be grown closed against storms or opened to admit the wind on fair days. Gardens of sky-oak flowers and aerial herbs grow on every available surface, tended by residents who bring the Hasura love of cultivated beauty to every corner of their environment. Children play on rope bridges between homes, their laughter carrying on the wind to mix with birdsong from the upper canopy. The platform looks south over miles of unbroken forest, and on quiet nights the distant sound of the Great River can be heard as a low murmur.",
+    "exits": {
+      "north": 10214,
+      "west": 10217
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10217,
+    "name": "Liraveth - Spell-Ink Distillery",
+    "description": "The spell-ink distillery is one of Liraveth's most prestigious workshops, where the luminous inks used for magical manuscripts and sky-charts are produced. The process combines amber-sap from Timberdeep, mineral pigments from Stoneharbor, and proprietary botanical extracts that the distillers guard as trade secrets. The resulting inks glow faintly with their own light and are said to enhance the potency of any spell written with them. The distillery occupies a cluster of sealed chambers where temperature and humidity are precisely controlled by Pekakarlik environmental systems. Visitors are permitted in the showroom but not the production areas.",
+    "exits": {
+      "east": 10216,
+      "north": 10220
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10220,
+    "name": "Liraveth - Western Promenade",
+    "description": "The western section of Liraveth's promenade passes through a district of mixed residences and workshops, its walkway broader here to accommodate the foot traffic between the central city and the western bridges that connect to Sylarien. Pekakarlik residents have established themselves in this district, their homes recognizable by the stone-and-iron reinforcements they have added to the living-wood structures. The blend of Pekakarlik solidity and Hasura organic architecture creates buildings that are both beautiful and remarkably sturdy, able to withstand the storms that occasionally sweep through the canopy.",
+    "exits": {
+      "east": 10200,
+      "north": 10221,
+      "south": 10217,
+      "west": 10222
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10221,
+    "name": "Liraveth - Pekakarlik District",
+    "description": "The Pekakarlik residents of Liraveth have adapted their subterranean architectural instincts to canopy living with characteristic ingenuity, creating enclosed spaces within the tree crowns that feel surprisingly cave-like in their warmth and solidity. Water channels carry collected rainwater through the district, and Pekakarlik-engineered structural reinforcements support the heavier stone elements that make their homes feel grounded even three hundred feet in the air. The district maintains a Gonmareck shrine where dwarven residents leave small offerings of worked metal, and the sound of water flowing through the channels provides the comforting background their people prefer.",
+    "exits": {
+      "south": 10220,
+      "east": 10201
+    },
+    "flags": [
+      "safe",
+      "altar"
+    ]
+  },
+  {
+    "vnum": 10222,
+    "name": "Liraveth - Western Bridge Head",
+    "description": "The western edge of Liraveth terminates at a bridge head where the great canopy bridge to Sylarien begins its arc across open sky between the groves. The bridge itself is a marvel of combined engineering: Pekakarlik cables of braided iron support a walkway of Hasura living-wood, the whole structure flexible enough to sway with the wind while remaining perfectly safe. A small guard post monitors traffic, more for census than security, and a wind-silk awning provides shelter for those waiting to cross. Looking west, the bridge curves gracefully toward Sylarien's canopy, a green island floating above the forest floor.",
+    "exits": {
+      "east": 10220,
+      "west": 10445
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10223,
+    "name": "Liraveth - Northern Residential Canopy",
+    "description": "The northern residential district is built among sky-oaks whose crowns have been shaped into natural amphitheaters, each home a platform in a tiered arrangement that provides privacy while maintaining the open, airy quality that Hasura architecture demands. The district is quieter than the commercial areas, its walkways lined with bioluminescent moss that provides soft green light after dark. Human residents have integrated into the community seamlessly, their homes distinguishable mainly by the presence of glass windows where Hasura prefer open lattice. Birdsong fills the upper branches, and the wind carries the distant sound of the Grand Library's bell marking the hours.",
+    "exits": {
+      "southeast": 10202,
+      "east": 10224,
+      "west": 10225
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10224,
+    "name": "Liraveth - Herbalist's Garden",
+    "description": "A sprawling aerial garden maintained by Hasura herbalists occupies several interconnected platforms on the city's northeastern edge. Medicinal plants, culinary herbs, and rare botanical specimens grow in tiered planters of living wood, their roots extending into the sky-oak bark to draw moisture and nutrients from the ancient trees. The garden supplies Liraveth's healers and the spell-ink distillery with essential ingredients, and its beauty draws visitors year-round. A permanent mist of water vapor, maintained by Pekakarlik irrigation systems, gives the garden a dreamlike quality where every surface glistens.",
+    "exits": {
+      "west": 10223
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10225,
+    "name": "Liraveth - Northern Bridge Head",
+    "description": "A secondary bridge extends north from Liraveth toward Aerithal, this one narrower than the Sylarien bridge and climbing slightly as it reaches for the higher canopy where Aerithal's observatory platforms are built. The bridge offers spectacular views in every direction: the forest floor far below, the canopy stretching to every horizon, and on clear nights the full sweep of the sky above, where Aerithal's astronomers chart the stars. Guards here are more vigilant than at the western bridge, as the northern forests beyond Aerithal are wilder and less patrolled.",
+    "exits": {
+      "east": 10223,
+      "north": 10447
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10250,
+    "name": "Aerithal - Southern Bridge Landing",
+    "description": "The bridge from Liraveth ends at a landing platform on Aerithal's southern edge, where the canopy is noticeably higher than Liraveth's, the sky-oaks here being among the tallest in the Windweave. Aerithal immediately feels different from its sister city: more vertical, more oriented toward the sky above than the forest below. Platforms climb the tree trunks in spiraling tiers, and the highest structures are visible only as silhouettes against the clouds. Wind is a stronger presence here, the canopy's height exposing the city to currents that make wind-silk banners snap and bridges sway. The air tastes of ozone and sky-oak pollen, cleaner and thinner than at lower elevations.",
+    "exits": {
+      "south": 10448,
+      "north": 10251,
+      "east": 10260
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10251,
+    "name": "Aerithal - Starwind Promenade",
+    "description": "Aerithal's main thoroughfare climbs northward through the city's tiers, its name reflecting the city's dual obsessions: the stars above and the wind that carries their light. The promenade is lined with workshops and residences that grow progressively more ethereal in construction as the elevation increases, the living-wood walls becoming thinner and more translucent until the highest buildings are little more than frameworks of branch and wind-silk, open to the sky on all sides. Navigation markers carved into the walkway correspond to stellar positions, so that walking the promenade is also walking a map of the heavens. The Kin-sense resonance here is Wind-dominant, bright and restless.",
+    "exits": {
+      "south": 10250,
+      "north": 10252,
+      "east": 10261,
+      "west": 10270
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10252,
+    "name": "Aerithal - Conclave District",
+    "description": "The Tri-Leaf Conclave's Aerithal offices occupy a cluster of platforms near the city's center, where Lead Navigator Voren Starlance coordinates the celestial observation and Wind-element research that define the city's purpose. The district is quieter than Liraveth's bustling administrative center, its atmosphere more contemplative, befitting a city of scholars and observers. Voren's office is identifiable by the Na'wasua star-sigils carved into its door frame, their silver inlay catching the light with a cold, precise beauty. When a Na'wasua seer becomes urgent, wise people pay attention, and Voren's recent shift from detachment to alarm has not gone unnoticed.",
+    "exits": {
+      "south": 10251,
+      "north": 10253,
+      "east": 10262
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10253,
+    "name": "Aerithal - Navigation Hall",
+    "description": "The Navigation Hall is where Aerithal's cartographers and navigators compile their observations into the celestial charts and gravitic maps that the city exports. Long tables display works in progress: star charts annotated with observations spanning decades, wind-current maps that trace the patterns of elemental flow across Twin Rivers, and the gravitic crystal readings that Na'wasua researchers use to study the forces binding the Aetherial Veil. The hall buzzes with quiet, focused activity, its occupants driven by Voren Starlance's recent warnings about anomalous stellar movements that the charts show have been accelerating.",
+    "exits": {
+      "south": 10252,
+      "north": 10254
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10254,
+    "name": "Aerithal - Observatory Approach",
+    "description": "A steep spiral walkway climbs the trunk of Aerithal's tallest sky-oak toward the observatory at its crown. The walkway is exposed to the wind on all sides, and the view expands with each turn: the entire canopy of the Windweave becomes visible, then the river valleys beyond, then the distant mountains of the Giant's Teeth. The climb is exhilarating and vertiginous, the forest floor now so far below that it is visible only as a dark abstraction. Wind-silk safety lines are available for those uncomfortable with the height. The air this high is noticeably cooler, and the stars are visible even in late afternoon.",
+    "exits": {
+      "south": 10253,
+      "up": 10255
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10255,
+    "name": "Aerithal - The Observatory",
+    "description": "The Observatory occupies the very crown of Aerithal's tallest sky-oak, the highest inhabited point in all of Twin Rivers. A framework of living-wood and crystal panels creates a viewing chamber open to the sky, equipped with lenses of ground crystal and polished amber-sap that magnify the stars. From here, the full sweep of the heavens is visible, and on clear nights the Aetherial Veil itself can be studied as it shimmers across the sky. Voren Starlance's personal instruments occupy the observatory's northern arc, where the anomalous stellar movements he has charted are displayed in urgent red annotations on the master star-chart. The Na'wasua's typically detached demeanor has given way to something that his colleagues find deeply unsettling: certainty that something is wrong.",
+    "exits": {
+      "down": 10254
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10260,
+    "name": "Aerithal - Research Quarter",
+    "description": "The eastern district of Aerithal is devoted to Wind-element research, where scholars study the elemental currents that flow through the canopy and the relationship between wind, Kin-sense, and the Aetherial Veil. Workshops here produce the gravitic crystals that Aerithal exports: carefully grown mineral structures that respond to gravitational forces in ways that researchers are still working to fully understand. The quarter has the atmosphere of a university campus, with animated discussions between researchers spilling out of workshops onto walkways. Experimental wind-silk structures flutter from every available surface, testing new weaving techniques.",
+    "exits": {
+      "west": 10250,
+      "north": 10261,
+      "south": 10263
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10261,
+    "name": "Aerithal - Gravitic Crystal Lab",
+    "description": "The primary laboratory for gravitic crystal research occupies a sealed chamber where environmental conditions are precisely controlled. Crystal growth chambers line the walls, each containing a developing gravitic crystal suspended in a solution of mineral water and ground sky-oak pollen. The crystals glow faintly with an inner light that shifts in color as they grow, and researchers monitor their development with instruments of Na'wasua design. The lab produces the crystals that are among Aerithal's most valuable exports, sought by scholars and artificers across Twin Rivers for their unique properties. The Kin-sense resonance here is strangely muted, as if the crystals absorb ambient elemental energy.",
+    "exits": {
+      "south": 10260,
+      "west": 10251
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10262,
+    "name": "Aerithal - Starlight Distillery",
+    "description": "Aerithal's starlight distillery produces the luminous elixirs that are among the city's most mystical exports. The process involves collecting dew from the highest leaves of the sky-oaks during specific stellar alignments and combining it with gravitic crystal dust and botanical extracts. The resulting starlight elixirs glow with a soft silver-blue light and are prized for their purported ability to enhance Kin-sense clarity and magical focus. The distillery operates primarily at night, its workers guided by the elixirs' own glow as they move between collection points on the upper branches and the processing chambers below. The air here smells of night-blooming flowers and cold starlight.",
+    "exits": {
+      "west": 10252,
+      "south": 10264
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10263,
+    "name": "Aerithal - Wind-Wrought Workshop",
+    "description": "A workshop specializing in wind-wrought relics: objects shaped by sustained elemental Wind channeled through Kin-sense attunement. The process is slow and requires exceptional control, and the resulting artifacts carry a permanent wind-resonance that makes them useful as navigational aids, weather predictors, and components in more complex magical constructions. The workshop is staffed by a mix of Hasura Wind-adepts and Na'wasua researchers, their combined expertise producing relics of remarkable quality. Unfinished pieces hang from the workshop ceiling, turning slowly in currents of elementally charged air.",
+    "exits": {
+      "north": 10260,
+      "west": 10264
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10264,
+    "name": "Aerithal - Na'wasua Quarter",
+    "description": "The Na'wasua Quarter is the most rarefied district in Aerithal, built at the highest tier of the eastern platforms where the sky is closest and the forest floor most distant. Na'wasua Elves favor spaces that feel unbounded, and their homes are open frameworks of living-wood with wind-silk walls that can be retracted entirely, leaving the inhabitants exposed to the open sky. The quarter's Kin-sense resonance is distinctive: a cold, clear, profoundly deep stillness that other Kin-sense users find simultaneously calming and unsettling. Star-sigils glow on every surface, and the light here seems different, as if the Na'wasua presence bends the air itself toward clarity.",
+    "exits": {
+      "north": 10262,
+      "east": 10263,
+      "west": 10265
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10265,
+    "name": "Aerithal - Na'wasua Meditation Platform",
+    "description": "An open platform extending from the Na'wasua Quarter into open sky, used for the meditative practices through which Na'wasua seers attune to stellar and elemental patterns. The platform is deliberately featureless, a circle of polished living-wood with no railing or ornament, designed to minimize distraction and maximize the observer's connection to the sky. At night, Na'wasua meditators sit here in perfect stillness for hours, their consciousness extended through Kin-sense to touch the patterns of the stars. Voren Starlance uses this platform for his most sensitive observations, and it was here that he first detected the anomalous movements that now consume his attention.",
+    "exits": {
+      "east": 10264
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10270,
+    "name": "Aerithal - Western Market",
+    "description": "Aerithal's market district occupies the western platforms, positioned conveniently near the bridge connections to the other canopy cities. The market specializes in the city's unique products: celestial charts, gravitic crystals, starlight elixirs, and wind-wrought relics, though more mundane supplies are also available for residents. Tanuki traders add their characteristic energy to the market, their stalls offering curiosities and clever devices alongside the more serious scholarly goods. The market platforms are built at varying heights, creating a vertical marketplace where shoppers ascend and descend between tiers on living-wood stairs.",
+    "exits": {
+      "east": 10251,
+      "north": 10271,
+      "south": 10272,
+      "west": 10273
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10271,
+    "name": "Aerithal - Tanuki Quarter",
+    "description": "Aerithal's Tanuki community is smaller than Liraveth's but no less vibrant, their quarter occupying a cluster of platforms near the western market that seem to have been arranged with deliberate asymmetry. The Tanuki here have adapted their trickster-artisan tradition to Aerithal's scholarly culture, producing mechanical models of celestial movements, optical illusions based on gravitational principles, and joke-instruments that produce surprisingly accurate readings. Their Wild Static resonance provides a counterpoint to the Na'wasua Quarter's profound stillness, and the contrast is considered healthy by both communities. A Tanuki-run tea house serves as the quarter's social hub, its walls decorated with star charts that rearrange themselves when no one is looking.",
+    "exits": {
+      "south": 10270
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10272,
+    "name": "Aerithal - Residential Tiers",
+    "description": "The residential district of Aerithal spirals around the western sky-oaks in ascending tiers, each level connected by living-wood stairs and rope bridges. The homes here reflect the city's diverse population: Hasura dwellings of woven branch and wind-silk, Human homes with glass-paned windows and solid doors, and Pekakarlik quarters reinforced with iron brackets and stone hearths. The integration is organic, each building style adapted to coexist with its neighbors in a way that mirrors the city's cultural harmony. Night comes early in the western tiers as the sky-oaks shade the afternoon sun, and the first stars appear here before they are visible from any other part of the city.",
+    "exits": {
+      "north": 10270
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10273,
+    "name": "Aerithal - Western Bridge Head",
+    "description": "The western bridge head connects Aerithal to the canopy bridge network, with paths leading to both Sylarien and Liraveth through the high walkways that link the three canopy cities. A way-station here offers rest and refreshment for bridge travelers, and a posting board displays current bridge conditions, wind speeds, and travel advisories. The bridge to Sylarien descends slightly as it crosses the gap between groves, while the route to Liraveth curves south through an intermediate platform. From this height, the three canopy cities are visible as green islands in the forest canopy, connected by the thread-thin lines of their bridges.",
+    "exits": {
+      "east": 10270,
+      "southwest": 10449
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10290,
+    "name": "Sylarien - Eastern Bridge Landing",
+    "description": "The bridge from Liraveth arrives at Sylarien's eastern landing, and the change in atmosphere is immediate. Where Liraveth is scholarly and Aerithal is contemplative, Sylarien is alive with creative energy. Music drifts from every direction: the clear notes of woodwind instruments, the rhythmic click of looms, and the ever-present singing that is both cultural expression and craft technique. Wind-silk dyed in brilliant colors decorates every surface, and the platforms seem to dance with pattern and movement. The smallest of the three canopy cities, Sylarien makes up in vibrancy what it lacks in size.",
+    "exits": {
+      "east": 10446,
+      "west": 10291,
+      "north": 10304
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10291,
+    "name": "Sylarien - Festival Promenade",
+    "description": "Sylarien's main walkway is called the Festival Promenade, and it earns the name daily. Artisan workshops open directly onto the promenade, their crafters working in full view of passersby, and impromptu musical performances break out at the slightest provocation. The promenade curves through the heart of the city in a gentle arc, its surface inlaid with mosaic patterns of colored wood that depict scenes from Pasua storytelling traditions. Wind-silk banners in the guild colors of the rotating governance flutter from poles at regular intervals, each representing one of the artisan guilds that take turns leading the city. The walkway is rarely empty, and never silent.",
+    "exits": {
+      "east": 10290,
+      "west": 10292,
+      "north": 10301,
+      "south": 10305
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10292,
+    "name": "Sylarien - Amphitheater Approach",
+    "description": "The promenade widens as it approaches Sylarien's famous amphitheater, the acoustic marvel that draws performers and audiences from across Twin Rivers. The approach is lined with notice boards advertising upcoming performances, from solo Pasua ballad-singers to full guild-sponsored dramatic productions. Food vendors offer candied sky-oak nuts, fruit wines, and the spiced tea that Sylarien's audiences sip during performances. The anticipation of performance infuses the air, and even the casual foot traffic here has a theatrical quality, as if everyone in Sylarien is always, at some level, performing.",
+    "exits": {
+      "east": 10291,
+      "south": 10293
+    },
+    "flags": [
+      "safe",
+      "street"
+    ]
+  },
+  {
+    "vnum": 10293,
+    "name": "Sylarien - The Amphitheater",
+    "description": "Sylarien's amphitheater is carved from the crown of the city's broadest sky-oak, its living-wood seats arranged in ascending tiers around a central stage that seems to float in the open air. The acoustics are legendary: a whisper on stage carries to the highest seat, amplified by the natural resonance of the living wood and enhanced by Wind-element channeling that Windspeaker Liora Airsong personally calibrated. When Liora sings here, her Kin-sense makes every listener's own resonance vibrate in sympathy, creating a shared emotional experience that transcends mere entertainment. The amphitheater seats three thousand and is the cultural heart of all three canopy cities.",
+    "exits": {
+      "north": 10292,
+      "east": 10305
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10294,
+    "name": "Sylarien - Guild Compact Hall",
+    "description": "The Guild Compact Hall is Sylarien's seat of governance, a building whose appearance changes with each guild's term in the rotating leadership. Currently the Weavers' Guild holds the chair, and the hall is draped in their signature wind-silk tapestries depicting the history of Sylarien's founding. The Compact system allows each major artisan guild to govern for a season, ensuring that no single craft dominates the city's priorities. Windspeaker Liora Airsong serves as the permanent voice of the Compact, her Pasua gift for oratory and song making her the natural mediator between competing guild interests.",
+    "exits": {
+      "east": 10301
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10295,
+    "name": "Sylarien - Loom District",
+    "description": "The Loom District is Sylarien's industrial heart, where the living looms produce wind-silk and dyed fabrics in quantities that rival Liraveth's output. The looms themselves are remarkable: frames of living wood that the weavers say respond to their moods, tightening or loosening the weave in ways that produce fabrics of almost supernatural quality. The click and shuttle of the looms creates a rhythm that the weavers work to, their hands moving in time with a beat that Kin-sense users perceive as a blend of craft and elemental resonance. Dyes extracted from sky-oak bark, mountain minerals, and cultivated flowers produce colors that remain vivid for decades.",
+    "exits": {
+      "north": 10300,
+      "east": 10296
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10296,
+    "name": "Sylarien - Instrument Crafting Workshop",
+    "description": "Sylarien's woodwind instruments are prized throughout Twin Rivers and beyond, their clear tones attributed to the combination of sky-oak wood, Hasura craftsmanship, and the unique acoustic properties of wood shaped at canopy height. The workshop produces flutes, pipes, and the distinctive multi-chambered wind-harps that are Sylarien's signature instrument. Each piece is tested on the workshop's small stage, and the sound of scales and experimental melodies drifts from the workshop at all hours. The master craftsman, an elderly Hasura with fingers worn smooth by decades of wood-shaping, can produce an instrument in a week that will last a lifetime.",
+    "exits": {
+      "west": 10295,
+      "south": 10301
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10300,
+    "name": "Sylarien - Northern Platform",
+    "description": "The northern platform of Sylarien overlooks the forest canopy stretching toward Aerithal, and the bridge to that city is visible as a graceful arc against the sky. This district houses more of the city's practical infrastructure: food stores, water collection systems, and the wind-powered grain mills that process imported cereals. A small Pekakarlik engineering office maintains the structural integrity of the platforms, and a Tanuki weather station provides forecasts based on a combination of Wind-element reading and the Tanuki's inexplicable intuition about storms. The platform is breezy and open, with wide views in every direction.",
+    "exits": {
+      "south": 10295,
+      "east": 10304,
+      "west": 10302
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10301,
+    "name": "Sylarien - Artisan Row",
+    "description": "A section of the promenade where Sylarien's diverse artisan guilds maintain their shopfronts and demonstration workshops. Dyers hang freshly colored wind-silk from every available line, creating curtains of color that billow and shift in the breeze. Woodcarvers produce decorative panels and musical instruments. Pasua storytellers perform miniature dramas for passing crowds, their voices carrying the distinctive resonance of a people whose art and Kin-sense are inseparable. The row is Sylarien in miniature: creative, colorful, and humming with the energy of people who define themselves by what they make.",
+    "exits": {
+      "north": 10296,
+      "south": 10291,
+      "west": 10294
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10302,
+    "name": "Sylarien - Pasua Quarter",
+    "description": "The Pasua Quarter is the cultural heartbeat of Sylarien, home to the Pasua Elves whose singing, storytelling, and musical traditions have shaped the city's identity. Buildings here are adorned with sound-sculptures that transform wind into music, and the walls of homes bear carved narratives that tell stories in visual form. Windspeaker Liora Airsong's personal residence occupies a central platform, recognizable by the wind-harps mounted on its roof that play constantly in the breeze. The Kin-sense resonance of the quarter is extraordinary: warm, musical, and so rich with emotional resonance that visitors often find themselves moved to tears or laughter without understanding why.",
+    "exits": {
+      "east": 10300,
+      "south": 10303,
+      "west": 10306
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10303,
+    "name": "Sylarien - Dye Works",
+    "description": "The Dye Works occupy a series of platforms on the city's western edge, where the prevailing winds carry the chemical vapors away from the residential districts. Vats of dye in every imaginable color bubble and steam, tended by dyers whose hands and arms are permanently stained in the rainbow hues of their craft. The dyes are produced from sky-oak bark, mineral pigments imported from Stoneharbor, and botanical extracts from Timberdeep, creating a palette that is uniquely Sylarien. The most skilled dyers can produce fabrics that seem to change color with the viewer's mood, a technique that blends craft skill with subtle Kin-sense manipulation.",
+    "exits": {
+      "north": 10302,
+      "northeast": 10305
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10304,
+    "name": "Sylarien - Tanuki Bazaar",
+    "description": "The Tanuki community in Sylarien has established a bazaar that is half marketplace and half performance space. Stalls sell curiosities, clever toys, and the joke-trinkets that Tanuki artisans produce with loving mischief, while Tanuki performers entertain the crowds with illusions, acrobatics, and the absurdist comedy that is their people's art form. The Wild Static here is cheerful and chaotic, making wind-silk flutter in impossible patterns and causing lanterns to flash in rainbow sequences. Sylarien's residents consider the Tanuki Bazaar essential to the city's creative ecosystem, the controlled chaos feeding inspiration.",
+    "exits": {
+      "south": 10290,
+      "west": 10300
+    },
+    "flags": [
+      "safe",
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 10305,
+    "name": "Sylarien - Southern Residential",
+    "description": "The southern residential platforms of Sylarien house the city's mixed population of Hasura artisans, Human craftworkers, and the various specialists who keep the canopy city functioning. Homes here show the influence of the Guild Compact in their decoration: each building bears the symbols of its inhabitants' guild affiliations, and the seasonal governance rotation is reflected in the way decorations change with each new guild's term. The platforms look south over the forest canopy, and on quiet evenings the distant sound of the Amphitheater carries across the residential district, a reminder that in Sylarien, art is never far away.",
+    "exits": {
+      "north": 10291,
+      "west": 10293,
+      "southwest": 10303
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10306,
+    "name": "Sylarien - Western Bridge Head",
+    "description": "The western edge of Sylarien terminates at a bridge head that connects to the Aerithal canopy bridge via a series of intermediate platforms. The bridge descends slightly before climbing toward Aerithal's higher canopy, and the crossing offers the most dramatic views of any inter-city route: the forest floor three hundred feet below, the canopy stretching in every direction, and the sky above where Aerithal's observatory spire is visible against the clouds. A wind-silk canopy shelters waiting travelers, and a posting board lists bridge conditions and scheduled crossings.",
+    "exits": {
+      "east": 10302,
+      "northwest": 10449
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10400,
+    "name": "Great River Road - South of Custos",
+    "description": "The Great River Road leads south from Custos do Aeternos through rolling hills where farms spread across the rich bottomland on both sides of the Great River. The road is wide and well-maintained, packed earth reinforced with river gravel, and grain wagons are a constant presence heading north to the capital. Willows line the riverbank to the east, their trailing branches creating green curtains that flutter in the river breeze. The Water element is strong along the banks, a cool, flowing resonance that accompanies travelers like a quiet companion.",
+    "exits": {
+      "north": 10500,
+      "south": 10401
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10401,
+    "name": "Great River Road - Farmlands",
+    "description": "The road passes through the heart of Twin Rivers' agricultural belt, where wheat fields stretch golden to the horizon on both sides. Farm buildings of timber and thatch dot the landscape, and the distant figures of field workers move among the grain. The Great River is visible to the east as a silver thread between the willows, and barges loaded with grain drift north toward Custos. The air smells of ripe wheat, warm earth, and the faintly sweet scent of river water. Milestone markers show the distance to Greenford decreasing with each step south.",
+    "exits": {
+      "north": 10400,
+      "south": 10402,
+      "west": 10504
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10402,
+    "name": "Great River Road - River Bend",
+    "description": "The road curves to follow the Great River as it bends westward, the river widening here into a broad, slow stretch where fishing boats bob at anchor. A wayside inn with a thatched roof and a weathered signboard offers rest to travelers, its common room smelling of river fish stew and barley bread. The river bend creates a natural harbor where barges tie up overnight, their crews sharing the inn with road travelers. The light here is soft, filtered through the mist that perpetually rises from the slow-moving water.",
+    "exits": {
+      "north": 10401,
+      "south": 10403
+    },
+    "flags": [
+      "road",
+      "inn"
+    ]
+  },
+  {
+    "vnum": 10403,
+    "name": "Great River Road - Greenford Approaches",
+    "description": "The road straightens as it approaches Greenford, the farms becoming more frequent and the traffic heavier. Grain carts converge from side roads, and the distant sound of millstones grinding is the first sign of the town ahead. The Great River runs close to the road here, and the combined smell of flour dust and river water is unmistakable. Road-side vendors sell water and fruit to travelers making the last stretch, and the whitewashed towers of Greenford's grain silos are visible above the treetops ahead.",
+    "exits": {
+      "north": 10402,
+      "south": 10000
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10404,
+    "name": "Great River Road - Between Towns",
+    "description": "The road between Greenford and Forkmeet follows the Great River through increasingly wooded terrain, the farms giving way to forest that crowds close on both sides. The river is audible but not always visible through the trees, and the road surface shows less maintenance than the northern sections. Timber wagons heading north from Forkmeet share the road with grain barges being towed upstream by draft teams on the towpath. A carved stone marks the halfway point between the two towns, its surface worn smooth by the hands of travelers who touch it for luck.",
+    "exits": {
+      "north": 10019,
+      "south": 10405
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10405,
+    "name": "Great River Road - Forkmeet Approach",
+    "description": "The road descends toward Forkmeet as the valley opens and the convergence of the Great River and Highwater River becomes visible ahead. The sound of two rivers meeting fills the air with a deep, constant rush that grows louder with each step. Timber rafts are visible on both rivers, and the smoke from Forkmeet's chimneys rises above the trees ahead. The Water element intensifies noticeably here, a doubled resonance that water-attuned Kin describe as feeling their senses sharpen and expand. The road surface improves as Forkmeet's maintenance begins.",
+    "exits": {
+      "north": 10404,
+      "south": 10030
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10410,
+    "name": "Highwater River Road - Forkmeet East",
+    "description": "The road east from Forkmeet follows the Highwater River upstream, climbing gradually through a valley that narrows between rocky hills. The Highwater runs fast and clear beside the road, its cold mountain water a sharp contrast to the Great River's warmer flow. Birch and alder line the banks, their roots gripping the rocky soil, and the occasional rapids send spray across the road in windy weather. The transition from river valley to hill country is marked by the changing birdsong and the cooling air.",
+    "exits": {
+      "west": 10043,
+      "east": 10411
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10411,
+    "name": "Highwater River Road - The Narrows",
+    "description": "The valley narrows dramatically here, the hills pressing close on both sides and the Highwater River channeled into a deep, swift passage between rock walls. The road is cut into the hillside above the water, wide enough for single-file traffic only, and the roar of the confined river makes conversation difficult. This stretch is impassable during spring flood, when the Highwater rises to cover the road entirely. Carved warnings in Pekakarlik script advise travelers to check water levels before attempting the passage. Beyond the narrows, the valley opens again toward Stoneharbor.",
+    "exits": {
+      "west": 10410,
+      "east": 10412
+    },
+    "flags": [
+      "road",
+      "water"
+    ]
+  },
+  {
+    "vnum": 10412,
+    "name": "Highwater River Road - Stoneharbor Approach",
+    "description": "The road widens as the valley opens before Stoneharbor, and the first signs of the mining town appear: slag heaps, ore cart tracks crossing the road, and the orange glow of forge fires visible in the bluffs ahead. The Highwater runs deep and dark here, its surface reflecting the stone walls of the bluffs that rise steeply on both sides. The smell of forge smoke and hot metal carries on the breeze, and the distant ring of hammers on anvils provides a metallic counterpoint to the river's rush. Stoneharbor's River Bluff Gate is visible ahead, carved into the cliff face.",
+    "exits": {
+      "west": 10411,
+      "east": 10060
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10413,
+    "name": "Highwater River Road - Mountain Fork",
+    "description": "Above Stoneharbor the road forks, one branch continuing to follow the Highwater upstream while another turns south toward the Riverwind Heights. A signpost carved in Pekakarlik script indicates distances to Highspire, the Riverwind Heights druidic site, and back to Stoneharbor. The air is cooler here, the mountain influence strengthening as the road climbs. The Highwater narrows to a rushing stream, its banks lined with stunted pines and the grey-green scrub of the mountain foothills.",
+    "exits": {
+      "north": 10414,
+      "west": 10077,
+      "south": 10416
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10414,
+    "name": "Highwater River Road - Upper Valley",
+    "description": "The upper Highwater valley is a wild, beautiful stretch where the river tumbles over granite boulders in a series of cascades. The road climbs steeply, switchbacking up the valley wall as the terrain transitions from hill country to true mountains. Mountain goats watch from the ridgeline above, and hawks circle in the thermals that rise from the sun-warmed rock faces. The road is maintained but rough, better suited to foot and pack animal than wagon traffic. Ahead, the Whispering Slopes begin where the murmurs of ancient Giant wisdom become audible to those with Kin-sense.",
+    "exits": {
+      "south": 10413,
+      "north": 10422
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10416,
+    "name": "Riverwind Heights - Trail Head",
+    "description": "A trail branches west from the mountain road toward the Riverwind Heights, a series of moss-covered hills that rise above the Highwater valley west of Stoneharbor. The hills are green and rounded, their shapes softened by centuries of wind and rain into forms that druids consider sacred. The trail is marked with Circle of Deeproot symbols carved into stone posts, indicating that the Heights are under druidic protection. The view from here encompasses the Highwater valley and Stoneharbor's bluff-side buildings, smoke rising from the forges like grey ribbons.",
+    "exits": {
+      "north": 10413,
+      "west": 10417
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10417,
+    "name": "Riverwind Heights - Mossy Ridge",
+    "description": "The trail climbs to the ridge of the Riverwind Heights, where ankle-deep moss covers every surface in a carpet of emerald green. The hills here are dotted with ancient standing stones that predate every settlement in Twin Rivers, their purpose debated by scholars but their druidic significance unquestioned. The wind carries a loamy, green scent mixed with the mineral tang of the river far below. Druids from the Circle of Deeproot maintain a ritual site here, and the stones are often adorned with fresh offerings of herbs and carved wooden tokens. The Kin-sense resonance is Earth-dominant, deep and patient, with an undercurrent of Water from the rivers below.",
+    "exits": {
+      "east": 10416,
+      "west": 10418
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10418,
+    "name": "Riverwind Heights - Druidic Overlook",
+    "description": "The highest point of the Riverwind Heights offers a panoramic view of the Twin Rivers basin: the Great River and Highwater visible as silver threads winding through green valleys, the settlements of Stoneharbor, Forkmeet, and distant Greenford identifiable by their smoke plumes. The Circle of Deeproot has placed a permanent ward-stone here, its surface carved with elemental sigils that druids use as a focus for weather-reading and long-distance communication. On still mornings, the ritual site resonates with a deep hum that druids say is the voice of the land itself, speaking through the rivers and stone that form Twin Rivers' bones.",
+    "exits": {
+      "east": 10417
+    },
+    "flags": [
+      "altar"
+    ]
+  },
+  {
+    "vnum": 10420,
+    "name": "Whispering Slopes - Lower Path",
+    "description": "The path from Forkmeet climbs into the Whispering Slopes, a range of wind-scored hills between the river valley and the mountain approaches to Highspire. The name is literal: the wind through these hills carries sounds that some hear as murmured words, fragments of speech in a language that predates all known tongues. Scholars attribute the phenomenon to wind resonance through quartz-laced rock formations, but those with Kin-sense report perceiving structured thought in the whispers, as if Giants who once walked these slopes left their wisdom imprinted on the stone. The path is well-marked but unsettling, and locals do not travel it after dark.",
+    "exits": {
+      "north": 10041,
+      "south": 10421
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10421,
+    "name": "Whispering Slopes - The Murmuring Pass",
+    "description": "The pass through the heart of the Whispering Slopes is where the phenomenon is strongest. Winds funnel through a narrow gap between two hills, and the resulting sound is so clearly speech-like that travelers have been known to answer it before realizing no one spoke. The quartz veins in the rock glow faintly at dusk, and spectral presences have been reported by reliable witnesses: translucent figures of enormous size that walk the ridgeline and fade when approached. The Circle of Deeproot maintains ward-markers along the pass, not against the presences themselves, but against the disorientation that prolonged exposure to the whispers can cause.",
+    "exits": {
+      "north": 10420,
+      "south": 10422
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10422,
+    "name": "Whispering Slopes - Upper Path",
+    "description": "The upper slopes emerge from the most intense whispering zone into clearer air, the murmurs fading to a distant background hum. The terrain transitions here from the rounded, wind-sculpted hills of the Slopes to the harder rock of the mountain foothills that lead to Highspire. The path is steeper now, and the first mountain views appear: the Giant's Teeth visible as a jagged line against the northern sky, their peaks snow-capped even in summer. A waystone carved by Kovaka masons marks the boundary between the Slopes and the mountain approaches, its surface inscribed with both directions and a brief prayer for safe passage.",
+    "exits": {
+      "north": 10421,
+      "south": 10414,
+      "east": 10423
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10423,
+    "name": "Whispering Slopes - Highspire Approach",
+    "description": "The final stretch of road before Highspire's Mountain Gate climbs steeply along a ridge that offers views in every direction: the Whispering Slopes falling away to the west, the Giant's Teeth rising to the east, and the river valleys far below. The air is thin and cold, and the wind is persistent, carrying the clean scent of snow and pine from the peaks above. Mountain flowers bloom in sheltered crevices, their colors brilliant against the grey stone. The road narrows as it approaches the gate, the natural architecture of the mountain spur channeling travelers toward the settlement's single defensible entrance.",
+    "exits": {
+      "west": 10422,
+      "east": 10100
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10430,
+    "name": "Singing Ridges - Western Approach",
+    "description": "The path from Timberdeep emerges from the forest onto the Singing Ridges, a series of quartz-veined hills that once hummed with a melodic resonance attributed to Giant craftsmanship from the Age of Giants. The ridges are beautiful in a stark way, their surfaces pale with exposed quartz that sparkles in sunlight, and the wind that crosses them carries a quality of sound that is unique to this place. But something has changed: the singing that gave the ridges their name has fallen silent in recent seasons, a silence that the Circle of Deeproot considers deeply alarming. The path crosses the westernmost ridge, where druid deep-markers stand like sentinels on either side.",
+    "exits": {
+      "west": 10443,
+      "east": 10431,
+      "southwest": 10133
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10431,
+    "name": "Singing Ridges - Crystal Hollow",
+    "description": "A natural amphitheater in the central ridge where the quartz formations are densest and the acoustic properties most remarkable. When the ridges sang, this hollow was the epicenter, its crystalline walls amplifying the wind's melody into a harmonious chorus that could be heard for miles. Now the hollow is silent except for the ordinary whistle of wind through rock, and the absence is felt as a physical weight by those with Kin-sense. Druids have examined the crystal formations and found no physical change, which makes the silence more troubling, not less. Something in the elemental resonance has shifted, and no one can explain why.",
+    "exits": {
+      "west": 10430,
+      "east": 10432
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10432,
+    "name": "Singing Ridges - Eastern Ridge",
+    "description": "The easternmost Singing Ridge overlooks the deep forest that stretches toward Aerithal's canopy, the treetops visible as a dark green sea from this elevation. The ridge path descends through scrubby vegetation toward the Windweave Forest Road below, connecting the ridges to the network of paths between the canopy cities and ground-level settlements. From here, the full extent of the Singing Ridges is visible, a line of pale quartz hills running north to south through the darker landscape. The silence of the ridges is most striking from this vantage, where the wind should carry the sound of the Crystal Hollow's resonance but carries only empty air.",
+    "exits": {
+      "west": 10431,
+      "south": 10435
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10433,
+    "name": "Singing Ridges - Wind Lord's Terrace",
+    "description": "At the highest point of the central ridge stands a terrace of worked stone that is unmistakably Giant-crafted: its proportions too large for any mortal builder, its stonework too precise for anything but the greatest artisans of the Age of Giants. The terrace was built as an offering to the Wind Lord, and the Singing Ridges' resonance was designed to please that elemental power. The druid deep-markers here are the oldest in the region, their symbols worn but still legible, and the Circle of Deeproot treats this place with a reverence that borders on fear. The silence here is loudest: a void where something vast once sang.",
+    "exits": {
+      "east": 10125
+    },
+    "flags": [
+      "altar"
+    ],
+    "effects": [
+      {
+        "type": "rune_circle",
+        "state": "dormant",
+        "attunement": "wind",
+        "power": "amplify",
+        "study_dc": 22,
+        "activate_dc": 20
+      }
+    ]
+  },
+  {
+    "vnum": 10434,
+    "name": "Windweave Forest Road - Near Timberdeep",
+    "description": "A ground-level path winds through the Windweave Forest between Timberdeep and the base camps of the canopy cities. The sky-oaks here are enormous, their trunks wider than houses and their canopy three hundred feet overhead, filtering the sunlight to a green-gold twilight. The forest floor is carpeted with moss and ferns, and the air is rich with the scent of decomposing leaves and living wood. The path is marked by druid carvings on the tree trunks, and the canopy above grows darker and thicker with each step deeper into the forest. Ground-level travelers report feeling small here, dwarfed by the scale of the ancient trees.",
+    "exits": {
+      "west": 10137,
+      "east": 10435
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10435,
+    "name": "Windweave Forest Road - Deep Forest",
+    "description": "The forest road enters a section where the canopy is so thick that the forest floor exists in perpetual twilight. Bioluminescent fungi provide faint blue-green light along the path, and the sounds of the upper canopy are muffled by the sheer mass of vegetation overhead. The sky-oaks here are among the oldest in the forest, their bark scarred by centuries and their roots creating a maze of ridges and hollows across the forest floor. The path connects to the base camps from which the canopy lift stations provide access to the cities above. The Kin-sense resonance is dense, layered, ancient: the combined life force of trees that have stood since before any settlement was founded.",
+    "exits": {
+      "west": 10434,
+      "east": 10436,
+      "north": 10432,
+      "south": 10450
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10436,
+    "name": "Windweave Forest Road - Canopy Base Camp",
+    "description": "A clearing in the deep forest serves as the base camp for travelers heading to the canopy cities. Simple shelters and a watering station are maintained here, and the massive cables and counterweight mechanisms of the Liraveth canopy lift are visible above, rising through the canopy like the rigging of some impossible ship. Ground-level traders store goods here for transport up, and descending travelers rest before continuing their journey. The clearing is one of the few places in the deep forest where direct sunlight reaches the ground, and the sudden brightness is almost startling after the twilight of the forest path.",
+    "exits": {
+      "west": 10435,
+      "east": 10437
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 10437,
+    "name": "Windweave Forest Road - Eastern Deep",
+    "description": "The forest road continues east past the base camp into even older growth, where the sky-oaks give way in places to the rare ironwood trees whose dense timber is among the most valuable commodities in Twin Rivers. The path narrows as it penetrates deeper, and the sounds of the forest change: birdsong gives way to the creaking of ancient branches and the rustle of unseen creatures in the undergrowth. The Aetherial Veil is invisible from the forest floor here, blocked by the immense canopy, but its influence can be felt as a faint tingling pressure on Kin-sense. The road eventually connects to the approaches to Aerithal's ground station.",
+    "exits": {
+      "west": 10436,
+      "north": 10502
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10440,
+    "name": "Mountain Approaches - Lower Pass",
+    "description": "The mountain path from Highspire enters the Giant's Teeth through a narrow pass between two towering peaks. The rock here is volcanic basalt veined with obsidian, and the air carries a faint sulfurous tang from distant thermal vents. The pass is the primary route between Twin Rivers and the eastern regions, and despite its difficulty it sees regular traffic from traders, messengers, and the occasional adventurer heading deeper into the mountains. Stone cairns mark the path where snow might obscure it, and emergency shelters built into the rock face provide refuge from the sudden storms that sweep the peaks.",
+    "exits": {
+      "north": 10112,
+      "south": 10441,
+      "east": 10443
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10441,
+    "name": "Mountain Approaches - Volcanic Shelf",
+    "description": "A broad shelf of volcanic rock provides a resting point along the mountain pass, its surface warmed by thermal vents that make the stone comfortable to sit on even in winter. Sulfurous steam rises from cracks in the rock, and the air has a mineral bite that catches in the throat. The view from the shelf encompasses the pass in both directions, and on clear days the Twin Rivers basin is visible to the northwest as a patchwork of green and silver far below. Pekakarlik geologists have studied the thermal activity here and declared it stable, but the mountain has its own opinions about stability.",
+    "exits": {
+      "north": 10440,
+      "south": 10442
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10442,
+    "name": "Mountain Approaches - High Pass",
+    "description": "The highest point of the pass through the Giant's Teeth is a wind-blasted saddle between two peaks where the air is thin enough to leave lowlanders gasping. The wind is ferocious here, channeled by the peaks into a constant gale that has scoured the rock smooth. On the rare calm days, the silence is absolute, broken only by the distant cry of mountain eagles. The pass marks the boundary of Twin Rivers' territory, and a stone boundary marker carved in multiple languages announces this to travelers heading in either direction. Beyond lies the descent toward Kinsweave and the eastern regions.",
+    "exits": {
+      "north": 10441,
+      "south": 10501
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10443,
+    "name": "Mountain Approaches - Eagle's Perch",
+    "description": "A side path from the lower pass leads to a rocky outcropping known as Eagle's Perch, where mountain eagles nest in crevices and the view is said to be the finest in the Giant's Teeth. The perch overlooks the entire approach from the Twin Rivers side, and it was used as a signal station during the Deceivers' War. The stone here bears scorch marks from the signal fires, and rusted iron brackets still hold the remnants of a beacon platform. The eagles have reclaimed the perch since the war's end, and they regard human visitors with the imperious tolerance of creatures who know they own the sky.",
+    "exits": {
+      "west": 10440,
+      "east": 10430
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10445,
+    "name": "Canopy Bridge - Liraveth to Sylarien",
+    "description": "The canopy bridge between Liraveth and Sylarien is a masterwork of combined engineering, three hundred feet of living-wood walkway supported by Pekakarlik iron cables anchored to the mightiest sky-oaks of both groves. The bridge sways gently with the wind, its movement controlled by tension systems that prevent dangerous oscillation. The walk across takes several minutes and offers views that no ground-level traveler ever experiences: the forest canopy spreading in every direction like a green ocean, the rivers glinting far below, and the sky above close enough to touch. Wind-silk railings provide safety, and small shelters at the midpoint offer rest during storms.",
+    "exits": {
+      "east": 10222,
+      "west": 10446
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10446,
+    "name": "Canopy Bridge - Sylarien East Span",
+    "description": "The eastern span of the Sylarien bridge extends from the city toward the intermediate platform that connects to the Liraveth bridge network. This section of the bridge passes through the canopy of a grove of particularly old sky-oaks, and the branches form a natural tunnel that filters the wind and creates a sheltered passage. Birds nest in the bridge's structural members, adding their song to the ever-present sound of wind through the canopy. The living-wood walkway flexes perceptibly underfoot, a sensation that newcomers find alarming but residents describe as the bridge breathing.",
+    "exits": {
+      "east": 10445,
+      "west": 10290
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10447,
+    "name": "Canopy Bridge - Liraveth to Aerithal",
+    "description": "The bridge between Liraveth and Aerithal climbs as it extends northward, reflecting the higher elevation of Aerithal's canopy. The ascent is gradual but noticeable, and the bridge's construction compensates with a slight staircase quality to the walkway. The view during the crossing is breathtaking: the entire Windweave Forest canopy stretches below, and Aerithal's observatory spire is visible ahead, rising above the treetops like a finger pointing at the stars. The bridge is busy with traffic between the two cities' scholarly communities, and researchers crossing with armloads of scrolls and charts are a common sight.",
+    "exits": {
+      "south": 10225,
+      "north": 10448
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10448,
+    "name": "Canopy Bridge - Aerithal South Landing",
+    "description": "The final span of the Liraveth-Aerithal bridge arrives at a landing platform on Aerithal's southern edge, where the higher canopy makes the transition from bridge to city feel like ascending from one world to another. The air is cooler and cleaner at this elevation, and the constant wind carries the distinctive ozone scent of Aerithal's research quarter. A way-station provides refreshment and information for arriving travelers, and the Starwind Promenade is visible as a ribbon of activity extending northward into the city. The bridge behind stretches south toward Liraveth like a thread connecting two green worlds.",
+    "exits": {
+      "south": 10447,
+      "north": 10250
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10449,
+    "name": "Canopy Bridge - Aerithal to Sylarien",
+    "description": "The bridge connecting Aerithal and Sylarien takes the longest and most scenic route of the three inter-city connections, curving through open sky between the two groves. The bridge descends from Aerithal's height to Sylarien's slightly lower canopy, and the walk offers a gradual change in the ambient sound: from Aerithal's contemplative quiet to the first distant notes of Sylarien's ever-present music. Midway across, a wider platform allows travelers to pause and take in the full panorama of the three canopy cities, the Singing Ridges to the south, and on exceptional days the glint of the Great River far to the west.",
+    "exits": {
+      "northeast": 10273,
+      "southeast": 10306
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10450,
+    "name": "Shadeharm Glade Approach - Edge of Twilight",
+    "description": "The path south from the deep forest enters a region where the light changes abruptly, the normal green-gold twilight of the Windweave giving way to a permanent grey dusk that no amount of sunlight seems to penetrate. The trees here are different: twisted, dark-barked, their branches bare despite the season. A dissonant hum is audible at the edge of perception, a sound that makes Kin-sense users flinch with its wrongness. Circle of Deeproot wards line the path, their sigils glowing with active power, and the message is clear: this is as far as any sensible person should go. Ahead lies Shadeharm Glade, sealed by druidic power against whatever corruption lurks within.",
+    "exits": {
+      "north": 10435,
+      "south": 10451
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10451,
+    "name": "Shadeharm Glade Approach - The Sealed Path",
+    "description": "The path ends at a wall of living thorns, deliberately grown and maintained by the Circle of Deeproot to seal the approach to Shadeharm Glade. The thorns are thick as a Human's arm and bear leaves of an unhealthy black-green that seems to absorb light. Beyond the barrier, glimpses of the Glade are visible through gaps in the thorns: a valley shrouded in permanent twilight where the trees stand dead and the ground is covered in grey ash. The dissonant hum is stronger here, a pressure on Kin-sense that feels like listening to a conversation conducted in a language specifically designed to cause pain. The druidic wards burn brightest at this point, and the message they convey is unambiguous: do not enter.",
+    "exits": {
+      "north": 10450
+    },
+    "flags": []
+  },
+  {
+    "vnum": 10500,
+    "name": "Great River Road - Southern Custos Crossroads",
+    "description": "A major crossroads where the Great River Road meets the southern approaches to Custos do Aeternos. A stone marker carved with the arms of the capital points north toward the city gates, while the road south stretches toward the farmlands and settlements of Twin Rivers. Travelers, merchants, and military patrols converge here, creating a busy intersection that serves as the unofficial boundary between the capital's territory and the wider region. The Great River is visible to the east, broad and slow, carrying the commercial traffic that binds the region together.",
+    "exits": {
+      "south": 10400,
+      "east": 4008
+    },
+    "flags": [
+      "road",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10501,
+    "name": "Giant's Teeth - Eastern Pass Descent",
+    "description": "The eastern descent from the Giant's Teeth pass leads down through increasingly gentle terrain toward the distant plains of the Kinsweave region. The volcanic rock gives way to sedimentary stone and eventually to soil, and the harsh mountain vegetation softens into scrubby grassland. The wind at this elevation carries scents from the east: grassland, distant woodsmoke, and the dry mineral tang of the Kinsweave plateau. The boundary marker at the pass above is the last sign of Twin Rivers' territory, and travelers heading east are reminded to carry sufficient supplies for the crossing.",
+    "exits": {
+      "north": 10442,
+      "east": 5000
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10502,
+    "name": "Northern Forest Road - Future Connection",
+    "description": "The northern road from the Windweave Forest fades into an unmaintained track that disappears into the wild forests beyond Twin Rivers' settled territory. Druid deep-markers warn of untamed wilderness ahead, and the trees here have a wilder, more ancient quality than the managed forests near the settlements. The road is little more than a suggestion, its surface overgrown and its markers faded. Future development may extend Twin Rivers' reach in this direction, but for now the northern forest remains unexplored territory, its depths home to creatures and forces that the Circle of Deeproot monitors but does not attempt to control.",
+    "exits": {
+      "south": 10437,
+      "west": 13079
+    },
+    "flags": [
+      "road"
+    ]
+  },
+  {
+    "vnum": 10503,
+    "name": "Windweave Canopy Descent",
+    "description": "The great canopy lift platform serves as the primary connection between the ground-level settlements and the canopy cities three hundred feet above. The platform is a broad disc of living-wood reinforced with Pekakarlik iron framing, large enough to carry a dozen passengers and their cargo. The counterweight mechanism operates smoothly, the platform rising or descending at a steady pace that allows passengers to watch the forest layers pass: ground ferns, trunk-level moss and fungi, the first branching canopy, and finally the bright upper world of leaves and sky. The transition between ground and canopy is a journey between worlds, each level with its own ecology, its own light, and its own sounds.",
+    "exits": {
+      "down": 10134,
+      "up": 10200
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 10504,
+    "name": "Great River Road - Western Junction",
+    "description": "A junction on the Great River Road where a lesser track branches west toward the territories of the Chainless Legion enclaves. The main road continues its north-south course between Custos and Greenford, but this western fork sees steady traffic from the trade envoys who manage the sensitive commerce between Twin Rivers' settlements and the Chainless communities. A small waypost manned by a single guard maintains a traveler's log, noting the passage of legitimate traders while watching for smugglers and trouble. The track west is rougher than the main road but passable in all seasons.",
+    "exits": {
+      "east": 10401
+    },
+    "flags": [
+      "road"
+    ]
+  }
+]

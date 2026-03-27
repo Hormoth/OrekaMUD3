@@ -52,7 +52,7 @@ class OrekaWorld:
         area_dir = os.path.join("data", "areas")
         for filename in os.listdir(area_dir):
             if filename.endswith(".json"):
-                with open(os.path.join(area_dir, filename), "r") as f:
+                with open(os.path.join(area_dir, filename), "r", encoding="utf-8") as f:
                     try:
                         data = json.load(f)
                         # Support both list-of-rooms and {"rooms": [...]} formats
@@ -67,7 +67,7 @@ class OrekaWorld:
                         print(f"Error loading {filename}: {e}")
 
         # Load mobs from JSON
-        with open(os.path.join("data", "mobs.json"), "r") as f:
+        with open(os.path.join("data", "mobs.json"), "r", encoding="utf-8") as f:
             mobs_data = json.load(f)
         for mob_data in mobs_data:
             mob = Mob(**{k: v for k, v in mob_data.items() if k != "room_vnum"})

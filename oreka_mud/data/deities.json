@@ -1,0 +1,427 @@
+{
+  "lord_of_stone": {
+    "name": "Lord of Stone, The Patient Foundation",
+    "type": "elemental_lord",
+    "alignment": "Lawful Neutral",
+    "domains": [
+      "Earth",
+      "Protection",
+      "Strength"
+    ],
+    "portfolio": "Earth, endurance, patience, craft",
+    "favored_weapon": "Warhammer",
+    "element": "earth",
+    "player_name": null,
+    "shrine_vnums": [
+      1001,
+      5042,
+      8115,
+      12074
+    ],
+    "prayer_buff": {
+      "type": "endurance",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Con": 2
+      },
+      "resist": {
+        "acid": 5
+      },
+      "description": "The earth beneath you hums with ancient patience."
+    },
+    "holy_symbol": "Granite fist",
+    "description": "The eldest Elemental Lord whose attention shaped stone and mountain."
+  },
+  "lady_of_fire": {
+    "name": "Lady of Fire, The Eternal Forge",
+    "type": "elemental_lord",
+    "alignment": "Chaotic Neutral",
+    "domains": [
+      "Fire",
+      "Destruction",
+      "War"
+    ],
+    "portfolio": "Fire, passion, destruction, renewal",
+    "favored_weapon": "Flaming sword",
+    "element": "fire",
+    "player_name": null,
+    "shrine_vnums": [
+      1002,
+      8004,
+      8125,
+      5124
+    ],
+    "prayer_buff": {
+      "type": "strength",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Str": 2
+      },
+      "resist": {
+        "fire": 5
+      },
+      "description": "Heat rises from the altar, filling your muscles with fiery resolve."
+    },
+    "holy_symbol": "Ember spiral",
+    "description": "The Lady whose forge burns at the heart of every volcano."
+  },
+  "lady_of_the_sea": {
+    "name": "Lady of the Sea, The Tempest Mother",
+    "type": "elemental_lord",
+    "alignment": "Neutral",
+    "domains": [
+      "Water",
+      "Weather",
+      "Travel"
+    ],
+    "portfolio": "Oceans, storms, journeys, depths",
+    "favored_weapon": "Trident",
+    "element": "water",
+    "player_name": null,
+    "shrine_vnums": [
+      1003,
+      5146,
+      6046,
+      9204
+    ],
+    "prayer_buff": {
+      "type": "protection",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {},
+      "resist": {
+        "cold": 5
+      },
+      "description": "Salt spray and calm settle over you like a protective tide."
+    },
+    "holy_symbol": "Cresting wave",
+    "description": "She who commands the tides and shelters those upon the water."
+  },
+  "youngest_brother": {
+    "name": "The Youngest Brother, Lord of Wind",
+    "type": "elemental_lord",
+    "alignment": "Chaotic Good",
+    "domains": [
+      "Air",
+      "Luck",
+      "Trickery"
+    ],
+    "portfolio": "Wind, freedom, luck, music",
+    "favored_weapon": "Shortbow",
+    "element": "wind",
+    "player_name": null,
+    "shrine_vnums": [
+      1004,
+      10433,
+      7000,
+      12086
+    ],
+    "prayer_buff": {
+      "type": "insight",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Dex": 2
+      },
+      "resist": {
+        "electricity": 5
+      },
+      "description": "A playful breeze swirls around you, sharpening your reflexes."
+    },
+    "holy_symbol": "Feather caught in a spiral",
+    "description": "The exiled Wind Lord whose essence still sustains the Aetherial Veil."
+  },
+  "dagdan": {
+    "name": "Dagdan, The United Sun",
+    "type": "ascended",
+    "alignment": "Lawful Good",
+    "domains": [
+      "Sun",
+      "Good",
+      "Magic",
+      "Strength"
+    ],
+    "portfolio": "Unity, light, law, knowledge",
+    "favored_weapon": "Longsword",
+    "element": "all",
+    "player_name": null,
+    "shrine_vnums": [
+      1000,
+      4026
+    ],
+    "prayer_buff": {
+      "type": "protection",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "all_saves": 1
+      },
+      "resist": {},
+      "description": "Golden light envelops you, steadying your resolve."
+    },
+    "holy_symbol": "Golden sun with four elemental rays",
+    "description": "The first to prove that mortal will could touch the divine."
+  },
+  "harreem": {
+    "name": "Harreem, The Golden Rose",
+    "type": "ascended",
+    "alignment": "Chaotic Neutral",
+    "domains": [
+      "Chaos",
+      "Destruction",
+      "War"
+    ],
+    "portfolio": "Revenge, retribution, music, justice",
+    "favored_weapon": "Thorned whip",
+    "element": null,
+    "player_name": null,
+    "shrine_vnums": [
+      4143
+    ],
+    "prayer_buff": {
+      "type": "strength",
+      "amount": null,
+      "duration_rounds": 50,
+      "stat_bonus": {
+        "Str": 2,
+        "attack": 1
+      },
+      "resist": {},
+      "description": "Thorns of golden light wind around your arms. Vengeance stirs."
+    },
+    "holy_symbol": "Golden rose with bloody thorns",
+    "description": "She who judged the twelve kings and found them wanting."
+  },
+  "kailea": {
+    "name": "Kaile'a, Mistress of Waves",
+    "type": "ascended",
+    "alignment": "Neutral Good",
+    "domains": [
+      "Water",
+      "Healing",
+      "Community"
+    ],
+    "portfolio": "Water, trade, community, mercy",
+    "favored_weapon": "Trident",
+    "element": "water",
+    "player_name": null,
+    "shrine_vnums": [
+      4007,
+      4029,
+      5076,
+      5146,
+      6016,
+      6046,
+      6080,
+      6141,
+      6145
+    ],
+    "prayer_buff": {
+      "type": "healing",
+      "amount": "2d8+5",
+      "duration_rounds": 0,
+      "stat_bonus": {},
+      "resist": {},
+      "description": "Warm water energy washes over you, mending flesh and purging poison."
+    },
+    "holy_symbol": "Silver wave crest",
+    "description": "Most beloved of the Ascended, who taught that water heals what fire cannot."
+  },
+  "cinvarin": {
+    "name": "Cinvarin, The Five Witnesses",
+    "type": "ascended",
+    "alignment": "Neutral Good",
+    "domains": [
+      "Protection",
+      "Community",
+      "Magic"
+    ],
+    "portfolio": "Unity, sacrifice, elemental harmony, memory",
+    "favored_weapon": "Quarterstaff",
+    "element": "all",
+    "player_name": null,
+    "shrine_vnums": [
+      4027,
+      4128,
+      4154,
+      6025,
+      10131
+    ],
+    "prayer_buff": {
+      "type": "protection",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "all_saves": 2
+      },
+      "resist": {
+        "fire": 3,
+        "cold": 3,
+        "acid": 3,
+        "electricity": 3
+      },
+      "description": "Five spectral figures shimmer around you, their protection a gift of sacrifice."
+    },
+    "holy_symbol": "Five interlocking rings",
+    "description": "Five druids who melted a mountain to save the world. Their names are still recited."
+  },
+  "semyon": {
+    "name": "Semyon, The Hearth Mother",
+    "type": "ascended",
+    "alignment": "Neutral Good",
+    "domains": [
+      "Healing",
+      "Protection",
+      "Community"
+    ],
+    "portfolio": "Family, healing, hearth, comfort",
+    "favored_weapon": "None",
+    "element": null,
+    "player_name": null,
+    "shrine_vnums": [
+      4021,
+      4030,
+      4034,
+      5043,
+      5182
+    ],
+    "prayer_buff": {
+      "type": "healing",
+      "amount": "3d6+3",
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Con": 2
+      },
+      "resist": {},
+      "description": "The scent of hearth-smoke and warm bread fills the air. You feel safe."
+    },
+    "holy_symbol": "Warm hearthstone",
+    "description": "Worshipped at every hearth. Her promise: family is defined by love, not blood."
+  },
+  "apela_kelsoe": {
+    "name": "Apela Kelsoe, The Windrider",
+    "type": "ascended",
+    "alignment": "Chaotic Good",
+    "domains": [
+      "Air",
+      "Travel",
+      "Luck"
+    ],
+    "portfolio": "Air, travel, luck, freedom",
+    "favored_weapon": "Shortbow",
+    "element": "wind",
+    "player_name": null,
+    "shrine_vnums": [
+      4028,
+      10433,
+      12086
+    ],
+    "prayer_buff": {
+      "type": "insight",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Dex": 2
+      },
+      "resist": {},
+      "description": "The wind picks up, carrying the scent of distant roads and fortune."
+    },
+    "holy_symbol": "Feather with windtrail",
+    "description": "Patron of travelers and the lucky. Canopy cities worship with fervor."
+  },
+  "ludus_galerius": {
+    "name": "Ludus Galerius, Stone's Hand",
+    "type": "ascended",
+    "alignment": "Neutral Good",
+    "domains": [
+      "Earth",
+      "Strength",
+      "Travel"
+    ],
+    "portfolio": "Endurance, travel, stone, honor",
+    "favored_weapon": "Warhammer",
+    "element": "earth",
+    "player_name": null,
+    "shrine_vnums": [
+      4031,
+      5009,
+      10105,
+      7112
+    ],
+    "prayer_buff": {
+      "type": "endurance",
+      "amount": null,
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Str": 2,
+        "Con": 2
+      },
+      "resist": {},
+      "description": "Your feet feel rooted, your back unbowed. The mountain endures, and so do you."
+    },
+    "holy_symbol": "Cairn of three stones",
+    "description": "God of mountain passes and those who endure. His cairns mark every trail."
+  },
+  "gonmareck_ritler": {
+    "name": "Gonmareck Ritler, The Anvil Saint",
+    "type": "ascended",
+    "alignment": "Lawful Good",
+    "domains": [
+      "Fire",
+      "War",
+      "Law"
+    ],
+    "portfolio": "Smithing, honor, discipline, tactics",
+    "favored_weapon": "Warhammer",
+    "element": "fire",
+    "player_name": null,
+    "shrine_vnums": [
+      4032,
+      10065,
+      8024
+    ],
+    "prayer_buff": {
+      "type": "strength",
+      "amount": null,
+      "duration_rounds": 80,
+      "stat_bonus": {
+        "Str": 2,
+        "attack": 1
+      },
+      "resist": {
+        "fire": 5
+      },
+      "description": "The ring of hammer on anvil echoes in your bones. Strike true."
+    },
+    "holy_symbol": "Anvil with flame",
+    "description": "God of smiths and disciplined warriors. His anvil-altar binds apprentice oaths."
+  },
+  "hand_unanswered": {
+    "name": "The Hand Unanswered",
+    "type": "ascended",
+    "alignment": "Neutral Good",
+    "domains": [
+      "Healing",
+      "Protection"
+    ],
+    "portfolio": "Compassion, martyrdom, innocent suffering",
+    "favored_weapon": "None",
+    "element": null,
+    "player_name": null,
+    "shrine_vnums": [],
+    "prayer_buff": {
+      "type": "healing",
+      "amount": "1d8+1",
+      "duration_rounds": 100,
+      "stat_bonus": {
+        "Will": 2
+      },
+      "resist": {},
+      "description": "A small, warm hand seems to touch yours. Tears come unbidden."
+    },
+    "holy_symbol": "Small open hand token",
+    "description": "The dying child of Aldenheim who ascended through innocent suffering. Worship is private and heartbreaking."
+  }
+}

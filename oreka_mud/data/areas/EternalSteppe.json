@@ -1,0 +1,2272 @@
+[
+  {
+    "vnum": 7000,
+    "name": "Windstone Circle",
+    "description": "The Great Windstone stands eighteen feet tall at the exact center of Tavranek, its pale granite veined with quartz that glows amber-white on clear nights, visible for miles across the open steppe. The paving around it is flat river-stone worn smooth by generations of boots, council debates, sentencing hearings, and the annual Wind Gathering that brings every Headman to this place. The stone's rune-circle pulses with a warmth that Kin-sense perceives as a deep, grounded resonance â€” the Lord of Stone's patient attention, or the Giants' lasting craft, or both. Every major decision affecting the Mytrone people is made here, the stone a witness that remembers.",
+    "exits": {
+      "north": 7001,
+      "east": 7002,
+      "south": 7003,
+      "west": 7004,
+      "northeast": 7210
+    },
+    "flags": [
+      "safe",
+      "altar",
+      "market"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "amplified",
+        "message": "Your Kin-sense is crystal clear here. The Great Windstone amplifies all resonance."
+      }
+    ]
+  },
+  {
+    "vnum": 7001,
+    "name": "North Wind Road",
+    "description": "The North Wind Road radiates from the Windstone Circle toward the desert trading gates, its surface packed earth hardened by years of hoof-traffic into something close to stone. Merchant camps pitch along the road's eastern side in trading season, their wagon-circles forming temporary neighborhoods that appear and dissolve with the caravan schedule. The wind comes straight down this road from the north on clear days, carrying the desert's dry breath into the city's heart. Mytrone riders orient themselves by this wind instinctively â€” even indoors, they know the direction of the Wind Road.",
+    "exits": {
+      "south": 7000,
+      "north": 7005
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7002,
+    "name": "East Wind Road - Far Rider Approach",
+    "description": "The East Wind Road connects the Windstone Circle to the Far Rider Yards, and the traffic on it is dominated by mounted cavalry in full gear and the support staff who keep them operational. The sound of hooves on packed earth and the smell of horses is constant on this road, and even during quiet hours the road carries the energy of a military installation operating at routine readiness. A rack of signal-torches is maintained at the road's midpoint for night-emergency use, and the duty-roster board at the Far Rider Yards end is updated twice daily.",
+    "exits": {
+      "west": 7000,
+      "east": 7006
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7003,
+    "name": "South Wind Road - Pasua Embassy Approach",
+    "description": "The South Wind Road leads from the Windstone Circle to the Pasua Quarter and the southern approaches to the steppe's crescent forests. The road's character changes subtly within a hundred yards of the Circle â€” the packed earth gives way to a surface mixed with fine gravel that Pasua community members prefer for the quieter footfall, and the planted hedgerow along the road's west side is maintained in the Pasua tradition of living architecture rather than cut stone or timber. The smell of the Pasua Quarter's herb garden is detectable from the road on warm afternoons.",
+    "exits": {
+      "north": 7000,
+      "south": 7007
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7004,
+    "name": "West Wind Road",
+    "description": "The West Wind Road runs from the Windstone Circle toward the outer ring of Tavranek's wagon-wheel layout, the Horse Market district visible at its far end. The road is the most commercially active spoke, handling the movement of horses between the Market and the outlying camps' staging areas. The sound of the Horse Market is audible from here â€” the distinctive combination of a lot of horses moving in an organized space, overlaid with the calls of the Halfling auctioneer whose family has run the Market for four generations. The ground here shows the damage that generations of shod hooves cause to any surface.",
+    "exits": {
+      "east": 7000,
+      "west": 7008
+    },
+    "flags": [
+      "safe",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7005,
+    "name": "Tavranek - North Gate and Desert Road",
+    "description": "The north gate of Tavranek opens onto the road to the desert border and the trade routes that link the Eternal Steppe to the Infinite Desert's oasis-cities. The gate is double-paneled timber reinforced with iron, functional rather than imposing, and the guards here maintain both a travel log and a current road-condition report updated by each incoming traveler. Caravans from the desert arrive through this gate on the seasonal schedule that defines Teshen Halt's commercial identity, and the Halfling caravan-brokers who work the desert trade are familiar faces to the gate's duty guards. The desert wind is a different quality than the steppe wind â€” drier, hotter, carrying fine mineral dust.",
+    "exits": {
+      "south": 7001,
+      "north": 7200
+    },
+    "flags": [
+      "gate",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7006,
+    "name": "Far Rider Yards - Main Gate",
+    "description": "The entrance to the Far Rider Yards is marked by a carved gate-post bearing the Far Rider device â€” a lancer on a galloping horse, carved in a style that conveys speed even in still stone. Visitors may observe from the outer fence but enter only with a Far Rider's escort; the Yards are a working military installation, not a public attraction. The sounds from within the fence are a constant education in cavalry training: the rhythmic thunder of the charge-course, the flat crack of archery targets being struck, the grunted exertion of horseback grappling in the sand arena. The smell of horses and leather and the mineral tang of the arena sand is unmistakable.",
+    "exits": {
+      "west": 7002,
+      "in": 7009
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7007,
+    "name": "Pasua Quarter - South Wind Road",
+    "description": "The Pasua Quarter's main lane branches off the South Wind Road, the vine-draped platforms of Pasua buildings visible above the hedge-line. The quarter has maintained a permanent presence in Tavranek since the Concordant era, and its integration into the city's daily life is complete and easy â€” Mytrone wind-dances performed here to Pasua flute accompaniment, Pasua songs sung in the Mytrone oral-history style. The cultural cross-pollination is most visible in the bardic school at the quarter's center, where both peoples' storytelling traditions are explicitly combined rather than merely tolerated side by side.",
+    "exits": {
+      "north": 7003,
+      "east": 7010
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7008,
+    "name": "Horse Market - Outer Approach",
+    "description": "The approach to Tavranek's Horse Market is announced by the smell long before the eye can take in the scale: hundreds of horses in a well-managed space, their combined presence creating an olfactory landscape that riders find calming and those unfamiliar with horses find overwhelming. The outer approach has observation rails where buyers can watch horses being led up for preliminary evaluation before the formal auction. Camp representatives from every Mytrone settlement bring horses here for the seasonal fairs, and buyers from as far as the Twin Rivers and Tidebloom Reach make the journey specifically for a certified Mytrone steppe-horse.",
+    "exits": {
+      "east": 7004,
+      "north": 7011,
+      "south": 7012
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 7009,
+    "name": "Far Rider Yards - Training Ground",
+    "description": "The central training ground of the Far Rider Yards is a large open space divided into three sections: the mounted archery range to the north, the lance-charge course to the east, and the sand-floored arena at the center where riders compete in horseback grappling â€” the Mytroan martial art that doubles as combat training and entertainment. The morning training session is underway, the sound of commands and the disciplined thunder of horses running the charge-course filling the compound. Far Rider veterans supervise apprentices with the precise brevity of instructors who have distilled years of experience into the minimum necessary words.",
+    "exits": {
+      "out": 7006,
+      "north": 7013,
+      "east": 7014
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7010,
+    "name": "Pasua Quarter - Bardic School",
+    "description": "The bardic school in the Pasua Quarter is where the Mytrone oral-history tradition and Pasua song-craft most formally meet. Students from both peoples attend, learning each other's techniques under instructors who are themselves products of the cross-pollination. The school produces bards who can perform in the storytelling contest style that Mytrone culture prizes and in the melodic song tradition that Pasua culture maintains, often simultaneously â€” the combination is not a compromise but a synthesis that neither tradition could have developed alone. The school's alumni travel widely, carrying both traditions as a unified art.",
+    "exits": {
+      "west": 7007,
+      "south": 7015
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7011,
+    "name": "Horse Market - Auction Floor",
+    "description": "The auction floor is where the Halfling auctioneer conducts the formal sales that govern Tavranek's primary export economy. Horses are led in at a walk, evaluated by the crowd, and bid on with the speed and ceremony that four generations of the auctioneer's family have refined into a performance as much as a transaction. A certified Mytrone steppe-horse commands three hundred to eight hundred gold pieces depending on age and training; the current auction is for a batch of six-year mounts from Kavarn's Drift, and the bidding is lively. The auctioneer's calls carry across the noise of the crowd with an ease that suggests either long practice or a minor bardic gift.",
+    "exits": {
+      "south": 7008,
+      "north": 7016
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7012,
+    "name": "Horse Market - Evaluation Yards",
+    "description": "Horses undergoing formal evaluation for sale certification are assessed in the evaluation yards, where Mytrone horse-experts examine each animal's gait, health, and temperament against the standards that determine its grade and price. The certification process is thorough and takes the better part of a day per animal, and the certified grade posted on the sale document is taken at face value by buyers from across the continent. A horse rejected for certification is not banned from sale â€” it may be sold uncertified at a lower price â€” but buyers who want a genuine Tavranek-certified steppe-horse know what to look for on the sale paperwork.",
+    "exits": {
+      "north": 7008,
+      "east": 7017
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7013,
+    "name": "Far Rider Yards - Archery Range",
+    "description": "The mounted archery range is a three-hundred-yard track with popup targets at various distances and angles, designed to replicate the conditions of the Running War's hit-and-retreat tactics. Far Rider archers run the course at gallop, releasing at multiple targets with a fluidity that looks effortless and requires years to develop. The targets are replaced and repainted after each session, and the scores are posted on a board at the range entrance. Competition between riders is formally encouraged â€” the standings board covers the past year of sessions, and the top three positions are noted by the Boss herself when reviewing training reports.",
+    "exits": {
+      "south": 7009,
+      "east": 7018
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7014,
+    "name": "Far Rider Yards - Lance Course",
+    "description": "The lance-charge course is the most physically demanding training element in the Yards, a five-hundred-yard track with dummy formations at its end designed to simulate the effect of a disciplined infantry mass on charging cavalry. Far Rider lancers run it daily, the impact on the dummies generating a sound audible from outside the Yards' fence. The lance technique developed here â€” the coordinated strike-point that can punch through an infantry line without decelerating the horse â€” is the Far Riders' most tactically decisive skill and the one that broke the Deceiver formations at Dark Dawn. Every rider trains it until it is reflex.",
+    "exits": {
+      "west": 7009,
+      "south": 7019
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7015,
+    "name": "Pasua Quarter - Herbalist and Wind-Silk Workshop",
+    "description": "The Pasua Quarter's combined herbalist stall and wind-silk workshop serves both the Quarter's community needs and the broader city. The herbalist stocks medicinal plants from the southern crescent forests and a selection of steppe herbs, with remedies prepared on request. The wind-silk workshop produces smaller quantities than Tidebloom's dedicated operations but higher-quality pieces, the Pasua technique of air-elemental infusion during weaving producing fabric with a subtler magical quality than standard wind-silk. The workshop's output is mostly traded internally within Tavranek's community, with surplus occasionally sold to visiting merchants who recognize the quality.",
+    "exits": {
+      "north": 7010,
+      "west": 7007
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7016,
+    "name": "Horse Market - Stable Complex",
+    "description": "The large stable complex behind the auction floor provides temporary housing for horses brought to market from the camps, their health and condition maintained during the sometimes multi-day sale process. The stable-hands are Mytrone specialists in horse care, their knowledge of each animal's routine preferences and stress responses making them invaluable during the transition from familiar camp environment to the bustle of the market. The stable complex is the cleanest large building in Tavranek, maintained to a standard that reflects the horses' status as the community's primary economic asset and deepest cultural symbol.",
+    "exits": {
+      "south": 7011,
+      "east": 7020
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7017,
+    "name": "Horse Market - Trade Records Office",
+    "description": "The trade records office documents every certified sale that passes through the Horse Market, maintaining the provenance records that are the basis of a Tavranek horse certificate's value. The registry goes back four generations, and cross-referencing a specific horse's bloodline through the records â€” a service the office provides for a modest fee â€” is something that serious buyers from outside the steppe do regularly before large purchases. The records office also handles complaints, disputes, and the occasionally necessary investigation when a certified horse's performance fails to match its certification.",
+    "exits": {
+      "west": 7012
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7018,
+    "name": "Far Rider Yards - Barracks",
+    "description": "The Far Rider barracks house the permanently stationed riders who form Tavranek's standing response force, distinct from the camp-based riders who come to the Yards for training rotations. The barracks is organized with military precision â€” bunk assignment, equipment maintenance, watch rotation, and the weekly readiness inspection that the duty officer conducts with the thoroughness of someone who has seen what happens when readiness fails. Personal kit is limited and standardized, the uniformity not merely practical but philosophical: the Brotherhood of the Steppe's identity runs deeper than any individual's property.",
+    "exits": {
+      "west": 7013,
+      "south": 7021
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7019,
+    "name": "Far Rider Yards - Commander's Post",
+    "description": "The Far Rider commander's post is where Boss Sarava Windmane's military authority is translated into operational orders. The duty officer here, a Far Rider veteran of ten years' service, manages the patrol schedule, the training calendar, and the intelligence reports from the seven camps. The walls hold a large map of the steppe with patrol routes, Windstone locations, Dark Dawn battlefield boundaries, and the current Flamewarg cult sighting reports from the past month. The map is updated daily by the duty officer and reviewed by the Boss weekly. Nothing on the map is decorative; everything on it is operational.",
+    "exits": {
+      "north": 7014,
+      "west": 7022
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7020,
+    "name": "Tavranek - Eastern Outer Ring",
+    "description": "The eastern section of Tavranek's outer ring is where the city's most recently established residences and workshops sit, the wagon-wheel pattern of the city's spokes creating a slightly wedge-shaped neighborhood between the Far Rider Yards and the Horse Market. The residents here are mostly the families of Far Riders and horse-market workers, their daily lives organized around the rhythms of military training and seasonal sales. The neighborhood is functional and plain â€” Mytrone aesthetic values do not prioritize decoration â€” but it is well-kept, and the community bonds here are strong in the way that shared purpose creates.",
+    "exits": {
+      "west": 7006,
+      "south": 7016,
+      "north": 7013
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7021,
+    "name": "Far Rider Yards - Stables",
+    "description": "The Yards' stables house the Far Rider mounts â€” a different population from the Horse Market's temporary guests. These horses are operational assets, not for sale at any price a civilian could name, and they are treated accordingly: individual stalls, custom feed rations calibrated to each animal's training load, and the daily personal attention of their assigned rider. The bond between a Far Rider and their mount is the most important professional relationship in Mytrone culture, and the stables are the physical expression of that bond â€” a space maintained not merely for the horses' health but for the relationship's deepening.",
+    "exits": {
+      "north": 7018,
+      "east": 7023
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7022,
+    "name": "Tavranek - Boss's Residence",
+    "description": "Boss Sarava Windmane â€” Mytrone Human, Ranger 8/Expert 3, elected by acclamation â€” governs the steppe from a residence that is deliberately modest. The building is larger than a private home needs to be but smaller than what many cultures would consider appropriate for a head of state, reflecting the Mytrone conviction that a leader who requires displays of authority has already begun to fail. Windmane receives the seven Headmen here, coordinates the Brotherhood's operations, and maintains the communication network that keeps the steppe's distributed communities in contact. Her horse is always saddled and ready in the adjacent stable; she has left Tavranek faster than a prepared messenger on three occasions in the past year.",
+    "exits": {
+      "east": 7019,
+      "south": 7024
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7023,
+    "name": "Tavranek - Southeast Quarter",
+    "description": "The southeast quarter of Tavranek's outer ring faces the road to Sylrek Camp and, beyond it, the Dark Dawn Battlefield. The quarter has a particular character: the residents here â€” mostly Far Riders and their families who have specifically requested this posting â€” maintain a collective awareness of the battlefield's southeast proximity that amounts to a standing vigil. Dawn's Vigil observances are coordinated from this quarter, and the windows that face southeast are hung with the feather-and-bone charms that mark places connected to the Brotherhood's sacrifice. The smell of the grass in this direction carries the faint ghost of old burning in high summer when the wind is right.",
+    "exits": {
+      "west": 7021,
+      "north": 7025
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7024,
+    "name": "Tavranek - Central Administration",
+    "description": "The administrative center of Tavranek handles the record-keeping, message dispatch, and resource management that keeps the steppe's distributed political structure functional. Headman dispatches, grazing rotation records, the Wind Gathering agenda, and the inter-camp treaty arrangements are all maintained here. The staff is small â€” four clerks and a records keeper â€” reflecting the Mytrone preference for minimal administrative overhead. The records keeper is a Halfling whose family has held the position for three generations, their institutional memory complementing the formal archives in ways that are genuinely irreplaceable and that no one has yet managed to formally document.",
+    "exits": {
+      "north": 7022,
+      "west": 7026,
+      "south": 7030
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7025,
+    "name": "Tavranek - South Road to Sylrek Camp",
+    "description": "The road south from Tavranek leads toward Sylrek Camp, the nearest semi-permanent settlement to the Dark Dawn Battlefield. The road is well-used â€” Far Rider patrols ride it daily â€” and the grass on both shoulders is cropped short by generations of horses grazing while the riders stopped to assess the Wind Road's direction. In midsummer the Wind Road itself is perceptible here as a consistent directional pressure in the air, the channeled wind-corridor the Giants shaped flowing south through the Varkhon Rise and across the central steppe. Mytrone riders tell which camp territory they are entering by the specific character of the wind before any landmark is in sight.",
+    "exits": {
+      "north": 7023,
+      "south": 7062,
+      "east": 7110
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7026,
+    "name": "Tavranek - Halfling Caravan District",
+    "description": "The Halfling caravan traders who run goods between the Infinite Desert and the southeastern forests maintain a seasonal district on Tavranek's western edge, their wagon-circles appearing and dissolving with the trade calendar. The district is most populous in the spring, when the first desert caravans arrive, and in the autumn when the southbound trade concentrates before the mountain passes close. The Halflings here are not residents â€” most are at the far end of a multi-month circuit â€” but their familiarity with Tavranek is genuine, and the relationships they have built with the Mytrone over generations are commercially and culturally valuable to both sides.",
+    "exits": {
+      "east": 7024,
+      "north": 7027
+    },
+    "flags": [
+      "safe",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 7027,
+    "name": "Tavranek - Teshkar Vale Road North",
+    "description": "The road north from Tavranek toward Teshkar Vale is the most ceremonially significant route in Mytrone civilization. It is along this road that the annual Wind Gathering procession moves, the Boss and the seven Headmen riding north to the sheltered depression where the steppe's only year-round spring flows. The road is unmaintained by Tavranek's standards â€” the Mytrone deliberately leave it to the grass rather than paving it, on the principle that a path too fine for the herd to follow is not a path the Mytrone need â€” but the wear of generations of the Gathering procession has compressed the earth into a clear line visible from the Varkhon Rise.",
+    "exits": {
+      "south": 7026,
+      "north": 7028
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7028,
+    "name": "Teshkar Vale - Approach",
+    "description": "The land changes character before the Vale itself is visible: the grass grows taller, the flowers more varied, and the air carries the distinct freshness of moving water that is unmistakable on a steppe where standing water is rare. Bird calls multiply as the spring-fed Vale approaches, and the sound of water â€” not loud, but present, a gentle murmur that carries on the flat steppe air â€” becomes audible. The Vale is sacred to the Mytrone, and non-Mytrone approaching here for the first time feel the shift in character before they are told its significance. The Windstones around the Vale's edge glow more consistently than those elsewhere.",
+    "exits": {
+      "south": 7027,
+      "north": 7029,
+      "east": 7239
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7029,
+    "name": "Teshkar Vale - Spring Center",
+    "description": "The spring at Teshkar Vale's center emerges from a Giant-carved channel that has flowed without interruption since before the Kin walked the steppe. The water is cold and clear, feeding a stream that flows south through Tavranek, and the ground around the spring is thick with tall grass and wildflowers that attract migratory birds in numbers extraordinary even by steppe standards. The Wind Gathering is held here annually, the Boss and all seven Headmen meeting to set grazing rotations, settle disputes, and renew the Windstone rune-circles. Non-Mytrone are welcome at the Gathering but not at the rune-renewal ceremony itself, a distinction that is explained politely and enforced absolutely.",
+    "exits": {
+      "south": 7028
+    },
+    "flags": [
+      "safe",
+      "water",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7030,
+    "name": "Tavranek - Healer's Hall",
+    "description": "The Healer's Hall of Tavranek provides medical services to the city's six thousand permanent residents and the seasonal population of camp visitors. The hall is staffed by three healers: a Mytrone Human ranger-physic whose training combines conventional medicine with the trail medicine that steppe life demands, a Pasua Elf herbalist from the southern forests, and a Halfling surgeon whose precision work is the best available within three days' ride in any direction. The hall is always open, always ready for the injuries that a cavalry-centered culture generates at a steady rate, and the recovery ward often holds Far Riders waiting out the healing time for lance-training injuries.",
+    "exits": {
+      "east": 7024,
+      "south": 7031
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7031,
+    "name": "Tavranek - Armorer and Supply",
+    "description": "Tavranek's main armorer and general supply operation serves the commercial needs of the city and the provisioning needs of the Far Rider Yards. The armorer carries light to medium armor â€” the Mytrone preference for mobility means heavy armor is not stocked â€” and the supply section maintains a full inventory of campaign equipment: dried food, rope, signal-mirrors, arrow-stock, and the carved bone items that Mytrone craftspeople produce as both tools and trade goods. The supply master, a Visetri Dwarf who settled in Tavranek after a trading visit forty years ago and never left, knows the steppe's supply requirements better than most Mytrone-born residents.",
+    "exits": {
+      "north": 7030,
+      "west": 7032
+    },
+    "flags": [
+      "safe",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7032,
+    "name": "Tavranek - Community Fire Circle",
+    "description": "The community fire circle on Tavranek's southern inner ring is where the city's social life concentrates after dark. A permanent fire â€” maintained in the tradition of the Mytrone camp-fires that are the fundamental unit of community organization â€” burns here through the night, tended by a rotating roster of residents who consider the duty a civic honor. The storytelling that happens around this fire is the Mytrone's highest art form, and the stories told here are expected to be either true or explicitly acknowledged as legend. Visitors who sit at the fire and offer a story in exchange for the warmth are participating in a tradition older than the city.",
+    "exits": {
+      "east": 7031,
+      "north": 7024,
+      "south": 7033
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7033,
+    "name": "Tavranek - Wind Gathering Pavilion",
+    "description": "A large open-sided pavilion at Tavranek's southern edge is used for the indoor events of the Wind Gathering when weather requires shelter, and for the horse-race viewing stands that overlook the course laid out on the southern steppe. The pavilion's construction is the most substantial in Tavranek â€” the Mytrone built it to last because the Gathering requires it â€” and its timber framework is maintained by the same Visetri Dwarf craftspeople who service the Windstone Circle's paving. Banners in the seven camp colors hang from the pavilion's beams, renewed each year at the Gathering.",
+    "exits": {
+      "north": 7032,
+      "east": 7025
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7034,
+    "name": "Tavranek - Western Gate",
+    "description": "The west gate of Tavranek opens onto the steppe toward the Varkhon Rise and Kavarn's Drift, the road west one of the most traveled in the region during the seasonal horse-drives. The gate is less formally guarded than the north gate â€” the steppe's western approaches are the most familiar to the Far Riders and the least likely direction for an unannounced threat â€” but the duty guard maintains a log and a current wind-road report updated by each incoming rider. The Halfling and Visetri Dwarf travelers who use the west road are familiar faces at this gate, their seasonal rhythms as regular as the grass.",
+    "exits": {
+      "east": 7004,
+      "west": 7035
+    },
+    "flags": [
+      "gate",
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7035,
+    "name": "Kavarn's Drift - Headman's Fire",
+    "description": "Kavarn's Drift is the westernmost of Tavranek's seven camps, sitting in the shadow of the Varkhon Rise where the largest horse herds on the steppe graze the thick grass of the Rise's leeward slopes. The Headman's fire at the camp's center is the largest on the steppe â€” Headman Torvek Greywind, eldest of the Headmen, maintains a fire that has not been allowed to go out in twenty years, a deliberate tradition that carries the weight of continuity. The camp shifts position within its territory seasonally, but the fire comes with it, carried on a protected ember in a clay pot when the move is made.",
+    "exits": {
+      "east": 7034,
+      "north": 7036,
+      "south": 7037,
+      "west": 7038,
+      "northeast": 7049
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7036,
+    "name": "Kavarn's Drift - Herd Grounds",
+    "description": "The herd grounds north of the camp's center hold the largest collection of steppe-horses in the Mytrone system. Thousands of animals graze the Varkhon Rise's leeward slopes, their movement managed by a rotation of herd-riders who keep the grazing pattern sustainable. The horses here are the heavy breeding stock that produces the camp's primary export â€” the large-frame mounts that command premium prices in Tavranek's Horse Market. Foals run alongside their mothers in the outer pastures, and the herd-riders can identify every animal by sight, their knowledge of individual horses as detailed as most people's knowledge of their own families.",
+    "exits": {
+      "south": 7035,
+      "west": 7039
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7037,
+    "name": "Kavarn's Drift - Wool and Tallow Works",
+    "description": "The secondary economy of Kavarn's Drift is centered on the processing of wool and tallow from the herd animals that are culled or die naturally. The wool-working building â€” a long structure of timber and heavy felt that travels with the camp's relocations, rolled onto a specialized cart â€” produces the steppe-wool that is the camp's other major export. The tallow rendering facility operates on the camp's downwind margin for reasons that are obvious to anyone within smelling distance of an active tallow operation. Both products are bundled for transport to Tavranek at the next Horse Market season.",
+    "exits": {
+      "north": 7035,
+      "east": 7040
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7038,
+    "name": "Kavarn's Drift - Varkhon Rise Overlook",
+    "description": "The highest accessible point above Kavarn's Drift looks out over the full western Varkhon Rise and, on clear days, the smudge of the crescent forest at the steppe's southwestern margin. The wind here is the cleanest on the steppe â€” the Rise channels it upward before releasing it, and the air at this height is the Wind Road at its most direct. Headman Greywind comes here when facing decisions that require the kind of clarity the Wind Road provides, and he is not the only one â€” the small clearing at the lookout's top shows the marks of many fires, many sit-periods, and many conversations with the wind that went unrecorded and did not need to be.",
+    "exits": {
+      "east": 7035
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7039,
+    "name": "Kavarn's Drift - Visetri Dwarf Vitsa Ground",
+    "description": "The flat ground west of the main herd area is where the Visetri Dwarf wagon-trains park their rolling workshops when they visit Kavarn's Drift for the seasonal trade. Ten percent of the camp's permanent population is Visetri, but during trading season the vitsa population swells the camp significantly. The Visetri trade stonework, metalwork, and the precision tools that the camp's horse-care operation requires, receiving horses, wool, and tallow in exchange. The vitsa ground has a permanent stone-circle campfire site that the Visetri maintain between visits, keeping the stones cleaned and the fire-pit clear against their return.",
+    "exits": {
+      "east": 7036,
+      "south": 7041,
+      "west": 7042
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 7040,
+    "name": "Kavarn's Drift - Camp Road East",
+    "description": "The road east from Kavarn's Drift connects the camp to the Tavranek road network and, via the Wind Road corridor, to the central steppe's trade routes. The road follows the Varkhon Rise's shadow line for its first several miles before crossing into the open steppe, and the transition from the Rise's shelter to the full exposure of the central grassland is a shift that experienced riders monitor closely â€” the Wind Road is strongest here on its way south, and reading its condition gives advance warning of weather patterns four to six hours ahead. The road is marked by Windstones at three-mile intervals, their amber glow visible for miles at night.",
+    "exits": {
+      "west": 7037,
+      "east": 7034,
+      "north": 7043,
+      "south": 7046
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7041,
+    "name": "Kavarn's Drift - Bone-Tool Workshop",
+    "description": "A specialist workshop at the camp's edge produces the carved bone tools and decorative items that are Kavarn's Drift's artisan export. Horse bone, culled from the herd, is worked by three craftspeople into combs, knife handles, needle cases, and the small figurines that are common gifts in Mytrone culture. The techniques used here have been developed over generations, the craft knowledge passed directly from practitioner to apprentice without formal documentation â€” a practice the Lore-Keeper at Tiravel has requested Headman Greywind consider documenting before the current master retires. Greywind has not refused, but has not yet agreed.",
+    "exits": {
+      "north": 7039,
+      "west": 7038
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7042,
+    "name": "Kavarn's Drift - Perimeter Watch",
+    "description": "The outermost position of Kavarn's Drift's security rotation, the perimeter watch maintains sight-lines across the western approaches and the Varkhon Rise's slopes. The watch here is less about specific threats than about the general situational awareness that Mytrone culture considers foundational â€” knowing what is in your territory at all times, reading the behavior of the herd as an environmental sensor, and maintaining the Wind Road sensitivity that gives the steppe's defenders their primary intelligence advantage. The watchers here rotate every four hours, longer in low light to allow Kin-sense calibration time.",
+    "exits": {
+      "east": 7039
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7043,
+    "name": "Kavarn's Drift - Herd's Return Festival Ground",
+    "description": "The flat ground set aside for the Herd's Return seasonal celebration â€” when the western herds come back from summer pasture â€” is kept clear of permanent structures by tradition, available for the temporary tent-village that the festival creates. The celebration is Kavarn's Drift's largest annual event, drawing riders from neighboring camps and the occasional Tavranek resident who makes the journey specifically for the music, food, and horse-race spectacular that Headman Greywind's camp is known for running with particular skill. The ground shows the marks of many festivals in the trampled earth and the ash-rings of past fires.",
+    "exits": {
+      "south": 7040,
+      "north": 7037,
+      "east": 7044
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7044,
+    "name": "Kavarn's Drift - Common Sleeping Area",
+    "description": "The semi-permanent sleeping area of Kavarn's Drift uses the combination of individual family wagons and shared communal yurts that defines Mytrone camp-sleeping tradition. Wagons are personal and mobile; yurts are communal and take longer to set up and strike, used for the camp's core sleeping group who anchor the location while the herd-riders are out. The sleeping area's layout changes with each seasonal move, but the relationships that determine who sleeps near whom are stable â€” camp communities are small enough that social cohesion requires active maintenance, and the sleeping arrangement is one of its most visible expressions.",
+    "exits": {
+      "north": 7043,
+      "east": 7035,
+      "south": 7045
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7045,
+    "name": "Kavarn's Drift - Supply Cache",
+    "description": "The supply cache that Kavarn's Drift maintains at its current site holds the reserves needed to sustain the camp through a bad season: preserved food, spare equipment, medicinal supplies, and the emergency horse-care materials that a large herd operation always needs on hand. The cache is inventoried monthly by the camp's supply-keeper, a Halfling woman whose accounting precision is legendary enough that other camps have tried to recruit her. She stays because Headman Greywind is the best camp-manager on the steppe, and she respects that even when she disagrees with his decisions.",
+    "exits": {
+      "west": 7044,
+      "south": 7037,
+      "north": 7047
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7046,
+    "name": "Kavarn's Drift - Entry Point",
+    "description": "The entry point to Kavarn's Drift's current position is marked by the camp's standard â€” a carved horse-head post with the green-and-black colors of the western territory â€” visible from half a mile across the steppe. Visitors announce their arrival by riding to within hailing distance and waiting; arriving without announcement is considered rude rather than threatening, but the herd-riders who flank the camp's perimeter will have tracked an approaching rider for the last two miles and the Headman will know about the arrival before the visitor dismounts. The welcome, once given, is genuine and complete.",
+    "exits": {
+      "east": 7040,
+      "west": 7035
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7047,
+    "name": "Kavarn's Drift - Far Rider Station",
+    "description": "A small dedicated space within Kavarn's Drift maintains the Far Rider presence that connects the camp to Tavranek's military network. Two Far Riders are permanently stationed here, their horses in better condition than any other animals in the camp and their communication equipment â€” signal mirror, relay-message kit, emergency supply pack â€” always ready for use. The station's primary function is two-way: it reports intelligence from the western territory to Tavranek and provides the camp with intelligence from the broader steppe situation. The current station rider is flagging the Kin-sense anomaly reports from the northern Varkhon Rise that have appeared three times this month.",
+    "exits": {
+      "south": 7045,
+      "east": 7036,
+      "north": 7048
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7048,
+    "name": "Kavarn's Drift - Healer's Wagon",
+    "description": "The healer's wagon of Kavarn's Drift is a specially fitted wagon that serves as both clinic and pharmacy for the camp's 2,200 residents. The healer is a Mytrone woman trained in both trail medicine and the steppe's traditional healing practices, her knowledge of horse-related injuries particularly deep. The wagon's interior is organized with the efficiency that mobile medicine requires: everything in a specific place, everything accessible without full extension of reach, and everything packed for movement on two hours' notice. The healer rides with the camp on its seasonal moves, the wagon the last to leave a site and the first to be set up at the new one.",
+    "exits": {
+      "north": 7047,
+      "east": 7043
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7049,
+    "name": "Kavarn's Drift - Outer Grass",
+    "description": "The open grassland surrounding Kavarn's Drift's current position is the camp's operational environment â€” the Varkhon Rise's leeward slopes rising to the west, the open steppe stretching east to the horizon. The grass here is genuinely the thickest on the steppe, the Windstone's influence producing a growth density that attracts the large herds that have made this territory the richest grazing ground in the Mytrone system. Riding across this grass at speed â€” the Wind Road running south alongside â€” is the experience that Mytrone culture considers fundamental to understanding the steppe's character. No description substitutes for it.",
+    "exits": {
+      "east": 7035,
+      "north": 7036
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7050,
+    "name": "Zhoraven Ring - Central Yurt",
+    "description": "Zhoraven Ring takes its name from the ring of yurts that forms its permanent center, a configuration that Headman Vorna Swiftheart maintains at all positions the camp occupies within its southern territory. The central yurt is Swiftheart's residence and governing space, its interior hung with the training records and bloodline charts that define her work as the steppe's premier horse-trainer. Twenty percent of the camp is Pasua Elf, the largest such proportion outside Tavranek, and their presence is visible in the vine-wrapped yurt frames and the herb garden maintained on the camp's eastern margin. Zhoraven Ring is a horse-training center, not merely a horse-herding camp.",
+    "exits": {
+      "north": 7051,
+      "east": 7052,
+      "south": 7053,
+      "west": 7054
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7051,
+    "name": "Zhoraven Ring - Training Yards",
+    "description": "The training yards at Zhoraven Ring are the steppe's most sophisticated horse-training facility outside the Far Rider Yards in Tavranek. Horses are worked here through a curriculum that Headman Swiftheart developed over twenty years of breeding and training, and the methods she uses produce the war-horses and saddle-craft mounts that command premium prices at Tavranek's Horse Market. Currently, a faintly glowing amber foal in the near paddock has been drawing attention from every visitor to the camp â€” its Kin-sense signature unlike anything the Pasua trainers have encountered, registering not as animal but as something new.",
+    "exits": {
+      "south": 7050,
+      "east": 7055
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7052,
+    "name": "Zhoraven Ring - Saddle-Craft Workshop",
+    "description": "Saddle-craft is the secondary export of Zhoraven Ring, and the workshop here produces leather goods â€” saddles, bridles, armor-straps, and bags â€” that are specifically designed for the extended steppe campaign conditions that the Far Riders operate in. The leather-worker, a Mytrone Human who trained at Kavarn's Drift before establishing this workshop, uses techniques that Swiftheart's training philosophy directly influences: the saddle designs are chosen to minimize horse fatigue on long-distance operations, the choices validated by the Far Riders who field-test the equipment and provide detailed feedback. The shop is available to visiting merchants.",
+    "exits": {
+      "west": 7050,
+      "south": 7056
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7053,
+    "name": "Zhoraven Ring - Foal's First Run Ground",
+    "description": "The festival ground for the annual Foal's First Run celebration â€” yearling horses racing their first open-steppe course under observation, with wagers and feasting â€” is maintained as a flat, grass-cleared oval south of the camp center. At festival time, riders from every camp attend, the racing and wagering providing both entertainment and valuable comparative data on each camp's yearling cohort. The race is not merely sport: Headmen use the comparative performance data to calibrate their respective breeding programs, and the informal consultation that happens around the wager-tables is some of the most important horse-husbandry discussion on the steppe.",
+    "exits": {
+      "north": 7050,
+      "east": 7057
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7054,
+    "name": "Zhoraven Ring - Pasua Elf Quarter",
+    "description": "The Pasua Elf component of Zhoraven Ring maintains a dedicated quarter with the vine-draped structures, herb gardens, and wind-instruments that mark Pasua community space. Their role in the camp is primarily as horse-medicine specialists and as the keepers of the nature-shaping techniques that allow the camp's veterinary care to go beyond conventional medicine. The Pasua quarter's herbalist has been tracking the glowing foal with a combination of professional interest and something approaching spiritual attention â€” the amber resonance of its Kin-sense signature matches the Windstone glow more precisely than any natural animal signal she has ever recorded.",
+    "exits": {
+      "east": 7050,
+      "north": 7058
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7055,
+    "name": "Zhoraven Ring - Eastern Pastures",
+    "description": "The training pastures east of the central yurt ring are where the current training cohort of horses works through the progressive curriculum that Swiftheart's methods prescribe. Different sections of the pasture correspond to different training stages â€” the eastern section for basic handling, the middle for gaited work, the far section for the advanced cavalry-response training that produces a Far Rider mount. The Shieldwood crescent forest is visible as a dark line on the southern horizon, its presence a constant environmental reference that Swiftheart uses in her weather assessment â€” when the forest line hazes, rain within six hours.",
+    "exits": {
+      "west": 7051
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7056,
+    "name": "Zhoraven Ring - Horse Medicine Store",
+    "description": "A dedicated store for the medicinal supplies required for the camp's intensive horse-training operation, the horse medicine store is jointly managed by the Pasua herbalist and the camp's Mytrone physic. The Pasua contribution â€” dried and prepared herbs from the crescent forests â€” complements the conventional medicines that the camp purchases through Tavranek's supply network. A current project, post-glowing-foal, has added a new section to the store: notes on the amber resonance phenomenon, samples of the foal's shed hair and waste for analysis, and a growing correspondence with Tavranek's Pasua Quarter about what the phenomenon might mean.",
+    "exits": {
+      "north": 7052,
+      "west": 7054
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7057,
+    "name": "Zhoraven Ring - Festival and Community Space",
+    "description": "The open community space at Zhoraven Ring's southern margin doubles as the festival ground's public viewing area and as the daily gathering point for the camp's social life. Evenings here are characterized by the music of Pasua flutes and Mytrone storytelling, the two traditions operating simultaneously in a blended performance style that is specific to this camp. The community fire here is maintained with the same dedication as Kavarn's Drift's fire, and the stories told at it are specifically the inter-woven Mytrone-Pasua narrative tradition that the bardic school at Tavranek has begun to document.",
+    "exits": {
+      "west": 7053,
+      "north": 7050
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7058,
+    "name": "Zhoraven Ring - Windstone Site",
+    "description": "The Windstone near Zhoraven Ring's territory is smaller than Tavranek's Great Windstone but well-maintained, its rune-circle pulsing with the amber-white glow characteristic of functional Giant-era work. The grass around it grows in the distinctive thicker-and-greener circle that marks Windstone influence, and the camp is positioned on the downwind side of the stone to take advantage of the stable weather pattern it maintains. The glowing foal was born in the paddock adjacent to this Windstone, a coincidence that nobody in the camp considers coincidental â€” the question being what it means, not whether it is significant.",
+    "exits": {
+      "south": 7054,
+      "east": 7059
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7059,
+    "name": "Zhoraven Ring - Outer Perimeter",
+    "description": "The outer perimeter of Zhoraven Ring's current position is maintained by the rotation of herd-riders who double as security in the Mytrone tradition where the same skills serve both functions. The perimeter here faces the Shieldwood crescent forest on the southern horizon, and herd-riders on this side of the camp maintain a specific watch for the Flamewarg cult activity that the crescent forests have historically sheltered. Reports from this perimeter go directly to Headman Swiftheart and are forwarded to Tavranek's Far Rider command within the day.",
+    "exits": {
+      "west": 7058,
+      "north": 7057,
+      "east": 7060
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7060,
+    "name": "Zhoraven Ring - Healer's Space",
+    "description": "The healer's space at Zhoraven Ring operates on a larger scale than at most camps, reflecting the higher injury rate of intensive training operations. The horse-training curriculum produces a steady stream of minor rider injuries â€” falls, kicks, the compression injuries that lance-training creates â€” and the healer here has developed particular expertise in these. She also manages the veterinary care of the training horses, the boundary between human medicine and horse medicine being less distinct in practice than in theory for a healer who treats both daily. Her case notes are referenced at the Tavranek Healer's Hall as useful secondary data.",
+    "exits": {
+      "west": 7059,
+      "south": 7057
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7061,
+    "name": "Zhoraven Ring - Road Junction",
+    "description": "The main road junction at Zhoraven Ring's eastern margin connects the camp to the Tavranek road network and to the southern steppe approaches toward the Shieldwood and the Gatefall Reach border. The junction post here is the standard Mytrone waypost with one addition: a Far Rider report board where current patrol findings are posted for riders passing through. The current board shows three items: a Flamewarg cult sighting south of the Shieldwood (six days ago, seven individuals, no engagement), a Wind Road anomaly in the central sector (three days ago, cause undetermined), and the standing advisory about the Dark Dawn Battlefield's perimeter.",
+    "exits": {
+      "north": 7050,
+      "east": 7035,
+      "south": 7072
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7062,
+    "name": "Sylrek Camp - Dawn Watch Post",
+    "description": "Sylrek Camp is the southeastern camp closest to the Dark Dawn Battlefield, and the Dawn Watch Post at its northern edge maintains a permanent visual connection with the battlefield's nearest edge. Headman Aelris Dustspur â€” youngest of the seven Headmen, ranger and storyteller â€” has made this watch post the camp's defining institution: every Far Rider candidate who comes through Sylrek starts their service here, learning to hold the battlefield's presence in their attention without being consumed by it. The watch post faces north-northwest, and in clear conditions the burn-scars of the battlefield are visible as dark patches in the grass five miles distant.",
+    "exits": {
+      "north": 7025,
+      "south": 7063,
+      "east": 7064,
+      "west": 7065
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7063,
+    "name": "Sylrek Camp - Camp Center",
+    "description": "The center of Sylrek Camp is quieter than most camps of comparable size, a deliberate character that Headman Dustspur maintains as part of the camp's psychological approach to its proximity to the battlefield. The community fire here burns lower than in other camps, and the storytelling at night focuses on remembrance rather than entertainment â€” the oral history of Dark Dawn is maintained and renewed here with a specificity and emotional weight that makes Sylrek Camp the steppe's primary repository of that event's human experience. The camp is small and serious, and its reputation as the primary Far Rider recruitment ground is inseparable from that character.",
+    "exits": {
+      "north": 7062,
+      "east": 7066
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7064,
+    "name": "Sylrek Camp - Scout-Horse Stables",
+    "description": "The horses maintained at Sylrek Camp are specifically trained as scout mounts â€” faster over long distances than the heavy Far Rider war-horses, more reliable in terrain that includes the edge effects of the Dead Zone and the Burnt Hollows. The stable here is smaller than Kavarn's Drift's facilities but more specialized, and the horses trained here find their way into Far Rider units throughout the steppe because of the specific qualities Dustspur's trainers develop. A scout-horse from Sylrek commands a premium even at Tavranek's Horse Market, and buyers who know the camp's reputation ask specifically.",
+    "exits": {
+      "west": 7062,
+      "south": 7067
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7065,
+    "name": "Sylrek Camp - Cured Hides Workshop",
+    "description": "The primary economic output of Sylrek Camp is cured hides and feather charms, processed from the animals that the camp's herd produces and from the birds of the battlefield margin. The hide-curing operation is managed by a Mytrone craftsman who has developed a process using battlefield-grass ash â€” which has properties unlike normal grass ash, the Deceiver fire having altered its chemistry â€” that produces a distinctive darker leather that is increasingly sought by Far Rider units for its harder wearing quality. The feather charms are a separate craft tradition, their production primarily ceremonial but traded widely as protective tokens.",
+    "exits": {
+      "east": 7062,
+      "south": 7068
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7066,
+    "name": "Sylrek Camp - Dawn's Vigil Grounds",
+    "description": "The ritual ground for Dawn's Vigil â€” the night-long watch at the battlefield's edge held annually at the Dark Dawn anniversary â€” is at Sylrek Camp's eastern margin, positioned so that the watch-line faces directly toward the battlefield. On vigil nights, every member of the camp and visitors from across the steppe stand in this line from moonset to dawn, speaking the names of the fallen from memory. No fire is lit during the Vigil; it is the one occasion in Mytrone culture where the community fire is deliberately allowed to go cold, relit at dawn with a formal ceremony that represents the renewal the Dark Dawn cost made possible.",
+    "exits": {
+      "west": 7063,
+      "north": 7064
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7067,
+    "name": "Sylrek Camp - Intelligence Station",
+    "description": "Sylrek Camp's intelligence station handles the flow of observation reports from the camp's position nearest the battlefield and the Burnt Hollows. Far Rider scouts operating in this sector report here before and after patrols, their observations logged, cross-referenced with previous reports, and transmitted to Tavranek's Far Rider command daily. The station's current focus is the new tunnel entrances that scouts reported three weeks ago â€” fresh-dug, reinforced, and descending into the old Deceiver burrow-fort network. Whether the excavation is Flamewarg cult, free goblin, or something else is the open question that the station's current analysis is attempting to answer.",
+    "exits": {
+      "north": 7064,
+      "west": 7063
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7068,
+    "name": "Sylrek Camp - Pasua Quarter",
+    "description": "The Pasua Elf component of Sylrek Camp is small â€” five percent of a 1,800-person camp â€” but their presence is felt in the camp's musical tradition and in the maintenance of the southern Windstones that Headman Dustspur has assigned them. The Pasua here are quiet, carrying the weight of their people's association with the battlefield in a different register than the Mytrone â€” where the Mytrone grieve through storytelling and communal vigil, the Pasua tend to grieve in private ceremony and the active maintenance of the living landscape. Their Windstone work is the most technically sophisticated on the steppe outside Tavranek.",
+    "exits": {
+      "north": 7065,
+      "east": 7066,
+      "south": 7069
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7069,
+    "name": "Sylrek Camp - Supply Cache",
+    "description": "The supply cache at Sylrek Camp includes an emergency component that other camps do not maintain: a kit specifically assembled for battlefield entry â€” Kin-sense stabilization herbs from the Pasua Quarter, signal equipment calibrated for the Dead Zone's interference, rope and timber rated for tunnel entry, and the specific medicinal preparations for the disorientation effects that the battlefield's Will DC 16 zone produces in sensitive individuals. The kit is checked and updated monthly by Headman Dustspur personally, and it has been drawn on twice in the past year for actual deployments rather than training exercises.",
+    "exits": {
+      "west": 7068,
+      "north": 7063,
+      "south": 7071
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7070,
+    "name": "Sylrek Camp - Road to Battlefield",
+    "description": "The road from Sylrek Camp east toward the Dark Dawn Battlefield is the most significant short road on the Eternal Steppe â€” not long, only five miles, but carrying the weight of three hundred years of Mytrone history in every wheel-rut and hoof-print. Far Rider patrols use it daily. Dawn's Vigil processions walk it once a year. Occasionally, scholars and adventurers ride it seeking the old encampment and the glass-fused craters and alien equipment fragments that still litter the battlefield's surface. The camp's standing orders for such visitors are clear: escort provided on request, entry at own risk, nothing removed from the battlefield without Headman authorization.",
+    "exits": {
+      "east": 7211,
+      "west": 7063
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7071,
+    "name": "Sylrek Camp - Perimeter",
+    "description": "The outer perimeter of Sylrek Camp faces the southeastern approaches where the battlefield meets the open steppe and where the Burnt Hollows' tunnel system's outer perimeter lies. The perimeter watch here is the most intensive of any camp on the steppe â€” two riders at all times, their watch periods shorter than standard to maintain concentration, and a third rider within quick-call distance. Kin-sense is maintained actively rather than passively on this perimeter, and the first sign of a dead-zone patch expanding toward the camp would trigger immediate escalation to Tavranek. The grass here grows less freely than elsewhere, the battlefield's influence detectable in its texture and color.",
+    "exits": {
+      "north": 7069,
+      "west": 7066
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7072,
+    "name": "Orthek's Stand - Garrison Center",
+    "description": "Orthek's Stand is the most militarized of the seven camps, its 1,800 residents organized more like a forward garrison than a pastoral community. Headman Kethren Ironsaddle â€” Far Rider captain, Fighter 7 â€” runs the camp with military discipline, the morning formation and evening report that are optional in other camps being mandatory here. The camp watches the northeastern approaches toward the Giant's Teeth foothills, where Flamewarg cult remnants have established a persistent presence in the mountain passes. The camp's perimeter is marked with signal-poles at fifty-yard intervals, each equipped with a mirror-flash reflector for instant camp-wide alert.",
+    "exits": {
+      "north": 7061,
+      "south": 7073,
+      "east": 7074,
+      "west": 7075,
+      "northeast": 7080
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7073,
+    "name": "Orthek's Stand - Training Ground",
+    "description": "The camp's training ground is used for both mounted and dismounted combat training, the terrain deliberately varied â€” loose gravel, cut timber obstacles, a mock fortification wall â€” to replicate the mountain approaches that the camp's patrols work in. Kovaka Elf fighters from the ten percent Elf minority join the training on equal terms, their different physical approach to combat useful to Mytrone riders who might face similar fighters on patrol. The Blade's Edge festival's martial tournament is held here annually, drawing competitors from every camp and establishing the steppe-wide ranking that determines which Far Rider unit gets first pick of the training year's new graduates.",
+    "exits": {
+      "north": 7072,
+      "east": 7076
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7074,
+    "name": "Orthek's Stand - Northeast Watch Station",
+    "description": "The watch station facing the Giant's Teeth approaches is the camp's primary intelligence post, its observations feeding directly into Tavranek's understanding of the mountain-pass situation. A Kovaka Elf watcher with long-distance sight capability is permanently assigned here, their ability to monitor terrain features several miles further than standard human vision providing the early warning that justifies the assignment. The current watch log includes three Flamewarg cult movement reports in the past month and one unidentified group sighting â€” larger than a cult cell, better equipped, moving with a discipline that suggests organized military rather than irregular raiders.",
+    "exits": {
+      "west": 7072,
+      "north": 7077
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7075,
+    "name": "Orthek's Stand - Supply and Armory",
+    "description": "The combined supply and armory of Orthek's Stand is maintained to a standard appropriate for a forward garrison that might need to operate independently for weeks without resupply. The armory section carries weapons and armor in quantities beyond what the camp's 1,800 residents use regularly â€” a reserve stock for emergencies â€” and the supply section maintains a sixty-day reserve of preserved food and medical supplies. Headman Ironsaddle reviews the inventory personally each week, and the supply-keeper's job security is directly tied to maintaining that sixty-day standard. The current stock is at seventy-two days, which Ironsaddle considers two days too close to standard.",
+    "exits": {
+      "east": 7072,
+      "south": 7078
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7076,
+    "name": "Orthek's Stand - Kovaka Elf Quarter",
+    "description": "The Kovaka Elf community at Orthek's Stand â€” ten percent of the camp, the second-largest Kovaka Elf presence after the original Concordant-era populations in the border zones â€” has maintained its distinct community space while integrating into the camp's military culture. Kovaka Elves are the camp's best individual fighters, their forest-combat techniques adapted effectively to the mountain-pass terrain of the northeast approaches. Their community space hosts a small shrine to Tarvek Wen â€” the Kovaka Elf faith tradition favors the god of justice and law, whose principles align with the border-defense mission that brought them here.",
+    "exits": {
+      "west": 7073,
+      "north": 7079
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7077,
+    "name": "Orthek's Stand - Mountain Approach Watch",
+    "description": "The furthest north point of Orthek's Stand's regular patrol circuit looks up at the Giant's Teeth foothills, the terrain changing from open steppe to rocky, broken ground within a mile. Far Rider scouts who work this terrain are specialists in ground the steppe-trained riders normally avoid, their horses selected for sure-footedness over speed. The watch here is rotated frequently because the terrain requires sustained concentration â€” the Flamewarg cult uses the broken ground expertly, and three ambushes in the past two years have made the point that this watch position requires alert riders, not merely present ones.",
+    "exits": {
+      "south": 7074
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7078,
+    "name": "Orthek's Stand - Blade's Edge Festival Ground",
+    "description": "The festival ground for the Blade's Edge martial tournament is the flat space south of the garrison center, its surface marked with the permanent lines of the competition courses and the circle where the horseback grappling elimination rounds take place. Blade's Edge is Orthek's Stand's annual diplomatic event as much as its sporting one â€” Headmen and their best riders come from every camp, and the informal politics of the tournament's social margins is where some of the steppe's most important inter-camp negotiations have begun. Headman Ironsaddle manages the tournament with the same precision he applies to the garrison.",
+    "exits": {
+      "north": 7075,
+      "west": 7072
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7079,
+    "name": "Orthek's Stand - Patrol Records Station",
+    "description": "The patrol records station at Orthek's Stand is the most current source of intelligence on the northeastern steppe situation available below the level of Tavranek's Far Rider command. Every patrol report from the camp's five active patrols is logged here before transmission, and the accumulated records show the Flamewarg cult's movement patterns with enough detail to allow predictive patrol placement. The records station is also where the current anomaly â€” the unidentified larger group sighting â€” is being analyzed. The analysis is two days old and still inconclusive, which is making Headman Ironsaddle uncomfortable in a way he is not yet ready to report formally.",
+    "exits": {
+      "south": 7076,
+      "west": 7077
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7080,
+    "name": "Orthek's Stand - Perimeter South",
+    "description": "The southern perimeter of Orthek's Stand faces the open steppe toward Tavranek, the least-watched approach because the Wind Road's predictability in this direction makes it the hardest direction for a threat to approach without early detection. The perimeter watch here is lighter than the northeast â€” two riders on a longer rotation â€” but the mirrors at each watch post give instant camp-wide alert capability. The grass here grows in the usual steppe pattern, and the Wind Road is detectable by riders trained to read it, providing a navigational reference that is also the primary intelligence tool for this watch direction.",
+    "exits": {
+      "north": 7072,
+      "west": 7078
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7081,
+    "name": "Orthek's Stand - Road Junction East",
+    "description": "The road east from Orthek's Stand leads toward the mountain approaches and the patrol circuits that cover the passes where Flamewarg cult activity has been most concentrated. The road becomes a trail within two miles â€” the Mytrone do not maintain roads into the mountain foothills â€” and the trail requires navigational skill beyond simple waypost-following. The junction here is the last point where resupply is practically possible before a patrol enters the mountain-approach terrain, and the supply-keeper maintains a cache at this junction specifically for patrol use, with a log requiring signature for accountability.",
+    "exits": {
+      "west": 7072,
+      "south": 7061
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7082,
+    "name": "Veyla Crossing - Druid's Circle",
+    "description": "Veyla Crossing is the southwestern camp, positioned at the transition between the open steppe and the crescent forest's northern edge. Headman Sylis Greenrein â€” Mytrone Human, Druid 6 â€” governs from a druid's circle of planted trees that is growing into a genuine small grove after twelve years of care. The camp's name comes from the shallow crossing of a seasonal stream where the steppe meets the forest, a feature that creates the small-scale landscape variety that Greenrein's nature-focused approach to the camp's character exploits for both practical and ceremonial purposes. Air and Earth elemental energies are both strong here, the forest and the steppe influencing the same space.",
+    "exits": {
+      "north": 7061,
+      "south": 7083,
+      "east": 7084,
+      "west": 7085,
+      "northeast": 7090,
+      "northwest": 7241
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7083,
+    "name": "Veyla Crossing - Medicinal Herb Gardens",
+    "description": "The medicinal herb gardens that Headman Greenrein maintains are the most productive on the steppe, using the forest-steppe transition's combination of light, soil types, and moisture to grow species that neither pure steppe nor pure forest environments can sustain. Three Pasua Elf herbalists work the gardens alongside Greenrein, and the combined output is the basis of an export trade in medicinal preparations that supplements the camp's more conventional livestock-based economy. The gardens are laid out in the Pasua tradition of functional aesthetics â€” beautiful because carefully designed, not despite it.",
+    "exits": {
+      "north": 7082,
+      "east": 7086
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7084,
+    "name": "Veyla Crossing - Steppe-Forest Border Watch",
+    "description": "The watch post at Veyla Crossing's eastern margin monitors both the open steppe and the forest edge, a dual responsibility that requires riders with broader observational range than the standard patrol. The crescent forests are prime cover for Flamewarg cult cells, and the transition zone here has seen three confirmed cult sightings in the past year. The watch post coordinates with Zhoraven Ring's southern perimeter and with the Pasua forest-wardens who monitor the Shieldwood from within, creating an overlapping intelligence network that makes this border one of the better-monitored sections of the steppe's vulnerable margin.",
+    "exits": {
+      "west": 7082,
+      "north": 7087,
+      "south": 11080
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7085,
+    "name": "Veyla Crossing - Pasua Quarter",
+    "description": "The twenty percent Pasua Elf component of Veyla Crossing is the largest Pasua presence in any of the seven camps, a reflection of the camp's forest-adjacent position and Headman Greenrein's own druidic affiliation. The Pasua here maintain connections to the Shieldwood communities inside the crescent forest, and their intelligence about forest conditions is more detailed and current than anything the Far Rider scouts can generate for that terrain. The community space includes a wind-dance platform where Pasua and Mytrone performers work together, and the Rootwind festival â€” the joint ceremony at the Shieldwood's edge â€” originates here.",
+    "exits": {
+      "east": 7082,
+      "north": 7088
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7086,
+    "name": "Veyla Crossing - Timber and Dye Works",
+    "description": "The forest timber and dye operations that support Veyla Crossing's economy take place in workshops at the camp's southern edge, where the forest is closest. Timber is harvested sustainably from the crescent forest under protocols developed jointly by Greenrein and the Pasua community, processed into the planks and beams that the steppe's camp-construction industry requires. The dye operation extracts the wind-dried flowers and bark pigments that are the camp's most distinctive export â€” colors produced from forest-steppe transition plants that cannot be replicated elsewhere. The dye-master is a Pasua Elf who has been refining her formulations for fifteen years.",
+    "exits": {
+      "west": 7083,
+      "south": 7089
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7087,
+    "name": "Veyla Crossing - Windstone and Rootwind Site",
+    "description": "The Windstone near Veyla Crossing is unique in that it sits precisely at the forest-steppe boundary, its eastern face shaded by crescent forest canopy and its western face exposed to the open steppe. The rune-circle's resonance at this stone combines earth and air elemental signatures in a way that Headman Greenrein describes as a conversation rather than a dominance â€” neither element overwhelming the other. The Rootwind ceremony performed here at the Shieldwood's edge blends Mytrone wind-dance with Pasua tree-song, the combination producing effects that neither tradition's practitioners fully understand but both consider powerful.",
+    "exits": {
+      "south": 7084,
+      "west": 7085
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "forest",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7088,
+    "name": "Veyla Crossing - Community Hall",
+    "description": "The community hall at Veyla Crossing is the most ecologically integrated structure on the steppe â€” built with the Pasua living-architecture techniques that use growing trees as structural elements, the hall is technically still growing, its walls slowly thickening as the trees continue their development. Meetings here take place in a space that is simultaneously inside and outside, the canopy of the partially-grown trees filtering the sky while the walls' living timber creaks in the wind. Community decisions in this camp tend toward consensus rather than authority, Greenrein's governance philosophy preferring to wait for agreement over imposing decision.",
+    "exits": {
+      "south": 7085,
+      "east": 7084
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7089,
+    "name": "Veyla Crossing - Road South",
+    "description": "The road south from Veyla Crossing leads toward the Deepwater Marches border and the western trade connections. The road passes through the crescent forest's northern margin, the first mile heavily shaded before emerging into more open terrain on the forest's southern side. Pasua forest-wardens maintain this road section and the intelligence network along it; Far Rider patrols cover the southern margin beyond the forest. The combination creates reliable security for the route that connects the southwestern steppe to the wider world, and the road is used by the Halfling caravan-traders who run the circuit between the steppe and the Deepwater region's edge settlements.",
+    "exits": {
+      "north": 7086,
+      "west": 7082
+    },
+    "flags": [
+      "road",
+      "forest"
+    ]
+  },
+  {
+    "vnum": 7090,
+    "name": "Veyla Crossing - Outer Camp",
+    "description": "The outer camp at Veyla Crossing's western margin is where the traveling and seasonal population sets up: Halfling caravan-traders in transit, Pasua forest-wardens resupplying between patrols, and the occasional merchant whose circuit brings them to this corner of the steppe. The outer camp is more dynamic than most settlements of comparable size, its population changing on a weekly cycle as travelers arrive and depart. Greenrein monitors the outer camp's composition carefully â€” the forest-steppe border is a potential entry point for threats moving in either direction, and transient populations are harder to track than residents.",
+    "exits": {
+      "east": 7082,
+      "south": 7089,
+      "north": 7091
+    },
+    "flags": [
+      "camp",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7091,
+    "name": "Veyla Crossing - Healer and Supply",
+    "description": "The combined healer and supply post at Veyla Crossing reflects the camp's position as a transit hub â€” the supply section maintains a broader inventory than a camp of 1,600 would normally justify, serving the transit traffic as well as the resident community. The healer here is Greenrein's closest associate, a Pasua Elf with training in both steppe and forest medicine â€” the injuries and illnesses of the forest-steppe transition zone differ from either pure environment, and the healer's combined expertise is well-suited. The supply section carries a forest-specific kit in addition to the standard steppe supplies, reflecting the dual-environment nature of the camp's operations.",
+    "exits": {
+      "north": 7090,
+      "east": 7088
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7092,
+    "name": "Teshen Halt - Trading Post Center",
+    "description": "Teshen Halt is the northernmost camp, positioned on the desert border where the steppe grades into the Infinite Desert's southern margins. Headman Pip Longstride â€” a Halfling, the only non-Mytrone Headman in the steppe's history â€” runs the camp as a trading post as much as a pastoral settlement, his commercial instincts transforming what might have been a purely functional border post into a thriving trade hub. The camp's center is organized around the permanent trading structures that have replaced wagons for the core commercial functions, a semi-settled character that is unique among the seven camps.",
+    "exits": {
+      "south": 7005,
+      "north": 7093,
+      "east": 7094,
+      "west": 7095
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 7093,
+    "name": "Teshen Halt - Desert Gate",
+    "description": "The northern edge of Teshen Halt where the steppe ends and the desert begins is marked by a formal gate structure â€” the only formal border marker on the Eternal Steppe, maintained jointly by the Mytrone and the oasis-city governments of the Infinite Desert. The gate controls the direction of trade and records the movement of caravans, its records feeding into both Tavranek's administrative system and the desert's caravan-tracking network. The desert wind through the gate is unmistakable â€” drier, hotter, carrying fine mineral dust that tastes of salt and distance â€” and the Mytrone riders stationed at the gate have learned to read the desert caravans' approach two hours before they arrive by the quality of the dust they raise.",
+    "exits": {
+      "south": 7092,
+      "north": 8300
+    },
+    "flags": [
+      "gate",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7094,
+    "name": "Teshen Halt - Caravan Grounds",
+    "description": "The caravan grounds of Teshen Halt handle the desert caravans at their most logistically complex: hundreds of animals, dozens of wagons, weeks of accumulated desert dust, and cargo that needs to be assessed, taxed, and redirected into the steppe distribution network. The grounds are organized with the precision that Halfling logistics culture applies to complex problems, and the camp's reputation for efficient caravan processing draws traffic that would otherwise route around the steppe entirely. The Caravan's Welcome festival celebrated here when the first desert caravan of the season arrives is a genuine cultural event for the camp, not merely a commercial one.",
+    "exits": {
+      "west": 7092,
+      "south": 7096
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 7095,
+    "name": "Teshen Halt - Oasis Map Archive",
+    "description": "Headman Longstride maintains the best collection of oasis-route maps on the steppe, acquired through four generations of his family's desert-border work and supplemented by information from every caravan that passes through. The maps are cross-referenced with seasonal water-availability data and updated as conditions change â€” a living document rather than a fixed record. Travelers heading into the Infinite Desert can purchase map copies here for a reasonable fee, and the detail available is significantly better than anything produced by the desert oasis-cities' own cartographers, whose interest in sharing route information is limited by competitive concerns.",
+    "exits": {
+      "east": 7092,
+      "south": 7097
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7096,
+    "name": "Teshen Halt - Preserved Food Stores",
+    "description": "The preserved food production and storage operation at Teshen Halt is the camp's secondary economy, its output of dried meat, preserved grain, and the pickled desert-edge plants that caravan provisioners prize making it a reliable supplier to the desert trade. The preservation techniques here blend Halfling food-culture with the desert-specific methods learned from caravan merchants, and the result â€” particularly the wind-dried steppe meat that Teshen Halt brands under Longstride family certification â€” commands premium prices as far as the Twin Rivers. The store doubles as the camp's disaster reserve, maintained at ninety days' capacity.",
+    "exits": {
+      "north": 7094,
+      "east": 7098
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7097,
+    "name": "Teshen Halt - Halfling Community Quarter",
+    "description": "The twenty percent Halfling component of Teshen Halt â€” supplemented by the transit population of Halfling caravan-traders that doubles the community during peak season â€” creates a quarter that is more Halfling in character than almost anywhere outside a dedicated Halfling settlement. The quarter's food culture, its communal organization, and the shrine to Semyon the Hearth Mother at its center all reflect a community that has adapted to steppe life without abandoning its foundational identity. The Halfling caravan-traders who stop here between runs find the quarter a genuinely comfortable rest stop in a journey that is otherwise defined by exposure.",
+    "exits": {
+      "north": 7095,
+      "east": 7099,
+      "south": 7100
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7098,
+    "name": "Teshen Halt - Eruskan Traders' Post",
+    "description": "The ten percent Eruskan Human community of Teshen Halt concentrates in a trading post that serves the commercial interests of Eruskan merchants making the desert circuit. The traders here have Tidebloom connections â€” many are from Branmill Cove families with branches on both the lake-shore and the desert-trade routes â€” and the commercial network they maintain between the two ends of Oreka's trade system is more sophisticated than its informal structure suggests. The trading post also serves as a safe-storage facility for high-value goods in transit, its security arrangements a cooperative between Mytrone Far Riders and the Halfling community's own protection capacity.",
+    "exits": {
+      "west": 7096,
+      "north": 7092
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7099,
+    "name": "Teshen Halt - Road South to Steppe",
+    "description": "The road south from Teshen Halt into the central steppe is the entry point for the desert-trade goods that flow into the Mytrone distribution network. The road widens as it moves south, the desert border's tight-entry control giving way to the more open steppe character within a mile of the camp. Wind Road readers find this section particularly informative â€” the Wind Road runs north here, bringing steppe air into the desert margin, and the disruption that a stopped or redirected Wind Road creates is detectable at Teshen Halt before it reaches any of the central camps. Headman Longstride keeps one rider permanently assigned to Wind Road monitoring at this road section.",
+    "exits": {
+      "north": 7092,
+      "south": 7005
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7100,
+    "name": "Teshen Halt - Windstone and Weather Station",
+    "description": "The Windstone near Teshen Halt serves double duty as a religious site and as the anchor for the camp's weather-monitoring station. The stone's amber glow on clear nights is visible to incoming desert caravans as a navigational landmark â€” the Giant-era engineers who placed it may have intended this function, given its placement at the desert-steppe boundary. The weather station uses the Windstone's rune-circle resonance as a baseline measurement, detecting shifts in the elemental-weather system that the stones regulate. A full day's advance warning of the brief but violent thunderstorms that cross the steppe in spring and autumn is possible from this station on good data days.",
+    "exits": {
+      "south": 7097,
+      "east": 7092,
+      "north": 7101
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7101,
+    "name": "Teshen Halt - Outer Perimeter and Caravan Stop",
+    "description": "The outer perimeter of Teshen Halt is the first structure that approaching desert caravans encounter, a low stone wall with a formal gate that funnels traffic through a controlled entry point. The perimeter is staffed by a combined Mytrone-Halfling watch that checks incoming caravans for the contraband list maintained by both Tavranek's administration and the desert oasis-city network. Current contraband concerns center on Deceiver artifacts â€” old equipment from the battlefield and the Burnt Hollows has been appearing on the desert black market, and the crossing point is a natural control point for the trade. Three such artifacts have been seized at this perimeter in the past year.",
+    "exits": {
+      "west": 7100,
+      "south": 7095
+    },
+    "flags": [
+      "gate",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7102,
+    "name": "Asharen Camp - Tracker's Circle",
+    "description": "Asharen Camp occupies the eastern steppe near the Gatefall Reach border, its 1,400 residents organized around the tracking and border-monitoring mission that Headman Eldra Stonereins has defined as the camp's primary function. The camp's center â€” the Tracker's Circle, where patrol debriefs and intelligence assessments are conducted â€” is organized for analytical work rather than community celebration, its fire surrounded by report boards and assessment tools rather than storytelling benches. Fifteen percent of the camp is Visetri Dwarf, their stonework skills used in the border-marker maintenance that is part of the camp's responsibilities.",
+    "exits": {
+      "south": 7081,
+      "north": 7103,
+      "east": 7104,
+      "west": 7105
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7103,
+    "name": "Asharen Camp - Stone and Sky Festival Ground",
+    "description": "The Stone and Sky festival ground combines horse-racing with stone-carving exhibitions in the joint Mytrone-Visetri tradition that Asharen Camp has developed over the years of their cohabitation. The stone-carving component â€” Visetri craftspeople competing for the best carved interpretation of the Wind Road, the Windstones, or the Dark Dawn â€” has become as popular as the racing, and the best pieces are purchased by Tavranek's administrative center for permanent display. The festival brings the two peoples' aesthetic traditions into direct dialogue, and the results occasionally surprise even the participants.",
+    "exits": {
+      "south": 7102,
+      "east": 7106
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7104,
+    "name": "Asharen Camp - Eastern Watch",
+    "description": "The eastern watch post at Asharen Camp faces the transition zone where the Eternal Steppe grades into the forested hills of the Gatefall Reach. This is the steppe's most historically significant direction â€” the Deceiver host came from the southeast, and the scattered warbands that fled Dark Dawn and were never found went back this way. The watch here is permanent and two-person, with a Kovaka Elf specialist present for the additional observational range they provide. A current watch log note, three days old, records an anomalous movement in the transition zone that Headman Stonereins has marked for follow-up but not yet investigated personally.",
+    "exits": {
+      "west": 7102,
+      "east": 7107,
+      "north": 7244
+    },
+    "flags": [
+      "safe",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7105,
+    "name": "Asharen Camp - Visetri Quarter",
+    "description": "The Visetri Dwarf vitsa community at Asharen Camp is the most permanent such settlement on the steppe, many of its members having given up the fully nomadic vitsa lifestyle for the semi-settled camp existence that allows their craftwork to reach its full potential. The quarter is organized around the stone-working equipment that Visetri craftsmanship requires â€” heavy, precise, immovable â€” and the buildings here are the most solidly constructed in any camp, the Visetri having upgraded temporary structures to permanent ones over years of residence. The camp moves seasonally, but the Visetri quarter's most substantial equipment stays at the primary site.",
+    "exits": {
+      "east": 7102,
+      "south": 7108
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 7106,
+    "name": "Asharen Camp - Intelligence Room",
+    "description": "Headman Stonereins has been silent for three weeks, her camp's riders withdrawn from shared patrol duties without explanation. The intelligence room at the camp's eastern edge â€” where the analytical work of border monitoring takes place â€” shows signs of recent intensive use: maps marked with unusual precision, report files pulled from their normal storage and stacked on the central table, and a correspondence file that has been sealed with Stonereins' personal mark. The duty officer who admits visitors to this room is clearly uncomfortable with questions about the Headman's status, and equally clearly under orders not to answer them directly.",
+    "exits": {
+      "west": 7103,
+      "north": 7104
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7107,
+    "name": "Asharen Camp - Gatefall Road",
+    "description": "The road from Asharen Camp toward the Gatefall Reach follows the terrain's natural contours as the steppe rises toward the forested hills of the east. The road is the steppe's least maintained far approach â€” Mytrone culture does not prioritize fixed roads â€” but the Far Rider patrol route that covers this direction keeps the path clear enough for steady riding. The Silence Breach's historical location is accessible from this direction, and the awareness of that fact gives the road a psychological weight that experienced riders feel differently than new patrol riders, who tend to ride it faster than is tactically advisable.",
+    "exits": {
+      "west": 7104,
+      "east": 12301
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7108,
+    "name": "Asharen Camp - Supply and Windstone Record",
+    "description": "The supply cache at Asharen Camp is maintained by a Visetri Dwarf supply-keeper who has also taken on responsibility for the Windstone maintenance records for the eastern sector. The Windstone nearest Asharen Camp is the most recently repaired on the steppe â€” its rune-circle was partially damaged by Flamewarg cult interference two years ago and restored by Visetri craftspeople working under Stonereins' authorization. The repair records here document the restoration process in detail, and the current state of the Windstone's resonance output is logged weekly. The most recent entry shows output slightly below the baseline established after the repair.",
+    "exits": {
+      "north": 7105,
+      "west": 7102,
+      "south": 7109
+    },
+    "flags": [
+      "safe",
+      "camp",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7109,
+    "name": "Asharen Camp - Community Fire",
+    "description": "The community fire at Asharen Camp is smaller and burns more quietly than those of the more socially active camps, reflecting the analytical culture that Stonereins has cultivated. Stories told here tend toward the intelligence-briefing end of Mytrone oral tradition â€” current threat assessments delivered in narrative form, patrol observations shared as cautionary tales, the Dark Dawn history invoked as operational reference rather than emotional memorial. Visitors from other camps find the fire conversations at Asharen Camp unusually useful and unusually uncomfortable. The fire has not had a visiting storyteller in twelve days, which is longer than usual and another item contributing to the general concern about Headman Stonereins' silence.",
+    "exits": {
+      "east": 7108,
+      "south": 7105
+    },
+    "flags": [
+      "safe",
+      "camp"
+    ]
+  },
+  {
+    "vnum": 7110,
+    "name": "Dalan's Hold - Watchtower",
+    "description": "The squat stone tower at Dalan's Hold stands on the steppe's southern edge where the grassland begins its transition to the forested hills of the Gatefall Reach, its compact construction built on Concordant-era Kovaka Elf foundations that have proven their durability over three centuries. A rotating garrison of Far Riders with trained hawk companions staffs the tower, the hawks extending the watch to two miles beyond the tower's visual range. In clear weather the tower's mirror-signal can reach Tavranek in four hours; in foul weather a rider relay covers the distance in two days. The tactical intelligence from this post is the steppe's earliest warning against southeastern threats.",
+    "exits": {
+      "south": 7111,
+      "north": 7025,
+      "east": 7112,
+      "west": 7113
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 7111,
+    "name": "Dalan's Hold - Garrison Quarters",
+    "description": "The garrison quarters of Dalan's Hold house the Far Riders who make this strategic waystation permanently functional. The quarters are spare but solid, the Kovaka Elf foundation work evident in the precision of the stone-fitting and the durability of the construction even after three centuries. Every rider stationed here understands the post's significance: the Hold commands the road between Tavranek and the Gatefall settlements, and its early-warning function has historical precedent â€” Dalan Oathspur held this position alone for three days during the Scattering, buying time for refugees that cost him his life. That history shapes every watch rotation.",
+    "exits": {
+      "north": 7110,
+      "east": 7114
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7112,
+    "name": "Dalan's Hold - Oathspur Shrine",
+    "description": "The shrine to Dalan Oathspur stands at the Hold's eastern margin, a rider's cairn built on the spot where records say he fell on the third day of his solitary defense. The Windstone nearest the shrine has never stopped glowing even in daylight â€” an anomaly noted by every garrison that has served here, attributed variously to the stone's unusually active rune-circle, the elemental resonance of a martyr's death, or the Lord of Stone's ongoing attention to a place where someone held the ground. The accumulated feather-and-bone charms left by every Far Rider who passes through form a wind-rustled mound that grows larger each year.",
+    "exits": {
+      "west": 7110,
+      "south": 7113
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7113,
+    "name": "Dalan's Hold - Supply Depot",
+    "description": "The supply depot at Dalan's Hold maintains the resources needed for extended independent operation â€” the scenario that Dalan Oathspur's three days made historical. The depot is supplied by the Tavranek resupply run that comes monthly when the road is passable and is maintained at sixty-day capacity as a standing operational requirement. The supply-keeper is a Mytrone woman with thirty years of steppe logistics experience who considers the post's historical significance motivation rather than burden; she inspects every incoming supply run personally and rejects substandard items without appeal.",
+    "exits": {
+      "north": 7112,
+      "east": 7110
+    },
+    "flags": [
+      "safe",
+      "indoor"
+    ]
+  },
+  {
+    "vnum": 7114,
+    "name": "Dalan's Hold - Southeastern Road",
+    "description": "The road southeast from Dalan's Hold leads toward the Gatefall Reach, the route that the Deceiver host came from and that the scattered warbands fled back along after Dark Dawn. The road is technically maintained but psychologically charged â€” the garrison's standing orders include a specific Kin-sense monitoring protocol for this direction, and the patrol circuit that covers the first ten miles southeast is the Hold's most sensitive assignment, given to the most experienced riders. The road is currently clear according to the last patrol report, filed two days ago. The next patrol departs tomorrow at dawn.",
+    "exits": {
+      "west": 7111,
+      "north": 7110
+    },
+    "flags": [
+      "road",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7200,
+    "name": "Wind Road - Northern Approach",
+    "description": "The northern end of the Wind Road corridor, where the steppe's prevailing wind enters the terrain channel the Giants shaped millennia ago, carries a directional pressure detectable by trained riders as a reliable navigational reference. The grass here bends south with a consistency that no local topography explains â€” it is the Wind Road's effect, the Giant-modified terrain channeling air into a corridor that Mytrone children learn to read before they learn to read words. Windstones at the horizon mark the corridor's eastern and western margins. The desert trade road passes through here, and caravans use the Wind Road's direction for orientation the way ships use current.",
+    "exits": {
+      "south": 7201,
+      "north": 7093
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7201,
+    "name": "Wind Road - Central Steppe Stretch",
+    "description": "The central section of the Wind Road corridor runs through the heart of the Eternal Steppe's most open terrain, the Varkhon Rise visible to the west and nothing between here and the southern crescent forests to obstruct the channeled wind. Riding with the Wind Road on a clear day â€” the wind at a consistent bearing, the grass rolling in predictable patterns, the sky enormous above â€” is the experience that Mytrone culture uses as its primary metaphor for alignment with the steppe's nature. When the Wind Road disrupts here, riders know it immediately: the grass loses its directional pattern, the air pressure changes, and something is wrong.",
+    "exits": {
+      "north": 7200,
+      "south": 7202,
+      "east": 7203,
+      "west": 7204,
+      "northeast": 7236
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7202,
+    "name": "Wind Road - Southern Passage",
+    "description": "The southern end of the Wind Road corridor, where the channeled air releases into the broader steppe and loses its maintained direction, is identifiable to trained riders as a subtle shift from directed to diffuse wind. The transition is gradual but real, and the Mytrone who have marked it precisely consider the release point a useful navigational landmark â€” knowing you are south of the Wind Road's maintained corridor orients you relative to Tavranek, the camps, and the battlefield with useful precision. Three Windstones are visible from this point on clear days, their amber glows a triangulation tool for experienced riders.",
+    "exits": {
+      "north": 7201,
+      "east": 7205,
+      "west": 7206,
+      "south": 7238
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7203,
+    "name": "Wind Road - Eastern Margin",
+    "description": "The eastern edge of the Wind Road corridor borders the territory of Orthek's Stand and Asharen Camp, and the riders who patrol this margin develop a particular familiarity with the corridor's eastern behavior â€” the way it interacts with the terrain features of the mountain foothills and how those interactions can indicate weather pattern changes before conventional observation would catch them. A cracked Windstone was reported in this sector last month, its rune-circle dark for the first time in recorded history. The patrol reports that followed describe tool-mark damage rather than natural degradation, and the investigation is ongoing.",
+    "exits": {
+      "west": 7201,
+      "south": 7207
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7204,
+    "name": "Wind Road - Western Margin",
+    "description": "The western edge of the Wind Road corridor is where the Varkhon Rise's terrain effect combines with the Giants' wind-channeling to create the strongest expression of the corridor's directional pressure. Riders near the Varkhon Rise who lose their orientation in poor conditions use the Wind Road's western margin as their re-orientation reference â€” the wind here is the most reliable directional indicator on the steppe, stronger and more consistent than anywhere else in the corridor. Kavarn's Drift's herd-riders work this margin daily, their Wind Road reading integrated into the routine of herd management so completely that they rarely think of it as a separate skill.",
+    "exits": {
+      "east": 7201,
+      "south": 7208
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7205,
+    "name": "Wind Road - Eastern Junction",
+    "description": "The point where the Wind Road corridor's eastern margin meets the patrol roads from Orthek's Stand and Asharen Camp is a navigational reference point that appears on every steppe map produced in the past century. A Windstone here marks the junction â€” smaller than the Great Windstone but well-maintained, its rune-circle reliable â€” and the convergence of patrol routes makes this a natural stop point for riders from three different camp territories who often cross paths here and exchange intelligence informally before continuing. The junction's position makes it the first point at which an eastern approach to the central steppe can be detected from the Wind Road corridor.",
+    "exits": {
+      "west": 7203,
+      "south": 7211,
+      "east": 7074
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7206,
+    "name": "Wind Road - Western Junction",
+    "description": "The western junction of the Wind Road corridor meets the patrol routes from Kavarn's Drift and Veyla Crossing, creating a convergence point used by the western camps' riders as regularly as the eastern junction is used by the eastern camps. The Varkhon Rise is visible on the western horizon from here, and in clear conditions the smoke from Kavarn's Drift's headman fire â€” maintained at a height that makes it visible for ten miles â€” is detectable. The Wind Road here carries the Varkhon Rise's influence, the Rise's terrain effect amplifying the corridor's directional pressure beyond what the Giants' terrain-shaping alone would produce.",
+    "exits": {
+      "east": 7202,
+      "south": 7209,
+      "west": 7038,
+      "north": 7245
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7207,
+    "name": "Wind Road - Approach to Battlefield",
+    "description": "The Wind Road corridor as it approaches the Dark Dawn Battlefield from the north shows the first signs of the battlefield's influence: the grass grows slightly less freely, the Wind Road's directional pressure has a slightly different quality â€” not disrupted, but changed, as if the corridor is working harder to maintain itself through the elemental scarring of the battlefield zone. Experienced riders notice it two miles before the battlefield's edge is visible and use the change as a warning indicator. Current patrol protocols mark this point as the transition from normal patrol to heightened-awareness patrol mode.",
+    "exits": {
+      "north": 7203,
+      "south": 7211
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7208,
+    "name": "Wind Road - Central Open Steppe",
+    "description": "The widest and most exposed section of the Wind Road's maintained corridor is here, the terrain flat in every direction, the sky genuinely enormous, the wind consistent at the corridor's bearing. Riding across this section in good weather is the clearest expression of the steppe's fundamental character â€” movement, openness, wind, and the horizon in every direction. Mytrone culture does not record this as a landmark because it is not one: it is the steppe itself, in its essential form, and the Mytrone understand landmarks as exceptions to that form rather than destinations within it. What is landmark here is precisely the absence of exception.",
+    "exits": {
+      "north": 7204,
+      "south": 7062,
+      "east": 7201,
+      "west": 7035
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7209,
+    "name": "Wind Road - Southwest Approach",
+    "description": "The southwestern approach to the Wind Road corridor from Veyla Crossing's direction provides a gentle on-ramp into the maintained wind-channel for riders approaching from the forest-steppe transition. The first entry into the Wind Road's influence â€” the moment when the diffuse mixed wind of the forest edge gives way to the corridor's directed pressure â€” is something Mytrone riders describe as 'finding the road' in the same way that a sailor describes finding the current. Veyla Crossing's riders use this entry point to calibrate their Wind Road reading after extended forest patrols where the corridor's signal is blocked.",
+    "exits": {
+      "east": 7206,
+      "south": 7085,
+      "north": 7204
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7210,
+    "name": "Wind Road - Tavranek Approach",
+    "description": "The Wind Road corridor's closest approach to Tavranek runs through the open steppe north of the city, the Great Windstone's amber glow visible on the horizon when conditions are right. The corridor here carries the combined influence of the Great Windstone and the terrain channeling, making it the most reliably readable section of the Wind Road for riders who need to navigate to Tavranek in poor visibility. Far Rider patrols returning to the city use this approach as their terminal navigation reference, and the worn path along the corridor's edge shows the accumulated boot-traffic of three hundred years of riders coming home.",
+    "exits": {
+      "south": 7000,
+      "north": 7201,
+      "east": 7025
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7211,
+    "name": "Dark Dawn Battlefield - Western Edge",
+    "description": "The western edge of the Dark Dawn Battlefield is where the battle reached its furthest extent, the evidence of the conflict visible in the dark patches of grass â€” thin, reluctant growth over scorched earth that has never fully recovered â€” and the occasional glass-fused crater where alien magic struck the steppe with enough force to fuse the soil. The smell of old burning rises from the ground on warm days, and Kin-sense begins its unpredictable flickering here: not gone, but unreliable, shifting between normal sensitivity and jarring suppression without warning. The horses of experienced riders shy here in ways that their riders do not understand and cannot prevent.",
+    "exits": {
+      "west": 7070,
+      "east": 7212,
+      "north": 7207,
+      "south": 7240
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7212,
+    "name": "Dark Dawn Battlefield - Northern Perimeter",
+    "description": "The northern edge of the battlefield is where the Brotherhood of the Steppe's charge lines began, the grass here worn to near-nothing by the training exercises and memorial processions that have maintained the ground's usage without allowing it to recover. The burn-scars here are lighter than deeper in the battlefield â€” the battle moved southward during the night â€” but the Kin-sense disruption is present from the moment you cross the northern perimeter. Riders entering here feel the Will DC 16 pressure that the battlefield generates, and those who have not experienced it before are typically not warned adequately by description.",
+    "exits": {
+      "south": 7213,
+      "west": 7211,
+      "east": 7214,
+      "north": 7223,
+      "northeast": 7224
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7213,
+    "name": "Dark Dawn Battlefield - Central Zone",
+    "description": "The center of the Dark Dawn Battlefield covers the area where the battle's intensity was greatest, the burn-scars dense and the glass-fused craters large. The alien-magic impact points are visible as smooth, slightly reflective depressions where the normal soil texture has been replaced by fused mineral glass. Items from the battle â€” metal fragments, the occasional Deceiver equipment piece, the rare remnant of Brotherhood arms â€” are half-buried in the glass-studded soil, and the temptation to collect them is understandable and ill-advised: the Mytrone's prohibition on removing battlefield material is not merely ceremonial. The Kin-sense disruption in this zone is severe, and disorientation follows quickly for those who do not anchor themselves.",
+    "exits": {
+      "north": 7212,
+      "south": 7215,
+      "east": 7216,
+      "west": 7222
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "flickering",
+        "dc": 16,
+        "message": "Your Kin-sense flickers dangerously. The central dead zone of Dark Dawn still pulses."
+      }
+    ]
+  },
+  {
+    "vnum": 7214,
+    "name": "Dark Dawn Battlefield - Eastern Flank",
+    "description": "The eastern flank of the battlefield is where the Wind-Rider Pasua archers operated during the battle's main engagement, their hit-and-retreat tactics leaving a different pattern of evidence than the lancers' direct charges: widely spaced impact clusters and the occasional burned circle where a Wind-Rider unit paused and received Deceiver fire before moving again. The burn-scars here are more scattered, the battlefield archaeology reflecting movement rather than position. Sand Wraiths have been spotted on the eastern flank more often than on other sections, their presence suggesting that the battle's casualties were heaviest here in the final phase.",
+    "exits": {
+      "west": 7213,
+      "south": 7217
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "flickering",
+        "dc": 16,
+        "message": "Your Kin-sense is unstable here. Dark Dawn's echo has not faded."
+      }
+    ]
+  },
+  {
+    "vnum": 7215,
+    "name": "Dark Dawn Battlefield - Southern Zone",
+    "description": "The southern zone of the battlefield is where the Deceiver encampment stood and where the battle ended. The burn-scars here are absolute â€” grass does not grow in the central section, has not grown since the battle, and soil samples sent to Tidebloom scholars have never produced any explanation consistent with natural fire. The glass-fused craters in this section are the largest on the battlefield, some ten feet across and six inches deep, their surfaces still carrying the faint residue of alien magic that defies identification. The Gilded Company fought here, and fragments of their non-Orekaan equipment occasionally emerge from the soil during heavy rains.",
+    "exits": {
+      "north": 7213,
+      "east": 7218,
+      "south": 7219
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7216,
+    "name": "Dark Dawn Battlefield - Warg Kill Zone",
+    "description": "The section of the battlefield where the Deceiver war-wargs with flaming-pitch ropes caused the greatest chaos is identifiable by the burn-pattern: long, curved scorch lines in the grass where the trailing pitch ropes swept the steppe, crossing and recrossing in the chaos of the battle's initial phase. The smell of old pitch rises here on hot days, and the grass that grows in the surrounding areas avoids these lines as if it remembers. The Mytrone who study the battlefield for historical purposes find this section the hardest to document accurately â€” the burn patterns record movement too complex for straightforward interpretation.",
+    "exits": {
+      "west": 7213,
+      "south": 7220
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7217,
+    "name": "Dark Dawn Battlefield - Wind-Rider Memorial",
+    "description": "A natural rise in the battlefield's eastern section has been maintained as a Wind-Rider memorial â€” a position that oral tradition says was where the Pasua Wind-Riders made their final charge, the one that shattered the last organized Deceiver resistance. The rise is the only point in the battlefield where any Mytrone-sanctioned construction has been placed: a single stone marker, uninscribed, which the Pasua community requested be left without text because the act of reading words is a slower form of communication than the act of feeling the wind that passes through them. Kin-sense at this marker registers a warmth rather than the disruption normal to the battlefield.",
+    "exits": {
+      "north": 7214,
+      "west": 7215
+    },
+    "flags": [
+      "dangerous",
+      "plains",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7218,
+    "name": "Dark Dawn Battlefield - Gilded Company Stand",
+    "description": "The position where the Gilded Company made their stand after their defection to the Brotherhood is documented in their own records, preserved by their descendants the Farborn in Titan's Rest. The ground here shows the evidence of a disciplined defensive position â€” the alien-equipment fragments here are from the Company's own arms, not Deceiver weapons, and the pattern of burn-scars suggests a perimeter defense that held for several hours before the battle's end. The Mytrone maintain no specific memorial here, unsure of the protocol for honoring fighters from another plane who died for Oreka's defense, but they do not disturb the ground.",
+    "exits": {
+      "west": 7215,
+      "north": 7216
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7219,
+    "name": "Dark Dawn Battlefield - Dead Zone Center",
+    "description": "The absolute center of the battlefield's Dead Zone is where the Deceiver command camp stood and where the encampment's alien anchoring magic was strongest. Kin-sense goes completely silent here â€” not the flickering disruption of the battlefield's edge but a total absence, the Void sensation that triggers the deepest instinctual alarm in every Kin practitioner. Glass-fused craters cluster in this section, the largest four feet deep, and the alien equipment fragments here are more numerous and better preserved than elsewhere. Flamewarg cult activity has been reported near this section's perimeter, suggesting that someone knows what to look for in the debris. Nothing biological grows in the central thirty yards.",
+    "exits": {
+      "north": 7215,
+      "south": 7220,
+      "east": 7221
+    },
+    "flags": [
+      "dangerous",
+      "plains",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 7220,
+    "name": "Dark Dawn Battlefield - Southern Exit Road",
+    "description": "The road south from the Dark Dawn Battlefield leads toward the Burnt Hollows â€” the network of collapsed Deceiver burrow-forts beneath the steppe south of the battlefield â€” and eventually toward Sylrek Camp. The road is marked with the double-slash warning sign used throughout the steppe for significant danger zones, and the patrol markers here are the most frequently updated on the steppe, reflecting the active intelligence situation on the battlefield's southern margin. The new tunnel entrances reported by scouts three weeks ago are visible from this road as disturbed earth mounds at irregular intervals, their fresh timber reinforcement incongruous against the old burned grass.",
+    "exits": {
+      "north": 7219,
+      "south": 7225,
+      "west": 7213
+    },
+    "flags": [
+      "dangerous",
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7221,
+    "name": "Dark Dawn Battlefield - Eastern Exit",
+    "description": "The eastern edge of the battlefield, where the Wind-Rider eastern flank operations ended and the post-battle pursuit of fleeing Deceiver warbands began. The grass here transitions back to normal steppe growth within a hundred yards, the battlefield's influence ending with the abruptness that characterizes all its borders â€” as if a line was drawn rather than the burn-damage fading gradually. Far Rider patrol markers on the eastern boundary are current, the patrols covering this edge more frequently than any other battlefield section due to the intelligence situation in the southeastern steppe.",
+    "exits": {
+      "west": 7219,
+      "north": 7216,
+      "east": 7107
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7222,
+    "name": "Dark Dawn Battlefield - Brotherhood Advance Line",
+    "description": "The advance line of the Brotherhood's initial engagement â€” the position from which the Far Rider lancers made their first charge â€” is marked by a subtle elongated depression in the grass where generations of memorial-riders have retraced the original charge line. The depression is shallow enough to be invisible unless you know to look, and most visitors miss it entirely. Those who know steppe archaeology read it immediately: a formation line seven hundred yards across, compressed into the soil by the weight of hundreds of horses standing in formation before the charge. The wind across this line always moves in the same direction as the original charge, an effect that no one has explained.",
+    "exits": {
+      "south": 7213,
+      "east": 7214,
+      "west": 7211
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7223,
+    "name": "Dark Dawn Battlefield - Scattered Debris Zone",
+    "description": "A section of the battlefield where the chaos of the battle's mid-phase is most evident in the random scatter of equipment fragments, burn-scars, and glass craters with no evident tactical pattern. Historians who have attempted to reconstruct the battle from this section's physical evidence have concluded that the mid-phase was genuinely chaotic â€” neither side in organized formation, the fighting fragmenting into dozens of simultaneous smaller engagements across several square miles of burning steppe. The debris here includes items from both sides mixed together, the clearest physical evidence of how close the outcome was during the hours before dawn.",
+    "exits": {
+      "north": 7212,
+      "east": 7216,
+      "west": 7211
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7224,
+    "name": "Dark Dawn Battlefield - Hawk Rider Position",
+    "description": "A position at the battlefield's northern edge that oral tradition identifies as where the Brotherhood's hawk companions â€” used for real-time battle communication across the chaotic engagement â€” were stationed with their handlers. The hawks flew message-carrying loops between unit commanders throughout the battle, their presence noted in multiple independent accounts. The ground here shows evidence of a static position â€” packed earth consistent with a standing camp rather than a charge line â€” and a small shelter-remnant of cut timber that has been preserved by the same mysterious process that maintains other organic remnants on the battlefield far beyond their natural lifespan.",
+    "exits": {
+      "west": 7212,
+      "south": 7222
+    },
+    "flags": [
+      "dangerous",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7225,
+    "name": "Burnt Hollows - Entrance",
+    "description": "The Burnt Hollows are the network of collapsed Deceiver burrow-forts beneath the steppe south of the Dark Dawn Battlefield, partially mapped by Far Rider scouts and extending deeper than anyone has followed. The entrance here â€” one of seven known surface access points â€” descends into a timber-reinforced tunnel that smells of old earth, stale air, and the faint chemical residue of Deceiver construction materials that three centuries have not fully dispersed. The new tunnel entrances reported three weeks ago are visible from this position: fresh timber reinforcement, recently disturbed soil, and footprints in the loose earth that are smaller than any Flamewarg cult member's foot. Someone â€” something â€” is digging from below.",
+    "exits": {
+      "north": 7220,
+      "down": 7226
+    },
+    "flags": [
+      "dangerous",
+      "trapped"
+    ]
+  },
+  {
+    "vnum": 7226,
+    "name": "Varkhon Rise - Southern Approach",
+    "description": "The southern approach to the Varkhon Rise â€” the series of long, low hills running north-south through the steppe's western quarter â€” begins here where the flat central steppe begins its gentle rise toward the Ridge's first hills. The transition is subtle, the terrain change barely perceptible in the first mile, but the wind changes immediately: the Wind Road's channeled pressure becomes more directional, the air carrying the slightly different scent of the higher ground. Kavarn's Drift's herd-riders work this approach daily, and their passage has compressed the approach track into something that functions as a road without being maintained as one.",
+    "exits": {
+      "north": 7227,
+      "east": 7208,
+      "south": 7082
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7227,
+    "name": "Varkhon Rise - First Hill",
+    "description": "The first significant elevation of the Varkhon Rise provides a view south across the central steppe that is Kavarn's Drift's primary tactical asset: two miles of open ground visible from the hilltop, with the Wind Road's corridor detectable by the grass-bending pattern for another three beyond that. The hill's leeward side â€” the eastern slope, sheltered from the prevailing wind â€” is where the camp pitches in its winter position, the shelter reducing the cold-season wind-chill to manageable levels. Windstones are visible on the hilltops to the north, their positions originally chosen by the Giants to maximize their wind-stabilizing effect.",
+    "exits": {
+      "south": 7226,
+      "north": 7228,
+      "east": 7035,
+      "west": 7233
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7228,
+    "name": "Varkhon Rise - Central Ridge",
+    "description": "The central section of the Varkhon Rise is the highest point of the north-south hill chain, its ridgeline providing the longest sight-lines available anywhere on the Eternal Steppe. On clear days both the Giant's Teeth to the north and the crescent forests of the southern margin are visible simultaneously â€” the full north-south extent of the steppe readable from a single position. The Mytrone use this ridge for Wind Gathering communications by mirror-signal, and the position is maintained by a semi-permanent watch station whose current focus is the cracked Windstone report in the corridor to the east.",
+    "exits": {
+      "south": 7227,
+      "north": 7229,
+      "east": 7204,
+      "west": 7230,
+      "northeast": 7231
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7229,
+    "name": "Varkhon Rise - Northern Summit",
+    "description": "The northernmost significant summit of the Varkhon Rise looks toward the desert approaches and the Giant's Teeth beyond. The wind here is coldest â€” the Giant's Teeth's snowfields affect the temperature gradient at this latitude â€” and the Windstones on this summit glow most reliably, their amber light consistent through storms that extinguish fires and reduce visibility to feet. Headman Greywind comes to this summit annually before the Wind Gathering, sitting here in the wind for an unspecified period before descending to lead the procession. He has not explained the practice, and no one has asked.",
+    "exits": {
+      "south": 7228,
+      "east": 7036,
+      "north": 7232
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7230,
+    "name": "Varkhon Rise - Rider's Teeth",
+    "description": "The ring of twelve standing stones on the Varkhon Rise's highest point is distinct from the Windstones â€” their rune-circles are oriented toward air rather than earth, and they hum audibly when the wind is strong. Mytrone legend says the Giants used this site to speak with the Wind Lord directly, and the legend has not been disproven by any investigation. The stones are six to eight feet tall, paler than the Windstones, and arranged in a precise circle fifty feet across. Air magic cast within the circle is amplified beyond the Windstones' effect â€” gust of wind spells require Fort DC 16 to resist near the stones, and spontaneous air-elemental manifestations have been reported during high-wind conditions.",
+    "exits": {
+      "south": 7228,
+      "east": 7039
+    },
+    "flags": [
+      "safe",
+      "temple",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7231,
+    "name": "Varkhon Rise - Western Slope",
+    "description": "The western slope of the Varkhon Rise descends toward the steppe's edge and the distant connection to the Deepwater Marches. The terrain here is rougher than the eastern slopes, the wind exposure higher, and the vegetation more sparse â€” the plants that grow on the windward western face have adapted to conditions that would discourage most steppe species. The view west is of open grassland that grades gradually into the transitional terrain before the Deepwater Marches' edge, a distance of many days' ride that is nonetheless visible in principle from the Rise's western ridgeline on clear days.",
+    "exits": {
+      "east": 7228,
+      "south": 7226,
+      "north": 7230
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7232,
+    "name": "Varkhon Rise - Kavarn's Drift Northern Pastures",
+    "description": "The northern pastures of Kavarn's Drift's territory extend along the Varkhon Rise's eastern slopes, the thick grass of the Rise's leeward areas supporting the large-frame breeding stock that is the camp's primary commercial asset. The pastures here are better-watered than the central steppe, the Rise's elevation capturing precipitation and the Windstone influence maintaining the soil moisture that produces the grass density. Herd-riders working these pastures operate at the edge of the camp's standard patrol circuit, and their daily reports on grass condition are one of the primary inputs into the annual Wind Gathering's grazing rotation discussion.",
+    "exits": {
+      "west": 7229,
+      "south": 7036,
+      "east": 7049,
+      "north": 7235
+    },
+    "flags": [
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7233,
+    "name": "Varkhon Rise - Southern Pass",
+    "description": "A natural pass through the Varkhon Rise's southern section allows passage between the western slopes and the open central steppe without climbing the full ridge. The pass is used by Veyla Crossing's riders on their patrol circuits and by the Halfling caravan-traders who prefer the Rise's shelter to the open steppe for the western portion of their circuit. The pass is narrow enough that a small force could hold it against a larger one â€” a tactical detail that Orthek's Stand's garrison assessment included in its most recent threat-scenario document, noting it as a potential chokepoint that nobody currently controls or watches.",
+    "exits": {
+      "north": 7227,
+      "east": 7082,
+      "west": 7231,
+      "south": 7234
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7234,
+    "name": "Varkhon Rise - Windstone Cluster",
+    "description": "Three Windstones in close proximity near the Varkhon Rise's midpoint create a weather-stabilization effect more powerful than any single stone, their combined rune-circle resonance producing the green-and-thick grass circle that Kavarn's Drift's camp has incorporated into its standard position. The cluster's combined glow on clear nights is visible from Tavranek's watchtower, providing a navigational reference point for night-riding between the two locations. The central stone of the three is the tallest Windstone outside Tavranek â€” fourteen feet, well-maintained, its rune-circle the most elaborately inscribed of the cluster. Riders who camp near it consistently report better rest than elsewhere on the steppe.",
+    "exits": {
+      "south": 7233,
+      "east": 7035,
+      "north": 7228
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7235,
+    "name": "Varkhon Rise - Northern Approach Road",
+    "description": "The road north from the Varkhon Rise toward Teshen Halt and the desert approaches follows the Rise's eastern base, the hills providing shelter from the prevailing westerly that makes the open steppe harder riding at this latitude. The road is the most comfortable approach to the desert border in poor weather, and caravan-traders from the desert consistently prefer it in autumn when the pre-winter winds intensify. The Windstones along this section provide navigational landmarks in conditions when the open steppe provides none, and the amber glow that marks each stone at night creates the closest thing to a road-lit highway that the Eternal Steppe offers.",
+    "exits": {
+      "south": 7232,
+      "north": 7005
+    },
+    "flags": [
+      "plains",
+      "road"
+    ]
+  },
+  {
+    "vnum": 7236,
+    "name": "Windstone - Central Steppe Site",
+    "description": "One of the forty known Windstones standing in the open central steppe, this stone rises seven feet from the surrounding grassland, its quartz veining clear and its rune-circle in excellent condition. The grass around it grows in the characteristic thicker-and-greener circle that marks Giant-era stone influence, and the circle's edge is visible even from a distance as a slight color shift in the steppe. Far Rider patrols use this stone as a checkpoint and waypoint; the patrol log attached to its base records every patrol that has passed since the log was established six years ago. The stone has shown no anomalies in that period.",
+    "exits": {
+      "north": 7201,
+      "east": 7237,
+      "south": 7208
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "amplified",
+        "message": "Your Kin-sense sharpens dramatically. The Windstone's rune-circle amplifies every resonance."
+      },
+      {
+        "type": "rune_circle",
+        "state": "active",
+        "attunement": "earth",
+        "power": "teleport",
+        "study_dc": 18,
+        "activate_dc": 15
+      }
+    ]
+  },
+  {
+    "vnum": 7237,
+    "name": "Windstone - Eastern Cluster Site",
+    "description": "Two Windstones standing within fifty feet of each other create a minor cluster in the eastern steppe, their combined rune-circle influence affecting weather across a wider radius than a single stone. The grass circle here is noticeably larger than at single-stone sites, and the cluster is a reliable navigational landmark for riders in the eastern sector. The Far Rider patrol that covers this sector has recently reported an anomaly: one of the two stones shows the beginning of a crack along its eastern face, the rune-circles near the crack showing reduced glow intensity. The inspection report is en route to Tavranek's administrative center.",
+    "exits": {
+      "west": 7236,
+      "north": 7074,
+      "south": 7104
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ],
+    "effects": [
+      {
+        "type": "kin_sense_modifier",
+        "mode": "amplified",
+        "message": "Your Kin-sense rings clear as a bell. Giant-era magic amplifies your perception."
+      },
+      {
+        "type": "rune_circle",
+        "state": "active",
+        "attunement": "wind",
+        "power": "weather",
+        "study_dc": 18,
+        "activate_dc": 15
+      }
+    ]
+  },
+  {
+    "vnum": 7238,
+    "name": "Windstone - Southern Steppe Site",
+    "description": "A Windstone at the southern steppe's edge, near the transition to the crescent forests, marks the Mytrone's southernmost permanent presence point. The stone is smaller than those in the central steppe â€” six feet, partially buried by soil creep â€” but its rune-circle is active and its effect on the local weather reliable. Headman Greenrein of Veyla Crossing maintains this stone as part of the Windstone maintenance work the camp has been assigned, and the most recent renewal ceremony was three months ago. The stone's position at the forest-steppe boundary means it is the one most exposed to the natural elemental interference that the forest generates.",
+    "exits": {
+      "north": 7202,
+      "east": 7082,
+      "west": 7085
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7239,
+    "name": "Windstone - Teshkar Vale Ring Stone",
+    "description": "One of four Windstones arranged in a loose ring around Teshkar Vale, this stone marks the northern approach to the Vale's sacred ground. The stones in this ring are maintained to the highest standard outside Tavranek, their rune-circles renewed at every Wind Gathering and their bases cleared of accumulated grass and soil each spring. The stone here faces the Wind Road's approach from the north, and its glow on Wind Gathering nights â€” when all four ring stones are active simultaneously â€” is said to be visible to incoming Headmen as the first sign that the Vale is in sight, before the Vale itself becomes visible over the steppe's gentle rise.",
+    "exits": {
+      "south": 7028,
+      "east": 7093,
+      "west": 7005
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ],
+    "effects": [
+      {
+        "type": "rune_circle",
+        "state": "active",
+        "attunement": "wind",
+        "power": "teleport",
+        "study_dc": 18,
+        "activate_dc": 15
+      }
+    ]
+  },
+  {
+    "vnum": 7240,
+    "name": "Windstone - Battle Perimeter Stone",
+    "description": "A Windstone near the Dark Dawn Battlefield's northern perimeter has maintained its function despite proximity to the battlefield's Kin-sense disruption zone â€” a fact that Mytrone scholars find significant and that practical patrol riders simply appreciate, since it provides a reliable navigational anchor in the otherwise disorienting battlefield approach. The stone's rune-circle shows the strain of operating near the dead zone in small ways visible only to trained observers: the amber glow is slightly more orange than standard, and the grass circle's edge is irregular rather than smooth. The stone is inspected monthly and flagged for close observation.",
+    "exits": {
+      "south": 7211,
+      "north": 7200,
+      "east": 7212
+    },
+    "flags": [
+      "safe",
+      "plains",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 7241,
+    "name": "Crescent Forest - Northern Shieldwood Margin",
+    "description": "The northern margin of the Shieldwood crescent forest where it meets the open steppe is the most accessible section of the forest for riders, its canopy lower than the interior and the undergrowth open enough for horses. Pasua Elf communities maintain a presence here, their forest-floor camps visible as organized clearings with the living-architecture structures that Pasua building uses. The forest smell â€” humid, rich with growing things, a sharp contrast to the steppe's dry grass scent â€” reaches riders at the forest edge, and the temperature drops several degrees within the first hundred yards of canopy cover.",
+    "exits": {
+      "south": 7242,
+      "east": 7082,
+      "north": 7089
+    },
+    "flags": [
+      "forest",
+      "plains"
+    ]
+  },
+  {
+    "vnum": 7242,
+    "name": "Crescent Forest - Shieldwood Interior",
+    "description": "The interior of the Shieldwood crescent forest is the densest and most ecologically complex section of the steppe's edge forestry. Giant-era planting designed this forest to anchor soil and break wind, and after millennia of growth the design has evolved into something far more elaborate â€” a multi-layered ecosystem with Pasua communities at the canopy level and a forest floor that supports species found nowhere else on the steppe. The forest here is genuinely concealing: visibility drops to thirty feet in most sections, and a full warband could shelter here without being visible from the steppe margin. The Flamewarg cult has used it for exactly this purpose.",
+    "exits": {
+      "north": 7241,
+      "south": 7243
+    },
+    "flags": [
+      "forest",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 7243,
+    "name": "Crescent Forest - Southern Shieldwood",
+    "description": "The southern section of the Shieldwood forest is the least-visited by Mytrone riders, its canopy dense and its approaches from the Deepwater Marches border direction making it a natural staging area for threats moving northwest. Pasua forest-wardens cover this section, their knowledge of the forest interior providing the intelligence that Far Rider scouts cannot generate in terrain this complex. Current reports from the southern Shieldwood section show increased Flamewarg cult activity in the past month â€” movement patterns suggesting preparation for something rather than the usual low-level presence. The report is with Tavranek's Far Rider command, flagged priority.",
+    "exits": {
+      "north": 7242,
+      "west": 7090
+    },
+    "flags": [
+      "forest",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 7244,
+    "name": "Steppe - Eastern Transition Zone",
+    "description": "The eastern transition between the Eternal Steppe and the Gatefall Reach's forested hills is a region of mixed terrain â€” grassland interrupted by rocky outcrops, isolated tree-stands, and the beginning of the soil change that marks the shift from steppe to hill-country. Flamewarg cult remnants use the terrain complexity here as operational cover, and Far Rider patrols in this zone operate with the heightened attention that mixed terrain requires. The Silence Breach's historical location is accessible from this direction, and the awareness of that proximity shapes patrol behavior in the eastern transition zone in ways that are both operationally appropriate and psychologically taxing.",
+    "exits": {
+      "west": 7104,
+      "north": 7237,
+      "south": 7114,
+      "east": 12300
+    },
+    "flags": [
+      "plains",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 7245,
+    "name": "Steppe - Northwestern Margin",
+    "description": "The northwestern corner of the Eternal Steppe where the grassland approaches the Deepwater Marches' edge is the least-traveled section of the steppe's perimeter, its distance from the major camps and the complex terrain of the Marches border making it a low-priority patrol area. The grass here grows into the transitional vegetation that precedes the Marches' jungle character, and the wind off the Apelian Sea â€” detectable at this latitude as a moister, saltier quality in the air â€” adds a coastal character to what is otherwise steppe landscape. Halfling caravan-traders who work the western circuit sometimes camp here between runs, finding the margin's solitude useful for accounting purposes.",
+    "exits": {
+      "east": 7206,
+      "south": 7241,
+      "north": 7034
+    },
+    "flags": [
+      "plains"
+    ]
+  }
+]

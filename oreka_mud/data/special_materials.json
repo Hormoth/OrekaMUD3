@@ -1,0 +1,278 @@
+[
+  {
+    "name": "Adamantine",
+    "hp_per_inch": 40,
+    "hardness": 20,
+    "weight_modifier": 1.0,
+    "cost_modifier": {
+      "ammunition": 60,
+      "light_armor": 5000,
+      "medium_armor": 10000,
+      "heavy_armor": 15000,
+      "weapon": 3000
+    },
+    "dr": {
+      "light_armor": "1/-",
+      "medium_armor": "2/-",
+      "heavy_armor": "3/-"
+    },
+    "masterwork": true,
+    "applicable_to": ["metal_weapons", "metal_armor", "metal_shields", "ammunition"],
+    "special": [
+      "Bypasses hardness less than 20 when sundering or attacking objects",
+      "Items have one-third more hit points than normal steel"
+    ],
+    "description": "This ultrahard metal adds to the quality of a weapon or suit of armor. Weapons fashioned from adamantine have a natural ability to bypass hardness when sundering weapons or attacking objects, ignoring hardness less than 20. Armor made from adamantine grants its wearer damage reduction. Items are always masterwork quality."
+  },
+  {
+    "name": "Darkwood",
+    "hp_per_inch": 10,
+    "hardness": 5,
+    "weight_modifier": 0.5,
+    "cost_modifier": {
+      "per_pound": 10
+    },
+    "dr": {},
+    "masterwork": true,
+    "applicable_to": ["wooden_weapons", "wooden_shields", "wooden_items"],
+    "special": [
+      "Weighs half as much as normal wood items",
+      "Armor check penalty of darkwood shield reduced by 2",
+      "Cost is original weight x 10 gp added to masterwork price"
+    ],
+    "description": "This rare magic wood is as hard as normal wood but very light. Any wooden or mostly wooden item made from darkwood is considered a masterwork item and weighs only half as much as a normal wooden item of that type."
+  },
+  {
+    "name": "Mithral",
+    "hp_per_inch": 30,
+    "hardness": 15,
+    "weight_modifier": 0.5,
+    "cost_modifier": {
+      "light_armor": 1000,
+      "medium_armor": 4000,
+      "heavy_armor": 9000,
+      "shield": 1000,
+      "other_per_pound": 500
+    },
+    "dr": {},
+    "masterwork": true,
+    "applicable_to": ["metal_weapons", "metal_armor", "metal_shields"],
+    "special": [
+      "Heavy armor treated as medium, medium armor treated as light for movement and proficiency",
+      "Spell failure chance decreased by 10%",
+      "Maximum Dexterity bonus increased by 2",
+      "Armor check penalty reduced by 3 (minimum 0)",
+      "Weighs half as much as steel equivalent"
+    ],
+    "armor_category_reduction": {
+      "heavy": "medium",
+      "medium": "light",
+      "light": "light"
+    },
+    "description": "Mithral is a very rare silvery, glistening metal that is lighter than iron but just as hard. When worked like steel, it becomes a wonderful material from which to create armor. Most mithral armors are one category lighter than normal for purposes of movement and other limitations."
+  },
+  {
+    "name": "Cold Iron",
+    "hp_per_inch": 30,
+    "hardness": 10,
+    "weight_modifier": 1.0,
+    "cost_modifier": {
+      "weapon": "double_base_cost",
+      "magical_enhancement_surcharge": 2000
+    },
+    "dr": {},
+    "masterwork": false,
+    "applicable_to": ["metal_weapons", "ammunition"],
+    "special": [
+      "Bypasses DR/cold iron (effective against fey creatures)",
+      "Weapons cost double normal price",
+      "Magical enhancements cost an additional 2,000 gp",
+      "Double weapon with only half cold iron increases cost by 50%"
+    ],
+    "dr_bypass": "cold iron",
+    "description": "This iron, mined deep underground, is known for its effectiveness against fey creatures. It is forged at a lower temperature to preserve its delicate properties. Weapons made of cold iron cost twice as much to make as their normal counterparts."
+  },
+  {
+    "name": "Alchemical Silver",
+    "hp_per_inch": 10,
+    "hardness": 8,
+    "weight_modifier": 1.0,
+    "cost_modifier": {
+      "ammunition": 2,
+      "light_weapon": 20,
+      "one_handed_weapon": 90,
+      "two_handed_weapon": 180
+    },
+    "dr": {},
+    "masterwork": false,
+    "applicable_to": ["metal_weapons", "ammunition"],
+    "special": [
+      "Bypasses DR/silver (effective against lycanthropes)",
+      "-1 penalty on damage rolls (minimum 1 damage)",
+      "Cannot be applied to adamantine, cold iron, or mithral"
+    ],
+    "dr_bypass": "silver",
+    "damage_penalty": -1,
+    "description": "A complex process involving metallurgy and alchemy can bond silver to a weapon made of steel so that it bypasses the damage reduction of creatures such as lycanthropes. On a successful attack with a silvered weapon, the wielder takes a -1 penalty on the damage roll (minimum 1 point of damage)."
+  },
+  {
+    "name": "Dragonhide",
+    "hp_per_inch": 10,
+    "hardness": 10,
+    "weight_modifier": 1.0,
+    "cost_modifier": {
+      "armor": "double_masterwork_cost"
+    },
+    "dr": {},
+    "masterwork": true,
+    "applicable_to": ["armor", "shields"],
+    "special": [
+      "Not made of metal; druids can wear without penalty",
+      "Costs double masterwork armor of its type",
+      "May grant energy resistance matching the dragon color",
+      "One dragon yields: hide armor (1 size smaller), banded mail (2 sizes smaller), half-plate (3 sizes smaller), breastplate or full plate (4 sizes smaller)"
+    ],
+    "dragon_colors": {
+      "black": {"element": "acid", "energy_type": "acid"},
+      "blue": {"element": "lightning", "energy_type": "electricity"},
+      "green": {"element": "poison", "energy_type": "acid"},
+      "red": {"element": "fire", "energy_type": "fire"},
+      "white": {"element": "cold", "energy_type": "cold"},
+      "brass": {"element": "fire", "energy_type": "fire"},
+      "bronze": {"element": "lightning", "energy_type": "electricity"},
+      "copper": {"element": "acid", "energy_type": "acid"},
+      "gold": {"element": "fire", "energy_type": "fire"},
+      "silver": {"element": "cold", "energy_type": "cold"}
+    },
+    "description": "Armorsmiths can work with the hides of dragons to produce armor or shields of masterwork quality. Because dragonhide armor is not made of metal, druids can wear it without penalty. Dragonhide armor costs double what masterwork armor of that type ordinarily costs."
+  },
+  {
+    "name": "Embersteel",
+    "hp_per_inch": 35,
+    "hardness": 16,
+    "weight_modifier": 1.0,
+    "cost_modifier": {
+      "weapon": 2000,
+      "light_armor": 3000,
+      "medium_armor": 5000,
+      "heavy_armor": 8000
+    },
+    "masterwork": true,
+    "applicable_to": ["metal_weapons", "metal_armor", "metal_shields"],
+    "special": [
+      "Deals +1d4 fire damage on critical hits",
+      "Grants fire resistance 5 to wearer (armor)",
+      "Glows soft red-orange when within 30 feet of open flame",
+      "Warm to the touch even in freezing conditions"
+    ],
+    "elemental_affinity": "fire",
+    "dr_bypass": null,
+    "description": "Ore mined from the volcanic veins beneath Kharazhad's caldera, forged in magma-fed furnaces that have burned for three millennia. Embersteel retains the heat of its forging permanently \u2014 a blade of embersteel never rusts, never cools, and leaves faint scorch marks on leather sheaths. Only Rarozhki smiths possess the techniques to work it, and they guard their craft with the same ferocity they apply to guarding their mountain."
+  },
+  {
+    "name": "Wind-silk",
+    "hp_per_inch": 8,
+    "hardness": 3,
+    "weight_modifier": 0.25,
+    "cost_modifier": {
+      "light_armor": 2000,
+      "clothing": 500,
+      "per_yard": 100
+    },
+    "masterwork": true,
+    "applicable_to": ["cloth_armor", "clothing", "cloaks", "robes"],
+    "special": [
+      "Weighs one-quarter normal weight",
+      "Grants +5 ft movement speed to wearer",
+      "Flows and billows as if in constant gentle breeze",
+      "Spell failure chance reduced by 15% for arcane casters"
+    ],
+    "elemental_affinity": "wind",
+    "description": "Fabric spun from the silk of canopy-dwelling spiders, treated through a process combining Na'wasua air magic and Pasua weaving tradition. Wind-silk is luminous, lighter than linen, stronger than leather, and moves with a life of its own \u2014 garments of wind-silk billow and flow even in still air. The great canopy cities of Liraveth, Aerithal, and Sylarien are the only places where it is produced."
+  },
+  {
+    "name": "Riverstone",
+    "hp_per_inch": 25,
+    "hardness": 12,
+    "weight_modifier": 0.8,
+    "cost_modifier": {
+      "jewelry": 200,
+      "weapon": 800,
+      "focus": 500
+    },
+    "masterwork": true,
+    "applicable_to": ["stone_weapons", "jewelry", "spell_focuses", "amulets"],
+    "special": [
+      "Grants +1 caster level to water/cold spells when used as focus",
+      "Faintly cool to touch, condensation forms on surface in dry air",
+      "Pekakarlik-crafted pieces channel water-element resonance"
+    ],
+    "elemental_affinity": "water",
+    "description": "Smooth, blue-grey stones found only in the deepest channels of the Great River where it cuts through the Northern Giant's Teeth. Pekakarlik artisans shape riverstone into amulets, focuses, and ceremonial weapons. The stone carries water-element resonance that Kin-sense perceives as a cool, steady pulse \u2014 like holding a river's heartbeat in your hand."
+  },
+  {
+    "name": "Moonwhisper Silver",
+    "hp_per_inch": 12,
+    "hardness": 9,
+    "weight_modifier": 0.9,
+    "cost_modifier": {
+      "light_weapon": 100,
+      "one_handed_weapon": 300,
+      "two_handed_weapon": 600,
+      "ammunition": 10
+    },
+    "masterwork": false,
+    "applicable_to": ["metal_weapons", "ammunition", "jewelry"],
+    "special": [
+      "Bypasses DR/silver (as alchemical silver)",
+      "No damage penalty (unlike normal alchemical silver)",
+      "Deals +1d4 cold damage against fey and undead",
+      "Faint silver luminescence in moonlight"
+    ],
+    "elemental_affinity": "wind",
+    "dr_bypass": "silver",
+    "description": "An improvement on standard alchemical silver developed by Hasura weapon-smiths in the canopy cities. The process bonds silver to steel through a wind-magic infusion that eliminates the brittleness of normal silvering. Moonwhisper weapons gleam with a faint luminescence in moonlight and carry a chill that the undead and fey find particularly painful."
+  },
+  {
+    "name": "Volcanic Glass",
+    "hp_per_inch": 5,
+    "hardness": 6,
+    "weight_modifier": 0.7,
+    "cost_modifier": {
+      "light_weapon": 50,
+      "one_handed_weapon": 150,
+      "ammunition": 5
+    },
+    "masterwork": false,
+    "applicable_to": ["light_weapons", "ammunition", "daggers"],
+    "special": [
+      "Critical threat range increased by 1 (e.g., 19-20 becomes 18-20)",
+      "Fragile: breaks on natural attack roll of 1",
+      "Razor-sharp edge impossible to achieve with metal",
+      "Shatters spectacularly on breakage \u2014 1d4 piercing to adjacent"
+    ],
+    "elemental_affinity": "fire",
+    "description": "Black glass forged in the eruptions of the Scorchspires, collected and knapped by Rarozhki artisans into blades of extraordinary sharpness. A volcanic glass edge can split a hair \u2014 but the material is brittle, and a poorly struck blow can shatter the weapon entirely. Scorchspire hunters consider a broken glass blade good luck: the shards find new purpose."
+  },
+  {
+    "name": "Giant-bone",
+    "hp_per_inch": 40,
+    "hardness": 14,
+    "weight_modifier": 1.3,
+    "cost_modifier": {
+      "weapon": 1500,
+      "armor": 3000,
+      "shield": 1000
+    },
+    "masterwork": true,
+    "applicable_to": ["weapons", "armor", "shields", "spell_focuses"],
+    "special": [
+      "Grants +1 caster level to earth/acid spells when used as focus",
+      "Exceptionally dense \u2014 adds +1 damage to bludgeoning weapons",
+      "Ancient Giant rune-circles sometimes visible on surface",
+      "Earth-element resonance detectable via Kin-sense at 30 feet"
+    ],
+    "elemental_affinity": "earth",
+    "description": "Fossilized remains of the Giants, the Firstborn who shaped Oreka itself. Giant-bone is harder than steel, dense as stone, and carries residual earth-element resonance that three millennia of burial have not extinguished. Harvesting giant-bone from the great ruins is considered sacrilege by some cultures and sacred duty by others. Weapons and armor crafted from it carry an unmistakable weight \u2014 both physical and spiritual."
+  }
+]

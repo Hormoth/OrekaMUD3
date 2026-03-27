@@ -394,6 +394,48 @@ CONDITIONS: Dict[str, Condition] = {
             "cannot_verbal_component": True,
         }
     ),
+
+    "disarmed": Condition(
+        name="Disarmed",
+        description="Weapon knocked from hands. Must use unarmed attacks or retrieve weapon.",
+        effects={
+            "cannot_use_weapon": True,
+            "attack_penalty": 4,
+        }
+    ),
+
+    "pushed": Condition(
+        name="Pushed",
+        description="Forced back by a bull rush or similar effect.",
+        effects={}
+    ),
+
+    "poisoned": Condition(
+        name="Poisoned",
+        description="Poisoned - taking periodic damage. -1 on attack rolls and saving throws.",
+        effects={
+            "attack_penalty": 1,
+            "save_penalty": 1,
+        }
+    ),
+
+    "diseased": Condition(
+        name="Diseased",
+        description="Diseased - weakened by illness. -2 on attack rolls and saving throws, move at 3/4 speed.",
+        effects={
+            "attack_penalty": 2,
+            "save_penalty": 2,
+            "speed_multiplier": 0.75,
+        }
+    ),
+
+    "charging": Condition(
+        name="Charging",
+        description="Charging - +2 attack bonus, but -2 penalty to AC until next turn.",
+        effects={
+            "ac_penalty": 2,
+        }
+    ),
 }
 
 

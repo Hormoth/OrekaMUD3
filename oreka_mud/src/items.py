@@ -31,7 +31,7 @@ def get_random_item(item_type=None, magical=None):
     return random.choice(items)
 
 class Item:
-    def __init__(self, vnum, name, item_type, weight, value, description="", slot=None, magical=False, ac_bonus=0, stat_bonuses=None, damage=None, properties=None, stats=None, hp=None, max_hp=None, material=None, complexity=None):
+    def __init__(self, vnum, name, item_type, weight, value, description="", slot=None, magical=False, ac_bonus=0, stat_bonuses=None, damage=None, properties=None, stats=None, hp=None, max_hp=None, material=None, complexity=None, charges=None, capacity=0, contents=None):
         self.vnum = vnum
         self.name = name
         self.item_type = item_type  # e.g., weapon, armor, potion
@@ -47,6 +47,9 @@ class Item:
         self.stats = stats or {}
         self.material = material
         self.complexity = complexity
+        self.charges = charges  # For wands — None means not a charged item
+        self.capacity = capacity  # Container capacity (0 = not a container)
+        self.contents = contents if contents is not None else ([] if capacity > 0 else None)
         # HP system
         base_hp = self._base_hp_for_material(material)
         multiplier = self._complexity_multiplier(complexity)
@@ -57,7 +60,9 @@ class Item:
         # Example values; expand as needed
         base_hp_table = {
             'iron': 20, 'steel': 30, 'wood': 10, 'leather': 8, 'stone': 40, 'mithral': 40, 'adamantine': 60,
-            'copper': 15, 'bronze': 18, 'bone': 8, 'chitin': 12, 'darkwood': 20, 'dragonhide': 50
+            'copper': 15, 'bronze': 18, 'bone': 8, 'chitin': 12, 'darkwood': 20, 'dragonhide': 50,
+            'embersteel': 45, 'wind-silk': 12, 'riverstone': 35, 'moonwhisper silver': 25,
+            'volcanic glass': 15, 'giant-bone': 50
         }
         if material is None:
             return 10
@@ -74,7 +79,7 @@ class Item:
         return self.hp
 
     def to_dict(self):
-        return {
+        d = {
             "vnum": self.vnum,
             "name": self.name,
             "item_type": self.item_type,
@@ -91,9 +96,40 @@ class Item:
             "material": self.material,
             "complexity": self.complexity,
             "hp": self.hp,
-            "max_hp": self.max_hp
+            "max_hp": self.max_hp,
+            "charges": self.charges,
+            "capacity": self.capacity,
+            "contents": [item.to_dict() for item in self.contents] if self.contents is not None else None,
         }
+        return d
 
     @staticmethod
     def from_dict(data):
-        return Item(**data)
+        # Handle contents recursively
+        raw_contents = data.pop("contents", None)
+        item = Item(**data)
+        if raw_contents is not None and isinstance(raw_contents, list) and item.capacity > 0:
+            item.contents = [Item.from_dict(c) for c in raw_contents]
+        return item
+
+
+class Corpse:
+    """A corpse left behind when a mob dies. Contains loot for players to collect."""
+
+    def __init__(self, mob_name, items=None, gold=0, decay_time=300):
+        self.mob_name = mob_name
+        self.items = items or []
+        self.gold = gold
+        self.decay_time = decay_time  # seconds until decay
+        self._created_at = None  # Set by caller (time.time())
+
+    @property
+    def is_decayed(self):
+        if self._created_at is None:
+            return False
+        import time
+        return (time.time() - self._created_at) >= self.decay_time
+
+    @property
+    def is_empty(self):
+        return self.gold <= 0 and not self.items

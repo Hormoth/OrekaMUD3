@@ -124,6 +124,7 @@ class Mob:
         self.track_target = None  # For Track feat
         # Shopkeeper fields
         self.shop_inventory = shop_inventory or []  # List of item vnums
+        self.base_shop_inventory = list(self.shop_inventory)  # Template for restocking
         self.shop_type = shop_type  # e.g., 'general', 'weapons', 'magic'
         self.buy_rate = buy_rate  # Multiplier for buying from player (e.g., 1.0 = 100% value)
         self.sell_rate = sell_rate  # Multiplier for selling to player (e.g., 1.0 = 100% value)
@@ -152,6 +153,10 @@ class Mob:
     def remove_shop_item(self, item_vnum):
         if item_vnum in self.shop_inventory:
             self.shop_inventory.remove(item_vnum)
+    def restock_shop(self):
+        """Restore shop inventory from the base template."""
+        self.shop_inventory = list(self.base_shop_inventory)
+
     def set_dodge_target(self, target):
         self.dodge_target = target
 

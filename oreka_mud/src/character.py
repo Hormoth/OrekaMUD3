@@ -21,6 +21,13 @@ def apply_color_tags(text):
         text = text.replace(tag, code)
     return text
 
+XP_TABLE = {
+    1: 0, 2: 1000, 3: 3000, 4: 6000, 5: 10000, 6: 15000, 7: 21000,
+    8: 28000, 9: 36000, 10: 45000, 11: 55000, 12: 66000, 13: 78000,
+    14: 91000, 15: 105000, 16: 120000, 17: 136000, 18: 153000,
+    19: 171000, 20: 190000
+}
+
 class State(Enum):
     EXPLORING = 1
     COMBAT = 2
@@ -103,6 +110,11 @@ class Character:
         self.feats = feats if feats is not None else []  # Accept feats from constructor or default to empty list
         self.domains = domains if domains is not None else []  # List of domain names (e.g., ["War", "Sun"])
 
+        # Apply Toughness feat bonus at creation time (only when feats passed explicitly; from_dict sets feats after init)
+        if feats is not None and 'Toughness' in self.feats:
+            self.max_hp += 3
+            self.hp = min(self.hp + 3, self.max_hp)
+
         # Equipment system
         self.equipment = {slot: None for slot in EQUIPMENT_SLOTS}
         self.gold = 0  # Currency
@@ -124,6 +136,98 @@ class Character:
         self.combat_target = None  # Current combat target (mob or player)
         self.queued_action = None  # (action_type, action_name, args) - replaces next auto-attack
         # action_type: 'spell', 'skill', 'feat', 'maneuver', 'item'
+
+        self.color_enabled = True
+        self.email = None
+        self.resistances = {}    # {"fire": 10, "cold": 5}
+        self.immunities = []     # ["poison", "disease"]
+        self.build_mode = False
+        self.hashed_password = None
+
+        # Power Attack and Combat Expertise toggle amounts
+        self.power_attack_amt = 0
+        self.combat_expertise_amt = 0
+
+        # --- New system fields (Phase 1-4 + Batch A/B) ---
+        # Phase 1
+        self.chosen_path = None      # Magi path: Seer/Keeper/Voice
+        self.wimpy = 0               # Auto-flee HP% threshold (0-50)
+        self.bank_gold = 0           # Gold stored in bank
+
+        # Phase 2
+        self.hidden = False          # Stealth: currently hiding
+        self.hide_check = 0          # Stealth: last Hide check result
+        self.sneaking = False        # Stealth: sneak mode active
+        self.class_levels = {}       # Multiclass: {class_name: level}
+
+        # Phase 3 (session-only — NOT persisted)
+        self.party = None            # Party object
+        self.following = None        # Player we're following
+
+        # Phase 4
+        self.achievements = []       # List of earned achievement IDs
+        self.kill_count = 0
+        self.craft_count = 0
+        self.rooms_visited = set()   # Set of visited room vnums
+        self.hunger = 100            # 100 = full, 0 = starving
+        self.thirst = 100            # 100 = hydrated, 0 = dehydrated
+        self.survival_mode = False   # Toggle hunger/thirst mechanics
+        self.guild_name = None       # Guild membership
+        self.guild_rank = None       # Rank within guild
+
+        # Session-only fields
+        self.mount = None
+        self.mounted = False
+        self.companion = None
+        self.light_source = None
+        self.flying = False          # System 30: Flying (session-only)
+        self.speaking_language = "Common"   # System 28: active speaking language (session-only)
+        self.known_languages = ["Common"]   # System 28: known languages (session-only)
+
+        # Batch A/B
+        self.auto_loot = False
+        self.auto_gold = False
+        self.aliases = {}            # Custom command aliases
+        self.practice_points = 0     # Skill practice points
+        self.trained_abilities = {}  # {ability: times_trained}
+        self.brief_mode = False      # Short room descriptions
+        self.compact_mode = False    # Reduce blank lines
+        self.auto_exit = True        # Show exits on move
+        self.familiar_type = None    # System 26: Familiar type (persisted)
+
+        # System 36: Remort / Prestige
+        self.remort_count = 0        # Number of times character has remoorted
+        self.remort_pending = False  # Confirmation flag (session-only)
+
+        # System 39: Ignore / Block (persisted)
+        self.ignored_players = []    # List of player names to ignore
+
+        # System 40: AFK Status (session-only, NOT persisted)
+        self.afk = False             # AFK toggle
+        self.afk_message = ""        # Optional AFK message
+
+        # Body position (session-only, NOT persisted)
+        self.position = "standing"   # standing/sitting/kneeling/resting/sleeping
+
+        # Auto-sacrifice toggle (persisted)
+        self.auto_sac = False
+
+        # System 42: Duel (session-only, NOT persisted)
+        self._in_duel = False
+        self._duel_challenger = None
+
+        # Class ability tracking (session-only, NOT persisted)
+        self._rage_uses = 0
+        self._inspire_uses = 0
+        self._turn_uses = 0
+        self._wildshape_uses = 0
+        self._smite_active = False
+        self._lay_on_hands_pool = 0
+        self._flurry_active = False
+        self._original_stats = None  # For wild shape revert
+
+        # Persisted class ability data
+        self.favored_enemies = []
 
         self._init_domains()
     def save(self):
@@ -254,7 +358,7 @@ class Character:
         return value
     def _auto_spells_known(self):
         """Auto-populate spells known for spellcasting classes."""
-        if self.char_class in ("Wizard", "Sorcerer", "Bard", "Cleric", "Paladin", "Ranger"):
+        if self.char_class in ("Wizard", "Sorcerer", "Bard", "Cleric", "Paladin", "Ranger", "Magi"):
             spells = get_spells_for_class(self.char_class, self.class_level)
             # Handle both old dict format and new Spell dataclass format
             result = {}
@@ -270,7 +374,7 @@ class Character:
 
     def _auto_spells_per_day(self):
         """Auto-populate spells per day for spellcasting classes (placeholder logic)."""
-        if self.char_class in ("Wizard", "Sorcerer", "Bard", "Cleric", "Paladin", "Ranger"):
+        if self.char_class in ("Wizard", "Sorcerer", "Bard", "Cleric", "Paladin", "Ranger", "Magi"):
             spells = get_spells_for_class(self.char_class, self.class_level)
             per_day = {}
             for spell in spells:
@@ -304,6 +408,22 @@ class Character:
     def get_spellcasting_info(self):
         class_data = self.get_class_data()
         return class_data.get("spellcasting", None)
+    def _apply_innate_elemental_resistance(self):
+        """Apply innate elemental resistance based on racial elemental affinity.
+        Oreka lore: all Kin carry elemental resonance granting minor resistance.
+        earth=acid resist 2, fire=fire resist 2, water=cold resist 2, wind=electricity resist 2.
+        """
+        affinity = getattr(self, 'elemental_affinity', None)
+        if not affinity:
+            return
+        element_to_energy = {"earth": "acid", "fire": "fire", "water": "cold", "wind": "electricity"}
+        energy = element_to_energy.get(affinity)
+        if energy:
+            # Set innate resistance (don't overwrite if player already has higher)
+            current = self.resistances.get(energy, 0)
+            if current < 2:
+                self.resistances[energy] = 2
+
     def to_dict(self):
         # Serialize equipment
         equipment_dict = {}
@@ -359,6 +479,55 @@ class Character:
             "conditions": list(getattr(self, 'conditions', set())),
             "active_conditions": getattr(self, 'active_conditions', {}),
             "auto_attack_enabled": getattr(self, 'auto_attack_enabled', True),
+            "color_enabled": getattr(self, 'color_enabled', True),
+            "email": getattr(self, 'email', None),
+            "resistances": getattr(self, 'resistances', {}),
+            "immunities": getattr(self, 'immunities', []),
+            "build_mode": getattr(self, 'build_mode', False),
+            "hashed_password": getattr(self, 'hashed_password', None),
+            "power_attack_amt": getattr(self, 'power_attack_amt', 0),
+            "combat_expertise_amt": getattr(self, 'combat_expertise_amt', 0),
+            "active_buffs": getattr(self, 'active_buffs', {}),
+            "temp_str_bonus": getattr(self, 'temp_str_bonus', 0),
+            "temp_dex_bonus": getattr(self, 'temp_dex_bonus', 0),
+            "temp_con_bonus": getattr(self, 'temp_con_bonus', 0),
+            "temp_ac_bonus": getattr(self, 'temp_ac_bonus', 0),
+            "temp_attack_bonus": getattr(self, 'temp_attack_bonus', 0),
+            "temp_save_bonus": getattr(self, 'temp_save_bonus', 0),
+            # New system fields
+            "chosen_path": getattr(self, 'chosen_path', None),
+            "wimpy": getattr(self, 'wimpy', 0),
+            "bank_gold": getattr(self, 'bank_gold', 0),
+            "hidden": getattr(self, 'hidden', False),
+            "hide_check": getattr(self, 'hide_check', 0),
+            "sneaking": getattr(self, 'sneaking', False),
+            "class_levels": getattr(self, 'class_levels', {}),
+            "achievements": getattr(self, 'achievements', []),
+            "kill_count": getattr(self, 'kill_count', 0),
+            "craft_count": getattr(self, 'craft_count', 0),
+            "rooms_visited": list(getattr(self, 'rooms_visited', set())),
+            "hunger": getattr(self, 'hunger', 100),
+            "thirst": getattr(self, 'thirst', 100),
+            "survival_mode": getattr(self, 'survival_mode', False),
+            "guild_name": getattr(self, 'guild_name', None),
+            "guild_rank": getattr(self, 'guild_rank', None),
+            "auto_loot": getattr(self, 'auto_loot', False),
+            "auto_gold": getattr(self, 'auto_gold', False),
+            "aliases": getattr(self, 'aliases', {}),
+            "practice_points": getattr(self, 'practice_points', 0),
+            "trained_abilities": getattr(self, 'trained_abilities', {}),
+            "brief_mode": getattr(self, 'brief_mode', False),
+            "compact_mode": getattr(self, 'compact_mode', False),
+            "auto_exit": getattr(self, 'auto_exit', True),
+            "familiar_type": getattr(self, 'familiar_type', None),
+            # System 36: Remort
+            "remort_count": getattr(self, 'remort_count', 0),
+            # System 39: Ignore / Block
+            "ignored_players": getattr(self, 'ignored_players', []),
+            # Class abilities (persisted)
+            "favored_enemies": getattr(self, 'favored_enemies', []),
+            # Auto-sacrifice
+            "auto_sac": getattr(self, 'auto_sac', False),
         }
 
     @staticmethod
@@ -442,6 +611,57 @@ class Character:
         char.conditions = set(data.get("conditions", []))
         char.active_conditions = data.get("active_conditions", {})
         char.auto_attack_enabled = data.get("auto_attack_enabled", True)
+        char.color_enabled = data.get("color_enabled", True)
+        char.email = data.get("email", None)
+        char.resistances = data.get("resistances", {})
+        # Apply innate elemental resistance from racial affinity
+        char._apply_innate_elemental_resistance()
+        char.immunities = data.get("immunities", [])
+        char.build_mode = data.get("build_mode", False)
+        char.hashed_password = data.get("hashed_password", None)
+        char.power_attack_amt = data.get("power_attack_amt", 0)
+        char.combat_expertise_amt = data.get("combat_expertise_amt", 0)
+        char.active_buffs = data.get("active_buffs", {})
+        char.temp_str_bonus = data.get("temp_str_bonus", 0)
+        char.temp_dex_bonus = data.get("temp_dex_bonus", 0)
+        char.temp_con_bonus = data.get("temp_con_bonus", 0)
+        char.temp_ac_bonus = data.get("temp_ac_bonus", 0)
+        char.temp_attack_bonus = data.get("temp_attack_bonus", 0)
+        char.temp_save_bonus = data.get("temp_save_bonus", 0)
+        # New system fields
+        char.chosen_path = data.get("chosen_path", None)
+        char.wimpy = data.get("wimpy", 0)
+        char.bank_gold = data.get("bank_gold", 0)
+        char.hidden = data.get("hidden", False)
+        char.hide_check = data.get("hide_check", 0)
+        char.sneaking = data.get("sneaking", False)
+        char.class_levels = data.get("class_levels", {})
+        char.achievements = data.get("achievements", [])
+        char.kill_count = data.get("kill_count", 0)
+        char.craft_count = data.get("craft_count", 0)
+        char.rooms_visited = set(data.get("rooms_visited", []))
+        char.hunger = data.get("hunger", 100)
+        char.thirst = data.get("thirst", 100)
+        char.survival_mode = data.get("survival_mode", False)
+        char.guild_name = data.get("guild_name", None)
+        char.guild_rank = data.get("guild_rank", None)
+        char.auto_loot = data.get("auto_loot", False)
+        char.auto_gold = data.get("auto_gold", False)
+        char.aliases = data.get("aliases", {})
+        char.practice_points = data.get("practice_points", 0)
+        char.trained_abilities = data.get("trained_abilities", {})
+        char.brief_mode = data.get("brief_mode", False)
+        char.compact_mode = data.get("compact_mode", False)
+        char.auto_exit = data.get("auto_exit", True)
+        char.familiar_type = data.get("familiar_type", None)
+        # System 36: Remort
+        char.remort_count = data.get("remort_count", 0)
+        # System 39: Ignore / Block
+        char.ignored_players = data.get("ignored_players", [])
+        # Class abilities (persisted)
+        char.favored_enemies = data.get("favored_enemies", [])
+        # Auto-sacrifice
+        char.auto_sac = data.get("auto_sac", False)
 
         # Load equipment
         equipment_data = data.get("equipment", {})
@@ -470,6 +690,13 @@ class Character:
                 if lvl not in self.domain_spells:
                     self.domain_spells[lvl] = set()
                 self.domain_spells[lvl].add(spell)
+
+        # Domain bonus slots: Clerics with domains get +1 slot per domain per spell level.
+        # One domain slot per spell level is the D&D 3.5 rule (not per domain count).
+        if self.char_class == "Cleric" and self.domains:
+            max_lvl = self.get_max_spell_level()
+            for lvl in range(1, max_lvl + 1):
+                self.spells_per_day[lvl] = self.spells_per_day.get(lvl, 0) + 1
 
     def get_available_domain_spells(self):
         """Return a dict of spell_level -> set of domain spells available at current spellcasting level."""
@@ -642,27 +869,111 @@ class Character:
         skill_val = self.skills.get(skill, 0)
         if skill in trained_only and skill_val == 0:
             return f"You cannot use {skill} untrained."
-        # Armor check penalty (stub: assumes self.armor_check_penalty exists, else 0)
-        armor_penalty = getattr(self, 'armor_check_penalty', 0)
+        # Armor check penalty — derive from equipped body armor
+        armor_penalty = 0
+        if hasattr(self, 'equipment'):
+            body_armor = self.equipment.get('body')
+            if body_armor:
+                # Common ACP values by armor type
+                acp_table = {
+                    'padded': 0, 'leather': 0, 'studded leather': -1,
+                    'chain shirt': -2, 'hide': -3, 'scale mail': -4,
+                    'chainmail': -5, 'breastplate': -4, 'splint mail': -7,
+                    'banded mail': -6, 'half-plate': -7, 'full plate': -6,
+                }
+                armor_name = getattr(body_armor, 'name', '').lower()
+                for key, acp in acp_table.items():
+                    if key in armor_name:
+                        armor_penalty = abs(acp)
+                        break
+                # Fallback: heavier armor = higher penalty based on AC bonus
+                if armor_penalty == 0 and getattr(body_armor, 'ac_bonus', 0) > 3:
+                    armor_penalty = getattr(body_armor, 'ac_bonus', 0) - 2
+            shield = self.equipment.get('off_hand')
+            if shield and getattr(shield, 'item_type', '').lower() == 'shield':
+                armor_penalty += 1  # Shields add -1 to -2 ACP
         penalty = armor_penalty if skill in armor_check_skills else 0
         roll = random.randint(1, 20)
         ability_mod = ability_mods.get(skill, 0)
-        # Cross-class skill logic (stub):
-        # In a full implementation, check if skill is in self.get_class_skills(),
-        # and enforce max ranks/costs accordingly.
-        return roll + skill_val + ability_mod + bonus - penalty
+        # Apply feat bonuses to skill checks (Skill Focus, Acrobatic, etc.)
+        feat_bonus = 0
+        from src.feats import FEATS
+        for feat_name in getattr(self, 'feats', []):
+            feat = FEATS.get(feat_name)
+            if feat and feat.effect:
+                feat_bonus = feat.apply(self, skill=skill, value=feat_bonus)
+        return roll + skill_val + ability_mod + bonus - penalty + feat_bonus
 
     def get_prompt(self):
-        str_mod = (self.str_score - 10) // 2
-        dex_mod = (self.dex_score - 10) // 2
-        con_mod = (self.con_score - 10) // 2
-        int_mod = (self.int_score - 10) // 2
-        wis_mod = (self.wis_score - 10) // 2
-        cha_mod = (self.cha_score - 10) // 2
-        xp_to_next = max(0, {1: 1000, 2: 3000, 3: 6000, 4: 10000, 5: 15000, 6: 21000, 7: 28000, 60: 0}.get(self.level + 1, 0) - self.xp)
-        if self.show_all:
-            return self.full_prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%v", str(self.move)).replace("%V", str(self.max_move)).replace("%s", f"{self.str_score} ({str_mod:+})").replace("%d", f"{self.dex_score} ({dex_mod:+})").replace("%c", f"{self.con_score} ({con_mod:+})").replace("%i", f"{self.int_score} ({int_mod:+})").replace("%w", f"{self.wis_score} ({wis_mod:+})").replace("%c", f"{self.cha_score} ({cha_mod:+})").replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
-        return self.prompt.replace("%a", str(self.ac)).replace("%h", str(self.hp)).replace("%H", str(self.max_hp)).replace("%x", str(xp_to_next)).replace("%RACE", self.race or "Unknown").replace("%s", " [Immortal]" if self.is_immortal else "")
+        # Colors
+        R = "\033[0m"       # Reset
+        RED = "\033[1;31m"
+        GRN = "\033[0;32m"
+        YEL = "\033[1;33m"
+        CYN = "\033[1;36m"
+        WHT = "\033[1;37m"
+        DIM = "\033[0;90m"
+        MAG = "\033[0;35m"
+        BRED = "\033[0;31m"
+
+        # HP with color based on percentage
+        hp_pct = (self.hp / self.max_hp * 100) if self.max_hp > 0 else 0
+        if hp_pct >= 75:
+            hp_color = GRN
+        elif hp_pct >= 40:
+            hp_color = YEL
+        else:
+            hp_color = RED
+        hp_str = f"{hp_color}HP:{self.hp}/{self.max_hp}{R}"
+
+        # AC
+        ac_str = f"{CYN}AC:{self.ac}{R}"
+
+        # Move
+        mv_str = f"{WHT}MV:{self.move}/{self.max_move}{R}"
+
+        # Gold
+        gold = getattr(self, 'gold', 0)
+        gold_str = f"{YEL}Gold:{gold}{R}"
+
+        # XP to next level
+        xp_to_next = max(0, XP_TABLE.get(self.level + 1, 0) - self.xp)
+        xp_str = f"{DIM}TNL:{xp_to_next}{R}"
+
+        # Spells (for casters)
+        spell_str = ""
+        spells_per_day = getattr(self, 'spells_per_day', {})
+        if spells_per_day and any(v > 0 for v in spells_per_day.values()):
+            slots = []
+            for lvl in sorted(spells_per_day.keys()):
+                remaining = spells_per_day[lvl]
+                if remaining > 0 or lvl == 0:
+                    slots.append(f"L{lvl}:{remaining}")
+            if slots:
+                spell_str = f" {MAG}SP:[{'/'.join(slots)}]{R}"
+
+        # Conditions
+        cond_str = ""
+        conditions = getattr(self, 'conditions', set())
+        active = getattr(self, 'active_conditions', {})
+        all_conds = list(conditions) + list(active.keys())
+        # Also check divine buffs
+        divine = getattr(self, 'divine_buffs', {})
+        if divine and divine.get('duration', 0) > 0:
+            all_conds.append("Blessed")
+        if all_conds:
+            cond_str = f" {BRED}[{','.join(all_conds[:3])}]{R}"
+
+        # Room name (short)
+        room_name = ""
+        if hasattr(self, 'room') and self.room:
+            rn = self.room.name
+            if len(rn) > 25:
+                rn = rn[:22] + "..."
+            room_name = f" {DIM}{rn}{R}"
+
+        # Build prompt
+        return f"\n{hp_str} {ac_str} {mv_str} {gold_str} {xp_str}{spell_str}{cond_str}{room_name}\n>"
     
     def toggle_stats(self):
         self.show_all = not self.show_all
@@ -979,6 +1290,27 @@ class Character:
         # Recalculate AC
         self._recalculate_ac()
 
+        # Apply stat bonuses from equipped item
+        _stat_bonus_attr_map = {
+            'str': 'temp_str_bonus', 'dex': 'temp_dex_bonus', 'con': 'temp_con_bonus',
+            'int': 'temp_int_bonus', 'wis': 'temp_wis_bonus', 'cha': 'temp_cha_bonus',
+            'attack': 'temp_attack_bonus', 'damage': 'temp_damage_bonus',
+            'save': 'temp_save_bonus',
+        }
+        bonuses = getattr(item, 'stat_bonuses', {})
+        for stat, value in bonuses.items():
+            attr = _stat_bonus_attr_map.get(stat.lower())
+            if attr:
+                setattr(self, attr, getattr(self, attr, 0) + value)
+
+        # Reverse bonuses from unequipped item
+        if unequipped:
+            old_bonuses = getattr(unequipped, 'stat_bonuses', {})
+            for stat, value in old_bonuses.items():
+                attr = _stat_bonus_attr_map.get(stat.lower())
+                if attr:
+                    setattr(self, attr, getattr(self, attr, 0) - value)
+
         msg = f"You equip {item.name}."
         if unequipped:
             msg += f" (Removed {unequipped.name})"
@@ -1002,6 +1334,19 @@ class Character:
 
         # Recalculate AC
         self._recalculate_ac()
+
+        # Reverse stat bonuses from unequipped item
+        _stat_bonus_attr_map = {
+            'str': 'temp_str_bonus', 'dex': 'temp_dex_bonus', 'con': 'temp_con_bonus',
+            'int': 'temp_int_bonus', 'wis': 'temp_wis_bonus', 'cha': 'temp_cha_bonus',
+            'attack': 'temp_attack_bonus', 'damage': 'temp_damage_bonus',
+            'save': 'temp_save_bonus',
+        }
+        bonuses = getattr(item, 'stat_bonuses', {})
+        for stat, value in bonuses.items():
+            attr = _stat_bonus_attr_map.get(stat.lower())
+            if attr:
+                setattr(self, attr, getattr(self, attr, 0) - value)
 
         return True, f"You remove {item.name}.", item
 
@@ -1185,3 +1530,15 @@ class Character:
 
     def set_prompt(self, new_prompt):
         self.prompt = new_prompt
+
+    # =========================================================================
+    # Encumbrance System
+    # =========================================================================
+
+    def get_carry_weight(self):
+        """Sum of weight for all inventory items."""
+        return sum(getattr(item, 'weight', 0) for item in self.inventory)
+
+    def get_max_carry(self):
+        """Max carry weight: STR * 10 (simplified D&D 3.5 light load for medium creatures)."""
+        return self.str_score * 10

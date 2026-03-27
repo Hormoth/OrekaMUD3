@@ -1,0 +1,408 @@
+**OREKA: ECHOES OF THE ELEMENTAL DAWN**
+
+**Creature Template**
+
+—
+
+**The Flesh-Forged**
+
+*An Acquired Template for Any Humanoid*
+
+*"**The Fleshweavers do not create monsters.*
+
+*They improve tools. The screaming is incidental.**"*
+
+*— Fleshweaver Zarn, Second of House Buarath*
+
+D&D 3.5e Compatible • Oreka Campaign Setting
+
+OGL content used under Open Game License v1.0a.
+
+**The Flesh-Forged**
+
+*"**It used to be a goblin. You can still see the goblin if you know where to look—the shape of the skull beneath the bone plating, the way the fingers bend at the old joints before the new ones take over. The Fleshweavers didn’t remove the goblin. They built on top of it. The goblin is still in there, underneath everything they added, and it is in unspeakable pain.**"*
+
+The Flesh-Forged are the living products of House Buarath’s flesh-forge operations—humanoid creatures that have been surgically, magically, and alchemically modified through the grafting of biological material, the forced growth of new organs and limbs, and the infusion of Abyssal-tainted mutagenic compounds. They are not undead, not constructs, and not natural mutations. They are manufactured. Every graft was placed with deliberate intent by a Fleshweaver Adept serving the will of Buaress, the Many-Mask.
+
+The process is not subtle. Flesh-forging involves the physical cutting, reshaping, and regrowth of living tissue using a combination of Abyssal necromantic energy, alchemical growth accelerants, and the Fleshweaver’s own spell-like abilities. The subject is conscious throughout. Buarath doctrine holds that pain is a necessary component of the forging—not for ritual reasons, but because the body’s trauma response accelerates the integration of grafted material. Subjects that are rendered unconscious reject grafts at a higher rate. The Fleshweavers solved this not by developing anesthetics but by developing better restraints.
+
+The base creatures most commonly subjected to flesh-forging are goblinoids—goblins, hobgoblins, and bugbears—because the Dómnathar view them as expendable and their physiology is resilient enough to survive the process. However, any humanoid can be flesh-forged. Captured Kin, foreign soldiers from the original Deceiver host, orcs, Half-Dómnathar who have fallen from favor, and even Dómnathar exiles sentenced to the forges have all been subjected to the process. The Fleshweavers do not discriminate. Flesh is flesh.
+
+Flesh-Forged creatures retain their intelligence, memories, and personalities. They know what was done to them. Some are broken by it—reduced to whimpering compliance, responding only to the handler’s commands. Others are enraged, their fury channeled by the Dómnathar into combat effectiveness. A rare few maintain enough self-awareness to hate what they have become, and these are the most dangerous of all, because they fight with the desperate precision of someone who wants the fight to be the last thing they ever do.
+
+**Creating a Flesh-Forged**
+
+"Flesh-Forged" is an acquired template that can be added to any humanoid creature with a Constitution score of 8 or higher (referred to hereafter as the base creature). The base creature retains all of its original statistics, class levels, skills, and feats except as modified below.
+
+The Flesh-Forged template is applied in tiers based on the number of grafts the creature has received. Each tier represents a greater degree of modification and a correspondingly greater departure from the base creature’s original form.
+
+| **Tier** | **CR Adj.** | **Description** |
+| --- | --- | --- |
+| Minor | +1 | One graft. Still recognizably the original creature. The modification is visible but contained—an extra joint, thickened skin, an eye that shouldn’t be there. Most people look away. |
+| Major | +2 | Two grafts. The body has been significantly restructured. Bone plating, additional limbs, sensory organs in wrong locations. Recognizable as the base creature only by size and posture. People flinch. |
+| Abomination | +3 | Three grafts. Barely recognizable as any specific creature. The Fleshweavers have rebuilt the chassis. The original body is a scaffold that the grafts have overwhelmed. People scream. |
+
+**Universal Template Modifications**
+
+The following changes apply to all Flesh-Forged regardless of tier, in addition to the specific graft effects:
+
+| **CORE STATISTICS** |
+| --- |
+
+| **Type** | Unchanged. The Flesh-Forged is still a living humanoid. It gains the (Augmented) subtype. If the base creature is a goblinoid, it retains the Goblinoid subtype. |
+| --- | --- |
+| **Hit Dice** | Unchanged. The Flesh-Forged uses the base creature’s HD and gains HP normally from Constitution. However, all Flesh-Forged gain +2 hit points per HD from the accelerated tissue growth (similar to Toughness, stacking). |
+| **Speed** | Unchanged unless modified by a specific graft. |
+| **Armor Class** | +1 natural armor bonus (thickened skin and subdermal scar tissue from the forging process). This stacks with any existing natural armor. |
+| **Abilities** | Con +2 (the forging process kills subjects with weak constitutions; survivors are tougher). Cha −2 (the modifications are grotesque and the psychological trauma is visible in the creature’s bearing). These stack with graft-specific modifications. |
+
+| **UNIVERSAL SPECIAL QUALITIES** |
+| --- |
+
+**Abyssal Taint (Su)**
+
+The Flesh-Forged radiates faint Abyssal corruption. It does not register on Kin-sense (reads as the same ‘nothing’ or ‘wild static’ as all Deceiver-associated creatures). Detect evil detects faint evil from the grafted tissue even if the creature itself is not evil. Detect magic reveals faint transmutation and moderate necromancy on the grafted areas. The Flesh-Forged is treated as having the Evil subtype for the purpose of spells and effects that specifically target evil creatures, even if its personal alignment is not evil.
+
+**Graft Rejection (Ex)**
+
+The Flesh-Forged’s body is in a constant state of low-grade rejection of the grafted material. This manifests as chronic pain, visible inflammation at graft boundaries, and occasional involuntary muscle spasms in the grafted areas. Mechanically, the Flesh-Forged takes a −1 penalty on all Concentration checks and must make a DC 10 Fortitude save when first taking damage in an encounter or be sickened for 1 round (the pain spikes). If the Flesh-Forged has access to regular doses of Buarath alchemical suppressants (provided by their handlers), this quality is suppressed entirely. Flesh-Forged that escape or are cut off from their handlers experience increasing rejection symptoms over days and weeks (DM’s discretion for long-term narrative effects).
+
+**Fleshweaver’s Mark (Ex)**
+
+Every Flesh-Forged bears a brand, scar-pattern, or subdermal glyph identifying its creator, House, and intended purpose. A DC 15 Knowledge (arcana) or Knowledge (the planes) check identifies the mark as Buarath work. A DC 20 check identifies the specific Fleshweaver or facility. A DC 25 check reveals the intended tactical purpose of the creature’s specific graft configuration—tunnel-runner, shock trooper, infiltrator, etc.
+
+**Pain Threshold (Ex)**
+
+The Flesh-Forged has lived with pain so constant that additional pain has diminished effect. It gains a +2 racial bonus on saves against pain effects, Intimidate checks based on threatening harm, and effects that impose the sickened or nauseated conditions (except its own Graft Rejection).
+
+**Abyssal Dependency (Ex)**
+
+Flesh-Forged creatures function optimally in environments saturated with Abyssal energy—Dómnathar strongholds, corrupted undercity warrens, areas of False Silence. In clean, Kin-resonant environments (consecrated ground, hallowed areas, or locations with strong natural elemental energy), the Flesh-Forged’s grafts function less efficiently: −1 penalty on attack rolls and saving throws. This does not apply in neutral territory (most wilderness, most settlements). It only triggers in areas of strong positive Kin energy.
+
+**The Graft Table**
+
+*"**The forge-menu. Roll or choose. Every line is a person’s worst day.**"*
+
+When applying the Flesh-Forged template, select grafts from the table below. The number of grafts determines the creature’s tier: 1 graft = Minor, 2 grafts = Major, 3 grafts = Abomination. A creature cannot have the same graft twice. Some grafts have prerequisites noted in their descriptions.
+
+The DM may roll randomly (d12) for Flesh-Forged encountered in the wild or in Dómnathar facilities where specific configurations are unknown. For planned encounters, select grafts that create the desired tactical role.
+
+| **Graft** | **Description** | **Stat Modification** | **CR** |
+| --- | --- | --- | --- |
+| 1. Bone Carapace | Plates of calcite-white bone erupt through the skin across the chest, shoulders, and spine. The plates grow continuously, cracking and re-forming in a cycle that leaves a trail of shed bone fragments. The skin between plates is stretched thin and translucent—you can see the muscle moving beneath it. | +3 natural armor (stacks with template’s +1). Speed reduced by 5 ft. from weight. | +0.5 |
+| 2. Grafted Limb | A third arm, grown from tissue harvested from a different creature, emerges from the shoulder blade, ribcage, or hip. It is visibly not the same species—different skin tone, different proportions, sometimes a different number of fingers. It moves with a slight delay, as though listening to instructions from far away. | Gains one extra slam attack (1d4 + half Str mod for Medium) or can wield an additional light weapon at −2 penalty. The limb counts as off-hand. | +0.5 |
+| 3. Sensory Cluster | A mass of mismatched eyes, nostrils, and tympanic membranes has been grown into the base of the skull, the chest, or the palm of one hand. The eyes blink independently. Some of them are not the base creature’s original color. One of them, occasionally, looks at things the others are not facing. | Gains blindsight 30 ft. Cannot be flanked. The cluster is sensitive: targeted attacks against it (called shot, −4 penalty) deal normal damage and negate blindsight for 1d4 rounds. | +1 |
+| 4. Toxin Glands | Swollen sacs beneath the jaw, inside the wrists, or along the forearms produce a viscous, yellowish fluid that weeps from pores near the creature’s natural weapons or hands. The fluid smells like rotting copper. The glands pulse visibly when the creature is agitated. | Natural weapons and unarmed strikes deal +1d4 poison damage. On a critical hit, target must make Fort save (DC 10 + 1/2 HD + Con mod) or be nauseated for 1 round. Manufactured weapons can be coated (free action, lasts 1 minute, 3 uses/day). | +0.5 |
+| 5. Acid Blood | The creature’s blood has been alchemically replaced with a caustic, greenish-black fluid that steams faintly when exposed to air. Wounds do not bleed normally—they seep. The creature’s veins are visible as dark lines beneath the skin, and the flesh around older graft-sites is pitted and scarred from internal leakage. | Any creature that deals piercing or slashing melee damage to the Flesh-Forged takes 1d4 acid damage from blood spray (Ref DC 10 + 1/2 HD + Con mod for half). When the Flesh-Forged is reduced below half HP, the spray increases to 1d6. When killed, it bursts: 5-ft. radius, 2d6 acid (Ref half). | +0.5 |
+| 6. Jaw Reconstruction | The entire lower face has been rebuilt. The jaw is wider, hinged differently, and filled with teeth that are not teeth—they are sharpened bone pegs driven into regrown gum tissue, interlocking in a pattern designed for grip rather than chewing. The creature cannot close its mouth fully. It drools. Speaking is difficult; it communicates mostly in grunts, whistles, and a wet clicking sound. | Gains bite attack: 1d6 (Medium) + Str mod. On a successful bite, may attempt a free grapple check to latch on. While latched, automatic bite damage each round. The creature’s verbal communication is limited to Goblin or its native language spoken poorly (−4 on Diplomacy, Bluff involving speech). | +0.5 |
+| 7. Subdermal Plating | Thin sheets of chitinous material have been grown beneath the skin, layered like fish scales but organic and warm. The skin over the plating is tight and shiny, with a faintly iridescent sheen that looks wrong on a goblinoid. The plating shifts audibly when the creature moves—a soft, wet clicking, like knuckles cracking underwater. | +2 natural armor. DR 2/— (the plating absorbs minor impacts). The creature takes a −2 penalty on Swim checks and Move Silently checks (the plating is rigid and noisy). | +0.5 |
+| 8. Tendril Whip | A muscular tendril, 6–8 feet long, extends from the base of the spine, the shoulder, or the abdomen. It is prehensile and coated in a thin mucous membrane. The tip splits into three smaller tendrils that can grip, squeeze, or lash. It moves constantly, even when the creature is still—coiling, uncoiling, tasting the air. | Gains a tendril attack: 1d4 (Medium) + half Str mod, 10-ft. reach. On hit, may attempt a free trip or disarm attempt without provoking attacks of opportunity. The tendril can also manipulate objects (but not wield weapons) and provides +4 on grapple checks. | +0.5 |
+| 9. Lung Bellows | The creature’s ribcage has been expanded and restructured to house oversized, alchemically treated lungs. The chest is visibly distended—too wide for the frame, the ribs splayed and visible beneath taut skin. When the creature breathes, you can hear it from thirty feet away: a deep, wet, bellows-like rasp that never quite finds a rhythm. | Gains a breath weapon (15-ft. cone): 2d6 acid or fire damage (chosen at creation), Ref DC 10 + 1/2 HD + Con mod for half. Usable every 1d4 rounds. The creature can hold its breath for 10 × Con modifier rounds. Immune to inhaled poisons and gases. | +1 |
+| 10. Muscle Lacing | The creature’s musculature has been stripped, regrown, and layered with additional fibers harvested from larger creatures. The result is visible: the muscles are too big for the skeleton, bunching and rolling beneath skin that cannot quite contain them. Stretch marks, burst capillaries, and the visible outlines of individual muscle groups give the creature a flayed appearance even with skin intact. | Str +4 (stacks with any other modifications). The creature’s carrying capacity doubles. However, the overgrown muscles impede fine motor control: −2 on all Dexterity-based skill checks and −1 on Reflex saves. | +0.5 |
+| 11. Stalker’s Eyes | The creature’s original eyes have been removed and replaced with oversized, pale orbs that do not blink. The pupils are vertical slits that dilate fully in darkness, reflecting light like a cat’s. In bright light, the eyes weep a thin, clear fluid that streaks the creature’s face. The eyes move independently of each other. | Darkvision 120 ft. Low-light vision. +4 racial bonus on Spot checks. Light sensitivity: dazzled in bright sunlight or daylight spell (−1 attack, −1 Spot). The eyes glow faintly red in darkness (negates Hide in total darkness unless eyes are covered). | +0.5 |
+| 12. Torso Maw | A second mouth has been opened in the creature’s abdomen or chest. It has its own teeth—flat, grinding molars arranged in concentric rings—and its own rudimentary musculature. It cannot speak. It chews. It is always chewing, even when empty, the jaw working in a slow, rhythmic circle. When the creature eats, it feeds both mouths. The torso maw digests faster. | In a grapple, the torso maw automatically deals 1d6 (Medium) + Str mod damage each round to a grappled opponent. The creature gains Fast Healing 1 while the torso maw is actively feeding (consuming rations or flesh). The maw can consume twice the normal food per day and the creature requires twice normal rations or it begins to starve at double the normal rate. | +0.5 |
+
+**Remaining Stat Block Modifications**
+
+| **SAVES, SKILLS, FEATS, AND ENVIRONMENT** |
+| --- |
+
+| **Saves** | Fort +2 (the body has been hardened by the forging process). Ref and Will unchanged. |
+| --- | --- |
+| **Skills** | The Flesh-Forged retains all skills from the base creature. Gains +2 racial bonus on Intimidate checks (it is inherently frightening). Takes a −2 penalty on Disguise checks (the modifications are impossible to fully conceal without magical aid). |
+| **Feats** | The Flesh-Forged retains all feats from the base creature. It does not gain additional feats from the template. |
+| **Environment** | Any (typically Dómnathar strongholds, corrupted warrens, underground complexes). Flesh-Forged are not native to any environment—they are deployed wherever their handlers send them. |
+| **Organization** | Solitary, pair, work gang (3–6 with 1 hobgoblin handler), or assault squad (6–12 with 2–4 hobgoblin handlers and 1 Fleshweaver Adept overseer). |
+| **Treasure** | Standard for base creature. Flesh-Forged rarely carry personal possessions; their equipment is issued by handlers and reclaimed after missions. Occasionally, the grafted material itself has alchemical or component value (DM’s discretion, typically 50–200 gp for a well-preserved graft harvested by someone with Heal 5+ ranks). |
+| **Alignment** | Any, but most are neutral evil (broken to compliance) or chaotic evil (enraged by the process). A rare Flesh-Forged that escapes its handlers may be any alignment. |
+| **Level Adjustment** | +1 (Minor), +2 (Major), +3 (Abomination). Flesh-Forged PCs require DM approval and a compelling narrative for how the character escaped Dómnathar control. |
+
+**The Flesh-Forges**
+
+*This section is for the DM. It describes the facilities where Flesh-Forged are created, for use as encounter locations, infiltration targets, or horror set-pieces.*
+
+A flesh-forge is not a single room. It is a complex of interconnected chambers, each dedicated to a stage of the forging process. The smallest operational forge requires at least one Fleshweaver Adept (a specialist spellcaster of House Buarath, typically cleric or wizard 7+), a supply of alchemical reagents, a source of Abyssal energy (a consecrated altar to Buaress, proximity to a Dómnathar stronghold, or a portable corruption focus), and subjects.
+
+**The Stages**
+
+**1. The Pens**
+
+Where subjects are held before forging. Bare stone or iron cages. Subjects are kept alive, fed minimally, and separated by intended graft configuration. The Fleshweavers assess physical condition, note existing injuries or deformities that might complicate grafting, and mark the subjects’ skin with charcoal or scarification to indicate where grafts will be placed. The pens smell of fear-sweat, old blood, and the faintly sweet chemical odor of Buarath growth accelerant.
+
+**2. The Table**
+
+The operating surface. A stone slab fitted with iron restraints at wrists, ankles, throat, and forehead. Channels carved into the stone drain fluids into collection basins beneath. The table is surrounded by racks of tools—bone saws, flesh hooks, suturing needles the length of a forearm, and glass vials of growth accelerant, pain suppressant (rarely used), and tissue-bonding paste. The room is warm. The Dómnathar prefer warm operating conditions because tissue grafts integrate faster in heat. A Fleshweaver works here for 4–12 hours per subject, depending on the graft. The subject is conscious.
+
+**3. The Growth Pit**
+
+After initial grafting, subjects are placed in shallow pits filled with a thick, warm, nutrient-rich fluid that accelerates tissue growth and integration. The fluid is opaque, brownish-pink, and has the consistency of thin porridge. Subjects float face-up, restrained, breathing through tubes. They remain in the pit for 1–7 days depending on the graft’s complexity. The pits glow faintly with Abyssal energy. Subjects in the growth pits sometimes scream, sometimes go silent, and sometimes make sounds that are neither.
+
+**4. The Breaking Yard**
+
+Where newly forged subjects are tested, evaluated, and—most importantly—conditioned to obey. Hobgoblin handlers put Flesh-Forged through combat drills, endurance tests, and pain-compliance exercises. Subjects that fail to respond to commands are returned to the table for corrective modification. Subjects that resist are given to the Abomination program. The Breaking Yard is the loudest part of the forge.
+
+**Kin-Sense and the Flesh-Forged**
+
+The Flesh-Forged present a unique and deeply disturbing Kin-sense profile, particularly when the base creature was originally Kin.
+
+**Non-Kin Base Creatures**
+
+Goblinoids, orcs, and other non-Kin humanoids that have been Flesh-Forged read on Kin-sense the same way they always did: wild static, background noise, or nothing. The Abyssal Taint from the grafts does not change this significantly—it adds a faintly unpleasant undertone to the static, like hearing white noise with a distant scream buried in it. Most Kin will not notice the difference unless they are specifically focusing their Kin-sense on the creature (DC 20 focus check to detect the Abyssal component).
+
+**Kin Base Creatures**
+
+A Flesh-Forged Kin is an abomination on the Kin-sense spectrum. The original Kin resonance—the elemental affinity, the warmth of recognition, the sense of ‘this is one of us’—is still there. But it is wrapped in something wrong. The Abyssal Taint from the grafts creates a dissonance that Kin describe as physically painful to perceive: a fire-affinity dwarf whose resonance tastes like ash and rot; a water-affinity Eruskan whose Kin-sense signature feels like drowning. The person is recognizably Kin, and the grafts are recognizably not, and the combination is worse than either would be alone.
+
+Any Kin within 60 feet of a Flesh-Forged Kin with active Kin-sense immediately knows something is deeply wrong. No check required. Identifying specifically what is wrong—that this is a Kin person who has been surgically modified with Abyssal-tainted tissue—requires a DC 15 Kin-sense focus check. The emotional impact of this realization is significant: most Kin who encounter a Flesh-Forged Kin for the first time are shaken (no save, narrative effect, DM’s discretion on duration) not from fear but from grief and horror.
+
+**The Party’s Reaction**
+
+When the party encounters Flesh-Forged in the Aldenheim undercity, the Kin-sense dynamics should be front and center. The Vestri dwarf will feel the goblinoids as static—normal Deceiver troops. But if they encounter a Flesh-Forged Kin—an Aldenheim dwarf captured during the siege, a Hasura elf taken from the refugee column, an Eruskan priestess who didn’t make it out—the Kin-sense hit is personal and devastating. These are their people. Were their people. The grafts did not kill them. The grafts made them into something that fights for the people who killed their city.
+
+**Sample Entry: Tunnel-Runner (Goblin Flesh-Forged Minor)**
+
+*A standard tunnel-reconnaissance unit encountered in Dómnathar warrens and the Aldenheim undercity excavation.*
+
+| **TUNNEL-RUNNER** |
+| --- |
+
+**Small Humanoid **(Goblinoid, Augmented)
+
+**Hit Dice: **1d8+3 (7 hp)
+
+**Initiative: **+2
+
+**Speed: **30 ft.
+
+**Armor Class: **17 (+1 size, +2 Dex, +2 natural, +2 leather), touch 13, flat-footed 15
+
+**Base Attack/Grapple: **+0/−4
+
+**Attack: **Short sword +2 melee (1d4/19–20)
+
+**Full Attack: **Short sword +2 melee (1d4/19–20)
+
+**Space/Reach: **5 ft./5 ft.
+
+**Special Attacks: **—
+
+**Special Qualities: **Abyssal Taint, Graft Rejection (DC 10), Fleshweaver’s Mark, Pain Threshold, Abyssal Dependency, darkvision 120 ft., low-light vision, light sensitivity
+
+**Saves: **Fort +4, Ref +2, Will +0
+
+**Abilities: **Str 10, Dex 14, Con 14, Int 10, Wis 10, Cha 4
+
+**Skills: **Hide +8, Move Silently +6, Spot +6
+
+**Feats: **Alertness
+
+**Graft: **Stalker’s Eyes (Minor, 1 graft)
+
+**Environment: **Underground (Dómnathar warrens)
+
+**Organization: **Pair or scouting pack (3–6)
+
+**Challenge Rating: **2
+
+**Alignment: **Usually neutral evil
+
+| **Flavor Text** |
+| --- |
+
+It crouches in the tunnel mouth, and for a moment you think it’s just a goblin—the size is right, the posture is right, the greasy leather armor is right. Then it looks at you and you see the eyes. They’re too big. They’re pale, almost white, and the pupils are slits that dilate as they fix on you. They don’t blink. Both eyes move independently, one tracking you while the other scans the tunnel behind it. There’s a thin, clear fluid weeping from the corners, cutting tracks through the grime on its face. In the dark, the eyes catch your torchlight and throw it back at you in two pinpoints of red. It sees you better than you see it. It always has.
+
+| **Combat** |
+| --- |
+
+Tunnel-Runners avoid direct combat. They scout, observe, and report. If cornered, they fight with short swords and attempt to disengage at the first opportunity, using their superior darkvision to flee into lightless tunnels where pursuers are blind. They are not brave. They are not meant to be brave. They are meant to see things in the dark and come back alive to tell their handlers what they saw.
+
+**Sample Entry: Breacher (Hobgoblin Flesh-Forged Major)**
+
+*A front-line assault unit designed to force entry into defended positions.*
+
+| **BREACHER** |
+| --- |
+
+**Medium Humanoid **(Goblinoid, Augmented)
+
+**Hit Dice: **3d8+12 (25 hp)
+
+**Initiative: **+1
+
+**Speed: **25 ft.
+
+**Armor Class: **21 (+1 Dex, +6 natural, +4 chain shirt), touch 11, flat-footed 20
+
+**Base Attack/Grapple: **+3/+8
+
+**Attack: **Longsword +8 melee (1d8+5/19–20)
+
+**Full Attack: **Longsword +8 melee (1d8+5/19–20) and slam +3 melee (1d4+2)
+
+**Space/Reach: **5 ft./5 ft.
+
+**Special Attacks: **Acid blood spray (1d4, Ref DC 13 half)
+
+**Special Qualities: **Abyssal Taint, Graft Rejection (DC 10), Fleshweaver’s Mark, Pain Threshold, Abyssal Dependency, DR 2/—, darkvision 60 ft., acid blood burst on death (2d6, 5-ft. radius, Ref DC 13 half)
+
+**Saves: **Fort +7, Ref +2, Will +1
+
+**Abilities: **Str 20, Dex 12, Con 18, Int 10, Wis 10, Cha 6
+
+**Skills: **Intimidate +4, Move Silently +1
+
+**Feats: **Power Attack, Cleave
+
+**Grafts: **Muscle Lacing + Acid Blood (Major, 2 grafts)
+
+**Environment: **Underground (Dómnathar strongholds)
+
+**Organization: **Assault squad (4–6 Breachers with 1 hobgoblin handler)
+
+**Challenge Rating: **5
+
+**Alignment: **Lawful evil
+
+| **Flavor Text** |
+| --- |
+
+It was a hobgoblin once and it still carries itself like one—upright, disciplined, moving in formation with the others. But the body is wrong. The muscles are too big, bunching and rolling under skin that can’t contain them. You can see individual muscle fibers through the stretch marks on its arms. Its veins are dark—almost black—and when it shifts its grip on the longsword, you see the skin at its elbow split slightly and something greenish seeps out before the wound closes. It doesn’t notice. It stands in line. It waits for the order. When the order comes, it hits the barricade like something that does not expect to survive and does not care.
+
+| **Combat** |
+| --- |
+
+Breachers fight in formation. Their hobgoblin training is intact and their handlers exploit it ruthlessly. They advance in a wall, using Power Attack for maximum damage against fortified positions. They do not retreat. If one falls, the acid blood burst discourages melee fighters from standing over the body—this is by design. Breachers are meant to break defensive lines and die doing it. The acid blood ensures that the space they died in remains hazardous for at least one round, creating openings for the second wave.
+
+**Sample Entry: The Wretched (Eruskan Flesh-Forged Abomination)**
+
+*A captured Kin subjected to the full Abomination program. The worst thing the party will find in the undercity.*
+
+| **THE WRETCHED** |
+| --- |
+
+**Medium Humanoid **(Human, Augmented)
+
+**Hit Dice: **4d8+20 (38 hp)
+
+**Initiative: **+0
+
+**Speed: **30 ft.
+
+**Armor Class: **19 (+6 natural, +3 from Bone Carapace), touch 10, flat-footed 19
+
+**Base Attack/Grapple: **+3/+7
+
+**Attack: **Slam +7 melee (1d6+4) or tendril +7 melee (1d4+2, 10-ft. reach)
+
+**Full Attack: **Slam +7 melee (1d6+4) and tendril +5 melee (1d4+2, 10-ft. reach) and torso maw +5 melee (1d6+2, grapple only)
+
+**Space/Reach: **5 ft./5 ft. (10 ft. with tendril)
+
+**Special Attacks: **Tendril trip/disarm, torso maw auto-damage in grapple (1d6+4/round), improved grab (tendril)
+
+**Special Qualities: **Abyssal Taint, Graft Rejection (DC 10), Fleshweaver’s Mark, Pain Threshold, Abyssal Dependency, fast healing 1 (while feeding), +4 grapple from tendril, darkvision 60 ft.
+
+**Saves: **Fort +8, Ref +1, Will +1
+
+**Abilities: **Str 18, Dex 10, Con 20, Int 8, Wis 10, Cha 2
+
+**Skills: **— (skills lost to the forging process)
+
+**Feats: **Multiattack, Improved Grapple
+
+**Grafts: **Bone Carapace + Tendril Whip + Torso Maw (Abomination, 3 grafts)
+
+**Environment: **Aldenheim undercity, Dómnathar strongholds
+
+**Organization: **Solitary or paired (always with handler)
+
+**Challenge Rating: **7
+
+**Alignment: **Chaotic neutral (broken)
+
+| **Flavor Text** |
+| --- |
+
+You can tell it was human because the face is still there. Everything else is gone—or rather, everything else has been added to. The bone plates across its chest and back are white as chalk and cracked where they’ve grown too fast, and between the cracks you can see pink, raw tissue that pulses with the heartbeat. A tendril as thick as your forearm extends from somewhere behind the left shoulder blade, coiling and uncoiling, its tip splitting into three wet fingers that open and close like a mouth trying to speak. And in the middle of the abdomen, where the bone plates part, there is a mouth. It has flat teeth arranged in rings. It is chewing. There is nothing in it. It is always chewing.
+
+But the face. The face is an Eruskan face. River-dark skin, high cheekbones, the bone structure of someone who grew up on the water. The eyes are still blue. They are still aware. And when they see the Eruskan cleric in your party, they widen—not with hunger, not with rage, but with recognition. For one second, the thing that this person became looks at one of its own people, and it knows what it is, and it makes a sound that is not a word in any language but means exactly one thing.
+
+Then the handler cracks the whip, and it charges.
+
+| **Combat** |
+| --- |
+
+The Wretched fights with animal ferocity, using its tendril to trip or disarm at range before closing to grapple. Once it has a victim in its grip, the torso maw activates, dealing automatic damage each round while the fast healing keeps the Wretched alive through counterattacks. It does not use tactics. It does not respond to commands beyond the most basic (attack, stop, come). The handler directs it by pointing and by pain.
+
+| **Oreka-Specific Elements** |
+| --- |
+
+**Kin-Sense Signature: **Water (corrupted). The original Eruskan resonance is present—water-affinity, unmistakably human—but overlaid with Abyssal rot. Any Kin with active Kin-sense within 60 feet knows immediately that this was a Kin person. The recognition is automatic. The horror is automatic. No check required.
+
+**Elemental Affinity: **Water (original), with Abyssal corruption dominant.
+
+**Cultural Significance: **The existence of Flesh-Forged Kin is one of the worst truths the party can discover in the undercity. It means the Dómnathar did not just kill the Kin who fought at Aldenheim. They used them. A party that frees or mercy-kills a Wretched and reports its existence to the Vestri elders above will fundamentally change the political calculus around the Lament—this is no longer a sacred grave. It is an active atrocity site.
+
+**Encounter Design Notes**
+
+**Tactical Roles by Graft**
+
+The graft system is designed to let you build Flesh-Forged for specific tactical roles. Some suggested configurations:
+
+- Tunnel Scout: Goblin + Stalker’s Eyes. CR 2. Reconnaissance and early warning.
+
+- Shock Trooper: Hobgoblin + Muscle Lacing + Bone Carapace. CR 5. Front-line armor-breaker.
+
+- Ambush Predator: Bugbear + Toxin Glands + Sensory Cluster. CR 7. Silent, venomous, and sees everything.
+
+- Tunnel Clearer: Goblin + Lung Bellows + Jaw Reconstruction. CR 4. Breath weapon and bite to clear tight spaces.
+
+- Grappler: Hobgoblin + Tendril Whip + Torso Maw. CR 6. Grab at range, pull in, feed.
+
+- Living Trap: Goblin + Acid Blood + Subdermal Plating. CR 3. Kill it and it punishes you. Leave it and it blocks the tunnel.
+
+**The Handler Dynamic**
+
+Flesh-Forged rarely operate alone. They are controlled by hobgoblin handlers—unmodified hobgoblin sergeants or lieutenants who direct the Flesh-Forged through a combination of verbal commands, pain-compliance tools (whips, shock-prods, alchemical punishment sprays), and established behavioral conditioning. Killing the handler does not cause Flesh-Forged to flee—it causes them to act on instinct, which usually means attacking the nearest living thing, including each other. A party that kills the handler first may find the encounter easier or significantly worse depending on how many Flesh-Forged are present and how close together they are.
+
+**The Mercy Question**
+
+Flesh-Forged are sapient. They are in pain. Many of them were forced into this and retain enough awareness to know what they are. The party will have to decide, repeatedly, whether Flesh-Forged are enemies to be killed, victims to be rescued, or something in between. There is no clean answer. The grafts cannot be removed without killing the subject (the integration is too deep, the alchemical bonding too thorough). Heal, restoration, and similar magic can ease the pain and suppress the Graft Rejection symptoms, but cannot undo the forging. Wish or miracle could theoretically reverse the process, but that is DM’s discretion and should be treated as a significant narrative event, not a routine solution.
+
+A Flesh-Forged Kin that is captured alive and brought to the surface represents a moral crisis for the Kin communities. Is it still one of them? Does it deserve healing, shelter, community—or is it a contaminated thing that must be put down for its own sake? This is exactly the kind of question that Oreka’s themes of unity and dissonance are designed to explore.
+
+**Emotional Calibration**
+
+The Tunnel-Runner is meant to be unsettling. The Breacher is meant to be grim. The Wretched is meant to be devastating. Scale the horror to the table’s comfort level, but don’t pull the punch entirely—the Flesh-Forged exist because House Buarath is monstrous, and the party should understand exactly how monstrous. The body horror is not gratuitous. It is evidence. Every graft is a war crime the party is walking through.
+
+**DM Quick Reference**
+
+| **Building a Flesh-Forged in 5 Steps** |
+| --- |
+
+- Choose the base creature (any humanoid, Con 8+). Note its race, stats, and class levels.
+
+- Apply universal modifications: type gains (Augmented), +1 natural armor, Con +2, Cha −2, +2 HP/HD, Fort +2, +2 Intimidate, −2 Disguise. Add all universal special qualities (Abyssal Taint, Graft Rejection, Fleshweaver’s Mark, Pain Threshold, Abyssal Dependency).
+
+- Choose tier: Minor (1 graft, CR +1), Major (2 grafts, CR +2), Abomination (3 grafts, CR +3).
+
+- Select grafts from the Graft Table. Apply their specific stat modifications.
+
+- Determine handler situation: who controls this Flesh-Forged, what happens if the handler dies, and what the creature does if it encounters Kin.
+
+| **Key Reminders** |
+| --- |
+
+- They are alive. They feel pain. They remember.
+
+- The grafts cannot be removed. Heal magic eases symptoms but does not cure.
+
+- Non-Kin Flesh-Forged read as static on Kin-sense. Kin Flesh-Forged read as their original resonance, corrupted. The difference matters.
+
+- Killing the handler makes things worse in the short term, better in the long term.
+
+- Flesh-Forged Kin are the worst thing in the undercity. Deploy them when the party needs to understand what the Dómnathar actually are.
+
+- The body horror is not decoration. It is evidence of atrocity. Treat it with the narrative weight it deserves.
+
+- A Flesh-Forged that escapes is a potential NPC, a potential ally, and a permanent moral question.

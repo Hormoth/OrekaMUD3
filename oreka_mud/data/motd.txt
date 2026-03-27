@@ -1,0 +1,23 @@
+
+================================================================================
+                         W E L C O M E   T O   O R E K A
+================================================================================
+
+  The world was shaped by four Elemental Lords -- Stone, Fire, Sea, and Wind.
+  They breathed life into the land, raised the mountains, filled the oceans,
+  and gave birth to the Kin who now walk Oreka's many roads.
+
+  The Fall of Aldenheim changed everything. From that ruin rose the Ascended
+  Gods -- mortal Kin who burned so brightly in sacrifice that the world itself
+  remembered them. Their stories are told in every hearth-fire, every tide.
+
+  Now it is your turn.
+
+  Oreka is a world of elemental concord and ancient conflict. Ruins hold
+  secrets older than memory. Factions compete for power, faith, and survival.
+  The road ahead is yours to walk -- carefully.
+
+  Type 'help' at any time for a list of commands.
+  Type 'score' to see your character sheet.
+
+================================================================================

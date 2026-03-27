@@ -1,0 +1,2200 @@
+[
+  {
+    "vnum": 4001,
+    "name": "River Street South",
+    "description": "River Street continues south from the chapel quarter, the cobblestones giving way to smooth river-worn flagstones. Willows arch overhead, their trailing branches catching droplets from the ever-present mist that rises off the Great River.",
+    "exits": {
+      "north": 3001,
+      "south": 4002
+    },
+    "flags": [
+      "street",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4002,
+    "name": "Riverside Promenade",
+    "description": "A broad, curving walkway follows the Great River's north bank. Crystal lampposts line the path, their enchanted flames casting prismatic light across the water. Pekakarlik-crafted benches of river-smoothed basalt invite contemplation, and the sound of the current is a constant, soothing companion.",
+    "exits": {
+      "north": 4001,
+      "south": 4003,
+      "east": 4013,
+      "west": 4009
+    },
+    "flags": [
+      "street",
+      "water",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4003,
+    "name": "The River Terrace",
+    "description": "Stone steps descend to the water's edge where a broad terrace overlooks the Great River. The Pekakarlik engineers who built this terrace carved Water-element runes into each step. On clear days, the Aetherial Veil's shimmer is reflected in the river's surface, doubling the sky.",
+    "exits": {
+      "north": 4002,
+      "south": 4004,
+      "east": 4005,
+      "southeast": 4146
+    },
+    "flags": [
+      "water",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4004,
+    "name": "Riverbank Landing",
+    "description": "A natural stone landing where small boats are moored among the reeds. Pekakarlik fishermen mend nets here at dawn, working in easy rhythm with the river's current. A weathered shrine to Kaile'a, Mistress of Waves, stands watch over the boats.",
+    "exits": {
+      "north": 4003,
+      "east": 4006,
+      "west": 4160
+    },
+    "flags": [
+      "water",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4005,
+    "name": "The Wavecrest Inn",
+    "description": "A sprawling riverside inn built from pale riverstone and living willow, its balconies extending over the water on crystal-reinforced pylons. The innkeeper, a stout Pekakarlik woman, keeps the common room warm with a driftwood fire and the scent of river-herb stew. The sound of the Great River lapping at the pylons below serves as a lullaby for weary travelers.",
+    "exits": {
+      "west": 4003,
+      "south": 4006
+    },
+    "flags": [
+      "inn",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4006,
+    "name": "Fishmonger's Row",
+    "description": "The air is thick with the briny scent of fresh river fish and the calls of Pekakarlik fishwives hawking the morning catch. Stalls of woven river-reed display silverfin, glacial trout, and the iridescent cave-perch prized by elven kitchens. Water channels cut into the street keep the catch fresh, their flow maintained by Pekakarlik hydraulic craft.",
+    "exits": {
+      "north": 4005,
+      "west": 4004,
+      "east": 4014,
+      "south": 4007,
+      "southwest": 4012
+    },
+    "flags": [
+      "shop",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4007,
+    "name": "Kaile'a's Shrine",
+    "description": "A circular plaza paved in blue-veined marble surrounds a fountain sculpted in Kaile'a's image — a woman formed of living water, arms raised to the sky. Offerings of river-pearls and carved shells line the fountain's rim. A cool mist drifts from the fountain, and Pekakarlik clerics tend the shrine at all hours.",
+    "exits": {
+      "north": 4006,
+      "south": 4008,
+      "west": 4010
+    },
+    "flags": [
+      "temple",
+      "water",
+      "safe"
+    ],
+    "effects": [
+      {
+        "type": "sanctuary",
+        "deity": "Kaile'a",
+        "healing_bonus": 3,
+        "rest_multiplier": 2.0
+      }
+    ]
+  },
+  {
+    "vnum": 4008,
+    "name": "South Gate",
+    "description": "The Great South Gate of Custos do Aeternos rises in an arch of crystal-veined granite, carved with scenes of river voyages and the founding of the city. Two crystal spires flank the gate, their tips catching the Aetherial Veil's light. Beyond the gate, the Great River Road leads south through rolling hills toward Greenford. Guards in wind-silk tabards check travelers entering and leaving.",
+    "exits": {
+      "north": 4007,
+      "east": 4022,
+      "up": 4156,
+      "south": 5402,
+      "west": 10500
+    },
+    "flags": [
+      "gate",
+      "street"
+    ]
+  },
+  {
+    "vnum": 4009,
+    "name": "Pekakarlik Aqueduct Walk",
+    "description": "A covered walkway runs along one of the great aqueducts that the Pekakarlik Dwarves maintain for the city. Water rushes through the elevated channel above, its passage creating a rhythmic drumming that Pekakarlik residents describe as comforting. Dwarf-height doors line the walkway, leading to maintenance tunnels and the homes of aqueduct engineers.",
+    "exits": {
+      "east": 4002,
+      "south": 4010,
+      "north": 4149,
+      "west": 4086
+    },
+    "flags": [
+      "residential",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4010,
+    "name": "Waterfolk Quarter",
+    "description": "A quiet residential neighborhood where Pekakarlik Dwarves have made their home for generations. The buildings are low and solid, built from river-smoothed basalt with doors sized for Small folk. Window boxes overflow with water lilies and river-moss, and small channels run along the gutters, connecting each home to the aqueduct system.",
+    "exits": {
+      "north": 4009,
+      "east": 4007,
+      "south": 4011,
+      "northeast": 4152
+    },
+    "flags": [
+      "residential",
+      "water",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4011,
+    "name": "Pekakarlik Bathhouse",
+    "description": "A domed building of pale stone from which fragrant steam perpetually rises. The Pekakarlik bathhouse is open to all Kin, though the pools are sized for both Small and Medium folk in separate chambers. Hot springs channeled from beneath the Giant's Teeth feed the baths, and the mingling of the geothermally warmed water and the cool stone creates a unique therapeutic atmosphere.",
+    "exits": {
+      "north": 4010,
+      "east": 4012
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4012,
+    "name": "Deepwell Tavern",
+    "description": "A cozy, low-ceilinged tavern built half below street level, its walls lined with river-stone and hung with fishing trophies. Pekakarlik ale — dark, mineral-rich, and faintly luminescent — is the house specialty. A permanent card game occupies the corner booth, and river-shanties echo from the back room most evenings. The ceiling is uncomfortably low for tall folk, but the welcome is warm.",
+    "exits": {
+      "west": 4011,
+      "northeast": 4006
+    },
+    "flags": [
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 4013,
+    "name": "Dock Street South",
+    "description": "Dock Street angles southeast from the chapel quarter, growing busier and louder with each step. Crates and barrels line the street edges, and the air carries the mingled scents of tar, rope, and exotic spices from upriver. Dockworkers — mostly humans and Pekakarlik — jostle past with loads balanced on shoulders and heads.",
+    "exits": {
+      "northwest": 3002,
+      "south": 4014,
+      "east": 4015,
+      "west": 4002
+    },
+    "flags": [
+      "street",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4014,
+    "name": "The Wharves",
+    "description": "A long wooden wharf extends into the Great River, its pilings reinforced with Pekakarlik stonework. Trade barges from Greenford, Forkmeet, and Stoneharbor crowd the moorings, their cargo booms swinging overhead. The phrase 'as the river runs' is heard constantly as merchants seal deals over clasped hands. Kaile'a's sigil is painted on every barge prow.",
+    "exits": {
+      "north": 4013,
+      "west": 4006,
+      "south": 4016,
+      "east": 4017,
+      "southwest": 4146
+    },
+    "flags": [
+      "dock",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4015,
+    "name": "Harbormaster's Office",
+    "description": "A sturdy stone building with a commanding view of the river wharves. The Harbormaster — a weathered human woman with ink-stained fingers — manages the flow of river commerce with brisk efficiency. Charts, manifests, and a large river map cover every wall. A brass speaking-trumpet hangs by the door for hailing incoming barges.",
+    "exits": {
+      "west": 4013,
+      "south": 4017
+    },
+    "flags": [
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4016,
+    "name": "Warehouse Row",
+    "description": "A line of massive stone warehouses stretches along the riverbank, their iron-banded doors sealed with Trade House locks. Pekakarlik-engineered drainage channels keep the floors dry, and thick stone walls protect sensitive cargo from the elements. Armed guards from the Trade Houses patrol with practiced vigilance.",
+    "exits": {
+      "north": 4014,
+      "east": 4018,
+      "west": 4152
+    },
+    "flags": [
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4017,
+    "name": "Chandler's Market",
+    "description": "A bustling open-air market where ship's chandlers sell everything a river trader needs: rope, tar, sailcloth, navigational charts, and preserved rations. The stalls are a mix of permanent shops and temporary blankets spread by traveling merchants. The scent of hemp and tallow mingles with the sharper tang of alchemical waterproofing compounds.",
+    "exits": {
+      "north": 4015,
+      "west": 4014,
+      "south": 4018
+    },
+    "flags": [
+      "shop",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4018,
+    "name": "Riverwind Trading Post",
+    "description": "The largest Trade House office in the dock district occupies a handsome two-story building of crystal-veined limestone. Inside, factors negotiate contracts for grain, timber, ore, and magical components. A large Kaile'a shrine occupies the entrance hall, and deals are sealed with river-water rather than wax.",
+    "exits": {
+      "north": 4017,
+      "west": 4016,
+      "south": 4019
+    },
+    "flags": [
+      "shop",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4019,
+    "name": "Sailor's Rest",
+    "description": "A rough-and-ready dockside inn with rooms above and a common room below that smells permanently of river-damp wool and strong ale. The beds are clean enough, the food hearty if plain, and the innkeeper asks no questions about cargo or destination. Dockworkers and river-sailors crowd the common room each evening, trading stories and dice games.",
+    "exits": {
+      "north": 4018,
+      "south": 4020,
+      "west": 4021
+    },
+    "flags": [
+      "inn",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4020,
+    "name": "Rope Street",
+    "description": "A narrow lane lined with rope-makers, net-weavers, and sail-menders. The rhythmic thwack of rope being twisted and the rattle of shuttle-looms create a constant industrial percussion. Halfling apprentices scramble between workshops carrying bundles of hemp and spools of treated cord.",
+    "exits": {
+      "north": 4019,
+      "south": 4022
+    },
+    "flags": [
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4021,
+    "name": "Dockside Shrine of Semyon",
+    "description": "A small, warm chapel tucked between warehouses, maintained by a kindly Pasua cleric. Inside, the hearthstone glows with Semyon's sigil, and the walls are lined with tokens left by sailors' families — prayers for safe return, thanks for healing, small carved boats that children have brought. The chapel serves as an informal infirmary for dock injuries.",
+    "exits": {
+      "east": 4019
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4022,
+    "name": "Customs House",
+    "description": "An imposing stone building where all goods entering Custos do Aeternos by river are inspected and taxed. Customs officers inspect merchants and their goods with practiced efficiency, cross-referencing manifests against cargo. Discrepancies draw immediate scrutiny.",
+    "exits": {
+      "north": 4020,
+      "south": 4023,
+      "west": 4008
+    },
+    "flags": [
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4023,
+    "name": "Smuggler's Dock",
+    "description": "A crumbling section of the old river wall where the stones have settled and the lampposts have conveniently never been repaired. By day it looks like an abandoned quay; by night, small boats slip in and out with cargoes that never pass through the Customs House. The Unstrung maintain a discreet interest in this stretch of riverbank.",
+    "exits": {
+      "north": 4022,
+      "east": 4024
+    },
+    "flags": [
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4024,
+    "name": "East River Gate",
+    "description": "The eastern gate straddles the Great River Road where it follows the bank toward Forkmeet and Stoneharbor. Built of the same crystal-veined granite as the South Gate, it features carved reliefs of river barges and the twin rivers that give the region its name. A toll booth collects bridge-crossing fees, and river traffic passes through a water-gate below.",
+    "exits": {
+      "west": 4023
+    },
+    "flags": [
+      "gate",
+      "street",
+      "dock"
+    ]
+  },
+  {
+    "vnum": 4025,
+    "name": "Temple Street East",
+    "description": "The lane continues east from the chapel quarter, growing quieter and more reverent with each step. Crystal lanterns hang from wrought-iron brackets, casting a soft, steady light that never flickers. The flagstones are swept immaculate, and the air carries the scent of sacred incense — a blend of sky-lotus, river-sage, and mountain cedar that honors all four elements.",
+    "exits": {
+      "west": 3003,
+      "east": 4026,
+      "south": 4035,
+      "north": 4145
+    },
+    "flags": [
+      "street",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4026,
+    "name": "Plaza of the Ascended",
+    "description": "A grand circular plaza paved in alternating bands of white marble and blue-veined granite. At its center stands a monument to the Ascended Gods — five pillars of crystal representing Cinvarin, the Five Witnesses, surrounded by smaller shrines to each of the other Ascended. The plaza serves as the spiritual heart of the city's formal religious life, distinct from the elemental worship of the chapel.",
+    "exits": {
+      "west": 4025,
+      "north": 4027,
+      "east": 4029,
+      "south": 4031
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4027,
+    "name": "Temple of Cinvarin",
+    "description": "A contemplative temple built of five different stones — one for each of the Five Witnesses who sacrificed themselves at Aldenheim. The interior is a single round chamber where five eternal flames burn in silence, each a different elemental color. Circle of Deeproot druids maintain the temple, and worship here is quiet: vigils, elemental offerings, and the recitation of the Five Names.",
+    "exits": {
+      "south": 4026,
+      "east": 4028
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ],
+    "effects": [
+      {
+        "type": "sanctuary",
+        "deity": "Cinvarin",
+        "healing_bonus": 2,
+        "rest_multiplier": 1.5
+      }
+    ]
+  },
+  {
+    "vnum": 4028,
+    "name": "Shrine of Apela Kelsoe",
+    "description": "A soaring open-air shrine where windchimes of crystal and silver hang from graceful arches. The Windrider's shrine catches every breeze, filling the air with ethereal music. Hasura Elves come here to pray for safe travel and good fortune, and small feather tokens left as offerings carpet the altar stones. The shrine's position catches the wind from the river valley below.",
+    "exits": {
+      "west": 4027,
+      "south": 4029
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4029,
+    "name": "Temple of Kaile'a",
+    "description": "A grand temple of blue-veined marble where water flows through channels carved into the walls, floor, and ceiling in defiance of gravity — a masterwork of Pekakarlik hydraulic engineering and clerical magic. The Mistress of Waves' temple is the largest religious building outside the central chapel, reflecting her status as the Twin Rivers' most widely worshipped Ascended God.",
+    "exits": {
+      "west": 4026,
+      "north": 4028,
+      "south": 4030,
+      "east": 4033
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ],
+    "effects": [
+      {
+        "type": "sanctuary",
+        "deity": "Kaile'a",
+        "healing_bonus": 4,
+        "rest_multiplier": 2.0
+      }
+    ]
+  },
+  {
+    "vnum": 4030,
+    "name": "Shrine of Semyon",
+    "description": "A warm, domestic temple where a central hearthstone blazes with eternal fire. The Hearth Mother's shrine serves as the city's largest birthing house and counseling center. Midwives trained in both medicine and healing magic attend families of all races, and the walls are covered in tapestries depicting families of every Kin — elven parents with dwarven children, human mothers holding halfling babes.",
+    "exits": {
+      "north": 4029,
+      "west": 4031
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ],
+    "effects": [
+      {
+        "type": "sanctuary",
+        "deity": "Semyon",
+        "healing_bonus": 3,
+        "rest_multiplier": 2.0
+      }
+    ]
+  },
+  {
+    "vnum": 4031,
+    "name": "Shrine of Ludus Galerius",
+    "description": "A cairn of stacked stones stands in a small courtyard, maintained in the mountain tradition. The shrine to Stone's Hand is simpler than the other temples — a deliberate choice that reflects Galerius's portfolio of endurance and humility. Kovaka Elves and Pekakarlik Dwarves are the most frequent visitors, leaving small carved stones as offerings.",
+    "exits": {
+      "north": 4026,
+      "east": 4030,
+      "south": 4032
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ],
+    "effects": [
+      {
+        "type": "sanctuary",
+        "deity": "Ludus Galerius",
+        "healing_bonus": 2,
+        "rest_multiplier": 1.5
+      }
+    ]
+  },
+  {
+    "vnum": 4032,
+    "name": "Shrine of Gonmareck Ritler",
+    "description": "An anvil-altar of black iron stands beneath a forge-roof in this shrine to Gunny. The smell of heated metal lingers permanently, and the shrine doubles as a working forge where blades are blessed and apprentices take oaths over glowing steel. Veterans and smiths come here to honor discipline and honest craft. Visiting Chainless Legion traders sometimes kneel here in quiet devotion.",
+    "exits": {
+      "north": 4031,
+      "east": 4036
+    },
+    "flags": [
+      "temple",
+      "forge"
+    ],
+    "effects": [
+      {
+        "type": "sanctuary",
+        "deity": "Gonmareck Ritler",
+        "healing_bonus": 2,
+        "rest_multiplier": 1.5
+      }
+    ]
+  },
+  {
+    "vnum": 4033,
+    "name": "Clergy Quarters",
+    "description": "A quiet residential cloister behind the great temples, where priests, druids, and acolytes of the various Ascended Gods maintain their living quarters. Small gardens grow sacred herbs between the dormitories, and a communal kitchen feeds the clergy three times daily. The atmosphere is scholarly and contemplative, with debates over theology as common as prayers.",
+    "exits": {
+      "west": 4029,
+      "south": 4034,
+      "north": 4154
+    },
+    "flags": [
+      "residential",
+      "temple",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4034,
+    "name": "Hall of Healing",
+    "description": "A long, airy building with crystal-paned windows that flood the interior with refracted light. Clerics of Kaile'a and Semyon work together here, tending the sick and injured. Beds line the walls, each screened with wind-silk curtains. The healing magic practiced here is cool and soothing, though Semyon's clerics add warmth to the touch.",
+    "exits": {
+      "north": 4033,
+      "west": 4035
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4035,
+    "name": "Temple Garden",
+    "description": "A walled garden where sacred plants from all four elemental traditions grow in carefully tended beds. Fire-flowers bloom beside water-lilies, earth-moss carpets the paths, and wind-orchids sway on invisible breezes. The Circle of Deeproot tends this garden as a living demonstration of elemental harmony. It is open to all and serves as a place of quiet meditation.",
+    "exits": {
+      "north": 4025,
+      "east": 4034
+    },
+    "flags": [
+      "temple",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4036,
+    "name": "The Reliquary",
+    "description": "A fortified vault beneath the Temple of Cinvarin where holy relics and dangerous artifacts are stored under guard. The walls are lined with specially treated basalt that muffles magical energy. Only senior clergy may enter without escort.",
+    "exits": {
+      "west": 4032
+    },
+    "flags": [
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4037,
+    "name": "Mystic Street Northeast",
+    "description": "The lane winds northeast from the chapel quarter, the air growing thick with the tingle of ambient magic. Arcane symbols are etched into the cobblestones, glowing faintly with residual enchantment. Crystal wind-chimes hanging from every doorway create a shifting, ethereal melody.",
+    "exits": {
+      "southwest": 3004,
+      "northeast": 4038,
+      "east": 4047,
+      "south": 4145
+    },
+    "flags": [
+      "street",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4038,
+    "name": "The Arcanist's Arcade",
+    "description": "A covered market of arcane wares where spell components, enchanted trinkets, and magical curiosities are bought and sold. Stalls shimmer with minor illusions advertising their contents — a Pasua merchant's specialty. The air crackles faintly with competing enchantments, and a permanent Detect Magic aura makes the entire arcade glow to those with the sight.",
+    "exits": {
+      "southwest": 4037,
+      "north": 4039,
+      "east": 4041
+    },
+    "flags": [
+      "shop",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4039,
+    "name": "Enchanter's Workshop",
+    "description": "A tall, narrow building where a Hasura enchantress plies her trade. Shelves line every wall from floor to ceiling, packed with half-finished wands, rings awaiting gems, and scrolls drying on crystal racks. The workshop hums with contained magical energy, and visitors can feel the hair on their arms stand on end. Custom enchantments are available for those with patience and coin.",
+    "exits": {
+      "south": 4038,
+      "east": 4040
+    },
+    "flags": [
+      "shop",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4040,
+    "name": "The Starweave Salon",
+    "description": "An elegant parlor where Na'wasua seers offer divination services — stellar readings and mystical consultations. The interior is decorated in deep indigo with silver star-maps covering the ceiling. Curtained alcoves provide privacy for consultations. The Na'wasua proprietor carries himself with the quiet composure characteristic of his subrace — unhurried and contemplative, like the space between stars.",
+    "exits": {
+      "west": 4039,
+      "south": 4041,
+      "north": 4042
+    },
+    "flags": [
+      "mystic",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4041,
+    "name": "Illusionist's Lane",
+    "description": "A short lane where reality is unreliable. Pasua illusionists maintain permanent glamours on their shopfronts, and the buildings seem to shift and shimmer as you walk past. One doorway appears to lead into a forest glade; another opens onto a starlit void. The illusions are harmless but disorienting to newcomers. Only the cobblestones underfoot remain stubbornly real.",
+    "exits": {
+      "west": 4038,
+      "north": 4040,
+      "south": 4043,
+      "east": 4048
+    },
+    "flags": [
+      "mystic",
+      "street"
+    ]
+  },
+  {
+    "vnum": 4042,
+    "name": "Na'wasua Observatory",
+    "description": "A slender crystal tower rising above the surrounding rooftops, its upper chambers filled with astronomical instruments of breathtaking precision. Na'wasua Elves chart the movements of stars, moons, and the strange celestial anomalies that may foretell coming change. The observatory's crystal dome can be opened to the sky, and on clear nights, the view of the heavens through the Aetherial Veil is indescribably beautiful.",
+    "exits": {
+      "south": 4040,
+      "west": 4055,
+      "north": 4059
+    },
+    "flags": [
+      "mystic",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4043,
+    "name": "The Scroll Emporium",
+    "description": "A cramped, wonderful shop stuffed floor to ceiling with scrolls, tomes, and loose pages of arcane notation. The proprietor — an ancient Pasua Elf with ink-stained fingers and spectacles of crystal — claims to have a copy of every spell written since the founding of Custos. This is certainly an exaggeration, but not by as much as one might think.",
+    "exits": {
+      "north": 4041,
+      "south": 4044
+    },
+    "flags": [
+      "shop",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4044,
+    "name": "Alchemist's Row",
+    "description": "A short stretch of road where three competing alchemists maintain their shops. The air is a complex stew of chemical scents — sulfur, rose-oil, quicksilver, and things less identifiable. Occasional small explosions from the back rooms punctuate the day, drawing resigned sighs from the neighbors. Potions, elixirs, tinctures, and the occasional regrettable experiment are available for purchase.",
+    "exits": {
+      "north": 4043,
+      "south": 4045
+    },
+    "flags": [
+      "shop",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4045,
+    "name": "The Resonance Chamber",
+    "description": "A domed chamber of specially tuned crystal used for the study and amplification of magical phenomena. Na'wasua researchers use this facility to experiment with the boundaries of magical detection, and the Circle of Deeproot occasionally borrows the chamber for elemental analysis. Visitors describe standing in the chamber as an uncanny experience, as though the crystal walls reflect something unseen back at them.",
+    "exits": {
+      "north": 4044,
+      "west": 4046
+    },
+    "flags": [
+      "mystic",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4046,
+    "name": "Crystal Spire Garden",
+    "description": "A small public garden at the base of one of the city's signature crystal spires. The spire rises a hundred feet overhead, its faceted surface catching and scattering the Aetherial Veil's light into a permanent rainbow. Benches of carved crystal invite rest, and the garden is a popular spot for lovers, poets, and anyone seeking a moment of beauty in a busy day.",
+    "exits": {
+      "east": 4045,
+      "south": 4047,
+      "north": 4159
+    },
+    "flags": [
+      "safe",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4047,
+    "name": "Familiar's Rest",
+    "description": "A peculiar establishment that caters to the bonded companions of the city's spellcasters. Comfortable stalls house familiars — cats, ravens, foxes, tiny elementals — while their masters conduct business in the Mystic Quarter. A halfling attendant with an uncanny talent for animal handling manages the menagerie with cheerful competence.",
+    "exits": {
+      "north": 4046,
+      "west": 4037
+    },
+    "flags": [
+      "mystic",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4048,
+    "name": "Veil Watcher's Terrace",
+    "description": "A high terrace at the northeast edge of the Mystic Quarter, offering the city's clearest ground-level view of the Aetherial Veil. From here, the shimmering magical barrier that protects Custos do Aeternos is visible as a vast, translucent dome overhead, its colors shifting through spectra that have no names in Common. Lately, scholars have observed the Veil pulsing erratically — flickers and gaps that were never seen before.",
+    "exits": {
+      "west": 4041,
+      "east": 4153,
+      "northeast": 4159
+    },
+    "flags": [
+      "mystic",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4049,
+    "name": "Scholar Street North",
+    "description": "The avenue continues north from the chapel quarter, its buildings growing taller and more austere. Libraries, bookshops, and lecture halls line both sides, their facades decorated with carved quotations from famous scholars. Students of all races hurry between buildings clutching scrolls and ink-pots, their animated debates spilling into the street.",
+    "exits": {
+      "south": 3005,
+      "north": 4050,
+      "west": 4059,
+      "southeast": 4150
+    },
+    "flags": [
+      "street",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4050,
+    "name": "Academy Square",
+    "description": "A broad plaza at the heart of the Scholar's District, paved in white marble and centered on a fountain that takes the form of an open book carved from living crystal. Benches ring the fountain where students study, argue, and occasionally nap. The buildings surrounding the square house the various faculties of the Academy of Sylaraeth — the city's premier institution of learning.",
+    "exits": {
+      "south": 4049,
+      "north": 4051,
+      "east": 4053,
+      "west": 4057,
+      "northeast": 4147
+    },
+    "flags": [
+      "academy",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4051,
+    "name": "The Great Library of Sylaraeth",
+    "description": "A magnificent building of crystal-veined white stone, its doors carved with the motto 'Knowledge Is the Wind That Lifts All Wings.' Inside, three floors of shelving hold the largest collection of texts in the Twin Rivers — though Liraveth's scholars would dispute this claim. Hasura librarians maintain the collection with meticulous care, and a permanent Silence enchantment ensures that the only sound is the whisper of turning pages.",
+    "exits": {
+      "south": 4050,
+      "east": 4052,
+      "west": 4056
+    },
+    "flags": [
+      "academy",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4052,
+    "name": "Rare Manuscripts Hall",
+    "description": "A vault-like chamber within the Great Library where the most precious texts are kept under magical and physical lock. Pre-Shattering documents, Giant-era rubbings, and original treaties between the Kin occupy crystal display cases. Scholars must petition for access, and a Na'wasua archivist screens applicants with exacting intellectual rigor.",
+    "exits": {
+      "west": 4051
+    },
+    "flags": [
+      "academy",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4053,
+    "name": "Lecture Hall of the Elements",
+    "description": "A great amphitheater-style hall where the Academy's senior faculty deliver lectures on elemental theory and the natural philosophy of Oreka. The tiered seating holds three hundred, and the demonstration floor at the center features elemental containment circles for practical instruction. Visiting scholars from Liraveth and Aerithal frequently guest-lecture here.",
+    "exits": {
+      "west": 4050,
+      "north": 4054
+    },
+    "flags": [
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4054,
+    "name": "Laboratory of Applied Magic",
+    "description": "A working laboratory where Academy researchers study the intersection of elemental magic and practical craft. Carefully calibrated instruments — crystal tuning forks, elemental spectrometers, and measuring stones — line the workbenches. Experiments here are sometimes felt throughout the district as brief, strange fluctuations in the ambient magical energy.",
+    "exits": {
+      "south": 4053,
+      "west": 4055
+    },
+    "flags": [
+      "academy",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4055,
+    "name": "Star Chart Archive",
+    "description": "A dimly lit chamber where celestial observations from the Na'wasua Observatory are catalogued and stored. Thousands of star charts, some dating back centuries, hang from rotating racks. The archive serves as a bridge between the Mystic Quarter's observational work and the Academy's theoretical scholarship. A permanent illusion of the night sky covers the ceiling, updating in real time.",
+    "exits": {
+      "east": 4054,
+      "south": 4042
+    },
+    "flags": [
+      "academy",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4056,
+    "name": "Scholar's Bookshop",
+    "description": "A rambling, overstuffed bookshop that occupies three connected townhouses. The proprietor, a human with an encyclopedic memory, claims he can find any text in the Twin Rivers given sufficient time and coin. Towers of books lean at alarming angles, connected by narrow paths. The shop cat — a ginger tom of exceptional size — is the true authority here.",
+    "exits": {
+      "east": 4051,
+      "south": 4057
+    },
+    "flags": [
+      "shop",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4057,
+    "name": "The Quill and Scroll",
+    "description": "A modest inn catering to visiting scholars and students too absorbed in study to walk home. The rooms are small but clean, each equipped with a writing desk, good lamp, and a shelf of reference texts. The common room doubles as an informal debate hall, and academic arguments over dinner frequently continue past midnight. The ale is adequate; the conversation is excellent.",
+    "exits": {
+      "east": 4050,
+      "north": 4056,
+      "south": 4058
+    },
+    "flags": [
+      "inn",
+      "safe",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4058,
+    "name": "Scribe's Lane",
+    "description": "A row of professional scriptoriums where scribes copy manuscripts, illuminate texts, and prepare official documents. The scratch of quills and the scent of fresh ink fill the air. Several scribes specialize in magical notation, producing spell scrolls and enchanted contracts. The lane connects the Scholar's District to the Grand Avenue district to the west.",
+    "exits": {
+      "north": 4057,
+      "west": 4110
+    },
+    "flags": [
+      "academy",
+      "street"
+    ]
+  },
+  {
+    "vnum": 4059,
+    "name": "Student Quarter",
+    "description": "A lively residential neighborhood where Academy students share cramped but affordable lodgings. The buildings are older, the paint peeling, but the energy is young and vibrant. Music drifts from upper windows, and the smell of cheap but filling food wafts from ground-floor cookshops. Arguments about philosophy and magic echo at all hours.",
+    "exits": {
+      "east": 4049,
+      "south": 4042,
+      "north": 4060,
+      "west": 4153
+    },
+    "flags": [
+      "residential",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4060,
+    "name": "The Tipsy Owl Tavern",
+    "description": "A student tavern of legendary reputation, its walls covered in graffiti, carved initials, and the occasional arcane formula. The ale is cheap, the meat pies are surprisingly good, and the barkeep — a retired adventurer with stories for every occasion — tolerates academic excess with amused patience. On festival nights, illusion-duels between rival student factions light up the common room.",
+    "exits": {
+      "south": 4059,
+      "east": 4157
+    },
+    "flags": [
+      "tavern",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4061,
+    "name": "Market Street Northwest",
+    "description": "Market Street broadens as it continues northwest from the chapel quarter, the bustle intensifying with every step. Colorful awnings and merchant banners line both sides, and the calls of vendors in Common, Elvish, and Dwarvish create a polyglot chorus.",
+    "exits": {
+      "southeast": 3006,
+      "northwest": 4062,
+      "west": 4067
+    },
+    "flags": [
+      "street",
+      "market"
+    ]
+  },
+  {
+    "vnum": 4062,
+    "name": "Central Market Square",
+    "description": "The beating commercial heart of Custos do Aeternos — a vast open square where permanent stalls, temporary blankets, and mobile carts create a labyrinth of goods from across the Twin Rivers and beyond. Grain from Greenford, ore from Stoneharbor, wind-silk from the canopy cities, and exotic spices from distant regions all change hands here.",
+    "exits": {
+      "southeast": 4061,
+      "north": 4063,
+      "west": 4065,
+      "south": 4068,
+      "northeast": 4150
+    },
+    "flags": [
+      "market",
+      "shop",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4063,
+    "name": "The Golden Bazaar",
+    "description": "An upscale section of the market where luxury goods are sold: enchanted jewelry, illusionary textiles, spiced teas, and the crystalline art objects for which Custos is famous. Pasua merchants hold court here, their natural charm making every transaction feel like a gift between friends. Prices are correspondingly elevated.",
+    "exits": {
+      "south": 4062,
+      "west": 4064
+    },
+    "flags": [
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4064,
+    "name": "Wind-Silk Merchants",
+    "description": "A cluster of shops specializing in wind-silk — the magical fabric woven in the canopy cities that is Custos do Aeternos's most famous export. Bolts of shimmering cloth in impossible colors hang from every rafter, catching the breeze and rippling like living things. A Hasura weaver demonstrates her art on a crystalline loom, drawing small crowds of admirers.",
+    "exits": {
+      "east": 4063,
+      "south": 4065
+    },
+    "flags": [
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4065,
+    "name": "Trade House Offices",
+    "description": "A row of handsome stone buildings housing the major Trade Houses that control commerce in the Twin Rivers. Inside, factors and clerks manage the flow of goods with ruthless efficiency. The Trade Houses have adopted Kaile'a as an unofficial patron, and her sigil decorates every door. Competition between houses is fierce but generally kept within the bounds of law — generally.",
+    "exits": {
+      "east": 4062,
+      "north": 4064,
+      "south": 4066,
+      "northeast": 4155
+    },
+    "flags": [
+      "market"
+    ]
+  },
+  {
+    "vnum": 4066,
+    "name": "Money-Changer's Row",
+    "description": "A short lane where currency exchange, banking, and moneylending are conducted. The money-changers — mostly humans with sharp eyes and sharper arithmetic — convert between the various coinages used across Oreka. Strongboxes of iron-banded oak line the back rooms, and armed guards are a constant presence. The rates are fair, if not generous.",
+    "exits": {
+      "north": 4065,
+      "south": 4067,
+      "east": 4068
+    },
+    "flags": [
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4067,
+    "name": "Spice Market",
+    "description": "A fragrant corner of the market district where exotic spices, herbs, and tea blends from across Oreka are sold. The air is a heady mix of cinnamon, star-anise, river-pepper, and the sharp, bright scent of sky-lotus. Pasua tea merchants brew samples in tiny crystal cups, and the competition for the best blends is a source of passionate civic pride.",
+    "exits": {
+      "east": 4061,
+      "north": 4066,
+      "south": 4073
+    },
+    "flags": [
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4068,
+    "name": "Market Tavern — The Laughing Elf",
+    "description": "A large, cheerful tavern at the edge of the market square, popular with merchants, off-duty guards, and anyone looking for a hot meal and cold ale after a day of trading. The sign depicts a Pasua Elf doubled over with laughter. The tavern is famous for its river-fish stew and its bardic entertainment — Pasua performers hold court most evenings, and the singing often becomes communal.",
+    "exits": {
+      "north": 4062,
+      "west": 4066,
+      "south": 4069
+    },
+    "flags": [
+      "tavern",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4069,
+    "name": "Halfling Market Row",
+    "description": "A charming section of the market where the city's halfling community conducts much of its commerce. The stalls are halfling-height, the wares are practical — cooking implements, garden tools, pipe-weed, preserves — and the proprietors are unfailingly cheerful. Halfling market culture emphasizes generous portions, fair dealing, and the firm belief that a sample freely given is a sale half-made.",
+    "exits": {
+      "north": 4068,
+      "south": 4070
+    },
+    "flags": [
+      "market",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4070,
+    "name": "The Provisioner",
+    "description": "A large general store occupying a converted warehouse, stocking everything an adventurer, traveler, or homemaker might need. Rope, rations, lanterns, bedrolls, waterskins, and a hundred other practical necessities fill the shelves. The shop is owned by a partnership of a human and a Pekakarlik, and their complementary skills — the human's eye for market trends and the dwarf's quality standards — make this the most reliable supply shop in the city.",
+    "exits": {
+      "north": 4069,
+      "west": 4071
+    },
+    "flags": [
+      "shop",
+      "market"
+    ]
+  },
+  {
+    "vnum": 4071,
+    "name": "Courier's Guild Post",
+    "description": "A busy office where the Courier's Guild maintains its Custos headquarters. Runners — mostly young humans and halflings — are dispatched throughout the city and to other settlements carrying messages, small packages, and urgent correspondence. A large board displays current job postings and the estimated travel times to every settlement in the Twin Rivers.",
+    "exits": {
+      "east": 4070,
+      "south": 4072
+    },
+    "flags": [
+      "guild",
+      "market"
+    ]
+  },
+  {
+    "vnum": 4072,
+    "name": "Market Gate",
+    "description": "A secondary city gate on the northwest side, smaller than the cardinal gates but busy with merchant traffic. Carts loaded with goods queue in both directions, and the guards here are more interested in cargo manifests than weapons. This gate connects to the trade road that leads northwest toward the Windweave Glade and the canopy cities, though the North Gate is the primary route.",
+    "exits": {
+      "north": 4071
+    },
+    "flags": [
+      "gate",
+      "market"
+    ]
+  },
+  {
+    "vnum": 4073,
+    "name": "Guild Street West",
+    "description": "A stately avenue lined with the banners of the city's professional guilds. Each guildhall displays its heraldry proudly — the Weavers' Guild's silver shuttle, the Brewers' Guild's golden tankard, the Healers' Guild's clasped hands — and the architecture grows more imposing as the street continues west. The street connects the market district to the south with the guild quarter proper.",
+    "exits": {
+      "east": 3007,
+      "west": 4074,
+      "north": 4067,
+      "south": 4155
+    },
+    "flags": [
+      "street",
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4074,
+    "name": "Guild Row",
+    "description": "A broad avenue where the major guildhalls of Custos do Aeternos stand in ordered grandeur. Each building reflects the character of its guild — the Stonemasons' Hall is a fortress of granite, the Musicians' Guild is a graceful tower of crystal and living wood, and the Artificers' Guild hums with contained magical energy. Guild membership is the backbone of the city's middle class.",
+    "exits": {
+      "east": 4073,
+      "north": 4075,
+      "south": 4077,
+      "west": 4079,
+      "southwest": 4148
+    },
+    "flags": [
+      "guild",
+      "street"
+    ]
+  },
+  {
+    "vnum": 4075,
+    "name": "Weavers' Guild",
+    "description": "A tall building of pale stone draped with samples of the guild's finest work. Wind-silk banners flutter from every window, their colors shifting in the breeze. Inside, looms of crystal and living wood produce the magical textiles that are Custos's signature export. The Guildmaster, a Hasura weaver of extraordinary skill, accepts apprentices from all races.",
+    "exits": {
+      "south": 4074,
+      "east": 4076
+    },
+    "flags": [
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4076,
+    "name": "Musicians' Guild",
+    "description": "A soaring crystal tower whose walls are tuned to resonate with musical frequencies, creating an ever-present melodic background. Inside, Pasua bards, Na'wasua composers, and musicians of all races practice, perform, and teach. The guild's common hall hosts concerts that draw audiences from across the city, and its archive preserves the musical traditions of every Kin race.",
+    "exits": {
+      "west": 4075
+    },
+    "flags": [
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4077,
+    "name": "Healers' Guild",
+    "description": "A warm, welcoming guildhall where healers of all traditions — clerical, druidic, and mundane — share knowledge and coordinate the city's medical care. The guild maintains a free clinic on the ground floor and a training hospital above. Clerics of Semyon and Kaile'a work alongside herbalists and surgeons, and the guild's reputation for competence crosses all racial lines.",
+    "exits": {
+      "north": 4074,
+      "south": 4078
+    },
+    "flags": [
+      "guild",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4078,
+    "name": "Artificers' Guild",
+    "description": "The Artificers' Guild occupies a building that seems to vibrate with contained energy. Inside, artificers — following the tradition of Mayor Caelith Windweaver herself — combine arcane magic with practical craft to produce enchanted objects of extraordinary quality. The workshops are noisy, sometimes dangerous, and always fascinating. Apprenticeships here are highly competitive.",
+    "exits": {
+      "north": 4077,
+      "west": 4080
+    },
+    "flags": [
+      "guild",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4079,
+    "name": "Merchants' Guild",
+    "description": "A prosperous-looking guildhall of polished stone and brass fittings, where the commercial interests of Custos's non-Trade-House merchants are represented. The guild arbitrates disputes, sets quality standards, and maintains the market rules that keep commerce orderly. A large meeting hall on the upper floor hosts weekly trade councils.",
+    "exits": {
+      "east": 4074,
+      "south": 4080,
+      "north": 4081
+    },
+    "flags": [
+      "guild",
+      "market"
+    ]
+  },
+  {
+    "vnum": 4080,
+    "name": "Adventurers' Guild",
+    "description": "A rough-hewn guildhall that stands in deliberate contrast to its more refined neighbors. Inside, a large notice board displays job postings — monster bounties, escort requests, exploration contracts, and the occasional discreet 'problem resolution' inquiry. A grizzled human guildmaster manages the roster of registered adventurers with the weary competence of someone who has seen everything.",
+    "exits": {
+      "north": 4079,
+      "east": 4078,
+      "south": 4082
+    },
+    "flags": [
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4081,
+    "name": "Guildmaster's Court",
+    "description": "A handsome courtyard surrounded by the senior guildhalls, where the Guildmasters of Custos do Aeternos meet monthly to discuss matters of shared concern. A crystal fountain at the center changes color with the seasons. Benches of carved stone line the walls, and the courtyard serves as neutral ground where inter-guild disputes are mediated under the Mayor's authority.",
+    "exits": {
+      "south": 4079,
+      "west": 4082
+    },
+    "flags": [
+      "guild",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4082,
+    "name": "Western Walk",
+    "description": "A quiet street connecting the Guild District to the Grand Avenue and administrative districts. The buildings here are a mix of guild offices, professional residences, and small specialized shops serving the guild community. The atmosphere is purposeful and industrious — people here work with their hands and their minds, and are proud of both.",
+    "exits": {
+      "north": 4081,
+      "east": 4080,
+      "west": 4109,
+      "south": 4083
+    },
+    "flags": [
+      "street",
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4083,
+    "name": "The Guildsman's Rest",
+    "description": "A comfortable, respectable inn frequented by traveling guild members, journeymen on their wanderyear, and merchants with business at the guildhalls. The rooms are well-appointed, the common room serves excellent food, and the innkeeper — a retired Weavers' Guild master — maintains standards that reflect well on the guild community.",
+    "exits": {
+      "north": 4082,
+      "east": 4084
+    },
+    "flags": [
+      "inn",
+      "safe",
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4084,
+    "name": "The Hammer and Quill",
+    "description": "A lively tavern at the intersection of the Guild and Artisan districts, where craftsfolk from both quarters gather to drink, argue, and occasionally collaborate. The name refers to the smith's hammer and the scribe's quill — tools of the two most common trades represented in its clientele. The house special is a dark, malty ale brewed with Pekakarlik mineral water.",
+    "exits": {
+      "west": 4083,
+      "south": 4085
+    },
+    "flags": [
+      "tavern",
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4085,
+    "name": "Artisan Street Southwest",
+    "description": "The avenue turns southwest from the chapel quarter, the sounds of creative labor growing with each step — hammers on wood, chisels on stone, the rhythmic clack of looms, and the occasional burst of song. Sawdust and stone-dust scent the air, and the workshops that line the street display their finest work in crystal-fronted windows.",
+    "exits": {
+      "northeast": 3008,
+      "south": 4086,
+      "north": 4084
+    },
+    "flags": [
+      "street",
+      "artisan"
+    ]
+  },
+  {
+    "vnum": 4086,
+    "name": "Artisan Square",
+    "description": "A bustling plaza at the heart of the artisan quarter, where craftsmen display and sell their work from permanent stalls. Woodcarvers, potters, glassblowers, leather-workers, and sculptors vie for attention, and the quality of work reflects the city's elven aesthetic — even utilitarian objects are made beautiful. A central stage hosts demonstrations of craft techniques.",
+    "exits": {
+      "north": 4085,
+      "south": 4087,
+      "east": 4009,
+      "west": 4090,
+      "southeast": 4149
+    },
+    "flags": [
+      "artisan",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4087,
+    "name": "Woodworker's Lane",
+    "description": "A fragrant street where the scent of freshly cut timber fills the air. Hasura woodworkers shape living wood — coaxing branches into furniture, instruments, and architectural elements without killing the tree. Pekakarlik carpenters work alongside them using more conventional methods, and the friendly rivalry between 'living-wood' and 'cut-wood' craftsmen is a source of constant good-natured argument.",
+    "exits": {
+      "north": 4086,
+      "south": 4088
+    },
+    "flags": [
+      "artisan",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4088,
+    "name": "Glassblower's Workshop",
+    "description": "A cavernous workshop where master glassblowers create the crystal-clear vessels, windows, and art objects for which Custos is famous. The furnaces blaze with magical fire that produces no smoke, and the artisans work with an almost musical rhythm — gathering, blowing, shaping, cooling — that draws spectators. The workshop's display room sells pieces ranging from simple tumblers to elaborate crystal sculptures.",
+    "exits": {
+      "north": 4087,
+      "east": 4089
+    },
+    "flags": [
+      "artisan",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4089,
+    "name": "Potter's Court",
+    "description": "A cobbled courtyard surrounded by pottery workshops where clay from the riverbanks is shaped into everything from simple cookware to elaborate ceremonial vessels. Kilns line the courtyard's south side, their steady warmth making this a popular gathering spot in cold weather. The Pekakarlik potters who work here use river-clay that has a subtle luminous quality, giving their finished pieces a soft, distinctive sheen.",
+    "exits": {
+      "west": 4088,
+      "north": 4090,
+      "south": 4160
+    },
+    "flags": [
+      "artisan",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4090,
+    "name": "Sculptor's Garden",
+    "description": "An open-air workshop and gallery where stone sculptors create and display their work. Figures carved from white marble, black basalt, and crystal-veined granite stand among living trees, blurring the line between art and nature. A Kovaka sculptor — one of the few in the city — works in volcanic stone, and her pieces have a grounding, primal quality.",
+    "exits": {
+      "north": 4086,
+      "south": 4089,
+      "west": 4091
+    },
+    "flags": [
+      "artisan",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4091,
+    "name": "Instrument Maker's Shop",
+    "description": "A shop where musical instruments of extraordinary quality are crafted. Hasura lutes, Pasua story-drums, Pekakarlik water-pipes, and human fiddles hang from every rafter. The master luthier — a Pasua Elf whose instruments are prized across the Twin Rivers — takes commissions from musicians far and wide. Testing an instrument is encouraged, and the shop often fills with impromptu music.",
+    "exits": {
+      "east": 4090,
+      "south": 4092
+    },
+    "flags": [
+      "artisan",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4092,
+    "name": "Dyer's Lane",
+    "description": "A colorful street where cloth dyers practice their ancient art. Vats of vibrant color line the narrow lane, and bolts of freshly dyed fabric hang from lines strung between the buildings, creating a canopy of shifting hues. The dyers use both mundane and magical techniques — some colors can only be achieved through enchantment — and the results are spectacular.",
+    "exits": {
+      "north": 4091,
+      "east": 4093
+    },
+    "flags": [
+      "artisan"
+    ]
+  },
+  {
+    "vnum": 4093,
+    "name": "Leather-Worker's Row",
+    "description": "Workshops where skilled leather-workers produce everything from boots to armor to the decorated book-bindings prized by the Scholar's District. The smell of tanned leather and neat's-foot oil is powerful but not unpleasant. A human master-saddler is the acknowledged master of the row, though a Pekakarlik armor-crafter runs a close second.",
+    "exits": {
+      "west": 4092,
+      "north": 4094
+    },
+    "flags": [
+      "artisan",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4094,
+    "name": "Tinker's Alley",
+    "description": "A narrow, twisting passage lined with the tiny workshops of tinkers, clock-makers, and inventors. The air is filled with the ticking of mechanisms and the occasional spark of a magical prototype being tested. Halfling tinkers are disproportionately represented, their small fingers and patient temperaments suited to the delicate work. Curious mechanical devices of uncertain purpose crowd every windowsill.",
+    "exits": {
+      "south": 4093,
+      "east": 4095
+    },
+    "flags": [
+      "artisan"
+    ]
+  },
+  {
+    "vnum": 4095,
+    "name": "The Craftsman's Hearth",
+    "description": "A warm, homey tavern that serves as the unofficial meeting hall of the artisan community. The walls are decorated with donations from regular patrons — a carving here, a painted tile there — creating a mosaic of the quarter's creative output. The food is simple, the ale is good, and the company is lively. Apprentices from every workshop gather here after hours.",
+    "exits": {
+      "west": 4094,
+      "north": 4096
+    },
+    "flags": [
+      "tavern",
+      "artisan"
+    ]
+  },
+  {
+    "vnum": 4096,
+    "name": "Artisan Residential Lane",
+    "description": "A quiet residential street where many of the quarter's craftsmen make their homes. The houses are modest but well-maintained, each reflecting its owner's trade — a woodcarver's home has an ornately carved door, a potter's features ceramic tile-work, a glassblower's glows with colored-glass windows. Flower boxes and small gardens soften the stone facades.",
+    "exits": {
+      "south": 4095,
+      "east": 4097
+    },
+    "flags": [
+      "residential",
+      "artisan",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4097,
+    "name": "Forge Street West",
+    "description": "The street continues west from the chapel quarter, the air growing warmer and tinged with the scent of hot metal and coal smoke. The rhythmic clang of hammers on anvils creates a percussive soundtrack, and the glow of forge-fires lights the lane from both sides. This is the domain of the smiths — Pekakarlik, human, and Kovaka working side by side.",
+    "exits": {
+      "northeast": 3009,
+      "west": 4098,
+      "north": 4096
+    },
+    "flags": [
+      "street",
+      "forge"
+    ]
+  },
+  {
+    "vnum": 4098,
+    "name": "Forge Square",
+    "description": "A broad, heat-hazed plaza at the center of the forge quarter, dominated by the Great Forge — a communal smithy maintained by the Smelter's Guild where any smith can rent time at the anvil. The plaza is paved with heat-resistant volcanic stone, and the air shimmers with radiant warmth. The sound of hammering never entirely ceases, even at night.",
+    "exits": {
+      "east": 4097,
+      "west": 4099,
+      "north": 4101,
+      "south": 4103,
+      "northeast": 4148
+    },
+    "flags": [
+      "forge",
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4099,
+    "name": "Weaponsmith's Hall",
+    "description": "A long, low building where master weaponsmiths produce blades, polearms, and other instruments of war. The finest work here rivals anything produced in Stoneharbor. Display racks show the smiths' art — swords with crystal-inlaid hilts, spears with rune-etched heads, and the occasional masterwork that seems to hum with latent power even before enchantment.",
+    "exits": {
+      "east": 4098,
+      "south": 4100
+    },
+    "flags": [
+      "forge",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4100,
+    "name": "Armorsmith's Workshop",
+    "description": "A cavernous workshop where armor of every type is crafted. Pekakarlik smiths work the volcanic ore from the Giant's Teeth, producing a steel with a distinctive blue-black sheen. Human armorers focus on practical, field-tested designs, while the rare Kovaka smith produces mountain-warrior armor that combines earthen durability with brutal functionality.",
+    "exits": {
+      "north": 4099,
+      "east": 4103
+    },
+    "flags": [
+      "forge",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4101,
+    "name": "Smelter's Guild Hall",
+    "description": "The guild headquarters of the Smelter's Guild, one of the most powerful trade organizations in the forge quarter. Inside, the guildmaster — a burly Pekakarlik with arms like tree trunks — oversees operations with quiet authority. The hall features a Gonmareck Ritler anvil-altar where new apprentices swear their oaths.",
+    "exits": {
+      "south": 4098,
+      "west": 4102
+    },
+    "flags": [
+      "guild",
+      "forge"
+    ]
+  },
+  {
+    "vnum": 4102,
+    "name": "Ore Warehouse",
+    "description": "A fortified storage building where raw ore from Stoneharbor and the Giant's Teeth is stockpiled. The building is heavily guarded, its walls reinforced with specially treated stone to prevent magical theft. Iron, copper, silver, and rarer metals are stored in separate, locked vaults. The Smelter's Guild controls access with bureaucratic precision.",
+    "exits": {
+      "east": 4101,
+      "south": 4104
+    },
+    "flags": [
+      "forge"
+    ]
+  },
+  {
+    "vnum": 4103,
+    "name": "Blacksmith's Row",
+    "description": "A street of working smithies where journeyman and master blacksmiths produce the everyday metalwork that keeps a city running: nails, hinges, tools, horseshoes, locks, and a thousand other necessities. The forges here are smaller than those in the Great Forge but run constantly. The smiths are practical, no-nonsense craftsmen who take pride in utility over artistry.",
+    "exits": {
+      "north": 4098,
+      "west": 4100,
+      "south": 4104
+    },
+    "flags": [
+      "forge"
+    ]
+  },
+  {
+    "vnum": 4104,
+    "name": "Foundry Lane",
+    "description": "A hot, smoky lane where the city's larger metalworking operations are conducted. The foundry produces cast-iron components, bronze fittings, and the structural metalwork used in the city's crystal spire architecture. The heat is intense, and workers strip to the waist despite the season. Pekakarlik hydraulic engineering keeps the cooling water flowing.",
+    "exits": {
+      "north": 4103,
+      "east": 4102,
+      "south": 4105
+    },
+    "flags": [
+      "forge"
+    ]
+  },
+  {
+    "vnum": 4105,
+    "name": "Jeweler's Workshop",
+    "description": "Tucked at the quieter end of the forge quarter, this elegant workshop is where raw gems and precious metals are transformed into the jewelry and ornamental metalwork for which Custos is known. The master jeweler — a Pasua Elf with a Fire-element attunement rare among her kind — produces pieces that are simultaneously beautiful and magical.",
+    "exits": {
+      "north": 4104,
+      "east": 4106
+    },
+    "flags": [
+      "forge",
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4106,
+    "name": "The Anvil Tavern",
+    "description": "A forge-quarter tavern where smiths gather after their shifts, still smelling of smoke and sweat. The ale is served in iron tankards, the food is heavy and filling, and arm-wrestling tournaments are a nightly fixture. The walls are decorated with retired tools and notable pieces of metalwork. It is loud, hot, and deeply convivial.",
+    "exits": {
+      "west": 4105,
+      "north": 4107
+    },
+    "flags": [
+      "tavern",
+      "forge"
+    ]
+  },
+  {
+    "vnum": 4107,
+    "name": "Smith's Residential Row",
+    "description": "A street of sturdy, heat-resistant homes where the forge quarter's smiths and their families live. The houses are built of volcanic stone and basalt — practical materials that withstand the quarter's ambient heat. Gardens are rare, but window boxes of fire-resistant herbs provide spots of green. The community is tight-knit, and disputes are settled over the anvil.",
+    "exits": {
+      "south": 4106,
+      "east": 4108,
+      "north": 4151
+    },
+    "flags": [
+      "residential",
+      "forge",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4108,
+    "name": "West Gate",
+    "description": "The western gate of Custos do Aeternos, built of dark basalt and reinforced with iron bands. This gate sees less traffic than the others — the road west leads through increasingly wild terrain toward the coast and the Chainless Legion enclaves. Guards here are alert and cautious, as the western approaches are the least patrolled. Chainless Legion traders occasionally arrive through this gate, drawing wary glances.",
+    "exits": {
+      "west": 4120,
+      "north": 4107
+    },
+    "flags": [
+      "gate",
+      "street"
+    ]
+  },
+  {
+    "vnum": 4109,
+    "name": "Grand Avenue",
+    "description": "A magnificent boulevard stretching west from the chapel quarter toward the Crystal Spire — the seat of the city's government. The avenue is the widest street in Custos, lined with ancient sky-oaks, crystal lampposts, and statues of the city's founders. Fountains play at regular intervals, and the pavement is polished marble that gleams in the Aetherial Veil's light.",
+    "exits": {
+      "east": 4082,
+      "southeast": 3010,
+      "west": 4110,
+      "northeast": 4122,
+      "south": 4151
+    },
+    "flags": [
+      "street",
+      "grand",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4110,
+    "name": "Civic Plaza",
+    "description": "A great square where public gatherings, proclamations, and festivals are held. The plaza can hold ten thousand citizens and frequently does during the seasonal festivals that mark the elemental calendar. A raised dais at the western end serves as the Mayor's speaking platform, and crystal amplification spires carry her voice to every corner of the square.",
+    "exits": {
+      "east": 4109,
+      "west": 4111,
+      "south": 4113,
+      "north": 4058,
+      "southwest": 4158
+    },
+    "flags": [
+      "grand",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4111,
+    "name": "The Crystal Spire — Ground Floor",
+    "description": "The base of the Crystal Spire rises from a garden of wind-orchids and crystal formations. This is the administrative heart of Custos do Aeternos — the Mayor's seat, the city council chamber, and the center of governance. The entrance hall is a soaring atrium of crystal and living wood, flooded with refracted light. Guards in ceremonial wind-silk stand watch, their polished crystal-tipped spears more decorative than functional.",
+    "exits": {
+      "east": 4110,
+      "up": 4112
+    },
+    "flags": [
+      "grand",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4112,
+    "name": "The Crystal Spire — Mayor's Hall",
+    "description": "The upper chamber of the Crystal Spire, where Mayor Caelith Windweaver conducts the business of governing Custos do Aeternos. The walls are transparent crystal offering a panoramic view of the city and the Aetherial Veil overhead. Caelith's illusionist's craft makes the room itself shift and respond to the mood of discussions. Maps, treaties, and a working model of the Veil's fluctuations occupy the central table.",
+    "exits": {
+      "down": 4111
+    },
+    "flags": [
+      "grand",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4113,
+    "name": "Court of Justice",
+    "description": "A solemn building of white marble where the city's legal matters are heard. The court is feared and respected in equal measure. Three magistrates — a Pasua, a Pekakarlik, and a human — hear cases in rotation, ensuring no single racial perspective dominates.",
+    "exits": {
+      "north": 4110,
+      "south": 4114,
+      "east": 4115,
+      "west": 4158
+    },
+    "flags": [
+      "grand"
+    ]
+  },
+  {
+    "vnum": 4114,
+    "name": "City Watch Headquarters",
+    "description": "The barracks and headquarters of the Custos City Watch. Guards — mostly humans and Pekakarlik, with a sprinkling of Kovaka — train in the courtyard, and the watch commander's office overlooks the Grand Avenue from a crystal-paned window. The Watch maintains close patrols and a strong presence throughout the city.",
+    "exits": {
+      "north": 4113,
+      "west": 4116
+    },
+    "flags": [
+      "grand",
+      "guild"
+    ]
+  },
+  {
+    "vnum": 4115,
+    "name": "Hall of Records",
+    "description": "A fireproof stone building where the city's official records are maintained — birth registers, property deeds, guild charters, trade agreements, and the voluminous archives of civic governance stretching back to the city's founding. A staff of Pasua and human clerks maintain the records with meticulous care. Access is available to any citizen during business hours.",
+    "exits": {
+      "west": 4113,
+      "south": 4116
+    },
+    "flags": [
+      "grand",
+      "academy"
+    ]
+  },
+  {
+    "vnum": 4116,
+    "name": "Tax Collector's Office",
+    "description": "A sturdy, practical building where the city's revenues are collected and accounted. The tax collectors — widely regarded as the least popular people in any city — perform their duties with resigned competence. The office connects to the City Watch headquarters for obvious reasons. A reinforced vault in the basement holds the city's treasury.",
+    "exits": {
+      "north": 4115,
+      "east": 4114,
+      "south": 4117
+    },
+    "flags": [
+      "grand"
+    ]
+  },
+  {
+    "vnum": 4117,
+    "name": "Embassy Row",
+    "description": "A dignified street where the other settlements of the Twin Rivers maintain diplomatic offices. Greenford, Stoneharbor, Liraveth, and Aerithal all have permanent embassies here, staffed by diplomatic representatives who manage trade disputes, coordinate regional defense, and gossip with professional enthusiasm. The Chainless Legion recently opened a modest trade office at the end of the row, a development watched with interest by all parties.",
+    "exits": {
+      "north": 4116,
+      "south": 4118
+    },
+    "flags": [
+      "grand",
+      "residential"
+    ]
+  },
+  {
+    "vnum": 4118,
+    "name": "The Golden Rose Chapter House",
+    "description": "An elegant townhouse that serves as the Custos headquarters of the Golden Roses — the continent-spanning organization devoted to detecting corruption and the Deceiver's Feat. The house's windows are curtained, its doors always locked, and its appearance is carefully nondescript. The Thorns stationed here specialize in monitoring the city for signs of deception and the telltale 'holes' that mark a Cut String.",
+    "exits": {
+      "north": 4117,
+      "south": 4119
+    },
+    "flags": [
+      "grand"
+    ]
+  },
+  {
+    "vnum": 4119,
+    "name": "The Veil Observatory",
+    "description": "A rooftop platform atop the highest building on Grand Avenue, fitted with crystal lenses and magical instruments focused on the Aetherial Veil. From here, scholars and mages monitor the Veil's health — a task that has become increasingly urgent as the barrier's fluctuations grow more frequent. The view encompasses the entire city beneath the shimmering dome, and on bad days, the gaps in the Veil are visible as dark patches against the sky.",
+    "exits": {
+      "north": 4118
+    },
+    "flags": [
+      "grand",
+      "mystic",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4120,
+    "name": "West Road Junction",
+    "description": "The road west from the city leads through rolling hills toward the coast and the Chainless Legion enclaves. The terrain is wilder here, and the trade road is less maintained than the great highways. Milestones mark the distance to Clifftide, Saltrest Haven, and Redcurrent Strand, though few travelers make the full journey.",
+    "exits": {
+      "east": 4108
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4121,
+    "name": "Oroas Street North",
+    "description": "The storied avenue continues north from the chapel quarter, its ancient oaks casting deep shadows across cobblestones worn smooth by centuries of use. Monuments to the city's history line the way — a cairn marking where the first Hasura raised a crystal spire, a relief showing the Aetherial Veil's creation, a bronze plaque recording the founding compact between the elven subraces.",
+    "exits": {
+      "southeast": 3011,
+      "north": 4122,
+      "east": 4134,
+      "northeast": 4125
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4122,
+    "name": "Old Quarter Square",
+    "description": "The oldest part of Custos do Aeternos, where the city's original buildings still stand. The architecture here predates the current crystal-spire style — these are buildings of living wood and hand-shaped stone, their organic forms a reminder that the city began as an elven settlement in the deep forest. A great sky-oak stands at the square's center, its trunk wider than a house, its canopy sheltering the entire plaza.",
+    "exits": {
+      "south": 4121,
+      "north": 4123,
+      "east": 4125,
+      "southwest": 4109,
+      "west": 4147
+    },
+    "flags": [
+      "safe",
+      "residential"
+    ]
+  },
+  {
+    "vnum": 4123,
+    "name": "Pasua Cultural Hall",
+    "description": "A graceful building of carved living-wood where the Pasua Elves — the city's cultural dominant — maintain their traditions. Inside, storytellers practice their art, diplomats refine their craft, and the archives of Pasua oral history are maintained in both written and performed form. The Hall hosts public storytelling evenings that draw audiences of all races, Pasua charm making the tales feel like shared memories.",
+    "exits": {
+      "south": 4122,
+      "east": 4124
+    },
+    "flags": [
+      "guild",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4124,
+    "name": "Hasura Lightweaver's Studio",
+    "description": "An airy, light-filled studio where a master Hasura lightweaver demonstrates and teaches the art of lightweaving — the manipulation of light into art, illusion, and architectural enhancement. The studio's walls shift through a cycle of scenes: forests at dawn, rivers at sunset, star-fields at midnight. The art form is central to Hasura identity, and this studio preserves techniques dating to the city's founding.",
+    "exits": {
+      "west": 4123,
+      "southwest": 4125
+    },
+    "flags": [
+      "artisan",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4125,
+    "name": "Heritage Walk",
+    "description": "A covered passage decorated with murals depicting the history of Custos do Aeternos, from its founding by Hasura Elves to the present day. The murals are enhanced with Hasura lightweaving, making them seem to move and breathe. Key scenes include the raising of the first crystal spire, the anchoring of the Aetherial Veil, and the arrival of the Pekakarlik Dwarves who would build the city's water infrastructure.",
+    "exits": {
+      "west": 4122,
+      "southwest": 4121,
+      "north": 4126,
+      "northeast": 4124
+    },
+    "flags": [
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4126,
+    "name": "Elders' Garden",
+    "description": "A serene garden maintained by the city's eldest residents — elves who remember the Deceivers' War not as history but as lived experience. Ancient trees and carefully tended flowers create a space of profound peace.",
+    "exits": {
+      "south": 4125,
+      "north": 4127,
+      "east": 4128
+    },
+    "flags": [
+      "safe",
+      "residential"
+    ]
+  },
+  {
+    "vnum": 4127,
+    "name": "The Ancestor Oak",
+    "description": "The oldest living tree in Custos do Aeternos — a sky-oak planted by the Giants themselves during the age of Thalorien, before the city existed. The tree is enormous, its trunk carved with runes in a language no living Kin can read. The Circle of Deeproot maintains a permanent warden here. The oak is sacred to all four elemental traditions.",
+    "exits": {
+      "south": 4126,
+      "east": 4129
+    },
+    "flags": [
+      "safe",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4128,
+    "name": "Cinvarin Vigil Ground",
+    "description": "An open field where the Circle of Deeproot holds its seasonal vigils — silent ceremonies honoring the Five Witnesses and monitoring the elemental health of the land. The ground is bare earth, kept deliberately unworked, and at the center stands a simple stone altar surrounded by five unlit torches. During vigils, the torches burn with elemental fire and the druids' awareness extends across the entire city.",
+    "exits": {
+      "west": 4126,
+      "north": 4129,
+      "south": 4154
+    },
+    "flags": [
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4129,
+    "name": "Circle of Deeproot Waystation",
+    "description": "A modest stone building where visiting druids of the Circle of Deeproot find lodging and share reports. Deep Markers — rune-carved stones used as elemental monitoring stations — are stored, maintained, and deployed from here. A rotating staff of Wardens mans the waystation, and their assessment of the city's elemental health is forwarded to the Rootmoot's seasonal meetings.",
+    "exits": {
+      "west": 4127,
+      "south": 4128,
+      "north": 4130
+    },
+    "flags": [
+      "guild",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4130,
+    "name": "North Road",
+    "description": "A well-maintained road leading north from the city through open parkland before entering the forest that gives way to the Windweave Glade. The road is the primary route to the canopy cities — Liraveth, Aerithal, and Sylarien — and sees steady traffic of travelers, traders, and diplomatic envoys. The trees along the roadside grow taller and older as the Glade approaches.",
+    "exits": {
+      "south": 4129,
+      "north": 4131
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4131,
+    "name": "Oroas Gate (North Gate)",
+    "description": "The great North Gate of Custos do Aeternos, the most ancient and ornate of the city's gates. Carved from a single massive crystal-veined boulder by the city's Hasura founders, the gate depicts scenes of the Windweave Glade in exquisite detail — sky-oaks, wind-spirits, and the distant canopy cities barely visible among the branches. A warm breeze funnels through the gate's arch, and passing through feels like stepping into a gentle current of air.",
+    "exits": {
+      "south": 4130,
+      "north": 4132
+    },
+    "flags": [
+      "gate",
+      "street"
+    ]
+  },
+  {
+    "vnum": 4132,
+    "name": "Northern Guardhouse",
+    "description": "A fortified watchtower adjacent to Oroas Gate, staffed by the city's best scouts and rangers. The guard here monitors not just mundane threats but elemental anomalies in the forest approaches — a responsibility shared with the Circle of Deeproot. The tower's upper platform offers a commanding view north along the Glade road, and on clear days, the canopy cities are visible as glittering specks among the treetops.",
+    "exits": {
+      "south": 4131,
+      "north": 6300
+    },
+    "flags": [
+      "gate"
+    ]
+  },
+  {
+    "vnum": 4133,
+    "name": "Dodger Street North",
+    "description": "The narrow lane continues northeast from the chapel quarter, growing darker and more cramped with each step. The crystal lampposts here are cracked or missing, and the buildings lean together overhead as if sharing secrets.",
+    "exits": {
+      "southwest": 3012,
+      "north": 4134,
+      "east": 4137,
+      "west": 4157
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4134,
+    "name": "Dodger's Square",
+    "description": "A small, shadowy plaza that serves as the unofficial heart of the city's rougher element. The cobblestones are uneven, the fountain has not worked in years, and the surrounding buildings sport boarded windows and reinforced doors. Despite appearances, the square is busy — just not with the kind of business that welcomes scrutiny. Street vendors sell hot food, cheap ale, and information, the last being the most expensive.",
+    "exits": {
+      "south": 4133,
+      "north": 4135,
+      "east": 4138,
+      "west": 4121
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4135,
+    "name": "The Crooked Stair",
+    "description": "A tall, narrow building of suspect structural integrity that serves as a flophouse, gambling den, and meeting place for those who prefer to conduct business away from the City Watch's patrols. The stairs are indeed crooked, and the rooms are tiny, but the prices are low and questions are not asked. The proprietor, a scarred human of indeterminate age, has the uncanny ability to be looking the other way at exactly the right moment.",
+    "exits": {
+      "south": 4134,
+      "east": 4136
+    },
+    "flags": [
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 4136,
+    "name": "Pickpocket's Alley",
+    "description": "A twisting, narrow alley that locals advise visitors to avoid — advice that is frequently ignored by the adventurous and regretted by the careless. The alley is suspiciously busy for its width, and the foot traffic moves with a practiced, jostling rhythm that provides excellent cover for light-fingered professionals. A few legitimate shops provide thin cover for the alley's true commerce.",
+    "exits": {
+      "west": 4135,
+      "south": 4138
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4137,
+    "name": "The Blind Eye Tavern",
+    "description": "A dingy tavern with blackened windows and a reputation for discretion. The ale is surprisingly good — the owner's one concession to quality — and the clientele ranges from petty criminals to information brokers to off-duty guards who prefer to drink where their colleagues will not see them. A back room is available for private meetings, no questions asked, for the price of a bottle.",
+    "exits": {
+      "west": 4133,
+      "north": 4138,
+      "east": 4144
+    },
+    "flags": [
+      "tavern"
+    ]
+  },
+  {
+    "vnum": 4138,
+    "name": "Fence's Row",
+    "description": "A short street where second-hand goods of questionable provenance change hands. The shops are small, cramped, and dimly lit, and the proprietors share a talent for not knowing where their merchandise came from. Identity verification is pointedly not practiced here — a cultural blind spot that the City Watch finds endlessly frustrating. The goods range from mundane household items to the occasional magical trinket that someone is very eager to sell quickly.",
+    "exits": {
+      "south": 4137,
+      "west": 4134,
+      "north": 4136,
+      "east": 4139
+    },
+    "flags": [
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4139,
+    "name": "The Whisper Market",
+    "description": "A cellar market accessible through an unmarked door in Fence's Row. Below street level, vendors sell restricted goods — poisons, lock-picks, forged documents, and information about guard patrol routes. The market operates on a rotating schedule known only to regulars, and the entrance changes location periodically. The Unstrung maintain a quiet oversight of the Whisper Market without openly controlling it.",
+    "exits": {
+      "west": 4138,
+      "north": 4140
+    },
+    "flags": [
+      "shop"
+    ]
+  },
+  {
+    "vnum": 4140,
+    "name": "Rat Run",
+    "description": "A network of narrow passages between and behind the buildings of Dodger's Row, used as escape routes, shortcuts, and meeting places by those who need to move through the quarter unseen. The passages are too narrow for anyone in armor, deliberately maintained that way. Local children use the Rat Run as a playground; local criminals use it as infrastructure.",
+    "exits": {
+      "south": 4139,
+      "north": 4141,
+      "west": 4142
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4141,
+    "name": "The Cutpurse's Loft",
+    "description": "A rooftop garret above the Rat Run, accessible only by a concealed ladder. From here, the city's criminal element maintains a lookout over Dodger's Row and the approaches from the City Watch headquarters. The loft offers excellent views of the Grand Avenue district and the North Gate approaches. Its current occupant is unknown to the City Watch, which frustrates them enormously.",
+    "exits": {
+      "south": 4140
+    },
+    "flags": [
+      "residential"
+    ]
+  },
+  {
+    "vnum": 4142,
+    "name": "Safe House",
+    "description": "A nondescript building in the heart of Dodger's Row with a reinforced door and no windows on the ground floor. Inside, a hidden cellar provides temporary refuge for those who need to disappear — debtors, fugitives, and the occasional political refugee. The safe house has changed hands many times, and its current operators maintain careful neutrality among the quarter's competing interests.",
+    "exits": {
+      "east": 4140,
+      "south": 4143
+    },
+    "flags": [
+      "residential"
+    ]
+  },
+  {
+    "vnum": 4143,
+    "name": "Back Alley Shrine",
+    "description": "A tiny, hidden shrine in a dead-end alley, its altar barely large enough for a candle and a prayer. No god's name is inscribed, but the offerings — wilted flowers, tear-stained letters, and small hand-shaped tokens — suggest a mix of Semyon's and the Hand Unanswered's suppliants. The desperate come here when the grand temples feel too public, and the shrine's anonymity is its most sacred quality.",
+    "exits": {
+      "north": 4142,
+      "south": 4144
+    },
+    "flags": [
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4144,
+    "name": "Dodger's Gate (Postern)",
+    "description": "A small, poorly maintained postern gate in the city wall that technically should be locked at night but somehow never is. The gate opens onto a muddy path that winds around the city's northeast wall and eventually connects to the North Road. The City Watch has sealed this gate seven times; it has been quietly reopened eight times.",
+    "exits": {
+      "west": 4137,
+      "north": 4143
+    },
+    "flags": [
+      "gate"
+    ]
+  },
+  {
+    "vnum": 4145,
+    "name": "Crystal Promenade (East)",
+    "description": "A beautiful walkway along the eastern edge of the city, offering views of the crystal spires against the sky. The promenade connects the Temple District to the Mystic Quarter, running along the inside of the city wall. Benches of crystal-veined stone invite rest, and the refracted light of the Aetherial Veil plays across every surface.",
+    "exits": {
+      "south": 4025,
+      "north": 4037
+    },
+    "flags": [
+      "street",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4146,
+    "name": "Riverside Walk (South)",
+    "description": "A cobbled path following the Great River's north bank between the River District and the Dock District. Willows trail their branches in the current, and small pleasure boats are tied at intervals. The walk is popular with couples at sunset, when the Aetherial Veil's light turns the river to molten gold.",
+    "exits": {
+      "northwest": 4003,
+      "northeast": 4014
+    },
+    "flags": [
+      "street",
+      "water",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4147,
+    "name": "Northern Lane",
+    "description": "A residential street connecting the Scholar's District and the Oroas Gate District along the city's northern edge. The houses here are old and comfortable, belonging to established families — professors, retired guildmasters, and clergy. The street is quiet, leafy, and pleasant, a world away from Dodger's Row just to the east.",
+    "exits": {
+      "southwest": 4050,
+      "east": 4122
+    },
+    "flags": [
+      "residential",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4148,
+    "name": "Western Approach",
+    "description": "A broad street connecting the Guild District to the Forge Quarter along the city's western side. The transition from the guildhalls' banners to the forge quarter's smoke and heat is gradual, and the street serves as a buffer zone where both communities mingle. Small shops serving both districts line the way.",
+    "exits": {
+      "northeast": 4074,
+      "southwest": 4098
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4149,
+    "name": "Artisan-River Passage",
+    "description": "A quiet lane connecting the Artisan Quarter to the River District, running along the southwestern city wall. Artisans whose work requires river-clay, water, or the particular light of the river terrace use this lane daily. The passage is narrow but well-maintained, and window boxes of river-herbs soften the stone walls.",
+    "exits": {
+      "northwest": 4086,
+      "south": 4009
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4150,
+    "name": "Market-Scholar Bridge",
+    "description": "An elegant covered bridge spanning a small ravine between the Market District and the Scholar's District. Booksellers have set up stalls on the bridge itself, creating a permanent market for academic texts. The bridge is a popular meeting spot where the commercial energy of the market meets the intellectual energy of the academy.",
+    "exits": {
+      "northwest": 4049,
+      "southwest": 4062
+    },
+    "flags": [
+      "street",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4151,
+    "name": "Sunset Terrace",
+    "description": "A broad terrace overlooking the western approaches to the city, offering spectacular views of sunsets over the distant coast. The terrace connects the Grand Avenue district to the Forge Quarter and serves as a popular gathering spot in the evenings. Street musicians — mostly Pasua bards — perform here at dusk.",
+    "exits": {
+      "north": 4109,
+      "south": 4107
+    },
+    "flags": [
+      "safe",
+      "grand"
+    ]
+  },
+  {
+    "vnum": 4152,
+    "name": "Pekakarlik Canal Walk",
+    "description": "An underground passage following one of the aqueduct channels that the Pekakarlik Dwarves maintain beneath the city. Lit by luminescent river-moss, the passage connects the Waterfolk Quarter to the Dock District and serves as both infrastructure access and dwarf-height shortcut. The sound of rushing water echoes from the stone walls.",
+    "exits": {
+      "southwest": 4010,
+      "east": 4016
+    },
+    "flags": [
+      "water"
+    ]
+  },
+  {
+    "vnum": 4153,
+    "name": "The Promenade of Winds",
+    "description": "An elevated walkway near the top of the city's northern wall, where the wind blows strongest and the Aetherial Veil's shimmer is close enough to almost touch. The walkway connects the Mystic Quarter to the Scholar's District and is a favorite of Na'wasua Elves who seek the combination of wind and starlight. On stormy nights, wind-spirits are sometimes visible from here as flickering blue lights.",
+    "exits": {
+      "west": 4048,
+      "east": 4059
+    },
+    "flags": [
+      "mystic",
+      "safe"
+    ]
+  },
+  {
+    "vnum": 4154,
+    "name": "Cinvarin Way",
+    "description": "A processional road connecting the Temple District to the Oroas Gate District, used for religious festivals and seasonal processions. The road is lined with the symbols of all four elements and the sigils of the Ascended Gods. During the Festival of the Five Names, the entire road is lit with elemental fire and thousands of Kin walk in silent vigil.",
+    "exits": {
+      "south": 4033,
+      "north": 4128
+    },
+    "flags": [
+      "street",
+      "temple"
+    ]
+  },
+  {
+    "vnum": 4155,
+    "name": "Guild-Market Passage",
+    "description": "A covered walkway connecting the Guild District to the Market District, allowing guild members to reach the market without crossing the main streets. The passage is lined with notice boards displaying guild announcements, apprenticeship postings, and trade opportunities.",
+    "exits": {
+      "southwest": 4065,
+      "north": 4073
+    },
+    "flags": [
+      "street",
+      "guild",
+      "market"
+    ]
+  },
+  {
+    "vnum": 4156,
+    "name": "South Wall Walk",
+    "description": "A patrol path along the top of the southern city wall, connecting the South Gate to the East River Gate. Guards walk this route hourly, and the views of the Great River and the road to Greenford are commanding. Arrow slits and signal-fire platforms are spaced at regular intervals.",
+    "exits": {
+      "down": 4008
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4157,
+    "name": "Dodger-Scholar Alley",
+    "description": "A narrow, unofficial passage connecting the respectable Scholar's District to the disreputable Dodger's Row. Students use this alley to visit the cheaper taverns and more exciting entertainments of the Row; criminals use it to case the wealthier district. Both groups pretend the other does not exist.",
+    "exits": {
+      "west": 4060,
+      "east": 4133
+    },
+    "flags": [
+      "street"
+    ]
+  },
+  {
+    "vnum": 4158,
+    "name": "Festival Grounds",
+    "description": "An open field south of Civic Plaza used for the city's largest festivals, fairs, and public celebrations. During the seasonal elemental festivals, the grounds are transformed with temporary stages, food stalls, and magical displays. Between festivals, the grounds serve as a public park and occasional military drill field.",
+    "exits": {
+      "northeast": 4110,
+      "east": 4113
+    },
+    "flags": [
+      "safe",
+      "grand"
+    ]
+  },
+  {
+    "vnum": 4159,
+    "name": "The Windharps",
+    "description": "A terrace at the northeastern edge of the city where crystal spires of varying heights have been tuned to catch the wind, producing haunting, ever-changing music. The installation was created by a collaboration between Hasura lightweavers, Pasua musicians, and Pekakarlik stone-cutters, and represents the cross-cultural creativity that defines Custos do Aeternos. Visitors often sit for hours, mesmerized by the sound.",
+    "exits": {
+      "south": 4046,
+      "southwest": 4048
+    },
+    "flags": [
+      "safe",
+      "mystic"
+    ]
+  },
+  {
+    "vnum": 4160,
+    "name": "River Garden",
+    "description": "A terraced garden descending from the Artisan Quarter toward the river, where water features and botanical displays create a peaceful retreat. Pekakarlik hydraulic engineering keeps the fountains running, and Hasura lightweavers have enchanted the garden to glow softly at night. The garden connects the Artisan Quarter to the southern river path.",
+    "exits": {
+      "east": 4004,
+      "north": 4089
+    },
+    "flags": [
+      "safe",
+      "water"
+    ]
+  }
+]

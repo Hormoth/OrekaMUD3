@@ -1,0 +1,388 @@
+{
+  "types": {
+    "Aberration": {
+      "name": "Aberration",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["Will"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Darkvision out to 60 feet",
+        "Proficient with natural weapons; if humanoid in form, proficient with all simple weapons and any weapon described in entry",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Aberrations eat, sleep, and breathe"
+      ]
+    },
+    "Animal": {
+      "name": "Animal",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["Fort", "Ref"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Intelligence score of 1 or 2",
+        "Low-light vision",
+        "Alignment: Always neutral",
+        "Treasure: None",
+        "Proficient with natural weapons only; noncombative herbivores use natural weapons as secondary attacks",
+        "Proficient with no armor unless trained for war",
+        "Animals eat, sleep, and breathe"
+      ]
+    },
+    "Construct": {
+      "name": "Construct",
+      "hit_die": "d10",
+      "bab": "3/4",
+      "good_saves": [],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "No Constitution score",
+        "Low-light vision",
+        "Darkvision out to 60 feet",
+        "Immunity to all mind-affecting effects (charms, compulsions, phantasms, patterns, and morale effects)",
+        "Immunity to poison, sleep effects, paralysis, stunning, disease, death effects, and necromancy effects",
+        "Cannot heal damage on their own, but can often be repaired or via Craft Construct feat; fast healing still works",
+        "Not subject to critical hits, nonlethal damage, ability damage, ability drain, fatigue, exhaustion, or energy drain",
+        "Immunity to any effect that requires a Fortitude save (unless the effect also works on objects, or is harmless)",
+        "Not at risk of death from massive damage; immediately destroyed when reduced to 0 hit points or less",
+        "Cannot be raised or resurrected",
+        "Gains bonus hit points based on size (Small 10, Medium 20, Large 30, Huge 40, Gargantuan 60, Colossal 80)",
+        "Proficient with natural weapons only; if humanoid in form, proficient with any weapon in entry",
+        "Proficient with no armor",
+        "Constructs do not eat, sleep, or breathe"
+      ]
+    },
+    "Dragon": {
+      "name": "Dragon",
+      "hit_die": "d12",
+      "bab": "full",
+      "good_saves": ["Fort", "Ref", "Will"],
+      "skill_points_per_hd": 6,
+      "traits": [
+        "Darkvision out to 60 feet and low-light vision",
+        "Immunity to magic sleep effects and paralysis effects",
+        "Proficient with natural weapons only; if humanoid in form, proficient with all simple weapons and any weapons in entry",
+        "Proficient with no armor",
+        "Dragons eat, sleep, and breathe"
+      ]
+    },
+    "Elemental": {
+      "name": "Elemental",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["varies"],
+      "good_saves_note": "Fortitude (earth, water) or Reflex (air, fire)",
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Darkvision out to 60 feet",
+        "Immunity to poison, sleep effects, paralysis, and stunning",
+        "Not subject to critical hits or flanking",
+        "No dual nature; soul and body form one unit; cannot be raised, reincarnated, or resurrected (requires limited wish, wish, miracle, or true resurrection)",
+        "Proficient with natural weapons only; if humanoid in form, proficient with all simple weapons and any weapons in entry",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Elementals do not eat, sleep, or breathe"
+      ]
+    },
+    "Fey": {
+      "name": "Fey",
+      "hit_die": "d6",
+      "bab": "1/2",
+      "good_saves": ["Ref", "Will"],
+      "skill_points_per_hd": 6,
+      "traits": [
+        "Low-light vision",
+        "Proficient with all simple weapons and any weapons mentioned in entry",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Fey eat, sleep, and breathe"
+      ]
+    },
+    "Giant": {
+      "name": "Giant",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["Fort"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Low-light vision",
+        "Proficient with all simple and martial weapons, as well as any natural weapons",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Giants eat, sleep, and breathe"
+      ]
+    },
+    "Humanoid": {
+      "name": "Humanoid",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["Ref"],
+      "good_saves_note": "Usually Reflex; a humanoid's good save varies",
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Proficient with all simple weapons, or by character class",
+        "Proficient with described armor type and all lighter types, or by character class; proficient with shields if proficient with any armor",
+        "Humanoids breathe, eat, and sleep"
+      ]
+    },
+    "Magical Beast": {
+      "name": "Magical Beast",
+      "hit_die": "d10",
+      "bab": "full",
+      "good_saves": ["Fort", "Ref"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Darkvision out to 60 feet and low-light vision",
+        "Proficient with natural weapons only",
+        "Proficient with no armor",
+        "Magical beasts eat, sleep, and breathe"
+      ]
+    },
+    "Monstrous Humanoid": {
+      "name": "Monstrous Humanoid",
+      "hit_die": "d8",
+      "bab": "full",
+      "good_saves": ["Ref", "Will"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Darkvision out to 60 feet",
+        "Proficient with all simple weapons and any weapons mentioned in entry",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Monstrous humanoids eat, sleep, and breathe"
+      ]
+    },
+    "Ooze": {
+      "name": "Ooze",
+      "hit_die": "d10",
+      "bab": "3/4",
+      "good_saves": [],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Mindless: No Intelligence score, and immunity to all mind-affecting effects (charms, compulsions, phantasms, patterns, and morale effects)",
+        "Blind (but have blindsight), with immunity to gaze attacks, visual effects, illusions, and other attack forms that rely on sight",
+        "Immunity to poison, sleep effects, paralysis, polymorph, and stunning",
+        "Some oozes deal acid damage to objects (10 + 1/2 HD + Con modifier per full round of contact)",
+        "Not subject to critical hits or flanking",
+        "Proficient with natural weapons only",
+        "Proficient with no armor",
+        "Oozes eat and breathe, but do not sleep"
+      ]
+    },
+    "Outsider": {
+      "name": "Outsider",
+      "hit_die": "d8",
+      "bab": "full",
+      "good_saves": ["Fort", "Ref", "Will"],
+      "skill_points_per_hd": 8,
+      "traits": [
+        "Darkvision out to 60 feet",
+        "No dual nature; soul and body form one unit; cannot be raised, reincarnated, or resurrected (requires limited wish, wish, miracle, or true resurrection); native subtype outsiders can be raised normally",
+        "Proficient with all simple and martial weapons and any weapons mentioned in entry",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Outsiders breathe, but do not need to eat or sleep (although they can); native outsiders breathe, eat, and sleep"
+      ]
+    },
+    "Plant": {
+      "name": "Plant",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["Fort"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Low-light vision",
+        "Immunity to all mind-affecting effects (charms, compulsions, phantasms, patterns, and morale effects)",
+        "Immunity to poison, sleep effects, paralysis, polymorph, and stunning",
+        "Not subject to critical hits",
+        "Proficient with natural weapons only",
+        "Proficient with no armor",
+        "Plants breathe and eat, but do not sleep"
+      ]
+    },
+    "Undead": {
+      "name": "Undead",
+      "hit_die": "d12",
+      "bab": "1/2",
+      "good_saves": ["Will"],
+      "skill_points_per_hd": 4,
+      "traits": [
+        "No Constitution score",
+        "Darkvision out to 60 feet",
+        "Immunity to all mind-affecting effects (charms, compulsions, phantasms, patterns, and morale effects)",
+        "Immunity to poison, sleep effects, paralysis, stunning, disease, and death effects",
+        "Not subject to critical hits, nonlethal damage, ability drain, or energy drain; immune to damage to physical ability scores (Str, Dex, Con), fatigue, and exhaustion",
+        "Cannot heal damage on its own if it has no Intelligence score, although it can be healed; negative energy can heal undead",
+        "Immunity to any effect that requires a Fortitude save (unless the effect also works on objects or is harmless)",
+        "Uses Charisma modifier for Concentration checks",
+        "Not at risk of death from massive damage; immediately destroyed when reduced to 0 hit points or less",
+        "Not affected by raise dead and reincarnate; resurrection and true resurrection turn undead back into living creatures",
+        "Proficient with natural weapons, all simple weapons, and any weapons mentioned in entry",
+        "Proficient with described armor type and all lighter types; proficient with shields if proficient with any armor",
+        "Undead do not breathe, eat, or sleep"
+      ]
+    },
+    "Vermin": {
+      "name": "Vermin",
+      "hit_die": "d8",
+      "bab": "3/4",
+      "good_saves": ["Fort"],
+      "skill_points_per_hd": 2,
+      "traits": [
+        "Mindless: No Intelligence score, and immunity to all mind-affecting effects (charms, compulsions, phantasms, patterns, and morale effects)",
+        "Darkvision out to 60 feet",
+        "Proficient with natural weapons only",
+        "Proficient with no armor",
+        "Vermin breathe, eat, and sleep"
+      ]
+    }
+  },
+  "subtypes": {
+    "Air": {
+      "name": "Air",
+      "traits": [
+        "Usually used for elementals and outsiders with a connection to the Elemental Plane of Air",
+        "Always have fly speeds",
+        "Usually have perfect maneuverability"
+      ]
+    },
+    "Aquatic": {
+      "name": "Aquatic",
+      "traits": [
+        "Always have swim speeds; can move in water without making Swim checks",
+        "Can breathe underwater",
+        "Cannot breathe air unless it has the amphibious special quality"
+      ]
+    },
+    "Chaotic": {
+      "name": "Chaotic",
+      "traits": [
+        "Usually applied only to outsiders native to the chaotic-aligned Outer Planes",
+        "Any effect that depends on alignment affects the creature as if it has a chaotic alignment",
+        "Overcomes damage reduction as if natural weapons and wielded weapons were chaotic-aligned"
+      ]
+    },
+    "Cold": {
+      "name": "Cold",
+      "traits": [
+        "Immunity to cold",
+        "Vulnerability to fire (+50% damage)"
+      ]
+    },
+    "Earth": {
+      "name": "Earth",
+      "traits": [
+        "Usually used for elementals and outsiders with a connection to the Elemental Plane of Earth",
+        "Usually have burrow speeds",
+        "Most earth creatures can burrow through solid rock"
+      ]
+    },
+    "Evil": {
+      "name": "Evil",
+      "traits": [
+        "Usually applied only to outsiders native to the evil-aligned Outer Planes; also called fiends",
+        "Any effect that depends on alignment affects the creature as if it has an evil alignment",
+        "Overcomes damage reduction as if natural weapons and wielded weapons were evil-aligned"
+      ]
+    },
+    "Extraplanar": {
+      "name": "Extraplanar",
+      "traits": [
+        "Applied to any creature when it is on a plane other than its native plane",
+        "Can be gained or lost as a creature travels between planes",
+        "Creatures not labeled as extraplanar are natives of the Material Plane and gain this subtype if they leave",
+        "No creature has the extraplanar subtype on a transitive plane (Astral, Ethereal, Shadow)"
+      ]
+    },
+    "Fire": {
+      "name": "Fire",
+      "traits": [
+        "Immunity to fire",
+        "Vulnerability to cold (+50% damage)"
+      ]
+    },
+    "Goblinoid": {
+      "name": "Goblinoid",
+      "traits": [
+        "Stealthy humanoids who live by hunting and raiding",
+        "All speak Goblin"
+      ]
+    },
+    "Good": {
+      "name": "Good",
+      "traits": [
+        "Usually applied only to outsiders native to the good-aligned Outer Planes",
+        "Any effect that depends on alignment affects the creature as if it has a good alignment",
+        "Overcomes damage reduction as if natural weapons and wielded weapons were good-aligned"
+      ]
+    },
+    "Incorporeal": {
+      "name": "Incorporeal",
+      "traits": [
+        "Has no physical body",
+        "Can be harmed only by other incorporeal creatures, magic weapons, and spells/spell-like/supernatural abilities",
+        "Immune to all nonmagical attack forms",
+        "50% chance to ignore any damage from a corporeal source (except positive energy, negative energy, force effects, or ghost touch weapons)",
+        "No natural armor bonus; has a deflection bonus equal to Charisma bonus (minimum +1)",
+        "Can enter or pass through solid objects but must remain adjacent to exterior",
+        "Attacks pass through (ignore) natural armor, armor, and shields; deflection bonuses and force effects work normally",
+        "Cannot fall or take falling damage",
+        "Cannot make trip or grapple attacks, nor be tripped or grappled",
+        "No Strength score; Dexterity modifier applies to both melee and ranged attacks",
+        "Moves silently; cannot be heard with Listen checks unless it wishes to be"
+      ]
+    },
+    "Lawful": {
+      "name": "Lawful",
+      "traits": [
+        "Usually applied only to outsiders native to the lawful-aligned Outer Planes",
+        "Any effect that depends on alignment affects the creature as if it has a lawful alignment",
+        "Overcomes damage reduction as if natural weapons and wielded weapons were lawful-aligned"
+      ]
+    },
+    "Native": {
+      "name": "Native",
+      "traits": [
+        "Applied only to outsiders",
+        "Have mortal ancestors or a strong connection to the Material Plane",
+        "Can be raised, reincarnated, or resurrected just as other living creatures",
+        "Native to the Material Plane",
+        "Unlike true outsiders, native outsiders need to eat and sleep"
+      ]
+    },
+    "Reptilian": {
+      "name": "Reptilian",
+      "traits": [
+        "Scaly and usually cold-blooded",
+        "Only used to describe a set of humanoid races, not all animals and monsters that are truly reptiles"
+      ]
+    },
+    "Shapechanger": {
+      "name": "Shapechanger",
+      "traits": [
+        "Has the supernatural ability to assume one or more alternate forms",
+        "Proficient with natural weapons, simple weapons, and any weapons mentioned in entry",
+        "Proficient with any armor mentioned in entry and all lighter forms; proficient with shields if proficient with any armor"
+      ]
+    },
+    "Swarm": {
+      "name": "Swarm",
+      "traits": [
+        "A collection of Fine, Diminutive, or Tiny creatures that acts as a single creature",
+        "Has a single pool of Hit Dice, hit points, initiative modifier, speed, and Armor Class",
+        "Occupies a 10-foot square (nonflying) or cube (flying); reach is 0 feet",
+        "Not subject to critical hits or flanking",
+        "Swarm of Tiny creatures takes half damage from slashing and piercing weapons",
+        "Swarm of Fine or Diminutive creatures is immune to all weapon damage",
+        "Cannot be tripped, grappled, or bull rushed; cannot grapple an opponent",
+        "Immune to any spell or effect that targets a specific number of creatures (except mind-affecting if it has Int and hive mind)",
+        "Takes +50% damage from area-effect spells and effects",
+        "Deals automatic damage to creatures in its space (no attack roll needed); damage scales with HD",
+        "Distraction (Ex): Living creatures vulnerable to swarm damage nauseated for 1 round (Fort negates)"
+      ]
+    },
+    "Water": {
+      "name": "Water",
+      "traits": [
+        "Usually used for elementals and outsiders with a connection to the Elemental Plane of Water",
+        "Always have swim speeds; can move in water without making Swim checks",
+        "Can breathe underwater and usually can breathe air as well"
+      ]
+    }
+  }
+}

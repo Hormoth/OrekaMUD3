@@ -1,0 +1,1824 @@
+# Cleric Domain Spell List
+
+**Editorial note:** This document has been cleaned of advertisements and reformatted for use as a source reference. The following typographical corrections have been made from the original: *Creats* → *Creates* (Darkness domain); *may be lowed* → *may be slowed* (Earth domain); *Slight of Hand* → *Sleight of Hand* (Greed domain); *Dessication/dessication* → *Desiccation/desiccation* (Summer/Purification domains).
+
+## CLERIC DOMAIN INDEX
+
+- Air
+
+- Animal
+
+- Artifice
+
+- Blackwater
+
+- Celerity
+
+- Celestial
+
+- Chaos
+
+- Charm
+
+- City
+
+- Cold
+
+- Community
+
+- Competition
+
+- Corruption
+
+- Courage
+
+- Creation
+
+- Darkness
+
+- Death
+
+- Deathbound
+
+- Demonic
+
+- Destiny
+
+- Destruction
+
+- Diabolic
+
+- Domination
+
+- Dragon
+
+- Dream
+
+- Earth
+
+- Endurance
+
+- Entropy
+
+- Evil
+
+- Fate
+
+- Fey
+
+- Fire
+
+- Force
+
+- Fury
+
+- Glory
+
+- Glory (BoED)
+
+- Good
+
+- Greed
+
+- Hatred
+
+- Healing
+
+- Herald
+
+- Hunger
+
+- Incarnum
+
+- Inquisition
+
+- Joy
+
+- Knowledge
+
+- Law
+
+- Liberation
+
+- Luck
+
+- Madness
+
+- Magic
+
+- Mind
+
+- Mysticism
+
+- Nobility
+
+- Ocean
+
+- Ooze
+
+- Oracle
+
+- Pact
+
+- Pestilence
+
+- Planning
+
+- Plant
+
+- Pleasure
+
+- Protection
+
+- Purification
+
+- Repose
+
+- Rune
+
+- Sand
+
+- Seafolk
+
+- Skalykind
+
+- Sky
+
+- Spite
+
+- Storm
+
+- Strength
+
+- Summer
+
+- Summoner
+
+- Sun
+
+- Temptation
+
+- Thirst
+
+- Travel
+
+- Trickery
+
+- Tyranny
+
+- Undeath
+
+- Vile Darkness
+
+- War
+
+- Water
+
+- Wealth
+
+- Weather
+
+- Winter
+
+- Wrath
+
+**Planar Domains:** The Abyss · Arborea · Baator · Celestia · Elysium · Hades · Limbo · Mechanus
+
+## AIR DOMAIN
+
+**Granted Powers:** Turn or destroy earth creatures as a good cleric turns undead. Rebuke, command, or bolster air creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Obscuring Mist | Fog surrounds you. |
+| 2 | Wind Wall | Deflects arrows, smaller creatures, and gases. |
+| 3 | Gaseous Form | Subject becomes insubstantial and can fly slowly. |
+| 4 | Air Walk | Subject treads on air as if solid (climb at 45-degree angle). |
+| 5 | Control Winds | Change wind direction and speed. |
+| 6 | Chain Lightning | 1d6/level damage; 1 secondary bolt/level each deals half damage. |
+| 7 | Control Weather | Changes weather in local area. |
+| 8 | Whirlwind | Cyclone deals damage and can pick up creatures. |
+| 9 | Elemental Swarm* | Summons multiple elementals. |
+
+*Cast as an air spell only.*
+
+## ANIMAL DOMAIN
+
+**Granted Powers:** You can use *speak with animals* once per day as a spell-like ability. Add Knowledge (nature) to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Calm Animals | Calms (2d4 + level) HD of animals. |
+| 2 | Hold Animal | Paralyzes one animal for 1 round/level. |
+| 3 | Dominate Animal | Subject animal obeys silent mental commands. |
+| 4 | Summon Nature’s Ally IV* | Calls creature to fight. |
+| 5 | Commune with Nature | Learn about terrain for 1 mile/level. |
+| 6 | Antilife Shell | 10-ft. field hedges out living creatures. |
+| 7 | Animal Shapes | One ally/level polymorphs into chosen animal. |
+| 8 | Summon Nature’s Ally VIII* | Calls creature to fight. |
+| 9 | Shapechange F | Transforms you into any creature, and change forms once per round. |
+
+*Can only summon animals.*
+
+## ARTIFICE DOMAIN
+
+**Granted Power:** Gain +4 bonus on Craft checks. The character casts conjuration (creation) spells at +1 caster level. (Those with access to both the Artifice and Creation domains cast conjuration [creation] spells at +3 caster level.)
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Animate Rope | Makes a rope move at your command. |
+| 2 | Wood Shape | Rearranges wooden objects to suit you. |
+| 3 | Stone Shape | Sculpts stone into any shape. |
+| 4 | Minor Creation | Creates one cloth or wood object. |
+| 5 | Fabricate | Transforms raw materials into finished items. |
+| 6 | Major Creation | As minor creation, plus stone and metal. |
+| 7 | Hardening | Increases hardness of target by 1 per 2 levels. |
+| 8 | True Creation | Creates permanent non-magical object. |
+| 9 | Prismatic Sphere | As prismatic wall, but surrounds on all sides. |
+
+## BLACKWATER DOMAIN
+
+**Granted Powers:** You are immune to pressure damage from descending into even the greatest of oceanic depths.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Cause Fear | One creature of 5 HD or less flees for 1d4 rounds. |
+| 2 | Pressure Sphere | Water pressure deals 4d6 damage to submerged targets. |
+| 3 | Evard’s Black Tentacles | Tentacles grapple all within 20-ft. spread. |
+| 4 | Transformation of the Deeps | Grant water breathing, darkvision, and pressure immunity to one creature/3 levels. |
+| 5 | Blackwater Tentacle | Create blackwater tentacle that attacks your foe. |
+| 6 | Blackwater Taint | Desecrate water, deal 1d6/2 levels negative energy damage, bestow a negative level. |
+| 7 | Dark Tide | Infuse water over a large area with negative energy, causing weakness and 1d6 damage/hour. |
+| 8 | Maelstrom | Conjures a deadly whirlpool to suck in and batter foes. |
+| 9 | Doom of the Seas | Summons a fiendish kraken under your command. |
+
+## CELERITY DOMAIN
+
+**Granted Powers:** Your land speed is faster than the normal for your race by +10 feet. This benefit is lost if you are wearing medium or heavy armor or carrying a medium or heavy load.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Expeditious Retreat | Your speed increases by 30 ft. |
+| 2 | Cat’s Grace | Subject gains +4 to Dex for 1 min./level. |
+| 3 | Blur | Attacks miss subject 20% of the time. |
+| 4 | Haste | One creature/level moves faster, +1 on attack rolls, AC, and Reflex saves. |
+| 5 | Tree Stride | Step from one tree to another far away. |
+| 6 | Wind Walk | You and your allies turn vaporous and travel fast. |
+| 7 | Cat’s Grace, Mass | As cat’s grace, affects one subject/level. |
+| 8 | Blink, Improved | As blink, but safer and with more control. |
+| 9 | Time Stop | You act freely for 1d4+1 rounds. |
+
+## CELESTIAL DOMAIN
+
+**Granted Power:** You gain the supernatural ability to smite evil once per day. Add a +4 bonus to your melee attack roll and your cleric level to your damage. You must declare the smite before making the attack, and the attempt is wasted if the target is not evil.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Vision of Heaven | Evil creature is dazed for 1 round. |
+| 2 | Consecrate | Fills area with positive energy, making undead weaker. |
+| 3 | Blessed Sight | Evil auras become visible to you. |
+| 4 | Lesser Planar Ally | Exchange services with a 6 HD extraplanar creature. |
+| 5 | Heavenly Lightning | Arcs of radiant lightning deal 3d6 damage to one target per two caster levels. |
+| 6 | Call Faithful Servants | Summons 1d4 lantern archons, coure eladrins, or musteval guardinals. |
+| 7 | Heavenly Lightning Storm | Arcs of radiant lightning deal 5d6 damage to one target per level. |
+| 8 | Holy Aura | +4 AC, +4 resistance, and SR 25 against evil spells. |
+| 9 | Gate | Connects two planes for travel or summoning. |
+
+## CHAOS DOMAIN
+
+**Granted Power:** You cast chaos spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Protection from Law | +2 to AC and saves, counter mind control, hedge out elementals and outsiders. |
+| 2 | Shatter | Sonic vibration damages objects or crystalline creatures. |
+| 3 | Magic Circle against Law | As protection spells, but 10-ft. radius and 10 min./level. |
+| 4 | Chaos Hammer | Damages and staggers lawful creatures. |
+| 5 | Dispel Law | +4 bonus against attacks by lawful creatures. |
+| 6 | Animate Objects | Objects attack your foes. |
+| 7 | Word of Chaos | Kills, confuses, stuns, or deafens nonchaotic subjects. |
+| 8 | Cloak of Chaos F | +4 to AC, +4 resistance, SR 25 against lawful spells. |
+| 9 | Summon Monster IX* | Calls extraplanar creature to fight for you. |
+
+*Cast as a chaos spell only.*
+
+## CHARM DOMAIN
+
+**Granted Power:** The character can boost his or her Charisma by 4 points once per day. Activating this power is a free action. The Charisma increase lasts 1 minute.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Charm Person | Makes one person your friend. |
+| 2 | Calm Emotions | Calms creatures, negating emotion effects. |
+| 3 | Suggestion | Compels subject to follow stated course of action. |
+| 4 | Heroism | Gives +2 on attack rolls, saves, skill checks. |
+| 5 | Charm Monster | Makes monster believe it is your ally. |
+| 6 | Geas/Quest | As lesser geas, plus it affects any creature. |
+| 7 | Insanity | Subject suffers continuous confusion. |
+| 8 | Demand | As sending, plus you can send suggestion. |
+| 9 | Dominate Monster | As dominate person, but any creature. |
+
+## CITY DOMAIN
+
+**Granted Powers:** Add Gather Information and Knowledge (local) to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Rooftop Strider | Move across uneven surfaces with ease. |
+| 2 | City Lights | Absorb nearby light to release as blinding flare. |
+| 3 | Winding Alleys | Trap foe in phantasmal maze. |
+| 4 | Commune with City | Learn about city. |
+| 5 | Skyline Runner | You can walk normally on any city surface. |
+| 6 | City Stride | Teleport between two cities. |
+| 7 | Urban Shield | City grants cover to you, not to enemies. |
+| 8 | City’s Might | Gain enhancement to Str and Con, damage reduction, while in city. |
+| 9 | Animate City | City structures attack, slow down enemies. |
+
+## COLD DOMAIN
+
+**Granted Powers:** You can turn or destroy fire creatures as a good cleric turns undead. You can also rebuke or command cold creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Chill Touch | One touch/level deals 1d6 damage and possibly 1 Str damage. |
+| 2 | Chill Metal | Cold metal damages those who touch it. |
+| 3 | Sleet Storm | Hampers vision and movement. |
+| 4 | Ice Storm | Hail deals 5d6 damage in cylinder 40 ft. across. |
+| 5 | Wall of Ice | Ice plane creates wall with 15 hp +1/level, or hemisphere can trap creatures inside. |
+| 6 | Cone of Cold | 1d6/level cold damage. |
+| 7 | Control Weather | Changes weather in local area. |
+| 8 | Polar Ray | Ranged touch attack deals 1d6/level cold damage. |
+| 9 | Obedient Avalanche | Snowy avalanche crushes and buries your foes. |
+
+## COMMUNITY DOMAIN
+
+**Granted Power:** Use *calm emotions* as a spell-like ability once per day. Gain a +2 competence bonus on Diplomacy checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Bless | Allies gain +1 on attack rolls and saves against fear. |
+| 2 | Status | Monitors condition, position of allies. |
+| 3 | Prayer | Allies +1 bonus on most rolls, enemies –1 penalty. |
+| 4 | Tongues | Speak any language. |
+| 5 | Telepathic Bond | Link lets allies communicate. |
+| 6 | Heroes’ Feast | Food for one creature/level cures and grants combat bonuses. |
+| 7 | Refuge | Alters item to transport its possessor to you. |
+| 8 | Mordenkainen’s Magnificent Mansion | Door leads to extradimensional mansion. |
+| 9 | Mass Heal | As heal, but with several subjects. |
+
+## COMPETITION DOMAIN
+
+**Granted Powers:** You relish the chance to prove yourself against your foes. As an extraordinary ability, you gain a +1 bonus on all opposed checks you make.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Remove Fear | Suppresses fear or gives +4 on saves against fear for one subject + one per four levels. |
+| 2 | Zeal | You move through foes to attack the enemy you want. |
+| 3 | Prayer | Allies +1 bonus on most rolls, enemies –1 penalty. |
+| 4 | Divine Power | You gain attack bonus, +6 to Str, and 1 hp/level. |
+| 5 | Righteous Might | Your size increases, and you gain combat bonuses. |
+| 6 | Zealot Pact | You automatically gain combat bonuses when you attack someone of opposite alignment. |
+| 7 | Regenerate | Subject’s severed limbs grow back, cures 4d8 damage +1/level (max +35). |
+| 8 | Moment of Prescience | You gain insight bonus on single attack roll, check, or save. |
+| 9 | Visage of the Deity, Greater | As lesser visage of the deity, but you become half-celestial or half-fiendish. |
+
+## CORRUPTION DOMAIN
+
+**Granted Powers:** Once per day, you can attack an object and ignore its hardness.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Doom | One subject takes a –2 penalty on attack rolls, damage rolls, saves, and checks. |
+| 2 | Blindness/Deafness | Makes subject blinded or deafened. |
+| 3 | Contagion | Infects subject with chosen disease. |
+| 4 | Morality Undone | Subject becomes evil. |
+| 5 | Feeblemind | Subject’s Int and Cha drop to 1. |
+| 6 | Pox | Deals 1d4 Con drain to one creature/level. |
+| 7 | Insanity | Subject affected by continuous confusion. |
+| 8 | Befoul | Turns large amount of water poisonous. |
+| 9 | Despoil | Kills plants and damages objects in 100-ft./level radius. |
+
+## COURAGE DOMAIN
+
+**Granted Powers:** You radiate an aura of courage that grants all allies within 10 feet (including yourself) a +4 morale bonus on saving throws against fear effects. This supernatural ability functions while you are conscious, but not if you are unconscious or dead.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Remove Fear | Suppresses fear or gives +4 on saves against fear for one subject + one per four levels. |
+| 2 | Aid | +1 on attack rolls and saves against fear, 1d8 temporary hp +1/level (max. +10). |
+| 3 | Cloak of Bravery | You and your allies gain a bonus on saves against fear. |
+| 4 | Heroism | Gives +2 bonus on attack rolls, saves, skill checks. |
+| 5 | Valiant Fury | +4 Str, Con; +2 Will saves; extra attack; cures 1d8 hp +1/level (max. +20). |
+| 6 | Heroes’ Feast | Food for one creature/level cures and grants combat bonuses. |
+| 7 | Heroism, Greater | Gives +4 bonus on attack rolls, saves, skill checks; immunity to fear; temporary hp. |
+| 8 | Lion’s Roar | Deals 1d8 points of damage per two levels to enemies; allies get +1 on attacks and saves against fear, plus temporary hp. |
+| 9 | Cloak of Bravery, Greater | You and your allies become immune to fear and get +2 bonus on attacks. |
+
+## CREATION DOMAIN
+
+**Granted Power:** Cast conjuration (creation) spells at +1 caster level. (Those with access to both the Artifice and Creation domains cast conjuration [creation] spells at +3 caster level.)
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Create Water | Creates 2 gallons/level of pure water. |
+| 2 | Minor Image | As silent image, plus some sound. |
+| 3 | Create Food and Water | Feeds three humans (or one horse)/level. |
+| 4 | Minor Creation | Creates one cloth or wood object. |
+| 5 | Major Creation | As minor creation, plus stone and metal. |
+| 6 | Heroes’ Feast | Food for one creature/level cures and grants combat bonuses. |
+| 7 | Permanent Image | Includes sight, sound, and smell. |
+| 8 | True Creation | Creates permanent nonmagical object. |
+| 9 | Genesis | Creates a small demiplane. |
+
+## DARKNESS DOMAIN
+
+**Granted Power:** Free Blind-Fight feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Obscuring Mist | Fog surrounds you. |
+| 2 | Blindness | Makes subject blinded. |
+| 3 | Blacklight | Creates magical darkness that the caster can see through. |
+| 4 | Armor of Darkness | Shroud obscures caster and grants darkvision and deflection bonus to AC. |
+| 5 | Summon Monster V* | Calls extraplanar creature to fight for you. |
+| 6 | Prying Eyes | 1d4 + 1/level floating eyes scout for you. |
+| 7 | Nightmare | Sends vision dealing 1d10 damage, fatigue. |
+| 8 | Power Word, Blind | Blinds creature with 200 hp or less. |
+| 9 | Power Word, Kill | Kills one creature with 100 hp or less. |
+
+*Summons 1d3 shadows only.*
+
+## DEATH DOMAIN
+
+**Granted Power:** You may use a death touch once per day. Your death touch is a supernatural ability that produces a death effect. You must succeed on a melee touch attack against a living creature (using the rules for touch spells). When you touch, roll 1d6 per cleric level you possess. If the total at least equals the creature’s current hit points, it dies (no save).
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Cause Fear | One creature of 5 HD or less flees for 1d4 rounds. |
+| 2 | Death Knell | Kill dying creature and gain 1d8 temporary hp, +2 to Str, and +1 caster level. |
+| 3 | Animate Dead M | Creates undead skeletons and zombies. |
+| 4 | Death Ward | Grants immunity to death spells and negative energy effects. |
+| 5 | Slay Living | Touch attack kills subject. |
+| 6 | Create Undead M | Create ghouls, ghasts, mummies, or mohrgs. |
+| 7 | Destruction F | Kills subject and destroys remains. |
+| 8 | Create Greater Undead M | Create shadows, wraiths, spectres, or devourers. |
+| 9 | Wail of the Banshee | Kills one creature/level. |
+
+## DEATHBOUND DOMAIN
+
+**Granted Powers:** Your limit for controlling undead animated with spells increases to three times your caster level instead of the normal two times caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Chill of the Grave | Ray causes cold damage. |
+| 2 | Blade of Pain and Fear | Creates blade of gnashing teeth. |
+| 3 | Fangs of the Vampire King | Grow vampire fangs. |
+| 4 | Wither Limb | Cause enemy’s limbs to wither. |
+| 5 | Revive Undead | Restores undeath to undead that was destroyed up to 1 day/level ago. |
+| 6 | Awaken Undead | Grant sentience to otherwise mindless undead. |
+| 7 | Avasculate | Reduce foe to 0 hp and stun foe for 1 round by purging blood vessels. |
+| 8 | Avascular Mass | Reduce foe to 0 hp and stun foe for 1 round by purging blood vessels; can trap creatures in 20-ft. radius from victim. |
+| 9 | Wail of the Banshee | Kills one creature/level. |
+
+## DEMONIC DOMAIN
+
+**Granted Powers:** You gain a +1 profane bonus on attack and damage rolls for unarmed strikes and attacks with natural weapons.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Demonflesh | Grants +1 natural armor/5 caster levels. |
+| 2 | Demoncall | Grants +10 profane bonus on one Knowledge (arcana), Knowledge (the planes), or Knowledge (religion) check. |
+| 3 | Demon Wings | You can fly at your land speed. |
+| 4 | Dimensional Anchor | Bars extradimensional movement. |
+| 5 | Planar Binding, Lesser | Traps extraplanar creature of 6 or fewer HD until it performs a task. |
+| 6 | Planar Binding | As lesser planar binding, but traps extraplanar creature with up to 12 HD. |
+| 7 | Fiendish Clarity | Grants you darkvision 60 ft., allows you to see in magical darkness, see invisibility out to 60 ft., and detect good. |
+| 8 | Planar Binding, Greater | As lesser planar binding, but traps extraplanar creatures with up to 18 HD. |
+| 9 | Gate | Connects two planes for travel or summoning. |
+
+## DESTINY DOMAIN
+
+**Granted Powers:** Once per day as an immediate action, you can grant a willing creature within 30 feet the ability to reroll an attack, save, ability check, or skill check. You must be able to see the creature to be affected. You cannot use this power on yourself. This is a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Omen of Peril | You know how dangerous the future will be. |
+| 2 | Augury | Learns whether an action will be good or bad. |
+| 3 | Delay Death | Losing hit points doesn’t kill subject. |
+| 4 | Bestow Curse | –6 to an ability score; –4 to attack rolls, saves, and checks; or 50% chance of losing each action. |
+| 5 | Stalwart Pact | Target gains combat bonuses automatically when reduced to half hit points or lower. |
+| 6 | Warp Destiny | Reverse failed save or hit in combat. |
+| 7 | Bestow Curse, Greater | As bestow curse, but more severe penalties. |
+| 8 | Moment of Prescience | You gain insight bonus on single attack roll, check, or save. |
+| 9 | Choose Destiny | Gain two chances for success on every action. |
+
+## DESTRUCTION DOMAIN
+
+**Granted Power:** You gain the smite power, the supernatural ability to make a single melee attack with a +4 bonus on attack rolls and a bonus on damage rolls equal to your cleric level (if you hit). You must declare the smite before making the attack. This ability is usable once per day.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Inflict Light Wounds | Touch attack, 1d8 damage +1/level (max +5). |
+| 2 | Shatter | Sonic vibration damages objects or crystalline creatures. |
+| 3 | Contagion | Infects subject with chosen disease. |
+| 4 | Inflict Critical Wounds | Touch attack, 4d8 damage +1/level (max +20). |
+| 5 | Inflict Light Wounds, Mass | Deals 1d8 damage +1/level to any creatures. |
+| 6 | Harm | Deals 10 points/level damage to target. |
+| 7 | Disintegrate | Makes one creature or object vanish. |
+| 8 | Earthquake | Intense tremor shakes 5-ft./level radius. |
+| 9 | Implosion | Kills one creature/round. |
+
+## DIABOLIC DOMAIN
+
+**Granted Powers:** Once per day, as an immediate action, add your class level as a bonus on a single Bluff, Diplomacy, Intimidate, or Sense Motive check.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Protection from Good | +2 to AC and saves, counter mind control, hedge out good elementals and outsiders. |
+| 2 | Devil’s Eye | See through magical darkness up to 30 ft. |
+| 3 | Devil’s Ego | Gain +4 to Cha and change type to outsider for 1 min./level. |
+| 4 | Hellfire | Explosion of infernal fire deals 1d8 damage/2 levels in 10-ft. radius. |
+| 5 | Planar Binding, Lesser | Traps extraplanar creature of 6 HD or less until it performs a task. |
+| 6 | Planar Binding | As lesser planar binding, but up to 12 HD. |
+| 7 | Hellfire Storm | Explosion of infernal fire deals 1d8 damage/level in 20-ft. radius. |
+| 8 | Demand | As sending, plus you can send suggestion. |
+| 9 | Investiture of the Pit Fiend | Target gains powerful claw attacks, ability to inflict disease, or ability to inflict terror. |
+
+## DOMINATION DOMAIN
+
+**Granted Powers:** You gain the Spell Focus (Enchantment) feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Command | One subject obeys one-word command for 1 round. |
+| 2 | Enthrall | Captivates all within 100 ft. + 10 ft./level. |
+| 3 | Suggestion | Compels subject to follow stated course of action. |
+| 4 | Dominate Person | Controls humanoid telepathically. |
+| 5 | Greater Command | As command, but affects one subject/level. |
+| 6 | Geas/Quest | As lesser geas, but affects any creature. |
+| 7 | Suggestion, Mass | As suggestion, plus one/level subjects. |
+| 8 | True Domination | As dominate person, but save at –4. |
+| 9 | Monstrous Thrall | As true domination, but permanent and affects any creature. |
+
+## DRAGON DOMAIN
+
+**Granted Powers:** Add Bluff and Intimidate to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Magic Fang | One natural weapon of subject creature gets +1 on attack and damage rolls. |
+| 2 | Resist Energy | Ignores 10 (or more) points of damage/attack from specified energy type. |
+| 3 | Magic Fang, Greater | One natural weapon of subject creature gets +1/three levels on attack and damage rolls (max +5). |
+| 4 | Voice of the Dragon | +10 on Bluff, Diplomacy, and Intimidate checks; can use one suggestion. |
+| 5 | True Seeing | Lets you see all things as they actually are. |
+| 6 | Stoneskin | Ignore 10 points of damage per attack. |
+| 7 | Dragon Ally | As lesser dragon ally, but up to 18 HD. |
+| 8 | Suggestion, Mass | As suggestion, plus one/level subjects. |
+| 9 | Dominate Monster | As dominate person, but any creature. |
+
+## DREAM DOMAIN
+
+**Granted Powers:** Because you have long delved into dreams and nightmares, you are immune to fear effects.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Sleep | Puts 4 HD of creatures into magical slumber. |
+| 2 | Augury | Learns whether an action will be good or bad. |
+| 3 | Deep Slumber | Puts 10 HD of creatures to sleep. |
+| 4 | Phantasmal Killer | Fearsome illusion kills subject or deals 3d6 damage. |
+| 5 | Nightmare | Sends vision dealing 1d10 damage, fatigue. |
+| 6 | Dream Sight | Your spirit can hear and see at a distance for 1 min./level. |
+| 7 | Scrying, Greater | As scrying, but faster and longer. |
+| 8 | Power Word Stun | Stuns creature with 150 hp or less. |
+| 9 | Weird | As phantasmal killer, but affects all within 30 ft. |
+
+## EARTH DOMAIN
+
+**Granted Power:** Turn or destroy air creatures as a good cleric turns undead. Rebuke, command, or bolster earth creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Magic Stone | Three stones become +1 projectiles, 1d6 +1 damage. |
+| 2 | Soften Earth and Stone | Turns stone to clay or dirt to sand or mud. |
+| 3 | Stone Shape | Sculpts stone into any shape. |
+| 4 | Spike Stones | Creatures in area take 1d8 damage, may be slowed. |
+| 5 | Wall of Stone | Creates a stone wall that can be shaped. |
+| 6 | Stoneskin M | Ignore 10 points of damage per attack. |
+| 7 | Earthquake | Intense tremor shakes 5-ft./level radius. |
+| 8 | Iron Body | Your body becomes living iron. |
+| 9 | Elemental Swarm* | Summons multiple elementals. |
+
+*Cast as an earth spell only.*
+
+## ENDURANCE DOMAIN
+
+**Granted Power:** You can perform a feat of endurance, which is the supernatural ability to gain an enhancement bonus to Constitution equal to one-half your level. Activating the power is a free action, the power lasts 1 minute, and it is usable once per day.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Endure Elements | Exist comfortably in hot or cold environments. |
+| 2 | Bear’s Endurance | Subject gains +4 Con for 1 minute/level. |
+| 3 | Refreshment | Cures creatures of all nonlethal damage. |
+| 4 | Sustain | Recipients need no food or drink for 6 hours/level. |
+| 5 | Stoneskin | Stops blows, cuts, stabs, and slashes. |
+| 6 | Mass Bear’s Endurance | As bear’s endurance, affects one subject/level. |
+| 7 | Globe of Invulnerability | As minor globe, plus 4th level. |
+| 8 | Spell Turning | Reflect 1d4+6 spell levels back at caster. |
+| 9 | Iron Body | Your body becomes living iron. |
+
+## ENTROPY DOMAIN
+
+**Granted Powers:** Once per day as a standard action, you can channel a bolt of Abyssal entropy as a ranged touch attack, dealing 1d8 points of damage per cleric level you possess. Half the damage is sonic damage, and half is unholy damage that cannot be reduced by sonic resistance or immunity.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Cause Fear | Causes one creature with 5 or fewer HD to flee for 1d4 rounds. |
+| 2 | Vision of Entropy | Confronts target with a vision of the Abyss that causes increasing fear. |
+| 3 | Ray of Exhaustion | Creates a ray that renders subject exhausted. |
+| 4 | Fear | Subjects within cone flee for 1 round/level. |
+| 5 | Waves of Fatigue | Causes several targets to become fatigued. |
+| 6 | Disintegrate | Causes one creature or object to vanish. |
+| 7 | Insanity | Afflicts subject with continuous confusion effect. |
+| 8 | Scintillating Pattern | Creates twisting colors that confuse, stun, or render subjects unconscious. |
+| 9 | Abyssal Rift | Opens a rift in the ground, damaging creatures and structures. |
+
+## EVIL DOMAIN
+
+**Granted Power:** You cast evil spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Protection from Good | +2 to AC and saves, counter mind control, hedge out elementals and outsiders. |
+| 2 | Desecrate M | Fills area with negative energy, making undead stronger. |
+| 3 | Magic Circle against Good | As protection spells, but 10-ft. radius and 10 min./level. |
+| 4 | Unholy Blight | Damages and sickens good creatures. |
+| 5 | Dispel Good | +4 bonus against attacks by good creatures. |
+| 6 | Create Undead M | Create ghouls, ghasts, mummies, or mohrgs. |
+| 7 | Blasphemy | Kills, paralyzes, weakens, or dazes nonevil subjects. |
+| 8 | Unholy Aura F | +4 to AC, +4 resistance, SR 25 against good spells. |
+| 9 | Summon Monster IX* | Calls extraplanar creature to fight for you. |
+
+*Cast as an evil spell only.*
+
+## FATE DOMAIN
+
+**Granted Powers:** You gain the uncanny dodge ability, allowing you to retain your Dexterity bonus to AC (if any) even if caught flat-footed or struck by an invisible attacker. However, you still lose your Dexterity bonus to AC if immobilized. If you have another class that gives you uncanny dodge, your cleric levels add to that class’s level for determining when you gain the improved uncanny dodge class feature.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | True Strike | +20 on your next attack roll. |
+| 2 | Augury | Learns whether an action will be good or bad. |
+| 3 | Bestow Curse | –6 to an ability score; –4 on attack rolls, saves, and checks; or 50% chance of losing each action. |
+| 4 | Status | Monitors condition, position of allies. |
+| 5 | Mark of Justice | Designates action that will trigger curse on subject. |
+| 6 | Geas/Quest | As lesser geas, plus it affects any creature. |
+| 7 | Vision | As legend lore, but quicker and strenuous. |
+| 8 | Mind Blank | Subject is immune to mental/emotional magic and scrying. |
+| 9 | Foresight | ‘Sixth sense’ warns of impending danger. |
+
+## FEY DOMAIN
+
+**Granted Power:** Gain a +4 bonus on saving throws against the spell-like abilities of feys (such as dryads, nymphs, and sprites).
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Faerie Fire | Outlines subject with light, canceling blur, concealment, etc. |
+| 2 | Charm Person | Makes one person your friend. |
+| 3 | Inspired Aim | Allies within 40 ft. gain +2 insight bonus on ranged attack rolls. |
+| 4 | Blinding Beauty | You become as beautiful as a nymph, and can blind humanoids who look at you. |
+| 5 | Tree Stride | Step from one tree to another far away. |
+| 6 | Heroes’ Feast | Food for one creature/level cures and blesses. |
+| 7 | Liveoak | Oak becomes treant guardian. |
+| 8 | Unearthly Beauty | As blinding beauty, but creatures must save or die. |
+| 9 | Summon Nature’s Ally IX | Calls creature to fight. |
+
+## FIRE DOMAIN
+
+**Granted Power:** Turn or destroy water creatures as a good cleric turns undead. Rebuke, command, or bolster fire creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Burning Hands | 1d4/level fire damage (max 5d4). |
+| 2 | Produce Flame | 1d6 damage +1/level, touch or thrown. |
+| 3 | Resist Energy* | Ignores 10 (or more) points of damage/attack from specified energy type. |
+| 4 | Wall of Fire | Deals 2d4 fire damage out to 10 ft. and 1d4 out to 20 ft. Passing through wall deals 2d6 damage +1/level. |
+| 5 | Fire Shield | Creatures attacking you take fire damage; you’re protected from heat or cold. |
+| 6 | Fire Seeds | Acorns and berries become grenades and bombs. |
+| 7 | Fire Storm | Deals 1d6/level fire damage. |
+| 8 | Incendiary Cloud | Cloud deals 4d6 fire damage/round. |
+| 9 | Elemental Swarm** | Summons multiple elementals. |
+
+*Resist cold or fire only.
+**Cast as a fire spell only.*
+
+## FORCE DOMAIN
+
+**Granted Powers:** By manipulating cosmic forces of inertia and force, once per day the cleric can reroll any damage roll (for a weapon, a spell, or an ability) and take the better of the two rolls. This granted power is considered a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Mage Armor | Gives subject +4 armor bonus. |
+| 2 | Magic Missile | 1d4+1 damage; +1 missile per two levels above 1st (max 5). |
+| 3 | Blast of Force | Ray deals 1d6 damage/two caster levels (max 5d6). |
+| 4 | Otiluke’s Resilient Sphere | Force globe protects but traps one subject. |
+| 5 | Wall of Force | Wall is immune to damage. |
+| 6 | Repulsion | Creatures can’t approach you. |
+| 7 | Forcecage | Cube or cage of force imprisons all inside. |
+| 8 | Otiluke’s Telekinetic Sphere | As Otiluke’s resilient sphere, but you move sphere telekinetically. |
+| 9 | Bigby’s Crushing Hand | Large hand provides cover, pushes, or crushes your foes. |
+
+## FURY DOMAIN
+
+**Granted Powers:** Once per day as a free action, you can designate a single creature or object as the target of your fury. You gain a +2 profane bonus on attack rolls against the designated creature or object and deal an extra 2 points of damage with each successful strike upon it. These bonuses persist until you select a new target for your attacks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | True Strike | Grants you a +20 bonus on your next attack roll. |
+| 2 | Bull’s Strength | Subject gains +4 to Str for 1 min./level. |
+| 3 | Rage | Grants +2 to Str and Con, +1 on Will saves, –2 to AC. |
+| 4 | Divine Power | You gain attack bonus, +6 to Str, and 1 hp/level. |
+| 5 | Shout | Deafens all within cone and deals 5d6 sonic damage. |
+| 6 | Song of Discord | Forces targets to attack each other. |
+| 7 | Abyssal Frenzy | Regresses target to brutish, demonic version of itself. |
+| 8 | Shout, Greater | Devastating yell deals 10d6 sonic damage, stuns creatures, and damages objects. |
+| 9 | Abyssal Frenzy, Mass | As abyssal frenzy, but 1 creature/level. |
+
+## GLORY DOMAIN
+
+**Granted Power:** Turn undead with a +2 bonus on the turning check and +1d6 to the turning damage roll.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Disrupt Undead | Deals 1d6 damage to one undead. |
+| 2 | Bless Weapon | Weapon strikes true against evil foes. |
+| 3 | Searing Light | Ray deals 1d8/two levels damage, more against undead. |
+| 4 | Holy Smite | Damages and blinds evil creatures. |
+| 5 | Holy Sword | Weapon becomes +5, deals +2d6 damage against evil. |
+| 6 | Bolt of Glory | Fires a magical bolt that deals damage according to the target’s type and origin. |
+| 7 | Sunbeam | Beam blinds and deals 4d6 damage. |
+| 8 | Crown of Glory | The caster is imbued with an aura of celestial authority, inspiring awe in all lesser creatures. |
+| 9 | Gate | Connects two planes for travel or summoning. |
+
+## GLORY DOMAIN (Book of Exalted Deeds)
+
+**Granted Power:** Turn undead with a +2 bonus on the turning check and +1d6 to the turning damage roll.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Disrupt Undead | Deals 1d6 damage to one undead. |
+| 2 | Glorious Raiment | Wearer gains +1 sacred bonus to AC per five caster levels and damage reduction 5/evil. |
+| 3 | Searing Light | Ray deals 1d8/two levels, more against undead. |
+| 4 | Celestial Brilliance | Object sheds brilliant light to 120 feet, hurts undead and evil outsiders. |
+| 5 | Crown of Flame | Aura burns evil outsiders, undead, and fey for 2d6 points of damage/round. |
+| 6 | Bolt of Glory | Ray deals 5d8 damage (varies against other creature types). |
+| 7 | Sunbeam | Beam blinds and deals 4d6 damage. |
+| 8 | Crown of Glory | Aura inspires awe. |
+| 9 | Blinding Glory | 100-ft./level radius of light that blinds evil creatures. |
+
+## GOOD DOMAIN
+
+**Granted Power:** You cast good spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Protection from Evil | +2 to AC and saves, counter mind control, hedge out elementals and outsiders. |
+| 2 | Aid | +1 on attack rolls, +1 on saves against fear, 1d8 temporary hp +1/level (max +10). |
+| 3 | Magic Circle against Evil | As protection spells, but 10-ft. radius and 10 min./level. |
+| 4 | Holy Smite | Damages and blinds evil creatures. |
+| 5 | Dispel Evil | +4 bonus against attacks by evil creatures. |
+| 6 | Blade Barrier | Wall of blades deals 1d6/level damage. |
+| 7 | Holy Word F | Kills, paralyzes, slows, or deafens nongood subjects. |
+| 8 | Holy Aura | +4 to AC, +4 resistance, and SR 25 against evil spells. |
+| 9 | Summon Monster IX* | Calls extraplanar creature to fight for you. |
+
+*Cast as a good spell only.*
+
+## GREED DOMAIN
+
+**Granted Powers:** You gain a +2 competence bonus on Appraise, Open Lock, and Sleight of Hand checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Cheat | Caster rerolls when determining the success of a game of chance. |
+| 2 | Entice Gift | Subject gives caster what it’s holding. |
+| 3 | Knock | Opens locked or magically sealed door. |
+| 4 | Fire Trap | Opened object deals 1d4 damage +1/level. |
+| 5 | Fabricate | Transforms raw materials into finished items. |
+| 6 | Guards and Wards | Array of magic effects protects area. |
+| 7 | Teleport Object | As teleport, but affects a touched object. |
+| 8 | Phantasmal Thief | Creates an unseen force that steals from others. |
+| 9 | Sympathy | Object or location attracts certain creatures. |
+
+## HATRED DOMAIN
+
+**Granted Powers:** Choose one opponent. Against that opponent you gain a +2 profane bonus on attack rolls, saving throws, and Armor Class for 1 minute. This supernatural ability is usable once per day as a free action.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Doom | One subject takes –2 on attack rolls, damage rolls, saves, and checks. |
+| 2 | Scare | Panics creatures of less than 6 HD. |
+| 3 | Bestow Curse | Subject takes –6 penalty to an ability score; –4 penalty on attack rolls, saves and checks; or 50% chance of losing each action. |
+| 4 | Song of Discord | Forces targets to attack each other. |
+| 5 | Righteous Might | Your size increases, and you gain combat bonuses. |
+| 6 | Forbiddance | Blocks planar travel, damages creatures of different alignment. |
+| 7 | Blasphemy | Kills, paralyzes, weakens, or dazes nonevil subjects. |
+| 8 | Antipathy | Object or location affected by spell repels certain creatures. |
+| 9 | Wail of the Banshee | Kills one creature/level. |
+
+## HEALING DOMAIN
+
+**Granted Power:** You cast healing spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Cure Light Wounds | Cures 1d8 damage +1/level (max +5). |
+| 2 | Cure Moderate Wounds | Cures 2d8 damage +1/level (max +10). |
+| 3 | Cure Serious Wounds | Cures 3d8 damage +1/level (max +15). |
+| 4 | Cure Critical Wounds | Cures 4d8 damage +1/level (max +20). |
+| 5 | Cure Light Wounds, Mass | Cures 1d8 damage +1/level (max +25) for many creatures. |
+| 6 | Heal | Cures 10 points/level of damage, all diseases and mental conditions. |
+| 7 | Regenerate | Subject’s severed limbs grow back, cures 4d8 damage +1/level (max +35). |
+| 8 | Cure Critical Wounds, Mass | Cures 4d8 damage +1/level (max +40) for many creatures. |
+| 9 | Heal, Mass | As heal, but with several subjects. |
+
+## HERALD DOMAIN
+
+**Granted Power:** Intimidate is a class skill. You gain a +4 sacred bonus on Diplomacy and Intimidate checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Comprehend Languages | Understand all spoken and written languages. |
+| 2 | Enthrall | Captivates all within 100 ft. + 10 ft./level. |
+| 3 | Tongues | Speak any language. |
+| 4 | Sending | Delivers short message anywhere, instantly. |
+| 5 | Greater Command | As command, but affects one subject/level. |
+| 6 | Dream | Sends message to anyone sleeping. |
+| 7 | Aspect of the Deity | As lesser aspect, but you get celestial qualities. |
+| 8 | Crown of Glory | Aura inspires awe. |
+| 9 | Greater Aspect of the Deity | As lesser aspect, but gain wings, enhanced ability scores, and various resistances and immunities. |
+
+## HUNGER DOMAIN
+
+**Granted Powers:** You gain a bite attack. If you are Small, your bite attack deals 1d4 points of damage; Medium, 1d6; or Large, 1d8. You are proficient with your bite, and considered armed. If you already have a natural bite attack, use the higher of the two damage values. This is considered a secondary natural attack.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Ghoul Light | Light provides turn resistance. |
+| 2 | Ghoul Glyph | Glyph wards area, paralyzes victims. |
+| 3 | Ghoul Gesture | Ray paralyzes target. |
+| 4 | Enervation | Subject gains 1d4 negative levels. |
+| 5 | Ghoul Gauntlet | Convert victim to a ghoul under your control. |
+| 6 | Eyes of the King | Summon fiendish dire bats. |
+| 7 | Field of Ghouls | Transform dying creatures into ghouls. |
+| 8 | Bite of the King | Swallow enemies whole. |
+| 9 | Energy Drain | Subject gains 2d4 negative levels. |
+
+## INCARNUM DOMAIN
+
+**Granted Power:** You gain Incarnum Spellshaping as a bonus feat.
+
+**Special:** Neutral clerics — those without an alignment component of chaotic, evil, good, or lawful — may not choose this domain.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Detect Incarnum | Detect soulmelds and essentia within 60 ft. |
+| 2 | Soul Boon | Grant 1 point of essentia per three caster levels to subject. |
+| 3 | Wall of Incarnum | Creates wall of incarnum that deals essentia or Wis damage to those attempting to pass through. |
+| 4 | Essentia Lock | Target can’t reallocate essentia. |
+| 5 | Incarnum Weapon | Weapon shaped of incarnum attacks foe. |
+| 6 | Incarnum Vigor | Subject gains fast healing; his healing spells cure extra damage. |
+| 7 | Incarnum Bladestorm | Storm of blades deals Wisdom damage to living creatures within. |
+| 8 | Incarnum Apotheosis | Target’s incarnum receptacles are treated as if invested with maximum essentia; target is immune to effects that reduce his essentia pool or unshape his soulmelds. |
+| 9 | Soulmeld Disjunction | One or more of target’s soulmelds are destroyed. |
+
+## INQUISITION DOMAIN
+
+**Granted Powers:** Gain a +4 bonus on all dispel checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Detect Chaos | Reveals chaotic creatures, spells, or objects. |
+| 2 | Zone of Truth | Subjects within range can’t lie. |
+| 3 | Detect Thoughts | Allows ‘listening’ to surface thoughts. |
+| 4 | Discern Lies | Reveals deliberate falsehoods. |
+| 5 | True Seeing | See all things as they really are. |
+| 6 | Geas/Quest | As lesser geas, plus it affects any creature. |
+| 7 | Dictum | Kills, paralyzes, weakens, or dazes nonlawful subjects. |
+| 8 | Shield of Law | +4 AC, +4 resistance, and SR 25 against chaotic spells. |
+| 9 | Imprisonment | Entombs subject beneath the earth. |
+
+## JOY DOMAIN
+
+**Granted Power:** You gain a +4 sacred bonus on Diplomacy checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Vision of Heaven | Evil creature is helpless for 1 round. |
+| 2 | Elation | Allies gain +2 to Strength and Dexterity, +5 ft. of speed. |
+| 3 | Distilled Joy | Create ambrosia. |
+| 4 | Good Hope | Subjects gain +2 on attacks, damage, saves, and checks. |
+| 5 | Chaav’s Laugh | Good creatures gain +2 on attack rolls and saves against fear, plus 1d8 temporary hp +1/level (max. +20). Evil creatures take –2 on attack rolls and saves against fear. |
+| 6 | Greater Heroism | Gives +4 bonus on attacks, damage, saves; immunity to fear; temporary hp. |
+| 7 | Starmantle | Cloak of stars destroys nonmagical weapons on contact and allows wearer a DC 15 Reflex save to reduce damage from magic weapons by half. |
+| 8 | Sympathy | Object or location attracts certain creatures. |
+| 9 | Otto’s Irresistible Dance | Forces subject to dance. |
+
+## KNOWLEDGE DOMAIN
+
+**Granted Power:** Add all Knowledge skills to your list of cleric class skills. You cast divination spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Detect Secret Doors | Reveals hidden doors within 60 ft. |
+| 2 | Detect Thoughts | Allows ‘listening’ to surface thoughts. |
+| 3 | Clairaudience/Clairvoyance | Hear or see at a distance for 1 min./level. |
+| 4 | Divination M | Provides useful advice for specific proposed actions. |
+| 5 | True Seeing M | Lets you see all things as they really are. |
+| 6 | Find the Path | Shows most direct way to a location. |
+| 7 | Legend Lore M F | Lets you learn tales about a person, place, or thing. |
+| 8 | Discern Location | Reveals exact location of creature or object. |
+| 9 | Foresight | ‘Sixth sense’ warns of impending danger. |
+
+## LAW DOMAIN
+
+**Granted Power:** You cast law spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Protection from Chaos | +2 to AC and saves, counter mind control, hedge out elementals and outsiders. |
+| 2 | Calm Emotions | Calms creatures, negating emotion effects. |
+| 3 | Magic Circle against Chaos | As protection spells, but 10-ft. radius and 10 min./level. |
+| 4 | Order’s Wrath | Damages and dazes chaotic creatures. |
+| 5 | Dispel Chaos | +4 bonus against attacks by chaotic creatures. |
+| 6 | Hold Monster | As hold person, but any creature. |
+| 7 | Dictum | Kills, paralyzes, slows, or deafens nonlawful subjects. |
+| 8 | Shield of Law F | +4 to AC, +4 resistance, and SR 25 against chaotic spells. |
+| 9 | Summon Monster IX* | Calls extraplanar creature to fight for you. |
+
+*Cast as a law spell only.*
+
+## LIBERATION DOMAIN
+
+**Granted Power:** If you are affected by a charm, compulsion, or fear effect and fail your saving throw, you can attempt it again 1 round later at the same DC. You get only this one extra chance to succeed on your saving throw. This granted power is considered a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Remove Fear | Suppresses fear or gives +4 on saves against fear for one subject + one per four levels. |
+| 2 | Remove Paralysis | Frees one or more creatures from paralysis or slow effect. |
+| 3 | Remove Curse | Frees object or person from curse. |
+| 4 | Freedom of Movement | Subject moves normally despite impediments. |
+| 5 | Break Enchantment | Frees subjects from enchantments, alterations, curses, and petrification. |
+| 6 | Greater Dispel Magic | As dispel magic, but up to +20 on check. |
+| 7 | Refuge | Alters item to transport its possessor to you. |
+| 8 | Mind Blank | Subject is immune to mental/emotional magic and scrying. |
+| 9 | Freedom | Releases creature from imprisonment. |
+
+## LUCK DOMAIN
+
+**Granted Power:** You gain the power of good fortune, which is usable once per day. This extraordinary ability allows you to reroll one roll that you have just made before the DM declares whether the roll results in success or failure. You must take the result of the reroll, even if it’s worse than the original roll.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Entropic Shield | Ranged attacks against you have 20% miss chance. |
+| 2 | Aid | +1 on attack rolls, +1 against fear, 1d8 temporary hp +1/level (max +10). |
+| 3 | Protection from Energy | Absorb 12 points/level of damage from one kind of energy. |
+| 4 | Freedom of Movement | Subject moves normally despite impediments. |
+| 5 | Break Enchantment | Frees subjects from enchantments, alterations, curses, and petrification. |
+| 6 | Mislead | Turns you invisible and creates illusory double. |
+| 7 | Spell Turning | Reflect 1d4+6 spell levels back at caster. |
+| 8 | Moment of Prescience | You gain insight bonus on single attack roll, check, or save. |
+| 9 | Miracle X | Requests a deity’s intercession. |
+
+## MADNESS DOMAIN
+
+**Granted Power:** Your insanity gives you insight. You subtract 1 from all Wisdom-based skill checks and all Will saves. However, once per day, you can see and act with the clarity of true madness: Add one-half your level to a single Wisdom-based skill check or Will save. You must choose to use this benefit before the check or save is rolled.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Confusion, Lesser | One creature acts randomly for one round. |
+| 2 | Touch of Madness | Dazes touched target for 1 round per caster level. |
+| 3 | Rage | Blood frenzy grants target +4 Str, +4 Con and +2 on Will saves. |
+| 4 | Confusion | Subjects behave oddly for 1 round/level. |
+| 5 | Bolts of Bedevilment | One ray attack per round. Affected creatures are dazed for 1d3 rounds. |
+| 6 | Phantasmal Killer | Fearsome illusion kills subject or deals 3d6 damage. |
+| 7 | Insanity | Subject suffers continuous confusion. |
+| 8 | Maddening Scream | Makes subject race about caterwauling. |
+| 9 | Weird | As phantasmal killer, but affects all within 30 ft. |
+
+## MAGIC DOMAIN
+
+**Granted Power:** Use scrolls, wands, and other devices with spell completion or spell trigger activation as a wizard of one-half your cleric level (at least 1st level). For the purpose of using a scroll or other magic device, if you are also a wizard, actual wizard levels and these effective wizard levels stack.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Magic Aura | Alters object’s magic aura. |
+| 2 | Identify | Determines properties of magic item. |
+| 3 | Dispel Magic | Cancels magical spells and effects. |
+| 4 | Imbue with Spell Ability | Transfer spells to subject. |
+| 5 | Spell Resistance | Subject gains SR 12 + level. |
+| 6 | Antimagic Field | Negates magic within 10 ft. |
+| 7 | Spell Turning | Reflect 1d4+6 spell levels back at caster. |
+| 8 | Protection from Spells M F | Confers +8 resistance bonus. |
+| 9 | Mage’s Disjunction | Dispels magic, disenchants magic items. |
+
+## MIND DOMAIN
+
+**Granted Powers:** Gain a +2 bonus on Bluff, Diplomacy, and Sense Motive checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Comprehend Languages | Understands all spoken and written languages. |
+| 2 | Detect Thoughts | Allows ‘listening’ to surface thoughts. |
+| 3 | Lesser Telepathic Bond | Link with subject within 30 ft. for 10 min./level. |
+| 4 | Discern Lies | Reveals deliberate falsehoods. |
+| 5 | Rary’s Telepathic Bond | Link lets allies communicate. |
+| 6 | Probe Thoughts | Read subject’s memories, one question/round. |
+| 7 | Brain Spider | Eavesdrop on thoughts of up to eight other creatures. |
+| 8 | Mind Blank | Subject is immune to mental/emotional magic and scrying. |
+| 9 | Weird | As phantasmal killer, but affects all within 30 ft. |
+
+## MYSTICISM DOMAIN
+
+**Restriction:** Neutral, Lawful Neutral, and Chaotic Neutral deities would never have this domain.
+
+**Granted Powers:** Once per day, you may use a free action to channel your deity’s power to grant yourself a luck bonus on your saving throws equal to your Charisma modifier (minimum +1). This is a supernatural ability and its effects last for 1 round.
+
+*Choose one spell of those given, based on your alignment, that is always your domain spell for this level.*
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Divine Favor | You gain attack, damage bonus, +1/3 levels. |
+| 2 | Spiritual Weapon | Magical weapon attacks on its own. |
+| 3 | Visage of the Deity, Lesser | Your form becomes more like your deity’s. |
+| 4 | Weapon of the Deity | Your weapon gains enhancement bonus and special ability. |
+| 5 | Righteous Might | Your size increases, and you gain +4 Strength. |
+| 6 | Visage of the Deity | As lesser visage of the deity, but you get celestial or fiendish qualities. |
+| 7 | Blasphemy / Holy Word* | Kills, paralyzes, weakens, or dazes nonevil/nongood subjects. |
+| 8 | Holy Aura / Unholy Aura* | +4 AC, +4 resistance, and SR 25 against evil/good spells. |
+| 9 | Visage of the Deity, Greater | As lesser visage of the deity, but you become half-celestial or half-fiendish. |
+
+## NOBILITY DOMAIN
+
+**Granted Power:** You have the spell-like ability to inspire allies, giving them a +2 morale bonus on saving throws, attack and damage rolls, ability checks, and skill checks. Allies must be able to hear you speak for 1 round. Using this ability is a standard action. It lasts a number of rounds equal to your Charisma bonus and can be used once per day.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Divine Favor | You gain +1 per three levels on attack and damage rolls. |
+| 2 | Enthrall | Captivates all within 100 ft. + 10 ft./level. |
+| 3 | Magic Vestment | Armor or shield gains +1 enhancement per four levels. |
+| 4 | Discern Lies | Reveals deliberate falsehoods. |
+| 5 | Greater Command | As command, but affects one subject/level. |
+| 6 | Geas/Quest | As lesser geas, plus it affects any creature. |
+| 7 | Repulsion | Creatures can’t approach you. |
+| 8 | Demand | As sending, plus you can send suggestion. |
+| 9 | Storm of Vengeance | Storm rains acid, lightning, and hail. |
+
+## OCEAN DOMAIN
+
+**Granted Powers:** You have the supernatural ability to breathe water as if under the effect of a *water breathing* spell, for up to 10 rounds per level. This effect occurs automatically as soon as it becomes applicable and lasts until the duration expires or the effect is no longer needed. This duration need not be consecutive; it can be used in increments as small as 1 round.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Endure Elements | Exist comfortably in hot or cold environments. |
+| 2 | Sound Burst | Deals 1d8 sonic damage to subjects; might stun them. |
+| 3 | Water Breathing | Subjects can breathe underwater. |
+| 4 | Freedom of Movement | Subject moves normally despite impediments. |
+| 5 | Wall of Ice | Creates wall with 15 hp +1/level, or hemisphere can trap creatures inside. |
+| 6 | Otiluke’s Freezing Sphere | Freezes water or deals cold damage. |
+| 7 | Waterspout | Water rises up into a whirling vortex that deals 3d8 damage and sucks creatures in. |
+| 8 | Maelstrom | Conjures a deadly whirlpool to suck in and batter foes. |
+| 9 | Elemental Swarm* | Summons multiple water elementals. |
+
+*Water elementals only.*
+
+## OOZE DOMAIN
+
+**Granted Powers:** You can rebuke or command oozes as an evil cleric rebukes or commands undead. This ability is usable a number of times per day equal to 3 + your Charisma modifier.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Grease | Makes a 10-ft. square or one object slippery. |
+| 2 | Web | Fills a 20-ft.-radius spread with sticky spider webs. |
+| 3 | Poison | Your touch deals 1d10 Con damage, repeats in 1 min. |
+| 4 | Rusting Grasp | Your touch corrodes iron and alloys. |
+| 5 | Oozepuppet | You can telekinetically control target ooze. |
+| 6 | Transmute Rock to Mud | Transforms two 10-ft. cubes per level. |
+| 7 | Slime Wave | Creates a 15-ft. spread of green slime. |
+| 8 | Befoul | Turns large amount of water poisonous. |
+| 9 | Implosion | Kills one creature/round. |
+
+## ORACLE DOMAIN
+
+**Granted Powers:** You cast divination spells at +2 caster levels.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Identify | Determines single feature of magic item. |
+| 2 | Augury | Learns whether an action will be good or bad. |
+| 3 | Divination | Provides useful advice for specific, proposed action. |
+| 4 | Scrying | Spies on subject from a distance. |
+| 5 | Commune | Deity answers one yes-or-no question/level. |
+| 6 | Legend Lore | Learn tales about a person, place, or thing. |
+| 7 | Scrying, Greater | As scrying, but faster and longer. |
+| 8 | Discern Location | Exact location of creature or object. |
+| 9 | Foresight | ‘Sixth sense’ warns of impending danger. |
+
+## PACT DOMAIN
+
+**Granted Powers:** Add Appraise, Intimidate, and Sense Motive to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Command | One subject obeys selected command for 1 round. |
+| 2 | Shield Other | You take half of subject’s damage. |
+| 3 | Speak With Dead | Corpse answers one question/two levels. |
+| 4 | Divination | Provides useful advice for specific proposed actions. |
+| 5 | Stalwart Pact | You gain combat bonuses automatically when reduced to half hit points or lower. |
+| 6 | Zealot Pact | You automatically gain combat bonuses when you attack someone of opposite alignment. |
+| 7 | Renewal Pact | Creature is automatically healed if adverse condition affects it. |
+| 8 | Death Pact | Deity brings you back from the dead automatically. |
+| 9 | Gate | Connects two planes for travel or summoning. |
+
+## PESTILENCE DOMAIN
+
+**Granted Powers:** Immunity to the effects of all diseases, though clerics with this power can still carry infectious diseases.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Doom | One subject suffers –2 on attacks, damage, saves, and checks. |
+| 2 | Summon Swarm | Summons swarm of bats, rats, or spiders. |
+| 3 | Contagion | Infects subject with chosen disease. |
+| 4 | Poison | Touch deals 1d10 Con damage, repeats in 1 min. |
+| 5 | Plague of Rats | Summons horde of diseased rats. |
+| 6 | Curse of Lycanthropy | Causes temporary lycanthropy in subject. |
+| 7 | Scourge | Inflicts a disease that must be magically cured, one subject/level. |
+| 8 | Create Greater Undead* | Create shadows, wraiths, spectres, or devourers. |
+| 9 | Otyugh Swarm | Creates 3d4 otyughs or 1d3+1 Huge otyughs. |
+
+*May only be used to create mummies.*
+
+## PLANNING DOMAIN
+
+**Granted Powers:** You gain Extend Spell as a bonus feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Deathwatch | Reveals how near death subjects within 30 ft. are. |
+| 2 | Augury | Learns whether an action will be good or bad. |
+| 3 | Clairaudience/Clairvoyance | Hear or see at a distance for 1 min./level. |
+| 4 | Status | Monitors condition, position of allies. |
+| 5 | Detect Scrying | Alerts you to magical eavesdropping. |
+| 6 | Heroes’ Feast | Food for one creature/level cures and grants combat bonuses. |
+| 7 | Scrying, Greater | As scrying, but faster and longer. |
+| 8 | Discern Location | Reveals exact location of creature or object. |
+| 9 | Time Stop | You act freely for 1d4+1 rounds. |
+
+## PLANT DOMAIN
+
+**Granted Powers:** Rebuke or command plant creatures as an evil cleric rebukes or commands undead. Use this ability a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability. Add Knowledge (nature) to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Entangle | Plants entangle everyone in 40-ft.-radius. |
+| 2 | Barkskin | Grants +2 (or higher) enhancement to natural armor. |
+| 3 | Plant Growth | Grows vegetation, improves crops. |
+| 4 | Command Plants | Sway the actions of one or more plant creatures. |
+| 5 | Wall of Thorns | Thorns damage anyone who tries to pass. |
+| 6 | Repel Wood | Pushes away wooden objects. |
+| 7 | Animate Plants | One or more trees animate and fight for you. |
+| 8 | Control Plants | Control actions of one or more plant creatures. |
+| 9 | Shambler | Summons 1d4+2 shambling mounds to fight for you. |
+
+## PLEASURE DOMAIN
+
+**Granted Power:** You are immune to any effect that damages or drains your Charisma.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Remove Fear | Suppresses fear or gives +4 on saves against fear for one subject + one per four levels. |
+| 2 | Lastai’s Caress | Intense feelings of good leave evil subject cowering, frightened, nauseated, or shaken. |
+| 3 | Heart’s Ease | Removes fear, despair, confusion, insanity and some mind-influencing effects; restores 2d4 points of temporary Wisdom damage. |
+| 4 | Remove Fatigue | Removes effects of fatigue as 8 hours of rest. |
+| 5 | Mass Eagle’s Splendor | One subject/level gains +4 bonus to Charisma for 1 minute/level. |
+| 6 | Celestial Blood | Grant energy resistance, +4 on saves against poison, and damage reduction 10/evil. |
+| 7 | Empyreal Ecstasy | Targets immune to pain and mind-influencing effects, and take half damage from melee and ranged attacks; –4 to skill checks. |
+| 8 | Spread of Contentment | Calms hostile creatures within 10-ft./level radius. |
+| 9 | Sublime Revelry | Targets are immune to pain and mind-influencing effects, and take half damage from melee and ranged attacks. |
+
+## PROTECTION DOMAIN
+
+**Granted Power:** You can generate a protective ward as a supernatural ability. Grant someone you touch a resistance bonus equal to your cleric level on his or her next saving throw. Activating this power is a standard action. The protective ward is an abjuration effect with a duration of 1 hour that is usable once per day.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Sanctuary | Opponents can’t attack you, and you can’t attack. |
+| 2 | Shield Other F | You take half of subject’s damage. |
+| 3 | Protection from Energy | Absorb 12 points/level of damage from one kind of energy. |
+| 4 | Spell Immunity | Subject is immune to one spell per four levels. |
+| 5 | Spell Resistance | Subject gains SR 12 + level. |
+| 6 | Antimagic Field | Negates magic within 10 ft. |
+| 7 | Repulsion | Creatures can’t approach you. |
+| 8 | Mind Blank | Subject is immune to mental/emotional magic and scrying. |
+| 9 | Prismatic Sphere | As prismatic wall, but surrounds on all sides. |
+
+## PURIFICATION DOMAIN
+
+**Granted Powers:** You cast abjuration spells at +1 caster level.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Nimbus of Light | Sunlight illuminates you until released as an attack for 1d8 +1/level damage. |
+| 2 | Deific Vengeance | Deity’s punishment deals 1d6 damage/two caster levels (max 5d6). |
+| 3 | Recitation | Your allies get bonus on attacks and saves, and your foes get penalties. |
+| 4 | Castigate | Verbal rebuke deafens all who hear and damages those whose alignment differs from yours. |
+| 5 | Dance of the Unicorn | Purifying mist washes the air clean of smoke, dust, and poisons. |
+| 6 | Fires of Purity | Target bursts into magical flame, becoming a dangerous weapon. |
+| 7 | Righteous Wrath of the Faithful | Your allies get bonuses, especially if they worship your deity. |
+| 8 | Sunburst | Blinds all within 10 ft., deals 6d6 damage. |
+| 9 | Visage of the Deity, Greater | As lesser visage of the deity, but you become half-celestial or half-fiendish. |
+
+## REPOSE DOMAIN
+
+The Repose domain is similar to the Death domain, but is granted by good-aligned deities whose clerics are barred from casting evil spells.
+
+**Granted Power:** The character may use a death touch once per day. The death touch is a spell-like ability that is a death effect. The character must succeed at a melee touch attack against a living creature (using the rules for touch spells). When the character touches, roll 1d6 per his or her cleric level. If the total at least equals the creature’s current hit points, it dies.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Deathwatch | Reveals how near death subjects within 30 ft. are. |
+| 2 | Gentle Repose | Preserves one corpse. |
+| 3 | Speak with Dead | Corpse answers one question/two levels. |
+| 4 | Death Ward | Grants immunity to death spells and negative energy effects. |
+| 5 | Slay Living | Touch attack kills subject. |
+| 6 | Undeath to Death | Slays 1d4 HD of undead creatures per caster level (max 20d4). |
+| 7 | Destruction | Kills subject and destroys remains. |
+| 8 | Surelife | Protects caster from specified natural death. |
+| 9 | Wail of the Banshee | Kills one creature/level. |
+
+## RUNE DOMAIN
+
+**Granted Power:** Free Scribe Scroll feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Erase | Mundane or magical writing vanishes. |
+| 2 | Secret Page | Changes one page to hide its real content. |
+| 3 | Glyph of Warding | Inscription harms those who pass it. |
+| 4 | Explosive Runes | Deals 6d6 damage when read. |
+| 5 | Lesser Planar Binding | Traps extraplanar creature of 6 HD or less until it performs a task. |
+| 6 | Greater Glyph of Warding | As glyph of warding, but up to 10d8 damage or 6th-level spell. |
+| 7 | Instant Summons | Prepared object appears in your hand. |
+| 8 | Symbol of Death | Triggered rune slays nearby creatures. |
+| 9 | Teleportation Circle | Circle teleports any creature inside to designated spot. |
+
+## SAND DOMAIN
+
+**Granted Powers:** Once per day, you can shape a small amount of sand into any solid object you can imagine, up to 8 cubic feet in volume. You can shape one object or several, up to a number equal to your Wisdom bonus, as long as the total volume does not exceed 8 cubic feet.
+
+You must make a special Wisdom check (d20 + your Wis modifier + 1/2 your cleric level) against a DC determined by the size and complexity of the item. The item has a base DC of 5, plus the modifiers below. Each attempt requires a number of minutes equal to its DC. You can take 10 or take 20 on this check.
+
+| Item Complexity | DC Modifier |
+| --- | --- |
+| Fine details | +2 |
+| Functioning tool | +2 |
+| Functioning armor/weapon | +5 |
+| Multiple parts | +5 |
+| Masterwork version | +10 |
+| Moving parts | +10 |
+
+Created items persist for 1 minute per cleric level and can only be solid objects. The objects have no magical properties, though they radiate faint transmutation magic. All items created this way have hardness 5 and hit points as follows: Fine 1, Diminutive 2, Tiny 3, Small 5, Medium 8, Large 10.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Waste Strider | Move through waste without penalties. |
+| 2 | Black Sand | Creates a 20-ft.-radius area of black sand. |
+| 3 | Haboob | Swirling grit obscures vision, blows smaller creatures over, and deals nonlethal damage. |
+| 4 | Blast of Sand | Cone deals 1d6 damage/level. |
+| 5 | Flaywind Burst | Blows away and knocks down smaller creatures and deals 1d6 damage/level. |
+| 6 | Awaken Sand | A region of sand forms into a Huge, sentient creature. |
+| 7 | Vitrify | Melts sand into glass. |
+| 8 | Desert Binding | Imprisons creature as sand in an hourglass or wind in the waste. |
+| 9 | Summon Desert Ally IX | Calls dustform creature to fight. |
+
+## SEAFOLK DOMAIN
+
+**Granted Powers:** You gain Expert Swimmer or Rapid Swimming (your choice) as a bonus feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Quickswim | Your swim speed increases by 10 ft. |
+| 2 | Fins to Feet | Transforms tails, tentacles, or finned extremities into humanoid legs and feet. |
+| 3 | Scales of the Sealord | Add 10 ft. to swim speed or gain swim speed of 15 ft.; add natural armor bonus +1/3 levels. |
+| 4 | Siren’s Call | Compel one creature/2 levels to submerse itself. |
+| 5 | Commune with Nature | Learn about terrain for 1 mile/level. |
+| 6 | Airy Water | Turn normal water into a breathable substance; negate underwater movement and melee attack penalties. |
+| 7 | Megalodon Empowerment | Gain scent, water breathing, swim speed for 1 hour/level. |
+| 8 | Depthsurge | Water slam deals 2d6 + caster level damage to all within 20-ft. radius, pushes targets back, sinks ships. |
+| 9 | Foresight | Sixth sense warns of impending danger. |
+
+## SKALYKIND DOMAIN
+
+**Granted Power:** Rebuke or command animals (reptilian creatures and snakes only) as an evil cleric rebukes or commands undead. Use this ability a total number of times per day equal to 3 + Charisma modifier.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Magic Fang | One natural weapon of subject creature gets +1 on attack and damage rolls. |
+| 2 | Animal Trance† | Fascinates 2d6 HD of animals. |
+| 3 | Greater Magic Fang | One natural weapon of subject creature gets +1/four levels on attack and damage rolls (max +5). |
+| 4 | Poison | Touch deals 1d10 Con damage, repeats in 1 min. |
+| 5 | Animal Growth† | One animal/two levels doubles in size. |
+| 6 | Eyebite | Target becomes panicked, sickened, and comatose. |
+| 7 | Creeping Doom* | Swarms of centipedes attack at your command. |
+| 8 | Animal Shapes† | One ally/level polymorphs into chosen animal. |
+| 9 | Shapechange | Transforms you into any creature, and change forms once per round. |
+
+*†Affects ophidian or reptilian creatures only.*
+Composed of tiny snakes.*
+
+## SKY DOMAIN
+
+**Granted Powers:** Your fly speed (or glide speed) improves by 5 feet. Add Spot to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Raptor’s Sight | Gain +5 on Spot checks; range increment penalty halved. |
+| 2 | Summon Dire Hawk | Summons dire hawk to serve you. |
+| 3 | Enduring Flight | Carry medium loads at full fly speed; flight duration is doubled. |
+| 4 | Aerial Alacrity | +30 ft. fly speed, +1 AC and Reflex saves while flying, maneuverability improves by one category. |
+| 5 | Control Winds | Change wind direction and speed. |
+| 6 | Wind Walk | You and your allies turn vaporous and travel fast. |
+| 7 | Reverse Gravity | Objects and creatures fall upward. |
+| 8 | Mastery of the Sky | Gain +2 on attack rolls and damage rolls while airborne; maneuverability becomes perfect; foes incur penalties against you. |
+| 9 | Summon Devoted Roc | Summons powerful roc to serve you. |
+
+## SPITE DOMAIN
+
+**Granted Powers:** Sympathetic strike. You can force opponents to take damage they have dealt you. Once per day, you can make a melee touch attack on the target, and deal damage equal to the damage the target dealt to you in the last round, to a maximum of 5 hp per divine caster level you possess.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Bestow Wound | Transfer 1 hp/level of wounds to another. |
+| 2 | Rage | Gain +2 to Str and Con, +1 on Will saves, –2 to AC. |
+| 3 | Vampiric Touch | Touch deals 1d6/two levels in damage; you gain damage as hp. |
+| 4 | Pronouncement of Fate | Impose a –4 penalty on an offender’s attacks, damage, saves, and checks; target loses actions. |
+| 5 | Fire in the Blood | Your blood becomes a potent corrosive that burns attackers. |
+| 6 | Cloak of Hate | Target provokes hostile reactions, takes –10 penalty to Diplomacy checks. |
+| 7 | Pact of Return | If you die as you predict, you are resurrected instantly. |
+| 8 | Mantle of Pure Spite | Gain a cumulative DR 1/– and a cumulative +1 bonus on attacks, damage, and AC each time a foe strikes you. |
+| 9 | Imprison Soul | Traps soul in a small object; target takes 1d4 Con damage/day. |
+
+## STORM DOMAIN
+
+**Granted Powers:** You gain resistance to electricity 5.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Entropic Shield | Ranged attacks against you have 20% miss chance. |
+| 2 | Gust of Wind | Blows away or knocks down smaller creatures. |
+| 3 | Call Lightning | Calls down lightning bolts (3d6 per bolt) from sky. |
+| 4 | Sleet Storm | Hampers vision and movement. |
+| 5 | Ice Storm | Hail deals 5d6 damage in cylinder 40 feet across. |
+| 6 | Call Lightning Storm | As call lightning, but 5d6 damage per bolt. |
+| 7 | Control Weather | Changes weather in local area. |
+| 8 | Whirlwind | Cyclone deals damage and can pick up creatures. |
+| 9 | Storm of Vengeance | Storm rains acid, lightning and hail. |
+
+## STRENGTH DOMAIN
+
+**Granted Power:** You can perform a feat of strength as a supernatural ability. You gain an enhancement bonus to Strength equal to your cleric level. Activating the power is a free action, the power lasts 1 round, and it is usable once per day.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Enlarge Person | Humanoid creature doubles in size. |
+| 2 | Bull’s Strength | Subject gains +4 to Str for 1 min./level. |
+| 3 | Magic Vestment | Armor or shield gains +1 enhancement per four levels. |
+| 4 | Spell Immunity | Subject is immune to one spell per four levels. |
+| 5 | Righteous Might | Your size increases, and you gain combat bonuses. |
+| 6 | Stoneskin M | Ignore 10 points of damage per attack. |
+| 7 | Grasping Hand | Large hand provides cover, pushes, or grapples. |
+| 8 | Clenched Fist | Large hand provides cover, pushes, or attacks your foes. |
+| 9 | Crushing Hand | Large hand provides cover, pushes, or crushes your foes. |
+
+## SUMMER DOMAIN
+
+**Granted Powers:** You are considered a native of the waste for purposes of heat resistance (you have 1 level of protection). During the summer season, you gain a +2 bonus on all Wisdom-based skill checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Impede Sun’s Brilliance | Diminishes the heat and light of the sun in an area. |
+| 2 | Sunstroke | Target takes 2d6 nonlethal damage and is fatigued. |
+| 3 | Protection from Desiccation | Absorb 10 points/level of desiccation damage. |
+| 4 | Skin of the Cactus | Grants natural armor, thorns, and resistance to dehydration. |
+| 5 | Unearthly Heat | Target is subjected to unearthly heat for 1 round/level. |
+| 6 | Sunbeam | Beam blinds and deals 4d6 damage. |
+| 7 | Control Weather | Changes weather in local area. |
+| 8 | Sunburst | Blinds all within 10 ft., deals 6d6 damage. |
+| 9 | Storm of Vengeance | Storm rains acid, lightning, and hail. |
+
+## SUMMONER DOMAIN
+
+**Granted Powers:** Add +2 to your caster level for all Conjuration (summoning) or Conjuration (calling) spells.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Summon Monster I | Calls outsider to fight for you. |
+| 2 | Summon Monster II | Calls outsider to fight for you. |
+| 3 | Summon Monster III | Calls outsider to fight for you. |
+| 4 | Lesser Planar Ally | Exchange services with an 8 HD outsider. |
+| 5 | Summon Monster V | Calls outsider to fight for you. |
+| 6 | Planar Ally | As lesser planar ally, but up to 16 HD. |
+| 7 | Summon Monster VII | Calls outsider to fight for you. |
+| 8 | Greater Planar Ally | As lesser planar ally, but up to 24 HD. |
+| 9 | Gate | Connects two planes for travel or summoning. |
+
+## SUN DOMAIN
+
+**Granted Power:** Once per day, you can perform a greater turning against undead in place of a regular turning. The greater turning is like a normal turning except that the undead creatures that would be turned are destroyed instead.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Endure Elements | Exist comfortably in hot or cold environments. |
+| 2 | Heat Metal | Make metal so hot it damages those who touch it. |
+| 3 | Searing Light | Ray deals 1d8/two levels, more against undead. |
+| 4 | Fire Shield | Creatures attacking you take fire damage; you’re protected from heat or cold. |
+| 5 | Flame Strike | Smite foes with divine fire (1d6/level damage). |
+| 6 | Fire Seeds | Acorns and berries become grenades and bombs. |
+| 7 | Sunbeam | Beam blinds and deals 4d6 damage. |
+| 8 | Sunburst | Blinds all within 10 ft., deals 6d6 damage. |
+| 9 | Prismatic Sphere | As prismatic wall, but surrounds on all sides. |
+
+## TEMPTATION DOMAIN
+
+**Granted Powers:** Select a gender. As long as you wear no armor, you gain a +2 competence bonus on Charisma-based checks opposed by creatures of this gender. Furthermore, each save DC for any mind-affecting spells or abilities you use against this gender increases by 1.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Charm Person | Makes one person your friend. |
+| 2 | Beckoning Call | Lures target creature closer to you. |
+| 3 | Suggestion | Compels subject to follow stated course of action. |
+| 4 | Charm Monster | Makes monster believe it is your ally. |
+| 5 | Dominate Person | Controls humanoid telepathically. |
+| 6 | Mass Suggestion | As suggestion, plus one subject/level. |
+| 7 | Soul Link | Grants target a boon, allows monitoring, and establishes a telepathic link that enhances enchantments. |
+| 8 | Sympathy | Causes object or location to attract certain creatures. |
+| 9 | Dominate Monster | As dominate person, but any creature. |
+
+## THIRST DOMAIN
+
+**Granted Powers:** Rebuke or command oozes as an evil cleric rebukes or commands undead. Use this ability a total number of times per day equal to 3 + your Charisma modifier. You also gain a +2 bonus on Constitution checks to resist dehydration.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Parching Touch | One touch/level deals 1d6 damage and possibly 1 Con damage. |
+| 2 | Desiccate | Deals 1d6/2 levels desiccation damage and dehydrates living creature. |
+| 3 | Tormenting Thirst | Subject is overwhelmed by thirst. |
+| 4 | Dispel Water | Cancels water spells and effects or dismisses water creatures. |
+| 5 | Desiccate, Mass | Desiccates several creatures. |
+| 6 | Symbol of Thirst | Triggered rune overwhelms nearby creatures with thirst. |
+| 7 | Mephit Mob | Summons multiple mephits. Dust, salt, or sulfur mephits only. |
+| 8 | Horrid Wilting | Deals 1d6 damage/level within 30 ft. |
+| 9 | Energy Drain | Subject gains 2d4 negative levels. |
+
+## TRAVEL DOMAIN
+
+**Granted Powers:** For a total time per day of 1 round per cleric level you possess, you can act normally regardless of magical effects that impede movement as if you were affected by the spell *freedom of movement*. This effect occurs automatically as soon as it applies, lasts until it runs out or is no longer needed, and can operate multiple times per day (up to the total daily limit of rounds). This granted power is a supernatural ability. Add Survival to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Longstrider | Increases your speed. |
+| 2 | Locate Object | Senses direction toward object (specific or type). |
+| 3 | Fly | Subject flies at speed of 60 ft. |
+| 4 | Dimension Door | Teleports you short distance. |
+| 5 | Teleport | Instantly transports you as far as 100 miles/level. |
+| 6 | Find the Path | Shows most direct way to a location. |
+| 7 | Teleport, Greater | As teleport, but no range limit and no off-target arrival. |
+| 8 | Phase Door | Creates an invisible passage through wood or stone. |
+| 9 | Astral Projection M | Projects you and companions onto Astral Plane. |
+
+## TRICKERY DOMAIN
+
+**Granted Power:** Add Bluff, Disguise, and Hide to your list of cleric class skills.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Disguise Self | Disguise own appearance. |
+| 2 | Invisibility | Subject invisible 1 min./level or until it attacks. |
+| 3 | Nondetection M | Hides subject from divination, scrying. |
+| 4 | Confusion | Subjects behave oddly for 1 round/level. |
+| 5 | False Vision M | Fools scrying with an illusion. |
+| 6 | Mislead | Turns you invisible and creates illusory double. |
+| 7 | Screen | Illusion hides area from vision, scrying. |
+| 8 | Polymorph Any Object | Changes any subject into anything else. |
+| 9 | Time Stop | You act freely for 1d4+1 rounds. |
+
+## TYRANNY DOMAIN
+
+**Granted Powers:** Add +1 to the save DC of any compulsion spell you cast.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Command | One subject obeys selected command for 1 round. |
+| 2 | Enthrall | Captivates all within 100 ft. + 10 ft./level. |
+| 3 | Discern Lies | Reveals deliberate falsehoods. |
+| 4 | Fear | Subjects within cone flee for 1 round/level. |
+| 5 | Command, Greater | As command, but affects one subject/level. |
+| 6 | Geas/Quest | As lesser geas, plus it affects any creature. |
+| 7 | Bigby’s Grasping Hand | Hand provides cover, pushes, or grapples. |
+| 8 | Charm Monster, Mass | As charm monster, but all within 30 ft. |
+| 9 | Dominate Monster | As dominate person, but any creature. |
+
+## UNDEATH DOMAIN
+
+**Granted Powers:** You gain Extra Turning as a bonus feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Detect Undead | Reveals undead within 60 ft. |
+| 2 | Desecrate | Fills area with negative energy, making undead stronger. |
+| 3 | Animate Dead | Creates undead skeletons and zombies. |
+| 4 | Death Ward | Grants immunity to death spells and negative energy effects. |
+| 5 | Circle of Death | Kills 1d4/level HD of creatures. |
+| 6 | Create Undead | Creates ghouls, ghasts, mummies, or mohrgs. |
+| 7 | Control Undead | Undead don’t attack you while under your command. |
+| 8 | Create Greater Undead | Create shadows, wraiths, specters, or devourers. |
+| 9 | Energy Drain | Subject gains 2d4 negative levels. |
+
+## VILE DARKNESS DOMAIN
+
+**Granted Powers:** You gain the Blind-Fight feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Darkvision | See 60 ft. in total darkness. |
+| 2 | Darkbolt | Deals 1d8 damage/2 levels and stuns 1 round. |
+| 3 | Deeper Darkness | Object sheds absolute darkness in a 60-ft. radius. |
+| 4 | Damning Darkness | Darkness deals either 2d6 or 1d6 damage per round. |
+| 5 | Evard’s Black Tentacles | 1d4+1/level tentacles grapple randomly within 15 ft. |
+| 6 | Wall of Force | Wall manifests as an opaque black wall, immune to damage. |
+| 7 | Shadow Walk | Step into shadow to travel rapidly. |
+| 8 | Utterdark | 100-ft./level radius of darkness that evil creatures can see through. |
+| 9 | Screen | Illusion hides area from vision, scrying. |
+
+## WAR DOMAIN
+
+**Granted Power:** Free Martial Weapon Proficiency with deity’s favored weapon (if necessary) and Weapon Focus with the deity’s favored weapon.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Magic Weapon | Weapon gains +1 bonus. |
+| 2 | Spiritual Weapon | Magical weapon attacks on its own. |
+| 3 | Magic Vestment | Armor or shield gains +1 enhancement per four levels. |
+| 4 | Divine Power | You gain attack bonus, +6 to Str, and 1 hp/level. |
+| 5 | Flame Strike | Smite foes with divine fire (1d6/level damage). |
+| 6 | Blade Barrier | Wall of blades deals 1d6/level damage. |
+| 7 | Power Word Blind | Blinds creature with 200 hp or less. |
+| 8 | Power Word Stun | Stuns creature with 150 hp or less. |
+| 9 | Power Word Kill | Kills creature with 100 hp or less. |
+
+## WATER DOMAIN
+
+**Granted Power:** Turn or destroy fire creatures as a good cleric turns undead. Rebuke, command, or bolster water creatures as an evil cleric rebukes undead. Use these abilities a total number of times per day equal to 3 + your Charisma modifier. This granted power is a supernatural ability.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Obscuring Mist | Fog surrounds you. |
+| 2 | Fog Cloud | Fog obscures vision. |
+| 3 | Water Breathing | Subjects can breathe underwater. |
+| 4 | Control Water | Raises or lowers bodies of water. |
+| 5 | Ice Storm | Hail deals 5d6 damage in cylinder 40 ft. across. |
+| 6 | Cone of Cold | 1d6/level cold damage. |
+| 7 | Acid Fog | Fog deals acid damage. |
+| 8 | Horrid Wilting | Deals 1d6/level damage within 30 ft. |
+| 9 | Elemental Swarm* | Summons multiple elementals. |
+
+*Cast as a water spell only.*
+
+## WEALTH DOMAIN
+
+**Granted Powers:** Add Appraise to your list of cleric class skills. You gain Skill Focus (Appraise) as a bonus feat.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Alarm | Wards an area for 2 hours/level. |
+| 2 | Obscure Object | Masks object against scrying. |
+| 3 | Glyph of Warding | Inscription harms those who pass it. |
+| 4 | Detect Scrying | Alerts you of magical eavesdropping. |
+| 5 | Leomund’s Secret Chest | Hides expensive chest on Ethereal Plane; you retrieve it at will. |
+| 6 | Forbiddance | Blocks planar travel, damages creatures of different alignment. |
+| 7 | Sequester | Subject is invisible to sight and scrying; renders creature comatose. |
+| 8 | Discern Location | Reveals exact location of creature or object. |
+| 9 | Antipathy | Object or location affected by spell repels certain creatures. |
+
+## WEATHER DOMAIN
+
+**Granted Power:** Inclement weather has less of an effect on you. Rain and snow don’t penalize your Spot and Search checks. You can move through snow-covered and icy terrain at your normal movement. Wind effects, whether natural or magical, affect you as if you were one size category larger.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Obscuring Mist | Fog surrounds you. |
+| 2 | Fog Cloud | Fog obscures vision. |
+| 3 | Call Lightning | Calls down lightning bolts (3d6 per bolt) from sky. |
+| 4 | Sleet Storm | Hampers vision and movement. |
+| 5 | Call Lightning Storm | As call lightning, but 5d6 damage per bolt. |
+| 6 | Control Winds | Change wind direction and speed. |
+| 7 | Control Weather | Changes weather in local area. |
+| 8 | Whirlwind | Cyclone deals damage and can pick up creatures. |
+| 9 | Storm of Vengeance | Storm rains acid, lightning, and hail. |
+
+## WINTER DOMAIN
+
+**Granted Powers:** During the winter season, you gain a +2 sacred bonus on all Wisdom-based skill checks.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Snowsight | Normal vision in winter weather conditions. |
+| 2 | Snow Walk | Increase your speed and walk effortlessly on top of snow without leaving tracks or scent. |
+| 3 | Winter’s Embrace | Subject takes 1d8 damage/round; can cause fatigue. |
+| 4 | Ice Storm | Hail deals 5d6 damage in cylinder 40 ft. across. |
+| 5 | Blizzard | Temperature drops and powerful blizzard reduces visibility to zero. |
+| 6 | Death Hail | Summons a storm of death hail. |
+| 7 | Control Weather | Changes weather in local area. |
+| 8 | Summon Giants (Frost Giants Only) | Summons outsider giants to fight for you. |
+| 9 | Fimbulwinter | Creates winter weather for miles around you that lasts for months. |
+
+## WRATH DOMAIN
+
+**Granted Power:** Once per day, you may make a free attack of opportunity against any opponent that damages you with a melee attack. This ability does not allow you to make more than one attack of opportunity in a round.
+
+| Level | Spell Name | Brief Description |
+| --- | --- | --- |
+| 1 | Doom | One subject takes –2 on attack rolls, damage rolls, saves, and checks. |
+| 2 | Energize Potion | Transforms potion into a grenade that deals energy damage in a 10-ft.-radius burst. |
+| 3 | Affliction | Infects evil subject with chosen affliction. |
+| 4 | Radiant Shield | Creatures attacking you take electricity damage; you’re protected from electricity. |
+| 5 | Righteous Might | Your size increases, and you gain combat bonuses. |
+| 6 | Vengeance Halo | Any creature that slays the spell’s recipient takes 1d6/level damage. |
+| 7 | Righteous Smite | Deals 1d6 damage/level (1d8 damage/level to evil outsiders) in 20-ft. radius and blinds evil foes. |
+| 8 | Last Judgment | Evil creatures are struck dead and sent to Lower Planes. |
+| 9 | Storm of Vengeance | Storm rains acid, lightning, and hail. |
+
+# PLANAR DOMAINS
+
+A planar domain counts as both of a cleric’s domain choices. The granted powers of a planar domain are more potent than those of other domains, and each level offers two spells from which a cleric may choose when preparing spells. Each day, a cleric with access to a planar domain chooses one of the two spells available to prepare in his domain spell slot for each spell level. Unlike other domains, planar domains each have an alignment requirement that must be met by a cleric who wants to access the domain.
+
+Though some of the domains below mention deities that can grant access to their followers, a cleric need not select a specific deity to have access to a planar domain. A cleric who devotes himself to a specific alignment (LG, NG, CG, LN, CN, LE, NE, or CE) rather than a deity can select a planar domain in place of his two normal domain choices. If the DM wishes, she can make domains specific to other planes, using these as representative guides.
+
+## THE ABYSS
+
+**Requirement:** Must be chaotic evil.
+
+**Example Deities:** Blibdoolpoolp (kuo-toa), Diirinka (derro), Great Mother (beholders), Hruggek (bugbears), Lolth (drow), Merrshaulk (yuan-ti).
+
+**Granted Power:** Once per day as a free action, you may channel the furious power of the demons. This power grants you a +4 bonus to Strength but also gives you a –2 penalty to Armor Class. The effect lasts for 5 rounds and cannot be ended prematurely. This is a supernatural ability. Add Intimidate to your list of cleric class skills.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Align Weapon (evil or chaotic) | Cause Fear: One creature of 5 HD or fewer flees for 1d4 rounds. |
+| 2 | Bull’s Strength: +4 Str for 1 min./level | Death Knell: Kills dying creature; gain 1d8 temp hp, +2 Str, +1 level. |
+| 3 | Babau Slime: Acid secretion damages foes’ weapons | Summon Monster III (CE creatures only) |
+| 4 | Balor Nimbus: Flaming body damages foes in grapple | Poison: Touch deals 1d10 Con damage, repeats in 1 min. |
+| 5 | Slay Living: Touch attack kills subject | Summon Monster V (CE creatures only) |
+| 6 | Bull’s Strength, Mass: As bull’s strength, one subject/level | Harm: Deals 10 points/level damage to target. |
+| 7 | Destruction: Kills subject and destroys remains | Summon Monster VII (CE creatures only) |
+| 8 | Finger of Death: Kills one subject | Bodak’s Glare: You slay a creature, which turns into a bodak 24 hours later. |
+| 9 | Implosion: Kills one creature/round | Summon Monster IX (CE creatures only) |
+
+## ARBOREA
+
+**Requirement:** Must be chaotic good.
+
+**Example Deities:** Corellon Larethian.
+
+**Granted Power:** Once per day as a free action, you can channel the glory of the eladrin to grant yourself a morale bonus on weapon damage rolls and saves against charm and fear effects. This bonus is equal to your Charisma bonus (if any) and lasts for 1 minute. This is a supernatural ability. Add Survival to your list of cleric class skills.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Endure Elements: Exist comfortably in extreme environments | Longstrider: Increases your speed. |
+| 2 | Aid: +1 attack/fear saves, 1d8 temp hp +1/level | Eagle’s Splendor: +4 Cha for 1 min./level. |
+| 3 | Heroism: +2 attack, saves, skill checks | Summon Monster III (CG creatures only) |
+| 4 | Neutralize Poison: Immunizes/detoxifies | Opalescent Glare: Kill evil creatures with a look, or make them afraid. |
+| 5 | Break Enchantment: Frees subjects from enchantments/curses | Summon Monster V (CG creatures only) |
+| 6 | Heroes’ Feast: Food for one creature/level cures and grants bonuses | Eagle’s Splendor, Mass: As eagle’s splendor, one subject/level. |
+| 7 | Spell Turning: Reflect 1d4+6 spell levels back at caster | Summon Monster VII (CG creatures only) |
+| 8 | Heroism, Greater: +4 bonus, fear immunity, temp hp | Mind Blank: Subject immune to mental/emotional magic and scrying. |
+| 9 | Freedom: Frees one creature from movement-restricting effects | Summon Monster IX (CG creatures only) |
+
+## BAATOR
+
+**Requirement:** Must be lawful evil.
+
+**Example Deities:** Kurtulmak (kobolds), Sekolah (sahuagin), Tiamat (evil dragons).
+
+**Granted Power:** You have the supernatural ability to see perfectly in darkness of any kind, even that created by a *deeper darkness* spell. Add Bluff to your list of cleric class skills.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Bane: Enemies take –1 on attack rolls and fear saves | Disguise Self: Changes your appearance. |
+| 2 | Darkness: 20-ft. radius of supernatural shadow | Fox’s Cunning: +4 Int for 1 min./level. |
+| 3 | Detect Thoughts: Allows ‘listening’ to surface thoughts | Summon Monster III (LE creatures only) |
+| 4 | Deeper Darkness: Object sheds supernatural shadow 60-ft. | Suggestion: Compels subject to follow stated course of action. |
+| 5 | Spell Resistance: Subject gains SR 12 + level | Summon Monster V (LE creatures only) |
+| 6 | Dominate Person: Controls humanoid telepathically | Fox’s Cunning, Mass: As fox’s cunning, one subject/level. |
+| 7 | Repulsion: Creatures can’t approach you | Summon Monster VII (LE creatures only) |
+| 8 | Demand: As sending, plus send suggestion | Spell Turning: Reflect 1d4+6 spell levels back at caster. |
+| 9 | Imprisonment: Entombs subject beneath the earth | Summon Monster IX (LE creatures only) |
+
+## CELESTIA
+
+**Requirement:** Must be lawful good.
+
+**Example Deities:** Bahamut (good dragons), Heironeous, Moradin, Yondalla.
+
+**Granted Power:** Once per day, as a free action, you can generate an aura of menace similar to that of the archons. The aura lasts for 1 minute. Any hostile enemy within a 20-foot radius of you must succeed on a Will save (DC 10 + 1/2 your cleric level + your Cha modifier) to resist its effects. Those who fail take a –2 penalty on attack rolls, Armor Class, and saves for 24 hours or until they successfully hit you. A creature that has resisted or broken the effect cannot be affected again by your aura for 24 hours. This is a supernatural ability. Add Sense Motive to your list of cleric class skills.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Light of Lunia: Radiate silvery light; expend as two 1d6 damage bolts | Shield of Faith: Aura grants +2 or higher deflection bonus. |
+| 2 | Bear’s Endurance: +4 Con for 1 min./level | Shield Other: You take half of subject’s damage. |
+| 3 | Magic Vestment: Armor or shield +1/four levels | Summon Monster III (LG creatures only) |
+| 4 | Divine Power: Attack bonus, +6 Str, 1 hp/level | Magic Weapon, Greater: +1 bonus/four levels (max +5). |
+| 5 | Righteous Might: Size increases, combat bonuses | Summon Monster V (LG creatures only) |
+| 6 | Blade Barrier: Wall of blades deals 1d6/level damage | Bear’s Endurance, Mass: As bear’s endurance, one subject/level. |
+| 7 | Regenerate: Severed limbs grow back, cures 4d8 +1/level | Summon Monster VII (LG creatures only) |
+| 8 | Power Word Stun: Stuns creatures with 150 or fewer hp | Shield of Law: +4 AC/resistance, SR 25 against chaotic spells. |
+| 9 | Foresight: ‘Sixth sense’ warns of impending danger | Summon Monster IX (LG creatures only) |
+
+## ELYSIUM
+
+**Requirement:** Must be neutral good.
+
+**Example Deities:** Pelor.
+
+**Granted Power:** You gain the supernatural ability to smite evil with a single melee attack once per day. You add your Charisma bonus (if any) to your attack roll and deal an extra 1 point of damage per class level. This smite attack is treated as good-aligned for the purpose of overcoming damage reduction. At 5th level, and every five levels thereafter, you can use this smite attack one additional time per day.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Charm Person: Makes one person your friend | Protection from Evil: +2 AC/saves, counter mind control. |
+| 2 | Enthrall: Captivates all within 100 ft. + 10 ft./level | Planar Tolerance: Long-term protection against damaging planar traits. |
+| 3 | Magic Circle against Evil: 10-ft. radius, 10 min./level | Mantle of Good: SR 12 + caster level against evil-descriptor spells. |
+| 4 | Charm Monster: Makes monster believe it is your ally | Holy Smite: Damages and blinds evil creatures. |
+| 5 | Dispel Evil: +4 bonus against attacks by evil creatures | Cure Light Wounds, Mass: Cures 1d8 damage +1/level for many creatures. |
+| 6 | Find the Path: Shows most direct way to a location | Mind Fog: Subjects in fog get –10 to Wisdom and Will checks. |
+| 7 | Control Weather: Changes weather in local area | Holy Word: Kills, paralyzes, blinds, or deafens nongood subjects. |
+| 8 | Holy Aura: +4 AC/resistance, SR 25 against evil spells | Sunburst: Blinds all within 80 ft., deals 6d6 damage. |
+| 9 | Heal, Mass: As heal, but with several subjects | Moment of Prescience: Insight bonus on single attack, check, or save. |
+
+## HADES
+
+**Requirement:** Must be neutral evil.
+
+**Example Deities:** None.
+
+**Granted Power:** You gain the supernatural ability to smite good with a single melee attack once per day. You add your Charisma bonus (if any) to your attack roll and deal an extra 1 point of damage per class level. This smite attack is treated as evil-aligned for the purpose of overcoming damage reduction. At 5th level, and every five levels thereafter, you can use this smite attack one additional time per day.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Doom: Subject shaken by horrible dread | Protection from Good: +2 AC/saves, counter mind control. |
+| 2 | Resist Planar Alignment: Resist penalties for opposing alignment on aligned plane | — |
+| 3 | Magic Circle against Good: 10-ft. radius, 10 min./level | Mantle of Evil: SR 12 + caster level against good-descriptor spells. |
+| 4 | Contagion: Infects subject with chosen disease | Unholy Blight: Damages and sickens good creatures. |
+| 5 | Crushing Despair: –2 on attacks, damage, saves, and checks | Dispel Good: +4 bonus against attacks by good creatures. |
+| 6 | Mind Fog: –10 to Wisdom and Will checks | Waves of Fatigue: Several targets become fatigued. |
+| 7 | Blasphemy: Kills, paralyzes, weakens, or dazes nonevil subjects | Plane Shift: Up to eight subjects travel to another plane. |
+| 8 | Unholy Aura: +4 AC/resistance, SR 25 against good spells | Waves of Exhaustion: Several targets become exhausted. |
+| 9 | Energy Drain: Subject gains 2d4 negative levels | Gate: Connects two planes for travel or summoning. |
+
+## LIMBO
+
+**Requirement:** Must be chaotic neutral.
+
+**Example Deities:** None.
+
+**Granted Power:** You gain the supernatural ability to smite law with a single melee attack once per day. You add your Charisma bonus (if any) to your attack roll and deal an extra 1 point of damage per class level. This smite attack is treated as chaotic-aligned for the purpose of overcoming damage reduction. At 5th level, and every five levels thereafter, you can use this smite attack one additional time per day.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Lesser Confusion: One creature confused for 1 round | Protection from Law: +2 AC/saves, counter mind control. |
+| 2 | Entropic Shield: Ranged attacks against you have 20% miss chance | Resist Planar Alignment: Resist penalties for opposing alignment on aligned plane. |
+| 3 | Magic Circle against Law: 10-ft. radius, 10 min./level | Mantle of Chaos: SR 12 + caster level against lawful-descriptor spells. |
+| 4 | Chaos Hammer: Damage and slow lawful creatures | Perinarch: Gain greater control over Limbo’s morphic essence. |
+| 5 | Baleful Polymorph: Transforms subject into harmless animal | Dispel Law: +4 bonus against attacks by lawful creatures. |
+| 6 | Animate Objects: Objects attack your foes | Insanity: Subject suffers continuous confusion effect. |
+| 7 | Song of Discord: Forces targets to attack each other | Word of Chaos: Kills, confuses, stuns, or deafens nonchaotic subjects. |
+| 8 | Cloak of Chaos: +4 AC/resistance, SR 25 against lawful spells | Otto’s Irresistible Dance: Forces subject to dance. |
+| 9 | Perinarch, Planar: Gain control over small area of any divinely morphic plane | Shapechange: Transforms you into any creature; change forms once per round. |
+
+## MECHANUS
+
+**Requirement:** Must be lawful neutral.
+
+**Example Deities:** None.
+
+**Granted Power:** You gain the supernatural ability to smite chaos with a single melee attack once per day. You add your Charisma bonus (if any) to your attack roll and deal an extra 1 point of damage per class level. This smite attack is treated as lawful-aligned for the purpose of overcoming damage reduction. At 5th level, and every five levels thereafter, you can use this smite attack one additional time per day.
+
+| Level | Spell A | Spell B |
+| --- | --- | --- |
+| 1 | Command: One subject obeys selected command for 1 round | Protection from Chaos: +2 AC/saves, counter mind control. |
+| 2 | Calm Emotions: Calms creatures, negating emotion effects | Mechanus Mind: Reformat subject’s mind to be coldly calculating. |
+| 3 | Magic Circle against Chaos: 10-ft. radius, 10 min./level | Mantle of Law: SR 12 + caster level against chaotic-descriptor spells. |
+| 4 | Discern Lies: Reveals deliberate falsehoods | Order’s Wrath: Damages and dazes chaotic creatures. |
+| 5 | Dispel Chaos: +4 bonus against attacks by chaotic creatures | Mark of Justice: Designates action that will trigger curse on subject. |
+| 6 | Hold Monster: As hold person, but any creature | Wall of Gears: Creates wall of moving gears, deals 1d6 damage/2 levels to creatures within 10 ft. |
+| 7 | Dictum: Kills, paralyzes, slows, or deafens nonlawful subjects | Hold Person, Mass: As hold person, but all within 30 ft. |
+| 8 | Iron Body: Your body becomes living iron | Shield of Law: +4 AC/resistance, SR 25 against chaotic spells. |
+| 9 | Call Marut: A marut aids you in pursuing one who seeks to cheat time | Mordenkainen’s Disjunction: Dispels magic, disenchants magic items. |
