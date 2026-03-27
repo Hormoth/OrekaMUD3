@@ -3688,6 +3688,16 @@ class CommandParser:
         if player_lines:
             desc += "\n\n" + "\n".join(player_lines)
 
+        # Shadow presences (Veil AI chat players)
+        try:
+            from src.shadow_presence import shadow_manager
+            shadows = shadow_manager.get_by_room(character.room.vnum)
+            if shadows:
+                shadow_lines = [s.room_description() for s in shadows]
+                desc += "\n\n" + "\n".join(shadow_lines)
+        except Exception:
+            pass
+
         # Wandering gods presence
         try:
             from src.wandering_gods import get_wandering_gods
@@ -3749,6 +3759,13 @@ class CommandParser:
                 msg = (f"{character.name} says something in {active_lang}, "
                        f"'{garbled}'")
             send_to_player(listener, msg)
+
+        # Inject into shadow presences in this room
+        try:
+            from src.shadow_presence import shadow_manager
+            shadow_manager.broadcast_speech(character.room.vnum, character.name, args)
+        except Exception:
+            pass
 
         # Return message to speaker
         if active_lang != "Common":

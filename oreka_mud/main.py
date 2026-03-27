@@ -16,6 +16,7 @@ from src.feats import FEATS
 from src.spells import SPELLS
 from src.spawning import get_spawn_manager
 from src.wandering_gods import get_wandering_gods
+from src.mcp_bridge import set_world as mcp_set_world, start_mcp_bridge_thread
 
 
 import telnetlib3
@@ -869,6 +870,23 @@ async def handle_client(reader, writer, world, parser):
             f"{prompt} "
         )
 
+    # Register GMCP handler for this connection
+    try:
+        from src.gmcp import register_handler as gmcp_register
+        gmcp_handler = gmcp_register(character, writer)
+        gmcp_handler.emit_vitals(character)
+        gmcp_handler.emit_status(character)
+        gmcp_handler.emit_room(character.room, character)
+    except Exception as e:
+        logger.debug(f"GMCP registration: {e}")
+
+    # Log login event
+    try:
+        from src.event_log import log_event
+        log_event(character.name, "login", {"class": getattr(character, 'char_class', '?'), "level": character.level}, room_vnum=character.room.vnum)
+    except Exception:
+        pass
+
     # Initial room display
     look_result = parser.cmd_look(character, "")
     writer.write(
@@ -971,6 +989,19 @@ async def handle_client(reader, writer, world, parser):
                 )
 
             await writer.drain()
+
+            # GMCP: emit vitals after every command
+            try:
+                from src.gmcp import get_handler as gmcp_get
+                gh = gmcp_get(character)
+                if gh:
+                    gh.emit_vitals(character)
+                    # Emit room on movement
+                    if character.room.vnum != prev_room_vnum:
+                        gh.emit_room(character.room, character)
+            except Exception:
+                pass
+
         except Exception as e:
             logger.error(f"Error processing command: {e}")
             import traceback
@@ -1895,6 +1926,12 @@ async def main():
                 pass
 
     server = await telnetlib3.create_server(host='0.0.0.0', port=4000, shell=telnet_shell, connect_maxwait=0.5)
+
+    # Start MCP Bridge (internal REST API on port 8001)
+    mcp_set_world(world)
+    start_mcp_bridge_thread()
+
+    # Start background ticks
     asyncio.create_task(log_players(world))
     asyncio.create_task(hunger_thirst_tick(world))
     asyncio.create_task(ambient_echo_tick(world))
@@ -1902,7 +1939,14 @@ async def main():
     asyncio.create_task(spawn_respawn_tick(world))
     asyncio.create_task(wandering_gods_tick(world))
     asyncio.create_task(location_effects_tick(world))
-    # asyncio.create_task(idle_check())  # idle_check is not defined
+
+    # Start WebSocket server (for Veil Client)
+    try:
+        from src.websocket_server import start_websocket_server
+        asyncio.create_task(start_websocket_server())
+    except Exception as e:
+        logger.warning(f"WebSocket server not started: {e}")
+
     async with server:
         await server.serve_forever()
 
