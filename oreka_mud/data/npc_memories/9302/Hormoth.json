@@ -1,0 +1,14 @@
+{
+  "npc_vnum": 9302,
+  "player_name": "Hormoth",
+  "memories": [
+    {
+      "text": "[RP overheard] Hormoth said: \"how are you today\" \u2014 I replied: \"\"Private botanical survey. Hired by a merchant house. Please move on.\"\"",
+      "importance": 0.4,
+      "session_id": "rpsay",
+      "created_at": 1775878987.085121
+    }
+  ],
+  "last_interaction": 1775878987.085123,
+  "total_sessions": 0
+}

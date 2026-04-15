@@ -1,0 +1,8 @@
+{
+  "users": ["hormoth", "dagdan", "hareem", "aelthara"],
+  "allow_all_existing_chars": true,
+  "open_signup": true,
+  "chat_eligible_npcs": [3000, 9004, 9010, 9200],
+  "default_chat_npc": 9200,
+  "max_concurrent_users": 50
+}

@@ -83,12 +83,40 @@ def broadcast_to_world(world, message, exclude=None):
 def broadcast_to_area(room, message, exclude=None, radius=3):
     """
     Broadcast a message to players in nearby rooms (for shout).
-    This is a simplified version - just broadcasts to current room.
-    A full implementation would traverse exits up to 'radius' rooms away.
+    Traverses exits up to 'radius' rooms away using BFS.
     """
-    # For now, just broadcast to current room
-    # TODO: Implement multi-room radius broadcasting
-    broadcast_to_room(room, message, exclude)
+    visited = set()
+    queue = [(room, 0)]
+    visited.add(room.vnum)
+
+    while queue:
+        current_room, depth = queue.pop(0)
+        # Send to all players in this room
+        for player in getattr(current_room, 'players', []):
+            if exclude and player == exclude:
+                continue
+            send_to_player(player, message)
+
+        # Traverse exits if within radius
+        if depth < radius:
+            for direction, exit_data in getattr(current_room, 'exits', {}).items():
+                if isinstance(exit_data, dict):
+                    next_vnum = exit_data.get("room")
+                    # Don't traverse closed doors
+                    if exit_data.get("closed", False):
+                        continue
+                else:
+                    next_vnum = exit_data
+                if next_vnum and next_vnum not in visited:
+                    visited.add(next_vnum)
+                    # Need access to world rooms - get from room's reference
+                    next_room = None
+                    if hasattr(current_room, '_world'):
+                        next_room = current_room._world.rooms.get(next_vnum)
+                    elif hasattr(room, '_world'):
+                        next_room = room._world.rooms.get(next_vnum)
+                    if next_room:
+                        queue.append((next_room, depth + 1))
 
 
 def send_tell(sender, recipient, message):

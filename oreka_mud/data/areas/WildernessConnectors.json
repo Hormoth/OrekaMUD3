@@ -26,7 +26,7 @@
   {
     "vnum": 11002,
     "name": "Emberfang Pass",
-    "description": "The road narrows to a tight defile between two volcanic peaks, the stone walls pressing close enough to touch on either side. Heat radiates from the exposed rock in palpable waves, and the air shimmers with thermals that distort the view ahead. In the tightest stretches the path allows only single-file passage, the basalt walls scarred with Rarozhki watch-carvings — territorial markers centuries old, their angular script warning trespassers in the blunt language of dwarven sovereignty. Overhead, the sky is a narrow ribbon of haze-filtered light between the canyon walls.",
+    "description": "The road narrows to a tight defile between two volcanic peaks, the stone walls pressing close enough to touch on either side. Heat radiates from the exposed rock in palpable waves, and the air shimmers with thermals that distort the view ahead. In the tightest stretches the path allows only single-file passage, the basalt walls scarred with Rarozhki watch-carvings -- territorial markers centuries old, their angular script warning trespassers in the blunt language of dwarven sovereignty. Overhead, the sky is a narrow ribbon of haze-filtered light between the canyon walls.",
     "exits": {
       "north": 11001,
       "south": 11003
@@ -66,7 +66,7 @@
   {
     "vnum": 11004,
     "name": "Kharazhad Outer Approach",
-    "description": "The caldera rim rises ahead like the lip of a titan's crucible, and Kharazhad's signal fires are visible on the northeast tower, burning with the distinctive blue-white flame of embersteel. Road markers reinforced with that same volcanic alloy have been placed at precise intervals by the Stonefire Guard, each one engraved with distance markers and warnings in Rarozhki script. The heat here is constant and bone-deep, radiating up through the soles of boots from magma channels that run close beneath the surface. A faint, rhythmic clanging carries on the heated air — the forges of Kharazhad, never silent, never cold.",
+    "description": "The caldera rim rises ahead like the lip of a titan's crucible, and Kharazhad's signal fires are visible on the northeast tower, burning with the distinctive blue-white flame of embersteel. Road markers reinforced with that same volcanic alloy have been placed at precise intervals by the Stonefire Guard, each one engraved with distance markers and warnings in Rarozhki script. The heat here is constant and bone-deep, radiating up through the soles of boots from magma channels that run close beneath the surface. A faint, rhythmic clanging carries on the heated air -- the forges of Kharazhad, never silent, never cold.",
     "exits": {
       "north": 11003,
       "northeast": 11005
@@ -116,7 +116,7 @@
   {
     "vnum": 11012,
     "name": "Northern Giant's Teeth Pass",
-    "description": "The mountain pass winds between towering peaks of the Northern Giant's Teeth range, following a route first carved when giants walked the world. Wind howls through the gap with a keening voice, carrying the dry mineral scent of the desert far below on the southern side. Giant-era road markers line the ancient highway, their runes dim but still legible to those trained in the old scripts — each one standing twice the height of a human, carved from single blocks of mountain granite. The road surface is remarkably level despite its age, a testament to engineering on a scale no modern race has matched.",
+    "description": "The mountain pass winds between towering peaks of the Northern Giant's Teeth range, following a route first carved when giants walked the world. Wind howls through the gap with a keening voice, carrying the dry mineral scent of the desert far below on the southern side. Giant-era road markers line the ancient highway, their runes dim but still legible to those trained in the old scripts -- each one standing twice the height of a human, carved from single blocks of mountain granite. The road surface is remarkably level despite its age, a testament to engineering on a scale no modern race has matched.",
     "exits": {
       "north": 11011,
       "south": 11013
@@ -128,7 +128,7 @@
   {
     "vnum": 11013,
     "name": "Canyon Rim Road",
-    "description": "The road descends along the canyon rim, and the first blast of desert heat rises from far below like the breath of an opened furnace. The Great River is a silver thread at the bottom of the gorge, its sound reduced to a distant, ceaseless roar that vibrates in the bones rather than reaching the ears. The transition from mountain forest to bare, sun-bleached rock is startlingly abrupt — within a few hundred yards, pine gives way to scrub, then scrub to nothing but stone and sky. Dust devils dance along the canyon edge, spinning red sand into ephemeral columns.",
+    "description": "The road descends along the canyon rim, and the first blast of desert heat rises from far below like the breath of an opened furnace. The Great River is a silver thread at the bottom of the gorge, its sound reduced to a distant, ceaseless roar that vibrates in the bones rather than reaching the ears. The transition from mountain forest to bare, sun-bleached rock is startlingly abrupt -- within a few hundred yards, pine gives way to scrub, then scrub to nothing but stone and sky. Dust devils dance along the canyon edge, spinning red sand into ephemeral columns.",
     "exits": {
       "north": 11012,
       "south": 11014
@@ -139,8 +139,8 @@
   },
   {
     "vnum": 11014,
-    "name": "Great River Gorge — Northern Rim Junction",
-    "description": "The road reaches the rim of the Great River Gorge proper, where the canyon walls drop hundreds of feet in sheer, striated cliffs to the river below. Pekakarlik cliff-face settlements are visible as dark windows and balconies carved into the opposite wall, connected by rope bridges and carved staircases that cling to the rock like spider silk. A carved stairway, its steps worn concave by generations of feet, descends toward the gorge floor in a series of switchbacks cut into the canyon face. The view is staggering in its scale — the gorge stretches east and west beyond sight, a wound in the earth that has no apparent end.",
+    "name": "Great River Gorge -- Northern Rim Junction",
+    "description": "The road reaches the rim of the Great River Gorge proper, where the canyon walls drop hundreds of feet in sheer, striated cliffs to the river below. Pekakarlik cliff-face settlements are visible as dark windows and balconies carved into the opposite wall, connected by rope bridges and carved staircases that cling to the rock like spider silk. A carved stairway, its steps worn concave by generations of feet, descends toward the gorge floor in a series of switchbacks cut into the canyon face. The view is staggering in its scale -- the gorge stretches east and west beyond sight, a wound in the earth that has no apparent end.",
     "exits": {
       "north": 11013,
       "south": 11015
@@ -152,7 +152,7 @@
   {
     "vnum": 11015,
     "name": "Gorge Descent",
-    "description": "The carved stairway switchbacks down the canyon wall toward the Great River Gorge's upper terraces, each landing offering a more vertiginous view than the last. The air is dry and hot, the desert's breath rising from below in waves that carry fine sand and the faint mineral tang of the river. Pekakarlik engineering holds the stairs firm against centuries of erosion — iron pins driven into the rock, drainage channels carved to divert rainwater, each step angled slightly outward to shed debris. Handholds have been worn into the canyon wall by countless hands seeking purchase on the descent.",
+    "description": "The carved stairway switchbacks down the canyon wall toward the Great River Gorge's upper terraces, each landing offering a more vertiginous view than the last. The air is dry and hot, the desert's breath rising from below in waves that carry fine sand and the faint mineral tang of the river. Pekakarlik engineering holds the stairs firm against centuries of erosion -- iron pins driven into the rock, drainage channels carved to divert rainwater, each step angled slightly outward to shed debris. Handholds have been worn into the canyon wall by countless hands seeking purchase on the descent.",
     "exits": {
       "north": 11014,
       "south": 8346
@@ -164,7 +164,7 @@
   {
     "vnum": 11050,
     "name": "Eastern Kinsweave Road",
-    "description": "The road heads east from the Kinsweave road network, leaving the river valleys behind as it climbs a gentle rise onto higher ground. Rolling hills dotted with stands of oak and birch stretch toward the horizon, their crowns rustling in a constant breeze that carries the scent of sun-warmed grass. Merchant caravans traveling between Stonefall and Branmill Cove use this road regularly, their wagon ruts worn deep into the earth. Wildflowers bloom in profusion along the road's shoulders — blue cornflower, yellow tansy, and the white stars of stitchwort nodding in the wind.",
+    "description": "The road heads east from the Kinsweave road network, leaving the river valleys behind as it climbs a gentle rise onto higher ground. Rolling hills dotted with stands of oak and birch stretch toward the horizon, their crowns rustling in a constant breeze that carries the scent of sun-warmed grass. Merchant caravans traveling between Stonefall and Branmill Cove use this road regularly, their wagon ruts worn deep into the earth. Wildflowers bloom in profusion along the road's shoulders -- blue cornflower, yellow tansy, and the white stars of stitchwort nodding in the wind.",
     "exits": {
       "southwest": 5400,
       "east": 11051
@@ -176,7 +176,7 @@
   },
   {
     "vnum": 11051,
-    "name": "Stonewind Plains — Western Grass",
+    "name": "Stonewind Plains -- Western Grass",
     "description": "The road enters the vast Stonewind Plains, where wind-rippled grass stretches to every horizon in an ocean of green and gold. The sky is enormous here, unbroken by forest or mountain, a dome of blue so wide it seems to press down with its own weight. Raptors circle overhead in lazy spirals, riding thermals generated by the sun-warmed grassland, their shadows flickering across the swaying grass below. The wind is a constant companion, bending the grass in long, rolling waves that travel across the plain like swells on a landlocked sea. The road is a thin line of packed earth through this wilderness, barely distinguishable from the surrounding terrain.",
     "exits": {
       "west": 11050,
@@ -188,8 +188,8 @@
   },
   {
     "vnum": 11052,
-    "name": "Stonewind Plains — Central Crossing",
-    "description": "A waystone marks the midpoint of the plains crossing, its Giant-era runes weathered by millennia of wind and rain but still legible to scholars of the old tongues. Caravan tracks converge here from multiple directions, the grass worn to bare earth in a wide circle around the ancient marker. A stone-ringed fire pit at the waystone's base, blackened by countless campfires, suggests this has served as a traditional camping ground since before recorded history. The wind sings a low, constant note through the waystone's carved channels — a navigational aid audible for miles across the flat terrain.",
+    "name": "Stonewind Plains -- Central Crossing",
+    "description": "A waystone marks the midpoint of the plains crossing, its Giant-era runes weathered by millennia of wind and rain but still legible to scholars of the old tongues. Caravan tracks converge here from multiple directions, the grass worn to bare earth in a wide circle around the ancient marker. A stone-ringed fire pit at the waystone's base, blackened by countless campfires, suggests this has served as a traditional camping ground since before recorded history. The wind sings a low, constant note through the waystone's carved channels -- a navigational aid audible for miles across the flat terrain.",
     "exits": {
       "west": 11051,
       "east": 11053
@@ -200,8 +200,8 @@
   },
   {
     "vnum": 11053,
-    "name": "Stonewind Plains — Eastern Approach",
-    "description": "The grass grows shorter and the soil darker as the road approaches the Tidebloom region, the earth enriched by centuries of organic decay from the forests ahead. The scent of the Kailian Sea carries on the east wind, salt and freshwater mingled in a briny perfume that grows stronger with each mile. Trees appear in greater numbers — first solitary specimens bent by the plains wind, then small copses, then proper stands of coastal pine and sea-oak. Birdsong replaces the wind's lonely whisper, and the character of the land shifts from austere grassland to something greener, lusher, more alive.",
+    "name": "Stonewind Plains -- Eastern Approach",
+    "description": "The grass grows shorter and the soil darker as the road approaches the Tidebloom region, the earth enriched by centuries of organic decay from the forests ahead. The scent of the Kailian Sea carries on the east wind, salt and freshwater mingled in a briny perfume that grows stronger with each mile. Trees appear in greater numbers -- first solitary specimens bent by the plains wind, then small copses, then proper stands of coastal pine and sea-oak. Birdsong replaces the wind's lonely whisper, and the character of the land shifts from austere grassland to something greener, lusher, more alive.",
     "exits": {
       "west": 11052,
       "east": 11054
@@ -212,7 +212,7 @@
   },
   {
     "vnum": 11054,
-    "name": "Stonewind Plains — Forest Margin",
+    "name": "Stonewind Plains -- Forest Margin",
     "description": "Scattered trees thicken into proper woodland as the plains give way to Tidebloom's western forests, the transition marked by a ragged line of ancient oaks that stand like sentries at the forest's edge. The road surface changes from packed earth to forest loam, softer underfoot and darker in color, and bird calls replace the wind's whisper with a complex chorus of warbler, thrush, and jay. Tidebloom trade markers appear along the roadside, carved wooden posts bearing Branmill Cove's chain-and-wave symbol, their surfaces stained green with moss. The canopy closes overhead in patches, dappling the road with shifting patterns of light and shadow.",
     "exits": {
       "west": 11053,
@@ -224,7 +224,7 @@
   },
   {
     "vnum": 11055,
-    "name": "Stonewind Plains — Tidebloom Junction",
+    "name": "Stonewind Plains -- Tidebloom Junction",
     "description": "The Stonewind Plains road meets the Tidebloom region's western road network at a small but bustling trade post built of weathered coastal timber and roofed with reed thatch. Travelers making the crossing can find water, dried fish, rope, and news from both regions here, dispensed by a weathered Pekakarlik proprietor who seems to know every caravan captain by name. The Tidewoods stretch east toward the Kailian Sea, their canopy a dark green wall broken by the pale trunks of birch and the silver flash of streams. A signpost carved with distances marks the road to Branmill Cove, Tidehearth, and points beyond.",
     "exits": {
       "west": 11054,
@@ -250,7 +250,7 @@
   {
     "vnum": 11081,
     "name": "Southern Hills Road",
-    "description": "The road descends through rolling hills clothed in tall grass and flowering shrubs that hum with insect life. The Apelian lowlands are visible to the south, a vast green basin of unbroken jungle canopy that stretches to the horizon like a rumpled emerald blanket. Mytrone trail markers — tall poles topped with carved horse heads — give way to Wargbond boundary signs: goblin script carved into tree trunks with crude but effective clarity, warning travelers that they approach monitored territory. The humidity thickens with every step downhill, and the scent of tropical vegetation grows from a suggestion to a presence.",
+    "description": "The road descends through rolling hills clothed in tall grass and flowering shrubs that hum with insect life. The Apelian lowlands are visible to the south, a vast green basin of unbroken jungle canopy that stretches to the horizon like a rumpled emerald blanket. Mytrone trail markers -- tall poles topped with carved horse heads -- give way to Wargbond boundary signs: goblin script carved into tree trunks with crude but effective clarity, warning travelers that they approach monitored territory. The humidity thickens with every step downhill, and the scent of tropical vegetation grows from a suggestion to a presence.",
     "exits": {
       "north": 11080,
       "south": 11082
@@ -262,7 +262,7 @@
   {
     "vnum": 11082,
     "name": "Jungle Margin",
-    "description": "Dense undergrowth closes in on both sides of the trail like green walls, vines and broad-leafed plants pressing against the narrow passage with vegetative urgency. The humidity rises sharply, and the canopy overhead filters the sunlight to a green twilight that makes noon feel like dusk. Insect noise replaces the steppe's wind-song — a ceaseless, layered chorus of buzzing, clicking, and droning that fills every frequency. The transition from grassland to jungle is nearly complete here, marked by the appearance of epiphytes, hanging mosses, and the first of the towering hardwoods that characterize the Deepwater Marches.",
+    "description": "Dense undergrowth closes in on both sides of the trail like green walls, vines and broad-leafed plants pressing against the narrow passage with vegetative urgency. The humidity rises sharply, and the canopy overhead filters the sunlight to a green twilight that makes noon feel like dusk. Insect noise replaces the steppe's wind-song -- a ceaseless, layered chorus of buzzing, clicking, and droning that fills every frequency. The transition from grassland to jungle is nearly complete here, marked by the appearance of epiphytes, hanging mosses, and the first of the towering hardwoods that characterize the Deepwater Marches.",
     "exits": {
       "north": 11081,
       "south": 11083
@@ -274,7 +274,7 @@
   {
     "vnum": 11083,
     "name": "Apelian Lowlands Trail",
-    "description": "The trail descends into the Apelian lowlands proper, where the jungle floor is soft and damp, every surface furred with moss or slicked with moisture. Bioluminescent fungi glow along fallen logs in pale blue and green constellations, casting just enough light to see by when the canopy blocks the sun entirely. The Deepwood's characteristic smell pervades everything — the rich perfume of leaf rot, flower bloom, and dark fertile earth, an ancient organic scent that speaks of centuries of unbroken growth. Vines hang from the canopy in thick curtains, and the trail is marked only by machete scars on tree trunks, each one slowly healing closed.",
+    "description": "The trail descends into the Apelian lowlands proper, where the jungle floor is soft and damp, every surface furred with moss or slicked with moisture. Bioluminescent fungi glow along fallen logs in pale blue and green constellations, casting just enough light to see by when the canopy blocks the sun entirely. The Deepwood's characteristic smell pervades everything -- the rich perfume of leaf rot, flower bloom, and dark fertile earth, an ancient organic scent that speaks of centuries of unbroken growth. Vines hang from the canopy in thick curtains, and the trail is marked only by machete scars on tree trunks, each one slowly healing closed.",
     "exits": {
       "north": 11082,
       "south": 11084
@@ -286,7 +286,7 @@
   {
     "vnum": 11084,
     "name": "Deep Jungle Approach",
-    "description": "The trail narrows further as old-growth trees close overhead, their trunks wider than houses, their root systems forming walls and archways that the path must navigate around. Burned sections appear along the route — the beginning of the Ash Trails that serve as the Deepwater Marches' road network, where controlled fires keep the jungle from reclaiming the paths entirely. Charcoal crunches underfoot, black and gritty against the red-brown jungle soil. A Wargbond scout marker is nailed to a tree at eye level, a crude wooden plaque bearing goblin glyphs that indicate monitored territory ahead and the consequences for uninvited guests.",
+    "description": "The trail narrows further as old-growth trees close overhead, their trunks wider than houses, their root systems forming walls and archways that the path must navigate around. Burned sections appear along the route -- the beginning of the Ash Trails that serve as the Deepwater Marches' road network, where controlled fires keep the jungle from reclaiming the paths entirely. Charcoal crunches underfoot, black and gritty against the red-brown jungle soil. A Wargbond scout marker is nailed to a tree at eye level, a crude wooden plaque bearing goblin glyphs that indicate monitored territory ahead and the consequences for uninvited guests.",
     "exits": {
       "north": 11083,
       "south": 11085
@@ -298,7 +298,7 @@
   {
     "vnum": 11085,
     "name": "Northern Ash Trail Junction",
-    "description": "The jungle trail meets the Ash Trail network at a junction where burned paths radiate outward like spokes, providing normal-speed travel through otherwise impassable jungle. The junction shows signs of regular use — undergrowth trimmed back with military precision, a cleared campsite with a stone-lined fire pit, and goblin-script direction markers nailed to trees pointing toward Titan's Rest and Thornwall. The controlled burns give the air a perpetual smoky quality, and the ground is a patchwork of black charcoal and green regrowth. Wargbond scouts pass through here on regular patrols, their movements silent despite the crunching terrain.",
+    "description": "The jungle trail meets the Ash Trail network at a junction where burned paths radiate outward like spokes, providing normal-speed travel through otherwise impassable jungle. The junction shows signs of regular use -- undergrowth trimmed back with military precision, a cleared campsite with a stone-lined fire pit, and goblin-script direction markers nailed to trees pointing toward Titan's Rest and Thornwall. The controlled burns give the air a perpetual smoky quality, and the ground is a patchwork of black charcoal and green regrowth. Wargbond scouts pass through here on regular patrols, their movements silent despite the crunching terrain.",
     "exits": {
       "north": 11084,
       "south": 9415
@@ -309,8 +309,8 @@
   },
   {
     "vnum": 11100,
-    "name": "Hillwatch Pass — Southern Approach",
-    "description": "North of Hillwatch's garrison, the road begins climbing into the Southern Giant's Teeth, the flatlands falling away behind with surprising speed. Wind-Rider patrol markers line the route at regular intervals, their pennants refreshed monthly by garrison riders who know every stone of this pass. The mountains rise steeply on either side, their inner faces scarred by ancient volcanic activity — dark basalt intrusions cutting through pale granite like veins of black ink. The road is wide and well-maintained here, its strategic importance to Gatefall's defense ensuring constant upkeep.",
+    "name": "Hillwatch Pass -- Southern Approach",
+    "description": "North of Hillwatch's garrison, the road begins climbing into the Southern Giant's Teeth, the flatlands falling away behind with surprising speed. Wind-Rider patrol markers line the route at regular intervals, their pennants refreshed monthly by garrison riders who know every stone of this pass. The mountains rise steeply on either side, their inner faces scarred by ancient volcanic activity -- dark basalt intrusions cutting through pale granite like veins of black ink. The road is wide and well-maintained here, its strategic importance to Gatefall's defense ensuring constant upkeep.",
     "exits": {
       "southeast": 12000,
       "north": 11101
@@ -321,8 +321,8 @@
   },
   {
     "vnum": 11101,
-    "name": "Hillwatch Pass — Lower Switchbacks",
-    "description": "The road switchbacks up the mountainside in sharp turns carved by Giant engineers millennia ago, each turn wide enough for war-wagons that no longer exist. The stonework is weathered but sound, its joints tight and its surfaces grooved for traction — a testament to a craft that modern masons can maintain but not replicate. Looking south, Gatefall's grasslands and crescent forests spread below in a patchwork of green and gold, stretching to the hazy horizon. The wind picks up with altitude, tugging at cloaks and whistling through cracks in the mountain's face. Small shrines to the Lord of Stone occupy several of the switchback landings, their offerings fresh.",
+    "name": "Hillwatch Pass -- Lower Switchbacks",
+    "description": "The road switchbacks up the mountainside in sharp turns carved by Giant engineers millennia ago, each turn wide enough for war-wagons that no longer exist. The stonework is weathered but sound, its joints tight and its surfaces grooved for traction -- a testament to a craft that modern masons can maintain but not replicate. Looking south, Gatefall's grasslands and crescent forests spread below in a patchwork of green and gold, stretching to the hazy horizon. The wind picks up with altitude, tugging at cloaks and whistling through cracks in the mountain's face. Small shrines to the Lord of Stone occupy several of the switchback landings, their offerings fresh.",
     "exits": {
       "south": 11100,
       "north": 11102
@@ -333,8 +333,8 @@
   },
   {
     "vnum": 11102,
-    "name": "Hillwatch Pass — Summit",
-    "description": "The highest point of the pass, where the Southern Giant's Teeth thin to a wind-blasted ridge barely wider than the road itself. To the north, the Infinite Desert stretches to the horizon in an ocean of shimmering heat haze, its sands rippling with mirage-water that promises nothing. To the south, Gatefall's green lands offer a stark contrast that makes the desert seem even more desolate by comparison. The temperature shifts dramatically between the two faces of the ridge — cool mountain air on the south slope, furnace-dry heat on the north. A Giant-era waymarker stands at the apex, its runes still sharp after millennia of wind.",
+    "name": "Hillwatch Pass -- Summit",
+    "description": "The highest point of the pass, where the Southern Giant's Teeth thin to a wind-blasted ridge barely wider than the road itself. To the north, the Infinite Desert stretches to the horizon in an ocean of shimmering heat haze, its sands rippling with mirage-water that promises nothing. To the south, Gatefall's green lands offer a stark contrast that makes the desert seem even more desolate by comparison. The temperature shifts dramatically between the two faces of the ridge -- cool mountain air on the south slope, furnace-dry heat on the north. A Giant-era waymarker stands at the apex, its runes still sharp after millennia of wind.",
     "exits": {
       "south": 11101,
       "north": 11103
@@ -357,8 +357,8 @@
   },
   {
     "vnum": 11103,
-    "name": "Hillwatch Pass — Northern Descent",
-    "description": "The road descends the northern face of the range toward the desert below, each switchback revealing more of the vast, shimmering expanse ahead. Heat rises in visible waves that warp the landscape into liquid distortion. The vegetation vanishes within a few hundred yards of the summit — mountain scrub giving way to bare rock, then bare rock to wind-scoured sand. Giant-era road markers, half-buried in drift sand that the wind rearranges daily, still guide the way with their deeply carved directional runes. The descent is steep, and the sand that dusts the stone surface makes footing treacherous.",
+    "name": "Hillwatch Pass -- Northern Descent",
+    "description": "The road descends the northern face of the range toward the desert below, each switchback revealing more of the vast, shimmering expanse ahead. Heat rises in visible waves that warp the landscape into liquid distortion. The vegetation vanishes within a few hundred yards of the summit -- mountain scrub giving way to bare rock, then bare rock to wind-scoured sand. Giant-era road markers, half-buried in drift sand that the wind rearranges daily, still guide the way with their deeply carved directional runes. The descent is steep, and the sand that dusts the stone surface makes footing treacherous.",
     "exits": {
       "south": 11102,
       "north": 11104
@@ -369,8 +369,8 @@
   },
   {
     "vnum": 11104,
-    "name": "Hillwatch Pass — Desert Foothills",
-    "description": "The mountains flatten into rocky foothills where sand and stone alternate in a barren mosaic. The last shade disappears as the final stunted trees give way to nothing but rock, sand, and sky. A stone-roofed way-shelter stands beside the road — ancient Giant construction, its walls three feet thick, maintained across the centuries by Sandsong pilgrims who consider the desert roads sacred ground. The shelter offers brief respite from the relentless sun, its interior cool and dark, its walls carved with pilgrim prayers in a dozen languages. Water stains on the ceiling mark where condensation collects during the cold desert nights.",
+    "name": "Hillwatch Pass -- Desert Foothills",
+    "description": "The mountains flatten into rocky foothills where sand and stone alternate in a barren mosaic. The last shade disappears as the final stunted trees give way to nothing but rock, sand, and sky. A stone-roofed way-shelter stands beside the road -- ancient Giant construction, its walls three feet thick, maintained across the centuries by Sandsong pilgrims who consider the desert roads sacred ground. The shelter offers brief respite from the relentless sun, its interior cool and dark, its walls carved with pilgrim prayers in a dozen languages. Water stains on the ceiling mark where condensation collects during the cold desert nights.",
     "exits": {
       "south": 11103,
       "north": 11105
@@ -382,7 +382,7 @@
   {
     "vnum": 11105,
     "name": "Southern Desert Road",
-    "description": "Open desert stretches ahead in every direction, the road marked only by stone cairns placed at intervals of perhaps a quarter mile, each one a careful stack of flat rocks that the wind slowly dismantles and pilgrims slowly rebuild. The sun is relentless, beating down from a sky bleached white at the horizon and deep blue overhead, its heat pressing on the skull like a physical weight. Sand Warden patrol signs indicate this route is monitored — carved stone markers bearing the Warden seal and a date of last patrol. The distances between outposts are measured in days, not hours, and the silence between the cairns is absolute.",
+    "description": "Open desert stretches ahead in every direction, the road marked only by stone cairns placed at intervals of perhaps a quarter mile, each one a careful stack of flat rocks that the wind slowly dismantles and pilgrims slowly rebuild. The sun is relentless, beating down from a sky bleached white at the horizon and deep blue overhead, its heat pressing on the skull like a physical weight. Sand Warden patrol signs indicate this route is monitored -- carved stone markers bearing the Warden seal and a date of last patrol. The distances between outposts are measured in days, not hours, and the silence between the cairns is absolute.",
     "exits": {
       "south": 11104,
       "north": 11106
@@ -405,7 +405,7 @@
   },
   {
     "vnum": 11106,
-    "name": "Desert Road — Southern Junction",
+    "name": "Desert Road -- Southern Junction",
     "description": "A junction where the Hillwatch Pass road meets east-west desert caravan routes, the intersection marked by a cluster of tall cairns and a weathered stone signpost. Carved directional markers indicate the way: north toward the oasis cities and their date-palm gardens, east toward the Glass Wastes where sand has been fused to mirror by ancient cataclysm, west toward the Great River Gorge and its cliff-face settlements. The sand here is packed hard by generations of caravan traffic, scored with wheel ruts and hoof prints that the wind fills and empties in an endless cycle. Discarded water skins and broken harness leather litter the margins.",
     "exits": {
       "south": 11105,
@@ -417,8 +417,8 @@
   },
   {
     "vnum": 11107,
-    "name": "Desert Road — Inner Approach",
-    "description": "The desert road continues north toward the heart of the Infinite Desert, a ribbon of packed sand stretching into the shimmering distance. The Northern Giant's Teeth are visible as a dark, jagged line on the far horizon, impossibly distant across an expanse that seems to breathe with heat. Oasis-city ruins dot the route ahead — their broken towers visible as dark smudges against the sand — interspersed with functioning pilgrim stations where water and shade can be found for a price. The wind carries fine sand that gets into everything, coating skin and cloth and metal with a persistent gritty film. At night, this road is said to be beautiful, the stars so thick they cast shadows on the dunes.",
+    "name": "Desert Road -- Inner Approach",
+    "description": "The desert road continues north toward the heart of the Infinite Desert, a ribbon of packed sand stretching into the shimmering distance. The Northern Giant's Teeth are visible as a dark, jagged line on the far horizon, impossibly distant across an expanse that seems to breathe with heat. Oasis-city ruins dot the route ahead -- their broken towers visible as dark smudges against the sand -- interspersed with functioning pilgrim stations where water and shade can be found for a price. The wind carries fine sand that gets into everything, coating skin and cloth and metal with a persistent gritty film. At night, this road is said to be beautiful, the stars so thick they cast shadows on the dunes.",
     "exits": {
       "south": 11106,
       "northeast": 8302
@@ -442,7 +442,7 @@
   {
     "vnum": 11131,
     "name": "Northern Giant's Teeth Foothills",
-    "description": "The terrain rises sharply into the mountain foothills, the gentle highland abruptly becoming steep, boulder-strewn slopes. The roar of falling water is audible even here, carried on the mountain air — the Sea Falls, where the Kailian Sea's overflow plunges through the mountains into the Great River Gorge far below. Pekakarlik trail markers carved into trailside boulders guide the way with their precise angular script, each one noting distance to the falls and elevation gained. The vegetation thins as altitude increases, hardy alpine flowers replacing the lowland grass, their colors startlingly vivid against the grey granite.",
+    "description": "The terrain rises sharply into the mountain foothills, the gentle highland abruptly becoming steep, boulder-strewn slopes. The roar of falling water is audible even here, carried on the mountain air -- the Sea Falls, where the Kailian Sea's overflow plunges through the mountains into the Great River Gorge far below. Pekakarlik trail markers carved into trailside boulders guide the way with their precise angular script, each one noting distance to the falls and elevation gained. The vegetation thins as altitude increases, hardy alpine flowers replacing the lowland grass, their colors startlingly vivid against the grey granite.",
     "exits": {
       "north": 11130,
       "south": 11132
@@ -453,7 +453,7 @@
   },
   {
     "vnum": 11132,
-    "name": "Northern Giant's Teeth — Sea Falls Pass",
+    "name": "Northern Giant's Teeth -- Sea Falls Pass",
     "description": "A narrow mountain pass winds between granite peaks worn smooth by ages of wind and water, the rock faces streaked with mineral deposits in bands of rust, cream, and grey. The thunder of the Sea Falls grows louder here, reverberating through the stone itself until the mountain seems to vibrate underfoot. Mist drifts through the pass on certain winds, coating the rocks in slick moisture that makes every step a careful negotiation. The air tastes of minerals and clean water, a sharp contrast to the dry highlands behind. Lichen and moss flourish in the constant dampness, painting the stone in shades of green and grey.",
     "exits": {
       "north": 11131,
@@ -466,7 +466,7 @@
   {
     "vnum": 11133,
     "name": "Inner Mountain Descent",
-    "description": "The road descends the inner face of the Northern Giant's Teeth, and the Great River Gorge opens below in a vista of staggering scale — a vast canyon splitting the landscape like a wound that reaches to the earth's bones. The Sea Falls are visible in the distance as a white curtain of water cascading over the canyon rim, its spray rising in a perpetual cloud that catches the sunlight and scatters it into fragments of color. Desert heat rises from the canyon floor to meet the mountain's coolness at this elevation, creating unpredictable gusts and eddies that tug at clothing and hair. The descent path is carved into the rock face, wide enough for two abreast but no more.",
+    "description": "The road descends the inner face of the Northern Giant's Teeth, and the Great River Gorge opens below in a vista of staggering scale -- a vast canyon splitting the landscape like a wound that reaches to the earth's bones. The Sea Falls are visible in the distance as a white curtain of water cascading over the canyon rim, its spray rising in a perpetual cloud that catches the sunlight and scatters it into fragments of color. Desert heat rises from the canyon floor to meet the mountain's coolness at this elevation, creating unpredictable gusts and eddies that tug at clothing and hair. The descent path is carved into the rock face, wide enough for two abreast but no more.",
     "exits": {
       "north": 11132,
       "south": 11134
@@ -477,8 +477,8 @@
   },
   {
     "vnum": 11134,
-    "name": "Great River Gorge — Eastern Rim Approach",
-    "description": "The road reaches the eastern rim of the Great River Gorge, where the canyon stretches west in a seemingly endless gash across the desert landscape. The Great River is a silver ribbon far below, its current deceptively calm from this height, its true power evident only in the white water where it meets rapids and boulders. Pekakarlik cliff-face settlements dot the opposite wall — dark windows, carved balconies, and the glint of copper pipe carrying water from springs deep in the rock. A carved path descends toward the North Rim Trail, its switchbacks visible as a pale zigzag line against the canyon's dark stone face.",
+    "name": "Great River Gorge -- Eastern Rim Approach",
+    "description": "The road reaches the eastern rim of the Great River Gorge, where the canyon stretches west in a seemingly endless gash across the desert landscape. The Great River is a silver ribbon far below, its current deceptively calm from this height, its true power evident only in the white water where it meets rapids and boulders. Pekakarlik cliff-face settlements dot the opposite wall -- dark windows, carved balconies, and the glint of copper pipe carrying water from springs deep in the rock. A carved path descends toward the North Rim Trail, its switchbacks visible as a pale zigzag line against the canyon's dark stone face.",
     "exits": {
       "north": 11133,
       "south": 11135
@@ -489,7 +489,7 @@
   },
   {
     "vnum": 11135,
-    "name": "Gorge Rim — Eastern Junction",
+    "name": "Gorge Rim -- Eastern Junction",
     "description": "The eastern rim path meets the North Rim Trail that runs along the gorge's edge, a well-worn route maintained by the Pekakarlik settlements below. West leads to the main gorge overlook and the descent paths that switchback down to the river level, where ferries and rope bridges connect the two sides. The Sea Falls' spray creates a permanent rainbow visible from this vantage point on clear days, its arc spanning the canyon like a bridge made of light and water. The junction is marked by a Pekakarlik waystone carved with distances, settlement names, and a warning about flash floods during the monsoon season.",
     "exits": {
       "north": 11134,

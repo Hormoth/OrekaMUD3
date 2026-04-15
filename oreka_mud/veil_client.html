@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oreka MUD - Veil Client</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a;
+    color: #c0c0c0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  #header {
+    background: #1a1a2e;
+    color: #e0a040;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+    text-align: center;
+  }
+  #output {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.4;
+  }
+  #input-bar {
+    display: flex;
+    border-top: 1px solid #333;
+    background: #111;
+    padding: 6px 8px;
+  }
+  #input-bar span {
+    color: #e0a040;
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+  #cmd {
+    flex: 1;
+    background: #111;
+    color: #e0e0e0;
+    border: none;
+    outline: none;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    padding: 6px;
+  }
+  #status {
+    background: #1a1a2e;
+    color: #888;
+    padding: 4px 16px;
+    font-size: 12px;
+    text-align: right;
+    border-top: 1px solid #222;
+  }
+  #status.connected { color: #4a4; }
+  #status.disconnected { color: #a44; }
+
+  /* ANSI color support */
+  .ansi-bold { font-weight: bold; }
+  .ansi-dim { opacity: 0.6; }
+  .ansi-black { color: #000; }
+  .ansi-red { color: #c44; }
+  .ansi-green { color: #4a4; }
+  .ansi-yellow { color: #e0a040; }
+  .ansi-blue { color: #48c; }
+  .ansi-magenta { color: #a4a; }
+  .ansi-cyan { color: #4cc; }
+  .ansi-white { color: #e0e0e0; }
+  .ansi-bright-black { color: #666; }
+  .ansi-bright-red { color: #f66; }
+  .ansi-bright-green { color: #6f6; }
+  .ansi-bright-yellow { color: #ff6; }
+  .ansi-bright-blue { color: #6af; }
+  .ansi-bright-magenta { color: #f6f; }
+  .ansi-bright-cyan { color: #6ff; }
+  .ansi-bright-white { color: #fff; }
+</style>
+</head>
+<body>
+
+<div id="header">Oreka MUD - Veil Client</div>
+<div id="output"></div>
+<div id="input-bar">
+  <span>&gt;</span>
+  <input type="text" id="cmd" autofocus autocomplete="off" placeholder="Enter command...">
+</div>
+<div id="status" class="disconnected">Disconnected</div>
+
+<script>
+const output = document.getElementById('output');
+const cmd = document.getElementById('cmd');
+const status = document.getElementById('status');
+let ws = null;
+let history = [];
+let historyIdx = -1;
+
+// Determine WebSocket URL from current page location
+const wsHost = window.location.hostname || 'localhost';
+const wsPort = 8765;
+const wsUrl = `ws://${wsHost}:${wsPort}`;
+
+function connect() {
+  status.textContent = 'Connecting...';
+  status.className = 'disconnected';
+
+  ws = new WebSocket(wsUrl);
+
+  ws.onopen = () => {
+    status.textContent = 'Connected to Oreka';
+    status.className = 'connected';
+    appendOutput('\n--- Connected to Oreka MUD ---\n\n');
+  };
+
+  ws.onmessage = (event) => {
+    appendAnsi(event.data);
+  };
+
+  ws.onclose = () => {
+    status.textContent = 'Disconnected - Click to reconnect';
+    status.className = 'disconnected';
+    appendOutput('\n--- Disconnected ---\n');
+  };
+
+  ws.onerror = () => {
+    status.textContent = 'Connection error';
+    status.className = 'disconnected';
+  };
+}
+
+// ANSI escape code parser
+const ANSI_COLORS = {
+  '0':  '', // reset
+  '1':  'ansi-bold',
+  '2':  'ansi-dim',
+  '0;31': 'ansi-red',
+  '0;32': 'ansi-green',
+  '0;33': 'ansi-yellow',
+  '0;35': 'ansi-magenta',
+  '0;90': 'ansi-bright-black',
+  '1;31': 'ansi-bold ansi-bright-red',
+  '1;32': 'ansi-bold ansi-bright-green',
+  '1;33': 'ansi-bold ansi-bright-yellow',
+  '1;34': 'ansi-bold ansi-bright-blue',
+  '1;35': 'ansi-bold ansi-bright-magenta',
+  '1;36': 'ansi-bold ansi-bright-cyan',
+  '1;37': 'ansi-bold ansi-bright-white',
+};
+
+function escapeHtml(text) {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function appendAnsi(text) {
+  // Parse ANSI escape codes and convert to spans
+  const regex = /\x1b\[([0-9;]*)m/g;
+  let result = '';
+  let lastIndex = 0;
+  let currentClass = '';
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Add text before this escape code
+    const before = text.substring(lastIndex, match.index);
+    if (before) {
+      if (currentClass) {
+        result += `<span class="${currentClass}">${escapeHtml(before)}</span>`;
+      } else {
+        result += escapeHtml(before);
+      }
+    }
+
+    const code = match[1];
+    if (code === '0' || code === '') {
+      currentClass = '';
+    } else {
+      currentClass = ANSI_COLORS[code] || currentClass;
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  // Remaining text
+  const remaining = text.substring(lastIndex);
+  if (remaining) {
+    if (currentClass) {
+      result += `<span class="${currentClass}">${escapeHtml(remaining)}</span>`;
+    } else {
+      result += escapeHtml(remaining);
+    }
+  }
+
+  output.innerHTML += result;
+  output.scrollTop = output.scrollHeight;
+}
+
+function appendOutput(text) {
+  output.innerHTML += escapeHtml(text);
+  output.scrollTop = output.scrollHeight;
+}
+
+function sendCommand(text) {
+  if (ws && ws.readyState === WebSocket.OPEN) {
+    ws.send(text + '\n');
+    // Don't echo locally — the server echoes back
+  }
+}
+
+// Input handling
+cmd.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    const text = cmd.value;
+    if (text.length > 0) {
+      history.unshift(text);
+      if (history.length > 100) history.pop();
+    }
+    historyIdx = -1;
+    sendCommand(text);
+    cmd.value = '';
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (historyIdx < history.length - 1) {
+      historyIdx++;
+      cmd.value = history[historyIdx];
+    }
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (historyIdx > 0) {
+      historyIdx--;
+      cmd.value = history[historyIdx];
+    } else {
+      historyIdx = -1;
+      cmd.value = '';
+    }
+  }
+});
+
+// Reconnect on status click
+status.addEventListener('click', () => {
+  if (!ws || ws.readyState === WebSocket.CLOSED) {
+    connect();
+  }
+});
+
+// Auto-connect
+connect();
+</script>
+</body>
+</html>

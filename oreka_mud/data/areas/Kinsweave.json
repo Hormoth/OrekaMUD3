@@ -1,7 +1,7 @@
 [
   {
     "vnum": 5000,
-    "name": "Stonefall â€” Eastern Gate",
+    "name": "Stonefall â€' Eastern Gate",
     "description": "Massive stone doors stand open in the mountain face, carved directly from the living rock of the Giant's Teeth. Runestone markers flank the passage, their glyphs glowing faintly in the dusty amber light. The smell of stone dust and barley bread drifts from within, and the distant rhythm of chisels echoes down the pass. Guards in granite-grey tabards eye travellers with the wary patience of people who have seen hard times.",
     "exits": {
       "west": 5001,
@@ -14,7 +14,7 @@
   },
   {
     "vnum": 5001,
-    "name": "Stonefall â€” Gate Ward",
+    "name": "Stonefall â€' Gate Ward",
     "description": "The gate ward is a broad antechamber carved into the mountain's foothills, its ceiling supported by pillars etched with the names of Orean fallen. Runestone lanterns cast warm amber light across the dusty flagstones. A guard post occupies the north wall, and a signpost directs visitors toward the Quarrymarket and Granite Hold. The faint tremor of quarry work can be felt through the soles of your boots.",
     "exits": {
       "east": 5000,
@@ -28,8 +28,8 @@
   },
   {
     "vnum": 5002,
-    "name": "Stonefall â€” Main Road",
-    "description": "The city's central road runs westward between buildings carved half into the mountain and half freestanding, their walls thick with decades of soot and runestone inscription. Orean residents move with purposeful strides, carrying stone tools and basalt samples. The hum of the city fills the airâ€”chisel-work, murmured conversation, the bark of a foreman from somewhere above. Runestone markers guide the way to each district.",
+    "name": "Stonefall â€' Main Road",
+    "description": "The city's central road runs westward between buildings carved half into the mountain and half freestanding, their walls thick with decades of soot and runestone inscription. Orean residents move with purposeful strides, carrying stone tools and basalt samples. The hum of the city fills the airâ€'chisel-work, murmured conversation, the bark of a foreman from somewhere above. Runestone markers guide the way to each district.",
     "exits": {
       "east": 5001,
       "west": 5003,
@@ -42,8 +42,8 @@
   },
   {
     "vnum": 5003,
-    "name": "Stonefall â€” West Road",
-    "description": "The road narrows here where the mountain's flank crowds in from the north, forcing buildings close together. Carved niches in the stone walls hold offerings to the Lord of Stoneâ€”small polished pebbles, carved figures, dried mountain herbs. A Visetri dwarf hauls a cart of dressed basalt blocks southward, nodding to passersby. The scent of mineral dust is stronger here, close to the quarry shafts.",
+    "name": "Stonefall â€' West Road",
+    "description": "The road narrows here where the mountain's flank crowds in from the north, forcing buildings close together. Carved niches in the stone walls hold offerings to the Lord of Stoneâ€'small polished pebbles, carved figures, dried mountain herbs. A Visetri dwarf hauls a cart of dressed basalt blocks southward, nodding to passersby. The scent of mineral dust is stronger here, close to the quarry shafts.",
     "exits": {
       "east": 5002,
       "west": 5004,
@@ -56,8 +56,8 @@
   },
   {
     "vnum": 5004,
-    "name": "Stonefall â€” Crossroads of the Hold",
-    "description": "Four carved obelisks mark this crossroads, each face etched with directional runes and the crest of Elder Torv Graniteheart â€” a hammer over a mountain peak. The centre stone bears a worn relief of Tharok's pillar, Stonefall's legendary founding marker. Foot traffic is heaviest here, with residents flowing toward the Hold to the north and the Quarrymarket to the south. The air smells of stone, lamp oil, and distant cook fires.",
+    "name": "Stonefall â€' Crossroads of the Hold",
+    "description": "Four carved obelisks mark this crossroads, each face etched with directional runes and the crest of Elder Torv Graniteheart â€' a hammer over a mountain peak. The centre stone bears a worn relief of Tharok's pillar, Stonefall's legendary founding marker. Foot traffic is heaviest here, with residents flowing toward the Hold to the north and the Quarrymarket to the south. The air smells of stone, lamp oil, and distant cook fires.",
     "exits": {
       "east": 5003,
       "west": 5005,
@@ -70,7 +70,7 @@
   },
   {
     "vnum": 5005,
-    "name": "Stonefall â€” Grove Road",
+    "name": "Stonefall â€' Grove Road",
     "description": "The road slopes gently westward and the stone buildings give way to older, rougher construction where the mountain meets the city's western edge. Moss grows thicker here, and the carved runestones have a weathered quality that speaks of centuries. The sound of wind through the heights above mingles with the creak of a handcart. Ahead, the smell of earth and growing things signals the proximity of Earthcircle Grove.",
     "exits": {
       "east": 5004,
@@ -82,7 +82,7 @@
   },
   {
     "vnum": 5006,
-    "name": "Stonefall â€” Residential Lane, East",
+    "name": "Stonefall â€' Residential Lane, East",
     "description": "Low-roofed homes line this quiet lane, their stone walls worn smooth by generations of hands. Window boxes hold hardy mountain herbs, and children play knucklebones in a carved alcove nearby. The lane connects the Gate Ward to the residential heart of the city, and old women sit in doorways watching strangers with frank curiosity. Tharok's pillar is visible as a dark silhouette at the lane's western end.",
     "exits": {
       "north": 5001,
@@ -96,7 +96,7 @@
   },
   {
     "vnum": 5007,
-    "name": "Stonefall â€” Residential Lane, Central",
+    "name": "Stonefall â€' Residential Lane, Central",
     "description": "Homes here are older, their stones fitting together with the seamless precision of Orean craft passed down through generations. A communal hearth occupies a covered alcove, its fire burning low in the afternoon light. Neighbours share news across doorsteps, their voices low and measured in the Orean way. A carved stone shrine to the Lord of Stone stands at the lane's midpoint, worn smooth by years of reverent touch.",
     "exits": {
       "east": 5006,
@@ -109,8 +109,8 @@
   },
   {
     "vnum": 5008,
-    "name": "Stonefall â€” Residential Lane, West",
-    "description": "The westernmost residential lane backs directly against a sheer cliff face, its homes tucked under natural overhangs that shelter them from rockfall and weather alike. This is the oldest part of the city's housing stock, and the stonework shows it â€” beautiful, precise, and very old. A staircase cut into the cliff leads upward to the Watchtower Rise district. The smell of baking bread drifts from a half-open door.",
+    "name": "Stonefall â€' Residential Lane, West",
+    "description": "The westernmost residential lane backs directly against a sheer cliff face, its homes tucked under natural overhangs that shelter them from rockfall and weather alike. This is the oldest part of the city's housing stock, and the stonework shows it â€' beautiful, precise, and very old. A staircase cut into the cliff leads upward to the Watchtower Rise district. The smell of baking bread drifts from a half-open door.",
     "exits": {
       "east": 5007,
       "north": 5003,
@@ -122,7 +122,7 @@
   },
   {
     "vnum": 5009,
-    "name": "Stonefall â€” Shrine of Ludus Galerius",
+    "name": "Stonefall â€' Shrine of Ludus Galerius",
     "description": "This small shrine sits in a carved recess near Tharok's pillar, its altar stone bearing the hammer-and-crown symbol of Ludus Galerius, the Ascended God of battle and honour. Offerings of broken weapons and polished stones are arranged with care. A bronze plaque describes Aldenheim's fall and Stonefall's survival in terse, sorrowful language. The air here feels heavier than elsewhere, freighted with the city's unspoken guilt.",
     "exits": {
       "south": 5004,
@@ -144,7 +144,7 @@
   },
   {
     "vnum": 5010,
-    "name": "Stonefall â€” Quarrymarket Square",
+    "name": "Stonefall â€' Quarrymarket Square",
     "description": "The Quarrymarket opens into a broad paved square below the looming face of Granite Hold. Stalls of dressed basalt, runestone artifacts, and quarry tools crowd the space, vendors calling their prices in the clipped Orean trading dialect. The square smells of stone dust and grilled root vegetables sold from clay braziers. Visetri dwarves and Orean humans haggle with equal intensity, their breath misting in the mountain cool.",
     "exits": {
       "south": 5001,
@@ -159,8 +159,8 @@
   },
   {
     "vnum": 5011,
-    "name": "Stonefall â€” Quarrymarket North Stalls",
-    "description": "The northern stalls of the Quarrymarket specialise in finished stonework â€” carved lintels, decorative runestones, and the polished obsidian figurines that Stonefall artisans are known for across the region. A stout Orean woman demonstrates a stone shape technique to a cluster of apprentices, her hands moving with practised surety. The sharp smell of cutting oil mingles with dust in the cool air.",
+    "name": "Stonefall â€' Quarrymarket North Stalls",
+    "description": "The northern stalls of the Quarrymarket specialise in finished stonework â€' carved lintels, decorative runestones, and the polished obsidian figurines that Stonefall artisans are known for across the region. A stout Orean woman demonstrates a stone shape technique to a cluster of apprentices, her hands moving with practised surety. The sharp smell of cutting oil mingles with dust in the cool air.",
     "exits": {
       "south": 5010,
       "east": 5014,
@@ -174,7 +174,7 @@
   },
   {
     "vnum": 5012,
-    "name": "Stonefall â€” Quarrymarket East Stalls",
+    "name": "Stonefall â€' Quarrymarket East Stalls",
     "description": "Raw material dominates the eastern stalls: basalt blocks on heavy sledges, quarried granite in graded sizes, bags of stone dust used in mortar. Drenna Rockbinder, a Visetri dwarf with ink-stained ledger books tucked under one arm, moves between the stalls checking weights and tallying trade figures with brisk efficiency. Her word here is law, and every stall-keeper knows it.",
     "exits": {
       "west": 5010,
@@ -188,8 +188,8 @@
   },
   {
     "vnum": 5013,
-    "name": "Stonefall â€” The Dusty Chisel Tavern",
-    "description": "The Quarrymarket's tavern is a low-beamed stone hall where quarry workers, traders, and off-duty guards gather over flagons of dark barley ale. Trophy runestones line the walls â€” the first examples carved by notable locals, kept for posterity and pride. A Halfling bard plays a slow Orean work-song on a stone-key instrument in the corner, mostly ignored but appreciated. The fire burns high and the ale flows freely.",
+    "name": "Stonefall â€' The Dusty Chisel Tavern",
+    "description": "The Quarrymarket's tavern is a low-beamed stone hall where quarry workers, traders, and off-duty guards gather over flagons of dark barley ale. Trophy runestones line the walls â€' the first examples carved by notable locals, kept for posterity and pride. A Halfling bard plays a slow Orean work-song on a stone-key instrument in the corner, mostly ignored but appreciated. The fire burns high and the ale flows freely.",
     "exits": {
       "east": 5010
     },
@@ -200,7 +200,7 @@
   },
   {
     "vnum": 5014,
-    "name": "Stonefall â€” Stonecutter's Guild Hall",
+    "name": "Stonefall â€' Stonecutter's Guild Hall",
     "description": "The guild hall presents a formal stone facade etched with the tools of the quarrying trade: chisel, mallet, wedge, and saw. Inside, a vaulted chamber holds the guild records, a library of stonecraft technique, and the ceremonial tools of past master-cutters mounted on the walls. Guild members pay dues here and settle disputes before a stone arbitration table worn smooth by centuries of deliberation.",
     "exits": {
       "south": 5012,
@@ -214,7 +214,7 @@
   },
   {
     "vnum": 5015,
-    "name": "Stonefall â€” Runestone Artifact Stall",
+    "name": "Stonefall â€' Runestone Artifact Stall",
     "description": "A specialist stall behind a low stone counter, hung with examples of runestone work: amulets that hum faintly with earth-magic, carved markers that glow at night, and elaborate keystones for structural enchantment. The proprietor, a wizened Hasura Elf, is one of the few non-humans in the Quarrymarket, and the Oreans give her a wide but respectful berth. Her runestones are the finest in the city.",
     "exits": {
       "east": 5011,
@@ -228,7 +228,7 @@
   },
   {
     "vnum": 5020,
-    "name": "Stonefall â€” South Market Lane",
+    "name": "Stonefall â€' South Market Lane",
     "description": "A lane running south from the main road toward the lower market stalls, its stones worn smooth by constant foot traffic. Pushcarts rattle past carrying basalt chips and root vegetables toward the Quarrymarket. The mountain walls press close on the eastern side, and carved drainage channels run along the lane's edges to manage the trickle of groundwater that seeps from the rock in wet seasons.",
     "exits": {
       "north": 5001,
@@ -241,7 +241,7 @@
   },
   {
     "vnum": 5021,
-    "name": "Stonefall â€” Lower Market",
+    "name": "Stonefall â€' Lower Market",
     "description": "Below the Quarrymarket proper, a lower market handles the humbler trade: food staples, rope, lamp oil, and secondhand tools. Orean farmers from the valley settlements bring barley and root crops here at first light, and by midday the stalls are reduced to picked-over remainders. The smell of fresh-baked rye bread from a baker's stall at the south end is pleasant against the pervasive stone dust.",
     "exits": {
       "north": 5020,
@@ -255,7 +255,7 @@
   },
   {
     "vnum": 5022,
-    "name": "Stonefall â€” The Greystone Inn",
+    "name": "Stonefall â€' The Greystone Inn",
     "description": "The Greystone Inn is a solid three-storey stone building whose thick walls keep it warm in winter and cool in summer with equal competence. The common room is hung with maps of the Giant's Teeth and lanterns of bronze and smoky glass. The innkeeper, a broad-shouldered Orean woman named Vassa Crestmantle, runs the place with calm authority. Rooms are clean, narrow, and unmistakably Orean in their austere comfort.",
     "exits": {
       "east": 5021,
@@ -269,7 +269,7 @@
   },
   {
     "vnum": 5023,
-    "name": "Stonefall â€” South Road",
+    "name": "Stonefall â€' South Road",
     "description": "The road continues south through a cluster of workshops and store-houses whose stone walls are stained with years of workshop smoke. Apprentices sweep stone chips from the doorways. A water trough fed by a mountain spring sits at the road's edge, and mules used to haul quarry material drink from it without ceremony. The smell of cold metal and stone dust is constant.",
     "exits": {
       "north": 5004,
@@ -282,7 +282,7 @@
   },
   {
     "vnum": 5024,
-    "name": "Stonefall â€” South Gate",
+    "name": "Stonefall â€' South Gate",
     "description": "A smaller secondary gate in the city's southern wall, used mainly by quarry workers and farmers from the valley. The stonework here is older than the eastern gate, its lintel carved with the older form of Orean runes that predate the Eke Concordant standardisation. Two guards lean on halberds, alert but relaxed. The valley road south leads toward the farming settlements and eventually to the Chapel road junction.",
     "exits": {
       "north": 5023,
@@ -294,8 +294,8 @@
   },
   {
     "vnum": 5030,
-    "name": "Granite Hold â€” Outer Courtyard",
-    "description": "The outer courtyard of Granite Hold is a broad, open expanse of flagged stone enclosed by walls reinforced with runestone defences that glow faintly blue in the shadow of the Hold's towers. Guards in full plate armour patrol the walls above, their movements precise and unhurried. The courtyard smells of polished stone and lamp oil, and the silence is deliberate â€” noise does not carry well within these walls.",
+    "name": "Granite Hold â€' Outer Courtyard",
+    "description": "The outer courtyard of Granite Hold is a broad, open expanse of flagged stone enclosed by walls reinforced with runestone defences that glow faintly blue in the shadow of the Hold's towers. Guards in full plate armour patrol the walls above, their movements precise and unhurried. The courtyard smells of polished stone and lamp oil, and the silence is deliberate â€' noise does not carry well within these walls.",
     "exits": {
       "south": 5009,
       "north": 5031,
@@ -309,7 +309,7 @@
   },
   {
     "vnum": 5031,
-    "name": "Granite Hold â€” Great Hall",
+    "name": "Granite Hold â€' Great Hall",
     "description": "The great hall is an immense carved chamber with a ceiling lost in shadow above the runestone lanterns. Long stone tables fill the floor, worn by generations of councils and feasts. Elder Torv Graniteheart holds court here, a broad man of fifty with the look of the mountain in his face, slow to speak and slower to change his mind. His carved stone chair sits on a low dais at the north end, and petitioners approach from the south with measured steps.",
     "exits": {
       "south": 5030,
@@ -323,7 +323,7 @@
   },
   {
     "vnum": 5032,
-    "name": "Granite Hold â€” Barracks",
+    "name": "Granite Hold â€' Barracks",
     "description": "The Hold's barracks is a long hall fitted with stone sleeping platforms and iron weapon racks. Off-duty soldiers clean equipment or rest, their conversation low. The room smells of leather and weapon oil, undercut by the ever-present mineral tang of the mountain. A duty roster carved into a slate board near the door lists names in neat Orean script. Veteran guards bunk here alongside younger recruits.",
     "exits": {
       "west": 5030,
@@ -336,8 +336,8 @@
   },
   {
     "vnum": 5033,
-    "name": "Granite Hold â€” Armory",
-    "description": "The armory is a broad low-ceilinged room with weapon racks along every wall and a central island for armour maintenance. Stone Gauntlets â€” the signature weapon enchanted with earth-energy, granting +1 to attack and the ability to knock a target prone once per day â€” are displayed prominently on a locked rack. The armourer, a taciturn Visetri dwarf named Beren Hammerknuckle, is always here, always working.",
+    "name": "Granite Hold â€' Armory",
+    "description": "The armory is a broad low-ceilinged room with weapon racks along every wall and a central island for armour maintenance. Stone Gauntlets â€' the signature weapon enchanted with earth-energy, granting +1 to attack and the ability to knock a target prone once per day â€' are displayed prominently on a locked rack. The armourer, a taciturn Visetri dwarf named Beren Hammerknuckle, is always here, always working.",
     "exits": {
       "east": 5030,
       "north": 5037
@@ -350,8 +350,8 @@
   },
   {
     "vnum": 5034,
-    "name": "Granite Hold â€” Elder's Council Chamber",
-    "description": "The council chamber adjoins the great hall through a heavy stone door carved with the city's founding oath. A round table of polished granite dominates the room, its surface inlaid with a map of the Giant's Teeth region in contrasting stone colours. Hilda Earthvein's seat is marked with a carved leaf; Drenna Rockbinder's with a pickaxe. The room is used for governance and closed deliberation â€” strangers are rarely admitted.",
+    "name": "Granite Hold â€' Elder's Council Chamber",
+    "description": "The council chamber adjoins the great hall through a heavy stone door carved with the city's founding oath. A round table of polished granite dominates the room, its surface inlaid with a map of the Giant's Teeth region in contrasting stone colours. Hilda Earthvein's seat is marked with a carved leaf; Drenna Rockbinder's with a pickaxe. The room is used for governance and closed deliberation â€' strangers are rarely admitted.",
     "exits": {
       "west": 5031
     },
@@ -362,8 +362,8 @@
   },
   {
     "vnum": 5035,
-    "name": "Granite Hold â€” Archive Room",
-    "description": "Shelves of carved stone tablets line the archive room's walls from floor to ceiling, each tablet engraved with a portion of Stonefall's civic record â€” land grants, tax assessments, quarry yields, and the names of the dead going back to the city's founding. A young scribe scratches at a new tablet, his stylus moving carefully. The room smells of dust and the faintly metallic odour of freshly cut stone.",
+    "name": "Granite Hold â€' Archive Room",
+    "description": "Shelves of carved stone tablets line the archive room's walls from floor to ceiling, each tablet engraved with a portion of Stonefall's civic record â€' land grants, tax assessments, quarry yields, and the names of the dead going back to the city's founding. A young scribe scratches at a new tablet, his stylus moving carefully. The room smells of dust and the faintly metallic odour of freshly cut stone.",
     "exits": {
       "east": 5031
     },
@@ -374,7 +374,7 @@
   },
   {
     "vnum": 5036,
-    "name": "Granite Hold â€” Watchtower Base",
+    "name": "Granite Hold â€' Watchtower Base",
     "description": "A spiral stair cut into the Hold's north tower begins here, its steps worn concave by boots over centuries. Arrow slits in the stairwell give slanted views across the city and toward the mountain passes. The stone is bare and functional, without decoration. A guard post with a small brazier and a rack of crossbow bolts sits at the stair's foot, manned at all hours.",
     "exits": {
       "south": 5032,
@@ -387,7 +387,7 @@
   },
   {
     "vnum": 5037,
-    "name": "Granite Hold â€” Watchtower Upper Level",
+    "name": "Granite Hold â€' Watchtower Upper Level",
     "description": "The watchtower's upper platform commands an unobstructed view of Stonefall and the surrounding Giant's Teeth passes for miles in every direction. The wind up here is constant and sharp, carrying the smell of snow from the higher peaks. A signal fire is laid but unlit, its tinder kept dry under a stone cover. Two guards maintain a rotating watch, scanning the valleys with trained eyes.",
     "exits": {
       "down": 5036,
@@ -400,7 +400,7 @@
   },
   {
     "vnum": 5038,
-    "name": "Granite Hold â€” Training Yard",
+    "name": "Granite Hold â€' Training Yard",
     "description": "A walled yard behind the Hold serves as the city guard's training ground. The yard's stone floor is scored with chalk marks indicating combat positions, and a row of practice dummies fashioned from bundled straw and wrapped leather stands against the north wall. A senior guardsman leads a drilling session, his voice carrying crisply across the yard. The crack of wooden practice weapons on stone paviers echoes from the walls.",
     "exits": {
       "south": 5030,
@@ -413,8 +413,8 @@
   },
   {
     "vnum": 5039,
-    "name": "Granite Hold â€” Guard Captain's Office",
-    "description": "A small stone office adjacent to the training yard, its desk buried under patrol reports, duty rosters, and incident tallies. The Guard Captain, a lean Orean woman named Petra Stonewatch, works through the pile with methodical focus. Maps of the surrounding passes are pinned to the wall with iron spikes. A locked chest in the corner holds the city's emergency response kit â€” torches, signal horns, a reserve of healing salves.",
+    "name": "Granite Hold â€' Guard Captain's Office",
+    "description": "A small stone office adjacent to the training yard, its desk buried under patrol reports, duty rosters, and incident tallies. The Guard Captain, a lean Orean woman named Petra Stonewatch, works through the pile with methodical focus. Maps of the surrounding passes are pinned to the wall with iron spikes. A locked chest in the corner holds the city's emergency response kit â€' torches, signal horns, a reserve of healing salves.",
     "exits": {
       "east": 5038
     },
@@ -425,7 +425,7 @@
   },
   {
     "vnum": 5040,
-    "name": "Earthcircle Grove â€” Entrance Path",
+    "name": "Earthcircle Grove â€' Entrance Path",
     "description": "The path to Earthcircle Grove is marked by a row of standing stones whose carved faces have been softened by centuries of weather into abstract shapes. Moss grows thick on the north-facing stones, and a deliberate calm settles over those who walk this way. The mineral smell of the city gives way gradually to the green, living scent of the grove ahead. Druidic runes are scratched into the path's paving stones.",
     "exits": {
       "east": 5005,
@@ -438,8 +438,8 @@
   },
   {
     "vnum": 5041,
-    "name": "Earthcircle Grove â€” Stone Circle",
-    "description": "The sacred stone circle of Stonefall is a ring of twelve standing stones, each representing one of the twelve months of the Orean year. The stones are living granite â€” not quarried but grown from the mountain by the slow work of druids over generations, their surfaces covered in natural crystal formations that catch and scatter light. Hilda Earthvein tends this circle, and her presence can often be felt even when she is not visible. The air hums with earth-magic.",
+    "name": "Earthcircle Grove â€' Stone Circle",
+    "description": "The sacred stone circle of Stonefall is a ring of twelve standing stones, each representing one of the twelve months of the Orean year. The stones are living granite â€' not quarried but grown from the mountain by the slow work of druids over generations, their surfaces covered in natural crystal formations that catch and scatter light. Hilda Earthvein tends this circle, and her presence can often be felt even when she is not visible. The air hums with earth-magic.",
     "exits": {
       "east": 5040,
       "north": 5042,
@@ -454,7 +454,7 @@
   },
   {
     "vnum": 5042,
-    "name": "Earthcircle Grove â€” Shrine to the Lord of Stone",
+    "name": "Earthcircle Grove â€' Shrine to the Lord of Stone",
     "description": "At the grove's northern edge, a natural rock formation has been shaped by druidic stone-work into a shrine. Offerings of carved stone, polished crystals, and dried mountain herbs fill the shallow offering basin at the shrine's base. Stone shape rituals are performed here at the equinoxes and solstices, and the ground around the shrine has been worn bare by generations of reverent feet. The hum of earth-magic is strongest here.",
     "exits": {
       "south": 5041
@@ -481,7 +481,7 @@
   },
   {
     "vnum": 5043,
-    "name": "Earthcircle Grove â€” Healing House",
+    "name": "Earthcircle Grove â€' Healing House",
     "description": "A low building of unmortared dry-stone construction, roofed with living turf, serves as the grove's healing house. The interior smells powerfully of dried herbs, clay poultices, and clean linen. An Orean healer named Marden Rootsalve tends to the sick and injured here, his manner brusque but effective. Beds of carved stone fitted with straw pallets line the walls, and a central worktable holds mortars, pestles, and bundled plants.",
     "exits": {
       "north": 5041
@@ -494,7 +494,7 @@
   },
   {
     "vnum": 5044,
-    "name": "Earthcircle Grove â€” Herb Garden",
+    "name": "Earthcircle Grove â€' Herb Garden",
     "description": "The herb garden is an orderly grid of raised stone beds filled with rich mountain soil, each bed planted with specific medicinal or ritual plants. Labels carved into small stones identify each variety. The garden produces the raw ingredients for Stonefall's healing salves and the incense burned during grove ceremonies. A young druidic apprentice works between the beds, her fingers dark with soil, moving with the careful deliberation of someone learning to listen to plants.",
     "exits": {
       "east": 5041,
@@ -507,8 +507,8 @@
   },
   {
     "vnum": 5045,
-    "name": "Earthcircle Grove â€” Excavation Site",
-    "description": "A freshly dug pit at the grove's western edge is cordoned off with rope and runestone markers. This is the site referenced in local anxious conversation â€” a newly excavated runestone that has begun emitting a low hum that Hilda Earthvein cannot explain. The stone lies partially exposed, its carvings unlike any known Orean or Concordant script. The vibration is faint but perceptible if you place a hand against the nearby earth. Hilda's tools and notes lie abandoned nearby.",
+    "name": "Earthcircle Grove â€' Excavation Site",
+    "description": "A freshly dug pit at the grove's western edge is cordoned off with rope and runestone markers. This is the site referenced in local anxious conversation â€' a newly excavated runestone that has begun emitting a low hum that Hilda Earthvein cannot explain. The stone lies partially exposed, its carvings unlike any known Orean or Concordant script. The vibration is faint but perceptible if you place a hand against the nearby earth. Hilda's tools and notes lie abandoned nearby.",
     "exits": {
       "east": 5044
     },
@@ -519,7 +519,7 @@
   },
   {
     "vnum": 5050,
-    "name": "Watchtower Rise â€” Lower Wall Walk",
+    "name": "Watchtower Rise â€' Lower Wall Walk",
     "description": "A broad wall walk runs along the city's upper defensive perimeter, its parapet of dressed stone offering protection to the guards who patrol it. Below to the south, the residential lanes of Stonefall are visible in their ordered arrangement; above to the north, the Giant's Teeth rise sheer and imposing. The wind here carries the smell of the high passes. Iron torch-brackets hold lanterns that burn from dusk to dawn.",
     "exits": {
       "down": 5008,
@@ -533,7 +533,7 @@
   },
   {
     "vnum": 5051,
-    "name": "Watchtower Rise â€” East Lookout Post",
+    "name": "Watchtower Rise â€' East Lookout Post",
     "description": "The eastern lookout post commands the approach from the lowland passes where travellers and trade goods arrive from the wider Kinsweave. A permanent guard station with a small enclosed room for weather protection stands here, along with a polished bronze signal mirror for long-distance communication with allied settlements. The post is manned around the clock, and the guards track every movement on the approach roads below.",
     "exits": {
       "west": 5050,
@@ -546,8 +546,8 @@
   },
   {
     "vnum": 5052,
-    "name": "Watchtower Rise â€” West Guard Post",
-    "description": "The western guard post watches the mountain approaches where the terrain is roughest and raids most likely to originate. Boulder traps have been constructed along the cliff face below â€” triggered by a lever mechanism inside the post, they can send cascades of stone down prepared channels. The mechanism's maintenance log shows it was last tested three weeks ago. The guards here are the most alert in the city.",
+    "name": "Watchtower Rise â€' West Guard Post",
+    "description": "The western guard post watches the mountain approaches where the terrain is roughest and raids most likely to originate. Boulder traps have been constructed along the cliff face below â€' triggered by a lever mechanism inside the post, they can send cascades of stone down prepared channels. The mechanism's maintenance log shows it was last tested three weeks ago. The guards here are the most alert in the city.",
     "exits": {
       "east": 5050,
       "south": 5053
@@ -559,8 +559,8 @@
   },
   {
     "vnum": 5053,
-    "name": "Watchtower Rise â€” North Wall",
-    "description": "The northernmost defensive wall runs directly along the base of the Giant's Teeth cliffs, where the mountain itself serves as an impenetrable backstop. The wall here is lower than elsewhere â€” the terrain does the work â€” but it is thicker, reinforced with runestone wards that make it resistant to earth-tremor damage. A narrow passage through the rock leads to a concealed exit used for supply runs during sieges.",
+    "name": "Watchtower Rise â€' North Wall",
+    "description": "The northernmost defensive wall runs directly along the base of the Giant's Teeth cliffs, where the mountain itself serves as an impenetrable backstop. The wall here is lower than elsewhere â€' the terrain does the work â€' but it is thicker, reinforced with runestone wards that make it resistant to earth-tremor damage. A narrow passage through the rock leads to a concealed exit used for supply runs during sieges.",
     "exits": {
       "north": 5052,
       "east": 5051,
@@ -573,8 +573,8 @@
   },
   {
     "vnum": 5054,
-    "name": "Watchtower Rise â€” Signal Tower",
-    "description": "The signal tower stands at the highest accessible point of Stonefall's defensive works, a squat stone turret whose beacon fire can be seen from Rivertop and the Chapel road junction on clear nights. The fuel is kept dry under an enchanted stone cover that repels moisture. A signal codebook hangs on a chain beside the fire-striker â€” a list of fire patterns and their meanings, stamped with Elder Graniteheart's seal.",
+    "name": "Watchtower Rise â€' Signal Tower",
+    "description": "The signal tower stands at the highest accessible point of Stonefall's defensive works, a squat stone turret whose beacon fire can be seen from Rivertop and the Chapel road junction on clear nights. The fuel is kept dry under an enchanted stone cover that repels moisture. A signal codebook hangs on a chain beside the fire-striker â€' a list of fire patterns and their meanings, stamped with Elder Graniteheart's seal.",
     "exits": {
       "south": 5053
     },
@@ -585,7 +585,7 @@
   },
   {
     "vnum": 5060,
-    "name": "Rivertop â€” South Landing",
+    "name": "Rivertop â€' South Landing",
     "description": "The south landing at Rivertop is where river traffic from Lakeshore arrives, its stone quay worn smooth by decades of rope-work and mooring posts. The Great River is visible in both directions, its swift current carrying the smell of cold mountain water and distant fish markets. Mariners with sea-blue Eruskan eyes unload crates and barrels with the efficiency of people who regard the river as a second home. Mist rises from the water in morning hours.",
     "exits": {
       "north": 5061,
@@ -599,8 +599,8 @@
   },
   {
     "vnum": 5061,
-    "name": "Rivertop â€” Wavefront Docks, Main Pier",
-    "description": "The main pier of the Wavefront Docks stretches forty yards into the river on rune-carved pilings that Pekakarlik engineers refreshed after the Shattering's floods. Barges, river-boats, and flat-bottomed trade vessels are moored in lines, their lines tended by dock hands shouting over the creak and slap of water. A River Serpent warning flag hangs from the dock master's post â€” yellow today, meaning sightings but no attacks. The dock master, a grizzled Eruskan named Calder Pipstave, keeps close watch.",
+    "name": "Rivertop â€' Wavefront Docks, Main Pier",
+    "description": "The main pier of the Wavefront Docks stretches forty yards into the river on rune-carved pilings that Pekakarlik engineers refreshed after the Shattering's floods. Barges, river-boats, and flat-bottomed trade vessels are moored in lines, their lines tended by dock hands shouting over the creak and slap of water. A River Serpent warning flag hangs from the dock master's post â€' yellow today, meaning sightings but no attacks. The dock master, a grizzled Eruskan named Calder Pipstave, keeps close watch.",
     "exits": {
       "south": 5060,
       "north": 5063,
@@ -614,8 +614,8 @@
   },
   {
     "vnum": 5062,
-    "name": "Rivertop â€” Riverside Road",
-    "description": "A road runs along the river's eastern bank, separating the city's inland districts from the waterfront. Pekakarlik dwarves move along it carrying hydraulic equipment â€” pipes, valves, and the arcane fittings for Rivertop's flood-gate system. The road is wide enough for two carts to pass, its stones fitted with drainage channels cut by Pekakarlik hands two centuries ago. The river is always audible from here, its voice a constant presence.",
+    "name": "Rivertop â€' Riverside Road",
+    "description": "A road runs along the river's eastern bank, separating the city's inland districts from the waterfront. Pekakarlik dwarves move along it carrying hydraulic equipment â€' pipes, valves, and the arcane fittings for Rivertop's flood-gate system. The road is wide enough for two carts to pass, its stones fitted with drainage channels cut by Pekakarlik hands two centuries ago. The river is always audible from here, its voice a constant presence.",
     "exits": {
       "west": 5060,
       "north": 5066,
@@ -629,8 +629,8 @@
   },
   {
     "vnum": 5063,
-    "name": "Rivertop â€” Wavefront Docks, North Pier",
-    "description": "The north pier handles the heavier commercial traffic â€” grain barges from the inland settlements, salt shipments from the coast, and the occasional military cargo. Brix Deepcurrent, a Pekakarlik ranger with a reputation for dock safety, can often be found here watching the water for River Serpents with the focused patience of someone who has seen one too many close calls. His crossbow is always at hand.",
+    "name": "Rivertop â€' Wavefront Docks, North Pier",
+    "description": "The north pier handles the heavier commercial traffic â€' grain barges from the inland settlements, salt shipments from the coast, and the occasional military cargo. Brix Deepcurrent, a Pekakarlik ranger with a reputation for dock safety, can often be found here watching the water for River Serpents with the focused patience of someone who has seen one too many close calls. His crossbow is always at hand.",
     "exits": {
       "south": 5061,
       "east": 5068
@@ -642,7 +642,7 @@
   },
   {
     "vnum": 5064,
-    "name": "Rivertop â€” Dockside Warehouse",
+    "name": "Rivertop â€' Dockside Warehouse",
     "description": "A long stone warehouse on the dockside stores goods awaiting transfer between river vessels and the city's markets. The interior is cavernous and dim, smelling of hemp rope, wet wood, and river fish. Crates are stacked to the ceiling beams in ordered rows, each stamped with merchant marks. A dock authority official sits at a small desk inside the door, logging arrivals and departures in a ledger that grows thicker by the week.",
     "exits": {
       "west": 5061,
@@ -655,7 +655,7 @@
   },
   {
     "vnum": 5065,
-    "name": "Rivertop â€” Boatwright's Yard",
+    "name": "Rivertop â€' Boatwright's Yard",
     "description": "The Pekakarlik community maintains a boatwright's yard at the western end of the docks where river vessels are built, repaired, and fitted. The smell of fresh timber and caulking compound is strong. Dwarf craftspeople work with quiet precision on hulls, keels, and rigging, their smaller hands ideally suited to the detailed joinery that keeps Rivertop's fleet river-worthy. A half-built barge occupies the central dry-dock frame.",
     "exits": {
       "east": 5061
@@ -667,8 +667,8 @@
   },
   {
     "vnum": 5066,
-    "name": "Rivertop â€” Riverside North",
-    "description": "The northern stretch of the riverside road passes by the back walls of the Mistmarket, and the smell of the market â€” fish, spices, river herbs, and the particular scent of Riverstone Amulet enchanting work â€” drifts over the wall. Halfling voices carry from the market side with cheerful animation. A flight of steps in the market wall leads up to the Mistmarket's east entrance. The river is calm here, wide and dark in the morning mist.",
+    "name": "Rivertop â€' Riverside North",
+    "description": "The northern stretch of the riverside road passes by the back walls of the Mistmarket, and the smell of the market â€' fish, spices, river herbs, and the particular scent of Riverstone Amulet enchanting work â€' drifts over the wall. Halfling voices carry from the market side with cheerful animation. A flight of steps in the market wall leads up to the Mistmarket's east entrance. The river is calm here, wide and dark in the morning mist.",
     "exits": {
       "south": 5062,
       "north": 5063,
@@ -681,8 +681,8 @@
   },
   {
     "vnum": 5067,
-    "name": "Rivertop â€” East Road",
-    "description": "A broad road leads east from the riverfront into the city's inland districts. River commerce gives way here to the more settled rhythms of Rivertop's residential and civic life. Eruskans with ink-stained fingers â€” clerks, cartographers, and traders â€” move along it, their faces preoccupied. A notice board near the road's junction with the riverside carries municipal announcements and River Serpent advisories.",
+    "name": "Rivertop â€' East Road",
+    "description": "A broad road leads east from the riverfront into the city's inland districts. River commerce gives way here to the more settled rhythms of Rivertop's residential and civic life. Eruskans with ink-stained fingers â€' clerks, cartographers, and traders â€' move along it, their faces preoccupied. A notice board near the road's junction with the riverside carries municipal announcements and River Serpent advisories.",
     "exits": {
       "west": 5062,
       "east": 5071,
@@ -695,8 +695,8 @@
   },
   {
     "vnum": 5068,
-    "name": "Rivertop â€” North Dock Gate",
-    "description": "A gatehouse controls access from the north pier to the city's interior, its arch carved with wave-patterns in the Eruskan style. The gate is open during daylight hours and guarded at night. A customs official checks cargo manifests on the city side; the dock side belongs to the harbour authority. The gate bears the scars of the Shattering's floods at chest height â€” a waterline mark the city has never painted over, as a reminder.",
+    "name": "Rivertop â€' North Dock Gate",
+    "description": "A gatehouse controls access from the north pier to the city's interior, its arch carved with wave-patterns in the Eruskan style. The gate is open during daylight hours and guarded at night. A customs official checks cargo manifests on the city side; the dock side belongs to the harbour authority. The gate bears the scars of the Shattering's floods at chest height â€' a waterline mark the city has never painted over, as a reminder.",
     "exits": {
       "west": 5063,
       "south": 5069,
@@ -709,7 +709,7 @@
   },
   {
     "vnum": 5069,
-    "name": "Rivertop â€” Dock Authority Hall",
+    "name": "Rivertop â€' Dock Authority Hall",
     "description": "The harbour authority operates from a stone hall whose tall windows look out over both the north pier and the Mistmarket. Mayor Senna Wavecourt holds her less formal meetings here, preferring the dock authority's practical atmosphere to her official chambers. The hall's walls are covered in river charts, current-maps, and the records of every significant trade dispute adjudicated since the city's founding. Clerks work at standing desks, never sitting.",
     "exits": {
       "south": 5064,
@@ -722,7 +722,7 @@
   },
   {
     "vnum": 5070,
-    "name": "Rivertop â€” Mistmarket Square",
+    "name": "Rivertop â€' Mistmarket Square",
     "description": "The Mistmarket is Rivertop's commercial heart, a covered square whose canvas awnings trap the morning mist and give the market its name and its atmosphere. Fish of every type the Great River produces are displayed on ice-stone slabs. River-sourced textiles hang in bolts from the awning frames. The Halfling community runs the most animated stalls, their voices carrying across the whole square. Seryn Tidecaller's amulet stall gleams at the square's centre with Riverstone Amulets.",
     "exits": {
       "west": 5066,
@@ -737,7 +737,7 @@
   },
   {
     "vnum": 5071,
-    "name": "Rivertop â€” Mistmarket South Entrance",
+    "name": "Rivertop â€' Mistmarket South Entrance",
     "description": "The south entrance to the Mistmarket opens onto the city's main inland road. Vendors roll their carts in through this arch before dawn to claim their spots. By midday the entrance is crowded with shoppers moving in both directions, and the smell of frying fish from a stall just inside the arch is enough to stop most passersby in their tracks. A city guard post flanks the entrance, unmanned except during the evening close.",
     "exits": {
       "west": 5067,
@@ -750,7 +750,7 @@
   },
   {
     "vnum": 5072,
-    "name": "Rivertop â€” Tidewatch Tower, Base",
+    "name": "Rivertop â€' Tidewatch Tower, Base",
     "description": "Tidewatch Tower rises above the northern part of the dockside, its squared stones a Pekakarlik engineering achievement visible from several miles upriver. The tower's base houses the river-watch duty room, where guards track River Serpent sightings on a large chalk board and maintain the signal systems that alert dock workers to hazards. Maps of the river's course for fifty miles in each direction are pinned above the duty desk.",
     "exits": {
       "west": 5068,
@@ -764,7 +764,7 @@
   },
   {
     "vnum": 5073,
-    "name": "Rivertop â€” Riverstone Amulet Workshop",
+    "name": "Rivertop â€' Riverstone Amulet Workshop",
     "description": "Behind the main market square, in a building whose every surface is etched with water-runes, the Riverstone Amulets that have made Rivertop famous are enchanted. Seryn Tidecaller, a sorcerer with the typical Eruskan sea-blue eyes and an air of distracted concentration, oversees the work. Completed amulets grant +5 to Swim checks and water breathing once per day. The workshop smells of river-stone dust and the ozone of channelled water-magic.",
     "exits": {
       "west": 5070,
@@ -778,8 +778,8 @@
   },
   {
     "vnum": 5074,
-    "name": "Rivertop â€” Mistmarket North Row",
-    "description": "The north row of the Mistmarket specialises in river-sourced textiles â€” woven rushwork, dyed river-reed cloth, and the distinctive blue-grey linen that Eruskan weavers produce using mineral-rich river water in the dyeing process. Halfling merchants at the north end have cornered the premium end of the market, their stalls hung with samples in graduated shades of river-blue. Prices are negotiated in good Eruskan fashion: opening high, settling fair.",
+    "name": "Rivertop â€' Mistmarket North Row",
+    "description": "The north row of the Mistmarket specialises in river-sourced textiles â€' woven rushwork, dyed river-reed cloth, and the distinctive blue-grey linen that Eruskan weavers produce using mineral-rich river water in the dyeing process. Halfling merchants at the north end have cornered the premium end of the market, their stalls hung with samples in graduated shades of river-blue. Prices are negotiated in good Eruskan fashion: opening high, settling fair.",
     "exits": {
       "south": 5070,
       "east": 5073
@@ -792,7 +792,7 @@
   },
   {
     "vnum": 5075,
-    "name": "Rivertop â€” Tidewatch Tower, Upper Platform",
+    "name": "Rivertop â€' Tidewatch Tower, Upper Platform",
     "description": "The tower's upper platform provides an unobstructed view of the Great River for miles in both directions, its flagstone floor worn smooth by the boots of watchkeepers over generations. On a clear day, the distant glint of Lakeshore's lake is visible to the south. A brass telescope mounted on a pivot allows close observation of the river surface, and the duty log shows frequent River Serpent sightings at the third river bend to the north. The wind up here smells of cold water and distant mountains.",
     "exits": {
       "down": 5072
@@ -804,7 +804,7 @@
   },
   {
     "vnum": 5076,
-    "name": "Rivertop â€” Seaspray Shrine",
+    "name": "Rivertop â€' Seaspray Shrine",
     "description": "The Seaspray Shrine is a low stone building whose threshold is flanked by two carved wave-columns, their surfaces perpetually damp from the mist that fills the courtyard. Inside, a shallow reflecting pool occupies the centre of the worship space, and offerings of small river-stones, woven reeds, and pearl-shell fragments are arranged on ledges around its edge. Seryn Tidecaller leads water spirit ceremonies here on the new moon, and the air carries a faint smell of salt despite the river being fresh water.",
     "exits": {
       "south": 5073,
@@ -834,7 +834,7 @@
   },
   {
     "vnum": 5077,
-    "name": "Rivertop â€” Shrine Courtyard",
+    "name": "Rivertop â€' Shrine Courtyard",
     "description": "The open courtyard behind the Seaspray Shrine is where larger devotional gatherings take place. Stone benches are arranged in a crescent facing a carved altar stone depicting the Lady of the Sea in her river-aspect, arms raised and water flowing from her palms. On festival days this courtyard fills completely; on ordinary mornings it holds only a few quiet worshippers and the sound of the river in the middle distance.",
     "exits": {
       "west": 5076
@@ -847,7 +847,7 @@
   },
   {
     "vnum": 5078,
-    "name": "Rivertop â€” Riverflow Inn",
+    "name": "Rivertop â€' Riverflow Inn",
     "description": "The Riverflow Inn is a wide-beamed wooden building that smells of river timber, ale, and the herbs Halfling staff use to season their cooking. The common room is boisterous in the evenings when dockworkers and traders gather, their voices layered over the sound of a river-drum ensemble that plays most nights. Mayor Wavecourt has been known to conduct informal business here when she wants information to flow freely. Rooms face the river and come with the sound of running water at no extra cost.",
     "exits": {
       "south": 5070,
@@ -861,8 +861,8 @@
   },
   {
     "vnum": 5079,
-    "name": "Rivertop â€” Mayor's Hall",
-    "description": "Mayor Senna Wavecourt's official hall is a stone building whose restrained exterior hides an interior furnished with the proceeds of three decades of shrewd trade negotiation. Maps, signed agreements, and portraits of past mayors cover the walls. The mayor herself â€” a sharp-featured Eruskan woman whose reputation for cunning negotiation and well-timed bribes extends across the Kinsweave â€” meets petitioners here most mornings. Her clerk keeps a carefully managed appointment book.",
+    "name": "Rivertop â€' Mayor's Hall",
+    "description": "Mayor Senna Wavecourt's official hall is a stone building whose restrained exterior hides an interior furnished with the proceeds of three decades of shrewd trade negotiation. Maps, signed agreements, and portraits of past mayors cover the walls. The mayor herself â€' a sharp-featured Eruskan woman whose reputation for cunning negotiation and well-timed bribes extends across the Kinsweave â€' meets petitioners here most mornings. Her clerk keeps a carefully managed appointment book.",
     "exits": {
       "east": 5070,
       "south": 5072
@@ -874,7 +874,7 @@
   },
   {
     "vnum": 5105,
-    "name": "Highridge â€” Northern Approach",
+    "name": "Highridge â€' Northern Approach",
     "description": "The road climbs steeply to Highridge through a landscape of hardened lava flows and volcanic scrub, the air growing noticeably warmer as the Scorchspires' vents exhale heat from below. The walls of Highridge are visible ahead, their basalt blocks ember-lit from within by the ambient heat of the volcanic substrate. The smell of sulphur is faint but present, and the distant ring of hammer on anvil carries on the thermal updrafts.",
     "exits": {
       "south": 5106,
@@ -886,7 +886,7 @@
   },
   {
     "vnum": 5106,
-    "name": "Highridge â€” North Gate",
+    "name": "Highridge â€' North Gate",
     "description": "The north gate of Highridge is a massive arch of fused basalt, its keystone bearing the hammer-and-flame crest of Chieftain Ignar Flameborn. The gate is warm to the touch, heated from below by volcanic activity. Taraf-Imro guards with red hair and amber eyes stand watch, their scale armour catching the ember-glow of runestone torches. Ember Drakes are occasionally visible on the wall-tops above, kept as watch-beasts by the city's garrison.",
     "exits": {
       "north": 5105,
@@ -898,7 +898,7 @@
   },
   {
     "vnum": 5107,
-    "name": "Highridge â€” Ember Road",
+    "name": "Highridge â€' Ember Road",
     "description": "The city's main road runs south from the gate between buildings whose walls radiate heat stored during the day. Ember-lit sconces give everything a warm orange glow. Taraf-Imro warriors move through the street with confident strides, embersteel weapons at their hips. Kovaka Elves, their earth-element resilience suited to this volcanic environment, maintain a cluster of shops along the road's western side. The smell of hot metal and volcanic stone is constant.",
     "exits": {
       "north": 5106,
@@ -912,7 +912,7 @@
   },
   {
     "vnum": 5108,
-    "name": "Highridge â€” Scorchmarket, Main Square",
+    "name": "Highridge â€' Scorchmarket, Main Square",
     "description": "The Scorchmarket is a wide open square where weapons, volcanic gems, and forge-tools are traded in an atmosphere of competitive intensity. Stall-keepers shout prices over each other; buyers handle blades with expert assessment and set them down without expression before negotiating. An Ember Drake on a heavy chain at the square's east end serves as both mascot and security measure, its breath weapon a persuasive argument against theft. The heat here is significant and the smell of hot metal pervasive.",
     "exits": {
       "north": 5107,
@@ -928,8 +928,8 @@
   },
   {
     "vnum": 5109,
-    "name": "Highridge â€” Scorchmarket South Stalls",
-    "description": "The south stalls of the Scorchmarket specialise in volcanic gems â€” raw and cut fire-opals, sulphur-crystals, and the distinctive red obsidian found only in the Scorchspires. Rarozhki dwarves run most of the gem stalls, their expertise in mineral assessment beyond dispute. A rivalry with the Taraf-Imro weapon merchants in the northern stalls is conducted entirely through pointed comments about the relative value of beauty versus utility.",
+    "name": "Highridge â€' Scorchmarket South Stalls",
+    "description": "The south stalls of the Scorchmarket specialise in volcanic gems â€' raw and cut fire-opals, sulphur-crystals, and the distinctive red obsidian found only in the Scorchspires. Rarozhki dwarves run most of the gem stalls, their expertise in mineral assessment beyond dispute. A rivalry with the Taraf-Imro weapon merchants in the northern stalls is conducted entirely through pointed comments about the relative value of beauty versus utility.",
     "exits": {
       "north": 5108,
       "east": 5119,
@@ -943,7 +943,7 @@
   },
   {
     "vnum": 5110,
-    "name": "Highridge â€” South Road",
+    "name": "Highridge â€' South Road",
     "description": "The south road leads to Highridge's lower districts, the heat from the volcanic substrate perceptible through the stone paving. Fire-powders are moved along this road in sealed clay containers, their transport regulated by the city garrison due to the obvious hazard. The road narrows where lava tubes pass close to the surface, and the stone here is visibly discoloured by years of heat exposure.",
     "exits": {
       "north": 5109,
@@ -956,8 +956,8 @@
   },
   {
     "vnum": 5111,
-    "name": "Highridge â€” Lavaflow Bastion, Outer Wall",
-    "description": "The outer wall of Lavaflow Bastion is reinforced with molten-trap channels â€” shallow conduits in the wall's face that can be flooded with lava from controlled vents to make the surface unclimbable. Warning signs in Taraf-Imro script are carved above the trap triggers. The wall itself is smooth, featureless, and very hot. A single gate in the wall's centre is the only entry, guarded by two Rarozhki dwarves who check credentials without expression.",
+    "name": "Highridge â€' Lavaflow Bastion, Outer Wall",
+    "description": "The outer wall of Lavaflow Bastion is reinforced with molten-trap channels â€' shallow conduits in the wall's face that can be flooded with lava from controlled vents to make the surface unclimbable. Warning signs in Taraf-Imro script are carved above the trap triggers. The wall itself is smooth, featureless, and very hot. A single gate in the wall's centre is the only entry, guarded by two Rarozhki dwarves who check credentials without expression.",
     "exits": {
       "north": 5110,
       "south": 5112,
@@ -970,8 +970,8 @@
   },
   {
     "vnum": 5112,
-    "name": "Highridge â€” Lavaflow Bastion, Inner Court",
-    "description": "The inner court of Lavaflow Bastion is a squared space between the outer defensive wall and the bastion's main tower, used for garrison drills and equipment inspection. The heat here is intense â€” volcanic vents run directly beneath the court â€” and the garrison uses this for physical conditioning, training in conditions no enemy would choose to fight in. Chieftain Flameborn's embersteel blade is mounted above the tower's inner gate as both trophy and symbol.",
+    "name": "Highridge â€' Lavaflow Bastion, Inner Court",
+    "description": "The inner court of Lavaflow Bastion is a squared space between the outer defensive wall and the bastion's main tower, used for garrison drills and equipment inspection. The heat here is intense â€' volcanic vents run directly beneath the court â€' and the garrison uses this for physical conditioning, training in conditions no enemy would choose to fight in. Chieftain Flameborn's embersteel blade is mounted above the tower's inner gate as both trophy and symbol.",
     "exits": {
       "north": 5111,
       "south": 5113
@@ -983,8 +983,8 @@
   },
   {
     "vnum": 5113,
-    "name": "Highridge â€” Lavaflow Bastion, Tower",
-    "description": "The bastion tower's interior is cooler than the outer court, its thick walls insulating against the volcanic heat. Garrison command operates from here, with maps of the Scorchspires and the surrounding region covering the walls. A concealed passage leads down to the lava tubes beneath the city â€” the route Kharaz Fireforge believes runs to the Deceiver artifact that has been heating the Emberforge beyond natural levels. The passage is sealed with a heavy iron door.",
+    "name": "Highridge â€' Lavaflow Bastion, Tower",
+    "description": "The bastion tower's interior is cooler than the outer court, its thick walls insulating against the volcanic heat. Garrison command operates from here, with maps of the Scorchspires and the surrounding region covering the walls. A concealed passage leads down to the lava tubes beneath the city â€' the route Kharaz Fireforge believes runs to the Deceiver artifact that has been heating the Emberforge beyond natural levels. The passage is sealed with a heavy iron door.",
     "exits": {
       "north": 5112,
       "east": 5114
@@ -996,8 +996,8 @@
   },
   {
     "vnum": 5114,
-    "name": "Highridge â€” Lavaflow Bastion, Battlements",
-    "description": "The bastion's battlements look out over the Scorchspires to the south, where lava vents glow orange in the middle distance and steam plumes rise from thermal fissures. The view is dramatic and unsettling in equal measure. From here, the arrangement of Highridge's defensive works is apparent â€” a city built to survive volcanic hazard and withstand siege simultaneously, its walls following the natural lava channels as guide and barrier both.",
+    "name": "Highridge â€' Lavaflow Bastion, Battlements",
+    "description": "The bastion's battlements look out over the Scorchspires to the south, where lava vents glow orange in the middle distance and steam plumes rise from thermal fissures. The view is dramatic and unsettling in equal measure. From here, the arrangement of Highridge's defensive works is apparent â€' a city built to survive volcanic hazard and withstand siege simultaneously, its walls following the natural lava channels as guide and barrier both.",
     "exits": {
       "west": 5113
     },
@@ -1008,8 +1008,8 @@
   },
   {
     "vnum": 5115,
-    "name": "Highridge â€” Emberforge Road",
-    "description": "The road east from Ember Road leads to the Emberforge district, the sound of hammer-work growing louder and the air hotter with every step. The road's stone blocks are heat-cracked and frequently replaced â€” the volcanic heat does to stone here what time does to it elsewhere, only faster. Workers transport embersteel billets on insulated carriers, their faces shielded by smoked-glass visors.",
+    "name": "Highridge â€' Emberforge Road",
+    "description": "The road east from Ember Road leads to the Emberforge district, the sound of hammer-work growing louder and the air hotter with every step. The road's stone blocks are heat-cracked and frequently replaced â€' the volcanic heat does to stone here what time does to it elsewhere, only faster. Workers transport embersteel billets on insulated carriers, their faces shielded by smoked-glass visors.",
     "exits": {
       "west": 5107,
       "east": 5122
@@ -1021,7 +1021,7 @@
   },
   {
     "vnum": 5116,
-    "name": "Highridge â€” West Lane",
+    "name": "Highridge â€' West Lane",
     "description": "The west lane passes by the Kovaka Elf residential quarter, a compact neighbourhood of stone-and-timber buildings whose earthy aesthetic differs markedly from the bare volcanic stone of Taraf-Imro construction. Kovaka children play in the lane; adults tend window-box herb gardens with the same care their Orean counterparts show toward stone. The lane ends at a staircase cut into the cliff face leading to the Flameshrine above.",
     "exits": {
       "east": 5107,
@@ -1035,7 +1035,7 @@
   },
   {
     "vnum": 5117,
-    "name": "Highridge â€” Weapon Merchant Row",
+    "name": "Highridge â€' Weapon Merchant Row",
     "description": "A row of open-fronted weapon stalls lines the Scorchmarket's eastern edge, each displaying a selection of Taraf-Imro craftsmanship from functional garrison weapons to elaborate ceremonial pieces. Embersteel Blades (+1 enhancement, 1d6 fire damage on hit) are the prestige items, displayed on velvet-padded racks with their certifications of Emberforge origin. The merchants here are all Taraf-Imro, their assessments of each other's work as fierce as their assessments of customers.",
     "exits": {
       "west": 5108,
@@ -1049,7 +1049,7 @@
   },
   {
     "vnum": 5118,
-    "name": "Highridge â€” Fire-Powder Stall",
+    "name": "Highridge â€' Fire-Powder Stall",
     "description": "A reinforced stall on the Scorchmarket's western edge sells fire-powders in sealed clay containers of various grades. The stall-keeper, a Rarozhki dwarf named Orna Cindergrace, handles the volatile materials with practised calm and impatience for customers who do not. Warning markings in three languages cover every surface, and the stall is positioned well away from the Ember Drake's chain radius. No open flames are permitted within ten yards.",
     "exits": {
       "east": 5108
@@ -1062,7 +1062,7 @@
   },
   {
     "vnum": 5119,
-    "name": "Highridge â€” Gem Cutter's Workshop",
+    "name": "Highridge â€' Gem Cutter's Workshop",
     "description": "The gem cutter's workshop is where the Rarozhki dwarves transform raw volcanic material into finished gemstones and decorative work. The room smells of mineral dust and the hot-metal tang of cutting tools. Kharaz Fireforge, when not occupied with sacred embersteel crafting, consults here on the forge-mystic properties of particular mineral formations. Uncut fire-opals in a tray catch the ember-light with startling brilliance.",
     "exits": {
       "west": 5109
@@ -1075,8 +1075,8 @@
   },
   {
     "vnum": 5120,
-    "name": "Highridge â€” Rarozhki Quarter",
-    "description": "The Rarozhki dwarf quarter of Highridge occupies a compact area southwest of the Scorchmarket, its buildings lower-ceilinged and more densely packed than the Taraf-Imro construction that dominates the rest of the city. The relationship between the two communities is visible in architecture â€” neighbouring but distinct, sharing walls but maintaining separate doors. A communal forge in the quarter's centre is used for the Rarozhki's own craft work, separate from the Emberforge.",
+    "name": "Highridge â€' Rarozhki Quarter",
+    "description": "The Rarozhki dwarf quarter of Highridge occupies a compact area southwest of the Scorchmarket, its buildings lower-ceilinged and more densely packed than the Taraf-Imro construction that dominates the rest of the city. The relationship between the two communities is visible in architecture â€' neighbouring but distinct, sharing walls but maintaining separate doors. A communal forge in the quarter's centre is used for the Rarozhki's own craft work, separate from the Emberforge.",
     "exits": {
       "east": 5110,
       "north": 5118
@@ -1088,8 +1088,8 @@
   },
   {
     "vnum": 5121,
-    "name": "Highridge â€” East Wall Walk",
-    "description": "The eastern wall walk runs above the city's outer defensive perimeter, looking out over the volcanic scrubland toward the distant ruins of Thrush. The wall here shows repair work from the Shattering's lava flows â€” newer stone fitted against older, the join visible in the differing colours of volcanic rock. Two guards in ember-scarred armour maintain the eastern watch, their attention focused on the distant ruins where Ember Drakes sometimes emerge unpredictably.",
+    "name": "Highridge â€' East Wall Walk",
+    "description": "The eastern wall walk runs above the city's outer defensive perimeter, looking out over the volcanic scrubland toward the distant ruins of Thrush. The wall here shows repair work from the Shattering's lava flows â€' newer stone fitted against older, the join visible in the differing colours of volcanic rock. Two guards in ember-scarred armour maintain the eastern watch, their attention focused on the distant ruins where Ember Drakes sometimes emerge unpredictably.",
     "exits": {
       "west": 5111
     },
@@ -1100,8 +1100,8 @@
   },
   {
     "vnum": 5122,
-    "name": "Highridge â€” The Emberforge",
-    "description": "The Emberforge is a massive cliffside smithy built directly over a volcanic vent, its chimney a natural fissure in the rock through which smoke and waste heat escape. Dozens of smiths work simultaneously at forge stations distributed across the vast floor, their strikes falling in coordinated rhythms that produce a sound like a geological event. The forge currently burns hotter than normal â€” visibly, uncomfortably hotter â€” and several smith-stations near the vent have been temporarily abandoned. Chieftain Flameborn produced his famous embersteel blade at the central forge station, and it bears his initials.",
+    "name": "Highridge â€' The Emberforge",
+    "description": "The Emberforge is a massive cliffside smithy built directly over a volcanic vent, its chimney a natural fissure in the rock through which smoke and waste heat escape. Dozens of smiths work simultaneously at forge stations distributed across the vast floor, their strikes falling in coordinated rhythms that produce a sound like a geological event. The forge currently burns hotter than normal â€' visibly, uncomfortably hotter â€' and several smith-stations near the vent have been temporarily abandoned. Chieftain Flameborn produced his famous embersteel blade at the central forge station, and it bears his initials.",
     "exits": {
       "west": 5115
     },
@@ -1113,7 +1113,7 @@
   },
   {
     "vnum": 5123,
-    "name": "Highridge â€” Chieftain's Hall",
+    "name": "Highridge â€' Chieftain's Hall",
     "description": "Chieftain Ignar Flameborn's hall is built on an elevated platform above the city, its basalt walls hung with embersteel trophies and the skulls of raiders defeated in the decades since the Shattering. Flameborn himself is often found here, a broad man of fifty with a forge-burn scar across his left arm and the restless energy of someone who has never learned to stop moving. He receives advisors, settles disputes, and sharpens his famous blade with the same undivided attention.",
     "exits": {
       "south": 5116,
@@ -1126,8 +1126,8 @@
   },
   {
     "vnum": 5124,
-    "name": "Highridge â€” Flameshrine",
-    "description": "The Flameshrine is a temple to the Lady of Fire built at the highest accessible point of Highridge, where the volcanic heat is strongest and the connection to the fire element most direct. Fire spells cast within the shrine are amplified â€” casters feel the Lady's presence like a second heartbeat. The shrine's altar is a channel of living lava, contained by runestone wards, its surface used for fire offerings that are consumed in moments. Feryn Emberstrike, a Taraf-Imro sorcerer, leads ceremonies here on the fire feast days.",
+    "name": "Highridge â€' Flameshrine",
+    "description": "The Flameshrine is a temple to the Lady of Fire built at the highest accessible point of Highridge, where the volcanic heat is strongest and the connection to the fire element most direct. Fire spells cast within the shrine are amplified â€' casters feel the Lady's presence like a second heartbeat. The shrine's altar is a channel of living lava, contained by runestone wards, its surface used for fire offerings that are consumed in moments. Feryn Emberstrike, a Taraf-Imro sorcerer, leads ceremonies here on the fire feast days.",
     "exits": {
       "down": 5116,
       "in": 5125
@@ -1154,8 +1154,8 @@
   },
   {
     "vnum": 5125,
-    "name": "Highridge â€” Flameshrine Antechamber",
-    "description": "The antechamber to the Flameshrine allows worshippers to acclimatise to the shrine's intense heat before entering the main worship space. Stone benches line the walls, and a shelf of heat-resistant ritual garments â€” heavy linen treated with volcanic mineral solution â€” is available for those who need them. Offerings of embersteel shavings are collected in a stone basin at the antechamber's centre, to be offered at the lava altar within.",
+    "name": "Highridge â€' Flameshrine Antechamber",
+    "description": "The antechamber to the Flameshrine allows worshippers to acclimatise to the shrine's intense heat before entering the main worship space. Stone benches line the walls, and a shelf of heat-resistant ritual garments â€' heavy linen treated with volcanic mineral solution â€' is available for those who need them. Offerings of embersteel shavings are collected in a stone basin at the antechamber's centre, to be offered at the lava altar within.",
     "exits": {
       "north": 5124,
       "south": 5116
@@ -1168,7 +1168,7 @@
   },
   {
     "vnum": 5140,
-    "name": "Lakeshore â€” Lake Road Junction",
+    "name": "Lakeshore â€' Lake Road Junction",
     "description": "The road from the wider Kinsweave meets the Lakeshore approach here, splitting between the main city gate and the lakeside path. The smell of freshwater and lake vegetation is immediate and pleasant after the dust of the road. A carved stone marker at the junction gives distances to Rivertop and Lakewell, and a smaller inscription notes the depth of the lake at the public docking point. Pelakarlik engineering signs mark the flood management infrastructure visible nearby.",
     "exits": {
       "east": 5141,
@@ -1181,8 +1181,8 @@
   },
   {
     "vnum": 5141,
-    "name": "Lakeshore â€” City Gate",
-    "description": "The gate of Lakeshore is more graceful than Stonefall's mountain-cut entrances â€” a wide arch of fitted limestone with wave-patterns carved in the Eruskan style, flanked by water-shrines where arriving travellers can pay their respects to the Lady of the Sea. The gate-guards are relaxed by Kinsweave standards, reflecting the city's reputation as a haven of calm. The sound of the lake is constant, a gentle backdrop to the business of entry.",
+    "name": "Lakeshore â€' City Gate",
+    "description": "The gate of Lakeshore is more graceful than Stonefall's mountain-cut entrances â€' a wide arch of fitted limestone with wave-patterns carved in the Eruskan style, flanked by water-shrines where arriving travellers can pay their respects to the Lady of the Sea. The gate-guards are relaxed by Kinsweave standards, reflecting the city's reputation as a haven of calm. The sound of the lake is constant, a gentle backdrop to the business of entry.",
     "exits": {
       "west": 5140,
       "east": 5142
@@ -1193,8 +1193,8 @@
   },
   {
     "vnum": 5142,
-    "name": "Lakeshore â€” Main Road",
-    "description": "Lakeshore's main road is wide and paved with smooth lake-stone, a building material unique to this city. Wooden docks are visible at the road's southern end where the lake begins, and stilted homes built over the shallows are visible beyond. The population moves at an Eruskan pace â€” purposeful but unhurried, with time for greetings and the exchange of market news. Water spirit shrines stand at regular intervals along the road's edges.",
+    "name": "Lakeshore â€' Main Road",
+    "description": "Lakeshore's main road is wide and paved with smooth lake-stone, a building material unique to this city. Wooden docks are visible at the road's southern end where the lake begins, and stilted homes built over the shallows are visible beyond. The population moves at an Eruskan pace â€' purposeful but unhurried, with time for greetings and the exchange of market news. Water spirit shrines stand at regular intervals along the road's edges.",
     "exits": {
       "west": 5141,
       "east": 5143,
@@ -1207,7 +1207,7 @@
   },
   {
     "vnum": 5143,
-    "name": "Lakeshore â€” Lakedock Plaza",
+    "name": "Lakeshore â€' Lakedock Plaza",
     "description": "The Lakedock Plaza is the heart of Lakeshore's commerce, a broad lakeside square where fishing boats tie up alongside trade barges and the morning catch is sold from nets and wooden trestles. The smell of fresh fish, lake water, and the cooking fires where vendors fry the morning's first catch is pervasive and appetising. Halfling merchants in elevated stalls call out the day's prices with infectious energy. Riverstone Amulets are sold from several permanent stalls along the plaza's north side.",
     "exits": {
       "west": 5142,
@@ -1222,7 +1222,7 @@
   },
   {
     "vnum": 5144,
-    "name": "Lakeshore â€” Lake Docks",
+    "name": "Lakeshore â€' Lake Docks",
     "description": "A series of wooden docks extend over the shallower water at the city's south edge, their pilings driven deep into the lake bed by Pekakarlik engineers. Fishing boats in various states of use are moored here, their nets drying on lines strung between dock-posts. Drenna Streamcarver, the Pekakarlik boat-builder who serves Mayor Seacrest, inspects hulls and checks hull-integrity marks with methodical thoroughness. The lake is calm, its surface reflecting the sky with still clarity.",
     "exits": {
       "north": 5143,
@@ -1236,8 +1236,8 @@
   },
   {
     "vnum": 5145,
-    "name": "Lakeshore â€” Boat Workshop",
-    "description": "The lakeside boat workshop where Drenna Streamcarver and her Pekakarlik colleagues build and repair the fishing and trade vessels that keep Lakeshore functional. The smell of fresh timber, caulking compound, and lake water fills the long open-fronted shed. Half-finished hulls sit in cradles; completed boats wait on launching ramps. The workmanship is consistently excellent â€” Pekakarlik boat-building in this city is old and refined.",
+    "name": "Lakeshore â€' Boat Workshop",
+    "description": "The lakeside boat workshop where Drenna Streamcarver and her Pekakarlik colleagues build and repair the fishing and trade vessels that keep Lakeshore functional. The smell of fresh timber, caulking compound, and lake water fills the long open-fronted shed. Half-finished hulls sit in cradles; completed boats wait on launching ramps. The workmanship is consistently excellent â€' Pekakarlik boat-building in this city is old and refined.",
     "exits": {
       "west": 5144,
       "north": 5143
@@ -1249,8 +1249,8 @@
   },
   {
     "vnum": 5146,
-    "name": "Lakeshore â€” Waveshrine",
-    "description": "The Waveshrine stands at the lake's edge on a platform of fitted lake-stone, its entrance flanked by carved pillars that appear to flow like water. Inside, Marin Wavewhisper â€” a cleric of the Lady of the Sea with the steady hands of someone who has navigated difficult waters in every sense â€” leads lake rituals and offers healing to those who present themselves with honest need. Water magic cast in this shrine is enhanced, and the air carries a faint iridescence that may be ambient magic.",
+    "name": "Lakeshore â€' Waveshrine",
+    "description": "The Waveshrine stands at the lake's edge on a platform of fitted lake-stone, its entrance flanked by carved pillars that appear to flow like water. Inside, Marin Wavewhisper â€' a cleric of the Lady of the Sea with the steady hands of someone who has navigated difficult waters in every sense â€' leads lake rituals and offers healing to those who present themselves with honest need. Water magic cast in this shrine is enhanced, and the air carries a faint iridescence that may be ambient magic.",
     "exits": {
       "south": 5144,
       "north": 5147,
@@ -1272,7 +1272,7 @@
   },
   {
     "vnum": 5147,
-    "name": "Lakeshore â€” Waveshrine Garden",
+    "name": "Lakeshore â€' Waveshrine Garden",
     "description": "A walled garden behind the Waveshrine is planted with the aquatic herbs used in the Lady of the Sea's rituals, grown in raised beds fed by lake water channels. The garden is open to the public during daylight hours and serves as a quiet retreat from the market noise. Shrine attendants tend the plants and maintain the water channels with the same devotional care given to the shrine's interior. Small offering pools dot the garden at intervals.",
     "exits": {
       "south": 5146
@@ -1285,7 +1285,7 @@
   },
   {
     "vnum": 5148,
-    "name": "Lakeshore â€” Stiltmarket, West",
+    "name": "Lakeshore â€' Stiltmarket, West",
     "description": "The western section of Stiltmarket occupies a maze of elevated walkways over the lake's shallow edge, connecting stalls built on pilings above the water. The walkways sway slightly underfoot as people pass, and the sound of water is constant below. Halfling merchants dominate this section, their stalls crammed with fish, woven lake-reed goods, and the freshwater pearls that Lakeshore is known for. A misstep off the walkway means a cold bath, a fact the merchants find endlessly amusing.",
     "exits": {
       "west": 5146,
@@ -1300,7 +1300,7 @@
   },
   {
     "vnum": 5149,
-    "name": "Lakeshore â€” Stiltmarket, East",
+    "name": "Lakeshore â€' Stiltmarket, East",
     "description": "The eastern half of the Stiltmarket extends further over the lake, where the water is deeper and the pilings longer. Pearl divers return here with their catch, trading directly from their boats to the pearl merchants' stalls above. The smell of the open lake is stronger at this end, and on windy days the spray from the market-side of the lake reaches the elevated walkways. This section of the market operates from before dawn until the last diver surfaces.",
     "exits": {
       "west": 5148,
@@ -1314,8 +1314,8 @@
   },
   {
     "vnum": 5150,
-    "name": "Lakeshore â€” Seaguard Spire, Base",
-    "description": "The Seaguard Spire stands at the north edge of Lakeshore's settled area, its tower watching for lake hazards â€” whether weather-related, creature-related, or, increasingly, related to the disappearing barge crews that Mayor Seacrest and Mayor Wavecourt of Rivertop are quietly exchanging letters about. The base level houses the lake-watch duty room, its windows oriented toward the open water. A duty officer maintains the incident log with careful notation.",
+    "name": "Lakeshore â€' Seaguard Spire, Base",
+    "description": "The Seaguard Spire stands at the north edge of Lakeshore's settled area, its tower watching for lake hazards â€' whether weather-related, creature-related, or, increasingly, related to the disappearing barge crews that Mayor Seacrest and Mayor Wavecourt of Rivertop are quietly exchanging letters about. The base level houses the lake-watch duty room, its windows oriented toward the open water. A duty officer maintains the incident log with careful notation.",
     "exits": {
       "south": 5142,
       "up": 5153
@@ -1327,8 +1327,8 @@
   },
   {
     "vnum": 5151,
-    "name": "Lakeshore â€” Mayor's Residence",
-    "description": "Mayor Kail Seacrest maintains a comfortable residence overlooking both the Lakedock Plaza and the lake itself, a location that allows him to observe the city's commercial pulse from his study window. Seacrest â€” a broad-shouldered Eruskan in his late forties with the navigator's habit of watching the horizon even indoors â€” receives visitors in a parlour whose walls are hung with lake charts and trade route maps. His reputation for cunning is well-deserved.",
+    "name": "Lakeshore â€' Mayor's Residence",
+    "description": "Mayor Kail Seacrest maintains a comfortable residence overlooking both the Lakedock Plaza and the lake itself, a location that allows him to observe the city's commercial pulse from his study window. Seacrest â€' a broad-shouldered Eruskan in his late forties with the navigator's habit of watching the horizon even indoors â€' receives visitors in a parlour whose walls are hung with lake charts and trade route maps. His reputation for cunning is well-deserved.",
     "exits": {
       "south": 5143,
       "east": 5150
@@ -1340,8 +1340,8 @@
   },
   {
     "vnum": 5152,
-    "name": "Lakeshore â€” Pearl Merchant's Row",
-    "description": "A row of permanent stone-fronted shops along the lakefront specialises in the processed freshwater pearls for which Lakeshore is known. The pearls range from utility-grade â€” used in enchantment work including Riverstone Amulets â€” to exceptional specimens sold as jewellery at prices that make the Scorchmarket's gem merchants envious. A pearl appraiser works from the row's central shop, offering certificates of quality for a flat fee.",
+    "name": "Lakeshore â€' Pearl Merchant's Row",
+    "description": "A row of permanent stone-fronted shops along the lakefront specialises in the processed freshwater pearls for which Lakeshore is known. The pearls range from utility-grade â€' used in enchantment work including Riverstone Amulets â€' to exceptional specimens sold as jewellery at prices that make the Scorchmarket's gem merchants envious. A pearl appraiser works from the row's central shop, offering certificates of quality for a flat fee.",
     "exits": {
       "south": 5149,
       "west": 5151
@@ -1354,8 +1354,8 @@
   },
   {
     "vnum": 5153,
-    "name": "Lakeshore â€” Seaguard Spire, Upper Watch",
-    "description": "The spire's upper platform gives an unobstructed view of the entire lake, from Lakeshore's docks to the distant reed-beds where the lake shallows toward Lakewell's territory. A duty officer sweeps the lake surface with a long-glass at regular intervals, logging observations. The incident board shows a cluster of marks in the central lake over the past three weeks â€” the positions where empty barges were found drifting. The pattern, when looked at together, suggests an origin point well below the lake's surface.",
+    "name": "Lakeshore â€' Seaguard Spire, Upper Watch",
+    "description": "The spire's upper platform gives an unobstructed view of the entire lake, from Lakeshore's docks to the distant reed-beds where the lake shallows toward Lakewell's territory. A duty officer sweeps the lake surface with a long-glass at regular intervals, logging observations. The incident board shows a cluster of marks in the central lake over the past three weeks â€' the positions where empty barges were found drifting. The pattern, when looked at together, suggests an origin point well below the lake's surface.",
     "exits": {
       "down": 5150
     },
@@ -1366,8 +1366,8 @@
   },
   {
     "vnum": 5154,
-    "name": "Lakeshore â€” Fishers' Alley",
-    "description": "A narrow alley behind the docks where fishing families live and work, mending nets in front of low homes while children play in and out of the water without adult concern â€” they learn to swim before they walk here. The alley smells of fish and lake water and the particular mixture of hemp and salt used to preserve nets. This is the oldest part of Lakeshore, predating the current city plan, and it has a weathered character absent from the newer civic buildings.",
+    "name": "Lakeshore â€' Fishers' Alley",
+    "description": "A narrow alley behind the docks where fishing families live and work, mending nets in front of low homes while children play in and out of the water without adult concern â€' they learn to swim before they walk here. The alley smells of fish and lake water and the particular mixture of hemp and salt used to preserve nets. This is the oldest part of Lakeshore, predating the current city plan, and it has a weathered character absent from the newer civic buildings.",
     "exits": {
       "north": 5144,
       "east": 5148
@@ -1379,8 +1379,8 @@
   },
   {
     "vnum": 5175,
-    "name": "Lakewell â€” Approach Road",
-    "description": "The road to Lakewell runs along the smaller lake's northern shore, the water visible through gaps in the reed-beds that grow thick at the water's edge. The city's silhouette is visible ahead â€” lower than Lakeshore, more spread out, with the distinctive reed-thatched rooftops that give Lakewell its particular character. The smell of lake water and wood-smoke from cooking fires drifts pleasantly on the morning air.",
+    "name": "Lakewell â€' Approach Road",
+    "description": "The road to Lakewell runs along the smaller lake's northern shore, the water visible through gaps in the reed-beds that grow thick at the water's edge. The city's silhouette is visible ahead â€' lower than Lakeshore, more spread out, with the distinctive reed-thatched rooftops that give Lakewell its particular character. The smell of lake water and wood-smoke from cooking fires drifts pleasantly on the morning air.",
     "exits": {
       "east": 5176,
       "west": 5422
@@ -1391,8 +1391,8 @@
   },
   {
     "vnum": 5176,
-    "name": "Lakewell â€” Town Gate",
-    "description": "Lakewell's gate is a simple arch of fitted stone, its lintel decorated with carved reeds and fish in the Halfling style â€” the Halfling community had the most say in Lakewell's post-Shattering reconstruction and left their aesthetic mark on the civic architecture. The gate stands open during daylight, guarded by two of Mosset Tidebrace's dock guards who double as town watch. The welcome here is warmer than most Kinsweave gates, in keeping with Lakewell's reputation for communal warmth.",
+    "name": "Lakewell â€' Town Gate",
+    "description": "Lakewell's gate is a simple arch of fitted stone, its lintel decorated with carved reeds and fish in the Halfling style â€' the Halfling community had the most say in Lakewell's post-Shattering reconstruction and left their aesthetic mark on the civic architecture. The gate stands open during daylight, guarded by two of Mosset Tidebrace's dock guards who double as town watch. The welcome here is warmer than most Kinsweave gates, in keeping with Lakewell's reputation for communal warmth.",
     "exits": {
       "west": 5175,
       "east": 5177
@@ -1403,7 +1403,7 @@
   },
   {
     "vnum": 5177,
-    "name": "Lakewell â€” Main Lane",
+    "name": "Lakewell â€' Main Lane",
     "description": "The main lane of Lakewell is narrower than the roads of its larger neighbours, sized for a city that prefers intimate scale. Reed-roofed homes line both sides, their windows bright with the orange of oil lanterns in the morning dark. The smell of fresh bread from a Halfling bakery drifts across the lane. Mayor Torin Saltfurrow can sometimes be seen walking this lane before the town wakes, making his habitual checks on the community he has kept at peace for two decades.",
     "exits": {
       "west": 5176,
@@ -1417,8 +1417,8 @@
   },
   {
     "vnum": 5178,
-    "name": "Lakewell â€” Floatmarket, Shore Landing",
-    "description": "Where the main lane reaches the lake, a series of floating platforms extend over the water â€” the Floatmarket's landward edge. Rope bridges connect the floating stalls to the shore, and the whole structure moves gently with the lake's surface. Nessa Streamknot, the Halfling rogue who runs the floating markets with an impeccable eye for both commerce and counterfeit, oversees the market from a small elevated platform at the bridge's midpoint.",
+    "name": "Lakewell â€' Floatmarket, Shore Landing",
+    "description": "Where the main lane reaches the lake, a series of floating platforms extend over the water â€' the Floatmarket's landward edge. Rope bridges connect the floating stalls to the shore, and the whole structure moves gently with the lake's surface. Nessa Streamknot, the Halfling rogue who runs the floating markets with an impeccable eye for both commerce and counterfeit, oversees the market from a small elevated platform at the bridge's midpoint.",
     "exits": {
       "west": 5177,
       "east": 5179,
@@ -1431,8 +1431,8 @@
   },
   {
     "vnum": 5179,
-    "name": "Lakewell â€” Floatmarket, Central Rafts",
-    "description": "The central rafted stalls of the Floatmarket trade in nets, woven goods, fresh fish, and the lake pearls that Lakewell produces in modest but consistent quantities. The stalls sway gently, and experienced customers learn to adjust their weight distribution without thinking about it. Counterfeit Riverstone Amulets have been appearing here recently â€” convincing enough to fool casual inspection, but providing no magical benefit, as Nessa Streamknot discovered to her fury after testing one in the lake.",
+    "name": "Lakewell â€' Floatmarket, Central Rafts",
+    "description": "The central rafted stalls of the Floatmarket trade in nets, woven goods, fresh fish, and the lake pearls that Lakewell produces in modest but consistent quantities. The stalls sway gently, and experienced customers learn to adjust their weight distribution without thinking about it. Counterfeit Riverstone Amulets have been appearing here recently â€' convincing enough to fool casual inspection, but providing no magical benefit, as Nessa Streamknot discovered to her fury after testing one in the lake.",
     "exits": {
       "west": 5178,
       "east": 5180,
@@ -1446,7 +1446,7 @@
   },
   {
     "vnum": 5180,
-    "name": "Lakewell â€” Floatmarket, East Rafts",
+    "name": "Lakewell â€' Floatmarket, East Rafts",
     "description": "The eastern rafted stalls extend over deeper water, their platforms somewhat more stable given the depth. Eruskan traders sell river goods brought from Rivertop and Lakeshore: preserved fish, river textiles, and the genuine article in Riverstone Amulets from certified Rivertop producers. The juxtaposition with the suspect merchandise circulating elsewhere in the market is not lost on the regular customers, who are beginning to ask uncomfortable questions about quality assurance.",
     "exits": {
       "west": 5179
@@ -1459,8 +1459,8 @@
   },
   {
     "vnum": 5181,
-    "name": "Lakewell â€” Boatwright Quay",
-    "description": "The Pekakarlik boat-building community centres on this quay, where sturdy river craft are assembled with the methodical precision that defines Pekakarlik craftsmanship. River Spears â€” a Lakewell specialty, long-shafted weapons designed for use from boats, with a weighted butt for balance â€” are produced here alongside conventional fishing and trade vessels. Mosset Tidebrace, the Pekakarlik ranger who guards the docks, learned his craft on this quay before taking up his current role.",
+    "name": "Lakewell â€' Boatwright Quay",
+    "description": "The Pekakarlik boat-building community centres on this quay, where sturdy river craft are assembled with the methodical precision that defines Pekakarlik craftsmanship. River Spears â€' a Lakewell specialty, long-shafted weapons designed for use from boats, with a weighted butt for balance â€' are produced here alongside conventional fishing and trade vessels. Mosset Tidebrace, the Pekakarlik ranger who guards the docks, learned his craft on this quay before taking up his current role.",
     "exits": {
       "north": 5178,
       "east": 5183
@@ -1472,8 +1472,8 @@
   },
   {
     "vnum": 5182,
-    "name": "Lakewell â€” Reedtemple",
-    "description": "The Reedtemple is Lakewell's primary place of worship, a structure of remarkable beauty built from living reeds woven over a stone framework â€” it requires constant maintenance as a devotional practice. The interior glows with the filtered light that passes through the reed walls, creating a warm amber atmosphere. Water magic cast here is enhanced, and the Lady of the Sea's presence is felt in the gentle sound of lake water audible through the walls. The temple is always open.",
+    "name": "Lakewell â€' Reedtemple",
+    "description": "The Reedtemple is Lakewell's primary place of worship, a structure of remarkable beauty built from living reeds woven over a stone framework â€' it requires constant maintenance as a devotional practice. The interior glows with the filtered light that passes through the reed walls, creating a warm amber atmosphere. Water magic cast here is enhanced, and the Lady of the Sea's presence is felt in the gentle sound of lake water audible through the walls. The temple is always open.",
     "exits": {
       "north": 5177,
       "east": 5181
@@ -1486,8 +1486,8 @@
   },
   {
     "vnum": 5183,
-    "name": "Lakewell â€” Reedtemple Dock",
-    "description": "A small private dock attached to the Reedtemple serves for water-ritual purposes â€” the dawn water-drawing ceremony, the offering of woven reeds to the lake on festival days, and the quiet prayers of fisherfolk before they put out. The dock is maintained by temple attendants and is not for commercial use. Its piling-tops are carved with water-spirit faces that peer at the lake with serene intensity.",
+    "name": "Lakewell â€' Reedtemple Dock",
+    "description": "A small private dock attached to the Reedtemple serves for water-ritual purposes â€' the dawn water-drawing ceremony, the offering of woven reeds to the lake on festival days, and the quiet prayers of fisherfolk before they put out. The dock is maintained by temple attendants and is not for commercial use. Its piling-tops are carved with water-spirit faces that peer at the lake with serene intensity.",
     "exits": {
       "west": 5182,
       "north": 5179
@@ -1500,7 +1500,7 @@
   },
   {
     "vnum": 5184,
-    "name": "Lakewell â€” Lake Viewpoint",
+    "name": "Lakewell â€' Lake Viewpoint",
     "description": "A small promontory of natural rock at the lake's southern edge offers a wide view of the smaller lake that gives Lakewell its identity. On clear mornings the water reflects the sky with perfect fidelity. On festival days this viewpoint fills with community members gathered to watch the floating lanterns drift across the surface during the Reedwave Festival. The lake appears peaceful, its reed-fringed edges unchanged from how they looked a century ago.",
     "exits": {
       "north": 5179,
@@ -1513,7 +1513,7 @@
   },
   {
     "vnum": 5185,
-    "name": "Lakewell â€” Lakemist Spire",
+    "name": "Lakewell â€' Lakemist Spire",
     "description": "The Lakemist Spire is a slender watch tower at Lakewell's north edge, its stone tapering gracefully to a point that Pekakarlik engineers insisted was structurally necessary and Halfling aesthetes agreed was also beautiful. Mosset Tidebrace maintains a duty roster here for dock watch and river threat monitoring. The spire's modest height is compensated by its position on the lake's highest ground, giving a clear sight line across both the smaller lake and the river approach to the south.",
     "exits": {
       "south": 5177,
@@ -1527,8 +1527,8 @@
   },
   {
     "vnum": 5186,
-    "name": "Lakewell â€” Lakemist Spire, Watch Platform",
-    "description": "The spire's watch platform looks north over the river approach and south across the smaller lake. On misty mornings â€” which account for most mornings in Lakewell â€” the platform is above the mist layer, giving the duty watchkeeper an island-like view over a white surface. The log-book shows diligent recording of traffic and weather. An entry from five days ago notes an unusual disturbance in the lake's centre: circular ripples with no apparent source, observed for several minutes before subsiding.",
+    "name": "Lakewell â€' Lakemist Spire, Watch Platform",
+    "description": "The spire's watch platform looks north over the river approach and south across the smaller lake. On misty mornings â€' which account for most mornings in Lakewell â€' the platform is above the mist layer, giving the duty watchkeeper an island-like view over a white surface. The log-book shows diligent recording of traffic and weather. An entry from five days ago notes an unusual disturbance in the lake's centre: circular ripples with no apparent source, observed for several minutes before subsiding.",
     "exits": {
       "down": 5185
     },
@@ -1539,8 +1539,8 @@
   },
   {
     "vnum": 5187,
-    "name": "Lakewell â€” Mayor's House",
-    "description": "Mayor Torin Saltfurrow's home is modest by regional mayoral standards â€” a well-kept two-storey building of stone and timber with a view of the lake from the upper floor. Saltfurrow is a former river captain whose leadership style reflects his sailing background: direct assessment, steady response, and no tolerance for unnecessary complexity. He keeps his door open most mornings and conducts town business at his kitchen table over strong tea.",
+    "name": "Lakewell â€' Mayor's House",
+    "description": "Mayor Torin Saltfurrow's home is modest by regional mayoral standards â€' a well-kept two-storey building of stone and timber with a view of the lake from the upper floor. Saltfurrow is a former river captain whose leadership style reflects his sailing background: direct assessment, steady response, and no tolerance for unnecessary complexity. He keeps his door open most mornings and conducts town business at his kitchen table over strong tea.",
     "exits": {
       "south": 5185,
       "east": 5177
@@ -1552,8 +1552,8 @@
   },
   {
     "vnum": 5200,
-    "name": "Mytro Ruins â€” Outer Sand",
-    "description": "The outer edge of what was once Mytro begins where the scrubland gives way to drifted sand. Tent-pole foundations protrude from the ground at irregular intervals, their iron fittings corroded to nothing â€” all that remains of the nomadic Mytroan city that once stood here. The wind moves constantly through the ruins, carrying dust that gets into everything. A sensation of wrongness pervades this place that experienced travellers learn to trust.",
+    "name": "Mytro Ruins â€' Outer Sand",
+    "description": "The outer edge of what was once Mytro begins where the scrubland gives way to drifted sand. Tent-pole foundations protrude from the ground at irregular intervals, their iron fittings corroded to nothing â€' all that remains of the nomadic Mytroan city that once stood here. The wind moves constantly through the ruins, carrying dust that gets into everything. A sensation of wrongness pervades this place that experienced travellers learn to trust.",
     "exits": {
       "north": 5201,
       "east": 5430
@@ -1565,8 +1565,8 @@
   },
   {
     "vnum": 5201,
-    "name": "Mytro Ruins â€” Market Ground",
-    "description": "The market ground of Mytro was the community's central space, marked now only by compacted earth and the ghost-outlines of tent-rings visible when the sand blows clear. A Sand Wraith has claimed the eastern section of the market ground as its territory, its desiccating touch waiting for the unwary. The air here carries a faint electrical quality â€” a remnant of the Deceiver artifacts buried somewhere beneath the sand. Survival DC 15 to navigate safely without a guide.",
+    "name": "Mytro Ruins â€' Market Ground",
+    "description": "The market ground of Mytro was the community's central space, marked now only by compacted earth and the ghost-outlines of tent-rings visible when the sand blows clear. A Sand Wraith has claimed the eastern section of the market ground as its territory, its desiccating touch waiting for the unwary. The air here carries a faint electrical quality â€' a remnant of the Deceiver artifacts buried somewhere beneath the sand. Survival DC 15 to navigate safely without a guide.",
     "exits": {
       "south": 5200,
       "north": 5202,
@@ -1579,8 +1579,8 @@
   },
   {
     "vnum": 5202,
-    "name": "Mytro Ruins â€” King's Ground",
-    "description": "The elevated ground at Mytro's centre where the Mytroan king's great tent once stood. The site of the largest tent-ring is still visible, its post-holes marking a circle thirty feet across. This is where the Mytroan king held court when he refused the call to Aldenheim's aid â€” the specific place where the decision was made that ended the kingdom. The sand here has a dark, fine quality unlike the surrounding terrain. Harreem's judgement left physical marks.",
+    "name": "Mytro Ruins â€' King's Ground",
+    "description": "The elevated ground at Mytro's centre where the Mytroan king's great tent once stood. The site of the largest tent-ring is still visible, its post-holes marking a circle thirty feet across. This is where the Mytroan king held court when he refused the call to Aldenheim's aid â€' the specific place where the decision was made that ended the kingdom. The sand here has a dark, fine quality unlike the surrounding terrain. Harreem's judgement left physical marks.",
     "exits": {
       "south": 5201,
       "east": 5204
@@ -1592,8 +1592,8 @@
   },
   {
     "vnum": 5203,
-    "name": "Mytro Ruins â€” Eastern Sand Field",
-    "description": "A broad field of deep drifted sand where the eastern residential area of Mytro once spread. Walking here is difficult â€” the sand is deep and unstable, concealing the tent-pole foundations that can catch an ankle without warning. Storm Wisps (CR 2, electric touch 1d4) have been encountered here, drifting through the sand-filled air and striking at anything that moves. Three centuries of sandstorm has almost entirely buried whatever was here.",
+    "name": "Mytro Ruins â€' Eastern Sand Field",
+    "description": "A broad field of deep drifted sand where the eastern residential area of Mytro once spread. Walking here is difficult â€' the sand is deep and unstable, concealing the tent-pole foundations that can catch an ankle without warning. Storm Wisps (CR 2, electric touch 1d4) have been encountered here, drifting through the sand-filled air and striking at anything that moves. Three centuries of sandstorm has almost entirely buried whatever was here.",
     "exits": {
       "west": 5201,
       "north": 5205
@@ -1606,8 +1606,8 @@
   },
   {
     "vnum": 5204,
-    "name": "Mytro Ruins â€” Burial Ground",
-    "description": "The Mytroan practice of burial under the tent-floor has left this area rich in shallow graves, many of which have been exposed by centuries of erosion and Deceiver disturbance. Bone fragments are visible in the sand. A Deceiver artifact â€” a corroded metal disc etched with script no living scholar can fully read â€” protrudes from the ground near the burial area's centre. It hums faintly and has been radiating a localised sandstorm effect for three centuries.",
+    "name": "Mytro Ruins â€' Burial Ground",
+    "description": "The Mytroan practice of burial under the tent-floor has left this area rich in shallow graves, many of which have been exposed by centuries of erosion and Deceiver disturbance. Bone fragments are visible in the sand. A Deceiver artifact â€' a corroded metal disc etched with script no living scholar can fully read â€' protrudes from the ground near the burial area's centre. It hums faintly and has been radiating a localised sandstorm effect for three centuries.",
     "exits": {
       "west": 5202,
       "north": 5205
@@ -1620,7 +1620,7 @@
   },
   {
     "vnum": 5205,
-    "name": "Mytro Ruins â€” Deepest Sand",
+    "name": "Mytro Ruins â€' Deepest Sand",
     "description": "The innermost ruins are buried deepest, and only a severe sandstorm or deliberate excavation reveals what lies beneath: the preserved lower sections of Mytro's stone-foundation storage structures, the only permanent buildings the nomadic city maintained. Whatever was stored here when Harreem passed judgement remains. The stillness at this depth, below the wind-noise, is profound and unsettling. Sand Wraiths congregate here. Fortitude DC 14 against the desiccating touch of anything encountered.",
     "exits": {
       "south": 5203,
@@ -1634,8 +1634,8 @@
   },
   {
     "vnum": 5220,
-    "name": "Kalite Ruins â€” River Approach",
-    "description": "The road to ruined Kalite passes along the silted remains of the Great River's old course before the Shattering shifted the channel. The old riverbed is now a depression of cracked mud and dead vegetation, its banks still showing the cut of the original watercourse. The ruins of Kalite are visible ahead â€” a compact Eruskan port city stopped dead in the water, its docks reaching into a river that no longer flows past them.",
+    "name": "Kalite Ruins â€' River Approach",
+    "description": "The road to ruined Kalite passes along the silted remains of the Great River's old course before the Shattering shifted the channel. The old riverbed is now a depression of cracked mud and dead vegetation, its banks still showing the cut of the original watercourse. The ruins of Kalite are visible ahead â€' a compact Eruskan port city stopped dead in the water, its docks reaching into a river that no longer flows past them.",
     "exits": {
       "north": 5221,
       "west": 5431
@@ -1647,8 +1647,8 @@
   },
   {
     "vnum": 5221,
-    "name": "Kalite Ruins â€” Silted Docks",
-    "description": "Kalite's docks protrude from the old riverbank into dried silt, their once-submerged pilings now exposed and bleached. The dock structure is still partially intact â€” Eruskan engineering at its best, designed to outlast the civilisation it served. Sand Wraiths guard this area, drawn by the lost Riverstone Amulets buried in the silt from the hasty evacuation. The desiccating touch (1d6 + 1d4 Constitution, Fortitude DC 14) of any Wraith encountered here is particularly punishing in the dry air.",
+    "name": "Kalite Ruins â€' Silted Docks",
+    "description": "Kalite's docks protrude from the old riverbank into dried silt, their once-submerged pilings now exposed and bleached. The dock structure is still partially intact â€' Eruskan engineering at its best, designed to outlast the civilisation it served. Sand Wraiths guard this area, drawn by the lost Riverstone Amulets buried in the silt from the hasty evacuation. The desiccating touch (1d6 + 1d4 Constitution, Fortitude DC 14) of any Wraith encountered here is particularly punishing in the dry air.",
     "exits": {
       "south": 5220,
       "north": 5222,
@@ -1662,7 +1662,7 @@
   },
   {
     "vnum": 5222,
-    "name": "Kalite Ruins â€” Market Square",
+    "name": "Kalite Ruins â€' Market Square",
     "description": "Kalite's market square was built on the same model as Rivertop's Mistmarket, and the ghost of the design is visible in the arrangement of foundation stones beneath the sand. The square's central fountain is dry, its carved wave-patterns still legible. The Kalite king refused Aldenheim's call to avoid 'stolen glory,' and the square where that decision's cost was paid bears a quality of muted accusation. Nothing grows here. Sand collects against the fountain's base without reason.",
     "exits": {
       "south": 5221,
@@ -1675,8 +1675,8 @@
   },
   {
     "vnum": 5223,
-    "name": "Kalite Ruins â€” Hidden Silt Cache",
-    "description": "A section of the old dock-side warehouse district where the silt has partially preserved the lower courses of the buildings. Inside the accessible portions, the detritus of a hasty abandonment survives: rotted rope, the bronze fittings of trade equipment, and â€” buried in the deepest silt â€” a small cache of Riverstone Amulets from Kalite's last days, their enchantments faded but potentially recoverable by a skilled enchanter. Sand Wraiths circle the building's exterior with patient intensity.",
+    "name": "Kalite Ruins â€' Hidden Silt Cache",
+    "description": "A section of the old dock-side warehouse district where the silt has partially preserved the lower courses of the buildings. Inside the accessible portions, the detritus of a hasty abandonment survives: rotted rope, the bronze fittings of trade equipment, and â€' buried in the deepest silt â€' a small cache of Riverstone Amulets from Kalite's last days, their enchantments faded but potentially recoverable by a skilled enchanter. Sand Wraiths circle the building's exterior with patient intensity.",
     "exits": {
       "west": 5221,
       "north": 5225
@@ -1689,8 +1689,8 @@
   },
   {
     "vnum": 5224,
-    "name": "Kalite Ruins â€” King's Hall",
-    "description": "The king's hall of Kalite is the best-preserved structure in the ruins, its stone walls standing nearly to full height in places. This is where King Verith of Kalite refused the call to Aldenheim's aid. The throne is gone, but the dais it stood on remains, and the hall still carries the formal proportions of a space designed for governance. A pilgrim recently claimed to have seen King Verith walking here at dawn â€” the description matches historical accounts too precisely to dismiss.",
+    "name": "Kalite Ruins â€' King's Hall",
+    "description": "The king's hall of Kalite is the best-preserved structure in the ruins, its stone walls standing nearly to full height in places. This is where King Verith of Kalite refused the call to Aldenheim's aid. The throne is gone, but the dais it stood on remains, and the hall still carries the formal proportions of a space designed for governance. A pilgrim recently claimed to have seen King Verith walking here at dawn â€' the description matches historical accounts too precisely to dismiss.",
     "exits": {
       "east": 5222,
       "north": 5225
@@ -1703,8 +1703,8 @@
   },
   {
     "vnum": 5225,
-    "name": "Kalite Ruins â€” Deepest Quarter",
-    "description": "The residential quarter at Kalite's inland edge is the most dangerous section of the ruins. Sand Wraiths congregate here in numbers not seen elsewhere in the ruin â€” perhaps drawn by the concentration of Deceiver artifacts buried in the old residential foundations, or perhaps by something older in the location itself. The sandstorms that sweep through this part of the ruins are localised and punishing (Survival DC 15, 1d4 damage per hour). Whatever the ghost-king seeks here, it draws him back repeatedly.",
+    "name": "Kalite Ruins â€' Deepest Quarter",
+    "description": "The residential quarter at Kalite's inland edge is the most dangerous section of the ruins. Sand Wraiths congregate here in numbers not seen elsewhere in the ruin â€' perhaps drawn by the concentration of Deceiver artifacts buried in the old residential foundations, or perhaps by something older in the location itself. The sandstorms that sweep through this part of the ruins are localised and punishing (Survival DC 15, 1d4 damage per hour). Whatever the ghost-king seeks here, it draws him back repeatedly.",
     "exits": {
       "south": 5224,
       "east": 5223
@@ -1717,8 +1717,8 @@
   },
   {
     "vnum": 5240,
-    "name": "Hylen Ruins â€” Plain Approach",
-    "description": "The Hylen ruins sit on a windswept plain where the terrain offers no shelter from the elements. The approach road is barely distinguishable from the surrounding ground, its stones scattered by three centuries of wind-driven sand. The ruins are visible as a low silhouette against the sky â€” the remnants of a Mytroan outpost, its structures always simpler than those of the settled kingdoms. Storm Wisps have been seen at distances of a mile or more from the ruin's centre.",
+    "name": "Hylen Ruins â€' Plain Approach",
+    "description": "The Hylen ruins sit on a windswept plain where the terrain offers no shelter from the elements. The approach road is barely distinguishable from the surrounding ground, its stones scattered by three centuries of wind-driven sand. The ruins are visible as a low silhouette against the sky â€' the remnants of a Mytroan outpost, its structures always simpler than those of the settled kingdoms. Storm Wisps have been seen at distances of a mile or more from the ruin's centre.",
     "exits": {
       "south": 5241,
       "east": 5432
@@ -1730,8 +1730,8 @@
   },
   {
     "vnum": 5241,
-    "name": "Hylen Ruins â€” Outer Perimeter",
-    "description": "The outer perimeter of Hylen is marked by a partial fence of wooden stakes, long since warped and stripped by wind. Between the stakes, shredded remnants of heavy canvas â€” once the walls of the city's tent-structures â€” catch the constant wind and snap with a sound like slow applause. Storm Wisps drift through the perimeter without apparent regard for it, their electric touch (1d4) making the air smell of lightning. The Hylen king claimed insufficient men to aid Aldenheim; his city suggests he may have been right.",
+    "name": "Hylen Ruins â€' Outer Perimeter",
+    "description": "The outer perimeter of Hylen is marked by a partial fence of wooden stakes, long since warped and stripped by wind. Between the stakes, shredded remnants of heavy canvas â€' once the walls of the city's tent-structures â€' catch the constant wind and snap with a sound like slow applause. Storm Wisps drift through the perimeter without apparent regard for it, their electric touch (1d4) making the air smell of lightning. The Hylen king claimed insufficient men to aid Aldenheim; his city suggests he may have been right.",
     "exits": {
       "north": 5240,
       "south": 5242,
@@ -1744,8 +1744,8 @@
   },
   {
     "vnum": 5242,
-    "name": "Hylen Ruins â€” Central Ground",
-    "description": "The central ground of Hylen shows the remains of a circular arrangement of larger tent-structures â€” a council space of some kind, its posts still partially standing. Wind shreds anything that catches on them with the persistence of something alive. Storm Wisps cluster here on cloudy days when the electrical potential in the air is highest. The ground beneath the central circle is unusually hard, as though vitrified by a massive electrical discharge â€” possibly the final expression of Harreem's judgement.",
+    "name": "Hylen Ruins â€' Central Ground",
+    "description": "The central ground of Hylen shows the remains of a circular arrangement of larger tent-structures â€' a council space of some kind, its posts still partially standing. Wind shreds anything that catches on them with the persistence of something alive. Storm Wisps cluster here on cloudy days when the electrical potential in the air is highest. The ground beneath the central circle is unusually hard, as though vitrified by a massive electrical discharge â€' possibly the final expression of Harreem's judgement.",
     "exits": {
       "north": 5241,
       "east": 5244
@@ -1758,8 +1758,8 @@
   },
   {
     "vnum": 5243,
-    "name": "Hylen Ruins â€” Storage Quarter",
-    "description": "The storage quarter is buried under sand drifts that have been accumulating for three centuries, but where erosion has exposed the surface, the remains of sealed clay storage vessels are visible. Most are empty â€” taken or shattered â€” but intact examples occasionally emerge from the sand after heavy windstorms. A Deceiver artifact in the form of a sealed cylinder of unfamiliar metal was reportedly found here last year; its current location is unknown.",
+    "name": "Hylen Ruins â€' Storage Quarter",
+    "description": "The storage quarter is buried under sand drifts that have been accumulating for three centuries, but where erosion has exposed the surface, the remains of sealed clay storage vessels are visible. Most are empty â€' taken or shattered â€' but intact examples occasionally emerge from the sand after heavy windstorms. A Deceiver artifact in the form of a sealed cylinder of unfamiliar metal was reportedly found here last year; its current location is unknown.",
     "exits": {
       "west": 5241,
       "south": 5245
@@ -1772,8 +1772,8 @@
   },
   {
     "vnum": 5244,
-    "name": "Hylen Ruins â€” Wind Channel",
-    "description": "A depression in the ruins' centre acts as a natural wind channel, concentrating the plain's constant wind into a corridor of sustained force. Loose sand moves through it in a constant stream, making visibility poor and footing uncertain. Storm Wisps are almost always present here â€” the concentrated electrical energy of the wind channel suits them. The sound in the channel is a sustained harmonic that experienced travellers describe as unnerving even when the hazards are managed.",
+    "name": "Hylen Ruins â€' Wind Channel",
+    "description": "A depression in the ruins' centre acts as a natural wind channel, concentrating the plain's constant wind into a corridor of sustained force. Loose sand moves through it in a constant stream, making visibility poor and footing uncertain. Storm Wisps are almost always present here â€' the concentrated electrical energy of the wind channel suits them. The sound in the channel is a sustained harmonic that experienced travellers describe as unnerving even when the hazards are managed.",
     "exits": {
       "west": 5242,
       "north": 5243,
@@ -1787,8 +1787,8 @@
   },
   {
     "vnum": 5245,
-    "name": "Hylen Ruins â€” Far Edge",
-    "description": "The far edge of the Hylen ruins fades back into open plain, the tent-pole remnants becoming sparser until they vanish entirely. A stone marker erected by the Lament of Kings pilgrimage organisation stands here â€” the only maintained structure in the ruins â€” bearing a carved inscription: 'Here stood Hylen. Its king cited insufficient men. Harreem counted the dead and found the numbers wanting.' The marker is regularly found disturbed, as though something circles it.",
+    "name": "Hylen Ruins â€' Far Edge",
+    "description": "The far edge of the Hylen ruins fades back into open plain, the tent-pole remnants becoming sparser until they vanish entirely. A stone marker erected by the Lament of Kings pilgrimage organisation stands here â€' the only maintained structure in the ruins â€' bearing a carved inscription: 'Here stood Hylen. Its king cited insufficient men. Harreem counted the dead and found the numbers wanting.' The marker is regularly found disturbed, as though something circles it.",
     "exits": {
       "north": 5244,
       "east": 5243
@@ -1800,8 +1800,8 @@
   },
   {
     "vnum": 5260,
-    "name": "Thrush Ruins â€” Scorchspire Approach",
-    "description": "The ruins of Thrush lie in the shadow of the Scorchspires, close enough to the volcanic region that the air is warm and the rock underfoot is often discoloured by mineral seepage. The approach shows the remains of a road that once served the forge-town's industrial traffic â€” broad, heavily built, and buckled by thermal expansion over three centuries. Ember Drakes have been established in the ruins for generations.",
+    "name": "Thrush Ruins â€' Scorchspire Approach",
+    "description": "The ruins of Thrush lie in the shadow of the Scorchspires, close enough to the volcanic region that the air is warm and the rock underfoot is often discoloured by mineral seepage. The approach shows the remains of a road that once served the forge-town's industrial traffic â€' broad, heavily built, and buckled by thermal expansion over three centuries. Ember Drakes have been established in the ruins for generations.",
     "exits": {
       "south": 5261,
       "north": 5433
@@ -1813,8 +1813,8 @@
   },
   {
     "vnum": 5261,
-    "name": "Thrush Ruins â€” Forge District Approach",
-    "description": "The forge district of Thrush was its reason for existence, and even in ruin the layout communicates industrial purpose â€” wide roads for material transport, the foundation footprints of large industrial buildings, and the remains of chimney structures now reduced to stubs. Cold smelters stand in rows, their fuel shafts open to the sky. Ember Drakes have nested in the smelter shafts, their body heat keeping the abandoned forges warmer than the surrounding ruins.",
+    "name": "Thrush Ruins â€' Forge District Approach",
+    "description": "The forge district of Thrush was its reason for existence, and even in ruin the layout communicates industrial purpose â€' wide roads for material transport, the foundation footprints of large industrial buildings, and the remains of chimney structures now reduced to stubs. Cold smelters stand in rows, their fuel shafts open to the sky. Ember Drakes have nested in the smelter shafts, their body heat keeping the abandoned forges warmer than the surrounding ruins.",
     "exits": {
       "north": 5260,
       "south": 5262,
@@ -1827,7 +1827,7 @@
   },
   {
     "vnum": 5262,
-    "name": "Thrush Ruins â€” Cold Smelter Row",
+    "name": "Thrush Ruins â€' Cold Smelter Row",
     "description": "A row of cold smelters stands along what was once Thrush's primary forge road. The smelters' interiors are dark and smell of old ash and the dry, hot scent of Ember Drake habitation. At least three Drakes have nests in the central smelters, and their breath weapons (2d6 fire, Reflex DC 13) can be directed down the forge road with effective range. The Thrush king chose profit over honour; the forge district that was his city's wealth now serves the animals.",
     "exits": {
       "north": 5261,
@@ -1841,8 +1841,8 @@
   },
   {
     "vnum": 5263,
-    "name": "Thrush Ruins â€” King's Forge Hall",
-    "description": "The king's personal forge hall â€” the largest building in Thrush â€” has partially collapsed, its roof fallen but its thick stone walls still standing. The forge at its centre is the finest construction in the ruins, its fire-brick perfectly cut and the runestone enchantments on its draft-vents still faintly active. Ember Drakes have claimed this structure as their territory's core, and multiple individuals maintain nests in the collapsed roof section. Entering is a statement of combat intent.",
+    "name": "Thrush Ruins â€' King's Forge Hall",
+    "description": "The king's personal forge hall â€' the largest building in Thrush â€' has partially collapsed, its roof fallen but its thick stone walls still standing. The forge at its centre is the finest construction in the ruins, its fire-brick perfectly cut and the runestone enchantments on its draft-vents still faintly active. Ember Drakes have claimed this structure as their territory's core, and multiple individuals maintain nests in the collapsed roof section. Entering is a statement of combat intent.",
     "exits": {
       "west": 5261,
       "south": 5264
@@ -1855,8 +1855,8 @@
   },
   {
     "vnum": 5264,
-    "name": "Thrush Ruins â€” Residential Quarter",
-    "description": "The residential quarter of Thrush was built quickly and cheaply, as forge-towns often are, and has deteriorated accordingly. Wall sections have collapsed leaving open foundations, and the rubble provides shelter for both Ember Drakes and the Sand Wraiths that moved in as the Drakes pushed west. The two species have reached an uneasy territorial arrangement that adventurers tend to disrupt. A Deceiver artifact â€” a heat-resistant box of unfamiliar alloy â€” was reportedly seen half-buried in the residential rubble.",
+    "name": "Thrush Ruins â€' Residential Quarter",
+    "description": "The residential quarter of Thrush was built quickly and cheaply, as forge-towns often are, and has deteriorated accordingly. Wall sections have collapsed leaving open foundations, and the rubble provides shelter for both Ember Drakes and the Sand Wraiths that moved in as the Drakes pushed west. The two species have reached an uneasy territorial arrangement that adventurers tend to disrupt. A Deceiver artifact â€' a heat-resistant box of unfamiliar alloy â€' was reportedly seen half-buried in the residential rubble.",
     "exits": {
       "west": 5262,
       "north": 5263
@@ -1869,8 +1869,8 @@
   },
   {
     "vnum": 5280,
-    "name": "Andrio Ruins â€” Valley Approach",
-    "description": "The valley that houses Andrio's ruins was a mixed Taraf-Imro and Orean community in the Concordant era, and the approach road shows this mixed heritage â€” volcanic stone foundations in Taraf-Imro style alternating with the dressed basalt of Orean construction. The valley's sides close in on the approach, creating a natural enclosure that made Andrio defensible in life and claustrophobic in ruin. The Giant ruins that attracted adventurers before Harreem's judgement still draw them now.",
+    "name": "Andrio Ruins â€' Valley Approach",
+    "description": "The valley that houses Andrio's ruins was a mixed Taraf-Imro and Orean community in the Concordant era, and the approach road shows this mixed heritage â€' volcanic stone foundations in Taraf-Imro style alternating with the dressed basalt of Orean construction. The valley's sides close in on the approach, creating a natural enclosure that made Andrio defensible in life and claustrophobic in ruin. The Giant ruins that attracted adventurers before Harreem's judgement still draw them now.",
     "exits": {
       "east": 5281,
       "west": 5434
@@ -1882,8 +1882,8 @@
   },
   {
     "vnum": 5281,
-    "name": "Andrio Ruins â€” Main Valley",
-    "description": "The main valley of Andrio's ruins shows crumbling basalt halls in Orean style alongside the ember-lit stonework of Taraf-Imro construction â€” or what remains of it. Whatever unity the two subraces maintained here ended with Harreem's judgement, and three centuries of mutual absence has erased most evidence of cooperation. The Giant ruins beneath the valley floor are visible through collapse holes in several buildings â€” structures far older than anything human that still attract adventurers willing to brave the Sand Wraiths above.",
+    "name": "Andrio Ruins â€' Main Valley",
+    "description": "The main valley of Andrio's ruins shows crumbling basalt halls in Orean style alongside the ember-lit stonework of Taraf-Imro construction â€' or what remains of it. Whatever unity the two subraces maintained here ended with Harreem's judgement, and three centuries of mutual absence has erased most evidence of cooperation. The Giant ruins beneath the valley floor are visible through collapse holes in several buildings â€' structures far older than anything human that still attract adventurers willing to brave the Sand Wraiths above.",
     "exits": {
       "west": 5280,
       "north": 5282,
@@ -1897,8 +1897,8 @@
   },
   {
     "vnum": 5282,
-    "name": "Andrio Ruins â€” Orean Quarter",
-    "description": "The Orean portion of Andrio is identifiable by its construction method â€” tight-fitted basalt blocks without mortar, the walls built to absorb seismic energy by slight flexion. Three centuries of earthquakes have tested this design and found it adequate; the Orean construction survives better than the Taraf-Imro work. Sand Wraiths patrol the upper portions of the valley. A partially exposed Giant-era structure beneath the Orean quarter's central building requires Disable Device DC 20 to access safely.",
+    "name": "Andrio Ruins â€' Orean Quarter",
+    "description": "The Orean portion of Andrio is identifiable by its construction method â€' tight-fitted basalt blocks without mortar, the walls built to absorb seismic energy by slight flexion. Three centuries of earthquakes have tested this design and found it adequate; the Orean construction survives better than the Taraf-Imro work. Sand Wraiths patrol the upper portions of the valley. A partially exposed Giant-era structure beneath the Orean quarter's central building requires Disable Device DC 20 to access safely.",
     "exits": {
       "south": 5281,
       "east": 5285
@@ -1911,8 +1911,8 @@
   },
   {
     "vnum": 5283,
-    "name": "Andrio Ruins â€” Taraf-Imro Quarter",
-    "description": "The volcanic stone construction of Andrio's Taraf-Imro quarter has fared worse â€” the mortar used in Taraf-Imro construction is less earthquake-resistant, and the valley has not been kind. Large sections have collapsed into rubble. Ember Drakes shelter in the rubble piles, and their territorial range overlaps with the Sand Wraiths in the Orean quarter â€” an overlap that produces frequent violent conflict and should be noted by anyone planning to move between the two areas.",
+    "name": "Andrio Ruins â€' Taraf-Imro Quarter",
+    "description": "The volcanic stone construction of Andrio's Taraf-Imro quarter has fared worse â€' the mortar used in Taraf-Imro construction is less earthquake-resistant, and the valley has not been kind. Large sections have collapsed into rubble. Ember Drakes shelter in the rubble piles, and their territorial range overlaps with the Sand Wraiths in the Orean quarter â€' an overlap that produces frequent violent conflict and should be noted by anyone planning to move between the two areas.",
     "exits": {
       "north": 5281,
       "east": 5285
@@ -1925,8 +1925,8 @@
   },
   {
     "vnum": 5284,
-    "name": "Andrio Ruins â€” Valley East",
-    "description": "The eastern end of the Andrio valley narrows to a cleft in the rock where the two subraces' territories met and where the king's hall once stood at what was meant to be a meeting point between them. The hall itself has collapsed completely. Beneath its ruins, adventurers have reported Giant stonework of considerable scale â€” passages, chambers, and the particular rune-work of the Giant era that the Stonecutters' Guild of Stonefall would pay well to have documented.",
+    "name": "Andrio Ruins â€' Valley East",
+    "description": "The eastern end of the Andrio valley narrows to a cleft in the rock where the two subraces' territories met and where the king's hall once stood at what was meant to be a meeting point between them. The hall itself has collapsed completely. Beneath its ruins, adventurers have reported Giant stonework of considerable scale â€' passages, chambers, and the particular rune-work of the Giant era that the Stonecutters' Guild of Stonefall would pay well to have documented.",
     "exits": {
       "west": 5281,
       "north": 5285
@@ -1939,8 +1939,8 @@
   },
   {
     "vnum": 5285,
-    "name": "Andrio Ruins â€” Giant Ruin Access",
-    "description": "A collapse hole in the valley floor exposes the uppermost level of the Giant ruins beneath Andrio. The stonework visible from above is immense in scale â€” blocks too large for human or dwarf to move without magic. The Giant runes carved into the visible lintel have been partially translated as a warning of some kind, though Knowledge (History) DC 20 is needed for more than fragments. Sand Wraiths circle the opening as though keeping watch over what is below. The descent requires rope and preparation.",
+    "name": "Andrio Ruins â€' Giant Ruin Access",
+    "description": "A collapse hole in the valley floor exposes the uppermost level of the Giant ruins beneath Andrio. The stonework visible from above is immense in scale â€' blocks too large for human or dwarf to move without magic. The Giant runes carved into the visible lintel have been partially translated as a warning of some kind, though Knowledge (History) DC 20 is needed for more than fragments. Sand Wraiths circle the opening as though keeping watch over what is below. The descent requires rope and preparation.",
     "exits": {
       "south": 5284,
       "west": 5282,
@@ -1954,8 +1954,8 @@
   },
   {
     "vnum": 5286,
-    "name": "Andrio Ruins â€” Giant Chamber",
-    "description": "The upper chamber of the Giant ruin beneath Andrio is vast, its ceiling twenty feet above and its floor smooth with a precision no human stone-cutter can match. The walls are covered in Giant runes â€” the full alphabet, presented as though this was a teaching space or a record-keeping facility. The air is still and cool, insulated from the desert heat above. Whatever the Giants stored here has been disturbed â€” the centre of the chamber shows signs of removal, deliberate and old, but not by human hands.",
+    "name": "Andrio Ruins â€' Giant Chamber",
+    "description": "The upper chamber of the Giant ruin beneath Andrio is vast, its ceiling twenty feet above and its floor smooth with a precision no human stone-cutter can match. The walls are covered in Giant runes â€' the full alphabet, presented as though this was a teaching space or a record-keeping facility. The air is still and cool, insulated from the desert heat above. Whatever the Giants stored here has been disturbed â€' the centre of the chamber shows signs of removal, deliberate and old, but not by human hands.",
     "exits": {
       "up": 5285
     },
@@ -1967,7 +1967,7 @@
   },
   {
     "vnum": 5300,
-    "name": "Pryee Ruins â€” Outer Approach",
+    "name": "Pryee Ruins â€' Outer Approach",
     "description": "The ruins of Pryee occupy a site where the Giant's Teeth foothills meet the volcanic zone, making it simultaneously the most defensible and most geologically unstable location in the Kinsweave. The Taraf-Imro and Orean king who dismissed the Deceivers' War as someone else's problem built his citadel here, and Harreem's judgement found him in it. The approach shows the remains of impressive fortifications reduced to rubble by three centuries of volcanic and seismic activity.",
     "exits": {
       "south": 5301,
@@ -1980,8 +1980,8 @@
   },
   {
     "vnum": 5301,
-    "name": "Pryee Ruins â€” Outer Wall",
-    "description": "The outer wall of Pryee's citadel still stands in sections, its construction combining Orean basalt work with Taraf-Imro volcanic reinforcement â€” the best engineering both subraces could offer, and still it has crumbled. Where the wall has fallen, lava tubes are visible beneath â€” the network of passages that house Sand Wraiths and Deceiver artifacts alike. The lava tube entrances are visible as dark openings in the rubble, warm air rising from them even now.",
+    "name": "Pryee Ruins â€' Outer Wall",
+    "description": "The outer wall of Pryee's citadel still stands in sections, its construction combining Orean basalt work with Taraf-Imro volcanic reinforcement â€' the best engineering both subraces could offer, and still it has crumbled. Where the wall has fallen, lava tubes are visible beneath â€' the network of passages that house Sand Wraiths and Deceiver artifacts alike. The lava tube entrances are visible as dark openings in the rubble, warm air rising from them even now.",
     "exits": {
       "north": 5300,
       "south": 5302,
@@ -1995,7 +1995,7 @@
   },
   {
     "vnum": 5302,
-    "name": "Pryee Ruins â€” Citadel Approach",
+    "name": "Pryee Ruins â€' Citadel Approach",
     "description": "The road through Pryee's ruins toward the citadel's inner gate is intact in places and collapsed in others, navigating between sections of fallen wall and the exposed openings of lava tubes beneath. Sand Wraiths emerge from the lava tube openings at night, their desiccating touch (1d6 + 1d4 Constitution, Fortitude DC 14) making this road particularly dangerous in darkness. The citadel ahead shows signs of two separate types of destruction: the Shattering's geological damage and Harreem's divine retribution.",
     "exits": {
       "north": 5301,
@@ -2010,8 +2010,8 @@
   },
   {
     "vnum": 5303,
-    "name": "Pryee Ruins â€” East Lava Tube Entrance",
-    "description": "One of the major lava tube entrances on the ruins' eastern side opens into a descending passage of volcanic rock. Warm air rises from it. Sand Wraiths have established a consistent presence in the tube system, using the tunnels to move through the ruins without exposure. The tube walls show the marks of three-century-old explosive gas events â€” scorch patterns in the rock that suggest the tubes were violently active during the Shattering. Whether they remain active is an open question.",
+    "name": "Pryee Ruins â€' East Lava Tube Entrance",
+    "description": "One of the major lava tube entrances on the ruins' eastern side opens into a descending passage of volcanic rock. Warm air rises from it. Sand Wraiths have established a consistent presence in the tube system, using the tunnels to move through the ruins without exposure. The tube walls show the marks of three-century-old explosive gas events â€' scorch patterns in the rock that suggest the tubes were violently active during the Shattering. Whether they remain active is an open question.",
     "exits": {
       "west": 5301,
       "down": 5306
@@ -2024,8 +2024,8 @@
   },
   {
     "vnum": 5304,
-    "name": "Pryee Ruins â€” Citadel Interior",
-    "description": "The citadel's inner courtyard has been partially collapsed by seismic activity and partially preserved by the very geological instability that damaged it â€” a section of the courtyard is now below grade, protected from the worst weathering. The king's execution took place in the great hall to the north, and the hall's threshold still bears discolouration that the overgrown vegetation around it avoids. The divine retribution of the Golden Rose left physical marks that three centuries have not erased.",
+    "name": "Pryee Ruins â€' Citadel Interior",
+    "description": "The citadel's inner courtyard has been partially collapsed by seismic activity and partially preserved by the very geological instability that damaged it â€' a section of the courtyard is now below grade, protected from the worst weathering. The king's execution took place in the great hall to the north, and the hall's threshold still bears discolouration that the overgrown vegetation around it avoids. The divine retribution of the Golden Rose left physical marks that three centuries have not erased.",
     "exits": {
       "north": 5302,
       "east": 5305,
@@ -2039,8 +2039,8 @@
   },
   {
     "vnum": 5305,
-    "name": "Pryee Ruins â€” The Great Hall",
-    "description": "The great hall of Pryee is where the final Kinsweave king received Harreem's judgement, and the space retains a quality that visitors consistently describe as weighty â€” not dangerous exactly, but deeply, uncomfortably significant. The hall's Orean-built walls are the best-preserved structure in the citadel. The throne is intact, its stone unmarked, facing a doorway through which the Golden Rose famously entered unannounced. The smell of wilting flowers â€” from the Lament of Kings poem â€” is occasionally reported here, though no flowers grow for miles.",
+    "name": "Pryee Ruins â€' The Great Hall",
+    "description": "The great hall of Pryee is where the final Kinsweave king received Harreem's judgement, and the space retains a quality that visitors consistently describe as weighty â€' not dangerous exactly, but deeply, uncomfortably significant. The hall's Orean-built walls are the best-preserved structure in the citadel. The throne is intact, its stone unmarked, facing a doorway through which the Golden Rose famously entered unannounced. The smell of wilting flowers â€' from the Lament of Kings poem â€' is occasionally reported here, though no flowers grow for miles.",
     "exits": {
       "east": 5304,
       "west": 5302
@@ -2052,8 +2052,8 @@
   },
   {
     "vnum": 5306,
-    "name": "Pryee Ruins â€” Lava Tube, Upper Level",
-    "description": "The lava tube's upper level is broad and high-ceilinged, its walls smooth from the ancient flow that created it. Sand Wraiths move through this space with disturbing fluency, their desiccating touch extended in the close confines of the tube. Light from the entrance above is the only illumination. Further down the tube, the sound of something â€” not wind, not geological movement â€” is audible at intervals. The Deceiver artifact reported in the lava tubes has been here long enough to develop an atmosphere of its own.",
+    "name": "Pryee Ruins â€' Lava Tube, Upper Level",
+    "description": "The lava tube's upper level is broad and high-ceilinged, its walls smooth from the ancient flow that created it. Sand Wraiths move through this space with disturbing fluency, their desiccating touch extended in the close confines of the tube. Light from the entrance above is the only illumination. Further down the tube, the sound of something â€' not wind, not geological movement â€' is audible at intervals. The Deceiver artifact reported in the lava tubes has been here long enough to develop an atmosphere of its own.",
     "exits": {
       "up": 5303,
       "down": 5307
@@ -2066,8 +2066,8 @@
   },
   {
     "vnum": 5307,
-    "name": "Pryee Ruins â€” Lava Tube, Deep Level",
-    "description": "The deep level of the lava tube is warmer than the surface ruins by a significant margin, the volcanic heat from the Scorchspires' proximity unfiltered here. The tube walls are faintly luminescent â€” a mineral property of the volcanic rock, not magic, though it creates an eerie and unreliable light. The Deceiver artifact is down here: a pulsing object of unidentifiable material, roughly the size of a human head, resting in a bowl-shaped depression in the tube floor. It has been here for three hundred years and shows no sign of decay.",
+    "name": "Pryee Ruins â€' Lava Tube, Deep Level",
+    "description": "The deep level of the lava tube is warmer than the surface ruins by a significant margin, the volcanic heat from the Scorchspires' proximity unfiltered here. The tube walls are faintly luminescent â€' a mineral property of the volcanic rock, not magic, though it creates an eerie and unreliable light. The Deceiver artifact is down here: a pulsing object of unidentifiable material, roughly the size of a human head, resting in a bowl-shaped depression in the tube floor. It has been here for three hundred years and shows no sign of decay.",
     "exits": {
       "up": 5306
     },
@@ -2079,8 +2079,8 @@
   },
   {
     "vnum": 5400,
-    "name": "Road to Rivertop â€” Stonefall Junction",
-    "description": "The road west from Stonefall meets the main Kinsweave road here at a carved stone waymarker. One face reads 'Stonefall â€” 1 hour'; another reads 'Rivertop â€” 4 hours by river road'; a third reads 'Chapel â€” South Road, 6 hours'. The junction is exposed to the mountain weather, and a stone windbreak shelter with a fire-striker kit is maintained by the Stonefall city guard for travellers caught here in storms. The road is well-maintained in both directions.",
+    "name": "Road to Rivertop â€' Stonefall Junction",
+    "description": "The road west from Stonefall meets the main Kinsweave road here at a carved stone waymarker. One face reads 'Stonefall â€' 1 hour'; another reads 'Rivertop â€' 4 hours by river road'; a third reads 'Chapel â€' South Road, 6 hours'. The junction is exposed to the mountain weather, and a stone windbreak shelter with a fire-striker kit is maintained by the Stonefall city guard for travellers caught here in storms. The road is well-maintained in both directions.",
     "exits": {
       "east": 5000,
       "west": 5401,
@@ -2094,8 +2094,8 @@
   },
   {
     "vnum": 5401,
-    "name": "Road to Rivertop â€” River Approach",
-    "description": "The road from Stonefall descends from the mountain foothills toward the Great River valley, the terrain shifting from bare rock to scrubby grassland and then to the river-fed vegetation of the lowlands. The sound of the Great River becomes audible before it is visible. This section of road sees regular traffic â€” quarry carts heading toward Rivertop's docks, traders coming the other way with river goods. The road surface is maintained but not dressed, its stones settled by years of heavy use.",
+    "name": "Road to Rivertop â€' River Approach",
+    "description": "The road from Stonefall descends from the mountain foothills toward the Great River valley, the terrain shifting from bare rock to scrubby grassland and then to the river-fed vegetation of the lowlands. The sound of the Great River becomes audible before it is visible. This section of road sees regular traffic â€' quarry carts heading toward Rivertop's docks, traders coming the other way with river goods. The road surface is maintained but not dressed, its stones settled by years of heavy use.",
     "exits": {
       "north": 5400,
       "south": 5060
@@ -2107,7 +2107,7 @@
   },
   {
     "vnum": 5402,
-    "name": "Road to Chapel â€” North Junction",
+    "name": "Road to Chapel â€' North Junction",
     "description": "The road south from the Stonefall junction leads toward the Chapel area, a well-travelled route used by pilgrims and traders alike. A stone marker points toward both the Chapel's gates and a secondary track that branches east toward the ruins of Andrio. The road is maintained by a joint agreement between Stonefall and the Chapel authorities, their differing aesthetics visible in the alternating sections of dressed stone and rougher local rock.",
     "exits": {
       "north": 4008,
@@ -2122,7 +2122,7 @@
   },
   {
     "vnum": 5410,
-    "name": "Road to Highridge â€” North Approach",
+    "name": "Road to Highridge â€' North Approach",
     "description": "The road approaching Highridge from the north passes through the transition zone between the normal scrublands of the Kinsweave and the volcanic territory of the Scorchspires. The air is noticeably warmer, the vegetation sparser and more adapted to heat, and the rock underfoot becomes visibly volcanic in character. Sulphur deposits in the roadside earth tinge the dust yellow. Highridge's walls are visible as a heat-shimmer on the horizon.",
     "exits": {
       "south": 5106,
@@ -2135,7 +2135,7 @@
   },
   {
     "vnum": 5411,
-    "name": "Road to Highridge â€” Regional Road",
+    "name": "Road to Highridge â€' Regional Road",
     "description": "The regional road between Highridge and Rivertop runs through middle Kinsweave, avoiding the worst of the volcanic zone to the south and the ruins to the east. Traders use this road regularly, though the Taraf-Imro and Eruskan trade rivalry means interactions between parties from either city are conducted with careful politeness. The road is marked at intervals with distance stones in three scripts: Taraf-Imro, Eruskan, and the Eke Concordant standard script.",
     "exits": {
       "south": 5410,
@@ -2150,8 +2150,8 @@
   },
   {
     "vnum": 5420,
-    "name": "Road to Lakeshore â€” West Approach",
-    "description": "The road approaching Lakeshore from the west crosses the neck of land between the Great River and the lake, giving travellers a simultaneous view of both bodies of water at the crossing point. The road is lined with water-spirit markers on both sides â€” small carved stones placed by the devout over generations. The lake smell is fresh and pleasant, and birds are abundant in the lakeside vegetation. The road is flat and easy here, well suited to trade cart traffic.",
+    "name": "Road to Lakeshore â€' West Approach",
+    "description": "The road approaching Lakeshore from the west crosses the neck of land between the Great River and the lake, giving travellers a simultaneous view of both bodies of water at the crossing point. The road is lined with water-spirit markers on both sides â€' small carved stones placed by the devout over generations. The lake smell is fresh and pleasant, and birds are abundant in the lakeside vegetation. The road is flat and easy here, well suited to trade cart traffic.",
     "exits": {
       "east": 5140,
       "west": 5421
@@ -2163,7 +2163,7 @@
   },
   {
     "vnum": 5421,
-    "name": "Road Junction â€” Lakeshore and Lakewell",
+    "name": "Road Junction â€' Lakeshore and Lakewell",
     "description": "A road junction in the middle ground between Lakeshore and Lakewell, marked by a waystone carved with the Lady of the Sea's wave-symbol. From here, the lake road continues east to Lakeshore and branches southeast to Lakewell. The junction sees regular traffic between the two cities, their relationship close enough that the road between them is more neighbourhood lane than inter-city route. A riverside rest area with a firepit and stone seating occupies the junction's northeast corner.",
     "exits": {
       "east": 5420,
@@ -2177,7 +2177,7 @@
   },
   {
     "vnum": 5422,
-    "name": "Road to Lakewell â€” Lake Track",
+    "name": "Road to Lakewell â€' Lake Track",
     "description": "The road between the junction and Lakewell follows the smaller lake's shore closely, the track often within yards of the water's edge. Reed-beds grow on the lakeside, and the track is sometimes muddy where the reeds' root systems hold water near the surface. The Reedwave Festival procession uses this track, and its edges are marked with carved posts painted in the festival colours: blue and green. The smell of lake water and reeds is pervasive and pleasant.",
     "exits": {
       "north": 5421,
@@ -2190,8 +2190,8 @@
   },
   {
     "vnum": 5430,
-    "name": "Road to Mytro Ruins â€” East Track",
-    "description": "A rough track leads east toward the Mytro ruins from the main Kinsweave road. This is not a maintained road â€” no city maintains access to the ruins â€” but it has been worn into the earth by the passage of adventurers, Lament of Kings pilgrims, and the occasional scholar who needs to see where Mytro stood. The track is manageable in good weather. In sandstorm conditions, Survival DC 15 is required to follow it without a guide.",
+    "name": "Road to Mytro Ruins â€' East Track",
+    "description": "A rough track leads east toward the Mytro ruins from the main Kinsweave road. This is not a maintained road â€' no city maintains access to the ruins â€' but it has been worn into the earth by the passage of adventurers, Lament of Kings pilgrims, and the occasional scholar who needs to see where Mytro stood. The track is manageable in good weather. In sandstorm conditions, Survival DC 15 is required to follow it without a guide.",
     "exits": {
       "west": 5431,
       "east": 5200,
@@ -2203,8 +2203,8 @@
   },
   {
     "vnum": 5431,
-    "name": "Road to Kalite Ruins â€” River Road",
-    "description": "The track to Kalite's ruins follows the old river road that once served the port city's trade traffic. The road surface is intact in places â€” the Eruskan road-builders of the Concordant era built well â€” but silting and three centuries without maintenance have reduced much of it to a pale suggestion of its former self. The old riverbed is visible to the track's north, and the ruins ahead are visible as a dark low shape against the plain. Sand Wraith sightings have been reported on this road at dusk.",
+    "name": "Road to Kalite Ruins â€' River Road",
+    "description": "The track to Kalite's ruins follows the old river road that once served the port city's trade traffic. The road surface is intact in places â€' the Eruskan road-builders of the Concordant era built well â€' but silting and three centuries without maintenance have reduced much of it to a pale suggestion of its former self. The old riverbed is visible to the track's north, and the ruins ahead are visible as a dark low shape against the plain. Sand Wraith sightings have been reported on this road at dusk.",
     "exits": {
       "east": 5220,
       "west": 5430,
@@ -2216,8 +2216,8 @@
   },
   {
     "vnum": 5432,
-    "name": "Road to Hylen Ruins â€” Plain Track",
-    "description": "The track to Hylen crosses the open plain where the wind is strongest and the terrain most exposed. Wind erosion has obscured the track in several places, and navigating by track alone is unreliable. The Storm Wisps that inhabit the Hylen ruins range further along this track than Sand Wraiths typically extend from their ruins â€” electric touch encounters have been reported two miles from the ruin perimeter. A Survival DC 12 check navigates the open plain without incident.",
+    "name": "Road to Hylen Ruins â€' Plain Track",
+    "description": "The track to Hylen crosses the open plain where the wind is strongest and the terrain most exposed. Wind erosion has obscured the track in several places, and navigating by track alone is unreliable. The Storm Wisps that inhabit the Hylen ruins range further along this track than Sand Wraiths typically extend from their ruins â€' electric touch encounters have been reported two miles from the ruin perimeter. A Survival DC 12 check navigates the open plain without incident.",
     "exits": {
       "west": 5431,
       "north": 5240
@@ -2228,8 +2228,8 @@
   },
   {
     "vnum": 5433,
-    "name": "Road to Thrush Ruins â€” Forge Road",
-    "description": "The road to Thrush ruins follows the old forge road that carried raw material from the volcanic zone to Thrush's smelters. The road is broader than the other ruin tracks and its construction more robust â€” it was built for industrial traffic. Ember Drake activity along this road is the highest of any ruin approach, and the garrison at Highridge periodically clears the road to the edge of Thrush territory as a deterrent to Drake range expansion.",
+    "name": "Road to Thrush Ruins â€' Forge Road",
+    "description": "The road to Thrush ruins follows the old forge road that carried raw material from the volcanic zone to Thrush's smelters. The road is broader than the other ruin tracks and its construction more robust â€' it was built for industrial traffic. Ember Drake activity along this road is the highest of any ruin approach, and the garrison at Highridge periodically clears the road to the edge of Thrush territory as a deterrent to Drake range expansion.",
     "exits": {
       "south": 5260,
       "west": 5434,
@@ -2241,8 +2241,8 @@
   },
   {
     "vnum": 5434,
-    "name": "Road to Andrio Ruins â€” Valley Road",
-    "description": "The valley road to Andrio descends from the central Kinsweave plateau into the valley where the mixed ruins lie. The road is cut into the valley wall at several points â€” Orean engineering, competently executed â€” and these cuts have held up well. The valley below is visible from the road, and the Giant ruin access hole at the ruins' east end is visible from the valley rim as a dark depression with a different quality of light rising from it. Experienced adventurers describe this view as 'appetising.'",
+    "name": "Road to Andrio Ruins â€' Valley Road",
+    "description": "The valley road to Andrio descends from the central Kinsweave plateau into the valley where the mixed ruins lie. The road is cut into the valley wall at several points â€' Orean engineering, competently executed â€' and these cuts have held up well. The valley below is visible from the road, and the Giant ruin access hole at the ruins' east end is visible from the valley rim as a dark depression with a different quality of light rising from it. Experienced adventurers describe this view as 'appetising.'",
     "exits": {
       "east": 5280,
       "north": 5433,
@@ -2255,8 +2255,8 @@
   },
   {
     "vnum": 5435,
-    "name": "Road to Pryee Ruins â€” Mountain Approach",
-    "description": "The approach to Pryee ruins is the most dramatic of the ruin roads, climbing through the transition zone where the Giant's Teeth meet the volcanic region. The citadel becomes visible at a sharp turn in the road â€” a sudden revelation of walls and towers that makes its ruined state all the more striking for the brief impression of intact grandeur. Lament of Kings pilgrims use a separate maintained path that bypasses the most dangerous sections of the ruins; this road leads to the ruins themselves.",
+    "name": "Road to Pryee Ruins â€' Mountain Approach",
+    "description": "The approach to Pryee ruins is the most dramatic of the ruin roads, climbing through the transition zone where the Giant's Teeth meet the volcanic region. The citadel becomes visible at a sharp turn in the road â€' a sudden revelation of walls and towers that makes its ruined state all the more striking for the brief impression of intact grandeur. Lament of Kings pilgrims use a separate maintained path that bypasses the most dangerous sections of the ruins; this road leads to the ruins themselves.",
     "exits": {
       "south": 5300,
       "west": 5433,
@@ -2269,8 +2269,8 @@
   },
   {
     "vnum": 5440,
-    "name": "The Lament of Kings Site â€” Pilgrim Road",
-    "description": "The road to the Lament of Kings site is the best-maintained path in the entire Kinsweave ruins zone, kept up by a joint pilgrimage organisation representing all five living cities. The road is marked with distance stones bearing the names of the twelve dead kings, one name per stone in order of Harreem's judgement. The six Kinsweave kings' stones are grouped together near the site's entrance. The blasted plain where Aldenheim once stood becomes visible as the road crests the last hill â€” a vast, flat, empty expanse.",
+    "name": "The Lament of Kings Site â€' Pilgrim Road",
+    "description": "The road to the Lament of Kings site is the best-maintained path in the entire Kinsweave ruins zone, kept up by a joint pilgrimage organisation representing all five living cities. The road is marked with distance stones bearing the names of the twelve dead kings, one name per stone in order of Harreem's judgement. The six Kinsweave kings' stones are grouped together near the site's entrance. The blasted plain where Aldenheim once stood becomes visible as the road crests the last hill â€' a vast, flat, empty expanse.",
     "exits": {
       "east": 5441,
       "west": 5435
@@ -2282,7 +2282,7 @@
   },
   {
     "vnum": 5441,
-    "name": "The Lament of Kings Site â€” Blasted Plain",
+    "name": "The Lament of Kings Site â€' Blasted Plain",
     "description": "The blasted plain atop the flattened ruins of Aldenheim is the most spiritually significant location in the Kinsweave and one of the most significant in all of Oreka. The ground here is scoured absolutely flat and still refuses to support plant growth three centuries after the event. The air is perfectly still, regardless of the weather elsewhere. On the annual Lament of Kings festival day, every city of the Kinsweave sends a delegation, and the combined assembly fills this plain completely. On other days it is empty and vast and quiet.",
     "exits": {
       "west": 5440,
@@ -2304,8 +2304,8 @@
   },
   {
     "vnum": 5442,
-    "name": "The Lament of Kings Site â€” Tomb of Kings Stage",
-    "description": "The Tomb of Kings stage occupies the back left corner of the blasted plain, a permanent stone platform built by the pilgrimage organisation for the annual recitation of the Lament of Kings. The poem is read in full â€” it is long â€” while the assembled Kin listen in silence. The stage is modest: a raised platform of dressed stone, a lectern, and, in the back wall, the plaques bearing the twelve kings' names and their excuses, carved in the Eke Concordant standard script that all the subraces can read. The excuses are as pathetic in stone as they were in life.",
+    "name": "The Lament of Kings Site â€' Tomb of Kings Stage",
+    "description": "The Tomb of Kings stage occupies the back left corner of the blasted plain, a permanent stone platform built by the pilgrimage organisation for the annual recitation of the Lament of Kings. The poem is read in full â€' it is long â€' while the assembled Kin listen in silence. The stage is modest: a raised platform of dressed stone, a lectern, and, in the back wall, the plaques bearing the twelve kings' names and their excuses, carved in the Eke Concordant standard script that all the subraces can read. The excuses are as pathetic in stone as they were in life.",
     "exits": {
       "west": 5441
     },
@@ -2324,8 +2324,8 @@
   },
   {
     "vnum": 5443,
-    "name": "The Lament of Kings Site â€” Memorial Ground",
-    "description": "The southern portion of the blasted plain is used as a memorial ground, where offerings to the Aldenheim dead are placed during festival periods and allowed to remain until the next year's assembly. Weapons, carved stones, woven objects, and written remembrances are laid in rows with care. Outside festival season, the memorial ground is maintained by a small permanent staff â€” mostly retired adventurers who found in this place the kind of stillness they needed. The silence here has a quality beyond mere absence of sound.",
+    "name": "The Lament of Kings Site â€' Memorial Ground",
+    "description": "The southern portion of the blasted plain is used as a memorial ground, where offerings to the Aldenheim dead are placed during festival periods and allowed to remain until the next year's assembly. Weapons, carved stones, woven objects, and written remembrances are laid in rows with care. Outside festival season, the memorial ground is maintained by a small permanent staff â€' mostly retired adventurers who found in this place the kind of stillness they needed. The silence here has a quality beyond mere absence of sound.",
     "exits": {
       "north": 5441,
       "south": 11000

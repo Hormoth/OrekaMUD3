@@ -1,0 +1,14 @@
+{
+  "npc_vnum": 9204,
+  "player_name": "Hormoth",
+  "memories": [
+    {
+      "text": "[RP overheard] Hormoth said: \"hello\" \u2014 I replied: \"\"The sea knows all currents, seen and unseen. Your [Kin-Sense] appears when you enter a room, revealing the elemental nature of those nearby. Fire, water, earth, wind \u2014 each resonance tells you something about a creature's strengths and weaknesses. Use `consider <target>` before a fight to judge how dangerous a foe is. Use `deities` to learn about the gods of Oreka, and `pray` at any altar for a blessing. Your reputation with factions matters \u2014 use `reputation` to check your standing. Killing innocents or townspeople will mark you, and some quests may become unavailable.\"\"",
+      "importance": 0.4,
+      "session_id": "rpsay",
+      "created_at": 1775858540.5880363
+    }
+  ],
+  "last_interaction": 1775858540.5880394,
+  "total_sessions": 0
+}

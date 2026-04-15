@@ -73,6 +73,27 @@ async def broadcast_event(world, scope: str, target: str, message: str,
                     pass
             players_reached.append(getattr(player, 'name', '?'))
 
+    # Inject into shadow presences (world bleed for AI chat)
+    try:
+        from src.shadow_presence import shadow_manager
+        if scope == "room":
+            try:
+                shadow_manager.broadcast_event(int(target), message)
+            except (ValueError, TypeError):
+                pass
+        elif scope == "global":
+            for shadow in shadow_manager.get_all().values():
+                shadow.inject_room_event(message)
+        elif scope == "region":
+            # Regional events reach shadows in that region
+            vrange = region_ranges.get(target.lower()) if target else None
+            if vrange:
+                for shadow in shadow_manager.get_all().values():
+                    if vrange[0] <= shadow.room_vnum < vrange[1]:
+                        shadow.inject_room_event(message)
+    except Exception:
+        pass
+
     # Apply mechanical effects if any
     if mechanical_effects:
         await _apply_event_effects(world, mechanical_effects, scope, target)
@@ -85,18 +106,81 @@ async def _apply_event_effects(world, effects: dict, scope: str, target: str):
     """Apply mechanical changes from a world event."""
     # Weather change
     if "weather" in effects:
-        # Future: apply weather to rooms in scope
-        pass
+        try:
+            from src.weather import get_weather_manager
+            wm = get_weather_manager()
+            new_weather = effects["weather"]
+            if scope == "region" and target:
+                region = target.lower().replace(" ", "_")
+                wm.region_weather[region] = new_weather
+                await wm._notify_weather_change(world, region, "clear", new_weather)
+            elif scope == "global":
+                for region in wm.region_weather:
+                    wm.region_weather[region] = new_weather
+                    await wm._notify_weather_change(world, region, "clear", new_weather)
+        except Exception:
+            pass
 
     # Mob surge — spawn additional mobs
     if "mob_surge" in effects:
-        # Future: spawn temporary mobs in target area
-        pass
+        try:
+            from src.spawning import get_spawn_manager
+            sm = get_spawn_manager()
+            surge = effects["mob_surge"]
+            mob_vnum = surge.get("mob_vnum")
+            count = surge.get("count", 3)
+            target_vnum = surge.get("room_vnum") or (int(target) if scope == "room" else None)
+            if mob_vnum and target_vnum:
+                room = world.rooms.get(int(target_vnum))
+                if room:
+                    from src.mob import Mob
+                    # Get mob template from spawn manager or world mobs
+                    mob_template = None
+                    sp = sm.spawn_points.get(mob_vnum)
+                    if sp:
+                        mob_template = sp.mob_template
+                    elif mob_vnum in world.mobs:
+                        mob_template = world.mobs[mob_vnum].to_dict()
+                    if mob_template:
+                        import copy
+                        for _ in range(count):
+                            data = {k: v for k, v in copy.deepcopy(mob_template).items() if k != 'room_vnum'}
+                            mob = Mob(**data)
+                            mob.alive = True
+                            room.mobs.append(mob)
+        except Exception:
+            pass
 
     # Shrine bonus — temporarily boost shrine effects
     if "shrine_bonus" in effects:
-        # Future: modify sanctuary effects temporarily
-        pass
+        try:
+            bonus = effects["shrine_bonus"]
+            multiplier = bonus.get("multiplier", 2.0)
+            duration = bonus.get("duration", 300)  # seconds
+            # Apply as a temporary buff to all players at shrines in scope
+            for player in world.players:
+                if not hasattr(player, 'room') or not player.room:
+                    continue
+                room_flags = getattr(player.room, 'flags', []) or []
+                if 'shrine' not in room_flags and 'altar' not in room_flags:
+                    continue
+                if not hasattr(player, 'active_buffs'):
+                    player.active_buffs = {}
+                player.active_buffs['shrine_bonus'] = {
+                    'value': multiplier,
+                    'duration': int(duration / 6),  # convert seconds to rounds
+                    'spell': 'World Event',
+                    'effect': f'Shrine power x{multiplier}',
+                }
+                if hasattr(player, '_writer'):
+                    try:
+                        player._writer.write(
+                            f"\n\033[1;33m[Shrine]\033[0m The shrine pulses with amplified power!\n"
+                        )
+                    except Exception:
+                        pass
+        except Exception:
+            pass
 
     # Faction rep change for all players in area
     if "faction_rep" in effects:

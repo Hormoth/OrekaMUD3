@@ -1,0 +1,14 @@
+{
+  "areas": {
+    "chapel": {
+      "reset_interval": 900,
+      "rooms": {
+        "1000": {
+          "items": [],
+          "doors": {},
+          "containers": {}
+        }
+      }
+    }
+  }
+}

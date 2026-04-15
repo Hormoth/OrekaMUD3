@@ -175,6 +175,99 @@ class MCPRequestHandler(BaseHTTPRequestHandler):
             })
             return
 
+        # GET /chat/active — list active chat sessions
+        if path == "chat/active":
+            sessions = []
+            for player in _world.players:
+                cs = getattr(player, 'active_chat_session', None)
+                if cs and not getattr(cs, 'ended', False):
+                    sessions.append({
+                        "session_id": cs.session_id,
+                        "player": cs.player_name,
+                        "npc_vnum": cs.npc_vnum,
+                        "npc_name": cs.npc_name,
+                        "anchor_room_vnum": cs.anchor_room_vnum,
+                        "anchor_room_name": cs.anchor_room_name,
+                        "anchor_region": cs.anchor_region,
+                        "started_at": cs.started_at,
+                        "last_active": cs.last_active,
+                        "state": getattr(cs, 'state', 'ACTIVE'),
+                        "messages_count": len(cs.conversation_history),
+                    })
+            self._send_json({"sessions": sessions, "count": len(sessions)})
+            return
+
+        # GET /chat/<session_id>
+        if len(parts) == 2 and parts[0] == "chat":
+            sid = parts[1]
+            for player in _world.players:
+                cs = getattr(player, 'active_chat_session', None)
+                if cs and cs.session_id == sid:
+                    self._send_json({
+                        "session_id": cs.session_id,
+                        "player": cs.player_name,
+                        "npc_name": cs.npc_name,
+                        "npc_vnum": cs.npc_vnum,
+                        "anchor_room_vnum": cs.anchor_room_vnum,
+                        "anchor_room_name": cs.anchor_room_name,
+                        "started_at": cs.started_at,
+                        "last_active": cs.last_active,
+                        "state": getattr(cs, 'state', 'ACTIVE'),
+                        "state_transitions": getattr(cs, 'state_transitions', []),
+                        "conversation_history": cs.conversation_history,
+                        "world_events_injected": cs.world_events_injected,
+                        "game_actions_executed": cs.game_actions_executed,
+                    })
+                    return
+            self._send_json({"error": f"chat session '{sid}' not found"}, 404)
+            return
+
+        # GET /arc/sheet/<player_name>[/<arc_id>]
+        if len(parts) >= 3 and parts[0] == "arc" and parts[1] == "sheet":
+            name = parts[2]
+            arc_id = parts[3] if len(parts) >= 4 else None
+            target = None
+            for p in _world.players:
+                if p.name.lower() == name.lower():
+                    target = p
+                    break
+            if not target:
+                self._send_json({"error": f"player '{name}' not found online"}, 404)
+                return
+            arcs = getattr(target, 'arc_sheets', {}) or {}
+            if arc_id:
+                sheet = arcs.get(arc_id)
+                if not sheet:
+                    self._send_json({"error": f"player has no arc '{arc_id}'"}, 404)
+                    return
+                self._send_json(sheet.to_dict() if hasattr(sheet, 'to_dict') else sheet)
+            else:
+                self._send_json({
+                    "player": target.name,
+                    "arcs": {
+                        aid: (s.to_dict() if hasattr(s, 'to_dict') else s)
+                        for aid, s in arcs.items()
+                    },
+                })
+            return
+
+        # GET /arc/stats — aggregate stats
+        if path == "arc/stats":
+            stats = {}
+            for player in _world.players:
+                for arc_id, sheet in (getattr(player, 'arc_sheets', None) or {}).items():
+                    entry = stats.setdefault(arc_id, {
+                        "title": getattr(sheet, 'title', arc_id),
+                        "untouched": 0, "aware": 0, "active": 0,
+                        "advancing": 0, "resolved": 0, "total": 0,
+                    })
+                    entry["total"] += 1
+                    status = getattr(sheet, 'status', 'untouched')
+                    if status in entry:
+                        entry[status] += 1
+            self._send_json({"arcs": stats})
+            return
+
         self._send_json({"error": "Unknown endpoint", "path": path}, 404)
 
     def do_POST(self):

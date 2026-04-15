@@ -1,0 +1,29 @@
+{
+  "rooms": [
+    {
+      "vnum": 5250,
+      "name": "Dry Fork Station -- Weigh Yard",
+      "description": "A dusty weigh station where the Long Road forks south toward the Deepwater Marches and east toward the Infinite Desert. Heavy balance scales squat on stone platforms. Caravans queue to have their loads measured, taxed, and stamped. The station master's office is a squat stone building with a clean-swept porch and a brass bell for service. Everything here is measured. Everything is precise.",
+      "exits": {"north": 5260, "east": 5251},
+      "flags": ["safe", "outdoor", "road"]
+    },
+    {
+      "vnum": 5251,
+      "name": "Dry Fork Station -- Weigh-Master's Office",
+      "description": "A small, immaculate office. Ledger books are stacked in perfect alignment. A set of graduated brass weights sits on the desk beside a cup of cold tea. Manifests are pinned to a corkboard in chronological order. The weigh-master sits behind her desk with the focused stillness of someone who thinks in measurements. Your Kin-sense reads the room and finds... nothing where she sits. Not void. Not null. Simply none. Like furniture. Like an empty chair that happens to be occupied.",
+      "exits": {"west": 5250},
+      "flags": ["safe", "indoor"],
+      "ambience": {
+        "mood": "tense precision",
+        "sounds": ["the tick of brass weights settling", "paper being turned with deliberate care"],
+        "smells": ["ink", "cold tea", "road dust that never quite leaves"],
+        "textures": ["every surface is clean. every edge is aligned."],
+        "ambient_details": [
+          "A filing drawer is slightly open. The label reads 'Farborn Inquiries -- Cross-Reference.'",
+          "The weigh-master's hands are steady. The rest of her is not."
+        ],
+        "npc_relevance": {"9503": "Khadi Vorlun. Weigh-master. Cut String. Holding a file she should have reported six weeks ago."}
+      }
+    }
+  ]
+}

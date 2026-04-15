@@ -4,7 +4,6 @@
         "skill": "Craft (weaponsmithing)",
         "dc": 12,
         "materials": [{"name": "iron ingot", "qty": 1}],
-        "result_vnum": null,
         "result_item": {
             "name": "Iron Dagger",
             "item_type": "weapon",
@@ -12,38 +11,7 @@
             "value": 2,
             "damage": [1, 4, 0],
             "material": "iron",
-            "description": "A simple iron dagger."
-        },
-        "time": 1
-    },
-    {
-        "name": "Leather Armor",
-        "skill": "Craft (leatherworking)",
-        "dc": 12,
-        "materials": [{"name": "leather hide", "qty": 2}],
-        "result_item": {
-            "name": "Leather Armor",
-            "item_type": "armor",
-            "weight": 15,
-            "value": 10,
-            "ac_bonus": 2,
-            "material": "leather",
-            "description": "Armor crafted from leather."
-        },
-        "time": 2
-    },
-    {
-        "name": "Healing Potion",
-        "skill": "Craft (alchemy)",
-        "dc": 15,
-        "materials": [{"name": "healing herb", "qty": 2}, {"name": "glass vial", "qty": 1}],
-        "result_item": {
-            "name": "Healing Potion",
-            "item_type": "potion",
-            "weight": 0.5,
-            "value": 50,
-            "stats": {"healing": 8},
-            "description": "A potion that heals 1d8 HP."
+            "description": "A simple iron dagger with a plain crossguard."
         },
         "time": 1
     },
@@ -59,9 +27,153 @@
             "value": 15,
             "damage": [1, 8, 0],
             "material": "iron",
-            "description": "A sturdy iron longsword."
+            "description": "A sturdy iron longsword with a leather-wrapped grip."
         },
         "time": 2
+    },
+    {
+        "name": "Iron Shortsword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 14,
+        "materials": [{"name": "iron ingot", "qty": 1}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Iron Shortsword",
+            "item_type": "weapon",
+            "weight": 2,
+            "value": 10,
+            "damage": [1, 6, 0],
+            "material": "iron",
+            "description": "A short iron blade suited for close combat."
+        },
+        "time": 1
+    },
+    {
+        "name": "Iron Battleaxe",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 15,
+        "materials": [{"name": "iron ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Iron Battleaxe",
+            "item_type": "weapon",
+            "weight": 6,
+            "value": 10,
+            "damage": [1, 8, 0],
+            "material": "iron",
+            "description": "A heavy iron battleaxe with a broad cutting edge."
+        },
+        "time": 2
+    },
+    {
+        "name": "Wooden Quarterstaff",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 10,
+        "materials": [{"name": "oak wood", "qty": 1}],
+        "result_item": {
+            "name": "Wooden Quarterstaff",
+            "item_type": "weapon",
+            "weight": 4,
+            "value": 1,
+            "damage": [1, 6, 0],
+            "material": "wood",
+            "description": "A smooth oak quarterstaff, balanced for fighting."
+        },
+        "time": 1
+    },
+    {
+        "name": "Shortbow",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 12,
+        "materials": [{"name": "oak wood", "qty": 1}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Shortbow",
+            "item_type": "weapon",
+            "weight": 2,
+            "value": 30,
+            "damage": [1, 6, 0],
+            "material": "wood",
+            "description": "A compact shortbow carved from oak with a leather-wrapped grip."
+        },
+        "time": 1
+    },
+    {
+        "name": "Longbow",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 14,
+        "materials": [{"name": "oak wood", "qty": 2}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Longbow",
+            "item_type": "weapon",
+            "weight": 3,
+            "value": 75,
+            "damage": [1, 8, 0],
+            "material": "wood",
+            "description": "A tall longbow of seasoned oak, strung with a strong cord."
+        },
+        "time": 2
+    },
+    {
+        "name": "Leather Armor",
+        "skill": "Craft (leatherworking)",
+        "dc": 12,
+        "materials": [{"name": "leather hide", "qty": 2}],
+        "result_item": {
+            "name": "Leather Armor",
+            "item_type": "armor",
+            "weight": 15,
+            "value": 10,
+            "ac_bonus": 2,
+            "material": "leather",
+            "description": "Armor crafted from cured leather hides."
+        },
+        "time": 2
+    },
+    {
+        "name": "Padded Armor",
+        "skill": "Craft (leatherworking)",
+        "dc": 10,
+        "materials": [{"name": "leather hide", "qty": 1}, {"name": "linen bolt", "qty": 1}],
+        "result_item": {
+            "name": "Padded Armor",
+            "item_type": "armor",
+            "weight": 10,
+            "value": 5,
+            "ac_bonus": 1,
+            "material": "leather",
+            "description": "Layers of quilted linen and leather padding that absorb blows."
+        },
+        "time": 1
+    },
+    {
+        "name": "Chain Shirt",
+        "skill": "Craft (armorsmithing)",
+        "dc": 15,
+        "materials": [{"name": "iron ingot", "qty": 4}],
+        "result_item": {
+            "name": "Chain Shirt",
+            "item_type": "armor",
+            "weight": 25,
+            "value": 100,
+            "ac_bonus": 4,
+            "material": "iron",
+            "description": "A shirt of interlocking iron rings providing solid protection."
+        },
+        "time": 3
+    },
+    {
+        "name": "Scale Mail",
+        "skill": "Craft (armorsmithing)",
+        "dc": 15,
+        "materials": [{"name": "iron ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
+        "result_item": {
+            "name": "Scale Mail",
+            "item_type": "armor",
+            "weight": 30,
+            "value": 50,
+            "ac_bonus": 4,
+            "material": "iron",
+            "description": "Overlapping iron scales riveted to a leather backing."
+        },
+        "time": 3
     },
     {
         "name": "Steel Shield",
@@ -75,443 +187,809 @@
             "value": 9,
             "ac_bonus": 1,
             "material": "steel",
-            "description": "A round steel shield."
+            "description": "A round steel shield with a leather arm strap."
         },
         "time": 2
     },
     {
-        "name": "Steel Longsword",
+        "name": "Masterwork Longsword",
         "skill": "Craft (weaponsmithing)",
-        "dc": 15,
+        "dc": 20,
+        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
+        "result_vnum": 500,
+        "time": 4
+    },
+    {
+        "name": "Masterwork Shortsword",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 20,
         "materials": [{"name": "steel ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
-        "result_item": {
-            "name": "Steel Longsword",
-            "item_type": "weapon",
-            "weight": 4,
-            "value": 15,
-            "damage": [1, 8, 0],
-            "material": "steel",
-            "description": "A well-forged steel longsword."
-        },
-        "time": 2
-    },
-    {
-        "name": "Steel Greatsword",
-        "skill": "Craft (weaponsmithing)",
-        "dc": 17,
-        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
-        "result_item": {
-            "name": "Steel Greatsword",
-            "item_type": "weapon",
-            "weight": 8,
-            "value": 50,
-            "damage": [2, 6, 0],
-            "material": "steel",
-            "description": "A heavy two-handed steel greatsword."
-        },
+        "result_vnum": 501,
         "time": 3
     },
     {
-        "name": "Embersteel Longsword",
+        "name": "Masterwork Battleaxe",
         "skill": "Craft (weaponsmithing)",
         "dc": 20,
-        "materials": [{"name": "embersteel ingot", "qty": 2}, {"name": "leather strip", "qty": 1}],
-        "result_item": {
-            "name": "Embersteel Longsword",
-            "item_type": "weapon",
-            "weight": 4,
-            "value": 2500,
-            "damage": [1, 8, 1],
-            "material": "embersteel",
-            "properties": ["fire_crit_1d4"],
-            "description": "A longsword of embersteel that radiates faint heat. Scorch marks trail where it rests."
-        },
+        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
+        "result_vnum": 502,
         "time": 4
     },
     {
-        "name": "Embersteel Warhammer",
+        "name": "Masterwork Dagger",
         "skill": "Craft (weaponsmithing)",
         "dc": 20,
-        "materials": [{"name": "embersteel ingot", "qty": 3}],
-        "result_item": {
-            "name": "Embersteel Warhammer",
-            "item_type": "weapon",
-            "weight": 5,
-            "value": 2800,
-            "damage": [1, 8, 1],
-            "material": "embersteel",
-            "properties": ["fire_crit_1d4"],
-            "description": "A warhammer forged from embersteel, its head glowing a dull red-orange."
-        },
+        "materials": [{"name": "steel ingot", "qty": 1}, {"name": "leather strip", "qty": 1}],
+        "result_vnum": 503,
+        "time": 2
+    },
+    {
+        "name": "Masterwork Longbow",
+        "skill": "Craft (weaponsmithing)",
+        "dc": 20,
+        "materials": [{"name": "oak wood", "qty": 2}, {"name": "leather strip", "qty": 1}, {"name": "masterwork weapon kit", "qty": 1}],
+        "result_vnum": 508,
         "time": 4
     },
     {
-        "name": "Volcanic Glass Dagger",
-        "skill": "Craft (weaponsmithing)",
-        "dc": 14,
-        "materials": [{"name": "volcanic glass shard", "qty": 1}],
-        "result_item": {
-            "name": "Volcanic Glass Dagger",
-            "item_type": "weapon",
-            "weight": 1,
-            "value": 200,
-            "damage": [1, 4, 0],
-            "material": "volcanic glass",
-            "properties": ["improved_crit_range"],
-            "description": "A razor-sharp dagger knapped from black volcanic glass. Beautiful and deadly, but fragile."
-        },
-        "time": 1
-    },
-    {
-        "name": "Moonwhisper Short Sword",
-        "skill": "Craft (weaponsmithing)",
-        "dc": 16,
-        "materials": [{"name": "steel ingot", "qty": 1}, {"name": "moonwhisper silver", "qty": 1}, {"name": "leather strip", "qty": 1}],
-        "result_item": {
-            "name": "Moonwhisper Short Sword",
-            "item_type": "weapon",
-            "weight": 2,
-            "value": 400,
-            "damage": [1, 6, 0],
-            "material": "moonwhisper silver",
-            "properties": ["cold_damage_vs_fey_undead"],
-            "description": "A short sword bonded with moonwhisper silver, gleaming faintly in low light."
-        },
-        "time": 2
-    },
-    {
-        "name": "Chain Shirt",
-        "skill": "Craft (armorsmithing)",
-        "dc": 14,
-        "materials": [{"name": "steel ingot", "qty": 3}],
-        "result_item": {
-            "name": "Chain Shirt",
-            "item_type": "armor",
-            "weight": 25,
-            "value": 100,
-            "ac_bonus": 4,
-            "material": "steel",
-            "description": "A shirt of interlocking steel rings."
-        },
-        "time": 3
-    },
-    {
-        "name": "Steel Breastplate",
-        "skill": "Craft (armorsmithing)",
-        "dc": 18,
-        "materials": [{"name": "steel ingot", "qty": 4}, {"name": "leather strip", "qty": 2}],
-        "result_item": {
-            "name": "Steel Breastplate",
-            "item_type": "armor",
-            "weight": 30,
-            "value": 200,
-            "ac_bonus": 5,
-            "material": "steel",
-            "description": "A solid steel breastplate with leather fittings."
-        },
+        "name": "Masterwork Leather Armor",
+        "skill": "Craft (leatherworking)",
+        "dc": 20,
+        "materials": [{"name": "leather hide", "qty": 3}, {"name": "masterwork armor kit", "qty": 1}],
+        "result_vnum": 504,
         "time": 4
     },
     {
-        "name": "Embersteel Breastplate",
+        "name": "Masterwork Chain Shirt",
         "skill": "Craft (armorsmithing)",
-        "dc": 22,
-        "materials": [{"name": "embersteel ingot", "qty": 4}, {"name": "leather strip", "qty": 2}],
-        "result_item": {
-            "name": "Embersteel Breastplate",
-            "item_type": "armor",
-            "weight": 30,
-            "value": 5500,
-            "ac_bonus": 5,
-            "material": "embersteel",
-            "properties": ["fire_resist_5"],
-            "description": "A breastplate of embersteel that radiates warmth. The metal glows faintly near open flame."
-        },
-        "time": 6
+        "dc": 20,
+        "materials": [{"name": "steel ingot", "qty": 4}, {"name": "masterwork armor kit", "qty": 1}],
+        "result_vnum": 505,
+        "time": 5
     },
     {
-        "name": "Steel Tower Shield",
+        "name": "Masterwork Scale Mail",
         "skill": "Craft (armorsmithing)",
-        "dc": 16,
-        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "leather strip", "qty": 1}],
-        "result_item": {
-            "name": "Steel Tower Shield",
-            "item_type": "shield",
-            "weight": 45,
-            "value": 30,
-            "ac_bonus": 4,
-            "material": "steel",
-            "description": "A massive steel tower shield providing substantial cover."
-        },
-        "time": 3
+        "dc": 20,
+        "materials": [{"name": "steel ingot", "qty": 4}, {"name": "leather strip", "qty": 1}, {"name": "masterwork armor kit", "qty": 1}],
+        "result_vnum": 506,
+        "time": 5
     },
     {
-        "name": "Giant-bone Shield",
+        "name": "Masterwork Heavy Steel Shield",
         "skill": "Craft (armorsmithing)",
-        "dc": 18,
-        "materials": [{"name": "giant-bone fragment", "qty": 2}, {"name": "leather strip", "qty": 1}],
-        "result_item": {
-            "name": "Giant-bone Shield",
-            "item_type": "shield",
-            "weight": 12,
-            "value": 1500,
-            "ac_bonus": 3,
-            "material": "giant-bone",
-            "properties": ["earth_focus"],
-            "description": "A shield carved from fossilized giant-bone, ancient runes faintly visible on its surface."
-        },
-        "time": 3
+        "dc": 20,
+        "materials": [{"name": "steel ingot", "qty": 3}, {"name": "masterwork armor kit", "qty": 1}],
+        "result_vnum": 507,
+        "time": 4
     },
     {
-        "name": "Studded Leather",
-        "skill": "Craft (leatherworking)",
-        "dc": 14,
-        "materials": [{"name": "leather hide", "qty": 3}, {"name": "iron ingot", "qty": 1}],
-        "result_item": {
-            "name": "Studded Leather",
-            "item_type": "armor",
-            "weight": 20,
-            "value": 25,
-            "ac_bonus": 3,
-            "material": "leather",
-            "description": "Leather armor reinforced with iron studs."
-        },
-        "time": 2
-    },
-    {
-        "name": "Riding Gear",
-        "skill": "Craft (leatherworking)",
-        "dc": 12,
-        "materials": [{"name": "leather hide", "qty": 2}, {"name": "iron buckle", "qty": 1}],
-        "result_item": {
-            "name": "Riding Gear",
-            "item_type": "equipment",
-            "weight": 10,
-            "value": 20,
-            "description": "A set of leather riding gear including saddle and bridle."
-        },
-        "time": 2
-    },
-    {
-        "name": "Wind-silk Lined Cloak",
-        "skill": "Craft (leatherworking)",
-        "dc": 16,
-        "materials": [{"name": "leather hide", "qty": 1}, {"name": "wind-silk bolt", "qty": 1}],
-        "result_item": {
-            "name": "Wind-silk Lined Cloak",
-            "item_type": "armor",
-            "weight": 2,
-            "value": 600,
-            "ac_bonus": 1,
-            "material": "wind-silk",
-            "properties": ["movement_bonus_5"],
-            "description": "A leather cloak lined with wind-silk that billows gently even in still air."
-        },
-        "time": 3
-    },
-    {
-        "name": "Amber-sap Elixir",
+        "name": "Healing Potion",
         "skill": "Craft (alchemy)",
         "dc": 15,
-        "materials": [{"name": "amber sap", "qty": 2}, {"name": "glass vial", "qty": 1}],
-        "result_item": {
-            "name": "Amber-sap Elixir",
-            "item_type": "potion",
-            "weight": 0.5,
-            "value": 75,
-            "stats": {"healing": 12},
-            "description": "A golden elixir brewed from amber sap that heals 2d6 HP."
-        },
-        "time": 1
-    },
-    {
-        "name": "Fire Resistance Potion",
-        "skill": "Craft (alchemy)",
-        "dc": 18,
-        "materials": [{"name": "salamander scale", "qty": 1}, {"name": "glass vial", "qty": 1}, {"name": "healing herb", "qty": 1}],
-        "result_item": {
-            "name": "Fire Resistance Potion",
-            "item_type": "potion",
-            "weight": 0.5,
-            "value": 150,
-            "stats": {"fire_resist": 10},
-            "description": "A potion that grants fire resistance 10 for a short duration."
-        },
-        "time": 2
-    },
-    {
-        "name": "Antitoxin",
-        "skill": "Craft (alchemy)",
-        "dc": 14,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
         "materials": [{"name": "healing herb", "qty": 2}, {"name": "glass vial", "qty": 1}],
         "result_item": {
-            "name": "Antitoxin",
+            "name": "Healing Potion",
             "item_type": "potion",
             "weight": 0.5,
             "value": 50,
-            "stats": {"poison_resist": 5},
-            "description": "A bitter draught that bolsters resistance to poison."
+            "stats": {"healing": 8},
+            "description": "A potion that heals 1d8 HP."
         },
         "time": 1
     },
     {
-        "name": "Starlight Elixir",
+        "name": "Potion of Bull's Strength",
         "skill": "Craft (alchemy)",
-        "dc": 20,
-        "materials": [{"name": "starlight essence", "qty": 1}, {"name": "moonwhisper silver dust", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "dc": 18,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "alchemical reagent", "qty": 1}, {"name": "glass vial", "qty": 1}],
         "result_item": {
-            "name": "Starlight Elixir",
+            "name": "Potion of Bull's Strength",
             "item_type": "potion",
             "weight": 0.5,
             "value": 300,
-            "stats": {"all_saves_bonus": 2},
-            "description": "A luminous silver elixir that grants +2 to all saving throws for a short duration."
+            "stats": {"str_bonus": 4},
+            "description": "A thick red potion that grants +4 enhancement bonus to Strength."
         },
-        "time": 3
+        "time": 2
     },
     {
-        "name": "Desert Survival Draught",
+        "name": "Potion of Cat's Grace",
         "skill": "Craft (alchemy)",
-        "dc": 15,
-        "materials": [{"name": "cactus water", "qty": 2}, {"name": "salt crystal", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "dc": 18,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "alchemical reagent", "qty": 1}, {"name": "glass vial", "qty": 1}],
         "result_item": {
-            "name": "Desert Survival Draught",
+            "name": "Potion of Cat's Grace",
             "item_type": "potion",
             "weight": 0.5,
-            "value": 60,
-            "stats": {"heat_resist": 10},
-            "description": "A briny draught that protects against extreme heat and dehydration."
+            "value": 300,
+            "stats": {"dex_bonus": 4},
+            "description": "A shimmering amber potion that grants +4 enhancement bonus to Dexterity."
+        },
+        "time": 2
+    },
+    {
+        "name": "Potion of Bear's Endurance",
+        "skill": "Craft (alchemy)",
+        "dc": 18,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "alchemical reagent", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Potion of Bear's Endurance",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 300,
+            "stats": {"con_bonus": 4},
+            "description": "A thick brown potion that grants +4 enhancement bonus to Constitution."
+        },
+        "time": 2
+    },
+    {
+        "name": "Potion of Mage Armor",
+        "skill": "Craft (alchemy)",
+        "dc": 15,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "arcane ink", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Potion of Mage Armor",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 50,
+            "stats": {"ac_bonus": 4},
+            "description": "A translucent blue potion that grants a +4 armor bonus to AC."
         },
         "time": 1
     },
     {
-        "name": "Wind-silk Cloak",
-        "skill": "Craft (weaving)",
+        "name": "Potion of Cure Moderate Wounds",
+        "skill": "Craft (alchemy)",
         "dc": 18,
-        "materials": [{"name": "raw wind-silk", "qty": 3}],
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "healing herb", "qty": 3}, {"name": "glass vial", "qty": 1}],
         "result_item": {
-            "name": "Wind-silk Cloak",
-            "item_type": "armor",
-            "slot": "back",
-            "weight": 1,
-            "value": 2200,
-            "ac_bonus": 1,
-            "material": "wind-silk",
-            "properties": ["movement_bonus_5", "spell_failure_reduction_15"],
-            "description": "A luminous cloak of wind-silk that flows and billows with a life of its own."
+            "name": "Potion of Cure Moderate Wounds",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 300,
+            "stats": {"healing": 16},
+            "description": "A deep crimson potion that heals 2d8+3 HP."
+        },
+        "time": 2
+    },
+    {
+        "name": "Potion of Invisibility",
+        "skill": "Craft (alchemy)",
+        "dc": 20,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 3,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "shadow silk", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Potion of Invisibility",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 300,
+            "stats": {"invisibility": true},
+            "description": "A clear potion that renders the drinker invisible until they attack."
+        },
+        "time": 2
+    },
+    {
+        "name": "Potion of Haste",
+        "skill": "Craft (alchemy)",
+        "dc": 20,
+        "required_feat": "Brew Potion",
+        "required_caster_level": 5,
+        "materials": [{"name": "purified water", "qty": 1}, {"name": "alchemical reagent", "qty": 2}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Potion of Haste",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 750,
+            "stats": {"haste": true},
+            "description": "A quicksilver potion that grants the effects of a Haste spell."
+        },
+        "time": 3
+    },
+    {
+        "name": "Antidote",
+        "skill": "Craft (alchemy)",
+        "dc": 12,
+        "materials": [{"name": "healing herb", "qty": 1}, {"name": "glass vial", "qty": 1}],
+        "result_item": {
+            "name": "Antidote",
+            "item_type": "potion",
+            "weight": 0.5,
+            "value": 25,
+            "stats": {"cure_poison": true},
+            "description": "A bitter herbal draught that neutralizes poison coursing through the body."
+        },
+        "time": 1
+    },
+    {
+        "name": "Scroll of Cure Light Wounds",
+        "skill": "Spellcraft",
+        "dc": 10,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 1,
+        "required_spell": "Cure Light Wounds",
+        "materials": [{"name": "blank parchment", "qty": 1}, {"name": "arcane ink", "qty": 1}],
+        "result_item": {
+            "name": "Scroll of Cure Light Wounds",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 25,
+            "spell": "Cure Light Wounds",
+            "caster_level": 1,
+            "description": "A parchment scroll inscribed with the divine formula for Cure Light Wounds."
+        },
+        "time": 1
+    },
+    {
+        "name": "Scroll of Magic Missile",
+        "skill": "Spellcraft",
+        "dc": 10,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 1,
+        "required_spell": "Magic Missile",
+        "materials": [{"name": "blank parchment", "qty": 1}, {"name": "arcane ink", "qty": 1}],
+        "result_item": {
+            "name": "Scroll of Magic Missile",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 25,
+            "spell": "Magic Missile",
+            "caster_level": 1,
+            "description": "A parchment scroll inscribed with the arcane formula for Magic Missile."
+        },
+        "time": 1
+    },
+    {
+        "name": "Scroll of Mage Armor",
+        "skill": "Spellcraft",
+        "dc": 10,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 1,
+        "required_spell": "Mage Armor",
+        "materials": [{"name": "blank parchment", "qty": 1}, {"name": "arcane ink", "qty": 1}],
+        "result_item": {
+            "name": "Scroll of Mage Armor",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 25,
+            "spell": "Mage Armor",
+            "caster_level": 1,
+            "description": "A parchment scroll inscribed with the arcane formula for Mage Armor."
+        },
+        "time": 1
+    },
+    {
+        "name": "Scroll of Shield",
+        "skill": "Spellcraft",
+        "dc": 10,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 1,
+        "required_spell": "Shield",
+        "materials": [{"name": "blank parchment", "qty": 1}, {"name": "arcane ink", "qty": 1}],
+        "result_item": {
+            "name": "Scroll of Shield",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 25,
+            "spell": "Shield",
+            "caster_level": 1,
+            "description": "A parchment scroll inscribed with the arcane formula for Shield."
+        },
+        "time": 1
+    },
+    {
+        "name": "Scroll of Bull's Strength",
+        "skill": "Spellcraft",
+        "dc": 13,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 1,
+        "required_spell": "Bull's Strength",
+        "materials": [{"name": "blank parchment", "qty": 1}, {"name": "arcane ink", "qty": 2}],
+        "result_item": {
+            "name": "Scroll of Bull's Strength",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 150,
+            "spell": "Bull's Strength",
+            "caster_level": 3,
+            "description": "A parchment scroll inscribed with the arcane formula for Bull's Strength."
+        },
+        "time": 1
+    },
+    {
+        "name": "Scroll of Fireball",
+        "skill": "Spellcraft",
+        "dc": 16,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 5,
+        "required_spell": "Fireball",
+        "materials": [{"name": "blank scroll case", "qty": 1}, {"name": "arcane ink", "qty": 3}],
+        "result_item": {
+            "name": "Scroll of Fireball",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 375,
+            "spell": "Fireball",
+            "caster_level": 5,
+            "description": "A scroll case containing the arcane formula for Fireball. The ink glows faintly orange."
+        },
+        "time": 2
+    },
+    {
+        "name": "Scroll of Dispel Magic",
+        "skill": "Spellcraft",
+        "dc": 16,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 5,
+        "required_spell": "Dispel Magic",
+        "materials": [{"name": "blank scroll case", "qty": 1}, {"name": "arcane ink", "qty": 3}],
+        "result_item": {
+            "name": "Scroll of Dispel Magic",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 375,
+            "spell": "Dispel Magic",
+            "caster_level": 5,
+            "description": "A scroll case containing the arcane formula for Dispel Magic."
+        },
+        "time": 2
+    },
+    {
+        "name": "Scroll of Stoneskin",
+        "skill": "Spellcraft",
+        "dc": 19,
+        "required_feat": "Scribe Scroll",
+        "required_caster_level": 7,
+        "required_spell": "Stoneskin",
+        "materials": [{"name": "blank scroll case", "qty": 1}, {"name": "arcane ink", "qty": 4}],
+        "result_item": {
+            "name": "Scroll of Stoneskin",
+            "item_type": "scroll",
+            "weight": 0.1,
+            "value": 950,
+            "spell": "Stoneskin",
+            "caster_level": 7,
+            "description": "A scroll case containing the arcane formula for Stoneskin. The parchment feels like stone to the touch."
+        },
+        "time": 2
+    },
+    {
+        "name": "Wand of Magic Missile",
+        "skill": "Spellcraft",
+        "dc": 18,
+        "required_feat": "Craft Wand",
+        "required_caster_level": 5,
+        "required_spell": "Magic Missile",
+        "gold_cost": 750,
+        "materials": [{"name": "wand blank (oak)", "qty": 1}, {"name": "arcane ink", "qty": 2}, {"name": "enchanting dust", "qty": 1}],
+        "result_item": {
+            "name": "Wand of Magic Missile",
+            "item_type": "wand",
+            "weight": 0.5,
+            "value": 750,
+            "charges": 50,
+            "spell": "Magic Missile",
+            "caster_level": 1,
+            "description": "An oak wand tipped with a tiny crystal that pulses with arcane energy."
         },
         "time": 4
     },
     {
-        "name": "Wind-silk Robe",
-        "skill": "Craft (weaving)",
-        "dc": 20,
-        "materials": [{"name": "raw wind-silk", "qty": 5}, {"name": "dye", "qty": 1}],
+        "name": "Wand of Cure Light Wounds",
+        "skill": "Spellcraft",
+        "dc": 18,
+        "required_feat": "Craft Wand",
+        "required_caster_level": 5,
+        "required_spell": "Cure Light Wounds",
+        "gold_cost": 750,
+        "materials": [{"name": "wand blank (oak)", "qty": 1}, {"name": "purified water", "qty": 1}, {"name": "enchanting dust", "qty": 1}],
         "result_item": {
-            "name": "Wind-silk Robe",
-            "item_type": "armor",
-            "slot": "body",
-            "weight": 2,
-            "value": 3500,
-            "ac_bonus": 2,
-            "material": "wind-silk",
-            "properties": ["movement_bonus_5", "spell_failure_reduction_15"],
-            "description": "A flowing robe of wind-silk, lighter than linen and stronger than leather. Favored by arcane casters."
+            "name": "Wand of Cure Light Wounds",
+            "item_type": "wand",
+            "weight": 0.5,
+            "value": 750,
+            "charges": 50,
+            "spell": "Cure Light Wounds",
+            "caster_level": 1,
+            "description": "A smooth oak wand suffused with gentle healing energy."
+        },
+        "time": 4
+    },
+    {
+        "name": "Wand of Scorching Ray",
+        "skill": "Spellcraft",
+        "dc": 20,
+        "required_feat": "Craft Wand",
+        "required_caster_level": 5,
+        "required_spell": "Scorching Ray",
+        "gold_cost": 4500,
+        "materials": [{"name": "wand blank (yew)", "qty": 1}, {"name": "elemental essence (fire)", "qty": 1}, {"name": "arcane ink", "qty": 2}],
+        "result_item": {
+            "name": "Wand of Scorching Ray",
+            "item_type": "wand",
+            "weight": 0.5,
+            "value": 4500,
+            "charges": 50,
+            "spell": "Scorching Ray",
+            "caster_level": 3,
+            "description": "A yew wand warm to the touch, its tip perpetually smoldering."
         },
         "time": 6
     },
     {
-        "name": "Charm-woven Textile",
-        "skill": "Craft (weaving)",
-        "dc": 16,
-        "materials": [{"name": "raw wind-silk", "qty": 2}, {"name": "charm thread", "qty": 1}],
+        "name": "Wand of Lightning Bolt",
+        "skill": "Spellcraft",
+        "dc": 22,
+        "required_feat": "Craft Wand",
+        "required_caster_level": 5,
+        "required_spell": "Lightning Bolt",
+        "gold_cost": 11250,
+        "materials": [{"name": "wand blank (yew)", "qty": 1}, {"name": "elemental essence (lightning)", "qty": 1}, {"name": "arcane ink", "qty": 3}],
         "result_item": {
-            "name": "Charm-woven Textile",
-            "item_type": "equipment",
-            "weight": 1,
-            "value": 500,
-            "properties": ["charisma_bonus_1"],
-            "description": "A length of enchanted textile woven with charm threads that enhance the wearer's presence."
-        },
-        "time": 3
-    },
-    {
-        "name": "Riverstone Amulet",
-        "skill": "Craft (jewelrycrafting)",
-        "dc": 16,
-        "materials": [{"name": "riverstone", "qty": 1}, {"name": "silver wire", "qty": 1}],
-        "result_item": {
-            "name": "Riverstone Amulet",
-            "item_type": "jewelry",
-            "slot": "neck",
+            "name": "Wand of Lightning Bolt",
+            "item_type": "wand",
             "weight": 0.5,
-            "value": 700,
-            "material": "riverstone",
-            "properties": ["water_focus"],
-            "description": "A smooth blue-grey riverstone set in silver wire. Cool to the touch, condensation beads on its surface."
+            "value": 11250,
+            "charges": 50,
+            "spell": "Lightning Bolt",
+            "caster_level": 5,
+            "description": "A dark yew wand that crackles with static. Small arcs of electricity dance along its length."
         },
-        "time": 2
+        "time": 8
     },
     {
-        "name": "Gem-cut Pendant",
-        "skill": "Craft (jewelrycrafting)",
-        "dc": 14,
-        "materials": [{"name": "uncut gem", "qty": 1}, {"name": "silver wire", "qty": 1}],
+        "name": "Wand of Fireball",
+        "skill": "Spellcraft",
+        "dc": 22,
+        "required_feat": "Craft Wand",
+        "required_caster_level": 5,
+        "required_spell": "Fireball",
+        "gold_cost": 11250,
+        "materials": [{"name": "wand blank (yew)", "qty": 1}, {"name": "elemental essence (fire)", "qty": 1}, {"name": "arcane ink", "qty": 3}],
         "result_item": {
-            "name": "Gem-cut Pendant",
-            "item_type": "jewelry",
-            "slot": "neck",
+            "name": "Wand of Fireball",
+            "item_type": "wand",
             "weight": 0.5,
-            "value": 200,
-            "description": "A carefully cut gemstone set in a silver wire pendant."
+            "value": 11250,
+            "charges": 50,
+            "spell": "Fireball",
+            "caster_level": 5,
+            "description": "A yew wand that radiates heat. The tip glows a deep red-orange in darkness."
         },
-        "time": 2
+        "time": 8
     },
     {
-        "name": "Runic Ring",
-        "skill": "Craft (jewelrycrafting)",
-        "dc": 18,
-        "materials": [{"name": "mithral wire", "qty": 1}, {"name": "gem dust", "qty": 1}],
-        "result_item": {
-            "name": "Runic Ring",
-            "item_type": "jewelry",
-            "slot": "finger",
-            "weight": 0.1,
-            "value": 500,
-            "magical": true,
-            "properties": ["minor_spell_resistance"],
-            "description": "A delicate ring of mithral wire inscribed with tiny runes, infused with gem dust."
-        },
-        "time": 3
-    },
-    {
-        "name": "Rune-carved Focus",
-        "skill": "Craft (runic crafting)",
+        "name": "Wand of Cure Moderate Wounds",
+        "skill": "Spellcraft",
         "dc": 20,
-        "materials": [{"name": "giant-bone fragment", "qty": 1}, {"name": "gem dust", "qty": 1}],
+        "required_feat": "Craft Wand",
+        "required_caster_level": 5,
+        "required_spell": "Cure Moderate Wounds",
+        "gold_cost": 4500,
+        "materials": [{"name": "wand blank (yew)", "qty": 1}, {"name": "purified water", "qty": 2}, {"name": "enchanting dust", "qty": 1}],
         "result_item": {
-            "name": "Rune-carved Focus",
-            "item_type": "spell_focus",
-            "weight": 2,
-            "value": 800,
-            "material": "giant-bone",
-            "properties": ["earth_focus", "caster_level_bonus_1"],
-            "description": "A spell focus carved from giant-bone, inscribed with ancient rune-circles that pulse with earth-element resonance."
+            "name": "Wand of Cure Moderate Wounds",
+            "item_type": "wand",
+            "weight": 0.5,
+            "value": 4500,
+            "charges": 50,
+            "spell": "Cure Moderate Wounds",
+            "caster_level": 3,
+            "description": "A polished yew wand infused with potent healing energy, faintly warm to the touch."
+        },
+        "time": 6
+    },
+    {
+        "name": "Cloak of Resistance +1",
+        "skill": "Spellcraft",
+        "dc": 15,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 3,
+        "gold_cost": 500,
+        "materials": [{"name": "leather hide", "qty": 2}, {"name": "enchanting dust", "qty": 1}, {"name": "shadow silk", "qty": 1}],
+        "result_item": {
+            "name": "Cloak of Resistance +1",
+            "item_type": "wondrous",
+            "slot": "back",
+            "weight": 1,
+            "value": 1000,
+            "stats": {"save_bonus": 1},
+            "description": "A dark cloak woven with shadow silk that bolsters the wearer's resilience against harmful effects."
+        },
+        "time": 3
+    },
+    {
+        "name": "Amulet of Natural Armor +1",
+        "skill": "Spellcraft",
+        "dc": 15,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 3,
+        "gold_cost": 1000,
+        "materials": [{"name": "silver wire", "qty": 1}, {"name": "mystical gemstone", "qty": 1}, {"name": "enchanting dust", "qty": 1}],
+        "result_item": {
+            "name": "Amulet of Natural Armor +1",
+            "item_type": "wondrous",
+            "slot": "neck",
+            "weight": 0.5,
+            "value": 2000,
+            "stats": {"natural_armor_bonus": 1},
+            "description": "A gemstone amulet set in silver wire that toughens the wearer's skin against physical blows."
+        },
+        "time": 3
+    },
+    {
+        "name": "Bracers of Armor +1",
+        "skill": "Spellcraft",
+        "dc": 15,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 3,
+        "gold_cost": 500,
+        "materials": [{"name": "leather hide", "qty": 1}, {"name": "enchanting dust", "qty": 1}, {"name": "steel ingot", "qty": 1}],
+        "result_item": {
+            "name": "Bracers of Armor +1",
+            "item_type": "wondrous",
+            "slot": "wrists",
+            "weight": 1,
+            "value": 1000,
+            "stats": {"ac_bonus": 1},
+            "description": "Steel-banded leather bracers that generate an invisible field of protective force."
+        },
+        "time": 3
+    },
+    {
+        "name": "Boots of Speed",
+        "skill": "Spellcraft",
+        "dc": 20,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 10,
+        "gold_cost": 6000,
+        "materials": [{"name": "leather hide", "qty": 2}, {"name": "enchanting dust", "qty": 2}, {"name": "elemental essence (lightning)", "qty": 1}],
+        "result_item": {
+            "name": "Boots of Speed",
+            "item_type": "wondrous",
+            "slot": "feet",
+            "weight": 1,
+            "value": 12000,
+            "stats": {"haste": true},
+            "description": "Supple leather boots threaded with lightning essence that allow the wearer to move with supernatural speed."
+        },
+        "time": 6
+    },
+    {
+        "name": "Gauntlets of Ogre Power",
+        "skill": "Spellcraft",
+        "dc": 18,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 6,
+        "gold_cost": 2000,
+        "materials": [{"name": "steel ingot", "qty": 2}, {"name": "enchanting dust", "qty": 2}, {"name": "elemental essence (acid)", "qty": 1}],
+        "result_item": {
+            "name": "Gauntlets of Ogre Power",
+            "item_type": "wondrous",
+            "slot": "hands",
+            "weight": 4,
+            "value": 4000,
+            "stats": {"str_bonus": 2},
+            "description": "Heavy steel gauntlets that grant the wearer a +2 enhancement bonus to Strength."
+        },
+        "time": 5
+    },
+    {
+        "name": "Headband of Intellect +2",
+        "skill": "Spellcraft",
+        "dc": 18,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 6,
+        "gold_cost": 2000,
+        "materials": [{"name": "shadow silk", "qty": 1}, {"name": "enchanting dust", "qty": 2}, {"name": "essence of divination", "qty": 1}],
+        "result_item": {
+            "name": "Headband of Intellect +2",
+            "item_type": "wondrous",
+            "slot": "head",
+            "weight": 0.5,
+            "value": 4000,
+            "stats": {"int_bonus": 2},
+            "description": "A headband of dark silk that sharpens the mind, granting a +2 enhancement bonus to Intelligence."
+        },
+        "time": 5
+    },
+    {
+        "name": "Bag of Holding",
+        "skill": "Spellcraft",
+        "dc": 18,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 9,
+        "gold_cost": 1250,
+        "materials": [{"name": "leather hide", "qty": 2}, {"name": "enchanting dust", "qty": 2}, {"name": "pristine crystal", "qty": 1}],
+        "result_item": {
+            "name": "Bag of Holding",
+            "item_type": "wondrous",
+            "weight": 15,
+            "value": 2500,
+            "stats": {"extra_capacity": 250},
+            "description": "A leather bag that opens into an extradimensional space far larger than its exterior suggests."
+        },
+        "time": 6
+    },
+    {
+        "name": "Goggles of Night",
+        "skill": "Spellcraft",
+        "dc": 15,
+        "required_feat": "Craft Wondrous Item",
+        "required_caster_level": 3,
+        "gold_cost": 6000,
+        "materials": [{"name": "pristine crystal", "qty": 1}, {"name": "enchanting dust", "qty": 1}, {"name": "shadow silk", "qty": 1}],
+        "result_item": {
+            "name": "Goggles of Night",
+            "item_type": "wondrous",
+            "slot": "eyes",
+            "weight": 0.5,
+            "value": 12000,
+            "stats": {"darkvision": 60},
+            "description": "Crystal lenses set in shadow silk frames that grant the wearer darkvision out to 60 feet."
         },
         "time": 4
     },
     {
-        "name": "Deep Marker Stone",
-        "skill": "Craft (runic crafting)",
+        "name": "Ring of Protection +1",
+        "skill": "Spellcraft",
         "dc": 22,
-        "materials": [{"name": "riverstone", "qty": 1}, {"name": "giant-bone fragment", "qty": 1}, {"name": "rune ink", "qty": 1}],
+        "required_feat": "Forge Ring",
+        "required_caster_level": 12,
+        "gold_cost": 1000,
+        "materials": [{"name": "base ring (gold)", "qty": 1}, {"name": "enchanting dust", "qty": 2}],
         "result_item": {
-            "name": "Deep Marker Stone",
-            "item_type": "equipment",
-            "weight": 3,
-            "value": 1200,
-            "properties": ["kin_sense_amplify"],
-            "description": "A riverstone fused with giant-bone fragments and inscribed with rune ink. Amplifies the bearer's Kin-sense."
+            "name": "Ring of Protection +1",
+            "item_type": "ring",
+            "slot": "finger",
+            "weight": 0.1,
+            "value": 2000,
+            "stats": {"deflection_bonus": 1},
+            "description": "A gold ring that generates a subtle deflection field, granting +1 deflection bonus to AC."
         },
-        "time": 5
+        "time": 4
+    },
+    {
+        "name": "Ring of Protection +2",
+        "skill": "Spellcraft",
+        "dc": 24,
+        "required_feat": "Forge Ring",
+        "required_caster_level": 12,
+        "gold_cost": 4000,
+        "materials": [{"name": "base ring (mithral)", "qty": 1}, {"name": "enchanting dust", "qty": 4}, {"name": "mystical gemstone", "qty": 1}],
+        "result_item": {
+            "name": "Ring of Protection +2",
+            "item_type": "ring",
+            "slot": "finger",
+            "weight": 0.1,
+            "value": 8000,
+            "stats": {"deflection_bonus": 2},
+            "description": "A mithral ring set with a mystical gemstone that projects a strong deflection field, granting +2 deflection bonus to AC."
+        },
+        "time": 6
+    },
+    {
+        "name": "Ring of Resistance +1",
+        "skill": "Spellcraft",
+        "dc": 22,
+        "required_feat": "Forge Ring",
+        "required_caster_level": 12,
+        "gold_cost": 500,
+        "materials": [{"name": "base ring (silver)", "qty": 1}, {"name": "enchanting dust", "qty": 2}],
+        "result_item": {
+            "name": "Ring of Resistance +1",
+            "item_type": "ring",
+            "slot": "finger",
+            "weight": 0.1,
+            "value": 1000,
+            "stats": {"save_bonus": 1},
+            "description": "A silver ring that bolsters the wearer's resistance, granting +1 to all saving throws."
+        },
+        "time": 4
+    },
+    {
+        "name": "Ring of Invisibility",
+        "skill": "Spellcraft",
+        "dc": 26,
+        "required_feat": "Forge Ring",
+        "required_caster_level": 12,
+        "gold_cost": 10000,
+        "materials": [{"name": "base ring (mithral)", "qty": 1}, {"name": "shadow silk", "qty": 2}, {"name": "enchanting dust", "qty": 4}],
+        "result_item": {
+            "name": "Ring of Invisibility",
+            "item_type": "ring",
+            "slot": "finger",
+            "weight": 0.1,
+            "value": 20000,
+            "stats": {"invisibility": true},
+            "description": "A mithral ring that turns the wearer invisible at will, its surface seemingly woven from solidified shadow."
+        },
+        "time": 8
+    },
+    {
+        "name": "Rod of Cancellation",
+        "skill": "Spellcraft",
+        "dc": 22,
+        "required_feat": "Craft Rod",
+        "required_caster_level": 9,
+        "gold_cost": 5500,
+        "materials": [{"name": "rod core", "qty": 1}, {"name": "enchanting dust", "qty": 3}, {"name": "pristine crystal", "qty": 1}],
+        "result_item": {
+            "name": "Rod of Cancellation",
+            "item_type": "rod",
+            "weight": 5,
+            "value": 11000,
+            "description": "A black rod tipped with a flat crystal disc that drains magical properties from items it touches."
+        },
+        "time": 6
+    },
+    {
+        "name": "Metamagic Rod (Extend)",
+        "skill": "Spellcraft",
+        "dc": 24,
+        "required_feat": "Craft Rod",
+        "required_caster_level": 9,
+        "gold_cost": 5500,
+        "materials": [{"name": "rod core", "qty": 1}, {"name": "infernal binding", "qty": 1}, {"name": "mystical gemstone", "qty": 1}],
+        "result_item": {
+            "name": "Metamagic Rod (Extend)",
+            "item_type": "rod",
+            "weight": 5,
+            "value": 11000,
+            "stats": {"metamagic": "extend"},
+            "description": "A rod of dark metal bound with infernal bindings that allows the wielder to extend the duration of their spells."
+        },
+        "time": 7
+    },
+    {
+        "name": "Staff of Fire",
+        "skill": "Spellcraft",
+        "dc": 26,
+        "required_feat": "Craft Staff",
+        "required_caster_level": 12,
+        "gold_cost": 9475,
+        "materials": [{"name": "staff shaft", "qty": 1}, {"name": "elemental essence (fire)", "qty": 2}, {"name": "enchanting dust", "qty": 3}],
+        "result_item": {
+            "name": "Staff of Fire",
+            "item_type": "staff",
+            "weight": 5,
+            "value": 18950,
+            "charges": 50,
+            "stats": {"spells": ["Burning Hands", "Fireball", "Wall of Fire"]},
+            "description": "A charred staff that radiates intense heat. Flames dance along its length when activated."
+        },
+        "time": 10
+    },
+    {
+        "name": "Staff of Healing",
+        "skill": "Spellcraft",
+        "dc": 26,
+        "required_feat": "Craft Staff",
+        "required_caster_level": 12,
+        "gold_cost": 14850,
+        "materials": [{"name": "staff shaft", "qty": 1}, {"name": "unicorn hair", "qty": 1}, {"name": "purified water", "qty": 2}],
+        "result_item": {
+            "name": "Staff of Healing",
+            "item_type": "staff",
+            "weight": 5,
+            "value": 29700,
+            "charges": 50,
+            "stats": {"spells": ["Cure Light Wounds", "Cure Moderate Wounds", "Cure Serious Wounds"]},
+            "description": "A white staff wrapped in unicorn hair that glows with a soft, warm light. It channels potent healing magic."
+        },
+        "time": 10
     }
 ]

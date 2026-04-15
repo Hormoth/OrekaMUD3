@@ -95,9 +95,8 @@
   "root": 0.01,
   "mushroom": 0.01,
   "ambergris": 50.0,
-  "dragon’s blood": 500.0,
+  "dragon's blood": 500.0,
   "bone ash": 0.1,
-
   "perfume": 5.0,
   "tincture": 1.0,
   "distilled spirits": 0.2,
@@ -122,7 +121,6 @@
   "lye": 0.01,
   "tallow": 0.01,
   "rope fiber": 0.05,
-
   "spice": 5.0,
   "grain": 0.01,
   "trade bar (iron)": 0.5,

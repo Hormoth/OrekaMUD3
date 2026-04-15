@@ -69,6 +69,39 @@ class FactionManager:
         if character.guild_name == faction_id:
             self._update_rank(character, faction_id)
 
+        # GMCP: notify client of faction reputation change
+        try:
+            from src.gmcp import emit_factions
+            emit_factions(character)
+        except Exception:
+            pass
+
+        # Narrative faction change hook
+        try:
+            from src.narrative import get_narrative_manager
+            nm = get_narrative_manager()
+            narr_triggered = nm.on_faction_change(character, faction_id, new_rep)
+            if narr_triggered:
+                _w = getattr(character, '_writer', None) or getattr(character, 'writer', None)
+                if _w:
+                    for chapter in narr_triggered:
+                        text, rewards = nm.trigger_chapter(character, chapter)
+                        try:
+                            _w.write(text + "\n")
+                            if rewards and "xp" in rewards:
+                                character.xp = getattr(character, 'xp', 0) + rewards["xp"]
+                                _w.write(f"Gained {rewards['xp']} XP!\n")
+                            if rewards and "title" in rewards:
+                                if not hasattr(character, 'titles'):
+                                    character.titles = []
+                                if rewards["title"] not in character.titles:
+                                    character.titles.append(rewards["title"])
+                                _w.write(f"Earned title: {rewards['title']}\n")
+                        except Exception:
+                            pass
+        except Exception:
+            pass
+
         return (new_rep, old_standing, new_standing, msg)
 
     def get_standing_name(self, character, faction_id):

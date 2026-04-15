@@ -20,7 +20,7 @@
   "wear": "Wear / Equip Command\n\nUsage: wear <item>\n       equip <item>\n\nEquip an item from your inventory. Items go to the appropriate\nslot (weapons to main_hand, armor to body, etc.).\n\nSee also: help remove, help equipment",
   "remove": "Remove / Unequip Command\n\nUsage: remove <item>\n       unequip <item>\n\nUnequip an item and return it to your inventory.\n\nSee also: help wear, help equipment",
   "inventory": "Inventory Command\n\nUsage: inventory\n       inv\n\nShow all items you are carrying, their weight, and your\nencumbrance level (Light/Medium/Heavy/Overloaded).\n\nEncumbrance limits (based on Strength):\n  Light:  STR x 5 lbs\n  Medium: STR x 10 lbs\n  Heavy:  STR x 15 lbs\n\nSee also: help get, help drop, help equipment",
-  "get": "Get / Take Command\n\nUsage: get <item>\n       take <item>\n\nPick up an item from the ground in your current room.\n\nSee also: help drop, help inventory, help loot",
+  "get": "Get / Take Command\n\nUsage: get <item>\n       take <item>\n       get <item> <container>\n\nPick up an item from the ground or from a container.\n\nSee also: help drop, help inventory, help loot, help put",
   "drop": "Drop Command\n\nUsage: drop <item>\n\nDrop an item from your inventory onto the ground.\n\nSee also: help get, help inventory",
   "score": "Score Command\n\nUsage: score\n\nDisplay your full character sheet including:\n  Name, race, class, level, alignment, deity\n  HP, AC, ability scores and modifiers\n  Saves (Fort, Ref, Will)\n  XP, gold, movement points\n  Active conditions and buffs\n\nSee also: help stats, help conditions",
   "stats": "Stats Command\n\nUsage: stats\n\nToggle verbose stat display mode.\n\nSee also: help score",
@@ -54,10 +54,10 @@
   "talk": "Talk / Ask / Converse Command\n\nUsage: talk <npc name> [message]\n       ask <npc name> [message]\n       converse <npc name> [message]\n\nSpeak to an NPC in the room. NPCs respond with AI-generated\nroleplay dialogue based on their personality and knowledge.\n\nWith no message, sends a greeting.\nType 'talk' alone to see who you can talk to.\n\nExamples:\n  talk mira hello\n  talk guard what is this place?\n  ask merchant what do you sell?\n\nSee also: help shops",
   "quest": "Quest Command\n\nUsage: quest\n\nShow your current quest log with objectives and progress.\nQuest types:\n  KILL:    Defeat specific mobs\n  DELIVER: Give an item to an NPC\n  EXPLORE: Visit specific rooms\n\nQuests are assigned by NPCs. Complete objectives to earn rewards.\n\nSee also: help give",
   "levelup": "Level Up Command\n\nUsage: levelup\n\nAdvance to the next level when you have enough XP.\n\nXP Requirements (cumulative):\n  Level 2:  1,000 XP     Level 11: 55,000 XP\n  Level 3:  3,000 XP     Level 12: 66,000 XP\n  Level 4:  6,000 XP     Level 13: 78,000 XP\n  Level 5:  10,000 XP    Level 14: 91,000 XP\n  Level 6:  15,000 XP    Level 15: 105,000 XP\n  Level 7:  21,000 XP    Level 16: 120,000 XP\n  Level 8:  28,000 XP    Level 17: 136,000 XP\n  Level 9:  36,000 XP    Level 18: 153,000 XP\n  Level 10: 45,000 XP    Level 19: 171,000 XP\n                         Level 20: 190,000 XP\n\nOn level up you gain:\n  - HP increase (class hit die + CON mod)\n  - Skill points (class base + INT mod)\n  - Feat at levels 1, 3, 6, 9, 12, 15, 18\n  - Ability score increase at levels 4, 8, 12, 16, 20\n  - New spell slots and spells known\n\nSee also: help progression, help score",
-  "progression": "Character Progression\n\nD&D 3.5 Advancement Chart:\n\n  Level | Feat? | Ability? | Max Class Skill | Max Cross-Class\n  ------|-------|----------|-----------------|----------------\n    1   |  Yes  |    No    |       4         |       2\n    3   |  Yes  |    No    |       6         |       3\n    4   |  No   |   Yes    |       7         |       3.5\n    6   |  Yes  |    No    |       9         |       4.5\n    8   |  No   |   Yes    |      11         |       5.5\n    9   |  Yes  |    No    |      12         |       6\n   12   |  Yes  |   Yes    |      15         |       7.5\n   15   |  Yes  |    No    |      18         |       9\n   16   |  No   |   Yes    |      19         |       9.5\n   18   |  Yes  |    No    |      21         |      10.5\n   20   |  No   |   Yes    |      23         |      11.5\n\nSee also: help levelup, help skills",
+  "progression": "Progression Command\n\nUsage: progression\n\nDisplay the D&D 3.5 character advancement chart showing feat levels,\nability score increases, and skill point totals by level.\n\nSee also: help levelup, help skills, help score",
   "recall": "Recall Command\n\nUsage: recall\n\nTeleport instantly to the Central Aetherial Altar (starting room).\nCannot be used during combat.\n\nSee also: help movement, help respawn",
   "who": "Who Command\n\nUsage: who\n\nList all players currently online, showing their name, level,\nrace, and class.\n\nSee also: help chat",
-  "time": "Time Command\n\nUsage: time\n\nShow the current in-game time. Oreka uses an accelerated day/night\ncycle. Nighttime affects room descriptions and NPC behavior.\n\nSee also: help look",
+  "time": "Time Command\n\nUsage: time\n\nShow the current in-game date and time. Oreka uses an accelerated\ncycle. Time of day affects room lighting, NPC schedules, and atmosphere.\n\nSee also: help weather, help look, help survival",
   "companion": "Companion Command\n\nUsage: companion\n\nView your current animal companions or familiars.\nCompanion recruitment and management is coming in a future update.\n\nSee also: help score",
   "ac": "Armor Class (AC)\n\nYour AC determines how hard you are to hit in combat.\n\nAC = 10 + Armor Bonus + Shield Bonus + Dex Modifier\n     + Size Modifier + Deflection + Natural Armor + Dodge\n\nTouch AC:      Ignores armor and shield bonuses\nFlat-Footed AC: Ignores Dex and Dodge bonuses\n\nHeavy armor limits your maximum Dex bonus to AC.\nUse 'wear' to equip armor and 'score' to see your AC.\n\nSee also: help equipment, help score",
   "xp": "Experience Points (XP)\n\nXP is earned by defeating monsters. The amount depends on\nthe level difference between you and the mob's CR:\n\n  You vs CR  |  XP Award\n  -----------|----------\n  CR-4       |  75 XP\n  CR-3       |  100 XP\n  CR-2       |  150 XP\n  CR-1       |  200 XP\n  Equal CR   |  300 XP\n  CR+1       |  450 XP\n  CR+2       |  600 XP\n  CR+3       |  900 XP\n  CR+4       |  1,200 XP\n\nUse 'levelup' when you have enough XP.\nDying costs 10% of your current XP.\n\nSee also: help levelup, help death",
@@ -71,284 +71,141 @@
   "ooc": "OOC Command\n\nUsage: ooc <message>\n\nSend an out-of-character message to everyone in the room.\n\nSee also: help chat",
   "sense": "Kin-Sense Command\n\nUsage: sense\n       sense <target>\n       kinsense\n\nActively focus your Kin-sense to read the resonance in the room.\nWithout arguments, gives a summary of all presences. With a target\nname, gives a detailed reading of that specific entity.\n\nKin-sense is automatic on room entry and when using 'look'.\n\nResonance Categories:\n  Harmonic (Kin) - Warm presence; race and element readable\n  Wild Static    - Alive but not Kin (animals, Tanuki, fey)\n  Breach Static  - Alien, unsettling (Goblins, Wargs, Orcs, etc.)\n  Null           - A wound in the harmony (Silentborn, Severed)\n  Void           - Predatory silence (Domnathar)\n  No Registration- Simply absent (Undead, Constructs, Farborn)\n  Raw Static     - Overwhelming elemental force (pure elementals)\n\nRacial Bonuses:\n  Half-Giant: +4  Elf: +2  Dwarf: +2  Halfling: +1  Human: +0\n\nKin-sense is NOT magic. It works in anti-magic zones.\nIt IS suppressed by False Silence and worked Domnathar metal.\n\nSee also: help death, help conditions",
   "kinsense": "Kin-Sense Command\n\nUsage: sense\n       sense <target>\n       kinsense\n\nActively focus your Kin-sense to read the resonance in the room.\nWithout arguments, gives a summary of all presences. With a target\nname, gives a detailed reading of that specific entity.\n\nKin-sense is automatic on room entry and when using 'look'.\n\nResonance Categories:\n  Harmonic (Kin) - Warm presence; race and element readable\n  Wild Static    - Alive but not Kin (animals, Tanuki, fey)\n  Breach Static  - Alien, unsettling (Goblins, Wargs, Orcs, etc.)\n  Null           - A wound in the harmony (Silentborn, Severed)\n  Void           - Predatory silence (Domnathar)\n  No Registration- Simply absent (Undead, Constructs, Farborn)\n  Raw Static     - Overwhelming elemental force (pure elementals)\n\nRacial Bonuses:\n  Half-Giant: +4  Elf: +2  Dwarf: +2  Halfling: +1  Human: +0\n\nKin-sense is NOT magic. It works in anti-magic zones.\nIt IS suppressed by False Silence and worked Domnathar metal.\n\nSee also: help death, help conditions",
-
   "balance": "Balance Skill\n\nUsage: balance\n\nAttempt a Dexterity-based Balance skill check (D&D 3.5).\nUsed to walk on narrow ledges, slippery surfaces, or unstable ground.\n\nAbility: Dexterity\nTrained only: No\n\nThis command also works at a banker to check your account balance.\nAt a bank: balance shows your current gold on deposit.\n\nSee also: help skills, help climb, help tumble",
-
   "bluff": "Bluff Skill\n\nUsage: bluff\n\nAttempt a Charisma-based Bluff skill check (D&D 3.5).\nUsed to lie convincingly, feint in combat, create a diversion,\nor pass secret messages through hidden meaning.\n\nAbility: Charisma\nTrained only: No\n\nIn combat, use 'feint <target>' to use Bluff to deny a foe's Dex to AC.\n\nSee also: help skills, help feint, help diplomacy, help intimidate",
-
   "climb": "Climb Skill\n\nUsage: climb\n\nAttempt a Strength-based Climb skill check (D&D 3.5).\nUsed to scale walls, cliff faces, ropes, or other vertical surfaces.\n\nAbility: Strength\nTrained only: No\n\nSee also: help skills, help jump, help swim",
-
   "concentration": "Concentration Skill\n\nUsage: concentration\n\nAttempt a Constitution-based Concentration skill check (D&D 3.5).\nSpellcasters use Concentration to maintain spells while taking damage,\nbeing grappled, or casting in adverse conditions.\n\nAbility: Constitution\nTrained only: No\n\nSee also: help skills, help cast, help spellcraft",
-
   "decipher": "Decipher Script Skill\n\nUsage: decipher\n\nAttempt an Intelligence-based Decipher Script check (D&D 3.5).\nUsed to read ancient texts, coded messages, or unfamiliar writing.\n\nAbility: Intelligence\nTrained only: Yes\n\nSee also: help skills, help spellcraft, help knowledge",
-
   "diplomacy": "Diplomacy Skill\n\nUsage: diplomacy\n\nAttempt a Charisma-based Diplomacy skill check (D&D 3.5).\nUsed to improve NPC attitudes, negotiate, and persuade.\n\nAbility: Charisma\nTrained only: No\n\nSee also: help skills, help bluff, help intimidate, help sensemotive",
-
   "disable": "Disable Device Skill\n\nUsage: disable\n\nAttempt an Intelligence-based Disable Device check (D&D 3.5).\nUsed to disarm traps, sabotage mechanical devices, or deactivate locks.\n\nAbility: Intelligence\nTrained only: Yes\n\nSee also: help skills, help disarmtrap, help openlock, help search",
-
   "disguise": "Disguise Skill\n\nUsage: disguise\n\nAttempt a Charisma-based Disguise skill check (D&D 3.5).\nUsed to change your appearance to impersonate another person or creature.\n\nAbility: Charisma\nTrained only: No\n\nSee also: help skills, help bluff, help hide",
-
   "escape": "Escape Artist Skill\n\nUsage: escape\n\nAttempt a Dexterity-based Escape Artist check (D&D 3.5).\nUsed to slip free from ropes, nets, grapples, or tight spaces.\n\nAbility: Dexterity\nTrained only: No\n\nIn combat, use 'gescape' to attempt to break out of a grapple.\n\nSee also: help skills, help grapple, help gescape",
-
   "forgery": "Forgery Skill\n\nUsage: forgery\n\nAttempt an Intelligence-based Forgery skill check (D&D 3.5).\nUsed to create or detect fake documents, seals, and written materials.\n\nAbility: Intelligence\nTrained only: No\n\nSee also: help skills, help decipher, help bluff",
-
   "handle": "Handle Animal Skill\n\nUsage: handle\n\nAttempt a Charisma-based Handle Animal skill check (D&D 3.5).\nUsed to command, train, or calm animals and magical beasts.\n\nAbility: Charisma\nTrained only: Yes\n\nSee also: help skills, help ride, help companion",
-
   "heal": "Heal Skill\n\nUsage: heal\n\nAttempt a Wisdom-based Heal skill check (D&D 3.5).\nUsed to provide first aid, long-term care, treat poison, or treat disease.\n\nAbility: Wisdom\nTrained only: No\n\nNote: This uses the Heal skill. For magical healing, use 'cast cure light wounds' etc.\n\nSee also: help skills, help cast, help rest",
-
   "intimidate": "Intimidate Skill\n\nUsage: intimidate\n\nAttempt a Charisma-based Intimidate skill check (D&D 3.5).\nUsed to demoralize opponents in combat or coerce NPCs outside combat.\n\nAbility: Charisma\nTrained only: No\n\nSee also: help skills, help bluff, help diplomacy",
-
   "jump": "Jump Skill\n\nUsage: jump\n\nAttempt a Strength-based Jump skill check (D&D 3.5).\nUsed to leap across gaps, over obstacles, or up to grab ledges.\n\nAbility: Strength\nTrained only: No\n\nSee also: help skills, help climb, help tumble",
-
   "knowledge": "Knowledge Skill\n\nUsage: knowledge [type]\n\nAttempt an Intelligence-based Knowledge skill check (D&D 3.5).\nKnowledge is actually a group of skills, each covering a different field:\n  arcana, nature, history, religion, dungeoneering, planes, etc.\n\nAbility: Intelligence\nTrained only: Yes\n\nExamples:\n  knowledge arcana\n  knowledge nature\n  knowledge religion\n\nSee also: help skills, help spellcraft, help decipher",
-
   "listen": "Listen Skill\n\nUsage: listen\n\nAttempt a Wisdom-based Listen skill check (D&D 3.5).\nUsed to hear approaching creatures, overhear conversations, or detect\ninvisible opponents by sound.\n\nAbility: Wisdom\nTrained only: No\n\nSee also: help skills, help spot, help search, help scan",
-
   "movesilently": "Move Silently Skill\n\nUsage: movesilently\n\nAttempt a Dexterity-based Move Silently check (D&D 3.5).\nUsed to move without making sound. Contested by opponent's Listen.\nUse 'sneak' to toggle automatic silent movement.\n\nAbility: Dexterity\nTrained only: No\n\nSee also: help skills, help sneak, help hide, help listen",
-
   "openlock": "Open Lock Skill\n\nUsage: openlock\n\nAttempt a Dexterity-based Open Lock skill check (D&D 3.5).\nUsed to pick locks without a key. See also the 'pick' command for\ninteracting with locked doors and containers.\n\nAbility: Dexterity\nTrained only: Yes\n\nSee also: help skills, help pick, help disable, help search",
-
   "perform": "Perform Skill\n\nUsage: perform\n\nAttempt a Charisma-based Perform skill check (D&D 3.5).\nBards use Perform as the basis for bardic music abilities (inspire, etc.).\nCovers singing, dancing, acting, playing instruments, and other arts.\n\nAbility: Charisma\nTrained only: No\n\nSee also: help skills, help inspire",
-
   "profession": "Profession Skill\n\nUsage: profession\n\nAttempt a Wisdom-based Profession skill check (D&D 3.5).\nRepresents a character's knowledge of a specific trade or craft.\n\nAbility: Wisdom\nTrained only: Yes\n\nSee also: help skills, help craft, help recipes",
-
   "ride": "Ride Skill\n\nUsage: ride\n\nAttempt a Dexterity-based Ride skill check (D&D 3.5).\nUsed to handle mounts in difficult situations, guide with knees,\nor perform mounted combat maneuvers.\n\nAbility: Dexterity\nTrained only: No\n\nSee also: help skills, help mount, help dismount, help handle",
-
   "sensemotive": "Sense Motive Skill\n\nUsage: sensemotive\n\nAttempt a Wisdom-based Sense Motive check (D&D 3.5).\nUsed to detect lies, gauge moods, or resist feints in combat.\nContested by an opponent's Bluff skill.\n\nAbility: Wisdom\nTrained only: No\n\nSee also: help skills, help bluff, help feint, help diplomacy",
-
   "sleight": "Sleight of Hand Skill\n\nUsage: sleight\n\nAttempt a Dexterity-based Sleight of Hand check (D&D 3.5).\nUsed to palm small objects, pick pockets, or conceal items.\nContested by observer's Spot checks.\n\nAbility: Dexterity\nTrained only: Yes\n\nSee also: help skills, help hide, help disguise",
-
   "spellcraft": "Spellcraft Skill\n\nUsage: spellcraft\n\nAttempt an Intelligence-based Spellcraft check (D&D 3.5).\nUsed to identify spells being cast, understand magical writings,\nand learn new spells from scrolls.\n\nAbility: Intelligence\nTrained only: Yes\n\nSee also: help skills, help concentration, help knowledge, help identify",
-
   "spot": "Spot Skill\n\nUsage: spot\n\nAttempt a Wisdom-based Spot skill check (D&D 3.5).\nUsed to notice hidden creatures, objects, or details.\nContested by Hide checks for hidden opponents.\n\nAbility: Wisdom\nTrained only: No\n\nSee also: help skills, help listen, help search, help scan",
-
   "survival": "Survival Skill\n\nUsage: survival\n\nAttempt a Wisdom-based Survival skill check (D&D 3.5).\nUsed to track creatures, forage for food, endure harsh weather,\nand navigate wilderness environments.\n\nAbility: Wisdom\nTrained only: No\n\nSee also: help skills, help track, help gather, help weather",
-
   "swim": "Swim Skill\n\nUsage: swim\n\nAttempt a Strength-based Swim skill check (D&D 3.5).\nUsed to move through water, resist currents, or avoid drowning.\n\nAbility: Strength\nTrained only: No\n\nSee also: help skills, help holdbreath, help climb",
-
   "tumble": "Tumble Skill\n\nUsage: tumble\n\nAttempt a Dexterity-based Tumble skill check (D&D 3.5).\nUsed to fall safely, move past opponents without provoking attacks\nof opportunity, or soften the impact of a fall.\n\nAbility: Dexterity\nTrained only: Yes\n\nSee also: help skills, help jump, help balance, help escape",
-
   "usemagic": "Use Magic Device Skill\n\nUsage: usemagic\n\nAttempt a Charisma-based Use Magic Device check (D&D 3.5).\nUsed to activate magic items whose use is normally restricted,\nsuch as wands or scrolls outside your class.\n\nAbility: Charisma\nTrained only: Yes\n\nSee also: help skills, help quaff, help read, help use",
-
   "userope": "Use Rope Skill\n\nUsage: userope\n\nAttempt a Dexterity-based Use Rope skill check (D&D 3.5).\nUsed to tie secure knots, bind prisoners, or set up rope systems.\n\nAbility: Dexterity\nTrained only: No\n\nSee also: help skills, help escape, help climb",
-
   "gatherinfo": "Gather Information Skill\n\nUsage: gatherinfo\n\nAttempt a Charisma-based Gather Information check (D&D 3.5).\nUsed to ask around town for rumors, news, or specific information\nabout people and places. Takes time and may cost money.\n\nAbility: Charisma\nTrained only: No\n\nSee also: help skills, help diplomacy, help bluff",
-
   "take10": "Take 10 Command\n\nUsage: take10 <skill name>\n\nAttempt a skill check as if you rolled a 10 on the d20 (D&D 3.5).\nTaking 10 is allowed when you are not rushed or threatened.\nYou cannot take 10 in combat or under stress.\n\nExamples:\n  take10 climb\n  take10 swim\n  take10 balance\n\nSee also: help take20, help check, help skills",
-
   "take20": "Take 20 Command\n\nUsage: take20 <skill name>\n\nAttempt a skill check as if you rolled a 20 on the d20 (D&D 3.5).\nTaking 20 represents trying repeatedly until you succeed.\nRequires extra time and cannot be used if failure has consequences.\nYou cannot take 20 in combat.\n\nExamples:\n  take20 open lock\n  take20 search\n\nSee also: help take10, help check, help skills",
-
   "skilllist": "Skill List Command\n\nUsage: skilllist\n\nDisplay a complete list of all D&D 3.5 skills, their governing\nability score, and whether they are trained-only.\n\nUse 'skills' to see your own trained skills and ranks.\nUse 'check <skill>' to attempt a skill check by name.\n\nSee also: help skills, help check, help take10, help take20",
-
   "helpfeats": "Help Feats Command\n\nUsage: helpfeats [feat name]\n\nBrowse all feats in the game system. Without an argument, lists all\nfeats, their type (passive or active), and brief descriptions.\nWith a feat name, shows full details and usage instructions.\n\nExamples:\n  helpfeats\n  helpfeats power attack\n  helpfeats improved disarm\n\nSee also: help feats, help levelup, help progression",
-
   "questlog": "Quest Log Command\n\nUsage: questlog [active|complete|all]\n\nView your quest journal. By default shows active quests.\n  active   - Show only quests in progress\n  complete - Show only completed quests\n  all      - Show all quests\n\nEach entry shows: quest name, objectives, progress, and reward.\n\nSee also: help quest, help give",
-
   "talkto": "Talkto Command\n\nUsage: talkto <npc name>\n\nInitiate dialogue with an NPC in the room.\nUnlike 'talk', 'talkto' targets a specific NPC by name for extended\nconversation, triggering their greeting and available dialogue topics.\n\nExamples:\n  talkto merchant\n  talkto guard captain\n\nSee also: help talk, help quest",
-
   "@backup": "Admin: Backup Player\n\nUsage: @backup <player name>\n\nCreate a backup snapshot of a player's saved data file.\nRequires immortal (admin) privileges.\n\nSee also: help @restore, help @save",
-
   "@restore": "Admin: Restore Player\n\nUsage: @restore <player name> [timestamp]\n\nRestore a player's data from a previously created backup.\nIf a timestamp is given, restores that specific backup version.\nRequires immortal (admin) privileges.\n\nSee also: help @backup, help @save",
-
   "@save": "Admin: Save Player\n\nUsage: @save <player name>\n\nForce-save a player's current data to disk immediately.\nNormally players are saved automatically; this forces an immediate write.\nRequires immortal (admin) privileges.\n\nSee also: help @backup, help @restore",
-
   "charge": "Charge Command\n\nUsage: charge <target>\n\nMake a charge attack (D&D 3.5 full-round action).\nYou must move at least 10 feet in a straight line before attacking.\n\nEffects:\n  +2 attack roll bonus\n  -2 AC penalty until your next turn\n\nSee also: help combat, help fullattack",
-
   "totaldefense": "Total Defense Command\n\nUsage: totaldefense\n       td\n\nFocus entirely on defense for one round (D&D 3.5 standard action).\nGrants +4 dodge bonus to AC but you cannot attack.\n\nSee also: help fightdef, help combat, help ac",
-
   "fightdef": "Fighting Defensively Command\n\nUsage: fightdef\n       defensive\n\nFight defensively for one round (D&D 3.5).\nTake -4 penalty to all attacks in exchange for +2 dodge bonus to AC.\nWith Combat Expertise feat: trade up to -5 attack for up to +5 AC.\n\nSee also: help totaldefense, help combat, help combatexpertise",
-
   "flurry": "Flurry of Blows Command\n\nUsage: flurry <target>\n\nMonk ability: make an extra attack at -2 penalty to all attacks.\nAt higher monk levels, the penalty decreases and additional attacks\nare gained. Requires unarmed or monk weapons only.\n\nSee also: help combat, help stunningfist",
-
   "smite": "Smite Evil / Good Command\n\nUsage: smite <target>\n\nPaladin / Blackguard ability: add Charisma modifier to attack roll\nand class level to damage against an evil (or good) target.\nUsable once per day (more at higher levels).\n\nSee also: help combat, help layonhands, help turn",
-
   "rage": "Rage Command\n\nUsage: rage\n\nBarbarian ability: enter a battle rage for several rounds.\nWhile raging:\n  +4 Strength, +4 Constitution, +2 Will saves\n  -2 AC penalty\n  Cannot use skills that require calm (Diplomacy, etc.)\n\nAfter rage ends: fatigued for twice the rage duration.\n\nSee also: help combat, help conditions",
-
   "inspire": "Inspire Courage / Bardic Music Command\n\nUsage: inspire\n\nBard ability: use bardic music to inspire allies.\nGranted effects depend on the bardic performance used:\n  Inspire Courage: +1 morale to attacks, damage, and fear saves\n\nRequires Perform skill ranks.\n\nSee also: help perform, help skills",
-
   "turn": "Turn Undead Command\n\nUsage: turn [target]\n       turnundead [target]\n\nCleric / Paladin ability: channel positive energy to turn, rebuke,\nor destroy undead. Each use expends one turn attempt per day.\n\nEffect depends on undead HD vs. your turning check:\n  Turn: undead flee for 10 rounds\n  Destroy: undead with weak enough HD are destroyed outright\n\nSee also: help combat, help smite, help layonhands",
-
   "wildshape": "Wild Shape Command\n\nUsage: wildshape [form]\n\nDruid ability: transform into an animal form.\nGranted HP, Str, Dex, Con, and natural armor of the animal form.\nUsable multiple times per day depending on druid level.\n\nSee also: help combat, help score",
-
   "favoredenemy": "Favored Enemy Command\n\nUsage: favoredenemy\n       fe\n\nRanger ability: display your favored enemy bonuses.\nYou gain +2 (or more) to attack rolls, damage, and skill checks\n(Bluff, Listen, Sense Motive, Spot, Survival) against favored enemies.\n\nFavored enemies are chosen at levels 1, 5, 10, 15, and 20.\n\nSee also: help combat, help skills, help track",
-
   "layonhands": "Lay On Hands Command\n\nUsage: layonhands [target]\n       loh [target]\n\nPaladin ability: heal hit points by touch.\nRestores CHA modifier x paladin level HP per day (pool shared).\nWith no target, heals yourself.\n\nSee also: help smite, help turn, help combat",
-
   "summon": "Summon Command\n\nUsage: summon <creature type>\n\nSummon a creature to fight alongside you.\nClerics and Druids can summon nature allies or monsters.\nSummoned creatures last for a limited duration.\n\nSee also: help familiar, help spells, help cast",
-
   "familiar": "Familiar Command\n\nUsage: familiar\n\nDisplay or manage your familiar (Sorcerer / Wizard ability).\nFamiliars provide special bonuses based on their type and grant\ntheir master shared senses at higher levels.\n\nSee also: help companion, help summon",
-
   "dispel": "Dispel Command\n\nUsage: dispel <target>\n       cast dispel magic <target>\n\nAttempt to dispel active magical effects on a target.\nMakes a caster level check (d20 + caster level) against each effect.\nDispel magic affects one spell; greater dispel magic can affect several.\n\nSee also: help cast, help spells, help affects",
-
   "north": "Movement Commands\n\nUsage: north / south / east / west / up / down\n       n / s / e / w / u / d\n\nMove in the specified direction if an exit exists and is passable.\nDoors must be open before you can pass through them.\n\nSee also: help open, help close, help exits, help recall, help speedwalk",
-
   "south": "Movement Commands\n\nUsage: north / south / east / west / up / down\n       n / s / e / w / u / d\n\nMove in the specified direction if an exit exists and is passable.\n\nSee also: help open, help close, help exits, help recall, help speedwalk",
-
   "east": "Movement Commands\n\nUsage: north / south / east / west / up / down\n       n / s / e / w / u / d\n\nMove in the specified direction if an exit exists and is passable.\n\nSee also: help open, help close, help exits, help recall, help speedwalk",
-
   "west": "Movement Commands\n\nUsage: north / south / east / west / up / down\n       n / s / e / w / u / d\n\nMove in the specified direction if an exit exists and is passable.\n\nSee also: help open, help close, help exits, help recall, help speedwalk",
-
   "up": "Movement Commands\n\nUsage: north / south / east / west / up / down\n       n / s / e / w / u / d\n\nMove in the specified direction if an exit exists and is passable.\n\nSee also: help open, help close, help exits, help recall, help speedwalk",
-
   "down": "Movement Commands\n\nUsage: north / south / east / west / up / down\n       n / s / e / w / u / d\n\nMove in the specified direction if an exit exists and is passable.\n\nSee also: help open, help close, help exits, help recall, help speedwalk",
-
   "open": "Open Command\n\nUsage: open <door direction or name>\n\nOpen a closed door or container in the room.\nDoors must be unlocked before they can be opened.\n\nSee also: help close, help lock, help unlock, help pick",
-
   "close": "Close Command\n\nUsage: close <door direction or name>\n\nClose an open door in the room.\n\nSee also: help open, help lock, help unlock",
-
   "lock": "Lock Command\n\nUsage: lock <door direction or name>\n\nLock a closed door. You must have the appropriate key.\n\nSee also: help unlock, help open, help pick",
-
   "unlock": "Unlock Command\n\nUsage: unlock <door direction or name>\n\nUnlock a locked door. You must have the appropriate key.\n\nSee also: help lock, help open, help pick",
-
   "pick": "Pick Lock Command\n\nUsage: pick <door direction or name>\n\nAttempt to pick a lock without the key using the Open Lock skill.\nDifficulty depends on the lock's quality.\n\nSee also: help unlock, help openlock, help disable",
-
   "speedwalk": "Speedwalk Command\n\nUsage: speedwalk <directions>\n       sw <directions>\n       walk <directions>\n\nExecute a sequence of movement commands with one command.\nUse letters: n (north), s (south), e (east), w (west), u (up), d (down).\n\nExamples:\n  speedwalk nnnwe\n  sw 3n2w\n\nSee also: help movement, help recall",
-
   "fly": "Fly Command\n\nUsage: fly\n\nBegin flying if you have a natural fly speed or an active fly spell.\nFlying allows movement over hazards and access to aerial exits.\nUse 'land' to return to the ground.\n\nSee also: help land, help movement",
-
   "land": "Land Command\n\nUsage: land\n\nLand from flight. Use when you are flying and wish to return to ground.\n\nSee also: help fly, help movement",
-
   "mount": "Mount Command\n\nUsage: mount <animal name>\n\nMount a rideable animal or creature in the room.\nMounted movement uses the mount's speed. Requires Ride skill.\n\nSee also: help dismount, help ride",
-
   "dismount": "Dismount Command\n\nUsage: dismount\n\nDismount from your current mount, returning to foot travel.\n\nSee also: help mount, help ride",
-
   "sit": "Sit Command\n\nUsage: sit\n\nSit down to rest. You are less mobile while sitting.\nYou cannot move or fight effectively while seated.\n\nSee also: help stand, help kneel, help rest, help wake",
-
   "stand": "Stand Command\n\nUsage: stand\n\nStand up from a seated, kneeling, or prone position.\n\nSee also: help sit, help kneel, help wake",
-
   "kneel": "Kneel Command\n\nUsage: kneel\n\nKneel down. Useful for roleplay at shrines, before NPCs, etc.\nYou cannot move effectively while kneeling.\n\nSee also: help sit, help stand, help wake",
-
   "wake": "Wake Command\n\nUsage: wake\n\nWake up from sleep or unconsciousness (if able).\n\nSee also: help rest, help sit, help stand",
-
   "group": "Group Command\n\nUsage: group\n       group <player name>\n\nView or manage your group. Groups allow XP sharing and coordinated\ncombat with other players.\n  group            - Show group status\n  group <name>     - Invite or accept a player into your group\n\nSee also: help follow, help unfollow, help assist, help gtell",
-
   "follow": "Follow Command\n\nUsage: follow <player name>\n\nBegin following another player, automatically moving when they move.\nYou must be in the same room to start following.\n\nSee also: help unfollow, help group, help assist",
-
   "unfollow": "Unfollow Command\n\nUsage: unfollow\n\nStop following another player.\n\nSee also: help follow, help group",
-
   "assist": "Assist Command\n\nUsage: assist <player name>\n\nAttack the same target that the specified player is fighting.\nUseful in group combat to focus fire on one enemy.\n\nSee also: help group, help follow, help rescue",
-
   "rescue": "Rescue Command\n\nUsage: rescue <player name>\n\nStep in to protect an ally in combat. You take over as the mob's\nprimary target, drawing its attacks away from your ally.\n\nSee also: help group, help assist, help combat",
-
   "guild": "Guild / Clan Command\n\nUsage: guild\n       guild info\n       guild join <name>\n       guild leave\n       guild roster\n       guild deposit <amount>\n       guild withdraw <amount>\n\nGuilds are player organizations that share a bank, hall, and identity.\nUse 'guild' with no args to see your current guild status.\n\nSee also: help clan, help group",
-
   "mail": "Mail Command\n\nUsage: mail\n       sendmail <player> <message>\n       readmail\n\nThe in-game mail system for player-to-player messages.\n  mail             - Show your mailbox summary\n  sendmail <name>  - Send a message to another player\n  readmail         - Read messages in your mailbox\n\nSee also: help sendmail, help readmail, help board",
-
   "sendmail": "Send Mail Command\n\nUsage: sendmail <player name> <message>\n\nSend an in-game mail message to another player.\n\nSee also: help mail, help readmail",
-
   "readmail": "Read Mail Command\n\nUsage: readmail\n       readmail <message number>\n\nRead messages in your mailbox. Without a number, lists all messages.\nWith a number, reads that specific message.\n\nSee also: help mail, help sendmail",
-
   "board": "Bulletin Board Command\n\nUsage: board\n       post <message>\n       readnote <number>\n\nThe in-game public bulletin board system.\n  board     - List posts on the current area's board\n  post      - Write a new post\n  readnote  - Read a specific post\n\nSee also: help post, help readnote, help mail",
-
   "post": "Post Command\n\nUsage: post <subject>\n\nPost a new message to the bulletin board in the current room.\n\nSee also: help board, help readnote",
-
   "readnote": "Read Note Command\n\nUsage: readnote <number>\n\nRead a specific note on the bulletin board in the room.\n\nSee also: help board, help post",
-
-  "duel": "Duel Command\n\nUsage: duel <player name>\n       challenge <player name>\n\nChallenge another player to a formal PvP duel.\nDuels are consensual — both players must agree before combat starts.\nThe loser is left at 1 HP and cannot be killed.\n\nSee also: help combat, help pvp",
-
+  "duel": "Duel Command\n\nUsage: duel <player name>\n       challenge <player name>\n\nChallenge another player to a formal PvP duel.\nDuels are consensual -- both players must agree before combat starts.\nThe loser is left at 1 HP and cannot be killed.\n\nSee also: help combat, help pvp",
   "ignore": "Ignore Command\n\nUsage: ignore\n       ignore <player name>\n\nManage your ignore list.\n  ignore           - Show your current ignore list\n  ignore <name>    - Toggle ignore on/off for that player\n\nIgnored players' tells, emotes, and chat messages are hidden from you.\n\nSee also: help tell, help ooc, help chat",
-
   "afk": "AFK Command\n\nUsage: afk\n       afk <message>\n\nToggle your AFK (Away From Keyboard) status.\n  afk            - Toggle AFK on or off\n  afk <message>  - Go AFK with a custom away message\n\nPlayers who send you a tell while AFK will see your message.\n\nSee also: help tell, help chat",
-
   "title": "Title Command\n\nUsage: title <new title>\n\nSet a custom title that appears after your name in 'who' and 'look'.\n\nSee also: help who, help score",
-
-  "get": "Get / Take Command\n\nUsage: get <item>\n       take <item>\n       get <item> <container>\n\nPick up an item from the ground or from a container.\n\nSee also: help drop, help inventory, help loot, help put",
-
   "put": "Put Command\n\nUsage: put <item> <container>\n\nPlace an item from your inventory into a container in the room\nor in your inventory.\n\nSee also: help get, help peek, help inventory",
-
   "peek": "Peek Command\n\nUsage: peek <container>\n\nLook inside a container without taking anything.\n\nSee also: help put, help get, help inventory",
-
   "quaff": "Quaff / Drink Command\n\nUsage: quaff <potion name>\n       drink <potion name>\n\nDrink a potion from your inventory, activating its magical effect.\n\nSee also: help use, help read, help inventory",
-
   "use": "Use Command\n\nUsage: use <item name> [target]\n\nActivate a wand, staff, or other usable magic item.\nFor potions use 'quaff'; for scrolls use 'read'.\n\nSee also: help quaff, help read, help identify",
-
   "light": "Light Command\n\nUsage: light <item name>\n\nLight a torch, lantern, or other light source in your inventory.\nLight sources illuminate dark rooms, affecting descriptions and combat.\n\nSee also: help extinguish, help look",
-
   "extinguish": "Extinguish Command\n\nUsage: extinguish <item name>\n\nPut out a lit light source.\n\nSee also: help light, help look",
-
   "eat": "Eat Command\n\nUsage: eat <food item>\n\nEat a food item from your inventory to reduce hunger.\nHunger and thirst affect HP recovery when resting.\n\nSee also: help drink_water, help rest, help survivalmode",
-
   "drink_water": "Drink Water Command\n\nUsage: drink_water\n\nDrink water to quench thirst. You need a water source nearby\nor a water container in your inventory.\n\nSee also: help eat, help rest, help survivalmode",
-
   "fish": "Fish Command\n\nUsage: fish\n\nAttempt to catch fish in a body of water. Requires being in a room\nwith a water source. Uses Survival skill.\n\nSee also: help gather, help mine, help survival",
-
   "mine": "Mine Command\n\nUsage: mine\n\nAttempt to mine ore or gems from a rocky surface. Requires being\nin a mine or rocky room. Uses Survival or craft skill.\n\nSee also: help gather, help fish, help craft, help recipes",
-
   "gather": "Gather Command\n\nUsage: gather\n\nGather herbs and natural materials from the environment.\nRequires being in a forest, garden, or field room.\nUses Survival (DC 8). Has a 60-second cooldown.\n\nSee also: help fish, help mine, help survival",
-
   "alias": "Alias System\n\nUsage: alias                    - List all your aliases\n       alias <name> <expansion>  - Create an alias\n       alias <name>              - Delete an alias\n\nAliases let you create shortcuts for commands or command sequences.\nYou can have up to 20 aliases.\n\nExamples:\n  alias h help\n  alias kk kill\n\nSee also: help config, help prompt",
-
   "config": "Config / Toggle Command\n\nUsage: config\n       config <setting> [value]\n       toggle <setting>\n\nView and change personal settings:\n  autoloot    - Automatically loot corpses\n  autogold    - Automatically pick up gold\n  autosac     - Automatically sacrifice worthless corpses\n  autoattack  - Automatically attack each round\n  wimpy       - HP threshold to auto-flee\n  survivalmode - Track hunger and thirst\n\nSee also: help autoloot, help autogold, help wimpy, help autoattack",
-
   "prompt": "Prompt Command\n\nUsage: prompt\n       prompt <format string>\n\nCustomize your command prompt. Variables:\n  %h  - Current HP\n  %H  - Max HP\n  %m  - Current mana/spell points\n  %M  - Max mana\n  %v  - Current movement\n  %V  - Max movement\n  %x  - XP\n  %g  - Gold\n  %l  - Level\n  %c  - Class\n\nSee also: help config, help score",
-
   "autoloot": "Autoloot Command\n\nUsage: autoloot [on|off]\n\nToggle automatic looting of corpses after combat.\nWhen enabled, you automatically loot any corpse in the room after killing.\n\nSee also: help autogold, help autosac, help config, help loot",
-
   "autogold": "Autogold Command\n\nUsage: autogold [on|off]\n\nToggle automatic collection of gold from corpses and the ground.\n\nSee also: help autoloot, help autosac, help config",
-
   "autosac": "Autosac Command\n\nUsage: autosac [on|off]\n\nToggle automatic sacrifice of empty corpses. When a corpse has been\nlooted clean, it is automatically sacrificed for a small amount of XP.\n\nSee also: help autoloot, help autogold, help config",
-
   "wimpy": "Wimpy Command\n\nUsage: wimpy <hp value>\n       wimpy 0\n\nSet a HP threshold at which you will automatically flee combat.\nSet to 0 to disable.\n\nExample: wimpy 20   (flee when HP drops to 20 or below)\n\nSee also: help flee, help config, help combat",
-
   "survivalmode": "Survival Mode Command\n\nUsage: survivalmode [on|off]\n\nToggle tracking of hunger and thirst.\nWhen enabled, you must eat and drink to maintain peak HP recovery.\nWhen disabled, hunger and thirst have no effect.\n\nSee also: help eat, help drink_water, help rest, help config",
-
   "deposit": "Deposit Command\n\nUsage: deposit <amount>\n\nDeposit gold into a bank account. You must be at a bank or financial\nNPC to make deposits. Deposited gold is safe even after death.\n\nSee also: help withdraw, help balance, help gold",
-
   "withdraw": "Withdraw Command\n\nUsage: withdraw <amount>\n\nWithdraw gold from your bank account. You must be at a bank or\nfinancial NPC. You cannot withdraw more than your balance.\n\nSee also: help deposit, help balance, help gold",
-
   "auction": "Auction Command\n\nUsage: auction\n       auction list\n       auction bid <id> <amount>\n       auction post <item name> <starting bid>\n       auction cancel <id>\n\nThe player-run auction house. Post items for sale to all players.\n\nSee also: help buy, help sell, help worth",
-
   "worth": "Worth Command\n\nUsage: worth\n       wealth\n\nShow your total net worth: gold on hand, gold in the bank,\nand estimated value of carried items and equipment.\n\nSee also: help gold, help deposit, help inventory, help score",
-
   "repair": "Repair Command\n\nUsage: repair <item name>\n\nPay a craftsman or smith NPC to repair a damaged item.\nItem condition affects combat effectiveness.\n\nSee also: help repairall, help craft, help equipment",
-
   "craft": "Craft Command\n\nUsage: craft <recipe name>\n\nCreate an item using raw materials and the appropriate recipe.\nYou must have the required materials in your inventory.\n\nSee also: help recipes, help gather, help mine, help fish",
-
   "recipes": "Recipes Command\n\nUsage: recipes\n       recipes <category>\n\nList all crafting recipes available to you.\nShows required materials and the resulting item.\n\nSee also: help craft, help gather, help mine",
-
   "enchant": "Enchant Command\n\nUsage: enchant <item name> <enchantment>\n\nApply a magical enchantment to an item using reagents.\nEnchantments add bonuses to weapons, armor, or accessories.\nRequires specific materials and an Arcane caster level.\n\nSee also: help craft, help identify, help spellcraft",
-
   "gamble": "Gamble / Bet Command\n\nUsage: gamble\n       bet <amount>\n\nPlay a game of chance at a gambling establishment.\nBet gold and test your luck. You may win or lose gold.\n\nSee also: help gold, help auction",
-
   "itemsets": "Item Sets Command\n\nUsage: itemsets\n       sets\n\nDisplay all item set bonuses. Item sets are groups of equipment\nthat grant extra bonuses when multiple pieces are worn together.\n\nSee also: help equipment, help wear, help identify",
-
   "examine": "Examine Command\n\nUsage: examine <target>\n       exam <target>\n       inspect <target>\n\nExamine an item, mob, or player closely for detailed information.\nReveals more detail than the basic 'look' command.\n\nSee also: help look, help identify, help compare",
-
   "affects": "Affects / Buffs Command\n\nUsage: affects\n       buffs\n\nDisplay all active magical effects and conditions currently affecting\nyour character, including their source and remaining duration.\n\nSee also: help conditions, help dispel, help score",
-
   "compare": "Compare Command\n\nUsage: compare <item1> <item2>\n       comp <item1> <item2>\n\nCompare the statistics of two items side by side.\nUseful for deciding which piece of equipment to use.\n\nSee also: help identify, help equipment, help examine",
-
   "consider": "Consider Command\n\nUsage: consider <target>\n       con <target>\n\nSize up an opponent to estimate how dangerous they are relative to you.\nGives a qualitative assessment of the challenge.\n\nSee also: help kill, help combat, help scan",
-
   "identify": "Identify Command\n\nUsage: identify <item name>\n       id <item name>\n\nReveal the full magical properties of an item. You must be near a\nsage, arcane shop, or cast 'identify' spell.\n\nSee also: help examine, help compare, help spellcraft",
-
   "track": "Track Command\n\nUsage: track <creature name>\n\nAttempt to track a creature using the Survival skill.\nOn success, shows the direction the creature went.\n\nAbility: Survival (Wisdom-based)\n\nSee also: help survival, help scan, help search",
-
   "weather": "Weather Command\n\nUsage: weather\n\nCheck the current weather conditions in your zone.\nWeather affects visibility (Spot/Listen), ranged combat, and travel.\n\nSee also: help time, help look, help survival",
-
-  "time": "Time Command\n\nUsage: time\n\nShow the current in-game date and time. Oreka uses an accelerated\ncycle. Time of day affects room lighting, NPC schedules, and atmosphere.\n\nSee also: help weather, help look, help survival",
-
   "tnl": "TNL / XP Command\n\nUsage: tnl\n       xp\n\nShow your current XP and how much you need to reach the next level (To Next Level).\n\nSee also: help levelup, help xp, help score",
-
   "leaderboard": "Leaderboard Command\n\nUsage: leaderboard\n       top\n       rankings\n\nDisplay the top players ranked by level and XP.\n\nSee also: help who, help score, help finger",
-
   "finger": "Finger / Whois Command\n\nUsage: finger <player name>\n       whois <player name>\n\nDisplay public information about a player: level, class, race,\nlast login, and title.\n\nSee also: help who, help score",
-
   "areas": "Areas Command\n\nUsage: areas\n       zones\n\nList all known areas and zones in the world, with level ranges\nand a brief description of each.\n\nSee also: help look, help recall, help map",
-
   "map": "Map Command\n\nUsage: map\n\nDisplay an ASCII map of your current area, showing rooms and exits\nyou have explored.\n\nSee also: help look, help exits, help areas",
-
   "scan": "Scan Command\n\nUsage: scan\n\nLook into adjacent rooms in all directions for visible mobs and players.\nShows what is in the next room in each available exit direction.\n\nSee also: help look, help spot, help search, help where",
-
   "where": "Where Command\n\nUsage: where\n       where <mob or player name>\n\nLocate mobs or players in the world.\n  where            - Show all players and their current areas\n  where <name>     - Find a specific mob or player\n\nSee also: help who, help scan, help map",
-
   "achievements": "Achievements Command\n\nUsage: achievements\n       achieve\n\nView your earned achievements and available achievement goals.\nAchievements grant XP bonuses and titles.\n\nSee also: help score, help progression, help levelup",
-
-  "progression": "Progression Command\n\nUsage: progression\n\nDisplay the D&D 3.5 character advancement chart showing feat levels,\nability score increases, and skill point totals by level.\n\nSee also: help levelup, help skills, help score",
-
   "skillcheck": "Skill Check Command\n\nUsage: check <skill name> [dc]\n\nAttempt a direct skill check. If a DC is given, reports success or failure.\n\nExamples:\n  check climb 15\n  check spot\n\nSee also: help skills, help take10, help take20, help skilllist",
-
   "reputation": "Reputation Command\n\nUsage: reputation\n       rep\n\nDisplay your reputation standings with the various factions and\norganizations in the world. Reputation affects NPC attitude,\nshop prices, and available quests.\n\nSee also: help guild, help diplomacy, help score",
-
   "remort": "Remort Command\n\nUsage: remort\n\nOnce you have reached maximum level, remorting allows you to start again\nat level 1 with bonus starting stats and a remort mark.\nEach remort increases the challenge and the rewards.\n\nSee also: help levelup, help progression, help score"
 }

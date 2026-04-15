@@ -1,0 +1,12 @@
+{
+  "_comment": "Arc checklist template for module arcs.json. Accompanies quest chains.",
+  "arc_id": "",
+  "title": "",
+  "checklist": [
+    {
+      "id": "",
+      "label": "",
+      "category": "npc_met | fact_learned | place_visited | choice_made | beat_fired"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "arcs": [
+    {
+      "arc_id": "quiet_graft",
+      "title": "The Quiet Graft",
+      "checklist": [
+        {"id": "visited_spur_tower", "label": "Arrived at Spur Tower", "category": "place_visited"},
+        {"id": "met_heln", "label": "Met Heln the archivist", "category": "npc_met"},
+        {"id": "visited_thornbend", "label": "Visited Thornbend vineyard settlement", "category": "place_visited"},
+        {"id": "heard_about_griff", "label": "Overheard caravan drivers mention Griff", "category": "fact_learned"},
+        {"id": "heard_about_michele", "label": "Overheard mention of Michele at Dry Fork", "category": "fact_learned"},
+        {"id": "met_sarre", "label": "Met Sarre Indorach in the scholar quarter", "category": "npc_met"},
+        {"id": "sensed_void_at_tower", "label": "Sensed void resonance (Domnathar) at Spur Tower", "category": "fact_learned"},
+        {"id": "noticed_maeren", "label": "Noticed Maeren in the envoy quarter", "category": "npc_met"},
+        {"id": "met_griff", "label": "Met Griff on the Long Road", "category": "npc_met"},
+        {"id": "visited_dry_fork", "label": "Visited Dry Fork Station", "category": "place_visited"},
+        {"id": "met_khadi", "label": "Met Khadi Vorlun at the weigh station", "category": "npc_met"},
+        {"id": "learned_khadi_unstrung", "label": "Sensed Khadi uses the Deceiver's Feat", "category": "fact_learned"},
+        {"id": "learned_eleven_inquiries", "label": "Learned about eleven Farborn inquiries through same cutouts", "category": "fact_learned"},
+        {"id": "learned_maeren_shrine_touch", "label": "Learned Maeren can touch shrine infrastructure", "category": "fact_learned"},
+        {"id": "found_maerens_letters", "label": "Found Maeren's unsent letters to her father", "category": "fact_learned"},
+        {"id": "traced_filing_system", "label": "Traced the 40-year filing system to the Records Adjutant", "category": "fact_learned"},
+        {"id": "found_farborn_variable_note", "label": "Found a note referencing 'the Farborn variable'", "category": "fact_learned"},
+        {"id": "met_vaerix", "label": "Confronted Vaerix Caelnorath at the top of the stairs", "category": "npc_met"},
+        {"id": "learned_vaerix_project", "label": "Understood the full scope of Vaerix's breeding project", "category": "fact_learned"},
+        {"id": "learned_posting_curated", "label": "Discovered own posting was curated by Michele/Vaerix", "category": "fact_learned"},
+        {"id": "chose_to_tell_griff", "label": "Chose to tell Griff his daughter is alive", "category": "choice_made"},
+        {"id": "chose_to_protect_maeren", "label": "Chose to protect Maeren's secret", "category": "choice_made"},
+        {"id": "chose_to_expose", "label": "Chose to expose Vaerix's operation", "category": "choice_made"},
+        {"id": "chose_to_stay_silent", "label": "Chose silence — left without acting", "category": "choice_made"},
+        {"id": "chose_to_join_vaerix", "label": "Chose to ally with Vaerix", "category": "choice_made"},
+        {"id": "chose_to_fight_vaerix", "label": "Chose to confront Vaerix by force", "category": "choice_made"},
+        {"id": "beat_reckoning", "label": "All threads converged at Spur Tower", "category": "beat_fired"},
+        {"id": "beat_griff_arrives", "label": "Griff arrived at (or near) Spur Tower", "category": "beat_fired"},
+        {"id": "beat_khadi_acts", "label": "Khadi made her decision about the file", "category": "beat_fired"},
+        {"id": "beat_sarre_learns", "label": "Sarre discovered he was a tool", "category": "beat_fired"}
+      ]
+    }
+  ]
+}

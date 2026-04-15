@@ -57,7 +57,26 @@
       "Bash(done)",
       "Bash(ipconfig)",
       "Bash(taskkill //F //IM python.exe)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(xargs cat:*)",
+      "Bash(taskkill:*)",
+      "Bash(netsh advfirewall:*)",
+      "Bash(find /c/data/workspace/OrekaMUD3/oreka_mud/data -type f -name *.json)",
+      "Bash(\"C:/data/workspace/Agamenmnon/ai_orchestrator_cli/venv/Scripts/python.exe\" main.py)",
+      "Bash(echo \"MUD started, PID: $!\")",
+      "Bash(GATEWAY_API_PORT=8300 \"C:/data/workspace/Agamenmnon/ai_orchestrator_cli/venv/Scripts/python.exe\" -m uvicorn gateway.main:app --host 127.0.0.1 --port 8300 --ws-max-size 1048576)",
+      "Bash(echo \"Gateway started, PID: $!\")",
+      "Bash(npx vite:*)",
+      "Bash(echo \"Vite client started, PID: $!\")",
+      "Bash(find /c/data/workspace/OrekaMUD3/oreka_mud -name \"*.py\" -type f ! -path \"*/__pycache__/*\" ! -path \"*/tests/*\" -exec wc -l {} +)",
+      "Bash(start:*)",
+      "Bash(tasklist /FI \"PID eq 34708\")",
+      "Bash(node node_modules/.bin/vite --host)",
+      "Bash(cmd.exe:*)",
+      "Bash(powershell:*)",
+      "Bash(timeout 3 telnet localhost 4000)",
+      "Bash(printf \"\\\\n\")",
+      "Bash(nc -w 3 localhost 4000)"
     ]
   }
 }

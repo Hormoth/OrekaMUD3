@@ -31,6 +31,7 @@ XP_TABLE = {
 class State(Enum):
     EXPLORING = 1
     COMBAT = 2
+    CHATTING = 3
 
 
 class HealthStatus(Enum):
@@ -188,7 +189,7 @@ class Character:
         self.auto_loot = False
         self.auto_gold = False
         self.aliases = {}            # Custom command aliases
-        self.practice_points = 0     # Skill practice points
+        self.practice_points = 0     # Skill points (D&D 3.5: spent on skills at level-up)
         self.trained_abilities = {}  # {ability: times_trained}
         self.brief_mode = False      # Short room descriptions
         self.compact_mode = False    # Reduce blank lines
@@ -199,12 +200,29 @@ class Character:
         self.remort_count = 0        # Number of times character has remoorted
         self.remort_pending = False  # Confirmation flag (session-only)
 
+        # Narrative progression
+        self.narrative_progress = []  # List of completed chapter IDs
+
+        # Arc tracking (BUILDOUT_ARC_MODULE) — hidden from player
+        self.arc_sheets = {}  # arc_id (str) -> ArcSheet
+
+        # PC roleplay sheet (player-authored via rpsheet command)
+        try:
+            from src.ai_schemas.pc_sheet import PcSheet
+            self.rp_sheet = PcSheet()
+        except ImportError:
+            self.rp_sheet = None
+
         # System 39: Ignore / Block (persisted)
         self.ignored_players = []    # List of player names to ignore
 
         # System 40: AFK Status (session-only, NOT persisted)
         self.afk = False             # AFK toggle
         self.afk_message = ""        # Optional AFK message
+
+        # AI Chat session (session-only, NOT persisted)
+        self.active_chat_session = None  # ChatSession object when in CHATTING state
+        self.chat_shadow = None          # ShadowPresence created for this chat
 
         # Body position (session-only, NOT persisted)
         self.position = "standing"   # standing/sitting/kneeling/resting/sleeping
@@ -515,6 +533,7 @@ class Character:
             "auto_gold": getattr(self, 'auto_gold', False),
             "aliases": getattr(self, 'aliases', {}),
             "practice_points": getattr(self, 'practice_points', 0),
+            "quest_points": getattr(self, 'quest_points', 0),
             "trained_abilities": getattr(self, 'trained_abilities', {}),
             "brief_mode": getattr(self, 'brief_mode', False),
             "compact_mode": getattr(self, 'compact_mode', False),
@@ -528,6 +547,20 @@ class Character:
             "favored_enemies": getattr(self, 'favored_enemies', []),
             # Auto-sacrifice
             "auto_sac": getattr(self, 'auto_sac', False),
+            "pending_feats": getattr(self, '_pending_feat_selection', None),
+            # Narrative progress
+            "narrative_progress": getattr(self, 'narrative_progress', []),
+            # Arc tracking (hidden from player; serialized for persistence)
+            "arc_sheets": {
+                arc_id: (sheet.to_dict() if hasattr(sheet, 'to_dict') else sheet)
+                for arc_id, sheet in (getattr(self, 'arc_sheets', {}) or {}).items()
+            },
+            # PC roleplay sheet (player-authored via rpsheet command)
+            "rp_sheet": (
+                self.rp_sheet.to_dict()
+                if getattr(self, 'rp_sheet', None) and hasattr(self.rp_sheet, 'to_dict')
+                else None
+            ),
         }
 
     @staticmethod
@@ -590,6 +623,7 @@ class Character:
         if quest_log_data:
             from src.quests import QuestLog
             char.quest_log = QuestLog.from_dict(quest_log_data)
+            char.quest_log.owner = char  # Set owner for GMCP emission
         else:
             char.quest_log = None
         char.reputation = data.get("reputation", {})
@@ -649,6 +683,7 @@ class Character:
         char.auto_gold = data.get("auto_gold", False)
         char.aliases = data.get("aliases", {})
         char.practice_points = data.get("practice_points", 0)
+        char.quest_points = data.get("quest_points", 0)
         char.trained_abilities = data.get("trained_abilities", {})
         char.brief_mode = data.get("brief_mode", False)
         char.compact_mode = data.get("compact_mode", False)
@@ -662,6 +697,34 @@ class Character:
         char.favored_enemies = data.get("favored_enemies", [])
         # Auto-sacrifice
         char.auto_sac = data.get("auto_sac", False)
+        char._pending_feat_selection = data.get("pending_feats", None)
+        # Narrative progress
+        char.narrative_progress = data.get("narrative_progress", [])
+
+        # Arc sheets (hidden from player)
+        char.arc_sheets = {}
+        try:
+            from src.ai_schemas.arc_sheet import ArcSheet
+            for arc_id, sheet_data in (data.get("arc_sheets", {}) or {}).items():
+                if isinstance(sheet_data, ArcSheet):
+                    char.arc_sheets[arc_id] = sheet_data
+                elif isinstance(sheet_data, dict):
+                    char.arc_sheets[arc_id] = ArcSheet.from_dict(sheet_data)
+        except ImportError:
+            pass  # Schemas not yet loadable — ignore
+
+        # PC roleplay sheet
+        try:
+            from src.ai_schemas.pc_sheet import PcSheet
+            rp_data = data.get("rp_sheet")
+            if isinstance(rp_data, dict):
+                char.rp_sheet = PcSheet.from_dict(rp_data)
+            elif isinstance(rp_data, PcSheet):
+                char.rp_sheet = rp_data
+            else:
+                char.rp_sheet = PcSheet()
+        except ImportError:
+            char.rp_sheet = None
 
         # Load equipment
         equipment_data = data.get("equipment", {})
@@ -673,6 +736,90 @@ class Character:
                     char.equipment[slot] = None
 
         return char
+
+    # =========================================================================
+    # Arc sheet accessors (BUILDOUT_ARC_MODULE §1.3)
+    # =========================================================================
+
+    def get_arc(self, arc_id):
+        """Return the ArcSheet for this arc_id, or None if not registered."""
+        return (getattr(self, 'arc_sheets', None) or {}).get(arc_id)
+
+    def get_checklist_item(self, arc_id, item_id):
+        """Return the ChecklistItem, or None."""
+        arc = self.get_arc(arc_id)
+        if not arc:
+            return None
+        return arc.get_item(item_id)
+
+    def check_arc_item(self, arc_id, item_id, detail=None, now=None):
+        """Flip a checklist item to checked (or detailed if detail provided).
+
+        Returns True if state changed, False otherwise. Updates timestamps
+        and auto-promotes arc.status from 'untouched' to 'aware' on first flip.
+        """
+        import time as _time
+        arc = self.get_arc(arc_id)
+        if not arc:
+            return False
+        item = arc.get_item(item_id)
+        if not item:
+            return False
+
+        ts = now if now is not None else _time.time()
+        prior_state = item.state
+        new_state = "detailed" if detail else "checked"
+
+        # Determine if this counts as an actual change
+        if detail:
+            # Detailed update is always considered a change if detail differs OR was unchecked
+            if prior_state == "detailed" and dict(item.detail) == dict(detail):
+                return False
+        else:
+            if prior_state == "checked":
+                return False
+
+        item.state = new_state
+        if detail:
+            item.detail = dict(detail)
+        if item.first_changed_at is None:
+            item.first_changed_at = ts
+        item.last_changed_at = ts
+
+        arc.last_activity_at = ts
+        if arc.status == "untouched":
+            arc.status = "aware"
+            arc.entered_at = ts
+
+        return True
+
+    def touched_arcs(self):
+        """Return list of arc_ids where any checklist item has progress."""
+        arcs = getattr(self, 'arc_sheets', None) or {}
+        return [
+            arc_id for arc_id, sheet in arcs.items()
+            if hasattr(sheet, 'has_any_progress') and sheet.has_any_progress()
+        ]
+
+    def set_arc_status(self, arc_id, status, resolution=None, now=None):
+        """Set the arc's status. Returns True if changed."""
+        import time as _time
+        arc = self.get_arc(arc_id)
+        if not arc:
+            return False
+        from src.ai_schemas.arc_sheet import ARC_STATUSES
+        if status not in ARC_STATUSES:
+            return False
+        if arc.status == status and (resolution is None or arc.resolution == resolution):
+            return False
+        arc.status = status
+        if resolution is not None:
+            arc.resolution = resolution
+        ts = now if now is not None else _time.time()
+        arc.last_activity_at = ts
+        if arc.entered_at is None and status != "untouched":
+            arc.entered_at = ts
+        return True
 
     def _init_domains(self):
         """Initialize domain powers and domain spells for this character."""
@@ -772,23 +919,7 @@ class Character:
         self.prompt = "(%RACE): AC %a HP %h/%H EXP %x>" if self.is_immortal else "AC %a HP %h/%H EXP %x>"
         self.full_prompt = "(%RACE): AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>" if self.is_immortal else "AC %a HP %h/%H EXP %x Move %v/%V Str %s Dex %d Con %c Int %i Wis %w Cha %c%s>"
 
-        # D&D 3.5e: Grant general feat at 1, 3, 6, 9, 12, 15, 18
-        if new_level in (1, 3, 6, 9, 12, 15, 18):
-            if hasattr(self, 'grant_general_feat'):
-                # If async context, schedule prompt, else just append placeholder
-                try:
-                    import asyncio
-                    loop = asyncio.get_event_loop()
-                    coro = self.grant_general_feat(self.writer, self.reader)
-                    if loop.is_running():
-                        asyncio.ensure_future(coro)
-                    else:
-                        loop.run_until_complete(coro)
-                except Exception:
-                    # Fallback: just append placeholder
-                    self.feats.append("General Feat (choose)")
-            else:
-                self.feats.append("General Feat (choose)")
+        # Feat selection is handled by cmd_levelup / cmd_feat_select
 
         # D&D 3.5e: Ability score increase at 4, 8, 12, 16, 20
         if new_level in (4, 8, 12, 16, 20):
@@ -895,6 +1026,16 @@ class Character:
         penalty = armor_penalty if skill in armor_check_skills else 0
         roll = random.randint(1, 20)
         ability_mod = ability_mods.get(skill, 0)
+        # Fallback: Craft (*) and Knowledge (*) use INT, Profession (*) uses WIS, Perform (*) uses CHA
+        if ability_mod == 0:
+            if skill.startswith("Craft ("):
+                ability_mod = (self.int_score - 10) // 2
+            elif skill.startswith("Knowledge ("):
+                ability_mod = (self.int_score - 10) // 2
+            elif skill.startswith("Profession ("):
+                ability_mod = (self.wis_score - 10) // 2
+            elif skill.startswith("Perform ("):
+                ability_mod = (self.cha_score - 10) // 2
         # Apply feat bonuses to skill checks (Skill Focus, Acrobatic, etc.)
         feat_bonus = 0
         from src.feats import FEATS
@@ -972,8 +1113,15 @@ class Character:
                 rn = rn[:22] + "..."
             room_name = f" {DIM}{rn}{R}"
 
-        # Build prompt
-        return f"\n{hp_str} {ac_str} {mv_str} {gold_str} {xp_str}{spell_str}{cond_str}{room_name}\n>"
+        # Exits line in yellow
+        exits_str = ""
+        if hasattr(self, 'room') and self.room and hasattr(self.room, 'exits'):
+            exit_names = list(self.room.exits.keys())
+            if exit_names:
+                exits_str = f"{YEL}[Exits: {', '.join(exit_names)}]{R}\n"
+
+        # Build prompt — exits in yellow above the stat line
+        return f"\n{exits_str}{hp_str} {ac_str} {mv_str} {gold_str} {xp_str}{spell_str}{cond_str}\n> \n"
     
     def toggle_stats(self):
         self.show_all = not self.show_all
@@ -996,10 +1144,22 @@ class Character:
     def add_condition(self, condition):
         """Add a status condition (e.g., 'prone', 'flanking', 'shaken')."""
         self.conditions.add(condition)
+        # GMCP: notify client of condition change
+        try:
+            from src.gmcp import emit_status
+            emit_status(self)
+        except Exception:
+            pass
 
     def remove_condition(self, condition):
         """Remove a status condition."""
         self.conditions.discard(condition)
+        # GMCP: notify client of condition change
+        try:
+            from src.gmcp import emit_status
+            emit_status(self)
+        except Exception:
+            pass
 
     def has_condition(self, condition):
         """Check if the character has a given condition."""
@@ -1149,6 +1309,21 @@ class Character:
         elif status == HealthStatus.DEAD:
             msg += f"\n{self.name} has died!"
 
+        # Shadow Chat Game world bleed: notify the dream
+        if amount > 0 and getattr(self, 'state', None) and self.state.name == 'CHATTING':
+            session = getattr(self, 'active_chat_session', None)
+            if session:
+                session.add_world_event(
+                    f"{self.name}'s body takes {amount} damage in the waking world!"
+                )
+                # Catastrophic damage ends the chat
+                if status == HealthStatus.DEAD:
+                    try:
+                        from src.chat_session import force_end_body_death
+                        force_end_body_death(session, self)
+                    except Exception:
+                        pass
+
         return msg
 
     def heal(self, amount: int) -> str:
@@ -1208,6 +1383,7 @@ class Character:
         slot_mapping = {
             'weapon': 'main_hand',
             'shield': 'off_hand',
+            'light': 'off_hand',
             'armor': 'body',
             'helm': 'head',
             'helmet': 'head',
@@ -1234,8 +1410,8 @@ class Character:
             'shoes': 'feet',
         }
 
-        item_type = getattr(item, 'item_type', '').lower()
-        item_slot = getattr(item, 'slot', '').lower()
+        item_type = (getattr(item, 'item_type', '') or '').lower()
+        item_slot = (getattr(item, 'slot', '') or '').lower()
 
         # First check if item has explicit slot
         if item_slot and item_slot in EQUIPMENT_SLOTS:

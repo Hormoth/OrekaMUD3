@@ -72,6 +72,7 @@ RESONANCE_FEEL = {
     "void": "deliberate, predatory silence — a gap shaped like a person where something should be",
     "none": None,  # Simply not detected
     "raw_static": "overwhelming elemental force — painful and blinding at this range",
+    "echo": "a presence that feels both near and far, like a voice heard through water",
 }
 
 # Kin race names for readout
@@ -217,7 +218,7 @@ def get_kin_sense_readout(character, room):
 
     viewer_element = get_element_for_race(race)
 
-    # Gather all entities in the room (mobs + other players)
+    # Gather all entities in the room (mobs + other players + shadow presences)
     entities = []
     for mob in getattr(room, 'mobs', []):
         if getattr(mob, 'alive', True) and getattr(mob, 'hp', 1) > 0:
@@ -226,7 +227,15 @@ def get_kin_sense_readout(character, room):
         if player is not character and getattr(player, 'hp', 1) > 0:
             entities.append(player)
 
-    if not entities:
+    # Shadow presences register as "echo" resonance
+    shadows = []
+    try:
+        from src.shadow_presence import shadow_manager
+        shadows = shadow_manager.get_by_room(getattr(room, 'vnum', -1))
+    except Exception:
+        pass
+
+    if not entities and not shadows:
         return ""
 
     # Check for room-level suppression (False Silence zone, Domnathar metal)
@@ -340,8 +349,45 @@ def get_kin_sense_readout(character, room):
         else:
             lines.append(f"{wild_count} wild presences — alive but not Kin.")
 
+    # Echo resonance (shadow presences — dreaming players in AI chat)
+    if shadows:
+        for shadow in shadows:
+            # Don't report your own shadow
+            if shadow.player_name == getattr(character, 'name', ''):
+                continue
+            lines.append(
+                f"An echo — {RESONANCE_FEEL.get('echo', 'a presence both near and far')}."
+            )
+
     if not lines:
         return ""
+
+    # GMCP: emit structured kin-sense data for the client
+    try:
+        from src.gmcp import emit_kin_sense as _gmcp_kin
+        detections = []
+        for (cat, element, race_name), count in counts.items():
+            detections.append({
+                "resonance": cat,
+                "element": element,
+                "race": race_name,
+                "count": count,
+            })
+        # Include shadow presences as echo resonance
+        for shadow in shadows:
+            if shadow.player_name != getattr(character, 'name', ''):
+                detections.append({
+                    "resonance": "echo",
+                    "element": None,
+                    "race": None,
+                    "count": 1,
+                    "name": shadow.player_name,
+                    "is_shadow": True,
+                })
+        room_mod = "suppressed" if ('false_silence' in room_flags or 'kin_sense_dead' in room_flags) else "normal"
+        _gmcp_kin(character, detections, room_modifier=room_mod, range_ft=60)
+    except Exception:
+        pass
 
     return prefix + " ".join(lines)
 

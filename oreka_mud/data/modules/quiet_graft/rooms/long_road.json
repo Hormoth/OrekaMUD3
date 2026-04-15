@@ -1,0 +1,34 @@
+{
+  "rooms": [
+    {
+      "vnum": 5260,
+      "name": "Long Road -- Junction Post",
+      "description": "A crossroads where the Long Road meets the southern trade route. A wooden post marks distances to six settlements in six directions. Caravan ruts groove the packed earth. A fire ring suggests this is where travelers camp when the next town is too far. A Farborn man sits on a crate near the fire ring, watching the road with the focused patience of someone who has been watching it for months.",
+      "exits": {"south": 5250, "north": 5240, "east": 5261},
+      "flags": ["safe", "outdoor", "road"],
+      "ambience": {
+        "mood": "quiet vigilance",
+        "sounds": ["wind through dry grass", "distant cart wheels", "the creak of a campfire ring cooling"],
+        "smells": ["road dust", "cold ash", "the faint sweetness of dried rations"],
+        "ambient_details": [
+          "The Farborn man doesn't approach. He watches. He has learned that the people who matter come to him.",
+          "Six distance markers point in six directions. The one toward Spur Tower has fresh scratches, as if someone counted the distance more than once."
+        ],
+        "npc_relevance": {"9520": "Griff. Farborn caravan-master. Maeren's father. Waiting."}
+      }
+    },
+    {
+      "vnum": 5261,
+      "name": "Long Road -- Trade Post",
+      "description": "A low adobe building where Long Road caravans resupply and exchange information. A board inside the door lists trade offers, labor requests, and -- in a bottom corner, in careful handwriting -- a description of a young Farborn woman who vanished four months ago. No name. Just a description. And a note: 'Information to Griff, Junction Post. Will pay.'",
+      "exits": {"west": 5260},
+      "flags": ["safe", "indoor", "shop"],
+      "ambience": {
+        "mood": "transactional with an undercurrent of grief",
+        "sounds": ["bartering", "the thump of goods being stacked", "someone reading the notice board aloud"],
+        "smells": ["leather", "dried spices", "road sweat"],
+        "ambient_details": ["The missing-person notice has been rewritten three times. The handwriting gets steadier each time, not shakier. That's worse."]
+      }
+    }
+  ]
+}

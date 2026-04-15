@@ -519,7 +519,7 @@ class CommandParser:
 
         parts = args.split(None, 1)
         npc_name = parts[0].lower()
-        message = parts[1] if len(parts) > 1 else "hello"
+        message = parts[1] if len(parts) > 1 else None
 
         # Find the NPC
         npc = None
@@ -530,6 +530,10 @@ class CommandParser:
 
         if not npc:
             return f"You don't see '{parts[0]}' here."
+
+        # If no message given, use functional talkto (quests, gear, dialogue)
+        if message is None:
+            return self.cmd_talkto(character, npc_name)
 
         # Use AI system for response
         from src import ai
@@ -545,6 +549,205 @@ class CommandParser:
         except Exception as e:
             # Fallback to simple response if AI fails
             return f"{npc.name} looks at you but doesn't respond."
+
+    async def cmd_chat(self, character, args):
+        """
+        Start an AI chat session with an NPC.
+        Usage: chat <npc name>
+
+        Enters Chat Mode where all input goes to AI conversation.
+        You appear as a Shadow Presence in the NPC's room.
+        Type 'endchat' to leave, or 'enter world' to materialize.
+        """
+        from src.character import State
+        from src import chat_session
+
+        if character.state == State.CHATTING:
+            return "You are already in a chat session. Type 'endchat' to leave first."
+        if character.state == State.COMBAT:
+            return "You can't start a conversation while in combat!"
+
+        if not args:
+            # List eligible NPCs
+            mobs = [m for m in getattr(character.room, 'mobs', [])
+                    if getattr(m, 'alive', True) and m.is_chat_eligible()]
+            if not mobs:
+                return "There's no one here to chat with."
+            names = [m.name for m in mobs]
+            return f"You can chat with: {', '.join(names)}\nUsage: chat <name>"
+
+        npc_name = args.lower()
+        npc = None
+        for mob in getattr(character.room, 'mobs', []):
+            if getattr(mob, 'alive', True) and npc_name in mob.name.lower():
+                npc = mob
+                break
+
+        if not npc:
+            return f"You don't see '{args}' here."
+
+        if not npc.is_chat_eligible():
+            return f"{npc.name} doesn't seem interested in conversation."
+
+        # Start the session
+        session = chat_session.start_session(character, npc, character.room)
+
+        # Build output
+        DIM = "\033[2m"
+        PURPLE = "\033[1;35m"
+        RESET = "\033[0m"
+        CYAN = "\033[0;36m"
+
+        lines = []
+        lines.append(f"\n{PURPLE}  ~ You feel yourself drift...{RESET}\n")
+
+        # Scene narration from ai_persona or room
+        ai_persona = getattr(npc, 'ai_persona', None)
+        if ai_persona and ai_persona.get("opening_narration"):
+            lines.append(f"{DIM}  {ai_persona['opening_narration']}{RESET}\n")
+        else:
+            room_desc = getattr(character.room, 'description', '')
+            if room_desc and len(room_desc) < 200:
+                lines.append(f"{DIM}  {room_desc}{RESET}\n")
+
+        # NPC greeting (from session opening)
+        if session.conversation_history:
+            greeting = session.conversation_history[0].get("content", "")
+            lines.append(f"  {CYAN}{npc.name}{RESET} says: \"{greeting}\"\n")
+
+        # Notify other players in the room
+        for p in character.room.players:
+            if p is not character and hasattr(p, '_writer'):
+                try:
+                    p._writer.write(
+                        f"\n{PURPLE}  ~ A dreaming presence of {character.name} "
+                        f"forms, their attention fixed on {npc.name}.{RESET}\n"
+                    )
+                except Exception:
+                    pass
+
+        # Emit GMCP
+        try:
+            from src.gmcp import emit_chat_start
+            emit_chat_start(character, npc.name, npc.vnum, character.room.vnum)
+        except Exception:
+            pass
+
+        return "\n".join(lines)
+
+    def cmd_endchat(self, character, args):
+        """
+        End the current AI chat session.
+        Usage: endchat
+        """
+        from src.character import State
+        from src import chat_session
+
+        if character.state != State.CHATTING or not character.active_chat_session:
+            return "You're not in a chat session."
+
+        session = character.active_chat_session
+        npc_name = session.npc_name
+
+        PURPLE = "\033[1;35m"
+        CYAN = "\033[0;36m"
+        RESET = "\033[0m"
+
+        # Get farewell
+        farewell = None
+        try:
+            # Check for ai_persona farewell
+            for mob in getattr(character.room, 'mobs', []):
+                if getattr(mob, 'vnum', None) == session.npc_vnum:
+                    ai_persona = getattr(mob, 'ai_persona', None)
+                    if ai_persona and ai_persona.get("farewell_line"):
+                        farewell = ai_persona["farewell_line"]
+                    break
+        except Exception:
+            pass
+
+        if not farewell:
+            farewell = "Until next time, traveler."
+
+        # End session
+        chat_session.end_session(session, character)
+
+        # Notify room
+        for p in character.room.players:
+            if p is not character and hasattr(p, '_writer'):
+                try:
+                    p._writer.write(
+                        f"\n{PURPLE}  ~ The dreaming presence of {character.name} "
+                        f"fades like smoke.{RESET}\n"
+                    )
+                except Exception:
+                    pass
+
+        # Emit GMCP
+        try:
+            from src.gmcp import emit_chat_end
+            emit_chat_end(character, session.session_id)
+        except Exception:
+            pass
+
+        return (f"\n  {CYAN}{npc_name}{RESET} says: \"{farewell}\"\n\n"
+                f"{PURPLE}  ~ You return to the waking world.{RESET}\n")
+
+    def cmd_enter_world(self, character, args):
+        """
+        Materialize from dream into the NPC's physical room.
+        Costs 10% max HP. 1-hour cooldown.
+        Usage: enter world
+        """
+        from src.character import State
+        from src import chat_session
+
+        if character.state != State.CHATTING or not character.active_chat_session:
+            return "You're not in a chat session."
+
+        session = character.active_chat_session
+        anchor_vnum = session.anchor_room_vnum
+        anchor_name = session.anchor_room_name
+
+        # Use the new materialize() function with HP cost + cooldown
+        result = chat_session.materialize(session, character, self.world)
+
+        # Emit GMCP
+        try:
+            from src.gmcp import emit_chat_materialized
+            emit_chat_materialized(character, anchor_vnum, anchor_name)
+        except Exception:
+            pass
+
+        return f"\n{result}\n  {anchor_name} surrounds you fully.\n"
+
+    def cmd_chatstatus(self, character, args):
+        """
+        Admin: show all active chat sessions.
+        Usage: @chatstatus
+        """
+        if not getattr(character, 'is_immortal', False):
+            return "Huh?"
+
+        from src.shadow_presence import shadow_manager
+        import time
+
+        shadows = shadow_manager.get_all()
+        if not shadows:
+            return "No active chat sessions."
+
+        lines = ["=== Active Chat Sessions ==="]
+        for pid, shadow in shadows.items():
+            duration = int(time.time() - shadow.created_at)
+            minutes = duration // 60
+            seconds = duration % 60
+            src = "telnet" if shadow.is_telnet else "veil"
+            lines.append(
+                f"  {shadow.player_name} <-> {shadow.npc_name} "
+                f"(room {shadow.room_vnum}, {minutes}m{seconds}s, {src})"
+            )
+        return "\n".join(lines)
+
     def _find_shopkeeper(self, character):
         # Return the first shopkeeper mob in the room, or None
         for mob in getattr(character.room, 'mobs', []):
@@ -577,7 +780,10 @@ class CommandParser:
         if not shopkeeper.shop_inventory and hasattr(shopkeeper, 'restock_shop'):
             shopkeeper.restock_shop()
         items = shopkeeper.get_shop_items()
-        item = next((i for i in items if i.name.lower() == args.lower()), None)
+        args_lower = args.lower()
+        item = next((i for i in items if i.name.lower() == args_lower), None)
+        if not item:
+            item = next((i for i in items if args_lower in i.name.lower()), None)
         if not item:
             return f"{shopkeeper.name} does not have {args}."
         price = shopkeeper.get_buy_price(item)
@@ -595,7 +801,10 @@ class CommandParser:
             return "There is no shopkeeper here."
         if not args:
             return "Sell what? Usage: sell <item name>"
-        item = next((i for i in character.inventory if i.name.lower() == args.lower()), None)
+        args_lower = args.lower()
+        item = next((i for i in character.inventory if i.name.lower() == args_lower), None)
+        if not item:
+            item = next((i for i in character.inventory if args_lower in i.name.lower()), None)
         if not item:
             return f"You do not have {args}."
         price = shopkeeper.get_sell_price(item)
@@ -603,6 +812,108 @@ class CommandParser:
         character.inventory.remove(item)
         shopkeeper.add_shop_item(item.vnum)
         return f"You sell {item.name} for {price} gp."
+
+    def cmd_qshop(self, character, args):
+        """Browse and buy items from the Quest Dealer using quest points.
+        Usage: qshop          — list items available at your level
+               qshop buy <item> — buy an item with quest points
+               qshop points    — check your quest point balance
+        """
+        from src.items import get_item_by_vnum
+
+        # Quest point shop tiers: (min_level, max_level, cost_in_qp, item_vnums)
+        QUEST_SHOP_TIERS = [
+            # Tier 1: Level 1-5 — Masterwork gear (3-5 QP each)
+            (1, 5, [
+                (500, 3, "Masterwork Longsword"),
+                (501, 3, "Masterwork Shortsword"),
+                (502, 3, "Masterwork Battleaxe"),
+                (503, 2, "Masterwork Dagger"),
+                (504, 3, "Masterwork Leather Armor"),
+                (505, 4, "Masterwork Chain Shirt"),
+                (506, 4, "Masterwork Scale Mail"),
+                (507, 3, "Masterwork Heavy Steel Shield"),
+                (508, 4, "Masterwork Longbow"),
+            ]),
+            # Tier 2: Level 6-10 — +1 Magical gear (8-12 QP each)
+            (6, 10, [
+                (401, 10, "+1 Longsword"),
+                (510, 10, "+1 Shortsword"),
+                (511, 10, "+1 Battleaxe"),
+                (512, 8, "+1 Dagger"),
+                (516, 10, "+1 Longbow"),
+                (402, 10, "+1 Chain Shirt"),
+                (513, 8, "+1 Leather Armor"),
+                (514, 10, "+1 Scale Mail"),
+                (515, 10, "+1 Heavy Steel Shield"),
+                (403, 8, "Cloak of Resistance +1"),
+                (405, 10, "Ring of Protection +1"),
+                (406, 10, "Amulet of Natural Armor +1"),
+            ]),
+            # Tier 3: Level 11-15 — +2 Magical gear (18-25 QP each)
+            (11, 15, [
+                (520, 20, "+2 Longsword"),
+                (521, 18, "+2 Chain Shirt"),
+                (522, 18, "+2 Heavy Steel Shield"),
+                (523, 15, "Cloak of Resistance +2"),
+                (524, 22, "Ring of Protection +2"),
+                (525, 20, "Gauntlets of Ogre Power"),
+            ]),
+        ]
+
+        args = (args or "").strip()
+        qp = getattr(character, 'quest_points', 0)
+
+        if args.lower() == "points" or args.lower() == "balance":
+            return f"You have {qp} quest points."
+
+        # Find which tiers the player can access
+        level = getattr(character, 'level', 1)
+        available = []
+        for min_lv, max_lv, items in QUEST_SHOP_TIERS:
+            if level >= min_lv:
+                for vnum, cost, name in items:
+                    available.append((vnum, cost, name, f"Lv{min_lv}-{max_lv}"))
+
+        if args.lower().startswith("buy "):
+            buy_name = args[4:].strip().lower()
+            match = None
+            for vnum, cost, name, tier in available:
+                if name.lower() == buy_name or buy_name in name.lower():
+                    match = (vnum, cost, name, tier)
+                    break
+            if not match:
+                return f"Item '{args[4:].strip()}' not found in the quest shop."
+            vnum, cost, name, tier = match
+            if qp < cost:
+                return f"You need {cost} quest points for {name}. You have {qp}."
+            item = get_item_by_vnum(vnum)
+            if not item:
+                return f"Error: Item {name} not found in database."
+            character.quest_points = qp - cost
+            character.inventory.append(item)
+            return f"You redeem {cost} quest points for {name}! (Remaining: {character.quest_points} QP)"
+
+        # Default: show shop
+        if not available:
+            return "The quest shop has no items available at your level yet."
+
+        YEL = "\033[1;33m"
+        CYN = "\033[1;36m"
+        WHT = "\033[1;37m"
+        R = "\033[0m"
+        lines = [f"{WHT}=== Quest Dealer ==={R}"]
+        lines.append(f"{YEL}Your quest points: {qp}{R}")
+        lines.append(f"{YEL}+------+-----+----------------------------------+{R}")
+        lines.append(f"{YEL}| {'Tier':<4} | {'QP':>3} | {'Item':<32} |{R}")
+        lines.append(f"{YEL}+------+-----+----------------------------------+{R}")
+        for vnum, cost, name, tier in available:
+            affordable = f"{CYN}" if qp >= cost else "\033[0;90m"
+            lines.append(f"{affordable}| {tier:<4} | {cost:>3} | {name:<32} |{R}")
+        lines.append(f"{YEL}+------+-----+----------------------------------+{R}")
+        lines.append(f"Use '{WHT}qshop buy <item>{R}' to purchase.")
+        return "\n".join(lines)
+
     def cmd_components(self, character, args):
         """
         Show all raw materials, spell components, and reagents available in the game.
@@ -1025,8 +1336,26 @@ class CommandParser:
             spell_deity = spell.get("deity")
             if spell_deity and (not deity or deity.lower() != spell_deity.lower()):
                 return f"Only followers of {spell_deity} may cast this spell."
-        # Deduct slot
-        character.spells_per_day[spell_level] -= 1
+        # Check for pending metamagic
+        metamagic = getattr(character, '_pending_metamagic', None)
+        meta_label = ""
+        effective_slot = spell_level
+        if metamagic and metamagic.get("spell", "").lower() == spell_name.lower():
+            effective_slot = spell_level + metamagic["slot_increase"]
+            meta_label = f" [{metamagic['type'].title()}]"
+            # Check if character has a slot at the effective level
+            if effective_slot > 9:
+                character._pending_metamagic = None
+                return f"Metamagic would require a level {effective_slot} slot, which exceeds maximum (9)."
+            if character.spells_per_day.get(effective_slot, 0) <= 0:
+                character._pending_metamagic = None
+                return (f"Metamagic {metamagic['type']} requires a level {effective_slot} slot "
+                        f"(base {spell_level} + {metamagic['slot_increase']}). No slots available.")
+            character._pending_metamagic = None  # Consume the metamagic
+
+        # Deduct slot (at effective level if metamagic applied)
+        deduct_level = effective_slot if meta_label else spell_level
+        character.spells_per_day[deduct_level] = character.spells_per_day.get(deduct_level, 0) - 1
         # Remove from prepared if prepared caster and prepared_spells is in use
         if is_prepared and hasattr(character, 'prepared_spells'):
             for lvl, spells in character.prepared_spells.items():
@@ -1034,14 +1363,16 @@ class CommandParser:
                     character.prepared_spells[lvl].remove(spell_name)
                     break
 
-        # Execute the spell effect
-        effect_result = self._execute_spell(character, spell_name, args, spell_level)
+        # Execute the spell effect (pass metamagic info)
+        effect_result = self._execute_spell(character, spell_name, args, spell_level,
+                                            metamagic=metamagic if meta_label else None)
 
         # Add slot info
-        slots_remaining = character.spells_per_day.get(spell_level, 0)
-        return f"{effect_result}\nSlots left for level {spell_level}: {slots_remaining}"
+        slots_remaining = character.spells_per_day.get(deduct_level, 0)
+        meta_msg = f" (Metamagic: {metamagic['type']})" if meta_label else ""
+        return f"{effect_result}{meta_msg}\nSlots left for level {deduct_level}: {slots_remaining}"
 
-    def _execute_spell(self, caster, spell_name, args, spell_level):
+    def _execute_spell(self, caster, spell_name, args, spell_level, metamagic=None):
         """Execute the actual spell effect - damage, healing, buffs, conditions."""
         import random
         from src.spells import (
@@ -1217,6 +1548,17 @@ class CommandParser:
             else:
                 damage, dice_str = calculate_spell_damage(caster, spell.damage_dice, char_class)
 
+                # Apply metamagic to damage
+                if metamagic:
+                    if metamagic["type"] == "empower":
+                        damage = int(damage * 1.5)
+                        dice_str = f"{dice_str} [Empowered x1.5]"
+                    elif metamagic["type"] == "maximize":
+                        # Maximize: use max value of each die
+                        max_dmg = spell.damage_dice[0] * spell.damage_dice[1] + spell.damage_dice[2]
+                        damage = max_dmg * min(caster_level, spell.damage_dice[3]) if len(spell.damage_dice) > 3 else max_dmg
+                        dice_str = f"{dice_str} [Maximized]"
+
                 for t in targets_hit:
                     final_damage = damage
 
@@ -1281,6 +1623,14 @@ class CommandParser:
                 target = caster
 
             healing, dice_str = calculate_healing(caster, spell.healing_dice, char_class)
+            # Apply metamagic to healing
+            if metamagic:
+                if metamagic["type"] == "empower":
+                    healing = int(healing * 1.5)
+                    dice_str = f"{dice_str} [Empowered x1.5]"
+                elif metamagic["type"] == "maximize":
+                    healing = spell.healing_dice[0] * spell.healing_dice[1] + spell.healing_dice[2]
+                    dice_str = f"{dice_str} [Maximized]"
             old_hp = target.hp
             target.hp = min(target.max_hp, target.hp + healing)
             actual_heal = target.hp - old_hp
@@ -1304,6 +1654,9 @@ class CommandParser:
             # Apply buff effects
             buff_desc = []
             duration_rounds = spell.duration_rounds if spell.duration_rounds > 0 else caster_level * 10
+            # Apply metamagic to duration
+            if metamagic and metamagic["type"] == "extend":
+                duration_rounds *= 2
 
             for buff_name, buff_value in spell.buff_effects.items():
                 target.active_buffs[buff_name] = {
@@ -1517,7 +1870,11 @@ class CommandParser:
             "companion": self.cmd_companion,
             "quest": self.cmd_questpage,
             "levelup": self.cmd_levelup,
+            "feat": self.cmd_feat_select,
             "recall": self.cmd_recall,
+            "qshop": self.cmd_qshop,
+            "questshop": self.cmd_qshop,
+            "chapel": self.cmd_chapel,
             "@dig": self.cmd_dig,
             "@desc": self.cmd_desc,
             "@exit": self.cmd_exit,
@@ -1567,6 +1924,12 @@ class CommandParser:
             "talk": self.cmd_talk,
             "ask": self.cmd_talk,
             "converse": self.cmd_talk,
+            # AI Chat session commands
+            "chat": self.cmd_chat,
+            "endchat": self.cmd_endchat,
+            "enterworld": self.cmd_enter_world,
+            "enter": self.cmd_enter_world,
+            "@chatstatus": self.cmd_chatstatus,
             # AI configuration commands (admin)
             "@ai": self.cmd_ai_config,
             "@aimodel": self.cmd_ai_model,
@@ -1710,6 +2073,8 @@ class CommandParser:
             "gtell": self.cmd_gtell,
             # Crafting (Phase 3)
             "craft": self.cmd_craft,
+            "scribe": self.cmd_scribe,
+            "brew": self.cmd_brew,
             "recipes": self.cmd_recipes,
             # Mount system (System 27)
             "mount": self.cmd_mount,
@@ -1758,7 +2123,7 @@ class CommandParser:
             "me": self.cmd_emote,
             # Speedwalk (System 9)
             "speedwalk": self.cmd_speedwalk,
-            "sw": self.cmd_speedwalk,
+            # "sw" reserved for southwest direction — use "speedwalk" for speedwalking
             "walk": self.cmd_speedwalk,
             # Alias system (System 10)
             "alias": self.cmd_alias,
@@ -1847,6 +2212,26 @@ class CommandParser:
             "leaderboard": self.cmd_leaderboard,
             "top": self.cmd_leaderboard,
             "rankings": self.cmd_leaderboard,
+            # Housing system (full)
+            "house": self.cmd_house,
+            "housing": self.cmd_house,
+            "furnish": self.cmd_furnish,
+            "storage": self.cmd_storage,
+            # Story / Narrative
+            "story": self.cmd_story,
+            "chapters": self.cmd_story,
+            "lore": self.cmd_lore,
+            # Account management
+            "changepassword": self.cmd_changepassword,
+            "passwd": self.cmd_changepassword,
+            "deletechar": self.cmd_deletechar,
+            # Metamagic
+            "metamagic": self.cmd_metamagic,
+            "meta": self.cmd_metamagic,
+            # Area resets (admin)
+            "@resets": self.cmd_admin_resets,
+            # Veil whitelist (admin)
+            "@veil": self.cmd_admin_veil,
             # Class ability commands
             "rage": self.cmd_rage,
             "inspire": self.cmd_inspire,
@@ -1859,6 +2244,16 @@ class CommandParser:
             "loh": self.cmd_layonhands,
             "favoredenemy": self.cmd_favoredenemy,
             "fe": self.cmd_favoredenemy,
+            # RP say (triggers NPC AI responses)
+            "rpsay": self.cmd_rpsay,
+            "rp": self.cmd_rpsay,
+            # RP sheet (player-authored bio for NPC LLM context)
+            "rpsheet": self.cmd_rpsheet,
+            # Arc tracking admin (immortal-only)
+            "@arc": self.cmd_admin_arc,
+            # Shadow Chat Game intrusion mechanics
+            "eavesdrop": self.cmd_eavesdrop,
+            "disturb": self.cmd_disturb,
             # Communication commands
             "tell": self.cmd_tell,
             "whisper": self.cmd_whisper,
@@ -1867,7 +2262,7 @@ class CommandParser:
             "yell": self.cmd_shout,
             "ooc": self.cmd_ooc,
             "global": self.cmd_ooc,
-            "chat": self.cmd_ooc,
+            "globalchat": self.cmd_ooc,
             # Examine / Inspect
             "examine": self.cmd_examine,
             "exam": self.cmd_examine,
@@ -2073,20 +2468,34 @@ class CommandParser:
             return "Usage: @flag <flag> [on|off]"
 
     def cmd_recall(self, character, args):
-        """Teleports the player to the center room of the chapel (Central Aetherial Altar)."""
+        """Teleports the player to the city center (Artisan Square)."""
         death_check = self._check_incapacitated(character)
         if death_check:
             return "You are dead! Use 'respawn' instead of recall."
-        center_vnum = 1000
+        center_vnum = 4086  # Artisan Square — city hub
         if center_vnum not in self.world.rooms:
-            return "Recall failed: Chapel center room not found."
-        # Remove from current room
+            return "Recall failed: City center not found."
         if character in character.room.players:
             character.room.players.remove(character)
-        # Move to center room
         character.room = self.world.rooms[center_vnum]
         character.room.players.append(character)
-        return f"You are enveloped in shimmering light and find yourself at the {character.room.name}."
+        look = self.cmd_look(character, "")
+        return f"You are enveloped in shimmering light and find yourself at {character.room.name}.\n{look}"
+
+    def cmd_chapel(self, character, args):
+        """Teleports the player to the Chapel (newbie area)."""
+        death_check = self._check_incapacitated(character)
+        if death_check:
+            return "You are dead! Use 'respawn' instead."
+        chapel_vnum = 1000  # Central Aetherial Altar
+        if chapel_vnum not in self.world.rooms:
+            return "Chapel not found."
+        if character in character.room.players:
+            character.room.players.remove(character)
+        character.room = self.world.rooms[chapel_vnum]
+        character.room.players.append(character)
+        look = self.cmd_look(character, "")
+        return f"You feel a pull toward the sacred altar and find yourself at {character.room.name}.\n{look}"
 
     # --- Immortal/Builder command helpers ---
     def _immortal_only(self, character):
@@ -3203,8 +3612,39 @@ class CommandParser:
             lines.append("Quest Log: None")
         return "\n".join(lines)
 
+    # All known help topics for prefix matching
+    _HELP_TOPICS = {
+        "prompt", "combat", "maneuvers", "maneuver", "chat", "movement",
+        "feats", "death", "conditions", "ac", "xp", "kill", "flee",
+        "target", "autoattack", "queue", "fullattack", "powerattack",
+        "combatexpertise", "disarm", "trip", "bullrush", "grapple",
+        "overrun", "sunder", "feint", "whirlwind", "springattack",
+        "stunningfist", "gdamage", "gpin", "gescape", "cast", "spells",
+        "spellinfo", "spellbook", "prepare", "domains", "components",
+        "inventory", "equipment", "wear", "remove", "get", "drop",
+        "loot", "corpses", "shops", "buy", "sell", "list", "appraise",
+        "give", "gold", "score", "stats", "skills", "rest", "respawn",
+        "levelup", "progression", "say", "tell", "reply", "emote",
+        "global", "shout", "ooc", "who", "talk", "quest", "time",
+        "rpsheet", "rpsay", "metamagic", "housing", "story", "lore",
+        "achievements", "weather", "faction", "religion", "eavesdrop",
+        "disturb",
+    }
+
     def cmd_help(self, character, args):
         topic = args.strip().lower() if args else None
+
+        # Prefix matching on help topics: "help skil" -> "help skills"
+        if topic and topic not in self._HELP_TOPICS:
+            # Also check data-driven topics
+            all_topics = set(self._HELP_TOPICS)
+            if hasattr(self, 'world') and self.world and hasattr(self.world, 'help_topics'):
+                all_topics.update(self.world.help_topics.keys())
+            matches = [t for t in all_topics if t.startswith(topic)]
+            if len(matches) == 1:
+                topic = matches[0]
+            elif len(matches) > 1 and len(matches) <= 8:
+                return f"Which help topic? {', '.join(sorted(matches))}"
 
         # Check data-driven help topics first
         if topic and hasattr(self, 'world') and self.world and hasattr(self.world, 'help_topics'):
@@ -3319,6 +3759,15 @@ class CommandParser:
             return death_check
         if not args:
             return "Get what?"
+
+        # Redirect "get all corpse", "get all from corpse", etc. to loot
+        args_lower = args.lower()
+        if "corpse" in args_lower:
+            corpses = getattr(character.room, 'corpses', [])
+            if corpses:
+                if "all" in args_lower:
+                    return self.cmd_loot(character, "all")
+                return self.cmd_loot(character, "")
 
         # Support "get <item> <container>" or "get <item> in <container>"
         parts = args.split()
@@ -3643,7 +4092,8 @@ class CommandParser:
 
             return f"You don't see '{args.strip()}' here."
 
-        desc = character.room.description
+        # Room name as heading
+        desc = f"\033[1;33m{character.room.name}\033[0m\n{character.room.description}"
         # Add time-based atmospheric description
         game_time = get_game_time()
         if game_time.is_nighttime():
@@ -3705,6 +4155,16 @@ class CommandParser:
             god_msgs = wg.get_room_presence_messages(character, character.room.vnum)
             if god_msgs:
                 desc += "\n\n" + "\n".join(god_msgs)
+        except Exception:
+            pass
+
+        # Wandering townsfolk
+        try:
+            from src.townsfolk import get_townsfolk_manager
+            folk = get_townsfolk_manager().get_townsfolk_in_room(character.room.vnum)
+            if folk:
+                folk_lines = [f"\033[0;90m{npc.name.capitalize()} is here.\033[0m" for npc in folk]
+                desc += "\n\n" + "\n".join(folk_lines)
         except Exception:
             pass
 
@@ -3900,20 +4360,16 @@ class CommandParser:
         # Return to sender
         return message
 
-    def cmd_chat(self, character, args):
-        """Alias for global chat."""
-        return self.cmd_global(character, args)
-
     def cmd_shout(self, character, args):
         """Shout something that can be heard in nearby rooms.
         Usage: shout <message>
         """
         if not args:
             return "Shout what?"
-        from src.chat import format_shout, broadcast_to_room
+        from src.chat import format_shout, broadcast_to_area
         message = format_shout(character, args)
-        # Broadcast to current room (TODO: expand to nearby rooms)
-        broadcast_to_room(character.room, message, exclude=character)
+        # Broadcast to nearby rooms (radius 3)
+        broadcast_to_area(character.room, message, exclude=character, radius=3)
         # Return to shouter
         return f"You shout, '{args}'"
 
@@ -3976,27 +4432,67 @@ class CommandParser:
                 if idle_str:
                     tags.append(idle_str)
 
-            # Format: [Lv## Class    ] Name Title (Race)
-            level_str = str(player.level).zfill(2)
-            class_name = (player.char_class or "Unknown")[:8]
-            bracket = f"[Lv{level_str} {class_name:<8}]"
-            name_part = player.name
-            title_part = getattr(player, 'title', None) or ""
-            race_part = f"({player.race})" if player.race else ""
+            level_str = str(player.level)
+
+            # Race abbreviation
+            race_abbrevs = {
+                "Taraf-Imro Human": "T-I Hum", "Eruskan Human": "Eru Hum",
+                "Hasura Elf": "Has Elf", "Kovaka Elf": "Kov Elf",
+                "Pasua Elf": "Pas Elf", "Na'wasua Elf": "Naw Elf",
+                "Visetri Dwarf": "Vis Dwf", "Pekakarlik Dwarf": "Pek Dwf",
+                "Ordan Half-Elf": "Ord H-E", "Valosi Half-Elf": "Val H-E",
+                "Half-Giant": "H-Giant", "Human": "Human",
+            }
+            race_full = player.race or "Unknown"
+            race_str = race_abbrevs.get(race_full, race_full[:7])
+
+            # Class abbreviation
+            class_abbrevs = {
+                "Fighter": "Ftr", "Barbarian": "Bbn", "Bard": "Brd",
+                "Cleric": "Clr", "Druid": "Drd", "Magi": "Mag",
+                "Monk": "Mnk", "Paladin": "Pal", "Ranger": "Rgr",
+                "Rogue": "Rog", "Sorcerer": "Sor", "Wizard": "Wiz",
+                "Adventurer": "Adv",
+            }
+            class_full = player.char_class or "Unknown"
+            class_str = class_abbrevs.get(class_full, class_full[:3])
+
+            # Name and title combined
+            name_str = player.name
+            title = getattr(player, 'title', None) or ""
+            if title:
+                name_str = f"{player.name} {title}"
             tag_str = " ".join(tags)
-            right_side = " ".join(filter(None, [name_part, title_part, race_part, tag_str]))
-            lines.append(f"  {bracket} {right_side}")
+            if tag_str:
+                name_str = f"{name_str} {tag_str}"
+
+            lines.append((level_str, race_str, class_str, name_str))
 
         if not lines:
             if level_min is not None:
                 return f"No players online in level range {level_min}-{level_max}."
             return "No players online."
 
-        header = "Players Online:"
+        # Build table
+        YEL = "\033[1;33m"
+        WHT = "\033[1;37m"
+        CYN = "\033[1;36m"
+        R = "\033[0m"
+        sep = f"{YEL}+-----+---------+-----+------------------------------------------+{R}"
+        hdr = f"{YEL}| {'Lv':>3} | {'Race':<7} | {'Cls':<3} | {'Name':<40} |{R}"
+        result = []
         if level_min is not None:
-            header = f"Players Online (levels {level_min}-{level_max}):"
-        footer = f"{count} player{'s' if count != 1 else ''} online."
-        return header + "\n" + "\n".join(lines) + "\n" + footer
+            result.append(f"{WHT}Players Online (levels {level_min}-{level_max}):{R}")
+        else:
+            result.append(f"{WHT}Players Online:{R}")
+        result.append(sep)
+        result.append(hdr)
+        result.append(sep)
+        for lv, race, cls, name in lines:
+            result.append(f"{CYN}| {lv:>3} | {race:<7} | {cls:<3} | {name:<40} |{R}")
+        result.append(sep)
+        result.append(f"{WHT}{count} player{'s' if count != 1 else ''} online.{R}")
+        return "\n".join(result)
 
     def cmd_kill(self, character, args):
         """Attack a mob or player.
@@ -4004,6 +4500,11 @@ class CommandParser:
         """
         if not args:
             return "Kill whom?"
+
+        # Can't attack while in AI chat
+        from src.character import State
+        if character.state == State.CHATTING:
+            return "You're lost in conversation. Type 'endchat' to return to the world."
 
         # Check if dead/incapacitated
         death_check = self._check_incapacitated(character)
@@ -4024,14 +4525,18 @@ class CommandParser:
 
         target = None
         is_pvp = False
+        args_lower = args.lower()
 
-        # First check mobs
-        target = next((m for m in character.room.mobs if m.name.lower() == args.lower() and m.alive), None)
+        # First check mobs (partial name matching)
+        for m in character.room.mobs:
+            if m.alive and (m.name.lower() == args_lower or args_lower in m.name.lower()):
+                target = m
+                break
 
-        # If no mob found, check players (PvP)
+        # If no mob found, check players (PvP, partial name matching)
         if not target:
             for player in character.room.players:
-                if player.name.lower() == args.lower():
+                if player.name.lower() == args_lower or args_lower in player.name.lower():
                     # Can't attack yourself
                     if player == character:
                         return "You can't attack yourself!"
@@ -4392,6 +4897,10 @@ class CommandParser:
         return "You fail to pick the lock."
 
     def cmd_move(self, character, args):
+        # Can't move while in AI chat session
+        from src.character import State
+        if character.state == State.CHATTING:
+            return "You're lost in conversation. Type 'endchat' to return to the world."
         # Check if dead/incapacitated
         death_check = self._check_incapacitated(character)
         if death_check:
@@ -4515,6 +5024,69 @@ class CommandParser:
                     effect_msgs = le.on_room_enter(character, new_room)
                     for emsg in effect_msgs:
                         result += f"\n{emsg}"
+                except Exception:
+                    pass
+
+                # NPC greetings — friendly NPCs greet players on entry
+                import random as _rng
+                for mob in new_room.mobs:
+                    if not getattr(mob, 'alive', True):
+                        continue
+                    flags = getattr(mob, 'flags', [])
+                    # Shopkeepers, trainers, innkeepers, and no_attack NPCs greet
+                    if any(f in flags for f in ('shopkeeper', 'trainer', 'no_attack')):
+                        if _rng.random() < 0.4:  # 40% chance to greet
+                            dialogue = getattr(mob, 'dialogue', None)
+                            if dialogue:
+                                # Extract first sentence of dialogue (split on ". " to avoid "I..." truncation)
+                                clean = dialogue.strip('"').strip("'")
+                                parts = clean.split('. ')
+                                greeting = parts[0].rstrip('.') + '.'
+                                # If greeting is too short, grab more
+                                if len(greeting) < 10 and len(parts) > 1:
+                                    greeting = '. '.join(parts[:2]).rstrip('.') + '.'
+                                if len(greeting) > 80:
+                                    greeting = greeting[:77] + '...'
+                                result += f"\n{mob.name} says: \"{greeting}\""
+
+                # GMCP: emit room info + mobs on room change
+                try:
+                    from src.gmcp import emit_room, emit_room_mobs
+                    emit_room(character, new_room)
+                    emit_room_mobs(character, new_room)
+                except Exception:
+                    pass
+
+                # Track rooms visited for achievements
+                if hasattr(character, 'rooms_visited'):
+                    character.rooms_visited.add(new_vnum)
+
+                # Narrative hooks on room entry
+                try:
+                    from src.narrative import get_narrative_manager
+                    nm = get_narrative_manager()
+                    narr_msgs = nm.on_enter_room(character, new_room)
+                    if narr_msgs:
+                        for nmsg in narr_msgs:
+                            text, rewards = nm.trigger_chapter(character, nmsg)
+                            result += f"\n{text}"
+                            if rewards and "xp" in rewards:
+                                character.xp = getattr(character, 'xp', 0) + rewards["xp"]
+                                result += f"\nGained {rewards['xp']} XP!"
+                            if rewards and "title" in rewards:
+                                if not hasattr(character, 'titles'):
+                                    character.titles = []
+                                if rewards["title"] not in character.titles:
+                                    character.titles.append(rewards["title"])
+                                result += f"\nEarned title: {rewards['title']}"
+                except Exception:
+                    pass
+
+                # Check achievements on room entry
+                try:
+                    ach_msgs = self.check_achievements(character)
+                    for amsg in ach_msgs:
+                        result += f"\n{amsg}"
                 except Exception:
                     pass
 
@@ -4989,38 +5561,68 @@ class CommandParser:
 
     def cmd_levelup(self, character, args):
         """
-        Level up the character by 1 and trigger Bonus Feat selection if eligible.
+        Level up the character. Supports multiclassing.
+        Usage: levelup [class]  — e.g. 'levelup' to stay in current class, 'levelup Rogue' to multiclass.
+        If a bonus feat is earned, use 'feat <name or number>' to select it.
         """
-        import asyncio
         import random
-        old_level = getattr(character, 'class_level', 1)
-        new_level = old_level + 1
-        character.set_level(new_level)
-        # TODO: Multiclass - prompt for class change
-        # If running in async context, schedule bonus feat prompt
-        try:
-            # Use get_running_loop() to avoid deprecation warning in Python 3.10+
-            loop = asyncio.get_running_loop()
-            coro = character.check_levelup_bonus_feat(character.writer, character.reader)
-            asyncio.ensure_future(coro)
-        except RuntimeError:
-            # No running loop - we're likely in a sync test context
-            pass
-        except Exception:
-            pass
-
-        # System 13: Award practice points on level-up
         from src.classes import CLASSES
         from src.combat import get_ability_mod
-        class_data = CLASSES.get(getattr(character, 'char_class', ''), {})
-        skill_points_per_level = class_data.get('skill_points', 2)
-        int_mod = get_ability_mod(character, 'Int')
-        points_gained = max(1, skill_points_per_level + int_mod)
-        character.practice_points = getattr(character, 'practice_points', 0) + points_gained
+        from src.character import XP_TABLE
+
+        current_level = getattr(character, 'level', 1)
+        current_xp = getattr(character, 'xp', 0)
+        xp_needed = XP_TABLE.get(current_level + 1, None)
+
+        if xp_needed is not None and current_xp < xp_needed:
+            remaining = xp_needed - current_xp
+            return f"You need {remaining} more XP to reach level {current_level + 1}."
+
+        # Determine class for this level
+        target_class = getattr(character, 'char_class', 'Fighter')
+        if args and args.strip():
+            class_name = args.strip().title()
+            if class_name not in CLASSES:
+                valid = ", ".join(sorted(CLASSES.keys()))
+                return f"Unknown class '{class_name}'. Valid classes: {valid}"
+            target_class = class_name
+
+        # Apply the level
+        old_level = getattr(character, 'class_level', 1)
+        if target_class != getattr(character, 'char_class', ''):
+            # Multiclassing — track levels per class
+            class_levels = getattr(character, 'class_levels', {})
+            old_class = getattr(character, 'char_class', '')
+            if old_class and old_class not in class_levels:
+                class_levels[old_class] = old_level
+            character.char_class = target_class
+            new_class_level = class_levels.get(target_class, 0) + 1
+            class_levels[target_class] = new_class_level
+            character.class_levels = class_levels
+            character.class_level = new_class_level
+        else:
+            new_class_level = old_level + 1
+            character.class_level = new_class_level
+            class_levels = getattr(character, 'class_levels', {})
+            class_levels[target_class] = new_class_level
+            character.class_levels = class_levels
+
+        character.level = current_level + 1
+        new_level = character.level
+
+        # Update class features, spells known, spells per day
+        character.class_features = character.get_class_features()
+        if hasattr(character, '_auto_spells_known'):
+            character.spells_known = character._auto_spells_known()
+        if hasattr(character, '_auto_spells_per_day'):
+            character.spells_per_day = character._auto_spells_per_day()
+
+        class_data = CLASSES.get(target_class, {})
+        results = []
+        results.append(f"You have reached level {new_level} ({target_class} {new_class_level})!")
 
         # System 22: HP Roll on level-up
         hit_die_raw = class_data.get('hit_die', 6)
-        # Support both integer (e.g. 10) and string (e.g. "d10") hit_die formats
         if isinstance(hit_die_raw, str):
             try:
                 die_size = int(hit_die_raw.lstrip('d'))
@@ -5034,9 +5636,151 @@ class CommandParser:
         hp_gained = max(1, hp_roll + con_mod)
         character.max_hp += hp_gained
         character.hp += hp_gained
-        hp_msg = f"You roll {die_string}{con_mod:+} for HP: +{hp_gained} HP! (Max HP: {character.max_hp})"
+        results.append(f"You roll {die_string}{con_mod:+} for HP: +{hp_gained} HP! (Max HP: {character.max_hp})")
 
-        return f"You have reached level {new_level}!\n{hp_msg}\nYou gained {points_gained} practice points."
+        # Award skill points on level-up (D&D 3.5: class skill points + Int modifier, min 1)
+        skill_points_per_level = class_data.get('skill_points', 2)
+        int_mod = get_ability_mod(character, 'Int')
+        points_gained = max(1, skill_points_per_level + int_mod)
+        character.practice_points = getattr(character, 'practice_points', 0) + points_gained
+        results.append(f"You gained {points_gained} skill points. Use 'practice <skill>' to spend them.")
+
+        # Check for bonus feat (Fighter bonus feats, etc.)
+        features = class_data.get("features", {})
+        grants_feat = False
+        for lvl, feat_list in features.items():
+            if int(lvl) == new_class_level and any("Bonus Feat" in f for f in feat_list):
+                grants_feat = True
+                break
+
+        # Every 3rd character level also grants a general feat (D&D 3.5 rule)
+        if new_level % 3 == 0:
+            grants_feat = True
+
+        if grants_feat:
+            from src.feats import list_eligible_feats
+            eligible = list_eligible_feats(character)
+            if eligible:
+                character._pending_feat_selection = eligible
+                results.append("\nYou may select a Bonus Feat! Type 'feat <name or number>':")
+                for i, fname in enumerate(eligible, 1):
+                    results.append(f"  {i}. {fname}")
+
+        # Narrative level-up hook
+        try:
+            from src.narrative import get_narrative_manager
+            nm = get_narrative_manager()
+            narr_triggered = nm.on_level_up(character)
+            if narr_triggered:
+                for chapter in narr_triggered:
+                    text, rewards = nm.trigger_chapter(character, chapter)
+                    results.append(text)
+                    if rewards and "xp" in rewards:
+                        character.xp += rewards["xp"]
+                        results.append(f"Gained {rewards['xp']} XP!")
+                    if rewards and "title" in rewards:
+                        if not hasattr(character, 'titles'):
+                            character.titles = []
+                        if rewards["title"] not in character.titles:
+                            character.titles.append(rewards["title"])
+                        results.append(f"Earned title: {rewards['title']}")
+        except Exception:
+            pass
+
+        # Achievement check after level-up
+        try:
+            ach_msgs = self._check_achievements(character)
+            for amsg in ach_msgs:
+                results.append(amsg)
+        except Exception:
+            pass
+
+        # Save character
+        try:
+            character.save()
+        except Exception:
+            pass
+
+        return "\n".join(results)
+
+    def cmd_feat_select(self, character, args):
+        """Select a pending bonus feat.
+        Usage: feat <name or number>
+               feat           (show pending list)
+        If you missed selecting a feat at level-up, this command will detect it
+        and let you choose retroactively.
+        """
+        eligible = getattr(character, '_pending_feat_selection', None)
+
+        # If no pending selection, check if the player is owed any feats
+        if not eligible:
+            from src.classes import CLASSES
+            from src.feats import list_eligible_feats
+            class_data = CLASSES.get(getattr(character, 'char_class', ''), {})
+            features = class_data.get("features", {})
+            class_level = getattr(character, 'class_level', 1)
+            char_level = getattr(character, 'level', 1)
+
+            # Count how many bonus feats should have been granted
+            owed_bonus = 0
+            for lvl, feat_list in features.items():
+                if int(lvl) <= class_level and any("Bonus Feat" in f for f in feat_list):
+                    owed_bonus += 1
+            # General feats at level 1, 3, 6, 9, 12, 15, 18
+            owed_general = sum(1 for fl in [1, 3, 6, 9, 12, 15, 18] if fl <= char_level)
+
+            total_owed = owed_bonus + owed_general
+            # Subtract feats the player already has (beyond starting racial/class feats)
+            # Simple heuristic: each feat chosen counts as one
+            current_feats = len(getattr(character, 'feats', []))
+
+            if current_feats < total_owed:
+                eligible = list_eligible_feats(character)
+                if eligible:
+                    character._pending_feat_selection = eligible
+
+        if not eligible:
+            return "You have no pending feat selection."
+
+        if not args:
+            lines = ["Select a feat by name or number:"]
+            for i, fname in enumerate(eligible, 1):
+                lines.append(f"  {i}. {fname}")
+            return "\n".join(lines)
+
+        # Try number first
+        choice = args.strip()
+        selected = None
+        try:
+            idx = int(choice) - 1
+            if 0 <= idx < len(eligible):
+                selected = eligible[idx]
+        except ValueError:
+            pass
+
+        # Try name match
+        if not selected:
+            query = choice.lower()
+            for fname in eligible:
+                if query == fname.lower() or query in fname.lower():
+                    selected = fname
+                    break
+
+        if not selected:
+            return f"'{choice}' is not a valid feat. Type 'feat' to see the list."
+
+        # Grant the feat
+        if not hasattr(character, 'feats'):
+            character.feats = []
+        character.feats.append(selected)
+        character._pending_feat_selection = None
+
+        try:
+            character.save()
+        except Exception:
+            pass
+
+        return f"You have learned the feat: {selected}!"
 
     def cmd_tnl(self, character, args):
         """Show XP progress toward the next level (TNL = To Next Level).
@@ -5531,7 +6275,9 @@ class CommandParser:
         return None
 
     def cmd_practice(self, character, args):
-        """Practice skills with a trainer NPC.
+        """Spend skill points to increase skill ranks (D&D 3.5).
+        Class skills cost 1 point per rank, cross-class skills cost 2.
+        Max ranks: level+3 (class) or (level+3)/2 (cross-class).
         Usage: practice
                practice <skill> [amount]
         """
@@ -5545,7 +6291,7 @@ class CommandParser:
 
         if not args:
             lines = [
-                f"{trainer.name} says: 'You have {practice_points} practice points available.'",
+                f"{trainer.name} says: 'You have {practice_points} skill points available.'",
                 "Your skills:",
             ]
             if character.skills:
@@ -5620,7 +6366,7 @@ class CommandParser:
             affordable = practice_points // cost_per_rank
             if affordable <= 0:
                 return (
-                    f"You need {cost_per_rank} practice point(s) to practice {matched_skill}. "
+                    f"You need {cost_per_rank} skill point(s) to buy a rank in {matched_skill}. "
                     f"You have {practice_points}."
                 )
             ranks_to_buy = affordable
@@ -5633,7 +6379,7 @@ class CommandParser:
         return (
             f"You practice {matched_skill}{cross_msg}.\n"
             f"  Rank: {current_rank} -> {new_rank} (max {max_ranks})\n"
-            f"  Practice points remaining: {character.practice_points}"
+            f"  Skill points remaining: {character.practice_points}"
         )
 
     def cmd_train(self, character, args):
@@ -5875,7 +6621,22 @@ class CommandParser:
             result = character.rest(8)  # Full recovery
             return "The comfortable inn allows you to rest fully.\n" + result
 
-        return character.rest(hours)
+        # Housing rest bonus: resting at home with a bed heals extra
+        rest_bonus_msg = ""
+        try:
+            from src.housing import get_housing_manager
+            hm = get_housing_manager()
+            effects = hm.get_house_effects(character)
+            if effects.get("rest_bonus"):
+                house = hm.get_house(character.name)
+                if house and character.room and character.room.vnum == house.get("location_vnum"):
+                    bonus_heal = character.max_hp // 4  # 25% extra HP
+                    character.hp = min(character.max_hp, character.hp + bonus_heal)
+                    rest_bonus_msg = f"\nYour comfortable bed grants extra rest. (+{bonus_heal} HP)"
+        except Exception:
+            pass
+
+        return character.rest(hours) + rest_bonus_msg
 
     # =========================================================================
     # Status and Condition Commands
@@ -7456,7 +8217,9 @@ class CommandParser:
         """Get or create a QuestLog for the character."""
         from src.quests import QuestLog
         if not hasattr(character, 'quest_log') or character.quest_log is None:
-            character.quest_log = QuestLog()
+            character.quest_log = QuestLog(owner=character)
+        if character.quest_log.owner is None:
+            character.quest_log.owner = character
         return character.quest_log
 
     def _get_quest_manager(self):
@@ -7698,6 +8461,44 @@ class CommandParser:
             return f"You don't see '{args}' here."
 
         lines = [f"You approach {npc.name}."]
+
+        # Special: Guide Priestess Elia gives starter equipment
+        if "elia" in npc.name.lower() or "guide priestess" in npc.name.lower():
+            has_gear = bool(character.inventory) or any(v for v in character.equipment.values() if v)
+            if not has_gear:
+                from src.items import Item, get_item_by_vnum
+                char_class = getattr(character, 'char_class', 'Fighter')
+                starter_gear = {
+                    "Fighter":   [2, 5, 102, 108, 204, 203],
+                    "Barbarian":  [6, 102, 204, 203],
+                    "Bard":       [5, 102, 2, 204, 203],
+                    "Cleric":     [7, 104, 107, 204, 203],
+                    "Druid":      [5, 102, 108, 204, 203],
+                    "Magi":       [8, 2, 101, 204, 203],
+                    "Monk":       [8, 204, 203],
+                    "Paladin":    [5, 104, 107, 204, 203],
+                    "Ranger":     [4, 5, 102, 204, 203],
+                    "Rogue":      [5, 2, 102, 204, 203],
+                    "Sorcerer":   [8, 2, 101, 204, 203],
+                    "Wizard":     [8, 2, 101, 204, 203],
+                }
+                vnums = starter_gear.get(char_class, [1, 101, 204, 203])
+                given = []
+                for vnum in vnums:
+                    item = get_item_by_vnum(vnum)
+                    if item:
+                        character.inventory.append(item)
+                        given.append(item.name)
+                character.gold = getattr(character, 'gold', 0) + 50
+                lines.append(f'\n{npc.name} says: "Welcome, young {char_class}! Take these to start your journey."')
+                if given:
+                    lines.append(f"You receive: {', '.join(given)}")
+                lines.append("You receive 50 gold pieces.")
+                lines.append(f'\n{npc.name} says: "Use \'wear all\' to equip your gear, and \'inventory\' to see what you carry."')
+                return "\n".join(lines)
+            else:
+                lines.append(f'\n{npc.name} says: "You already have equipment, adventurer. Go forth and explore the four quadrants!"')
+                lines.append(f'"North teaches movement, east teaches combat, south teaches the Kin-Sense, and west teaches skills."')
 
         # Update quest talk objectives
         talk_msgs = on_npc_talked(character, npc.name, quest_log, quest_manager)
@@ -8216,6 +9017,16 @@ class CommandParser:
         character.conditions.clear()
         character.active_conditions.clear()
 
+        # PcSheet: record death event
+        try:
+            from src.ai_schemas.pc_sheet import record_event
+            rp_sheet = getattr(character, 'rp_sheet', None)
+            if rp_sheet:
+                rp_sheet.deaths = getattr(rp_sheet, 'deaths', 0) + 1
+                record_event(rp_sheet, f"Died and respawned at the chapel.", "death", weight=1.8)
+        except Exception:
+            pass
+
         # Broadcast arrival
         broadcast_to_room(character.room, f"{character.name} materializes at the chapel in a flash of light.", exclude=character)
 
@@ -8229,7 +9040,7 @@ class CommandParser:
 
     def cmd_loot(self, character, args):
         """Loot gold and items from a corpse.
-        Usage: loot [corpse name]
+        Usage: loot [all | corpse name]
         """
         death_check = self._check_incapacitated(character)
         if death_check:
@@ -8238,6 +9049,23 @@ class CommandParser:
         corpses = getattr(character.room, 'corpses', [])
         if not corpses:
             return "There are no corpses here to loot."
+
+        # "loot all" — loot every corpse in the room
+        if args and args.lower() == "all":
+            results = []
+            for corpse in list(corpses):
+                if corpse.gold > 0:
+                    character.gold = getattr(character, 'gold', 0) + corpse.gold
+                    results.append(f"You loot {corpse.gold} gp from the corpse of {corpse.mob_name}.")
+                    corpse.gold = 0
+                for item in corpse.items[:]:
+                    character.inventory.append(item)
+                    results.append(f"You loot {item.name} from the corpse of {corpse.mob_name}.")
+                corpse.items.clear()
+                if corpse.is_empty:
+                    corpses.remove(corpse)
+                    results.append(f"The corpse of {corpse.mob_name} crumbles to dust.")
+            return "\n".join(results) if results else "Nothing to loot."
 
         # Find matching corpse (first one, or by name)
         corpse = None
@@ -8267,12 +9095,8 @@ class CommandParser:
 
         # Remove empty corpse (auto-sac or default cleanup)
         if corpse.is_empty:
-            if getattr(character, 'auto_sac', False):
-                corpses.remove(corpse)
-                results.append("The corpse crumbles to dust.")
-            else:
-                corpses.remove(corpse)
-                results.append(f"The corpse of {corpse.mob_name} crumbles to dust.")
+            corpses.remove(corpse)
+            results.append(f"The corpse of {corpse.mob_name} crumbles to dust.")
 
         if not results:
             return f"The corpse of {corpse.mob_name} has nothing left to loot."
@@ -9001,6 +9825,7 @@ class CommandParser:
         """
         Show current weather conditions and their mechanical effects.
         Usage: weather
+               weather forecast
         """
         room = character.room
         game_time = get_game_time()
@@ -9008,23 +9833,46 @@ class CommandParser:
         if "indoor" in getattr(room, 'flags', []):
             return "You are indoors. You can't see the weather."
 
+        # Use room-level weather override first, then dynamic engine
         weather = getattr(room, 'weather', None)
+        if not weather or weather == "clear":
+            try:
+                from src.weather import get_weather_manager
+                wm = get_weather_manager()
+                dynamic = wm.get_weather(room.vnum)
+                if dynamic and dynamic != "clear":
+                    weather = dynamic
+            except Exception:
+                pass
+        if not weather:
+            weather = "clear"
+
         lines = []
 
-        if weather is None or weather == "clear":
-            lines.append("The skies are clear.")
-        elif weather == "rain":
-            lines.append("Rain falls steadily. (-2 ranged attacks, -4 Spot)")
-        elif weather == "storm":
-            lines.append("A fierce storm rages! (half movement, concentration DC +4)")
-        elif weather == "heat":
-            lines.append("The heat is oppressive. (fire spells +1 CL)")
-        elif weather == "cold":
-            lines.append("A bitter cold grips the land. (cold spells +1 CL)")
-        elif weather == "snow":
-            lines.append("Snow blankets the area. (-2 movement, +2 Hide in snow)")
-        else:
-            lines.append(f"The weather is: {weather}.")
+        weather_desc = {
+            "clear": "The skies are clear.",
+            "rain": "Rain falls steadily. (-2 ranged attacks, -4 Spot)",
+            "storm": "A fierce storm rages! (half movement, concentration DC +4)",
+            "heat": "The heat is oppressive. (fire spells +1 CL)",
+            "cold": "A bitter cold grips the land. (cold spells +1 CL)",
+            "snow": "Snow blankets the area. (-2 movement, +2 Hide in snow)",
+            "fog": "A thick fog blankets the area. (-4 Spot, concealment 20%)",
+            "wind": "Strong winds howl across the land. (-4 ranged attacks, -2 Listen)",
+        }
+        lines.append(weather_desc.get(weather, f"The weather is: {weather or 'clear'}."))
+
+        # Forecast
+        if args and args.strip().lower() == "forecast":
+            try:
+                from src.weather import get_weather_manager
+                wm = get_weather_manager()
+                region = wm.get_region(room.vnum)
+                if region:
+                    forecast = wm.get_forecast(region)
+                    lines.append(f"Region: {region.replace('_', ' ').title()}")
+                    lines.append(f"Forecast: likely {forecast.get('likely_next', 'unknown')}")
+            except Exception:
+                pass
 
         lines.append(f"Current time: {game_time.get_full_time_string()}")
         return "\n".join(lines)
@@ -9361,12 +10209,32 @@ class CommandParser:
                 lines.append(f"  - {m}")
             return "\n".join(lines)
 
-        success, message, item = crafting.craft_item(character, recipe)
+        # Apply housing craft bonus if in own home with workbench
+        craft_bonus = 0
+        try:
+            from src.housing import get_housing_manager
+            hm = get_housing_manager()
+            effects = hm.get_house_effects(character)
+            if effects.get("craft_bonus"):
+                house = hm.get_house(character.name)
+                if house and character.room and character.room.vnum == house.get("location_vnum"):
+                    craft_bonus = effects["craft_bonus"]
+        except Exception:
+            pass
+
+        success, message, item = crafting.craft_item(character, recipe, bonus=craft_bonus)
 
         if success:
             crafting.consume_materials(character, recipe)
             character.inventory.append(item)
             character.craft_count = getattr(character, 'craft_count', 0) + 1
+            # Check achievements after crafting
+            try:
+                ach_msgs = self.check_achievements(character)
+                if ach_msgs:
+                    message += "\n" + "\n".join(ach_msgs)
+            except Exception:
+                pass
             return message
         else:
             # Critical failure: result < dc - 5, materials are lost
@@ -9388,17 +10256,223 @@ class CommandParser:
         if not recipes:
             return "No recipes are available."
 
-        lines = ["Available Crafting Recipes:", "-" * 40]
+        feats = getattr(character, 'feats', [])
+        lines = ["Available Crafting Recipes:", "-" * 60]
         for recipe in recipes:
             mats = ", ".join(
                 f"{m['name']} x{m['qty']}" for m in recipe["materials"]
             )
+            feat_req = recipe.get("required_feat", "")
+            feat_str = ""
+            if feat_req:
+                has_feat = feat_req in feats
+                mark = "\033[0;32m[OK]\033[0m" if has_feat else "\033[0;31m[NEED]\033[0m"
+                feat_str = f" Feat: {feat_req} {mark}"
             lines.append(
-                f"  {recipe['name']:<20} Skill: {recipe['skill']:<28} DC: {recipe['dc']:<4} Materials: {mats}"
+                f"  {recipe['name']:<20} Skill: {recipe['skill']:<25} DC: {recipe['dc']:<4} Materials: {mats}{feat_str}"
             )
-        lines.append("-" * 40)
+        lines.append("-" * 60)
         lines.append("Use: craft <recipe name>")
+        lines.append("Also: scribe <spell> (scrolls), brew <spell> (potions)")
         return "\n".join(lines)
+
+    def cmd_scribe(self, character, args):
+        """Scribe a scroll from a known spell (D&D 3.5).
+        Usage: scribe <spell name>
+        Requires: Scribe Scroll feat, must know the spell.
+        Cost: spell level x caster level x 12.5 gp + materials (parchment, arcane ink).
+        """
+        if not args or not args.strip():
+            return "Usage: scribe <spell name>\nRequires Scribe Scroll feat and the spell known."
+
+        feats = getattr(character, 'feats', [])
+        if "Scribe Scroll" not in feats:
+            return "You need the 'Scribe Scroll' feat to scribe scrolls."
+
+        spell_name = args.strip()
+        spells_known = getattr(character, 'spells_known', {})
+        # Find spell (case-insensitive)
+        matched_spell = None
+        for sk in spells_known:
+            if sk.lower() == spell_name.lower() or spell_name.lower() in sk.lower():
+                matched_spell = sk
+                break
+        if not matched_spell:
+            return f"You don't know the spell '{spell_name}'."
+
+        # Get spell data for level
+        from src.spells import get_spell
+        spell = get_spell(matched_spell)
+        if not spell:
+            return f"Spell '{matched_spell}' not found in the spell database."
+
+        # Get spell level for character's class
+        char_class = getattr(character, 'char_class', '')
+        spell_level = spell.level.get(char_class, None)
+        if spell_level is None:
+            # Try any class
+            spell_level = min(spell.level.values()) if spell.level else 1
+
+        caster_level = max(1, getattr(character, 'class_level', 1))
+
+        # Gold cost: spell level x caster level x 12.5 gp (min 12.5 for cantrips)
+        gold_cost = max(13, int(spell_level * caster_level * 12.5))
+
+        # Material check: parchment + arcane ink (scaled by level)
+        ink_needed = max(1, spell_level)
+        parchment_name = "blank parchment" if spell_level <= 2 else "blank scroll case"
+
+        # Check materials
+        inv_names = [i.name.lower() for i in character.inventory]
+        parchment_count = sum(1 for n in inv_names if parchment_name in n)
+        ink_count = sum(1 for n in inv_names if "arcane ink" in n)
+
+        missing = []
+        if parchment_count < 1:
+            missing.append(f"{parchment_name.title()} x1")
+        if ink_count < ink_needed:
+            missing.append(f"Arcane Ink x{ink_needed} (have {ink_count})")
+        if missing:
+            return f"Missing materials: {', '.join(missing)}"
+
+        if getattr(character, 'gold', 0) < gold_cost:
+            return f"You need {gold_cost} gold to scribe this scroll. You have {character.gold}."
+
+        # Spellcraft check: DC 5 + caster level
+        dc = 5 + caster_level
+        result = character.skill_check("Spellcraft")
+        if isinstance(result, str):
+            return "You lack the Spellcraft skill needed to scribe scrolls."
+
+        if result < dc:
+            lost = gold_cost // 4
+            character.gold -= lost
+            return f"Your scribing fails! Spellcraft: {result} vs DC {dc}. Lost {lost} gold."
+
+        # Success — consume materials and gold
+        character.gold -= gold_cost
+        # Remove materials
+        for i in list(character.inventory):
+            if parchment_name in i.name.lower():
+                character.inventory.remove(i)
+                break
+        removed_ink = 0
+        for i in list(character.inventory):
+            if "arcane ink" in i.name.lower() and removed_ink < ink_needed:
+                character.inventory.remove(i)
+                removed_ink += 1
+
+        # Create scroll item
+        from src.items import Item
+        scroll = Item(
+            vnum=90000 + __import__('random').randint(0, 9999),
+            name=f"Scroll of {matched_spell}",
+            item_type="scroll",
+            weight=0.1,
+            value=gold_cost,
+            description=f"A scroll inscribed with the spell {matched_spell}. Use 'read scroll' to cast it.",
+            magical=True,
+            properties=["scroll"],
+            stats={"spell": matched_spell, "caster_level": caster_level, "spell_level": spell_level},
+        )
+        character.inventory.append(scroll)
+        return (f"You carefully scribe a Scroll of {matched_spell}!\n"
+                f"  Spellcraft: {result} vs DC {dc}, Cost: {gold_cost} gp")
+
+    def cmd_brew(self, character, args):
+        """Brew a potion from a known spell (D&D 3.5).
+        Usage: brew <spell name>
+        Requires: Brew Potion feat, spell level 0-3, must know the spell.
+        Cost: spell level x caster level x 25 gp + materials.
+        """
+        if not args or not args.strip():
+            return "Usage: brew <spell name>\nRequires Brew Potion feat. Spells level 0-3 only."
+
+        feats = getattr(character, 'feats', [])
+        if "Brew Potion" not in feats:
+            return "You need the 'Brew Potion' feat to brew potions."
+
+        spell_name = args.strip()
+        spells_known = getattr(character, 'spells_known', {})
+        matched_spell = None
+        for sk in spells_known:
+            if sk.lower() == spell_name.lower() or spell_name.lower() in sk.lower():
+                matched_spell = sk
+                break
+        if not matched_spell:
+            return f"You don't know the spell '{spell_name}'."
+
+        from src.spells import get_spell
+        spell = get_spell(matched_spell)
+        if not spell:
+            return f"Spell '{matched_spell}' not found in the spell database."
+
+        char_class = getattr(character, 'char_class', '')
+        spell_level = spell.level.get(char_class, None)
+        if spell_level is None:
+            spell_level = min(spell.level.values()) if spell.level else 1
+
+        if spell_level > 3:
+            return f"{matched_spell} is level {spell_level}. Brew Potion only works with spells of level 0-3."
+
+        caster_level = max(1, getattr(character, 'class_level', 1))
+        gold_cost = max(25, int(spell_level * caster_level * 25))
+
+        # Materials: purified water + glass vial (always), alchemical reagent for level 2+
+        inv_names = [i.name.lower() for i in character.inventory]
+        missing = []
+        if sum(1 for n in inv_names if "purified water" in n) < 1:
+            missing.append("Purified Water x1")
+        if sum(1 for n in inv_names if "glass vial" in n) < 1:
+            missing.append("Glass Vial x1")
+        if spell_level >= 2 and sum(1 for n in inv_names if "alchemical reagent" in n) < 1:
+            missing.append("Alchemical Reagent x1")
+        if missing:
+            return f"Missing materials: {', '.join(missing)}"
+
+        if getattr(character, 'gold', 0) < gold_cost:
+            return f"You need {gold_cost} gold. You have {character.gold}."
+
+        # Craft (alchemy) check
+        dc = 15 + (spell_level * 2)
+        result = character.skill_check("Craft (alchemy)")
+        if isinstance(result, str):
+            return "You lack the Craft (alchemy) skill needed to brew potions."
+
+        if result < dc:
+            lost = gold_cost // 4
+            character.gold -= lost
+            return f"Your brewing fails! Craft (alchemy): {result} vs DC {dc}. Lost {lost} gold."
+
+        # Success — consume materials and gold
+        character.gold -= gold_cost
+        for mat_name in ["purified water", "glass vial"]:
+            for i in list(character.inventory):
+                if mat_name in i.name.lower():
+                    character.inventory.remove(i)
+                    break
+        if spell_level >= 2:
+            for i in list(character.inventory):
+                if "alchemical reagent" in i.name.lower():
+                    character.inventory.remove(i)
+                    break
+
+        from src.items import Item
+        potion = Item(
+            vnum=90000 + __import__('random').randint(0, 9999),
+            name=f"Potion of {matched_spell}",
+            item_type="potion",
+            weight=0.5,
+            value=gold_cost,
+            description=f"A potion infused with {matched_spell}. Use 'quaff potion' to drink it.",
+            magical=True,
+            properties=["potion"],
+            stats={"spell": matched_spell, "caster_level": caster_level, "spell_level": spell_level,
+                   "healing": 8 + (spell_level * 5) if "cure" in matched_spell.lower() or "heal" in matched_spell.lower() else 0},
+        )
+        character.inventory.append(potion)
+        return (f"You brew a Potion of {matched_spell}!\n"
+                f"  Craft (alchemy): {result} vs DC {dc}, Cost: {gold_cost} gp")
 
 
     # =========================================================================
@@ -9725,10 +10799,11 @@ class CommandParser:
                eat  (eats first food item found)
         """
         if args and args.strip():
+            args_lower = args.strip().lower()
             food = next(
                 (i for i in character.inventory
                  if getattr(i, 'item_type', '') == 'food'
-                 and i.name.lower() == args.strip().lower()),
+                 and (i.name.lower() == args_lower or args_lower in i.name.lower())),
                 None
             )
             if food is None:
@@ -11034,85 +12109,140 @@ _SPELLCASTER_CLASSES = {"Bard", "Cleric", "Druid", "Magi", "Paladin", "Ranger", 
 
 
 def _cmd_enchant(self, character, args):
-    """Enchant an item with a magical bonus.
-    Usage: enchant <item> <bonus_type> <value>
-    bonus_type: attack, damage, ac, stat
-    Requires a spellcaster class and a Spellcraft check.
-    Costs value * 1000 gold. Maximum enchantment: +5.
+    """Enchant a masterwork item with a magical bonus (D&D 3.5 rules).
+    Usage: enchant <item> <bonus> (e.g. 'enchant masterwork longsword 1')
+    Requires: Craft Magic Arms and Armor feat, caster level 3x bonus,
+              masterwork base item, and gold (bonus squared x 2000 gp).
+    For wondrous items: Craft Wondrous Item feat.
+    For rings: Forge Ring feat + base ring.
     """
-    char_class = getattr(character, 'char_class', '')
-    if char_class not in _SPELLCASTER_CLASSES:
-        return "You must be a spellcaster to enchant items."
+    feats = getattr(character, 'feats', [])
 
-    parts = args.strip().split()
-    if len(parts) < 3:
-        return "Usage: enchant <item name> <bonus_type> <value>\n  bonus_type: attack, damage, ac, stat"
+    if not args or not args.strip():
+        lines = [
+            "Usage: enchant <item name> <bonus>",
+            "  Example: enchant Masterwork Longsword 1",
+            "",
+            "Requirements (D&D 3.5):",
+            "  Weapons/Armor/Shields: Craft Magic Arms and Armor feat",
+            "  Wondrous items:        Craft Wondrous Item feat",
+            "  Rings:                 Forge Ring feat + base ring",
+            "  Base item must be masterwork quality",
+            "  Caster level >= 3 x enhancement bonus",
+            "  Cost: bonus^2 x 2000 gp",
+            "  Spellcraft check: DC 15 + (bonus x 5)",
+        ]
+        return "\n".join(lines)
 
+    parts = args.strip().rsplit(None, 1)
+    if len(parts) < 2:
+        return "Usage: enchant <item name> <bonus>"
+
+    item_name = parts[0]
     try:
-        value = int(parts[-1])
-        bonus_type = parts[-2].lower()
-        item_name = " ".join(parts[:-2])
-    except (ValueError, IndexError):
-        return "Usage: enchant <item name> <bonus_type> <value>"
+        value = int(parts[1])
+    except ValueError:
+        return "Usage: enchant <item name> <bonus> (bonus must be a number 1-5)"
 
     if value < 1 or value > 5:
-        return "Enchantment bonus must be between 1 and 5."
+        return "Enhancement bonus must be between +1 and +5."
 
-    valid_bonus_types = {"attack", "damage", "ac", "stat"}
-    if bonus_type not in valid_bonus_types:
-        return f"Invalid bonus type '{bonus_type}'. Choose: attack, damage, ac, stat"
-
-    # Find item in inventory or equipped
-    item = next((i for i in character.inventory if i.name.lower() == item_name.lower()), None)
+    # Find item in inventory or equipped (partial match)
+    item_lower = item_name.lower()
+    item = next((i for i in character.inventory if item_lower in i.name.lower()), None)
     if not item:
         for slot, eq_item in character.equipment.items():
-            if eq_item and eq_item.name.lower() == item_name.lower():
+            if eq_item and item_lower in eq_item.name.lower():
                 item = eq_item
                 break
     if not item:
         return f"You don't have '{item_name}'."
 
-    item_type = getattr(item, 'item_type', '').lower()
-    if item_type not in ('weapon', 'armor', 'shield'):
-        return f"{item.name} must be a weapon or armor to be enchanted."
+    item_type = (getattr(item, 'item_type', '') or '').lower()
 
-    cost = value * 1000
+    # Determine required feat based on item type
+    if item_type in ('weapon', 'armor', 'shield'):
+        required_feat = "Craft Magic Arms and Armor"
+    elif item_type == 'ring':
+        required_feat = "Forge Ring"
+    elif item_type in ('wondrous', 'amulet', 'cloak', 'gauntlets', 'boots'):
+        required_feat = "Craft Wondrous Item"
+    else:
+        return f"{item.name} cannot be enchanted. Must be a weapon, armor, shield, ring, or wondrous item."
+
+    # Check feat
+    if required_feat not in feats:
+        return f"You need the '{required_feat}' feat to enchant {item.name}."
+
+    # Check masterwork requirement (weapons/armor/shields must be masterwork)
+    if item_type in ('weapon', 'armor', 'shield'):
+        properties = getattr(item, 'properties', []) or []
+        complexity = getattr(item, 'complexity', '') or ''
+        is_masterwork = 'masterwork' in properties or complexity == 'masterwork'
+        is_already_magical = getattr(item, 'magical', False)
+        if not is_masterwork and not is_already_magical:
+            return f"{item.name} must be masterwork quality before it can be enchanted."
+
+    # Check caster level (need 3x the bonus)
+    caster_level = getattr(character, 'class_level', 1)
+    required_cl = value * 3
+    if caster_level < required_cl:
+        return f"You need caster level {required_cl} to create a +{value} enchantment. You are level {caster_level}."
+
+    # D&D 3.5 cost: bonus squared x 2000 gp
+    cost = value * value * 2000
     if getattr(character, 'gold', 0) < cost:
-        return (f"Enchanting {item.name} with +{value} {bonus_type} costs {cost} gold, "
-                f"but you only have {character.gold} gold.")
+        return (f"Enchanting {item.name} to +{value} costs {cost} gold "
+                f"(bonus^2 x 2000 gp). You have {character.gold} gold.")
 
     # Spellcraft check: DC 15 + (value * 5)
     dc = 15 + (value * 5)
     spellcraft_result = character.skill_check("Spellcraft")
     if isinstance(spellcraft_result, str):
-        return f"You cannot enchant items: {spellcraft_result}"
+        return f"You lack the Spellcraft skill needed to enchant items."
     if spellcraft_result < dc:
-        fail_cost = cost // 2
+        fail_cost = cost // 4
         character.gold -= fail_cost
-        return (f"Your enchantment ritual fails! Spellcraft check: {spellcraft_result} vs DC {dc}. "
+        return (f"Your enchantment ritual fails! Spellcraft: {spellcraft_result} vs DC {dc}. "
                 f"You lose {fail_cost} gold in wasted materials. (Gold: {character.gold})")
 
+    # Success — apply enchantment
     character.gold -= cost
     if not hasattr(item, 'stat_bonuses') or item.stat_bonuses is None:
         item.stat_bonuses = {}
 
-    if bonus_type == "ac":
-        item.ac_bonus = getattr(item, 'ac_bonus', 0) + value
-        result_desc = f"+{value} AC bonus"
-    elif bonus_type == "attack":
-        item.stat_bonuses['attack_bonus'] = item.stat_bonuses.get('attack_bonus', 0) + value
-        result_desc = f"+{value} attack bonus"
-    elif bonus_type == "damage":
-        item.stat_bonuses['damage_bonus'] = item.stat_bonuses.get('damage_bonus', 0) + value
-        result_desc = f"+{value} damage bonus"
-    else:  # stat
-        item.stat_bonuses['enhancement'] = item.stat_bonuses.get('enhancement', 0) + value
-        result_desc = f"+{value} enhancement bonus to stats"
+    if item_type in ('weapon',):
+        # Weapons: +N to attack and damage
+        if item.damage and len(item.damage) >= 3:
+            item.damage = list(item.damage)
+            item.damage[2] = value  # Set damage bonus to enhancement
+        item.stat_bonuses['attack_bonus'] = value
+        item.stat_bonuses['damage_bonus'] = value
+        result_desc = f"+{value} enhancement (attack and damage)"
+    elif item_type in ('armor', 'shield'):
+        item.ac_bonus = getattr(item, 'ac_bonus', 0)
+        # For masterwork->magical, the AC bonus increases by the enhancement
+        # Masterwork doesn't give AC, so just add the enhancement
+        item.ac_bonus += value
+        result_desc = f"+{value} enhancement (AC)"
+    elif item_type == 'ring':
+        item.stat_bonuses['deflection'] = value
+        result_desc = f"+{value} deflection bonus"
+    else:
+        item.stat_bonuses['enhancement'] = value
+        result_desc = f"+{value} enhancement bonus"
 
     item.magical = True
-    return (f"You successfully enchant {item.name} with {result_desc}! "
-            f"(Spellcraft: {spellcraft_result} vs DC {dc}, Cost: {cost} gold, "
-            f"Gold remaining: {character.gold})")
+    # Update item name to reflect enchantment
+    old_name = item.name
+    if "Masterwork" in item.name:
+        item.name = item.name.replace("Masterwork ", f"+{value} ")
+    elif not item.name.startswith("+"):
+        item.name = f"+{value} {item.name}"
+
+    return (f"You successfully enchant {old_name} into {item.name}! ({result_desc})\n"
+            f"  Spellcraft: {spellcraft_result} vs DC {dc}\n"
+            f"  Cost: {cost} gold (Gold remaining: {character.gold})")
 
 
 def _cmd_itemsets(self, character, args):
@@ -12446,3 +13576,1266 @@ def cmd_title(self, character, args):
 
 
 CommandParser.cmd_title = cmd_title
+
+
+# =========================================================================
+# Housing System (Full)
+# =========================================================================
+
+def cmd_house(self, character, args):
+    """Player housing system.
+    Usage: house              - show your house info
+           house buy <type>   - buy a house (cottage/townhouse/manor/guild_hall)
+           house sell          - sell your house (50% refund)
+           house visit <name> - visit another player's house
+    """
+    from src.housing import get_housing_manager, HOUSE_TYPES
+    hm = get_housing_manager()
+    parts = args.strip().split(None, 1) if args else []
+    subcmd = parts[0].lower() if parts else "info"
+    rest = parts[1] if len(parts) > 1 else ""
+
+    if subcmd == "info" or not args or not args.strip():
+        house = hm.get_house(character.name)
+        if not house:
+            lines = ["You don't own a house.", "", "Available house types:"]
+            for key, ht in HOUSE_TYPES.items():
+                lines.append(f"  {key:<15} {ht['name']:<20} {ht['cost']:>7} gp  ({ht['rooms']} rooms, {ht['storage']} storage)")
+            lines.append("\nUse 'house buy <type>' to purchase.")
+            return "\n".join(lines)
+        return hm.format_house_info(character)
+
+    elif subcmd == "buy":
+        house_type = rest.strip().lower() if rest else ""
+        if not house_type:
+            return "Usage: house buy <type> (cottage/townhouse/manor/guild_hall)"
+        ok, msg = hm.buy_house(character, house_type, character.room.vnum)
+        return msg
+
+    elif subcmd == "sell":
+        ok, msg = hm.sell_house(character)
+        return msg
+
+    elif subcmd == "visit":
+        if not rest:
+            return "Visit whose house? Usage: house visit <player>"
+        ok, msg, vnum = hm.visit_house(character, rest.strip())
+        if ok and vnum:
+            room = self.world.rooms.get(vnum)
+            if room:
+                character.room = room
+        return msg
+
+    else:
+        return "Usage: house [buy|sell|visit|info]"
+
+
+CommandParser.cmd_house = cmd_house
+
+
+def cmd_furnish(self, character, args):
+    """Add or remove furniture from your house.
+    Usage: furnish list            - list available furniture
+           furnish buy <item>      - buy and place furniture
+           furnish remove <item>   - remove furniture
+    """
+    from src.housing import get_housing_manager, FURNITURE
+    hm = get_housing_manager()
+    house = hm.get_house(character.name)
+    if not house:
+        return "You don't own a house. Use 'house buy <type>' first."
+
+    parts = args.strip().split(None, 1) if args else []
+    subcmd = parts[0].lower() if parts else "list"
+    rest = parts[1].strip() if len(parts) > 1 else ""
+
+    if subcmd == "list":
+        lines = ["Available Furniture:"]
+        lines.append(f"{'Key':<15} {'Name':<25} {'Cost':>7} Effect")
+        lines.append("-" * 65)
+        for key, f in FURNITURE.items():
+            owned = " [OWNED]" if key in house.get("furniture", []) else ""
+            lines.append(f"  {key:<15} {f['name']:<25} {f['cost']:>7} {f['effect']}{owned}")
+        lines.append("\nUse 'furnish buy <key>' to purchase.")
+        return "\n".join(lines)
+
+    elif subcmd == "buy":
+        if not rest:
+            return "Usage: furnish buy <furniture key>"
+        ok, msg = hm.add_furniture(character, rest.lower())
+        return msg
+
+    elif subcmd == "remove":
+        if not rest:
+            return "Usage: furnish remove <furniture key>"
+        ok, msg = hm.remove_furniture(character, rest.lower())
+        return msg
+
+    else:
+        return "Usage: furnish [list|buy|remove]"
+
+
+CommandParser.cmd_furnish = cmd_furnish
+
+
+def cmd_storage(self, character, args):
+    """Manage your house storage.
+    Usage: storage              - list stored items
+           storage store <item> - store an item from inventory
+           storage take <item>  - retrieve a stored item
+    """
+    from src.housing import get_housing_manager
+    hm = get_housing_manager()
+    house = hm.get_house(character.name)
+    if not house:
+        return "You don't own a house. Use 'house buy <type>' first."
+
+    parts = args.strip().split(None, 1) if args else []
+    subcmd = parts[0].lower() if parts else "list"
+    rest = parts[1].strip() if len(parts) > 1 else ""
+
+    if subcmd == "list" or not args or not args.strip():
+        ok, msg = hm.list_storage(character)
+        return msg
+
+    elif subcmd == "store":
+        if not rest:
+            return "Store what? Usage: storage store <item name>"
+        item = next((i for i in character.inventory if rest.lower() in i.name.lower()), None)
+        if not item:
+            return f"You don't have '{rest}' in your inventory."
+        ok, msg = hm.store_item(character, item)
+        return msg
+
+    elif subcmd in ("take", "retrieve", "get"):
+        if not rest:
+            return "Take what? Usage: storage take <item name>"
+        ok, msg = hm.retrieve_item(character, rest)
+        return msg
+
+    else:
+        return "Usage: storage [list|store|take]"
+
+
+CommandParser.cmd_storage = cmd_storage
+
+
+# =========================================================================
+# Story / Narrative System
+# =========================================================================
+
+def cmd_story(self, character, args):
+    """View your story progress and narrative chapters.
+    Usage: story         - show story progress
+           story <id>    - view a specific chapter
+    """
+    from src.narrative import get_narrative_manager
+    nm = get_narrative_manager()
+
+    if args and args.strip():
+        chapter_id = args.strip().lower()
+        from src.narrative import STORY_CHAPTERS
+        chapter = next((c for c in STORY_CHAPTERS if c["id"] == chapter_id), None)
+        if not chapter:
+            return f"Unknown chapter '{chapter_id}'. Use 'story' to see all chapters."
+        progress = getattr(character, 'narrative_progress', [])
+        if chapter["id"] in progress:
+            return nm.format_cutscene(chapter["title"], chapter["narrative"])
+        else:
+            return f"{chapter['title']} - {chapter['description']}\n(Not yet unlocked)"
+
+    # Check for new triggers
+    triggered = nm.check_triggers(character)
+    output = []
+    for chapter in triggered:
+        text, rewards = nm.trigger_chapter(character, chapter)
+        output.append(text)
+        if rewards:
+            if "xp" in rewards:
+                character.xp = getattr(character, 'xp', 0) + rewards["xp"]
+                output.append(f"  Gained {rewards['xp']} XP!")
+            if "title" in rewards:
+                if not hasattr(character, 'titles'):
+                    character.titles = []
+                if rewards["title"] not in character.titles:
+                    character.titles.append(rewards["title"])
+                output.append(f"  Earned title: {rewards['title']}")
+
+    if output:
+        output.append("")
+
+    output.append(nm.format_story(character))
+    return "\n".join(output)
+
+
+CommandParser.cmd_story = cmd_story
+
+
+def cmd_lore(self, character, args):
+    """Look up lore about the world of Oreka.
+    Usage: lore           - list available lore topics
+           lore <topic>   - read about a specific topic
+    """
+    from src.narrative import get_narrative_manager
+    nm = get_narrative_manager()
+
+    if not args or not args.strip():
+        result = nm.format_lore(None)
+        if result:
+            return result
+        return "No lore entries available."
+
+    result = nm.format_lore(args.strip())
+    return result
+
+
+CommandParser.cmd_lore = cmd_lore
+
+
+# =========================================================================
+# Account Management
+# =========================================================================
+
+def cmd_changepassword(self, character, args):
+    """Change your password.
+    Usage: changepassword <old_password> <new_password>
+    """
+    import hashlib
+    if not args:
+        return "Usage: changepassword <old_password> <new_password>"
+    parts = args.strip().split()
+    if len(parts) < 2:
+        return "Usage: changepassword <old_password> <new_password>"
+    old_pass = parts[0]
+    new_pass = parts[1]
+
+    if len(new_pass) < 4:
+        return "New password must be at least 4 characters."
+
+    old_hash = hashlib.sha256(old_pass.encode()).hexdigest()
+    stored_hash = getattr(character, 'hashed_password', None)
+    if stored_hash and old_hash != stored_hash:
+        return "Incorrect current password."
+
+    character.hashed_password = hashlib.sha256(new_pass.encode()).hexdigest()
+    character.save()
+    return "Password changed successfully."
+
+
+CommandParser.cmd_changepassword = cmd_changepassword
+
+
+def cmd_deletechar(self, character, args):
+    """Permanently delete your character. Requires password confirmation.
+    Usage: deletechar <password> CONFIRM
+    WARNING: This action is irreversible!
+    """
+    import hashlib, os
+    if not args:
+        return ("WARNING: This will permanently delete your character!\n"
+                "Usage: deletechar <password> CONFIRM")
+    parts = args.strip().split()
+    if len(parts) < 2 or parts[-1] != "CONFIRM":
+        return ("You must type CONFIRM as the last word to delete your character.\n"
+                "Usage: deletechar <password> CONFIRM")
+
+    password = parts[0]
+    pw_hash = hashlib.sha256(password.encode()).hexdigest()
+    stored_hash = getattr(character, 'hashed_password', None)
+    if stored_hash and pw_hash != stored_hash:
+        return "Incorrect password. Character not deleted."
+
+    # Remove player file
+    player_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'players')
+    filename = os.path.join(player_dir, f"{character.name.lower()}.json")
+    if os.path.exists(filename):
+        # Rename to .deleted instead of actual delete for safety
+        deleted_name = filename + ".deleted"
+        os.rename(filename, deleted_name)
+
+    # Remove from world
+    if character.room:
+        if character in character.room.players:
+            character.room.players.remove(character)
+    if character in self.world.players:
+        self.world.players.remove(character)
+
+    return ("Your character has been deleted. The connection will be closed.\n"
+            "Thank you for playing OrekaMUD!")
+
+
+CommandParser.cmd_deletechar = cmd_deletechar
+
+
+# =========================================================================
+# Metamagic Casting
+# =========================================================================
+
+METAMAGIC_FEATS = {
+    "empower": {"feat": "Empower Spell", "slot_increase": 2,
+                "desc": "Increase variable numeric effects by 50%"},
+    "maximize": {"feat": "Maximize Spell", "slot_increase": 3,
+                 "desc": "Maximize all variable numeric effects"},
+    "quicken": {"feat": "Quicken Spell", "slot_increase": 4,
+                "desc": "Cast as a swift action"},
+    "extend": {"feat": "Extend Spell", "slot_increase": 1,
+               "desc": "Double spell duration"},
+    "silent": {"feat": "Silent Spell", "slot_increase": 1,
+               "desc": "Cast without verbal components"},
+    "still": {"feat": "Still Spell", "slot_increase": 1,
+              "desc": "Cast without somatic components"},
+}
+
+
+def cmd_metamagic(self, character, args):
+    """Apply metamagic to your next spell cast.
+    Usage: metamagic <type> <spell>
+           metamagic list
+    Types: empower, maximize, quicken, extend, silent, still
+    Example: metamagic empower fireball
+    """
+    if not args:
+        return "Usage: metamagic <type> <spell>  or  metamagic list"
+
+    parts = args.strip().split(None, 1)
+    subcmd = parts[0].lower()
+
+    if subcmd == "list":
+        lines = ["Available Metamagic Feats:"]
+        lines.append(f"{'Type':<12} {'Required Feat':<20} {'Slot +':>6} Description")
+        lines.append("-" * 65)
+        for key, meta in METAMAGIC_FEATS.items():
+            has = "  [HAVE]" if meta["feat"] in getattr(character, 'feats', []) else ""
+            lines.append(f"  {key:<12} {meta['feat']:<20} {'+' + str(meta['slot_increase']):>6} {meta['desc']}{has}")
+        lines.append("\nUsage: metamagic <type> <spell name>")
+        return "\n".join(lines)
+
+    meta_type = subcmd
+    if meta_type not in METAMAGIC_FEATS:
+        return f"Unknown metamagic type '{meta_type}'. Use 'metamagic list' to see options."
+
+    meta = METAMAGIC_FEATS[meta_type]
+    if meta["feat"] not in getattr(character, 'feats', []):
+        return f"You need the '{meta['feat']}' feat to use {meta_type} metamagic."
+
+    spell_name = parts[1].strip() if len(parts) > 1 else ""
+    if not spell_name:
+        return f"Usage: metamagic {meta_type} <spell name>"
+
+    # Queue the metamagic for the next cast
+    character._pending_metamagic = {
+        "type": meta_type,
+        "feat": meta["feat"],
+        "slot_increase": meta["slot_increase"],
+        "spell": spell_name,
+    }
+    return (f"Metamagic ({meta_type}) prepared for {spell_name}. "
+            f"Cast it now - the spell will use a slot {meta['slot_increase']} level(s) higher.\n"
+            f"Effect: {meta['desc']}")
+
+
+CommandParser.cmd_metamagic = cmd_metamagic
+
+
+# =========================================================================
+# Admin Area Resets
+# =========================================================================
+
+def cmd_admin_resets(self, character, args):
+    """Admin: manage area resets.
+    Usage: @resets status       - show reset status
+           @resets force <area> - force reset an area now
+           @resets interval <area> <seconds> - set reset interval
+    """
+    if not getattr(character, 'is_immortal', False):
+        return "Huh?"
+
+    from src.area_resets import get_reset_manager
+    rm = get_reset_manager()
+
+    parts = args.strip().split() if args else []
+    subcmd = parts[0].lower() if parts else "status"
+
+    if subcmd == "status":
+        return rm.get_status()
+
+    elif subcmd == "force":
+        area = parts[1] if len(parts) > 1 else ""
+        if not area:
+            return "Usage: @resets force <area_name>"
+        import asyncio
+        asyncio.create_task(rm.force_reset(self.world, area))
+        return f"Forcing reset of area '{area}'."
+
+    elif subcmd == "interval":
+        if len(parts) < 3:
+            return "Usage: @resets interval <area> <seconds>"
+        area = parts[1]
+        try:
+            seconds = int(parts[2])
+        except ValueError:
+            return "Interval must be a number of seconds."
+        rm.set_interval(area, seconds)
+        return f"Reset interval for '{area}' set to {seconds} seconds."
+
+    else:
+        return "Usage: @resets [status|force|interval]"
+
+
+CommandParser.cmd_admin_resets = cmd_admin_resets
+
+
+# =========================================================================
+# Veil Whitelist Admin Command
+# =========================================================================
+
+def cmd_admin_veil(self, character, args):
+    """Admin: manage Veil Client access whitelist.
+    Usage: @veil list                 - show whitelist + config
+           @veil add <player>         - add player to whitelist
+           @veil remove <player>      - remove player from whitelist
+           @veil signup on|off        - toggle new character creation
+           @veil openchars on|off     - toggle: any existing char can use Veil
+           @veil npcs add <vnum>      - add NPC to chat-eligible list
+           @veil npcs remove <vnum>   - remove NPC from chat-eligible list
+           @veil npcs list            - list chat-eligible NPCs
+    """
+    if not getattr(character, 'is_immortal', False):
+        return "Huh?"
+
+    from src.veil_auth import (
+        load_whitelist, save_whitelist, add_user, remove_user,
+        set_config, list_chat_npcs,
+    )
+
+    parts = args.strip().split() if args else []
+    subcmd = parts[0].lower() if parts else "list"
+
+    if subcmd == "list":
+        wl = load_whitelist()
+        lines = ["\n=== Veil Whitelist ===\n"]
+        lines.append(f"  Whitelisted users: {', '.join(wl.get('users', [])) or '(none)'}")
+        lines.append(f"  Allow all existing chars: {wl.get('allow_all_existing_chars', False)}")
+        lines.append(f"  Open signup: {wl.get('open_signup', False)}")
+        lines.append(f"  Max concurrent users: {wl.get('max_concurrent_users', 50)}")
+        lines.append(f"  Chat-eligible NPC vnums: {wl.get('chat_eligible_npcs', [])}")
+        lines.append(f"  Default chat NPC: {wl.get('default_chat_npc')}")
+        return "\n".join(lines)
+
+    elif subcmd == "add":
+        if len(parts) < 2:
+            return "Usage: @veil add <player_name>"
+        ok, msg = add_user(parts[1])
+        return msg
+
+    elif subcmd == "remove":
+        if len(parts) < 2:
+            return "Usage: @veil remove <player_name>"
+        ok, msg = remove_user(parts[1])
+        return msg
+
+    elif subcmd == "signup":
+        if len(parts) < 2:
+            return "Usage: @veil signup on|off"
+        val = parts[1].lower() in ("on", "true", "yes", "1")
+        ok, msg = set_config("open_signup", val)
+        return msg
+
+    elif subcmd == "openchars":
+        if len(parts) < 2:
+            return "Usage: @veil openchars on|off"
+        val = parts[1].lower() in ("on", "true", "yes", "1")
+        ok, msg = set_config("allow_all_existing_chars", val)
+        return msg
+
+    elif subcmd == "npcs":
+        if len(parts) < 2:
+            return "Usage: @veil npcs [list|add <vnum>|remove <vnum>]"
+        sub2 = parts[1].lower()
+        wl = load_whitelist()
+        npc_vnums = wl.get("chat_eligible_npcs", [])
+
+        if sub2 == "list":
+            npcs = list_chat_npcs()
+            if not npcs:
+                return "No chat-eligible NPCs configured."
+            lines = ["\n=== Chat-Eligible NPCs ===\n"]
+            for npc in npcs:
+                lines.append(f"  {npc['vnum']:>5} - {npc['name']} ({npc.get('type', '?')})")
+            return "\n".join(lines)
+
+        elif sub2 == "add":
+            if len(parts) < 3:
+                return "Usage: @veil npcs add <vnum>"
+            try:
+                vnum = int(parts[2])
+            except ValueError:
+                return "vnum must be a number."
+            if vnum in npc_vnums:
+                return f"NPC {vnum} already in chat-eligible list."
+            npc_vnums.append(vnum)
+            wl["chat_eligible_npcs"] = npc_vnums
+            save_whitelist(wl)
+            return f"NPC {vnum} added to chat-eligible list."
+
+        elif sub2 == "remove":
+            if len(parts) < 3:
+                return "Usage: @veil npcs remove <vnum>"
+            try:
+                vnum = int(parts[2])
+            except ValueError:
+                return "vnum must be a number."
+            if vnum not in npc_vnums:
+                return f"NPC {vnum} is not in chat-eligible list."
+            npc_vnums.remove(vnum)
+            wl["chat_eligible_npcs"] = npc_vnums
+            save_whitelist(wl)
+            return f"NPC {vnum} removed from chat-eligible list."
+
+        else:
+            return "Usage: @veil npcs [list|add|remove]"
+
+    else:
+        return "Usage: @veil [list|add|remove|signup|openchars|npcs]"
+
+
+CommandParser.cmd_admin_veil = cmd_admin_veil
+
+
+# =========================================================================
+# RP Say — Local say with NPC AI reactions, conversation memory, targeting
+# =========================================================================
+
+def cmd_rpsay(self, character, args):
+    """Say something in-character. LLM-capable NPCs in the room may react.
+    Usage: rpsay <message>              - speak to the room, NPCs may react
+           rpsay (<npc name>) <message> - direct rpsay at a specific NPC
+           rp <message>                 - alias
+    NPCs remember what was said and build on the conversation.
+    """
+    if not args:
+        return "Say what? Usage: rpsay <message>  or  rpsay (npc name) <message>"
+
+    from src.chat import send_to_player
+    from src.rp_context import get_rp_context
+
+    room = character.room
+    rp_ctx = get_rp_context()
+
+    # Check for targeted NPC: rpsay (guard) hello there
+    target_npc = None
+    message = args
+    if args.startswith("("):
+        close = args.find(")")
+        if close > 1:
+            npc_query = args[1:close].strip().lower()
+            message = args[close + 1:].strip()
+            if not message:
+                return "Say what to them? Usage: rpsay (npc name) <message>"
+            # Find NPC in room
+            for mob in getattr(room, 'mobs', []):
+                if not getattr(mob, 'alive', True):
+                    continue
+                if npc_query in mob.name.lower():
+                    target_npc = mob
+                    break
+            if not target_npc:
+                return f"You don't see '{npc_query}' here."
+
+    # Broadcast to players in room
+    if target_npc:
+        player_msg = f"\033[1;35m{character.name} says to {target_npc.name} (RP), '{message}'\033[0m"
+    else:
+        player_msg = f"\033[1;35m{character.name} says (RP), '{message}'\033[0m"
+    for listener in list(getattr(room, 'players', [])):
+        if listener is character:
+            continue
+        send_to_player(listener, player_msg)
+
+    # Inject into shadow presences
+    try:
+        from src.shadow_presence import shadow_manager
+        shadow_manager.broadcast_speech(room.vnum, character.name, message)
+    except Exception:
+        pass
+
+    # Track in room RP buffer
+    rp_ctx.add_player_line(room.vnum, character.name, message)
+
+    # Find responding NPCs
+    if target_npc:
+        # Targeted: only that NPC responds, 100% chance
+        responding_npcs = [(target_npc, True)]
+    else:
+        # Untargeted: all LLM-capable NPCs may respond
+        responding_npcs = []
+        for mob in getattr(room, 'mobs', []):
+            if not getattr(mob, 'alive', True):
+                continue
+            flags = getattr(mob, 'flags', [])
+            has_persona = bool(getattr(mob, 'persona', None))
+            has_dialogue = bool(getattr(mob, 'dialogue', None))
+            is_friendly = 'no_attack' in flags or 'shopkeeper' in flags or 'trainer' in flags
+            if has_persona or has_dialogue or is_friendly:
+                responding_npcs.append((mob, False))
+
+    if responding_npcs:
+        import asyncio as _asyncio
+        _asyncio.ensure_future(
+            _rpsay_npc_responses(character, message, responding_npcs, room)
+        )
+
+    # Return to speaker
+    if target_npc:
+        return f"\033[1;35mYou say to {target_npc.name} (RP), '{message}'\033[0m"
+    return f"\033[1;35mYou say (RP), '{message}'\033[0m"
+
+
+async def _rpsay_npc_responses(character, message, npc_list, room):
+    """Async handler: get AI responses from NPCs who overheard rpsay.
+
+    Uses the unified build_unified_npc_prompt(mode='rpsay') so rpsay,
+    talk, and chat all use the same enrichment process.
+
+    npc_list: list of (npc, is_targeted) tuples
+    """
+    import asyncio
+    import random
+    from src.ai import build_unified_npc_prompt, _call_ollama, _call_lmstudio, _config
+    from src.rp_context import get_rp_context, save_rpsay_memory
+
+    rp_ctx = get_rp_context()
+
+    # Small delay to feel natural
+    await asyncio.sleep(1.0 + random.random() * 1.5)
+
+    for npc, is_targeted in npc_list:
+        # Targeted NPCs always respond; untargeted have 60% chance
+        if not is_targeted and random.random() > 0.6:
+            continue
+
+        try:
+            # Build conversation buffer (raw lines) for the unified builder
+            buf = rp_ctx.get_buffer(room.vnum)
+            recent_lines = []
+            for ex in list(buf.exchanges)[-8:]:
+                recent_lines.append(f"{ex.speaker}: \"{ex.text}\"")
+
+            npc_last = rp_ctx.get_npc_last_line(room.vnum, npc.name)
+
+            # Build the system prompt with the unified builder
+            system_prompt = build_unified_npc_prompt(
+                npc=npc,
+                character=character,
+                room=room,
+                mode="rpsay",
+                rp_room_buffer=recent_lines,
+                npc_last_remark=npc_last,
+            )
+
+            # User message frames the trigger differently for targeted vs overheard
+            if is_targeted:
+                user_prompt = (
+                    f"{character.name} speaks DIRECTLY to you: \"{message}\""
+                )
+            else:
+                user_prompt = (
+                    f"You overhear {character.name} say (not directly to you): "
+                    f"\"{message}\""
+                )
+
+            # Call the LLM directly
+            if _config.get("enabled"):
+                if _config["backend"] == "ollama":
+                    response = await _call_ollama(user_prompt, system_prompt)
+                else:
+                    response = await _call_lmstudio(user_prompt, system_prompt)
+            else:
+                continue  # no LLM -> no response (template fallback isn't useful for overhear)
+
+            # Filter silent responses
+            if not response or not response.strip() or response.strip() in ('...', '…', ''):
+                continue
+
+            response = response.strip().strip('"').strip("'")
+            if len(response) > 500:
+                response = response[:497] + "..."
+
+            # Track NPC response in room buffer
+            rp_ctx.add_npc_line(room.vnum, npc.name, response)
+
+            # Save to NPC's persistent memory of this player
+            save_rpsay_memory(npc, character.name, message, response)
+
+            # Broadcast to all players in room
+            npc_msg = f"\033[1;36m{npc.name} remarks, \"{response}\"\033[0m"
+            for player in getattr(room, 'players', []):
+                _w = getattr(player, '_writer', None) or getattr(player, 'writer', None)
+                if _w:
+                    try:
+                        _w.write(f"\n{npc_msg}\n")
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+
+        # Stagger responses from multiple NPCs
+        await asyncio.sleep(0.8 + random.random() * 1.2)
+
+
+CommandParser.cmd_rpsay = cmd_rpsay
+
+
+# =========================================================================
+# rpsheet command — player-authored RP sheet (bio, personality, goals, quirks)
+# =========================================================================
+
+def _ensure_rp_sheet(character):
+    """Make sure the character has a PcSheet; create one if missing."""
+    from src.ai_schemas.pc_sheet import PcSheet
+    if not hasattr(character, 'rp_sheet') or not isinstance(character.rp_sheet, PcSheet):
+        character.rp_sheet = PcSheet()
+    return character.rp_sheet
+
+
+def cmd_rpsheet(self, character, args):
+    """View or edit your roleplay sheet. NPCs reference these when speaking with you.
+    Usage:
+      rpsheet                    - view your sheet
+      rpsheet bio <text>         - set 1-3 sentence background
+      rpsheet personality <text> - set demeanor
+      rpsheet goal add <text>    - add a goal
+      rpsheet goal remove <#>    - remove goal by number
+      rpsheet quirk add <text>   - add observable quirk (max 5)
+      rpsheet quirk remove <#>   - remove quirk by number
+      rpsheet pronouns <text>    - set pronouns (e.g. she/her, they/them)
+      rpsheet hide               - hide sheet from NPC prompts
+      rpsheet show               - show sheet to NPC prompts
+      rpsheet clear <field>      - wipe a field (bio|personality|goals|quirks)
+    """
+    sheet = _ensure_rp_sheet(character)
+    parts = args.strip().split(None, 1) if args else []
+    sub = parts[0].lower() if parts else "view"
+    rest = parts[1] if len(parts) > 1 else ""
+
+    # --- view ---
+    if sub in ("view", ""):
+        return _format_rp_sheet(character, sheet)
+
+    # --- bio ---
+    if sub == "bio":
+        if not rest:
+            return f"Current bio: {sheet.bio or '(none)'}"
+        if len(rest) > 500:
+            return "Bio must be 500 characters or less."
+        sheet.bio = rest.strip()
+        try:
+            character.save()
+        except Exception:
+            pass
+        return f"\033[0;32mBio updated.\033[0m"
+
+    # --- personality ---
+    if sub == "personality":
+        if not rest:
+            return f"Current personality: {sheet.personality or '(none)'}"
+        if len(rest) > 300:
+            return "Personality must be 300 characters or less."
+        sheet.personality = rest.strip()
+        try:
+            character.save()
+        except Exception:
+            pass
+        return f"\033[0;32mPersonality updated.\033[0m"
+
+    # --- pronouns ---
+    if sub == "pronouns":
+        if not rest:
+            return f"Current pronouns: {sheet.pronouns}"
+        if len(rest) > 30:
+            return "Pronouns must be 30 characters or less."
+        sheet.pronouns = rest.strip()
+        try:
+            character.save()
+        except Exception:
+            pass
+        return f"\033[0;32mPronouns updated to: {sheet.pronouns}\033[0m"
+
+    # --- goal add/remove ---
+    if sub == "goal":
+        sub_parts = rest.split(None, 1)
+        if not sub_parts:
+            if not sheet.goals:
+                return "You have no goals set."
+            lines = ["Your goals:"]
+            for i, g in enumerate(sheet.goals, 1):
+                lines.append(f"  {i}. {g}")
+            return "\n".join(lines)
+        action = sub_parts[0].lower()
+        body = sub_parts[1] if len(sub_parts) > 1 else ""
+        if action == "add":
+            if not body:
+                return "Usage: rpsheet goal add <text>"
+            if len(sheet.goals) >= 10:
+                return "You already have the maximum 10 goals."
+            sheet.goals.append(body.strip())
+            try:
+                character.save()
+            except Exception:
+                pass
+            return f"\033[0;32mGoal added: {body.strip()}\033[0m"
+        if action == "remove":
+            try:
+                idx = int(body) - 1
+            except ValueError:
+                return "Usage: rpsheet goal remove <number>"
+            if 0 <= idx < len(sheet.goals):
+                removed = sheet.goals.pop(idx)
+                try:
+                    character.save()
+                except Exception:
+                    pass
+                return f"\033[0;33mGoal removed: {removed}\033[0m"
+            return f"No goal at index {body}."
+        return "Usage: rpsheet goal [add|remove] ..."
+
+    # --- quirk add/remove ---
+    if sub == "quirk":
+        sub_parts = rest.split(None, 1)
+        if not sub_parts:
+            if not sheet.quirks:
+                return "You have no quirks set."
+            lines = ["Your quirks:"]
+            for i, q in enumerate(sheet.quirks, 1):
+                lines.append(f"  {i}. {q}")
+            return "\n".join(lines)
+        action = sub_parts[0].lower()
+        body = sub_parts[1] if len(sub_parts) > 1 else ""
+        if action == "add":
+            if not body:
+                return "Usage: rpsheet quirk add <text>"
+            if len(sheet.quirks) >= 5:
+                return "You already have the maximum 5 quirks."
+            sheet.quirks.append(body.strip())
+            try:
+                character.save()
+            except Exception:
+                pass
+            return f"\033[0;32mQuirk added: {body.strip()}\033[0m"
+        if action == "remove":
+            try:
+                idx = int(body) - 1
+            except ValueError:
+                return "Usage: rpsheet quirk remove <number>"
+            if 0 <= idx < len(sheet.quirks):
+                removed = sheet.quirks.pop(idx)
+                try:
+                    character.save()
+                except Exception:
+                    pass
+                return f"\033[0;33mQuirk removed: {removed}\033[0m"
+            return f"No quirk at index {body}."
+        return "Usage: rpsheet quirk [add|remove] ..."
+
+    # --- hide / show ---
+    if sub == "hide":
+        sheet.sheet_visible_in_prompts = False
+        try:
+            character.save()
+        except Exception:
+            pass
+        return "\033[0;33mYour RP sheet is now hidden from NPC prompts.\033[0m"
+
+    if sub == "show":
+        sheet.sheet_visible_in_prompts = True
+        try:
+            character.save()
+        except Exception:
+            pass
+        return "\033[0;32mYour RP sheet is now visible to NPCs.\033[0m"
+
+    # --- clear ---
+    if sub == "clear":
+        if not rest:
+            return "Usage: rpsheet clear <bio|personality|goals|quirks>"
+        field = rest.strip().lower()
+        if field == "bio":
+            sheet.bio = ""
+        elif field == "personality":
+            sheet.personality = ""
+        elif field == "goals":
+            sheet.goals = []
+        elif field == "quirks":
+            sheet.quirks = []
+        else:
+            return "Unknown field. Use: bio, personality, goals, quirks."
+        try:
+            character.save()
+        except Exception:
+            pass
+        return f"\033[0;33m{field.title()} cleared.\033[0m"
+
+    return ("Usage: rpsheet [view|bio|personality|goal|quirk|pronouns|hide|show|clear]\n"
+            "Type 'help rpsheet' for full details.")
+
+
+def _format_rp_sheet(character, sheet):
+    """Render the RP sheet for display."""
+    lines = [
+        "\033[1;36m=" * 60 + "\033[0m",
+        f"\033[1;36m  RP Sheet — {character.name} ({sheet.pronouns})\033[0m",
+        "\033[1;36m=" * 60 + "\033[0m",
+    ]
+    visibility = "\033[0;32mvisible to NPCs\033[0m" if sheet.sheet_visible_in_prompts \
+        else "\033[0;33mhidden from NPCs\033[0m"
+    lines.append(f"  Status: {visibility}")
+    lines.append("")
+
+    lines.append(f"\033[1;33mBio:\033[0m {sheet.bio or '(set with: rpsheet bio <text>)'}")
+    lines.append(f"\033[1;33mPersonality:\033[0m {sheet.personality or '(set with: rpsheet personality <text>)'}")
+
+    if sheet.goals:
+        lines.append("\033[1;33mGoals:\033[0m")
+        for i, g in enumerate(sheet.goals, 1):
+            lines.append(f"  {i}. {g}")
+    else:
+        lines.append("\033[1;33mGoals:\033[0m (set with: rpsheet goal add <text>)")
+
+    if sheet.quirks:
+        lines.append("\033[1;33mQuirks:\033[0m")
+        for i, q in enumerate(sheet.quirks, 1):
+            lines.append(f"  {i}. {q}")
+    else:
+        lines.append("\033[1;33mQuirks:\033[0m (set with: rpsheet quirk add <text>)")
+
+    # Engine-authored fields (read-only)
+    if sheet.titles_earned:
+        lines.append(f"\033[0;36mTitles:\033[0m " + ", ".join(sheet.titles_earned))
+    if sheet.notable_kills:
+        lines.append(f"\033[0;36mNotable kills:\033[0m " + ", ".join(sheet.notable_kills))
+    if sheet.deaths or sheet.remorts:
+        stats = []
+        if sheet.deaths:
+            stats.append(f"{sheet.deaths} death{'s' if sheet.deaths != 1 else ''}")
+        if sheet.remorts:
+            stats.append(f"{sheet.remorts} remort{'s' if sheet.remorts != 1 else ''}")
+        lines.append(f"\033[0;36mHistory:\033[0m " + ", ".join(stats))
+    if sheet.recent_events:
+        lines.append(f"\033[0;36mRecent events:\033[0m {len(sheet.recent_events)} tracked")
+
+    lines.append("\033[1;36m" + "=" * 60 + "\033[0m")
+    return "\n".join(lines)
+
+
+CommandParser.cmd_rpsheet = cmd_rpsheet
+
+
+# =========================================================================
+# @arc admin command — view + override arc state
+# =========================================================================
+
+def cmd_admin_arc(self, character, args):
+    """Admin: view and override player arc tracking state.
+    Usage:
+      @arc view <player>                       - show all arc sheets for a player
+      @arc view <player> <arc_id>              - show one arc in detail
+      @arc check <player> <arc_id> <item_id>   - force-check a checklist item
+      @arc status <player> <arc_id> <status>   - set arc status (untouched|aware|active|advancing|resolved)
+      @arc stats                               - aggregate stats across all loaded arcs
+    """
+    if not getattr(character, 'is_immortal', False):
+        return "Huh?"
+
+    parts = args.strip().split() if args else []
+    sub = parts[0].lower() if parts else "help"
+
+    if sub == "stats":
+        return _arc_admin_stats(self.world)
+
+    if sub == "view":
+        if len(parts) < 2:
+            return "Usage: @arc view <player> [arc_id]"
+        target = _find_player_by_name(self.world, parts[1])
+        if not target:
+            return f"Player '{parts[1]}' not found online."
+        if len(parts) >= 3:
+            return _arc_admin_view_one(target, parts[2])
+        return _arc_admin_view_all(target)
+
+    if sub == "check":
+        if len(parts) < 4:
+            return "Usage: @arc check <player> <arc_id> <item_id>"
+        target = _find_player_by_name(self.world, parts[1])
+        if not target:
+            return f"Player '{parts[1]}' not found online."
+        arc_id, item_id = parts[2], parts[3]
+        changed = target.check_arc_item(arc_id, item_id)
+        _arc_admin_audit_log(character.name, target.name, "check_arc_item", {
+            "arc_id": arc_id, "item_id": item_id, "changed": changed,
+        })
+        if changed:
+            return f"\033[0;32m[+] {target.name}: arc '{arc_id}' item '{item_id}' checked.\033[0m"
+        return f"\033[0;33m[!] No state change. Arc/item may not exist or already checked.\033[0m"
+
+    if sub == "status":
+        if len(parts) < 4:
+            return "Usage: @arc status <player> <arc_id> <new_status> [resolution]"
+        target = _find_player_by_name(self.world, parts[1])
+        if not target:
+            return f"Player '{parts[1]}' not found online."
+        arc_id = parts[2]
+        new_status = parts[3]
+        resolution = parts[4] if len(parts) >= 5 else None
+        changed = target.set_arc_status(arc_id, new_status, resolution=resolution)
+        _arc_admin_audit_log(character.name, target.name, "set_arc_status", {
+            "arc_id": arc_id, "status": new_status, "resolution": resolution,
+            "changed": changed,
+        })
+        if changed:
+            return f"\033[0;32m[+] {target.name}: arc '{arc_id}' status -> {new_status}\033[0m"
+        return f"\033[0;33m[!] No status change. Arc may not exist or invalid status.\033[0m"
+
+    return ("Usage: @arc [view|check|status|stats] ...\n"
+            "Type 'help @arc' for full details.")
+
+
+def _find_player_by_name(world, name):
+    """Find an online player by name (case-insensitive)."""
+    name_lower = name.lower()
+    for p in getattr(world, 'players', []) or []:
+        if getattr(p, 'name', '').lower() == name_lower:
+            return p
+    return None
+
+
+def _arc_admin_view_all(target):
+    arcs = getattr(target, 'arc_sheets', None) or {}
+    if not arcs:
+        return f"{target.name} has no arc sheets registered."
+    lines = [f"\033[1;36m=== Arc Sheets — {target.name} ===\033[0m"]
+    for arc_id, sheet in arcs.items():
+        if not hasattr(sheet, 'checklist'):
+            continue
+        total = len(sheet.checklist)
+        checked = sum(1 for ci in sheet.checklist if ci.state != "unchecked")
+        lines.append(
+            f"  \033[1;33m{arc_id}\033[0m — {sheet.title or '?'} "
+            f"[{sheet.status}] ({checked}/{total} items)"
+        )
+        if sheet.resolution:
+            lines.append(f"    resolution: {sheet.resolution}")
+    lines.append("\nUse '@arc view <player> <arc_id>' for detail.")
+    return "\n".join(lines)
+
+
+def _arc_admin_view_one(target, arc_id):
+    arc = target.get_arc(arc_id) if hasattr(target, 'get_arc') else None
+    if not arc:
+        return f"{target.name} has no arc sheet for '{arc_id}'."
+    lines = [
+        "\033[1;36m" + "=" * 60 + "\033[0m",
+        f"\033[1;36m  {arc.title or arc_id} — {target.name}\033[0m",
+        f"\033[1;36m  Status: {arc.status}{(' / ' + arc.resolution) if arc.resolution else ''}\033[0m",
+        "\033[1;36m" + "=" * 60 + "\033[0m",
+    ]
+    if arc.entered_at:
+        import time as _t
+        lines.append(f"  Entered: {_t.strftime('%Y-%m-%d %H:%M', _t.localtime(arc.entered_at))}")
+    if arc.last_activity_at:
+        import time as _t
+        lines.append(f"  Last activity: {_t.strftime('%Y-%m-%d %H:%M', _t.localtime(arc.last_activity_at))}")
+    lines.append("")
+    for ci in arc.checklist:
+        state_color = {
+            "unchecked": "\033[0;90m[ ]\033[0m",
+            "checked":   "\033[0;32m[X]\033[0m",
+            "detailed":  "\033[1;32m[*]\033[0m",
+        }.get(ci.state, "[?]")
+        cat_label = f"({ci.category})"
+        line = f"  {state_color} \033[1;37m{ci.id}\033[0m {cat_label} — {ci.label}"
+        if ci.orphaned:
+            line += " \033[0;31m[ORPHANED]\033[0m"
+        lines.append(line)
+        if ci.state == "detailed" and ci.detail:
+            for k, v in ci.detail.items():
+                lines.append(f"      {k}: {v}")
+    if arc.flags:
+        lines.append("")
+        lines.append("  Flags:")
+        for k, v in arc.flags.items():
+            lines.append(f"    {k}: {v}")
+    return "\n".join(lines)
+
+
+def _arc_admin_stats(world):
+    """Aggregate stats across all online players' arcs."""
+    stats = {}  # arc_id -> {status_count: dict, total_players: int}
+    for player in getattr(world, 'players', []) or []:
+        for arc_id, sheet in (getattr(player, 'arc_sheets', None) or {}).items():
+            entry = stats.setdefault(arc_id, {
+                "title": sheet.title if hasattr(sheet, 'title') else arc_id,
+                "untouched": 0, "aware": 0, "active": 0,
+                "advancing": 0, "resolved": 0, "total": 0,
+            })
+            entry["total"] += 1
+            status = getattr(sheet, 'status', 'untouched')
+            if status in entry:
+                entry[status] += 1
+    if not stats:
+        return "No arc sheets among online players."
+    lines = ["\033[1;36m=== Arc Statistics (online players) ===\033[0m"]
+    for arc_id, data in stats.items():
+        lines.append(f"  \033[1;33m{arc_id}\033[0m — {data['title']}")
+        lines.append(
+            f"    untouched: {data['untouched']}  aware: {data['aware']}  "
+            f"active: {data['active']}  advancing: {data['advancing']}  "
+            f"resolved: {data['resolved']}  (total {data['total']})"
+        )
+    return "\n".join(lines)
+
+
+def _arc_admin_audit_log(admin_name, target_name, action_type, payload):
+    """Append to data/audit/arc_overrides.jsonl."""
+    import os, json, time
+    audit_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'audit')
+    os.makedirs(audit_dir, exist_ok=True)
+    path = os.path.join(audit_dir, 'arc_overrides.jsonl')
+    entry = {
+        "timestamp": time.time(),
+        "admin": admin_name,
+        "target_player": target_name,
+        "action": action_type,
+        "payload": payload,
+    }
+    try:
+        with open(path, 'a', encoding='utf-8') as f:
+            f.write(json.dumps(entry) + "\n")
+    except Exception:
+        pass
+
+
+CommandParser.cmd_admin_arc = cmd_admin_arc
+
+
+# =========================================================================
+# Shadow Chat Game intrusion mechanics (Phase 5 §5.2.3)
+# =========================================================================
+
+def cmd_eavesdrop(self, character, args):
+    """Try to listen in on a dreaming player's chat conversation.
+    Usage: eavesdrop <player>
+    Listen check vs the dreamer's Will save. Success reveals the last 3 lines
+    of the chat, with the NPC name redacted to "a distant voice".
+    """
+    if not args:
+        return "Eavesdrop on whom? Usage: eavesdrop <player>"
+
+    target_name = args.strip().lower()
+    target = None
+    # Find the target in the same room as the eavesdropper
+    for p in getattr(character.room, 'players', []) or []:
+        if p is character:
+            continue
+        if p.name.lower() == target_name or p.name.lower().startswith(target_name):
+            target = p
+            break
+    if not target:
+        return f"You don't see '{args}' here."
+
+    from src.character import State
+    if target.state != State.CHATTING or not getattr(target, 'active_chat_session', None):
+        return f"{target.name} isn't dreaming. There's nothing to overhear."
+
+    # Listen vs Will opposed check
+    import random
+    listen = character.skill_check("Listen") if hasattr(character, 'skill_check') else random.randint(1, 20)
+    if isinstance(listen, str):  # untrained returns a string in some impls
+        listen = random.randint(1, 20)
+    target_will = 0
+    if hasattr(target, 'get_save'):
+        target_will = target.get_save("Will") or 0
+    will_roll = random.randint(1, 20) + int(target_will)
+
+    if listen <= will_roll:
+        return (f"\033[0;31mYou strain to listen but {target.name}'s dream is "
+                f"sealed against you. (Listen {listen} vs Will {will_roll})\033[0m")
+
+    # Success — show last 3 conversation lines, redacting NPC name
+    session = target.active_chat_session
+    history = [e for e in session.conversation_history
+               if e.get("role") in ("user", "assistant")]
+    last_three = history[-3:]
+    if not last_three:
+        return ("\033[0;33mYou catch the rhythm of speech, but nothing has "
+                "passed between them yet.\033[0m")
+
+    lines = [
+        f"\033[0;35m  ~ You catch fragments of {target.name}'s dream:\033[0m"
+    ]
+    for entry in last_three:
+        speaker = "a distant voice" if entry["role"] == "assistant" else target.name
+        text = entry.get("content", "")[:200]
+        lines.append(f"  \033[2;37m{speaker}: \"{text}\"\033[0m")
+    return "\n".join(lines)
+
+
+CommandParser.cmd_eavesdrop = cmd_eavesdrop
+
+
+def cmd_disturb(self, character, args):
+    """Disturb a dreaming player. Forces their chat to end. Trust penalty.
+    Usage: disturb <player>
+    The disturbed NPC marks you as having interrupted their counsel — your
+    next interaction with them starts at a lower trust tier.
+    """
+    if not args:
+        return "Disturb whom? Usage: disturb <player>"
+
+    target_name = args.strip().lower()
+    target = None
+    for p in getattr(character.room, 'players', []) or []:
+        if p is character:
+            continue
+        if p.name.lower() == target_name or p.name.lower().startswith(target_name):
+            target = p
+            break
+    if not target:
+        return f"You don't see '{args}' here."
+
+    from src.character import State
+    if target.state != State.CHATTING or not getattr(target, 'active_chat_session', None):
+        return f"{target.name} isn't dreaming. They're already with you."
+
+    session = target.active_chat_session
+    npc_name = session.npc_name
+
+    # Force-end the disturbed chat (applies trust penalty in chat_session)
+    from src import chat_session as cs
+    cs.force_end_disturbed(session, target, disturber_name=character.name)
+
+    # Notify the dreamer
+    if hasattr(target, '_writer'):
+        try:
+            target._writer.write(
+                f"\n\033[1;31m  ~ {character.name} shakes you awake! The dream snaps.\033[0m\n"
+            )
+        except Exception:
+            pass
+
+    # Notify the room
+    try:
+        from src.chat import broadcast_to_room
+        broadcast_to_room(
+            character.room,
+            f"\033[0;33m{character.name} shakes {target.name} from their dream.\033[0m",
+            exclude=character,
+        )
+    except Exception:
+        pass
+
+    return (f"\n\033[1;33mYou shake {target.name} from their conversation with "
+            f"{npc_name}. The dream snaps.\033[0m\n"
+            f"\033[2;37m  ({npc_name} will remember the interruption.)\033[0m")
+
+
+CommandParser.cmd_disturb = cmd_disturb

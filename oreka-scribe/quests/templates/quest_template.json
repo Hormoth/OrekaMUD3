@@ -1,0 +1,60 @@
+{
+  "_comment": "OrekaMUD3 quest template. Fill in and move to quests/drafts/ for review.",
+  "id": 0,
+  "name": "",
+  "description": "",
+  "category": "story",
+  "level": 1,
+  "giver_npc": "",
+  "giver_room": 0,
+  "turnin_npc": "",
+  "turnin_room": 0,
+  "time_limit": 0,
+  "repeatable": false,
+  "shareable": false,
+  "abandonable": true,
+  "auto_accept": false,
+  "auto_complete": false,
+  "accept_text": "",
+  "progress_text": "",
+  "complete_text": "",
+  "fail_text": "",
+  "chain_quest": 0,
+  "branch_quests": [],
+  "prerequisites": {
+    "min_level": 0,
+    "max_level": 0,
+    "required_quests": [],
+    "required_class": "",
+    "required_race": "",
+    "required_alignment": "",
+    "required_reputation": {},
+    "required_items": [],
+    "required_skills": {}
+  },
+  "objectives": [
+    {
+      "id": "obj_1",
+      "objective_type": "talk",
+      "description": "",
+      "target": "",
+      "required_count": 1,
+      "current_count": 0,
+      "optional": false,
+      "hidden": false,
+      "order": 1,
+      "skill_name": "",
+      "skill_dc": 0
+    }
+  ],
+  "rewards": {
+    "xp": 0,
+    "gold": 0,
+    "items": [],
+    "reputation": {},
+    "unlock_quests": [],
+    "class_feature": "",
+    "title": "",
+    "quest_points": 0
+  }
+}

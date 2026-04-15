@@ -1,15 +1,20 @@
 # OrekaMUD3
 
-A D&D 3.5 OGL multi-user dungeon set in the world of Oreka, built in Python with async telnet.
+A D&D 3.5 OGL multi-user dungeon set in the world of Oreka, built from scratch in Python with async telnet and WebSocket support.
+
+**33,000+ lines of code | 1,624 rooms | 373 mobs | 321 commands | 88 feats | 82 spells | 60 crafting recipes | 13 deities | 10 factions | 300 automated tests**
 
 ## Quick Start
 
 ```bash
 cd oreka_mud
+pip install telnetlib3 websockets
 python main.py
 ```
 
-Connect: `telnet localhost 4000` or any MUD client (MudLet, TinTin++, etc.) on port 4000.
+Connect via telnet: `telnet localhost 4000` or any MUD client (MudLet, TinTin++, etc.) on port 4000.
+
+Connect via browser: Open `veil_client.html` (WebSocket on port 8765).
 
 Public server: `telnet 47.188.185.168 4000`
 
@@ -33,9 +38,11 @@ Oreka is a continent shaped by four Elemental Lords -- Stone, Fire, Sea, and Win
 
 ### World Stats
 
-- **1,615 rooms** across 12 area files
-- **366 mobs** (276 hostile, 85 friendly NPCs, 5 tutorial)
-- **238 bestiary creatures** (D&D 3.5 compatible)
+- **1,624 rooms** across 13 area files
+- **373 mobs** (276 hostile, 85 friendly NPCs, 5 tutorial)
+- **238 bestiary creatures** (D&D 3.5 compatible template library)
+- **88 items** with 12 special material types
+- **83 active location effects** (Kin-sense modifiers, elemental resonance, hazards, rune-circles, sanctuaries)
 - **100% room connectivity** verified by AI bot explorer
 - **6 wilderness corridors** connecting regions through mountain passes and desert roads
 
@@ -65,6 +72,7 @@ Oreka is a continent shaped by four Elemental Lords -- Stone, Fire, Sea, and Win
 ### NPC Races
 | Race | Kin-Sense | Notes |
 |------|-----------|-------|
+| Half-Domnathar | Harmonic (cracked) | Domnathar-touched, discordant resonance |
 | Warg | Breach Static | Sapient wolf-warriors, freed servitors |
 | Goblin | Breach Static | Freed servitors, diverse tribal societies |
 | Hobgoblin | Breach Static | Disciplined military, Deceiver remnants |
@@ -91,7 +99,7 @@ All follow D&D 3.5 OGL rules with full:
 ### Kin-Sense
 The signature mechanic of Oreka. All Kin share an elemental sixth sense that detects nearby presences.
 
-- **9 resonance categories**: harmonic, wild_static, warm_static, breach_static, null, void, none, raw_static
+- **9 resonance categories**: harmonic, wild_static, warm_static, breach_static, null, void, echo, none, raw_static
 - **60 ft base range**, modified by room effects
 - **Room modifiers**: Dead zones (Silence Breach), flickering zones (Dark Dawn), amplified zones (Windstones)
 - Races determine resonance type; Farborn are invisible, Domnathar register as void
@@ -109,12 +117,31 @@ Full D&D 3.5 combat system:
 - Auto-attack with configurable behavior
 - Attack rolls, AC, damage, critical hits
 - Combat maneuvers: disarm, trip, bull rush, grapple, overrun, sunder, feint
-- Full attack actions
+- Full attack actions with iterative attacks
 - Power Attack, Combat Expertise toggles
 - Sneak Attack for Rogues
-- Conditions: prone, stunned, blinded, poisoned, etc.
+- 37 conditions with mechanical effects: prone, stunned, blinded, poisoned, etc.
 - Elemental weapon damage (flaming, frost, shock)
 - Spawn/respawn system with timers (5 min regular, 15 min boss)
+- **Combat AI**: Mobs flee at low HP, select optimal targets, use combat maneuvers from feats, trigger special attacks
+
+### AI Chat Game
+Full AI conversation system with any eligible NPC. Players enter a narrative chat mode with structured JSON responses from the LLM.
+
+- `chat <npc>` — Enter AI chat mode with an NPC. All input routed to AI conversation.
+- `endchat` — End session gracefully with NPC farewell
+- `enter world` — Materialize from chat into the live world (moves player to NPC's room)
+- **Shadow Presence**: Chatting players appear as dreaming presences in the NPC's room, visible to other players on `look` and Kin-sense (echo resonance)
+- **World bleed**: Speech, combat, and world events in the room inject into the AI conversation as `[~WORLD~]` messages
+- **NPC personas**: `ai_persona` field on mobs with voice, motivation, secrets, knowledge domains, speech style, faction attitudes, lore tags
+- **NPC memory**: NPCs remember past conversations with each player (stored in `data/npc_memories/`)
+- **Lore integration**: `data/lore.json` with 17 canon entries injected into AI context based on NPC's lore tags
+- **Game actions**: AI can trigger reputation changes, quest grants, item gives, and memory storage
+- **Conversation summarization**: Long conversations auto-compress older exchanges to stay within context limits
+- **Model tier selection**: Premium (faction leaders, lore keepers), standard (merchants, trainers), fast (guards, commoners)
+- **Session logs**: Complete conversation history saved to `data/chat_sessions/`
+- **GMCP**: `Chat.Started`, `Chat.WorldEvent`, `Chat.Ended`, `Chat.Materialized` packages for Veil Client integration
+- **30-minute auto-despawn**: Idle chat sessions cleaned up automatically
 
 ### Religion & Deities (13)
 4 Elemental Lords + 9 Ascended Gods with mechanical effects.
@@ -175,11 +202,14 @@ Oreka-specific:
 | Volcanic Glass | Fire | Scorchspires | Expanded crit range, fragile |
 | Giant-bone | Earth | Ruins | +1 CL earth/acid as focus, +1 bludgeon damage |
 
-### Crafting (32 recipes)
+### Crafting (60 recipes)
 
 7 craft skills: Weaponsmithing (8), Armorsmithing (6), Leatherworking (4), Alchemy (6), Weaving (3), Jewelrycrafting (3), Runic Crafting (2)
 
-Includes Oreka-specific recipes: Embersteel weapons, Wind-silk cloaks, Amber-sap Elixir, Riverstone Amulets, Volcanic Glass daggers, Rune-carved focuses.
+- DC checks with success, critical success, and critical failure mechanics
+- Material requirements and gold costs per recipe
+- Feat and caster level requirements for magical crafting
+- Includes Oreka-specific recipes: Embersteel weapons, Wind-silk cloaks, Amber-sap Elixir, Riverstone Amulets, Volcanic Glass daggers, Rune-carved focuses
 
 ---
 
@@ -268,11 +298,45 @@ HP:45/50 AC:17 MV:88/100 Gold:150 TNL:450 SP:[L0:3/L1:2] [Blessed]  Central Alta
 
 ---
 
+## Veil Client — Browser-Based Play
+
+OrekaMUD3 ships with the **Veil Client** (`veil_client.html`), a built-in HTML/WebSocket MUD client:
+
+- **No download required** — Play in any modern browser
+- **WebSocket server** on port 8765 with bidirectional telnet proxy
+- **ANSI color rendering** — Full color support
+- **GMCP integration** — Real-time data pushed to client
+- **Keep-alive** — 30-second ping/pong heartbeat
+- Telnet and WebSocket players share the same world simultaneously
+
+### GMCP Protocol
+
+Full Generic MUD Communication Protocol for rich client integration:
+
+| Package | Data |
+|---------|------|
+| `Char.Vitals` | HP, AC, movement, gold, TNL, level |
+| `Char.Status` | Conditions, spell slots, class, race |
+| `Char.Factions` | All faction reputation values |
+| `Char.Deity` | Patron deity, shrine status, active buffs |
+| `Char.KinSense` | Elemental detections with range and room modifiers |
+| `Char.Quest` | Active quests with state, completed quest list |
+| `Room.Info` | Vnum, name, description, region, exits, effects, terrain |
+| `Room.Mobs` | Living mobs with health state indicators |
+| `Chat.Started` | NPC name/vnum, room, scenario (on chat session start) |
+| `Chat.WorldEvent` | Injected world event text during chat |
+| `Chat.Ended` | Session ID, reason (on chat session end) |
+| `Chat.Materialized` | Room vnum/name (on shadow materialization) |
+
+Works with MudLet, TinTin++, Veil Client, and any GMCP-compatible client.
+
+---
+
 ## World Map Viewer
 
 Interactive HTML/Canvas map at `http://localhost:8080/oreka_world_map.html`
 
-- All 1,615 rooms visualized with region clustering
+- All 1,624 rooms visualized with region clustering
 - Terrain topology layer (mountains, forests, rivers, desert, seas)
 - Region labels with color coding
 - Click rooms for details, exits, flags
@@ -302,31 +366,38 @@ Reports: room coverage, combat results by CR, deaths, dead ends, errors, region 
 
 ### Server
 - **Language**: Python 3.13+
-- **Networking**: telnetlib3 (async telnet)
-- **Port**: 4000 (configurable)
-- **Protocol**: Telnet with `connect_maxwait=0.5` for MudLet compatibility
+- **Networking**: telnetlib3 (async telnet) + websockets (async WebSocket)
+- **Ports**: 4000 (telnet, configurable) + 8765 (WebSocket/Veil Client)
+- **Protocols**: Telnet + WebSocket + GMCP (Generic MUD Communication Protocol)
+- **Codebase**: 33,000+ lines across 37 source modules + main.py
 
 ### Data Storage
-- **Rooms**: JSON area files in `data/areas/` (12 files)
-- **Mobs**: `data/mobs.json` (366 entries) + `data/mobs_bestiary.json` (238 templates)
+- **Rooms**: JSON area files in `data/areas/` (13 files, 1,624 rooms)
+- **Mobs**: `data/mobs.json` (373 entries) + `data/mobs_bestiary.json` (238 templates)
 - **Players**: Individual JSON files in `data/players/`
 - **Factions**: `data/guilds.json`
 - **Deities**: `data/deities.json`
 - **Materials**: `data/special_materials.json`
 - **Recipes**: `data/recipes.json`
 - **Achievements**: `data/achievements.json`
+- **Events**: `data/events/player_events.jsonl` (JSONL event log)
+- **Lore**: `data/lore.json` (17 canon entries for AI context)
+- **Chat Sessions**: `data/chat_sessions/` (conversation logs)
+- **NPC Memories**: `data/npc_memories/{npc_vnum}/` (per-player memory files)
 
 ### Source Modules
 | File | Purpose |
 |------|---------|
 | `main.py` | Server, login, character creation, game loop, tick functions |
+| `src/commands.py` | 321 player/admin/builder commands (13,128 lines) |
 | `src/character.py` | Character class, stats, equipment, persistence |
-| `src/commands.py` | All player commands (~200+) |
 | `src/combat.py` | D&D 3.5 combat engine |
-| `src/spells.py` | Spell system with elemental integration |
+| `src/spells.py` | 82 spells with elemental integration |
 | `src/feats.py` | 88 feats with prerequisites |
-| `src/items.py` | Item system with materials |
+| `src/items.py` | Item system with 12 special materials |
 | `src/mob.py` | Mob/NPC class |
+| `src/ai.py` | Three-tier NPC dialogue + Combat AI + AI Chat (JSON structured, lore, model tiers) |
+| `src/chat_session.py` | AI chat session lifecycle, NPC memory, session logging |
 | `src/room.py` | Room class with effects |
 | `src/world.py` | World loader |
 | `src/races.py` | 20 race definitions |
@@ -337,9 +408,11 @@ Reports: room coverage, combat results by CR, deaths, dead ends, errors, region 
 | `src/location_effects.py` | Room effects (hazards, rune-circles, etc.) |
 | `src/wandering_gods.py` | Invisible deity entities |
 | `src/spawning.py` | Mob spawn/respawn manager |
-| `src/crafting.py` | Crafting system |
-| `src/quests.py` | Quest system |
-| `src/conditions.py` | Status conditions |
+| `src/crafting.py` | Crafting system (60 recipes, 7 disciplines) |
+| `src/quests.py` | Quest system (10 objective types) |
+| `src/conditions.py` | 37 status conditions |
+| `src/gmcp.py` | GMCP protocol (telnet + WebSocket, 12 data packages) |
+| `src/websocket_server.py` | WebSocket server for Veil Client (port 8765) |
 | `src/ai_player.py` | AI bot explorer |
 | `src/party.py` | Party/group system |
 | `src/schedules.py` | NPC behavior schedules |

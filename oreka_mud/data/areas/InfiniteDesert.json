@@ -1,7 +1,7 @@
 [
   {
     "vnum": 8000,
-    "name": "Kharazhad â€” Caldera Gate",
+    "name": "Kharazhad â€' Caldera Gate",
     "description": "The great iron gate of Kharazhad stands open beneath an arch of black volcanic stone, its surface etched with reliefs of the Lady of Fire's forge-flame. Heat rolls outward from the caldera city beyond in visible waves, and the air tastes of sulfur and hot metal. Rarozhki Dwarf guards in ember-scarred plate watch arrivals with the unhurried confidence of warriors who know nothing survives the mountain that they did not permit.",
     "exits": {
       "north": 8001,
@@ -14,7 +14,7 @@
   },
   {
     "vnum": 8001,
-    "name": "Kharazhad â€” Gate Road",
+    "name": "Kharazhad â€' Gate Road",
     "description": "A broad avenue of fire-tempered basalt leads from the Caldera Gate into the city's heart, its stones worn smooth by three thousand years of Rarozhki boots. Smoke-blackened lanterns cast amber pools of light even at midday, and the distant heartbeat of the great forge carries through the stone beneath your feet like a second pulse. Stalls selling ember-bread and roasted cave-fungus line the eastern edge.",
     "exits": {
       "south": 8000,
@@ -28,7 +28,7 @@
   },
   {
     "vnum": 8002,
-    "name": "Kharazhad â€” Central Market",
+    "name": "Kharazhad â€' Central Market",
     "description": "The central market of Kharazhad is a covered hall whose ceiling vaults are crusted with centuries of forge-smoke and cooled lava drips. Rarozhki smiths sell Embersteel blades from stalls of black iron, while Taraf-Imro traders display volcanic gems in leather-lined cases. The air is thick and hot, and every surface glows faintly with residual heat from the forge-vents below.",
     "exits": {
       "south": 8001,
@@ -43,8 +43,8 @@
   },
   {
     "vnum": 8003,
-    "name": "Kharazhad â€” High Thane's Hall",
-    "description": "The Hall of the High Thane is carved directly from the caldera wall, its interior polished obsidian reflecting the eternal flame of a lava-channel that runs along the western wall. Stone banners bearing the Stonefire clan's sigil â€” a fist clutching a lightning-bolt flame â€” hang from iron rods. This is where High Thane Karveth Stonefire has held court for over three centuries, and the hall carries the weight of every decision made within its walls.",
+    "name": "Kharazhad â€' High Thane's Hall",
+    "description": "The Hall of the High Thane is carved directly from the caldera wall, its interior polished obsidian reflecting the eternal flame of a lava-channel that runs along the western wall. Stone banners bearing the Stonefire clan's sigil â€' a fist clutching a lightning-bolt flame â€' hang from iron rods. This is where High Thane Karveth Stonefire has held court for over three centuries, and the hall carries the weight of every decision made within its walls.",
     "exits": {
       "south": 8002,
       "east": 8012,
@@ -60,7 +60,7 @@
   },
   {
     "vnum": 8004,
-    "name": "Kharazhad â€” Temple of the Lady of Fire",
+    "name": "Kharazhad â€' Temple of the Lady of Fire",
     "description": "The temple rises in tiers of red-veined basalt, each level hotter than the last, until the inner sanctum shimmers with heat-haze visible to the naked eye. A lava-fed font at the altar's center burns with the Eternal Flame that has not been extinguished in three millennia. Priests in fire-resistant robes tend the flame in silence, and the air smells of hot iron and burning herbs.",
     "exits": {
       "south": 8003,
@@ -91,8 +91,8 @@
   },
   {
     "vnum": 8005,
-    "name": "Kharazhad â€” Embersteel Forges (East Wing)",
-    "description": "The eastern forge-wing is a cathedral of industry â€” ranked anvils, roaring bellows, and lava-channels that carry molten Embersteel from the vent to the quench-tanks in a controlled flow. Apprentice smiths work in careful silence under the eyes of masters who learned their craft from masters three generations dead. The heat here is punishing; visitors without fire resistance feel it as a persistent, bone-deep ache.",
+    "name": "Kharazhad â€' Embersteel Forges (East Wing)",
+    "description": "The eastern forge-wing is a cathedral of industry â€' ranked anvils, roaring bellows, and lava-channels that carry molten Embersteel from the vent to the quench-tanks in a controlled flow. Apprentice smiths work in careful silence under the eyes of masters who learned their craft from masters three generations dead. The heat here is punishing; visitors without fire resistance feel it as a persistent, bone-deep ache.",
     "exits": {
       "west": 8006,
       "north": 8013,
@@ -106,8 +106,8 @@
   },
   {
     "vnum": 8006,
-    "name": "Kharazhad â€” Embersteel Forges (Central)",
-    "description": "The central forge is the heart of Kharazhad's economic and spiritual life. The primary magma vent rises here through a channel of Giant-carved stone, its controlled flow a piece of engineering that has baffled outside scholars for centuries. The vent's heat is sufficient to work Embersteel â€” a metal found nowhere else on Oreka â€” and the forge-masters guard the techniques of its working as a sacred trust.",
+    "name": "Kharazhad â€' Embersteel Forges (Central)",
+    "description": "The central forge is the heart of Kharazhad's economic and spiritual life. The primary magma vent rises here through a channel of Giant-carved stone, its controlled flow a piece of engineering that has baffled outside scholars for centuries. The vent's heat is sufficient to work Embersteel â€' a metal found nowhere else on Oreka â€' and the forge-masters guard the techniques of its working as a sacred trust.",
     "exits": {
       "east": 8005,
       "west": 8007,
@@ -131,7 +131,7 @@
   },
   {
     "vnum": 8007,
-    "name": "Kharazhad â€” Embersteel Forges (West Wing)",
+    "name": "Kharazhad â€' Embersteel Forges (West Wing)",
     "description": "The western forge-wing handles the finishing and testing of Embersteel weapons and tools. Grinding wheels screech against blade edges, and sparks shower from polishing benches in constant orange curtains. Forgekeeper Agama Stonefire is often found here, testing each weapon personally before it leaves the complex. His voice carries easily over the noise when he finds a blade that fails his standards.",
     "exits": {
       "east": 8006,
@@ -146,7 +146,7 @@
   },
   {
     "vnum": 8008,
-    "name": "Kharazhad â€” Barracks (East)",
+    "name": "Kharazhad â€' Barracks (East)",
     "description": "The eastern barracks house a permanent garrison of three hundred Rarozhki warriors, their beds carved from the caldera wall itself in tiers of stone bunks. Weapons are racked in precise order along every aisle, and the smell of oil and leather overlays the ever-present forge-smoke. Off-duty soldiers sharpen blades and tell stories in the low rumble of Rarozhki Dwarven that newcomers find difficult to follow.",
     "exits": {
       "west": 8009,
@@ -160,7 +160,7 @@
   },
   {
     "vnum": 8009,
-    "name": "Kharazhad â€” Barracks (West)",
+    "name": "Kharazhad â€' Barracks (West)",
     "description": "The western barracks serve as both garrison quarters and training ground for the Stonefire Guard, the High Thane's personal household troops. A sparring pit occupies the center of the hall, and even when occupied by sleepers, the room smells of effort and hot stone. The guard roster is posted on a slab of polished basalt by the entrance, updated daily.",
     "exits": {
       "east": 8008,
@@ -174,7 +174,7 @@
   },
   {
     "vnum": 8010,
-    "name": "Kharazhad â€” Residential Quarter (East)",
+    "name": "Kharazhad â€' Residential Quarter (East)",
     "description": "The eastern residential quarter is a warren of carved stone apartments stacked four and five levels high along the caldera's inner wall, connected by ramp-roads rather than stairs. Each family's door is marked by a clan sigil hammered in copper. Children dart between the ramps while elders sit in carved niches and watch the forge-smoke rise through the caldera's open top.",
     "exits": {
       "west": 8001,
@@ -188,8 +188,8 @@
   },
   {
     "vnum": 8011,
-    "name": "Kharazhad â€” Gem-Cutter's Row",
-    "description": "Volcanic gems from the Scorchspires are cut and polished in this row of specialized workshops, their windows fitted with fine mesh to catch gem-dust. Pekakarlik gem-cutters work alongside Rarozhki jewelers in one of the few areas of the city where inter-kin collaboration is genuinely common. Display cases in the front rooms show finished pieces â€” fire rubies, lava opals, and the rare ember-diamonds that form only in active vents.",
+    "name": "Kharazhad â€' Gem-Cutter's Row",
+    "description": "Volcanic gems from the Scorchspires are cut and polished in this row of specialized workshops, their windows fitted with fine mesh to catch gem-dust. Pekakarlik gem-cutters work alongside Rarozhki jewelers in one of the few areas of the city where inter-kin collaboration is genuinely common. Display cases in the front rooms show finished pieces â€' fire rubies, lava opals, and the rare ember-diamonds that form only in active vents.",
     "exits": {
       "south": 8010,
       "west": 8002,
@@ -204,7 +204,7 @@
   },
   {
     "vnum": 8012,
-    "name": "Kharazhad â€” Council Chamber",
+    "name": "Kharazhad â€' Council Chamber",
     "description": "The Council Chamber is a circular room of polished red stone where the Forge Council meets to advise the High Thane. Stone chairs in concentric rings face a raised central dais, and the walls are carved with the genealogy of every Rarozhki clan that has contributed to Kharazhad's governance. The chamber is closed to visitors during session and eerily quiet between meetings.",
     "exits": {
       "south": 8011,
@@ -218,8 +218,8 @@
   },
   {
     "vnum": 8013,
-    "name": "Kharazhad â€” Temple Approach",
-    "description": "A processional corridor of black basalt leads from the forge complex to the Temple of the Lady of Fire, its walls carved with the history of the Flame Offering festival. Every ten years, a smith destroys their finest work in the central forge as sacrifice to the Lady â€” the carvings depict this act with a reverence that outsiders often misread as tragedy. The corridor is always warm enough to make breath unnecessary.",
+    "name": "Kharazhad â€' Temple Approach",
+    "description": "A processional corridor of black basalt leads from the forge complex to the Temple of the Lady of Fire, its walls carved with the history of the Flame Offering festival. Every ten years, a smith destroys their finest work in the central forge as sacrifice to the Lady â€' the carvings depict this act with a reverence that outsiders often misread as tragedy. The corridor is always warm enough to make breath unnecessary.",
     "exits": {
       "west": 8004,
       "south": 8005,
@@ -232,7 +232,7 @@
   },
   {
     "vnum": 8014,
-    "name": "Kharazhad â€” The Ember Vault Approach",
+    "name": "Kharazhad â€' The Ember Vault Approach",
     "description": "At the base of a switchback descent cut through the oldest volcanic stone in the complex, a massive door of Embersteel bars the passage downward. The door's surface is inscribed with Giant-era runes that the Rarozhki have never successfully translated, and fire elementals drift in slow patrol arcs across the approach corridor. The High Thane's seal alone authorizes entry, and even then, entry has been granted only twice in living memory.",
     "exits": {
       "up": 8003,
@@ -246,8 +246,8 @@
   },
   {
     "vnum": 8015,
-    "name": "Kharazhad â€” South Residential Tier",
-    "description": "The southern residential tiers cling to the caldera's lower inner wall where the heat from the forge-vents is most intense. Houses here are built with heat-channels that draw some of the warmth away, but visitors from cooler climes find the ambient temperature exhausting within hours. The residents â€” mostly smithing families and forge-workers â€” seem not to notice.",
+    "name": "Kharazhad â€' South Residential Tier",
+    "description": "The southern residential tiers cling to the caldera's lower inner wall where the heat from the forge-vents is most intense. Houses here are built with heat-channels that draw some of the warmth away, but visitors from cooler climes find the ambient temperature exhausting within hours. The residents â€' mostly smithing families and forge-workers â€' seem not to notice.",
     "exits": {
       "north": 8010,
       "west": 8016,
@@ -260,7 +260,7 @@
   },
   {
     "vnum": 8016,
-    "name": "Kharazhad â€” Provisioner's Street",
+    "name": "Kharazhad â€' Provisioner's Street",
     "description": "Kharazhad imports most of its food from Pekakarlik river traders and Halfling caravans, and Provisioner's Street is where those goods are warehoused and sold. The contrast with the forge-quarter is striking: here amid sacks of grain and crates of dried fruit, the heat seems almost manageable. The provisioners are mostly Halflings and Pekakarlik Dwarves, their cheerful commercial voices incongruous against the volcanic backdrop.",
     "exits": {
       "east": 8015,
@@ -275,7 +275,7 @@
   },
   {
     "vnum": 8017,
-    "name": "Kharazhad â€” East Wall Walkway",
+    "name": "Kharazhad â€' East Wall Walkway",
     "description": "The eastern wall of the caldera has been cut into a series of walkways and defensive positions that give archers clear lines of fire across the approaches below. The wall itself radiates heat from within, and the stone is warm to the touch at every point. From here the desert stretches east in a shimmer of heat, punctuated by the dark peaks of the Emberfangs twenty miles distant.",
     "exits": {
       "west": 8010,
@@ -289,7 +289,7 @@
   },
   {
     "vnum": 8018,
-    "name": "Kharazhad â€” Northeast Tower",
+    "name": "Kharazhad â€' Northeast Tower",
     "description": "The northeast tower of the caldera's defensive ring is Kharazhad's primary watch-post, staffed by rotating shifts of Rarozhki rangers whose desert-adapted vision can spot a caravan at five miles in clear conditions. Signal mirrors are mounted at the tower's crown, capable of relaying messages to Ashgarin Fold in under an hour. The tower's lower levels serve as an officers' mess.",
     "exits": {
       "south": 8017,
@@ -302,7 +302,7 @@
   },
   {
     "vnum": 8019,
-    "name": "Kharazhad â€” North Gate Approach",
+    "name": "Kharazhad â€' North Gate Approach",
     "description": "A secondary gate in the caldera's northern wall opens toward the road to the Emberfang peaks, used primarily by mining expeditions and Rarozhki patrol parties. The gate is smaller than the main entrance and guarded by a permanent post of four soldiers. Ore-sledges wait in a queue beside the gate, loaded with raw stone from the mountain's upper workings.",
     "exits": {
       "south": 8018,
@@ -315,8 +315,8 @@
   },
   {
     "vnum": 8020,
-    "name": "Kharazhad â€” West Residential Quarter",
-    "description": "The western quarter is where Kharazhad's Taraf-Imro and Kovaka residents have established their homes â€” a somewhat less blistering neighborhood by virtue of its position relative to the forge-vents. Kovaka stonework decorates the archways, and a small Taraf-Imro communal hall occupies a corner of the quarter, its interior hung with the geometric tapestries typical of that people.",
+    "name": "Kharazhad â€' West Residential Quarter",
+    "description": "The western quarter is where Kharazhad's Taraf-Imro and Kovaka residents have established their homes â€' a somewhat less blistering neighborhood by virtue of its position relative to the forge-vents. Kovaka stonework decorates the archways, and a small Taraf-Imro communal hall occupies a corner of the quarter, its interior hung with the geometric tapestries typical of that people.",
     "exits": {
       "east": 8001,
       "north": 8021,
@@ -329,7 +329,7 @@
   },
   {
     "vnum": 8021,
-    "name": "Kharazhad â€” Taraf-Imro Communal Hall",
+    "name": "Kharazhad â€' Taraf-Imro Communal Hall",
     "description": "A two-story hall of dressed stone maintained by Kharazhad's Taraf-Imro population, its upper floor used for meetings and its lower for communal meals. The Taraf-Imro who live in Kharazhad are mostly traders and skilled artisans who have spent years negotiating the cultural distance between Rarozhki formality and their own traditions. The hall is a piece of home in an alien landscape.",
     "exits": {
       "south": 8020,
@@ -343,7 +343,7 @@
   },
   {
     "vnum": 8022,
-    "name": "Kharazhad â€” Kovaka Stone Ward",
+    "name": "Kharazhad â€' Kovaka Stone Ward",
     "description": "The Kovaka Elves who live in Kharazhad occupy a small ward of exceptionally well-maintained stone structures, their angular geometry a contrast to the organic curves of Rarozhki volcanic architecture. Kovaka stonebinders work quietly in open-fronted workshops, repairing rune-circles and maintaining the structural integrity of the caldera's older sections. Their patience in this hot, close environment reflects centuries of adaptation.",
     "exits": {
       "east": 8021,
@@ -357,7 +357,7 @@
   },
   {
     "vnum": 8023,
-    "name": "Kharazhad â€” West Gate",
+    "name": "Kharazhad â€' West Gate",
     "description": "The western gate of Kharazhad is a working entrance used by supply caravans from Ashgarin Fold and the river settlements below. Embersteel-banded wagons line the approach, and Pekakarlik teamsters haggle with Rarozhki gate-wardens over cargo inspections. A customs office occupies the gatehouse's lower room, and the smell of fresh desert air drifting through the open arch is bracing after the forge-quarter's heat.",
     "exits": {
       "east": 8022,
@@ -369,8 +369,8 @@
   },
   {
     "vnum": 8024,
-    "name": "Kharazhad â€” Forge-Priests' Cloister",
-    "description": "The forge-priests who serve the Lady of Fire maintain this walled cloister adjacent to the temple, where novices learn the theology and craft of sacred smithing. A small practice forge burns in the courtyard, and the sound of prayer-hammering â€” rhythmic, deliberate strikes made as devotional act rather than productive work â€” carries through the walls at the canonical hours.",
+    "name": "Kharazhad â€' Forge-Priests' Cloister",
+    "description": "The forge-priests who serve the Lady of Fire maintain this walled cloister adjacent to the temple, where novices learn the theology and craft of sacred smithing. A small practice forge burns in the courtyard, and the sound of prayer-hammering â€' rhythmic, deliberate strikes made as devotional act rather than productive work â€' carries through the walls at the canonical hours.",
     "exits": {
       "east": 8004,
       "south": 8022
@@ -384,8 +384,8 @@
   },
   {
     "vnum": 8025,
-    "name": "Kharazhad â€” The Quench Yards",
-    "description": "Embersteel fresh from the forge is quenched in massive tanks of mineral-rich water drawn from the deep caldera aquifer, each quench accompanied by a shriek of steam that pressurizes the surrounding corridors. The quench-masters are a specialized guild within the broader smith culture, and their timing decisions â€” the precise moment between forge and quench â€” determine whether a blade becomes masterwork or slag.",
+    "name": "Kharazhad â€' The Quench Yards",
+    "description": "Embersteel fresh from the forge is quenched in massive tanks of mineral-rich water drawn from the deep caldera aquifer, each quench accompanied by a shriek of steam that pressurizes the surrounding corridors. The quench-masters are a specialized guild within the broader smith culture, and their timing decisions â€' the precise moment between forge and quench â€' determine whether a blade becomes masterwork or slag.",
     "exits": {
       "north": 8005,
       "west": 8006,
@@ -400,7 +400,7 @@
   },
   {
     "vnum": 8026,
-    "name": "Kharazhad â€” Deep Ore Corridor",
+    "name": "Kharazhad â€' Deep Ore Corridor",
     "description": "A descending corridor cut through solid basalt leads from the forge complex to the upper mine-works where raw volcanic ore is extracted. The walls here are veined with the orange-red Embersteel ore in its natural state, and even unprocessed it radiates warmth to the touch. Mine-carts on iron rails fill the corridor at shift-change, their loads rattling northward toward the forges.",
     "exits": {
       "north": 8025,
@@ -413,8 +413,8 @@
   },
   {
     "vnum": 8027,
-    "name": "Kharazhad â€” Upper Mine Works",
-    "description": "The upper mine-works are a network of cut passages where Rarozhki miners extract the Embersteel ore that feeds the city's forge economy. Pickaxes ring against hot stone, and the passages are lit by lava-globes â€” sealed balls of volcanic glass containing small amounts of molten rock that provide steady, sourceless illumination. Ventilation shafts cut every fifty feet carry away the worst of the mine-gases.",
+    "name": "Kharazhad â€' Upper Mine Works",
+    "description": "The upper mine-works are a network of cut passages where Rarozhki miners extract the Embersteel ore that feeds the city's forge economy. Pickaxes ring against hot stone, and the passages are lit by lava-globes â€' sealed balls of volcanic glass containing small amounts of molten rock that provide steady, sourceless illumination. Ventilation shafts cut every fifty feet carry away the worst of the mine-gases.",
     "exits": {
       "up": 8026,
       "north": 8028,
@@ -427,8 +427,8 @@
   },
   {
     "vnum": 8028,
-    "name": "Kharazhad â€” Vent Chamber",
-    "description": "A natural chamber where a secondary magma vent rises from the deep rock, its flow controlled by Giant-era stonework that the Rarozhki maintain with obsessive care. The air here is barely breathable without fire resistance, and the temperature exceeds anything found in the forge-halls above. This chamber is the geological explanation for Kharazhad's very existence â€” without this vent, there is no Embersteel, no city, no Stonefire clan.",
+    "name": "Kharazhad â€' Vent Chamber",
+    "description": "A natural chamber where a secondary magma vent rises from the deep rock, its flow controlled by Giant-era stonework that the Rarozhki maintain with obsessive care. The air here is barely breathable without fire resistance, and the temperature exceeds anything found in the forge-halls above. This chamber is the geological explanation for Kharazhad's very existence â€' without this vent, there is no Embersteel, no city, no Stonefire clan.",
     "exits": {
       "south": 8027
     },
@@ -458,8 +458,8 @@
   },
   {
     "vnum": 8029,
-    "name": "Kharazhad â€” The Hammerbright Tavern",
-    "description": "The only establishment in Kharazhad that might charitably be called a tavern occupies a broad vault cut into the residential quarter's lowest level. Stools of iron and stone circle a central forge-pit that doubles as hearth and entertainment â€” arm-wrestling over the coals is a traditional Rarozhki recreational activity. The drink is hot fermented root-ale served in iron cups, and it is considerably better than it sounds.",
+    "name": "Kharazhad â€' The Hammerbright Tavern",
+    "description": "The only establishment in Kharazhad that might charitably be called a tavern occupies a broad vault cut into the residential quarter's lowest level. Stools of iron and stone circle a central forge-pit that doubles as hearth and entertainment â€' arm-wrestling over the coals is a traditional Rarozhki recreational activity. The drink is hot fermented root-ale served in iron cups, and it is considerably better than it sounds.",
     "exits": {
       "north": 8020,
       "east": 8016
@@ -472,7 +472,7 @@
   },
   {
     "vnum": 8030,
-    "name": "Kharazhad â€” Stonefire Clan Vault",
+    "name": "Kharazhad â€' Stonefire Clan Vault",
     "description": "The innermost sanctum of the Stonefire clan's private holdings is sealed behind a door of solid Embersteel that has never in three centuries been forced. Within, according to Rarozhki tradition, are kept the clan's founding relics, the High Thane's testament, and the original deed of compact between the Rarozhki and the Giants who first permitted them to work this caldera. The current High Thane holds the only key.",
     "exits": {
       "east": 8003
@@ -484,7 +484,7 @@
   },
   {
     "vnum": 8031,
-    "name": "Kharazhad â€” Caldera Rim Path (North)",
+    "name": "Kharazhad â€' Caldera Rim Path (North)",
     "description": "A narrow path cut into the caldera's outer rim gives access to the higher wall positions and the ventilation works above the city. The drop into the caldera on one side and the sheer volcanic slope on the other make this a vertigo-inducing walk for the uninitiated. Rarozhki children run this path as a coming-of-age test, and the adults' nonchalance about the exposure is quietly alarming to visitors.",
     "exits": {
       "south": 8019,
@@ -497,7 +497,7 @@
   },
   {
     "vnum": 8032,
-    "name": "Kharazhad â€” Ventilation Shafts",
+    "name": "Kharazhad â€' Ventilation Shafts",
     "description": "The ventilation system that keeps Kharazhad's forge-gases from poisoning the city is a piece of Giant-era engineering that the Rarozhki have modified and extended over centuries. Vertical shafts cut through the caldera wall draw hot gas out and channel cooler air from above the rim downward. The system requires constant maintenance, and a team of engineers is always on duty here.",
     "exits": {
       "east": 8031,
@@ -510,8 +510,8 @@
   },
   {
     "vnum": 8033,
-    "name": "Kharazhad â€” Signal Platform",
-    "description": "The signal platform on the caldera's eastern rim provides line-of-sight to Ashgarin Fold to the east and, on clear days, to the distant glint of the Great River to the west. A mirror array and a fire-basket for smoke signals are maintained in ready condition. From this elevation the full scale of the Infinite Desert becomes visible â€” a shimmering sea of ochre and gold that seems to have no end.",
+    "name": "Kharazhad â€' Signal Platform",
+    "description": "The signal platform on the caldera's eastern rim provides line-of-sight to Ashgarin Fold to the east and, on clear days, to the distant glint of the Great River to the west. A mirror array and a fire-basket for smoke signals are maintained in ready condition. From this elevation the full scale of the Infinite Desert becomes visible â€' a shimmering sea of ochre and gold that seems to have no end.",
     "exits": {
       "west": 8031
     },
@@ -519,8 +519,8 @@
   },
   {
     "vnum": 8034,
-    "name": "Kharazhad â€” The Stone Covenant Hall",
-    "description": "Founded by High Thane Karveth Stonefire himself following his witnessing of Aldenheim's fall, the Stone Covenant is a religious-martial order dedicated to preserving fire-craft knowledge against future catastrophe. The Covenant Hall houses their library of forge-records and their reliquary of Aldenheim artifacts â€” tools and metals that survived the destruction. The air here smells of old paper and cool stone, a welcome relief from the forge quarter.",
+    "name": "Kharazhad â€' The Stone Covenant Hall",
+    "description": "Founded by High Thane Karveth Stonefire himself following his witnessing of Aldenheim's fall, the Stone Covenant is a religious-martial order dedicated to preserving fire-craft knowledge against future catastrophe. The Covenant Hall houses their library of forge-records and their reliquary of Aldenheim artifacts â€' tools and metals that survived the destruction. The air here smells of old paper and cool stone, a welcome relief from the forge quarter.",
     "exits": {
       "west": 8003,
       "south": 8030
@@ -532,7 +532,7 @@
   },
   {
     "vnum": 8035,
-    "name": "Kharazhad â€” Healer's Alcove",
+    "name": "Kharazhad â€' Healer's Alcove",
     "description": "Burns are an occupational hazard in Kharazhad, and the healer's alcove adjacent to the forge complex is always busy. Kovaka healers apply mineral-paste poultices and channel earth-affinity magic into damaged tissue while Pekakarlik water-adepts cool the worst heat injuries. The combination of the two traditions has produced a burn-treatment practice that northern physicians would find fascinating.",
     "exits": {
       "west": 8025,
@@ -545,7 +545,7 @@
   },
   {
     "vnum": 8036,
-    "name": "Kharazhad â€” Merchant Caravanserai",
+    "name": "Kharazhad â€' Merchant Caravanserai",
     "description": "The caravanserai just inside the main gate provides lodging and storage for the outside merchants who make Kharazhad's trade connections possible. Stone stalls accommodate pack animals that would otherwise refuse the heat, and the sleeping quarters are cut deep enough into the caldera wall that the temperature is merely uncomfortably warm rather than actively dangerous. Halfling caravan masters dominate the guest register.",
     "exits": {
       "north": 8000,
@@ -560,7 +560,7 @@
   },
   {
     "vnum": 8037,
-    "name": "Kharazhad â€” Apprentice Forges",
+    "name": "Kharazhad â€' Apprentice Forges",
     "description": "Young Rarozhki smiths spend their first three years of apprenticeship at these smaller practice forges, learning the foundational techniques of fire-work before they are permitted anywhere near the Embersteel channels. The work here is iron and copper, and the mistakes are instructive rather than catastrophic. The masters who supervise the apprentice forges are notably more patient than their counterparts in the main complex.",
     "exits": {
       "west": 8006,
@@ -575,8 +575,8 @@
   },
   {
     "vnum": 8038,
-    "name": "Kharazhad â€” Volcanic Spring Baths",
-    "description": "A natural volcanic spring has been channeled into a series of bathing pools at varying temperatures, providing Kharazhad's residents with one of the city's few genuine luxuries. The mineral-rich water is said to ease forge-aches and joint inflammation, and the pools are occupied at all hours. The hottest pool is a point of pride â€” outsiders typically last thirty seconds before retreating to the cooler ones.",
+    "name": "Kharazhad â€' Volcanic Spring Baths",
+    "description": "A natural volcanic spring has been channeled into a series of bathing pools at varying temperatures, providing Kharazhad's residents with one of the city's few genuine luxuries. The mineral-rich water is said to ease forge-aches and joint inflammation, and the pools are occupied at all hours. The hottest pool is a point of pride â€' outsiders typically last thirty seconds before retreating to the cooler ones.",
     "exits": {
       "south": 8016,
       "east": 8015
@@ -589,8 +589,8 @@
   },
   {
     "vnum": 8039,
-    "name": "Kharazhad â€” Fire-Powder Magazine",
-    "description": "Kharazhad's production of fire-powders â€” alchemical compounds derived from volcanic minerals with a range of explosive and incendiary applications â€” is stored in this heavily guarded magazine near the city's wall. The magazine is built with blast-walls and a quick-flood channel that can inundate the interior from the caldera aquifer if a fire breaks out. The guards here are the tensest soldiers in the city.",
+    "name": "Kharazhad â€' Fire-Powder Magazine",
+    "description": "Kharazhad's production of fire-powders â€' alchemical compounds derived from volcanic minerals with a range of explosive and incendiary applications â€' is stored in this heavily guarded magazine near the city's wall. The magazine is built with blast-walls and a quick-flood channel that can inundate the interior from the caldera aquifer if a fire breaks out. The guards here are the tensest soldiers in the city.",
     "exits": {
       "west": 8017,
       "north": 8013
@@ -602,8 +602,8 @@
   },
   {
     "vnum": 8040,
-    "name": "Kharazhad â€” Rune-Circle Chamber",
-    "description": "Deep in the caldera's foundations, reached by a side passage from the ore corridors, a Giant-era rune-circle pulses with amber light in a chamber that has clearly never been remodeled â€” the Giant-carved walls are too large for Dwarf habitation and show no signs of Rarozhki modification. The circle's function is debated; the Rarozhki believe it stabilizes the caldera. The Kovaka who have studied it say it does something far more interesting.",
+    "name": "Kharazhad â€' Rune-Circle Chamber",
+    "description": "Deep in the caldera's foundations, reached by a side passage from the ore corridors, a Giant-era rune-circle pulses with amber light in a chamber that has clearly never been remodeled â€' the Giant-carved walls are too large for Dwarf habitation and show no signs of Rarozhki modification. The circle's function is debated; the Rarozhki believe it stabilizes the caldera. The Kovaka who have studied it say it does something far more interesting.",
     "exits": {
       "east": 8027,
       "west": 8028
@@ -625,8 +625,8 @@
   },
   {
     "vnum": 8050,
-    "name": "Ember Vault â€” First Antechamber",
-    "description": "The air changes immediately below the Embersteel door â€” cooler, drier, and carrying a subtle metallic scent unlike anything in the forge complex above. Giant-carved reliefs line the antechamber walls, depicting the forge-rituals of an era before the Rarozhki, before the Shattering, when Giants worked these same volcanic channels for purposes that remain unknown. The floor is smooth and unmarked, as though no foot has touched it in centuries.",
+    "name": "Ember Vault â€' First Antechamber",
+    "description": "The air changes immediately below the Embersteel door â€' cooler, drier, and carrying a subtle metallic scent unlike anything in the forge complex above. Giant-carved reliefs line the antechamber walls, depicting the forge-rituals of an era before the Rarozhki, before the Shattering, when Giants worked these same volcanic channels for purposes that remain unknown. The floor is smooth and unmarked, as though no foot has touched it in centuries.",
     "exits": {
       "up": 8014,
       "north": 8051
@@ -639,7 +639,7 @@
   },
   {
     "vnum": 8051,
-    "name": "Ember Vault â€” Giant Forge Hall",
+    "name": "Ember Vault â€' Giant Forge Hall",
     "description": "A forge hall scaled for beings twelve feet tall confronts the descending visitor with immediate disorientation. Anvils of black iron the size of carriages stand dormant at each station, their surfaces pitted by use that ended millennia ago. Channels cut for magma flow still carry a faint warmth, but the flow itself was diverted when the vault was sealed. A fire elemental drifts in slow circles near the far wall, untethered but apparently contained.",
     "exits": {
       "south": 8050,
@@ -653,8 +653,8 @@
   },
   {
     "vnum": 8052,
-    "name": "Ember Vault â€” Metal Repository",
-    "description": "Racks of Giant-scale metal ingots occupy this chamber â€” materials whose composition the Rarozhki have analyzed through the bars of an inner gate without being able to test. Some are Embersteel of a purity the surface forges cannot approach. Others are alloys that do not correspond to any metal in current knowledge. The inner gate is sealed with a mechanism that appears to require both fire and water affinity to open simultaneously.",
+    "name": "Ember Vault â€' Metal Repository",
+    "description": "Racks of Giant-scale metal ingots occupy this chamber â€' materials whose composition the Rarozhki have analyzed through the bars of an inner gate without being able to test. Some are Embersteel of a purity the surface forges cannot approach. Others are alloys that do not correspond to any metal in current knowledge. The inner gate is sealed with a mechanism that appears to require both fire and water affinity to open simultaneously.",
     "exits": {
       "east": 8051,
       "west": 8053
@@ -667,7 +667,7 @@
   },
   {
     "vnum": 8053,
-    "name": "Ember Vault â€” The Sealed Chamber",
+    "name": "Ember Vault â€' The Sealed Chamber",
     "description": "The innermost chamber of the Ember Vault is sealed by a door of some material that is neither stone nor metal, its surface cool to the touch despite the ambient heat. Giant-script covers every inch of the door's face, and two fire elementals maintain permanent vigil before it. Whatever the Aldenheim Dwarves and their Giant patrons placed in this final chamber, the precautions suggest it was something neither was willing to let the world touch casually.",
     "exits": {
       "east": 8052
@@ -680,8 +680,8 @@
   },
   {
     "vnum": 8054,
-    "name": "Ember Vault â€” Guard Garrison",
-    "description": "A garrison chamber where the Rarozhki who watch the Ember Vault's upper approaches are quartered in rotating shifts of six. The soldiers here are the most elite of the Stonefire Guard â€” chosen for temperament as much as skill, because the duty is long, the vault is unsettling, and nothing has ever happened here that requires action. The waiting is the hardest part, according to veterans of the rotation.",
+    "name": "Ember Vault â€' Guard Garrison",
+    "description": "A garrison chamber where the Rarozhki who watch the Ember Vault's upper approaches are quartered in rotating shifts of six. The soldiers here are the most elite of the Stonefire Guard â€' chosen for temperament as much as skill, because the duty is long, the vault is unsettling, and nothing has ever happened here that requires action. The waiting is the hardest part, according to veterans of the rotation.",
     "exits": {
       "up": 8014,
       "east": 8050
@@ -692,8 +692,8 @@
   },
   {
     "vnum": 8090,
-    "name": "Dunewell â€” Upper Cliff Market",
-    "description": "The cliff-face settlement of Dunewell begins here at the upper rim, where a market of canvas-roofed stalls occupies a wide ledge cut into the Great River Gorge's eastern wall. River fish, hydraulic tools, and rune-anchored masonry goods are traded here by Pekakarlik merchants who speak with the easy fluency of people accustomed to dealing with all comers. The drop to the river below is visible through gaps in the market floor â€” a long way down.",
+    "name": "Dunewell â€' Upper Cliff Market",
+    "description": "The cliff-face settlement of Dunewell begins here at the upper rim, where a market of canvas-roofed stalls occupies a wide ledge cut into the Great River Gorge's eastern wall. River fish, hydraulic tools, and rune-anchored masonry goods are traded here by Pekakarlik merchants who speak with the easy fluency of people accustomed to dealing with all comers. The drop to the river below is visible through gaps in the market floor â€' a long way down.",
     "exits": {
       "south": 8091,
       "down": 8092,
@@ -706,8 +706,8 @@
   },
   {
     "vnum": 8091,
-    "name": "Dunewell â€” Cliffside Approach Road",
-    "description": "A switchback road cut into the gorge wall descends from the desert plateau to the upper market level, its surface worn smooth by generations of caravan traffic. The wall on the right radiates heat from the desert above; the cool updraft from the river two hundred feet below creates a constant wind that makes conversation difficult. Rope railings are anchored to the wall at irregular intervals â€” local advice is to ignore them; Pekakarlik engineering standards are high.",
+    "name": "Dunewell â€' Cliffside Approach Road",
+    "description": "A switchback road cut into the gorge wall descends from the desert plateau to the upper market level, its surface worn smooth by generations of caravan traffic. The wall on the right radiates heat from the desert above; the cool updraft from the river two hundred feet below creates a constant wind that makes conversation difficult. Rope railings are anchored to the wall at irregular intervals â€' local advice is to ignore them; Pekakarlik engineering standards are high.",
     "exits": {
       "north": 8090,
       "west": 8095,
@@ -717,7 +717,7 @@
   },
   {
     "vnum": 8092,
-    "name": "Dunewell â€” Mid-Cliff Residential Tier",
+    "name": "Dunewell â€' Mid-Cliff Residential Tier",
     "description": "Carved into the gorge wall at a level where the river's sound becomes a constant background presence, the residential tier of Dunewell is honeycombed with clan-apartments whose entrances face outward onto narrow ledge-streets. Laundry lines run between cliff-bolts; children play on platforms built out over the void with a casualness that defines Pekakarlik attitudes toward heights. The smell of cooking and river-damp is welcoming after the desert.",
     "exits": {
       "up": 8090,
@@ -730,7 +730,7 @@
   },
   {
     "vnum": 8093,
-    "name": "Dunewell â€” Tunnel Works Entrance",
+    "name": "Dunewell â€' Tunnel Works Entrance",
     "description": "The primary entrance to Dunewell's under-river tunnel network is a broad archway reinforced with rune-anchored stone, carved with the flowing-water designs that characterize Pekakarlik monumental art. The tunnels beyond carry the Great River's flow through a system of channels and gates that the Flowkeepers operate continuously. Chief Flowkeeper Torra Floodgate's office is just inside, usually occupied by an assistant when Torra is in the tunnels.",
     "exits": {
       "up": 8092,
@@ -743,8 +743,8 @@
   },
   {
     "vnum": 8094,
-    "name": "Dunewell â€” River-Level Docks",
-    "description": "At the base of the cliff, a series of wooden docks extends over the Great River, their pilings driven into the riverbed with a precision that has kept them standing through three documented flood-seasons. Flat-bottomed Pekakarlik riverboats are tied in rows, their cargoes being loaded and unloaded by teams working in the choreographed efficiency of long practice. The sound of the river is total here â€” conversation requires raised voices.",
+    "name": "Dunewell â€' River-Level Docks",
+    "description": "At the base of the cliff, a series of wooden docks extends over the Great River, their pilings driven into the riverbed with a precision that has kept them standing through three documented flood-seasons. Flat-bottomed Pekakarlik riverboats are tied in rows, their cargoes being loaded and unloaded by teams working in the choreographed efficiency of long practice. The sound of the river is total here â€' conversation requires raised voices.",
     "exits": {
       "up": 8093,
       "north": 8098,
@@ -754,8 +754,8 @@
   },
   {
     "vnum": 8095,
-    "name": "Dunewell â€” Kovaka Stone Quarter",
-    "description": "A compact neighborhood where Dunewell's Kovaka Elf population maintains its own customs within the larger Pekakarlik settlement. Stone-carved archways open onto small courtyards where Kovaka rangers clean weapons and Kovaka stonebinders work maintenance repairs on the cliff-wall's structural anchors. The integration here is practical â€” the Kovaka are here because the gorge needs their skills, and both sides understand that.",
+    "name": "Dunewell â€' Kovaka Stone Quarter",
+    "description": "A compact neighborhood where Dunewell's Kovaka Elf population maintains its own customs within the larger Pekakarlik settlement. Stone-carved archways open onto small courtyards where Kovaka rangers clean weapons and Kovaka stonebinders work maintenance repairs on the cliff-wall's structural anchors. The integration here is practical â€' the Kovaka are here because the gorge needs their skills, and both sides understand that.",
     "exits": {
       "east": 8091,
       "south": 8096,
@@ -767,8 +767,8 @@
   },
   {
     "vnum": 8096,
-    "name": "Dunewell â€” Flowkeeper Hall",
-    "description": "The administrative center of Dunewell's Consensus Council occupies a hall cut deep into the gorge wall, its stone cool and damp even at midsummer. Hydrological charts cover every available surface â€” maps of the Great River's seasonal variations, the tunnel system's current configuration, and the projected impact of the next flood season on dock infrastructure. The governance here is entirely practical in character.",
+    "name": "Dunewell â€' Flowkeeper Hall",
+    "description": "The administrative center of Dunewell's Consensus Council occupies a hall cut deep into the gorge wall, its stone cool and damp even at midsummer. Hydrological charts cover every available surface â€' maps of the Great River's seasonal variations, the tunnel system's current configuration, and the projected impact of the next flood season on dock infrastructure. The governance here is entirely practical in character.",
     "exits": {
       "north": 8092,
       "west": 8095,
@@ -781,8 +781,8 @@
   },
   {
     "vnum": 8097,
-    "name": "Dunewell â€” Under-River Tunnels",
-    "description": "The tunnelworks beneath the Great River are a marvel of Pekakarlik hydraulic engineering â€” channels cut through bedrock that carry controlled amounts of river water to side-pools used for water storage, fish-trapping, and the powering of mechanical devices through water-wheel systems. The walls are slick with moisture and the air is cool and cave-scented. The tunnels extend further than any single person has mapped.",
+    "name": "Dunewell â€' Under-River Tunnels",
+    "description": "The tunnelworks beneath the Great River are a marvel of Pekakarlik hydraulic engineering â€' channels cut through bedrock that carry controlled amounts of river water to side-pools used for water storage, fish-trapping, and the powering of mechanical devices through water-wheel systems. The walls are slick with moisture and the air is cool and cave-scented. The tunnels extend further than any single person has mapped.",
     "exits": {
       "south": 8093,
       "west": 8094,
@@ -794,7 +794,7 @@
   },
   {
     "vnum": 8098,
-    "name": "Dunewell â€” North Dock & Boat-Yard",
+    "name": "Dunewell â€' North Dock & Boat-Yard",
     "description": "The northern dock serves as Dunewell's boat construction and maintenance yard, where Pekakarlik shipwrights build the flat-hulled river craft that navigate the Great River's desert stretch. Frames of river-hardwood are fitted with hull planks sealed with a proprietary resin that makes them effectively waterproof indefinitely. Boats under construction rest in wooden cradles along the dock's upper terrace.",
     "exits": {
       "south": 8094,
@@ -804,8 +804,8 @@
   },
   {
     "vnum": 8099,
-    "name": "Dunewell â€” South Dock & Customs",
-    "description": "The southern dock handles the commercial traffic that makes Dunewell the central trading node for the desert's river corridor. A customs shed at the dock's head records all cargo passing through â€” the Consensus Council's primary revenue mechanism. Halfling traders sit in patient queues with their manifests, trading pleasantries with the Pekakarlik customs officers who inspect each load with meticulous thoroughness.",
+    "name": "Dunewell â€' South Dock & Customs",
+    "description": "The southern dock handles the commercial traffic that makes Dunewell the central trading node for the desert's river corridor. A customs shed at the dock's head records all cargo passing through â€' the Consensus Council's primary revenue mechanism. Halfling traders sit in patient queues with their manifests, trading pleasantries with the Pekakarlik customs officers who inspect each load with meticulous thoroughness.",
     "exits": {
       "north": 8094,
       "east": 8096,
@@ -817,7 +817,7 @@
   },
   {
     "vnum": 8100,
-    "name": "Dunewell â€” Eruskan Traders' Hostel",
+    "name": "Dunewell â€' Eruskan Traders' Hostel",
     "description": "The small Eruskan population of Dunewell operates this hostel for visiting traders from the northern reaches, offering sleeping mats, hot food, and the particular service of translating between the city's Pekakarlik formal dialect and the traders' Common. The hostel is two stories of carved-cliff rooms, and its common room serves a fish stew that visiting traders from every direction tend to discuss long after they have left Dunewell.",
     "exits": {
       "north": 8091,
@@ -831,7 +831,7 @@
   },
   {
     "vnum": 8101,
-    "name": "Dunewell â€” The Tidal Amphitheater",
+    "name": "Dunewell â€' The Tidal Amphitheater",
     "description": "A natural bowl in the gorge wall has been widened and tiered into an amphitheater that floods to the lower tiers during the Great River's annual peak flow. During the Tide-Turning festival, boat races are run through the partially flooded amphitheater in a display of seamanship and bravery that is equal parts competition and ceremony. The flood-tide ring is marked on the lower wall in permanently stained stone.",
     "exits": {
       "south": 8099,
@@ -841,8 +841,8 @@
   },
   {
     "vnum": 8102,
-    "name": "Dunewell â€” Rune-Anchor Workshop",
-    "description": "The specialized craft of rune-anchored masonry â€” stone construction stabilized by elemental runes that resist weathering, water damage, and seismic stress â€” is practiced and taught in this workshop. Pekakarlik stonebinders work alongside Kovaka rune-carvers here in a collaborative tradition that predates Dunewell's current governance structure. The workshop also produces repair materials for the Great River's ancient Giant-era infrastructure.",
+    "name": "Dunewell â€' Rune-Anchor Workshop",
+    "description": "The specialized craft of rune-anchored masonry â€' stone construction stabilized by elemental runes that resist weathering, water damage, and seismic stress â€' is practiced and taught in this workshop. Pekakarlik stonebinders work alongside Kovaka rune-carvers here in a collaborative tradition that predates Dunewell's current governance structure. The workshop also produces repair materials for the Great River's ancient Giant-era infrastructure.",
     "exits": {
       "north": 8095,
       "south": 8101,
@@ -855,7 +855,7 @@
   },
   {
     "vnum": 8108,
-    "name": "Solhaven â€” Oasis Grove Entry",
+    "name": "Solhaven â€' Oasis Grove Entry",
     "description": "The road from the desert gives way to a canopy of desert palms and ancient tamarind trees whose roots tap the Giant-maintained underground channels that keep the Solhaven oasis alive. The temperature drops five degrees in the shade, and the sound of running water from an irrigation channel is immediately audible. A carved sandstone pillar at the grove's entrance bears a Giant-script inscription that the local Kovaka read as 'Water Given, Life Kept.'",
     "exits": {
       "north": 8109,
@@ -871,8 +871,8 @@
   },
   {
     "vnum": 8109,
-    "name": "Solhaven â€” Oasis Heart",
-    "description": "At the center of the oasis grove, a natural spring fed by Giant-era underground channels rises into a stone basin carved with flowing-water reliefs. Desert willows and date palms crowd around it, their roots drinking from the overflow channels that distribute water to the settlement. This is the reason Solhaven exists â€” the spring has never gone dry in recorded memory, its output regulated by rune-circles that the Kovaka Elves maintain with painstaking care.",
+    "name": "Solhaven â€' Oasis Heart",
+    "description": "At the center of the oasis grove, a natural spring fed by Giant-era underground channels rises into a stone basin carved with flowing-water reliefs. Desert willows and date palms crowd around it, their roots drinking from the overflow channels that distribute water to the settlement. This is the reason Solhaven exists â€' the spring has never gone dry in recorded memory, its output regulated by rune-circles that the Kovaka Elves maintain with painstaking care.",
     "exits": {
       "south": 8108,
       "north": 8110,
@@ -886,8 +886,8 @@
   },
   {
     "vnum": 8110,
-    "name": "Solhaven â€” Central Market",
-    "description": "The market of Solhaven is an open-air square in the lee of the oasis grove, shaded by a patchwork of canvas awnings in the bright colors favored by the Halfling traders who run most of the stalls. Oasis fruits, date wine, desert herbs, and caravan supplies are the staples, but the real draw is Pip Sungrove's brokerage service â€” a one-stop arrangement point for travelers crossing the desert in any direction.",
+    "name": "Solhaven â€' Central Market",
+    "description": "The market of Solhaven is an open-air square in the lee of the oasis grove, shaded by a patchwork of canvas awnings in the bright colors favored by the Halfling traders who run most of the stalls. Oasis fruits, date wine, desert herbs, and caravan supplies are the staples, but the real draw is Pip Sungrove's brokerage service â€' a one-stop arrangement point for travelers crossing the desert in any direction.",
     "exits": {
       "south": 8109,
       "east": 8113,
@@ -901,8 +901,8 @@
   },
   {
     "vnum": 8111,
-    "name": "Solhaven â€” Pilgrim Lodging House",
-    "description": "Sand Warden pilgrims and civilian travelers on the oasis circuit rest here in a low stone building ringed with ventilation slits that allow airflow while blocking sand. The lodging house keeps a roster of active pilgrim groups and their circuit schedules â€” a practical safety net, since knowing who is on the road between oases is the only reliable way to notice when someone has not arrived. The Oasis Warden checks the roster daily.",
+    "name": "Solhaven â€' Pilgrim Lodging House",
+    "description": "Sand Warden pilgrims and civilian travelers on the oasis circuit rest here in a low stone building ringed with ventilation slits that allow airflow while blocking sand. The lodging house keeps a roster of active pilgrim groups and their circuit schedules â€' a practical safety net, since knowing who is on the road between oases is the only reliable way to notice when someone has not arrived. The Oasis Warden checks the roster daily.",
     "exits": {
       "west": 8109,
       "south": 8113
@@ -914,7 +914,7 @@
   },
   {
     "vnum": 8112,
-    "name": "Solhaven â€” Rune-Circle Shrine",
+    "name": "Solhaven â€' Rune-Circle Shrine",
     "description": "The Giant-era rune-circle that stabilizes the Solhaven oasis has been incorporated into a shrine to the Lord of Stone, its ancient geometric precision surrounded by offerings of polished stone and carved wooden figures. Kovaka guardians maintain the rune-circle's active state through periodic re-inscription of worn glyphs, and the shrine serves as a meditation site for Sand Warden pilgrims completing the oasis circuit. At night the runes emit a faint amber glow.",
     "exits": {
       "east": 8109,
@@ -943,7 +943,7 @@
   },
   {
     "vnum": 8113,
-    "name": "Solhaven â€” Caravan Staging Ground",
+    "name": "Solhaven â€' Caravan Staging Ground",
     "description": "The sandy ground east of the market has been leveled and marked with stone posts to form a caravan staging area where pack animals are watered, cargo is inspected, and outfitting for the next desert crossing is organized. Halfling provisioners circulate among the staging caravans selling last-minute supplies at prices that reflect the knowledge that the next shop is days away in any direction.",
     "exits": {
       "north": 8111,
@@ -954,8 +954,8 @@
   },
   {
     "vnum": 8114,
-    "name": "Solhaven â€” Pekakarlik Water Engineers' Hall",
-    "description": "The Pekakarlik Dwarves who maintain Solhaven's underground water distribution channels operate from this hall, its interior dominated by a scale model of the oasis's hydraulic system â€” channels, valves, and rune-points all mapped in miniature. The engineers conduct weekly inspections of the physical channels and daily monitoring of the rune-circles' performance. They are the quiet reason the oasis has not dried up despite centuries of climate stress.",
+    "name": "Solhaven â€' Pekakarlik Water Engineers' Hall",
+    "description": "The Pekakarlik Dwarves who maintain Solhaven's underground water distribution channels operate from this hall, its interior dominated by a scale model of the oasis's hydraulic system â€' channels, valves, and rune-points all mapped in miniature. The engineers conduct weekly inspections of the physical channels and daily monitoring of the rune-circles' performance. They are the quiet reason the oasis has not dried up despite centuries of climate stress.",
     "exits": {
       "east": 8110,
       "south": 8112
@@ -967,8 +967,8 @@
   },
   {
     "vnum": 8115,
-    "name": "Solhaven â€” Lord of Stone Shrine",
-    "description": "A secondary shrine to the Lord of Stone occupies a natural alcove in the sandstone cliff behind the oasis, its interior cool and dark. Giant-era carvings on the back wall show the Lord of Stone in the act of raising a mountain â€” a depiction that local Kovaka scholars interpret as a record of actual events rather than allegory. Offerings of gems, carved stone animals, and desert-flowers are always fresh, left by Sand Warden pilgrims passing through.",
+    "name": "Solhaven â€' Lord of Stone Shrine",
+    "description": "A secondary shrine to the Lord of Stone occupies a natural alcove in the sandstone cliff behind the oasis, its interior cool and dark. Giant-era carvings on the back wall show the Lord of Stone in the act of raising a mountain â€' a depiction that local Kovaka scholars interpret as a record of actual events rather than allegory. Offerings of gems, carved stone animals, and desert-flowers are always fresh, left by Sand Warden pilgrims passing through.",
     "exits": {
       "south": 8112
     },
@@ -988,8 +988,8 @@
   },
   {
     "vnum": 8116,
-    "name": "Solhaven â€” Eruskan Quarter",
-    "description": "Solhaven's Eruskan residents â€” traders and their families who found the oasis pleasant enough to stay permanently â€” occupy a small quarter on the grove's southern fringe. The buildings here are whitewashed stone with decorated window-frames, a southern tradition transplanted to the desert with practical modifications for sand-resistance. A small shrine to no particular deity occupies one corner â€” a generalist practice common among Eruskan expatriates.",
+    "name": "Solhaven â€' Eruskan Quarter",
+    "description": "Solhaven's Eruskan residents â€' traders and their families who found the oasis pleasant enough to stay permanently â€' occupy a small quarter on the grove's southern fringe. The buildings here are whitewashed stone with decorated window-frames, a southern tradition transplanted to the desert with practical modifications for sand-resistance. A small shrine to no particular deity occupies one corner â€' a generalist practice common among Eruskan expatriates.",
     "exits": {
       "north": 8108,
       "east": 8113
@@ -1000,8 +1000,8 @@
   },
   {
     "vnum": 8117,
-    "name": "Solhaven â€” Date Wine Cellar",
-    "description": "The date wine that Solhaven exports across the desert routes is fermented and aged in this underground cellar carved beneath the oasis grove, where the temperature remains cool enough for extended storage. The proprietor â€” an elderly Halfling woman named Bessa Sweetpit â€” maintains a tasting room at the cellar's entrance and considers her date wine to be Solhaven's finest diplomatic asset. She is not wrong.",
+    "name": "Solhaven â€' Date Wine Cellar",
+    "description": "The date wine that Solhaven exports across the desert routes is fermented and aged in this underground cellar carved beneath the oasis grove, where the temperature remains cool enough for extended storage. The proprietor â€' an elderly Halfling woman named Bessa Sweetpit â€' maintains a tasting room at the cellar's entrance and considers her date wine to be Solhaven's finest diplomatic asset. She is not wrong.",
     "exits": {
       "north": 8109,
       "west": 8116,
@@ -1014,8 +1014,8 @@
   },
   {
     "vnum": 8118,
-    "name": "Solhaven â€” Oasis Warden's Office",
-    "description": "Oasis Warden Pip Sungrove operates from this cluttered office at the edge of the central market, its shelves loaded with caravan route maps, desert weather records, and a correspondence archive that covers thirty years of desert trade. Pip's two primary functions â€” maintaining the rune-circle and running the caravan brokerage â€” are here intertwined, since knowing who travels the desert is inseparable from knowing whether the oases that travelers depend on are functioning.",
+    "name": "Solhaven â€' Oasis Warden's Office",
+    "description": "Oasis Warden Pip Sungrove operates from this cluttered office at the edge of the central market, its shelves loaded with caravan route maps, desert weather records, and a correspondence archive that covers thirty years of desert trade. Pip's two primary functions â€' maintaining the rune-circle and running the caravan brokerage â€' are here intertwined, since knowing who travels the desert is inseparable from knowing whether the oases that travelers depend on are functioning.",
     "exits": {
       "west": 8110,
       "north": 8114
@@ -1027,8 +1027,8 @@
   },
   {
     "vnum": 8119,
-    "name": "Solhaven â€” Grove's Edge (North)",
-    "description": "The northern edge of the oasis grove is a sharp transition â€” within a few paces, the date palms and desert willows give way to open sand and the heat increases by ten degrees. A carved boundary marker in the Giant style stands at the edge, its inscription interpreted by Sand Wardens as a warning against straying without adequate water. The road north toward the Glass Wastes begins here, and it looks exactly as forbidding as it is.",
+    "name": "Solhaven â€' Grove's Edge (North)",
+    "description": "The northern edge of the oasis grove is a sharp transition â€' within a few paces, the date palms and desert willows give way to open sand and the heat increases by ten degrees. A carved boundary marker in the Giant style stands at the edge, its inscription interpreted by Sand Wardens as a warning against straying without adequate water. The road north toward the Glass Wastes begins here, and it looks exactly as forbidding as it is.",
     "exits": {
       "south": 8109,
       "north": 8300
@@ -1040,7 +1040,7 @@
   },
   {
     "vnum": 8120,
-    "name": "Solhaven â€” Herbalist's Workshop",
+    "name": "Solhaven â€' Herbalist's Workshop",
     "description": "Desert herbs with medicinal and alchemical value are dried, sorted, and processed in this workshop at the grove's western edge, where the morning light is best for color-matching during grading. The Halfling herbalists who work here supply caravan medicine-kits throughout the desert routes and export surplus to the Kharazhad healers. A drying rack built into the workshop's exterior wall carries a permanent array of hanging plant bundles.",
     "exits": {
       "north": 8108,
@@ -1053,7 +1053,7 @@
   },
   {
     "vnum": 8121,
-    "name": "Solhaven â€” Lantern-Walk Landing",
+    "name": "Solhaven â€' Lantern-Walk Landing",
     "description": "During the Lantern Walk festival that honors the Giants, this landing at the oasis spring's outlet pool is where river lanterns are launched to drift downstream through the grove's irrigation channels. The pool is lined with smooth stone and surrounded by carved fish-figures in a Giant tradition that the settlement's Halfling and Pekakarlik residents have maintained without fully understanding its original significance.",
     "exits": {
       "east": 8117,
@@ -1065,8 +1065,8 @@
   },
   {
     "vnum": 8122,
-    "name": "Solhaven â€” South Caravan Gate",
-    "description": "The southern approach to Solhaven is marked by a carved sandstone gate â€” not a true fortification, but a marker of settled space amid the desert. Caravans from the direction of Sandsong and the Pilgrim Road approach through this gate, and their arrival typically prompts immediate commercial activity from the Halfling traders who keep a watch rotation on the southern horizon.",
+    "name": "Solhaven â€' South Caravan Gate",
+    "description": "The southern approach to Solhaven is marked by a carved sandstone gate â€' not a true fortification, but a marker of settled space amid the desert. Caravans from the direction of Sandsong and the Pilgrim Road approach through this gate, and their arrival typically prompts immediate commercial activity from the Halfling traders who keep a watch rotation on the southern horizon.",
     "exits": {
       "north": 8108,
       "south": 8300
@@ -1075,8 +1075,8 @@
   },
   {
     "vnum": 8123,
-    "name": "Ashgarin Fold â€” Volcanic Spring Entry",
-    "description": "The settlement of Ashgarin Fold is built around a volcanic spring that emerges from a crack in the desert floor and pools in a natural depression before flowing into the rock. The smell of mineral-rich water and volcanic sulfur is immediate and distinctive. Stone buildings of basalt block â€” fire-tempered and harder than standard quarried stone â€” rise on the depression's rim, and the constant low hiss of the spring underlies every sound.",
+    "name": "Ashgarin Fold â€' Volcanic Spring Entry",
+    "description": "The settlement of Ashgarin Fold is built around a volcanic spring that emerges from a crack in the desert floor and pools in a natural depression before flowing into the rock. The smell of mineral-rich water and volcanic sulfur is immediate and distinctive. Stone buildings of basalt block â€' fire-tempered and harder than standard quarried stone â€' rise on the depression's rim, and the constant low hiss of the spring underlies every sound.",
     "exits": {
       "north": 8124,
       "east": 8300,
@@ -1089,8 +1089,8 @@
   },
   {
     "vnum": 8124,
-    "name": "Ashgarin Fold â€” Forge-Stone Complex",
-    "description": "The forge-stone complex is Ashgarin Fold's economic core â€” a cluster of working forges where volcanic spring water is used in the finishing process for fire-tempered stone tools and Embersteel equipment. The techniques practiced here are distinct from Kharazhad's methods, developed independently by the Fold's Joint Forge-Stone Council over centuries of isolated innovation. The products are distinctive: darker in color, with a surface sheen that Rarozhki smiths call 'spring-finished.'",
+    "name": "Ashgarin Fold â€' Forge-Stone Complex",
+    "description": "The forge-stone complex is Ashgarin Fold's economic core â€' a cluster of working forges where volcanic spring water is used in the finishing process for fire-tempered stone tools and Embersteel equipment. The techniques practiced here are distinct from Kharazhad's methods, developed independently by the Fold's Joint Forge-Stone Council over centuries of isolated innovation. The products are distinctive: darker in color, with a surface sheen that Rarozhki smiths call 'spring-finished.'",
     "exits": {
       "south": 8123,
       "east": 8125,
@@ -1104,8 +1104,8 @@
   },
   {
     "vnum": 8125,
-    "name": "Ashgarin Fold â€” Firemother's Shrine",
-    "description": "Firemother Draya Cinderward maintains the volcanic spring shrine that is Ashgarin Fold's spiritual center, a platform of firewalking stones surrounding the spring's main outlet pool. The water is scalding at the source and cools only gradually as it flows outward. The shrine's twin dedication to the Lady of Fire and the Lord of Stone is expressed in its architecture â€” alternating fire-basalt and smooth river-granite in every surface.",
+    "name": "Ashgarin Fold â€' Firemother's Shrine",
+    "description": "Firemother Draya Cinderward maintains the volcanic spring shrine that is Ashgarin Fold's spiritual center, a platform of firewalking stones surrounding the spring's main outlet pool. The water is scalding at the source and cools only gradually as it flows outward. The shrine's twin dedication to the Lady of Fire and the Lord of Stone is expressed in its architecture â€' alternating fire-basalt and smooth river-granite in every surface.",
     "exits": {
       "west": 8124,
       "north": 8127
@@ -1118,7 +1118,7 @@
   },
   {
     "vnum": 8126,
-    "name": "Ashgarin Fold â€” Quarrier's Hall",
+    "name": "Ashgarin Fold â€' Quarrier's Hall",
     "description": "Orean Humans and Pekakarlik Dwarves who work the basalt quarries outside the settlement gather in this hall for meals and coordination meetings. The Forge-Stone Council holds its regular sessions here, with Firemother Draya often present as mediator between the Rarozhki smiths whose forge preferences shape demand and the quarriers whose extraction capacity shapes supply. The dynamic is professionally civil and personally complicated.",
     "exits": {
       "east": 8124,
@@ -1131,8 +1131,8 @@
   },
   {
     "vnum": 8127,
-    "name": "Ashgarin Fold â€” Firewalk Vows Hall",
-    "description": "The Firewalk Vows festival is Ashgarin Fold's most important annual event â€” oaths sworn while walking a path of volcanic stone, followed by communal forging. This hall serves as both preparation space for festival participants and year-round gathering space for those who have taken the Vows and formed the bonded community they create. The volcanic stone walkway is a permanent installation in the hall's center, kept warm by channels from the spring below.",
+    "name": "Ashgarin Fold â€' Firewalk Vows Hall",
+    "description": "The Firewalk Vows festival is Ashgarin Fold's most important annual event â€' oaths sworn while walking a path of volcanic stone, followed by communal forging. This hall serves as both preparation space for festival participants and year-round gathering space for those who have taken the Vows and formed the bonded community they create. The volcanic stone walkway is a permanent installation in the hall's center, kept warm by channels from the spring below.",
     "exits": {
       "south": 8125,
       "east": 8129
@@ -1146,8 +1146,8 @@
   },
   {
     "vnum": 8128,
-    "name": "Ashgarin Fold â€” Residential Longhouses",
-    "description": "The residential buildings of Ashgarin Fold are longhouses of fire-tempered basalt arranged around the spring's lower pool, where the water has cooled enough for bathing and washing. The architecture is practical without ornamentation â€” thick walls for heat insulation, narrow windows for sand-exclusion, and roof-drains designed to collect the rare desert rainfall. A communal kitchen occupies the end of each longhouse block.",
+    "name": "Ashgarin Fold â€' Residential Longhouses",
+    "description": "The residential buildings of Ashgarin Fold are longhouses of fire-tempered basalt arranged around the spring's lower pool, where the water has cooled enough for bathing and washing. The architecture is practical without ornamentation â€' thick walls for heat insulation, narrow windows for sand-exclusion, and roof-drains designed to collect the rare desert rainfall. A communal kitchen occupies the end of each longhouse block.",
     "exits": {
       "north": 8126,
       "east": 8130
@@ -1158,8 +1158,8 @@
   },
   {
     "vnum": 8129,
-    "name": "Ashgarin Fold â€” Spring Salt Works",
-    "description": "The volcanic spring water carries dissolved minerals that precipitate as a crust on the pool's edges and on the salt-pans constructed downstream. Volcanic spring salts from Ashgarin Fold are traded across the desert routes and north to the river settlements â€” their flavor is distinctive, with a mineral sharpness that cooks across Oreka seek for specific preparations. The salt workers are Pekakarlik and Orean in roughly equal proportion.",
+    "name": "Ashgarin Fold â€' Spring Salt Works",
+    "description": "The volcanic spring water carries dissolved minerals that precipitate as a crust on the pool's edges and on the salt-pans constructed downstream. Volcanic spring salts from Ashgarin Fold are traded across the desert routes and north to the river settlements â€' their flavor is distinctive, with a mineral sharpness that cooks across Oreka seek for specific preparations. The salt workers are Pekakarlik and Orean in roughly equal proportion.",
     "exits": {
       "west": 8127,
       "south": 8128
@@ -1171,8 +1171,8 @@
   },
   {
     "vnum": 8130,
-    "name": "Ashgarin Fold â€” East Basalt Approach",
-    "description": "The road east from Ashgarin Fold toward the Scorchspires passes through a landscape of exposed basalt formations â€” columns and sheets of ancient lava that cooled in irregular patterns millions of years ago. The volcanic spring's overflow has cut a shallow channel through the basalt that follows the road for a mile before sinking into the rock. The distant peaks of the Emberfangs are visible on the horizon in clear weather.",
+    "name": "Ashgarin Fold â€' East Basalt Approach",
+    "description": "The road east from Ashgarin Fold toward the Scorchspires passes through a landscape of exposed basalt formations â€' columns and sheets of ancient lava that cooled in irregular patterns millions of years ago. The volcanic spring's overflow has cut a shallow channel through the basalt that follows the road for a mile before sinking into the rock. The distant peaks of the Emberfangs are visible on the horizon in clear weather.",
     "exits": {
       "west": 8128,
       "east": 8331
@@ -1184,8 +1184,8 @@
   },
   {
     "vnum": 8133,
-    "name": "Sandsong â€” Pilgrim Road Hub",
-    "description": "The settlement of Sandsong exists because the pilgrim roads from three directions converge here, making it the natural rest-and-resupply point for Sand Warden circuits of the oasis ring. The buildings are low and sand-colored, almost invisible from a distance, their walls thick enough to survive sandstorms. Chapter Warden Sula Dustwalker's office is the tallest structure in the settlement â€” a distinction that requires only two stories.",
+    "name": "Sandsong â€' Pilgrim Road Hub",
+    "description": "The settlement of Sandsong exists because the pilgrim roads from three directions converge here, making it the natural rest-and-resupply point for Sand Warden circuits of the oasis ring. The buildings are low and sand-colored, almost invisible from a distance, their walls thick enough to survive sandstorms. Chapter Warden Sula Dustwalker's office is the tallest structure in the settlement â€' a distinction that requires only two stories.",
     "exits": {
       "north": 8134,
       "east": 8300,
@@ -1198,7 +1198,7 @@
   },
   {
     "vnum": 8134,
-    "name": "Sandsong â€” Giant Shrine",
+    "name": "Sandsong â€' Giant Shrine",
     "description": "The largest known intact Giant shrine in the Infinite Desert stands at Sandsong's northern edge, its scale dwarfing the settlement buildings nearby. Carved from a single monolith of dark granite, the shrine's relief work depicts the Giants' relationships with the elemental forces with an artistic precision that has not been matched in any later tradition. Sand Wraiths drift at the shrine's margins at night, and pilgrim tradition holds that respectful visitors have nothing to fear from them.",
     "exits": {
       "south": 8133,
@@ -1212,8 +1212,8 @@
   },
   {
     "vnum": 8135,
-    "name": "Sandsong â€” Sand Warden Chapter House",
-    "description": "The chapter house of Sandsong's Sand Warden organization is a working administrative space â€” maps, circuit schedules, sandstorm records, and rune-circle maintenance logs cover every available surface. Sula Dustwalker runs a tight operation with a lean staff, and the chapter house reflects that: efficient, minimal, and focused entirely on the practical demands of keeping the oasis circuit functional.",
+    "name": "Sandsong â€' Sand Warden Chapter House",
+    "description": "The chapter house of Sandsong's Sand Warden organization is a working administrative space â€' maps, circuit schedules, sandstorm records, and rune-circle maintenance logs cover every available surface. Sula Dustwalker runs a tight operation with a lean staff, and the chapter house reflects that: efficient, minimal, and focused entirely on the practical demands of keeping the oasis circuit functional.",
     "exits": {
       "east": 8133,
       "south": 8137
@@ -1225,8 +1225,8 @@
   },
   {
     "vnum": 8136,
-    "name": "Sandsong â€” Halfling Caravan Quarter",
-    "description": "Halfling caravaneers who use Sandsong as a waypoint on the desert crossing maintain this quarter of semi-permanent structures â€” buildings that have been rebuilt so many times in the same location that they are functionally permanent. Trading of caravan supplies, desert herbs, and Giant relics happens continuously in the quarter's open spaces, and the Halfling tendency toward social gathering means the quarter is rarely quiet.",
+    "name": "Sandsong â€' Halfling Caravan Quarter",
+    "description": "Halfling caravaneers who use Sandsong as a waypoint on the desert crossing maintain this quarter of semi-permanent structures â€' buildings that have been rebuilt so many times in the same location that they are functionally permanent. Trading of caravan supplies, desert herbs, and Giant relics happens continuously in the quarter's open spaces, and the Halfling tendency toward social gathering means the quarter is rarely quiet.",
     "exits": {
       "west": 8134,
       "south": 8138
@@ -1238,8 +1238,8 @@
   },
   {
     "vnum": 8137,
-    "name": "Sandsong â€” Pilgrim Rest House",
-    "description": "The rest house provides basic but reliable shelter for pilgrims completing the oasis circuit â€” sleeping mats in a sand-screened hall, a communal water point fed by the settlement's underground cistern, and a food-share tradition where pilgrims contribute what they have to a communal pot. The practice has been continuous for longer than anyone can document, and it is considered one of the desert's genuine hospitalities.",
+    "name": "Sandsong â€' Pilgrim Rest House",
+    "description": "The rest house provides basic but reliable shelter for pilgrims completing the oasis circuit â€' sleeping mats in a sand-screened hall, a communal water point fed by the settlement's underground cistern, and a food-share tradition where pilgrims contribute what they have to a communal pot. The practice has been continuous for longer than anyone can document, and it is considered one of the desert's genuine hospitalities.",
     "exits": {
       "north": 8135,
       "east": 8136
@@ -1251,8 +1251,8 @@
   },
   {
     "vnum": 8138,
-    "name": "Sandsong â€” Stone's Memory Vigil Site",
-    "description": "The Stone's Memory festival is held at this prepared ground between the Giant shrine and the settlement's southern edge â€” a vigil site where the rune-circles are ritually renewed by Sand Warden chapter members while the broader community maintains an overnight watch. The ground is marked with concentric rings of placed stone that are removed and replaced fresh each year. During off-festival periods the space is used for caravan inspections and communal gatherings.",
+    "name": "Sandsong â€' Stone's Memory Vigil Site",
+    "description": "The Stone's Memory festival is held at this prepared ground between the Giant shrine and the settlement's southern edge â€' a vigil site where the rune-circles are ritually renewed by Sand Warden chapter members while the broader community maintains an overnight watch. The ground is marked with concentric rings of placed stone that are removed and replaced fresh each year. During off-festival periods the space is used for caravan inspections and communal gatherings.",
     "exits": {
       "north": 8136,
       "west": 8137
@@ -1261,7 +1261,7 @@
   },
   {
     "vnum": 8139,
-    "name": "Sandsong â€” Relic Trader's Stall",
+    "name": "Sandsong â€' Relic Trader's Stall",
     "description": "Giant relics recovered from the desert ruins pass through Sandsong regularly, and this permanent stall acts as a clearinghouse where Sand Wardens assess whether a recovered item is a trade good or a sacred object requiring proper placement. The distinction matters enormously to the pilgrim community and generates some of the settlement's most intense disagreements. Sula Dustwalker usually resolves disputes personally, and her decisions are treated as final.",
     "exits": {
       "west": 8134,
@@ -1275,7 +1275,7 @@
   },
   {
     "vnum": 8140,
-    "name": "Sandsong â€” Desert Observation Post",
+    "name": "Sandsong â€' Desert Observation Post",
     "description": "A stone platform raised three meters above the settlement's roofline serves as both weather watch and approach monitor. Sand Warden rangers rotate through observation shifts here, tracking sandstorm fronts, mapping Sand Wraith movements, and noting caravan arrivals from all four approaches. The observation records maintained here constitute one of the most comprehensive accounts of desert weather patterns in existence.",
     "exits": {
       "south": 8133
@@ -1284,8 +1284,8 @@
   },
   {
     "vnum": 8200,
-    "name": "Giant Oasis-City Ruins â€” Outer Ring",
-    "description": "The outermost ring of the ruined Giant oasis-city is marked by broken wall segments that once stood forty feet high, now half-buried in drifted sand. The carved reliefs that cover every surviving surface depict Giant daily life â€” colossal figures tending water channels, conducting ceremonies, and building the very walls whose ruins you now walk among. Between the wall segments, sand has filled what were once patrolled corridors to within a foot of the old parapet height.",
+    "name": "Giant Oasis-City Ruins â€' Outer Ring",
+    "description": "The outermost ring of the ruined Giant oasis-city is marked by broken wall segments that once stood forty feet high, now half-buried in drifted sand. The carved reliefs that cover every surviving surface depict Giant daily life â€' colossal figures tending water channels, conducting ceremonies, and building the very walls whose ruins you now walk among. Between the wall segments, sand has filled what were once patrolled corridors to within a foot of the old parapet height.",
     "exits": {
       "east": 8201,
       "north": 8202,
@@ -1298,8 +1298,8 @@
   },
   {
     "vnum": 8201,
-    "name": "Giant Oasis-City Ruins â€” Eastern Gate",
-    "description": "The eastern gate of the oasis-city still stands to its full original height â€” a vaulted arch of green-veined stone that required no mortar because the Giant engineers cut each stone to lock against its neighbors under their own weight. A carved Giant figure flanks each side of the arch in high relief, each bearing a vessel that ancient water channels once filled continuously. The channels are dry now, but the stone is still faintly cool to the touch from groundwater far below.",
+    "name": "Giant Oasis-City Ruins â€' Eastern Gate",
+    "description": "The eastern gate of the oasis-city still stands to its full original height â€' a vaulted arch of green-veined stone that required no mortar because the Giant engineers cut each stone to lock against its neighbors under their own weight. A carved Giant figure flanks each side of the arch in high relief, each bearing a vessel that ancient water channels once filled continuously. The channels are dry now, but the stone is still faintly cool to the touch from groundwater far below.",
     "exits": {
       "west": 8200,
       "north": 8204
@@ -1311,8 +1311,8 @@
   },
   {
     "vnum": 8202,
-    "name": "Giant Oasis-City Ruins â€” Northern Approach",
-    "description": "The northern approach road to the oasis-city is still traceable as a wide, slightly elevated strip of paving stones that the sand has not quite covered. Giant-scale road markers stand at intervals â€” carved posts bearing distance counts in Giant numerals that archaeologists have deciphered only approximately. Sand Wraiths drift along the road in the late afternoon, following a patrol circuit they have maintained for longer than human civilization has existed.",
+    "name": "Giant Oasis-City Ruins â€' Northern Approach",
+    "description": "The northern approach road to the oasis-city is still traceable as a wide, slightly elevated strip of paving stones that the sand has not quite covered. Giant-scale road markers stand at intervals â€' carved posts bearing distance counts in Giant numerals that archaeologists have deciphered only approximately. Sand Wraiths drift along the road in the late afternoon, following a patrol circuit they have maintained for longer than human civilization has existed.",
     "exits": {
       "south": 8200,
       "east": 8204,
@@ -1325,8 +1325,8 @@
   },
   {
     "vnum": 8203,
-    "name": "Giant Oasis-City Ruins â€” Western Residential Ruins",
-    "description": "Giant residential buildings scaled for twelve-foot inhabitants have partially collapsed, their thick stone walls creating a maze of interior spaces now accessible only through collapse-gaps. The interior rooms are darker and cooler than the open desert, and Sand Wraiths tend to gather in the deepest sections at midday. Personal effects in Giant scale â€” stone furniture, ceramic vessels, metal fixtures â€” have been extensively looted but occasional pieces remain in contexts too difficult to extract.",
+    "name": "Giant Oasis-City Ruins â€' Western Residential Ruins",
+    "description": "Giant residential buildings scaled for twelve-foot inhabitants have partially collapsed, their thick stone walls creating a maze of interior spaces now accessible only through collapse-gaps. The interior rooms are darker and cooler than the open desert, and Sand Wraiths tend to gather in the deepest sections at midday. Personal effects in Giant scale â€' stone furniture, ceramic vessels, metal fixtures â€' have been extensively looted but occasional pieces remain in contexts too difficult to extract.",
     "exits": {
       "east": 8200,
       "north": 8206
@@ -1338,8 +1338,8 @@
   },
   {
     "vnum": 8204,
-    "name": "Giant Oasis-City Ruins â€” The Dry Oasis Basin",
-    "description": "At the city's heart, where the Giant-maintained spring once rose, a depression marks the site of the oasis that gave the city its life. The spring mechanism â€” a complex of stone valves and rune-circles â€” is visible at the basin's bottom, dry for centuries, its rune-circles dark. The basin is perhaps two hundred feet across, its slopes carved with offering-reliefs that suggest this was simultaneously civic infrastructure and sacred space. Sand has filled the bottom third.",
+    "name": "Giant Oasis-City Ruins â€' The Dry Oasis Basin",
+    "description": "At the city's heart, where the Giant-maintained spring once rose, a depression marks the site of the oasis that gave the city its life. The spring mechanism â€' a complex of stone valves and rune-circles â€' is visible at the basin's bottom, dry for centuries, its rune-circles dark. The basin is perhaps two hundred feet across, its slopes carved with offering-reliefs that suggest this was simultaneously civic infrastructure and sacred space. Sand has filled the bottom third.",
     "exits": {
       "south": 8201,
       "west": 8203,
@@ -1353,8 +1353,8 @@
   },
   {
     "vnum": 8205,
-    "name": "Giant Oasis-City Ruins â€” Processional Way",
-    "description": "A broad avenue â€” clearly processional rather than functional in purpose â€” runs west from the city center, its paving intact enough to walk without difficulty. Carved stone trees line both sides, their abstract forms representing desert plants in a stylized Giant aesthetic. At intervals, low stone platforms that once supported statues now hold only the anchor-bolts of figures long since toppled and removed by either time or treasure-hunters.",
+    "name": "Giant Oasis-City Ruins â€' Processional Way",
+    "description": "A broad avenue â€' clearly processional rather than functional in purpose â€' runs west from the city center, its paving intact enough to walk without difficulty. Carved stone trees line both sides, their abstract forms representing desert plants in a stylized Giant aesthetic. At intervals, low stone platforms that once supported statues now hold only the anchor-bolts of figures long since toppled and removed by either time or treasure-hunters.",
     "exits": {
       "east": 8202,
       "south": 8203,
@@ -1367,8 +1367,8 @@
   },
   {
     "vnum": 8206,
-    "name": "Giant Oasis-City Ruins â€” Hall of Waters",
-    "description": "This enormous hall â€” roofless now, its ceiling having collapsed inward centuries ago â€” once served as the administrative center for the oasis's water distribution. Stone conduit maps are carved into the floor, showing the full network of channels that carried spring water to every district of the city. Following them as a navigation guide through the ruins is surprisingly effective, since the channels themselves are often still traceable in the sand.",
+    "name": "Giant Oasis-City Ruins â€' Hall of Waters",
+    "description": "This enormous hall â€' roofless now, its ceiling having collapsed inward centuries ago â€' once served as the administrative center for the oasis's water distribution. Stone conduit maps are carved into the floor, showing the full network of channels that carried spring water to every district of the city. Following them as a navigation guide through the ruins is surprisingly effective, since the channels themselves are often still traceable in the sand.",
     "exits": {
       "south": 8203,
       "east": 8207
@@ -1380,8 +1380,8 @@
   },
   {
     "vnum": 8207,
-    "name": "Giant Oasis-City Ruins â€” Sacred Grove Remnant",
-    "description": "A few ancient trees â€” desert-adapted species with roots that reach the deep aquifer â€” have survived in the ruins of the sacred grove at the city's northern end. Their presence gives the ruins an uncanny quality: living green amid dead stone, silence where there was once the sound of a city. The trees are enormous by desert standards, their canopies providing rare shade, and Sand Wraiths appear more cautiously in their vicinity than elsewhere in the ruins.",
+    "name": "Giant Oasis-City Ruins â€' Sacred Grove Remnant",
+    "description": "A few ancient trees â€' desert-adapted species with roots that reach the deep aquifer â€' have survived in the ruins of the sacred grove at the city's northern end. Their presence gives the ruins an uncanny quality: living green amid dead stone, silence where there was once the sound of a city. The trees are enormous by desert standards, their canopies providing rare shade, and Sand Wraiths appear more cautiously in their vicinity than elsewhere in the ruins.",
     "exits": {
       "south": 8204,
       "west": 8206,
@@ -1393,8 +1393,8 @@
   },
   {
     "vnum": 8208,
-    "name": "Giant Oasis-City Ruins â€” Treasure Vault Entry",
-    "description": "A stone trapdoor in Giant scale has been partially uncovered from the sand â€” partially, because whoever uncovered it seems to have encountered difficulties proceeding. Tool marks, a discarded rope, and a cold campfire suggest at least one previous expedition that did not return to complete the work. The trapdoor bears the Lord of Stone's seal alongside a warning inscription in Giant script that the local Sand Warden chapter advises translating before attempting entry.",
+    "name": "Giant Oasis-City Ruins â€' Treasure Vault Entry",
+    "description": "A stone trapdoor in Giant scale has been partially uncovered from the sand â€' partially, because whoever uncovered it seems to have encountered difficulties proceeding. Tool marks, a discarded rope, and a cold campfire suggest at least one previous expedition that did not return to complete the work. The trapdoor bears the Lord of Stone's seal alongside a warning inscription in Giant script that the local Sand Warden chapter advises translating before attempting entry.",
     "exits": {
       "west": 8207,
       "south": 8204,
@@ -1408,8 +1408,8 @@
   },
   {
     "vnum": 8209,
-    "name": "Giant Oasis-City Ruins â€” Underground Archive",
-    "description": "Below the trapdoor, a vaulted chamber of impeccable Giant stonework has been preserved from the desert's ravages entirely. Stone tablets in floor-to-ceiling racks cover every wall â€” records of the oasis-city's administration, water system maintenance logs, and, in one corner, what appear to be personal journals. A Giant trap mechanism is still active here, its trigger stones detecting weight and responding with a sealed-door mechanism that is not immediately reversible from the inside.",
+    "name": "Giant Oasis-City Ruins â€' Underground Archive",
+    "description": "Below the trapdoor, a vaulted chamber of impeccable Giant stonework has been preserved from the desert's ravages entirely. Stone tablets in floor-to-ceiling racks cover every wall â€' records of the oasis-city's administration, water system maintenance logs, and, in one corner, what appear to be personal journals. A Giant trap mechanism is still active here, its trigger stones detecting weight and responding with a sealed-door mechanism that is not immediately reversible from the inside.",
     "exits": {
       "up": 8208,
       "north": 8220
@@ -1421,8 +1421,8 @@
   },
   {
     "vnum": 8220,
-    "name": "The Sunken Thrones â€” Outer Desert",
-    "description": "The approach to the Sunken Thrones is marked by the increasing presence of carved stone fragments protruding from the dunes â€” pieces of buildings that were once connected to the administrative capital of the Eke Concordant. Sand Wraiths are visible here even by day, their towering forms of swirling dust drifting in slow circuits that suggest purpose rather than random wandering. The rune-circles that once held the sand at bay have failed outward from the center.",
+    "name": "The Sunken Thrones â€' Outer Desert",
+    "description": "The approach to the Sunken Thrones is marked by the increasing presence of carved stone fragments protruding from the dunes â€' pieces of buildings that were once connected to the administrative capital of the Eke Concordant. Sand Wraiths are visible here even by day, their towering forms of swirling dust drifting in slow circuits that suggest purpose rather than random wandering. The rune-circles that once held the sand at bay have failed outward from the center.",
     "exits": {
       "east": 8221,
       "north": 8222
@@ -1434,8 +1434,8 @@
   },
   {
     "vnum": 8221,
-    "name": "The Sunken Thrones â€” Throne Approach Road",
-    "description": "The final approach to the Keeper's thrones is along a still-visible processional road whose paving has been undermined by sand infiltration, creating a tilted, uneven surface that catches the ankle if walked carelessly. Stone guardian figures â€” Giant-carved, twelve feet high, and largely intact â€” line the road at twenty-foot intervals, their faces worn featureless by millennia of sand-abrasion but their postures still clearly ceremonial. Sand Wraiths drift between them like a mirror procession.",
+    "name": "The Sunken Thrones â€' Throne Approach Road",
+    "description": "The final approach to the Keeper's thrones is along a still-visible processional road whose paving has been undermined by sand infiltration, creating a tilted, uneven surface that catches the ankle if walked carelessly. Stone guardian figures â€' Giant-carved, twelve feet high, and largely intact â€' line the road at twenty-foot intervals, their faces worn featureless by millennia of sand-abrasion but their postures still clearly ceremonial. Sand Wraiths drift between them like a mirror procession.",
     "exits": {
       "west": 8220,
       "east": 8223
@@ -1447,8 +1447,8 @@
   },
   {
     "vnum": 8222,
-    "name": "The Sunken Thrones â€” Northern Ruins",
-    "description": "The administrative buildings that surrounded the throne complex on its northern side are deep in sand â€” only rooftops and upper story fragments protrude in most areas. In one section, a partial collapse has opened a room whose interior is still visible: stone desks, dried-ink record-tablets, and the remains of a filing system organized with the meticulous bureaucratic precision of the Concordant era. No one has attempted to excavate it in living memory.",
+    "name": "The Sunken Thrones â€' Northern Ruins",
+    "description": "The administrative buildings that surrounded the throne complex on its northern side are deep in sand â€' only rooftops and upper story fragments protrude in most areas. In one section, a partial collapse has opened a room whose interior is still visible: stone desks, dried-ink record-tablets, and the remains of a filing system organized with the meticulous bureaucratic precision of the Concordant era. No one has attempted to excavate it in living memory.",
     "exits": {
       "south": 8220,
       "east": 8223
@@ -1460,8 +1460,8 @@
   },
   {
     "vnum": 8223,
-    "name": "The Sunken Thrones â€” The Four Thrones",
-    "description": "The great carved thrones of the Keepers are visible here â€” four stone seats the size of small buildings, each carved from a single piece of dark granite and inscribed with the personal seal of one of Oreka's four Keepers. Three stand intact, though half-buried in sand. The fourth â€” the Third Crowned Keeper's throne â€” has been deliberately defaced, its inscriptions obliterated and its carved figure decapitated, though who performed this act and when is unrecorded. Sand Wraiths circle the thrones continuously, and on moonless nights the remaining rune-circles pulse amber in the stone beneath the sand.",
+    "name": "The Sunken Thrones â€' The Four Thrones",
+    "description": "The great carved thrones of the Keepers are visible here â€' four stone seats the size of small buildings, each carved from a single piece of dark granite and inscribed with the personal seal of one of Oreka's four Keepers. Three stand intact, though half-buried in sand. The fourth â€' the Third Crowned Keeper's throne â€' has been deliberately defaced, its inscriptions obliterated and its carved figure decapitated, though who performed this act and when is unrecorded. Sand Wraiths circle the thrones continuously, and on moonless nights the remaining rune-circles pulse amber in the stone beneath the sand.",
     "exits": {
       "west": 8222,
       "south": 8221,
@@ -1477,8 +1477,8 @@
   },
   {
     "vnum": 8224,
-    "name": "The Sunken Thrones â€” Vault Approach",
-    "description": "East of the thrones, a stone staircase descending beneath the sand level leads to the vault complex that treasure hunters have sought for generations. The staircase itself is accessible, but the lower sections fill with sand rapidly after each clearing â€” a property that may be mechanical rather than natural, given the rune-circles evident in the staircase walls. Sand Wraiths are thickest here, their movements distinctly protective rather than random.",
+    "name": "The Sunken Thrones â€' Vault Approach",
+    "description": "East of the thrones, a stone staircase descending beneath the sand level leads to the vault complex that treasure hunters have sought for generations. The staircase itself is accessible, but the lower sections fill with sand rapidly after each clearing â€' a property that may be mechanical rather than natural, given the rune-circles evident in the staircase walls. Sand Wraiths are thickest here, their movements distinctly protective rather than random.",
     "exits": {
       "west": 8223,
       "down": 8227
@@ -1491,8 +1491,8 @@
   },
   {
     "vnum": 8225,
-    "name": "The Sunken Thrones â€” Pilgrim Rest Point",
-    "description": "Pilgrims who come to pay respects at the Sunken Thrones rest here under a canvas shade structure maintained by the Sandsong Sand Warden chapter. Water is cached in sealed containers and replenished by circuit riders. The rest point is placed carefully â€” close enough to the thrones for pilgrimage purposes but outside the zone where the Sand Wraiths become agitated by non-reverential activity. A carved stone tablet lists the proper forms of address for approaching the thrones.",
+    "name": "The Sunken Thrones â€' Pilgrim Rest Point",
+    "description": "Pilgrims who come to pay respects at the Sunken Thrones rest here under a canvas shade structure maintained by the Sandsong Sand Warden chapter. Water is cached in sealed containers and replenished by circuit riders. The rest point is placed carefully â€' close enough to the thrones for pilgrimage purposes but outside the zone where the Sand Wraiths become agitated by non-reverential activity. A carved stone tablet lists the proper forms of address for approaching the thrones.",
     "exits": {
       "east": 8223,
       "west": 8220
@@ -1503,8 +1503,8 @@
   },
   {
     "vnum": 8226,
-    "name": "The Sunken Thrones â€” Concordant Records Hall",
-    "description": "Beneath the thrones, a hall of Concordant-era records has survived in near-perfect condition â€” the stone construction and the accidental airtightness of the burial creating a preservation environment. Record-tablets in stacked cases document the administrative decisions of the first two Crowned Keepers, and cross-referenced among them are accounts of the Third Keeper's governance that are far more damning than any northern history text has acknowledged.",
+    "name": "The Sunken Thrones â€' Concordant Records Hall",
+    "description": "Beneath the thrones, a hall of Concordant-era records has survived in near-perfect condition â€' the stone construction and the accidental airtightness of the burial creating a preservation environment. Record-tablets in stacked cases document the administrative decisions of the first two Crowned Keepers, and cross-referenced among them are accounts of the Third Keeper's governance that are far more damning than any northern history text has acknowledged.",
     "exits": {
       "up": 8223,
       "east": 8227
@@ -1515,8 +1515,8 @@
   },
   {
     "vnum": 8227,
-    "name": "The Sunken Thrones â€” The Sealed Vault",
-    "description": "The innermost vault bears the Second Crowned Keeper's personal seal â€” an impression in metal set into the stone door with a complexity suggesting Giant assistance in its manufacture. The vault has been successfully sealed for the entirety of the Concordant's collapse and the millennia since. Whatever records of the Concordant's final days and the Third Keeper's failures lie within, they have waited an unimaginably long time for someone to open the door. The seal can be read but not yet unlocked.",
+    "name": "The Sunken Thrones â€' The Sealed Vault",
+    "description": "The innermost vault bears the Second Crowned Keeper's personal seal â€' an impression in metal set into the stone door with a complexity suggesting Giant assistance in its manufacture. The vault has been successfully sealed for the entirety of the Concordant's collapse and the millennia since. Whatever records of the Concordant's final days and the Third Keeper's failures lie within, they have waited an unimaginably long time for someone to open the door. The seal can be read but not yet unlocked.",
     "exits": {
       "west": 8226
     },
@@ -1527,8 +1527,8 @@
   },
   {
     "vnum": 8240,
-    "name": "Glass Wastes â€” Iridescent Flats (Entry)",
-    "description": "The transition from desert sand to the Glass Wastes is sharp and alarming â€” one step on sand, the next on smooth, iridescent fused surface that rings faintly underfoot. The glass here was sand once, melted and fused by the alien magic of the Deceivers' march north. It is warm to the touch even at night, and its surface reflects sky and movement in unnatural combinations. Kin-sense begins to flicker here at the edges, intermittently rather than completely.",
+    "name": "Glass Wastes â€' Iridescent Flats (Entry)",
+    "description": "The transition from desert sand to the Glass Wastes is sharp and alarming â€' one step on sand, the next on smooth, iridescent fused surface that rings faintly underfoot. The glass here was sand once, melted and fused by the alien magic of the Deceivers' march north. It is warm to the touch even at night, and its surface reflects sky and movement in unnatural combinations. Kin-sense begins to flicker here at the edges, intermittently rather than completely.",
     "exits": {
       "west": 8241,
       "north": 8300
@@ -1548,8 +1548,8 @@
   },
   {
     "vnum": 8241,
-    "name": "Glass Wastes â€” Deep Glass Field",
-    "description": "The fused surface extends here in all directions without interruption, its iridescent surface broken only by occasional bubbles and ridges where the alien magic ran hottest. Nothing grows. No insects cross the glass. Even wind seems to behave differently over these fields, moving in patterns that do not correspond to the surrounding desert's airflow. Kin-sense is effectively dead in the deep glass â€” not muffled but absent, as if the glass has absorbed the elemental resonance.",
+    "name": "Glass Wastes â€' Deep Glass Field",
+    "description": "The fused surface extends here in all directions without interruption, its iridescent surface broken only by occasional bubbles and ridges where the alien magic ran hottest. Nothing grows. No insects cross the glass. Even wind seems to behave differently over these fields, moving in patterns that do not correspond to the surrounding desert's airflow. Kin-sense is effectively dead in the deep glass â€' not muffled but absent, as if the glass has absorbed the elemental resonance.",
     "exits": {
       "east": 8240,
       "north": 8242,
@@ -1570,8 +1570,8 @@
   },
   {
     "vnum": 8242,
-    "name": "Glass Wastes â€” Ancient Battleground",
-    "description": "A patch of the glass is disturbed in a way that suggests the fusion did not happen uniformly â€” there are deeper pits and ridges that preserve the shape of a conflict. Frozen mid-action in the glass are what appear to be the outlines of figures â€” not bodies, since organic material would not have survived, but the impressions their positions left as the sand fused around them. The shapes of Kin and Deceiver are distinguishable to those willing to look closely enough.",
+    "name": "Glass Wastes â€' Ancient Battleground",
+    "description": "A patch of the glass is disturbed in a way that suggests the fusion did not happen uniformly â€' there are deeper pits and ridges that preserve the shape of a conflict. Frozen mid-action in the glass are what appear to be the outlines of figures â€' not bodies, since organic material would not have survived, but the impressions their positions left as the sand fused around them. The shapes of Kin and Deceiver are distinguishable to those willing to look closely enough.",
     "exits": {
       "south": 8241,
       "east": 8244
@@ -1591,8 +1591,8 @@
   },
   {
     "vnum": 8243,
-    "name": "Glass Wastes â€” Glass Sinkhole",
-    "description": "A section of the fused glass has cracked and partially collapsed inward, creating a sinkhole that descends perhaps thirty feet into a cavity that smells of minerals and old fire. The walls of the sinkhole are glass of varying thickness â€” in some places translucent enough to suggest spaces behind them. Treasure hunters have attempted descent here before; their rope-anchors are visible at the rim, the ropes cut rather than worn.",
+    "name": "Glass Wastes â€' Glass Sinkhole",
+    "description": "A section of the fused glass has cracked and partially collapsed inward, creating a sinkhole that descends perhaps thirty feet into a cavity that smells of minerals and old fire. The walls of the sinkhole are glass of varying thickness â€' in some places translucent enough to suggest spaces behind them. Treasure hunters have attempted descent here before; their rope-anchors are visible at the rim, the ropes cut rather than worn.",
     "exits": {
       "east": 8241,
       "north": 8244
@@ -1605,8 +1605,8 @@
   },
   {
     "vnum": 8244,
-    "name": "Glass Wastes â€” Buried Deceiver Cache",
-    "description": "A section of glass has been carefully broken from above in a grid pattern, revealing a space beneath where items of obvious alien manufacture are partially buried in the still-hot glass substrate. The tools and equipment here bear Deceiver design â€” functional, angular, made of materials without Orekan parallel. Some appear intact. The Kin-sense dead zone here is absolute, and there is a quality to the silence that is not merely natural absence but something that feels deliberately maintained.",
+    "name": "Glass Wastes â€' Buried Deceiver Cache",
+    "description": "A section of glass has been carefully broken from above in a grid pattern, revealing a space beneath where items of obvious alien manufacture are partially buried in the still-hot glass substrate. The tools and equipment here bear Deceiver design â€' functional, angular, made of materials without Orekan parallel. Some appear intact. The Kin-sense dead zone here is absolute, and there is a quality to the silence that is not merely natural absence but something that feels deliberately maintained.",
     "exits": {
       "south": 8243,
       "west": 8242
@@ -1626,8 +1626,8 @@
   },
   {
     "vnum": 8260,
-    "name": "Tharok's Pillar â€” Outer Approach",
-    "description": "The great pillar raised by Lirien at the site where Tharok, last of the Giants, crumbled to dust is visible from two hours' walk away â€” a needle of dark stone rising sixty feet from the flat desert, perfectly straight, perfectly unweathered despite apparent millennia of desert wind. The pillar is carved from base to tip with the Giant-script account of Tharok's last days, and the translation, still incomplete after two centuries of scholarly effort, grows more harrowing as it ascends.",
+    "name": "Tharok's Pillar â€' Outer Approach",
+    "description": "The great pillar raised by Lirien at the site where Tharok, last of the Giants, crumbled to dust is visible from two hours' walk away â€' a needle of dark stone rising sixty feet from the flat desert, perfectly straight, perfectly unweathered despite apparent millennia of desert wind. The pillar is carved from base to tip with the Giant-script account of Tharok's last days, and the translation, still incomplete after two centuries of scholarly effort, grows more harrowing as it ascends.",
     "exits": {
       "east": 8261,
       "south": 8300
@@ -1639,8 +1639,8 @@
   },
   {
     "vnum": 8261,
-    "name": "Tharok's Pillar â€” The Rune-Circle",
-    "description": "Around the pillar's base, the oldest functioning rune-circle in the Infinite Desert pulses with amber light at all hours â€” not only on moonless nights, as at other sites. The circle is approximately forty feet in diameter and carved so deeply into the bedrock that it shows no sign of desert erosion despite its apparent age. Sand Wraiths gather at the circle's edge but do not cross it. Whether their presence is protective or simply attracted by the circle's power is a question of considerable theological debate.",
+    "name": "Tharok's Pillar â€' The Rune-Circle",
+    "description": "Around the pillar's base, the oldest functioning rune-circle in the Infinite Desert pulses with amber light at all hours â€' not only on moonless nights, as at other sites. The circle is approximately forty feet in diameter and carved so deeply into the bedrock that it shows no sign of desert erosion despite its apparent age. Sand Wraiths gather at the circle's edge but do not cross it. Whether their presence is protective or simply attracted by the circle's power is a question of considerable theological debate.",
     "exits": {
       "west": 8260,
       "north": 8262
@@ -1662,8 +1662,8 @@
   },
   {
     "vnum": 8262,
-    "name": "Tharok's Pillar â€” Shrine Platform",
-    "description": "A platform of polished stone, maintained by Sand Warden pilgrims on the Pilgrim Road circuit, provides a clean space for offerings and meditation adjacent to the pillar. The platform's stones are replaced annually â€” a tradition that began when pilgrims noticed that the stones nearest the pillar crack and degrade faster than those further away, suggesting the pillar's rune-work continues to exert forces on surrounding matter. The platform offerings are always stone â€” no organic material is left here by tradition.",
+    "name": "Tharok's Pillar â€' Shrine Platform",
+    "description": "A platform of polished stone, maintained by Sand Warden pilgrims on the Pilgrim Road circuit, provides a clean space for offerings and meditation adjacent to the pillar. The platform's stones are replaced annually â€' a tradition that began when pilgrims noticed that the stones nearest the pillar crack and degrade faster than those further away, suggesting the pillar's rune-work continues to exert forces on surrounding matter. The platform offerings are always stone â€' no organic material is left here by tradition.",
     "exits": {
       "south": 8261,
       "east": 8263
@@ -1674,8 +1674,8 @@
   },
   {
     "vnum": 8263,
-    "name": "Tharok's Pillar â€” Scholar's Camp",
-    "description": "A semi-permanent camp of desert-proof tents marks where the scholars who study Tharok's Pillar maintain their ongoing translation and survey work. The camp's composition changes as researchers rotate in and out, but it is rarely fully abandoned. Current work focuses on the upper third of the pillar's inscription, which the available Rarozhki record-lore suggests contains an account of what Tharok understood about the world's future â€” if 'understoodood' is the right word for whatever a final Giant perceives at the end of their existence.",
+    "name": "Tharok's Pillar â€' Scholar's Camp",
+    "description": "A semi-permanent camp of desert-proof tents marks where the scholars who study Tharok's Pillar maintain their ongoing translation and survey work. The camp's composition changes as researchers rotate in and out, but it is rarely fully abandoned. Current work focuses on the upper third of the pillar's inscription, which the available Rarozhki record-lore suggests contains an account of what Tharok understood about the world's future â€' if 'understoodood' is the right word for whatever a final Giant perceives at the end of their existence.",
     "exits": {
       "west": 8262,
       "south": 8260
@@ -1684,7 +1684,7 @@
   },
   {
     "vnum": 8300,
-    "name": "Desert Road â€” Kharazhad Junction",
+    "name": "Desert Road â€' Kharazhad Junction",
     "description": "The junction of the Kharazhad road and the central desert caravan route is marked by a carved stone waymarker whose Giant-script distance counts have been supplemented by Pekakarlik carvings in four later scripts. Caravans from all desert directions pass through here, and the junction often has a small informal market of travelers selling and trading with each other before diverging onto separate routes. The heat here is unrelenting from mid-morning through late afternoon.",
     "exits": {
       "north": 8000,
@@ -1703,7 +1703,7 @@
   },
   {
     "vnum": 8301,
-    "name": "Desert Road â€” South Trade Route",
+    "name": "Desert Road â€' South Trade Route",
     "description": "The southern trade route descends from the junction toward the Apelian Sea basin, its path marked by cairns of stacked stone at half-day intervals. The surface is hardpan with intermittent sand drifts, and caravan masters navigate by the distant volcanic peaks rather than the route markers when visibility permits. Sand Wraiths have been reported at the midpoint of this section with sufficient consistency that experienced guides factor them into their timing.",
     "exits": {
       "north": 8300,
@@ -1717,8 +1717,8 @@
   },
   {
     "vnum": 8302,
-    "name": "Desert Road â€” East Caravan Stage",
-    "description": "A waypoint station â€” a roofed rest-platform with a covered water cache â€” has been maintained at this east caravan stage by the Sandsong Sand Warden chapter for generations. The water cache is checked and refilled on a fourteen-day circuit, and caravan masters know the schedule well enough to plan water rationing around it. The platform's shade is genuine relief after an eastbound morning crossing, and the benches around its edge are worn smooth by generations of exhausted travelers.",
+    "name": "Desert Road â€' East Caravan Stage",
+    "description": "A waypoint station â€' a roofed rest-platform with a covered water cache â€' has been maintained at this east caravan stage by the Sandsong Sand Warden chapter for generations. The water cache is checked and refilled on a fourteen-day circuit, and caravan masters know the schedule well enough to plan water rationing around it. The platform's shade is genuine relief after an eastbound morning crossing, and the benches around its edge are worn smooth by generations of exhausted travelers.",
     "exits": {
       "west": 8300,
       "east": 8305,
@@ -1733,8 +1733,8 @@
   },
   {
     "vnum": 8303,
-    "name": "Desert Road â€” West Crossing to River",
-    "description": "The western route toward the Great River Gorge and Dunewell crosses a section of desert where the surface transitions from hardpan to loose sand and back in unpredictable stretches. Caravan masters who know this route carry pole-markers to test the surface before committing heavy loads, and the pace slows to a crawl in the loose sections. The gorge becomes audible â€” a faint rushing of water â€” about an hour before it becomes visible.",
+    "name": "Desert Road â€' West Crossing to River",
+    "description": "The western route toward the Great River Gorge and Dunewell crosses a section of desert where the surface transitions from hardpan to loose sand and back in unpredictable stretches. Caravan masters who know this route carry pole-markers to test the surface before committing heavy loads, and the pace slows to a crawl in the loose sections. The gorge becomes audible â€' a faint rushing of water â€' about an hour before it becomes visible.",
     "exits": {
       "east": 8300,
       "west": 8090,
@@ -1747,8 +1747,8 @@
   },
   {
     "vnum": 8304,
-    "name": "Desert Road â€” Southern Approach to Solhaven",
-    "description": "The oasis grove of Solhaven becomes visible as a smear of green on the horizon after a long section of featureless desert. Experienced travelers know this smear has been visible for two hours before arriving â€” distance over flat desert is deeply deceptive. The temperature begins to drop almost imperceptibly as the oasis humidity spreads outward from the grove, and this subtle change is enough to motivate the last stretch of travel.",
+    "name": "Desert Road â€' Southern Approach to Solhaven",
+    "description": "The oasis grove of Solhaven becomes visible as a smear of green on the horizon after a long section of featureless desert. Experienced travelers know this smear has been visible for two hours before arriving â€' distance over flat desert is deeply deceptive. The temperature begins to drop almost imperceptibly as the oasis humidity spreads outward from the grove, and this subtle change is enough to motivate the last stretch of travel.",
     "exits": {
       "north": 8301,
       "south": 8108
@@ -1760,8 +1760,8 @@
   },
   {
     "vnum": 8305,
-    "name": "Desert Road â€” Sandsong Approach",
-    "description": "The approach road to Sandsong from the west crosses a section of particularly fine sand â€” powder rather than grit, which gets into everything but does not impede movement. The settlement's observation post is visible as a dark speck above the roofline when conditions are clear. Sand Warden rangers from Sandsong patrol this approach regularly, and their presence usually means that news of approaching caravans precedes arrival by an hour or more.",
+    "name": "Desert Road â€' Sandsong Approach",
+    "description": "The approach road to Sandsong from the west crosses a section of particularly fine sand â€' powder rather than grit, which gets into everything but does not impede movement. The settlement's observation post is visible as a dark speck above the roofline when conditions are clear. Sand Warden rangers from Sandsong patrol this approach regularly, and their presence usually means that news of approaching caravans precedes arrival by an hour or more.",
     "exits": {
       "west": 8302,
       "east": 8133
@@ -1773,8 +1773,8 @@
   },
   {
     "vnum": 8306,
-    "name": "Desert Road â€” Pillar Road Junction",
-    "description": "A secondary junction on the caravan route marks the turn-off toward Tharok's Pillar, indicated by a waymarker carved with the Giant-script word for 'remembrance' â€” or possibly 'final,' given the ambiguity in the translation. Pilgrims traveling to the Pillar turn here, separating from commercial caravans that continue on the main route. The junction has a small stone shelter large enough for four people to sit out a sandstorm.",
+    "name": "Desert Road â€' Pillar Road Junction",
+    "description": "A secondary junction on the caravan route marks the turn-off toward Tharok's Pillar, indicated by a waymarker carved with the Giant-script word for 'remembrance' â€' or possibly 'final,' given the ambiguity in the translation. Pilgrims traveling to the Pillar turn here, separating from commercial caravans that continue on the main route. The junction has a small stone shelter large enough for four people to sit out a sandstorm.",
     "exits": {
       "north": 8305,
       "west": 8304,
@@ -1787,8 +1787,8 @@
   },
   {
     "vnum": 8307,
-    "name": "Desert Road â€” Long Flat Crossing",
-    "description": "This section of the caravan route crosses a long flat of compressed sand and gravel where the walking is easy but the exposure to sun is total. No shade, no landmarks, no variation â€” just the horizon in all directions and the steady crunch of footsteps. Experienced desert travelers move this section in pre-dawn darkness and rest during the midday hours. Those who attempt it in full sun learn quickly why the desert has its reputation.",
+    "name": "Desert Road â€' Long Flat Crossing",
+    "description": "This section of the caravan route crosses a long flat of compressed sand and gravel where the walking is easy but the exposure to sun is total. No shade, no landmarks, no variation â€' just the horizon in all directions and the steady crunch of footsteps. Experienced desert travelers move this section in pre-dawn darkness and rest during the midday hours. Those who attempt it in full sun learn quickly why the desert has its reputation.",
     "exits": {
       "north": 8302,
       "south": 8306,
@@ -1813,8 +1813,8 @@
   },
   {
     "vnum": 8308,
-    "name": "Desert Road â€” Glass Wastes Bypass",
-    "description": "The caravan route bends sharply here to avoid the nearest Glass Wastes field â€” the bend was established by Pekakarlik caravan masters generations ago when the dead-Kin-sense zone was first recognized as a navigation and survival hazard. A cairn of white-painted stones marks the bypass turn with exaggerated clarity, and a painted warning-board in six scripts has been maintained by the Sandsong chapter since someone tried to take the direct route and was not seen again.",
+    "name": "Desert Road â€' Glass Wastes Bypass",
+    "description": "The caravan route bends sharply here to avoid the nearest Glass Wastes field â€' the bend was established by Pekakarlik caravan masters generations ago when the dead-Kin-sense zone was first recognized as a navigation and survival hazard. A cairn of white-painted stones marks the bypass turn with exaggerated clarity, and a painted warning-board in six scripts has been maintained by the Sandsong chapter since someone tried to take the direct route and was not seen again.",
     "exits": {
       "west": 8307,
       "north": 8240,
@@ -1827,8 +1827,8 @@
   },
   {
     "vnum": 8309,
-    "name": "Desert Road â€” Midpoint Water Cache",
-    "description": "A large water cache buried beneath the surface â€” insulated stone containers sealed against heat and sand infiltration â€” provides emergency water at the midpoint of the longest unsupported section of the caravan route. The cache location is known to licensed caravan masters and Sand Warden chapter members; it is not marked on any public map. The cache is never to be used for convenience, only for genuine emergency â€” a social compact enforced entirely by reputation and the understanding that everyone's survival depends on it.",
+    "name": "Desert Road â€' Midpoint Water Cache",
+    "description": "A large water cache buried beneath the surface â€' insulated stone containers sealed against heat and sand infiltration â€' provides emergency water at the midpoint of the longest unsupported section of the caravan route. The cache location is known to licensed caravan masters and Sand Warden chapter members; it is not marked on any public map. The cache is never to be used for convenience, only for genuine emergency â€' a social compact enforced entirely by reputation and the understanding that everyone's survival depends on it.",
     "exits": {
       "west": 8308,
       "east": 8310
@@ -1852,8 +1852,8 @@
   },
   {
     "vnum": 8310,
-    "name": "Desert Road â€” Ruin Outlook",
-    "description": "From a low rise in the terrain â€” barely visible as a hill but enough to extend sightlines â€” the outer ruins of the Giant oasis-city are visible to the north, and the discolored patch of the Glass Wastes to the west. The vantage is used by caravan scouts and Sand Warden rangers as a standard observation point. A fire-signal platform here can relay information to both Sandsong and the oasis-city ruin camp simultaneously.",
+    "name": "Desert Road â€' Ruin Outlook",
+    "description": "From a low rise in the terrain â€' barely visible as a hill but enough to extend sightlines â€' the outer ruins of the Giant oasis-city are visible to the north, and the discolored patch of the Glass Wastes to the west. The vantage is used by caravan scouts and Sand Warden rangers as a standard observation point. A fire-signal platform here can relay information to both Sandsong and the oasis-city ruin camp simultaneously.",
     "exits": {
       "west": 8309,
       "north": 8200,
@@ -1866,8 +1866,8 @@
   },
   {
     "vnum": 8311,
-    "name": "Desert Road â€” Ashgarin Fold Eastern Branch",
-    "description": "The branch road toward Ashgarin Fold leaves the main caravan route here, heading east-northeast toward the volcanic highlands. The surface improves markedly â€” the Fold's Orean quarriers maintain this section as their supply road, and the hardpack is rolled and graded regularly. The smell of volcanic sulfur becomes intermittently detectable on easterly winds from here onward.",
+    "name": "Desert Road â€' Ashgarin Fold Eastern Branch",
+    "description": "The branch road toward Ashgarin Fold leaves the main caravan route here, heading east-northeast toward the volcanic highlands. The surface improves markedly â€' the Fold's Orean quarriers maintain this section as their supply road, and the hardpack is rolled and graded regularly. The smell of volcanic sulfur becomes intermittently detectable on easterly winds from here onward.",
     "exits": {
       "west": 8310,
       "east": 8123
@@ -1879,8 +1879,8 @@
   },
   {
     "vnum": 8331,
-    "name": "Scorchspires â€” Western Approach",
-    "description": "The volcanic peaks of the Scorchspires rise from the desert floor with the abruptness of geological violence â€” no foothills, no gradual transition, just sand and then rock that leans over you at angles that seem to defy stable geology. The stone is dark red and black, heat-fractured into columns and overhangs. Rarozhki Dwarf patrol markers â€” iron stakes with clan-sigil brands â€” appear at intervals indicating the Kharazhad territorial boundary.",
+    "name": "Scorchspires â€' Western Approach",
+    "description": "The volcanic peaks of the Scorchspires rise from the desert floor with the abruptness of geological violence â€' no foothills, no gradual transition, just sand and then rock that leans over you at angles that seem to defy stable geology. The stone is dark red and black, heat-fractured into columns and overhangs. Rarozhki Dwarf patrol markers â€' iron stakes with clan-sigil brands â€' appear at intervals indicating the Kharazhad territorial boundary.",
     "exits": {
       "east": 8332,
       "west": 8300,
@@ -1893,8 +1893,8 @@
   },
   {
     "vnum": 8332,
-    "name": "Scorchspires â€” Emberfang Ridge",
-    "description": "The Emberfang peaks are named for the way their summits, when viewed from the desert at sunset, resemble a row of teeth with fire behind them. The ridge here is a series of jagged basalt columns rising from a hardpan floor scattered with volcanic ejecta â€” rocks that cooled mid-flight and struck the ground with enough force to half-bury themselves. The air smells of active geology: minerals, heat, and the faint sweetness of volcanic gas at concentrations that cause headache but not immediate danger.",
+    "name": "Scorchspires â€' Emberfang Ridge",
+    "description": "The Emberfang peaks are named for the way their summits, when viewed from the desert at sunset, resemble a row of teeth with fire behind them. The ridge here is a series of jagged basalt columns rising from a hardpan floor scattered with volcanic ejecta â€' rocks that cooled mid-flight and struck the ground with enough force to half-bury themselves. The air smells of active geology: minerals, heat, and the faint sweetness of volcanic gas at concentrations that cause headache but not immediate danger.",
     "exits": {
       "west": 8331,
       "north": 8333,
@@ -1907,8 +1907,8 @@
   },
   {
     "vnum": 8333,
-    "name": "Scorchspires â€” Rarozhki Watch Station",
-    "description": "A watch station built into a natural basalt overhang commands views across both the desert approaches and the upper volcanic terrain. Rarozhki rangers in heat-resistant gear rotate through three-day shifts here, monitoring for both external intrusion and the internal geological signals â€” smoke patterns, ground tremors, gas emission changes â€” that warn of volcanic activity. The station's fire-signal equipment is maintained in daily readiness.",
+    "name": "Scorchspires â€' Rarozhki Watch Station",
+    "description": "A watch station built into a natural basalt overhang commands views across both the desert approaches and the upper volcanic terrain. Rarozhki rangers in heat-resistant gear rotate through three-day shifts here, monitoring for both external intrusion and the internal geological signals â€' smoke patterns, ground tremors, gas emission changes â€' that warn of volcanic activity. The station's fire-signal equipment is maintained in daily readiness.",
     "exits": {
       "south": 8332,
       "east": 8335
@@ -1920,8 +1920,8 @@
   },
   {
     "vnum": 8334,
-    "name": "Scorchspires â€” Volcanic Flow Field",
-    "description": "A historical lava flow â€” several centuries old by Rarozhki records â€” has cooled into a field of ropy, twisted stone that is navigable but deeply disorienting. The flow field extends east from the ridge to a vent field where secondary vents release steam and gas in unpredictable locations. The Embersteel ore that Kharazhad depends on is most concentrated in areas like this one, and Rarozhki mining expeditions work the field's eastern margins.",
+    "name": "Scorchspires â€' Volcanic Flow Field",
+    "description": "A historical lava flow â€' several centuries old by Rarozhki records â€' has cooled into a field of ropy, twisted stone that is navigable but deeply disorienting. The flow field extends east from the ridge to a vent field where secondary vents release steam and gas in unpredictable locations. The Embersteel ore that Kharazhad depends on is most concentrated in areas like this one, and Rarozhki mining expeditions work the field's eastern margins.",
     "exits": {
       "west": 8332,
       "south": 8019
@@ -1933,8 +1933,8 @@
   },
   {
     "vnum": 8335,
-    "name": "Scorchspires â€” Upper Vent Field",
-    "description": "The upper reaches of the Scorchspires expose the active geological processes that created the Rarozhki way of life â€” steam vents, sulfur deposits, and small lava channels that flow in predictable seasonal patterns. The Rarozhki navigate this terrain with practiced ease, reading the geological signs that tell them where new vents may open and which channels are safe to cross. For visitors, the terrain is genuinely dangerous without a guide.",
+    "name": "Scorchspires â€' Upper Vent Field",
+    "description": "The upper reaches of the Scorchspires expose the active geological processes that created the Rarozhki way of life â€' steam vents, sulfur deposits, and small lava channels that flow in predictable seasonal patterns. The Rarozhki navigate this terrain with practiced ease, reading the geological signs that tell them where new vents may open and which channels are safe to cross. For visitors, the terrain is genuinely dangerous without a guide.",
     "exits": {
       "west": 8333,
       "north": 8028
@@ -1946,8 +1946,8 @@
   },
   {
     "vnum": 8346,
-    "name": "Great River Gorge â€” Upper Rim Overlook",
-    "description": "The rim of the Great River Gorge provides the most dramatic geological view in the Infinite Desert â€” a canyon three hundred feet deep whose vertical walls expose strata representing millions of years of desert history. The river below is audible as a constant roar that varies in pitch with the season. The Pekakarlik settlements are visible as carved interruptions in the wall-face across the gorge, connected by boat traffic invisible at this distance.",
+    "name": "Great River Gorge â€' Upper Rim Overlook",
+    "description": "The rim of the Great River Gorge provides the most dramatic geological view in the Infinite Desert â€' a canyon three hundred feet deep whose vertical walls expose strata representing millions of years of desert history. The river below is audible as a constant roar that varies in pitch with the season. The Pekakarlik settlements are visible as carved interruptions in the wall-face across the gorge, connected by boat traffic invisible at this distance.",
     "exits": {
       "south": 8347,
       "east": 8300,
@@ -1961,8 +1961,8 @@
   },
   {
     "vnum": 8347,
-    "name": "Great River Gorge â€” Descent Path",
-    "description": "A switchback trail descends the gorge's eastern wall, its surface cut and maintained by Pekakarlik engineers who have been improving the original Giant-carved path for centuries. The trail is safe by desert standards â€” maintained rope anchors, drainage channels, and widened passing-places for loaded animals â€” but requires several hours to descend and a certain commitment of attention on the narrower sections. The sound of the river grows with every switchback.",
+    "name": "Great River Gorge â€' Descent Path",
+    "description": "A switchback trail descends the gorge's eastern wall, its surface cut and maintained by Pekakarlik engineers who have been improving the original Giant-carved path for centuries. The trail is safe by desert standards â€' maintained rope anchors, drainage channels, and widened passing-places for loaded animals â€' but requires several hours to descend and a certain commitment of attention on the narrower sections. The sound of the river grows with every switchback.",
     "exits": {
       "north": 8346,
       "south": 8348
@@ -1971,8 +1971,8 @@
   },
   {
     "vnum": 8348,
-    "name": "Great River Gorge â€” River Terrace",
-    "description": "A natural terrace about a third of the way down the gorge wall provides a rest point on the descent and a launching site for Pekakarlik small craft that can be lowered from here rather than requiring the full descent to river level. The terrace surface is covered with river-smooth stones deposited by ancient flood events when the river ran much higher. A carved Pekakarlik relief on the terrace wall records water levels from historical floods â€” the highest mark is alarming.",
+    "name": "Great River Gorge â€' River Terrace",
+    "description": "A natural terrace about a third of the way down the gorge wall provides a rest point on the descent and a launching site for Pekakarlik small craft that can be lowered from here rather than requiring the full descent to river level. The terrace surface is covered with river-smooth stones deposited by ancient flood events when the river ran much higher. A carved Pekakarlik relief on the terrace wall records water levels from historical floods â€' the highest mark is alarming.",
     "exits": {
       "north": 8347,
       "south": 8349,
@@ -1982,8 +1982,8 @@
   },
   {
     "vnum": 8349,
-    "name": "Great River Gorge â€” River Level North",
-    "description": "At river level, the gorge is a different world from the desert above â€” cool, wet, and green with riparian vegetation that clings to every crack in the stone walls. The Great River runs fast and deep here, its current carrying the snowmelt of the Giant's Teeth hundreds of miles to the north. Pekakarlik dock structures are visible up and downstream, connected by a system of rope-ferries that allows crossings without fighting the current.",
+    "name": "Great River Gorge â€' River Level North",
+    "description": "At river level, the gorge is a different world from the desert above â€' cool, wet, and green with riparian vegetation that clings to every crack in the stone walls. The Great River runs fast and deep here, its current carrying the snowmelt of the Giant's Teeth hundreds of miles to the north. Pekakarlik dock structures are visible up and downstream, connected by a system of rope-ferries that allows crossings without fighting the current.",
     "exits": {
       "north": 8348,
       "south": 8094,
@@ -1993,7 +1993,7 @@
   },
   {
     "vnum": 8350,
-    "name": "Great River Gorge â€” Western Rim Road",
+    "name": "Great River Gorge â€' Western Rim Road",
     "description": "A road follows the gorge's western rim, providing the primary land route between the northern and southern desert along the river corridor. Caravan traffic moves in both directions throughout the day, and the road is wide enough for two carts to pass. Rarozhki stone markers at intervals note distance to Kharazhad and the major settlements. In mid-afternoon the western-rim road is entirely in the sun and the heat on exposed stone is brutal.",
     "exits": {
       "east": 8346,
@@ -2009,8 +2009,8 @@
   },
   {
     "vnum": 8351,
-    "name": "Great River Gorge â€” Cliff-Face Settlement (North Tier)",
-    "description": "A Pekakarlik cliff-face settlement occupies this section of the gorge's eastern wall â€” apartments carved into the rock, their entrances barely visible from across the gorge, their exteriors hung with fishing lines that extend over the river below. The settlement has a private quality; the Pekakarlik here are engaged in the business of river life and trade, not tourism. Visitors are accommodated practically rather than warmly.",
+    "name": "Great River Gorge â€' Cliff-Face Settlement (North Tier)",
+    "description": "A Pekakarlik cliff-face settlement occupies this section of the gorge's eastern wall â€' apartments carved into the rock, their entrances barely visible from across the gorge, their exteriors hung with fishing lines that extend over the river below. The settlement has a private quality; the Pekakarlik here are engaged in the business of river life and trade, not tourism. Visitors are accommodated practically rather than warmly.",
     "exits": {
       "west": 8348,
       "south": 8352,
@@ -2023,8 +2023,8 @@
   },
   {
     "vnum": 8352,
-    "name": "Great River Gorge â€” Cliff-Face Settlement (South Tier)",
-    "description": "The southern tier of the gorge settlement connects to the tunnelworks that extend beneath the river, a network that the Pekakarlik Flowkeepers maintain continuously. A repair team is almost always visible working on some section of the external dock structure, replacing rot-damaged planking or reinforcing a mooring post weakened by current. The settlement is alive in the way that working places are alive â€” constant, purposeful, and entirely indifferent to aesthetic appreciation.",
+    "name": "Great River Gorge â€' Cliff-Face Settlement (South Tier)",
+    "description": "The southern tier of the gorge settlement connects to the tunnelworks that extend beneath the river, a network that the Pekakarlik Flowkeepers maintain continuously. A repair team is almost always visible working on some section of the external dock structure, replacing rot-damaged planking or reinforcing a mooring post weakened by current. The settlement is alive in the way that working places are alive â€' constant, purposeful, and entirely indifferent to aesthetic appreciation.",
     "exits": {
       "north": 8351,
       "west": 8349,
@@ -2036,8 +2036,8 @@
   },
   {
     "vnum": 8353,
-    "name": "Great River Gorge â€” Sea Falls Approach",
-    "description": "The river's gradient increases perceptibly here as the Great River approaches the Sea Falls â€” the series of dramatic cascades that connect the Kailian and Apelian seas through the body of Oreka. The roar of the falls is audible from this rim road approach, carried upward and outward by the gorge acoustics. Portage trails bypass the falls entirely on both rim roads, and they are busy year-round with the goods that the Sea Falls make impossible to navigate.",
+    "name": "Great River Gorge â€' Sea Falls Approach",
+    "description": "The river's gradient increases perceptibly here as the Great River approaches the Sea Falls â€' the series of dramatic cascades that connect the Kailian and Apelian seas through the body of Oreka. The roar of the falls is audible from this rim road approach, carried upward and outward by the gorge acoustics. Portage trails bypass the falls entirely on both rim roads, and they are busy year-round with the goods that the Sea Falls make impossible to navigate.",
     "exits": {
       "north": 8350,
       "south": 8354
@@ -2049,8 +2049,8 @@
   },
   {
     "vnum": 8354,
-    "name": "Great River Gorge â€” Sea Falls Overlook",
-    "description": "The Sea Falls drop in three great cascades that fill the gorge with perpetual mist and a roar that makes normal conversation impossible. The water at the base of the falls boils and churns in a permanent white chaos before reorganizing into the calmer river that continues south. The mist produces a micro-climate of unusual coolness and humidity â€” plants grow on the cliff-faces here that would not survive fifty yards away in either direction.",
+    "name": "Great River Gorge â€' Sea Falls Overlook",
+    "description": "The Sea Falls drop in three great cascades that fill the gorge with perpetual mist and a roar that makes normal conversation impossible. The water at the base of the falls boils and churns in a permanent white chaos before reorganizing into the calmer river that continues south. The mist produces a micro-climate of unusual coolness and humidity â€' plants grow on the cliff-faces here that would not survive fifty yards away in either direction.",
     "exits": {
       "north": 8353
     },
@@ -2058,8 +2058,8 @@
   },
   {
     "vnum": 8355,
-    "name": "Great River Gorge â€” Portage Station (North)",
-    "description": "The northern portage station at the Sea Falls is a Halfling and Pekakarlik operation that transfers cargo around the falls â€” too dangerous for navigation even by the most skilled boat pilots. The station has warehousing, draft animals, and specialized freight wagons for the overland bypass route. The portage fee is controlled by tradition rather than market pricing, a convention that has kept the route politically accessible to small traders and prevented monopolization.",
+    "name": "Great River Gorge â€' Portage Station (North)",
+    "description": "The northern portage station at the Sea Falls is a Halfling and Pekakarlik operation that transfers cargo around the falls â€' too dangerous for navigation even by the most skilled boat pilots. The station has warehousing, draft animals, and specialized freight wagons for the overland bypass route. The portage fee is controlled by tradition rather than market pricing, a convention that has kept the route politically accessible to small traders and prevented monopolization.",
     "exits": {
       "south": 8356,
       "north": 8350
@@ -2070,7 +2070,7 @@
   },
   {
     "vnum": 8356,
-    "name": "Great River Gorge â€” Portage Bypass Road",
+    "name": "Great River Gorge â€' Portage Bypass Road",
     "description": "The portage bypass road makes a wide arc around the Sea Falls, its surface maintained to a standard that reflects the road's economic importance. Teams of draft animals pull loaded wagons continuously in both directions, and the traffic management at the pinch-points where the road narrows is handled by a system of alternating priority signals that the portage operators have refined over generations into something that almost never fails.",
     "exits": {
       "north": 8355,
@@ -2080,8 +2080,8 @@
   },
   {
     "vnum": 8357,
-    "name": "Great River Gorge â€” Portage Station (South)",
-    "description": "The southern portage station marks the end of the bypass and the beginning of navigable water again on the southern side of the Sea Falls. Cargo is reloaded here onto waiting boats for the journey south to the Apelian Sea. The station maintains a small hostel and a trading post where goods are sometimes sold before the southern leg of transport rather than carried further â€” the station's location makes it a secondary market for goods whose primary market is elsewhere.",
+    "name": "Great River Gorge â€' Portage Station (South)",
+    "description": "The southern portage station marks the end of the bypass and the beginning of navigable water again on the southern side of the Sea Falls. Cargo is reloaded here onto waiting boats for the journey south to the Apelian Sea. The station maintains a small hostel and a trading post where goods are sometimes sold before the southern leg of transport rather than carried further â€' the station's location makes it a secondary market for goods whose primary market is elsewhere.",
     "exits": {
       "north": 8356,
       "south": 8349
@@ -2092,7 +2092,7 @@
   },
   {
     "vnum": 8358,
-    "name": "Great River Gorge â€” Canyon Pool",
+    "name": "Great River Gorge â€' Canyon Pool",
     "description": "A natural widening of the gorge at a bend in the Great River has created a deep pool of calmer water where boats anchor to rest between the difficult current sections. The pool's walls show high-water marks from multiple flood seasons, and a Pekakarlik-maintained rescue station on a rock platform above the pool keeps ropes and flotation equipment ready. The pool is cold even in high summer, fed by current from the mountains.",
     "exits": {
       "west": 8351,
@@ -2103,7 +2103,7 @@
   },
   {
     "vnum": 8359,
-    "name": "Great River Gorge â€” North Rim Trail",
+    "name": "Great River Gorge â€' North Rim Trail",
     "description": "A narrow trail along the gorge's north rim connects the Kharazhad approach road to the portage bypass, providing a faster alternative to the switchback descent for travelers who do not need to use the river. The trail requires careful footing in several sections but is navigable without climbing equipment. Desert flora grows to the rim-edge, and the transition from desert ground-cover to the sudden void of the gorge is startling every time.",
     "exits": {
       "east": 8350,
@@ -2117,8 +2117,8 @@
   },
   {
     "vnum": 8360,
-    "name": "Great River Gorge â€” Spring Flood High-Water Mark",
-    "description": "A section of gorge wall where the spring flood tide has deposited a distinctive band of sediment at its maximum height â€” a visual record of the river's seasonal extremes. The Pekakarlik have been measuring and recording flood heights here for centuries, and the carved record on the wall face constitutes the longest continuous flood-data series in Oreka. Current flood heights are compared to this record by every generation of Flowkeepers as part of their maintenance planning.",
+    "name": "Great River Gorge â€' Spring Flood High-Water Mark",
+    "description": "A section of gorge wall where the spring flood tide has deposited a distinctive band of sediment at its maximum height â€' a visual record of the river's seasonal extremes. The Pekakarlik have been measuring and recording flood heights here for centuries, and the carved record on the wall face constitutes the longest continuous flood-data series in Oreka. Current flood heights are compared to this record by every generation of Flowkeepers as part of their maintenance planning.",
     "exits": {
       "north": 8358,
       "east": 8097

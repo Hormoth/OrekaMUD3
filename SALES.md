@@ -2,15 +2,15 @@
 
 ## What Is It?
 
-OrekaMUD3 is a fully playable Multi-User Dungeon that implements the D&D 3.5 Edition ruleset from the ground up in Python. Players connect via telnet, create characters using the complete 3.5 character creation process, and play through a persistent world with real-time combat, spellcasting, equipment, quests, and AI-powered NPC dialogue.
+OrekaMUD3 is a fully playable Multi-User Dungeon that implements the D&D 3.5 Edition ruleset from the ground up in Python. Players connect via telnet, WebSocket (Veil Client), or any GMCP-compatible MUD client. They create characters using the complete 3.5 character creation process and play through a persistent 1,624-room world with real-time combat, spellcasting, equipment, quests, factions, religion, crafting, and AI-powered NPC dialogue.
 
-It is not a fork of DikuMUD, CircleMUD, or any legacy codebase. Every line was written from scratch with modern Python async architecture. The result is a MUD that plays like a tabletop D&D session — not a simplified approximation, but the actual rules.
+It is not a fork of DikuMUD, CircleMUD, or any legacy codebase. Every line — 35,000+ across 42 source modules — was written from scratch with modern Python async architecture. The result is a MUD that plays like a tabletop D&D session — not a simplified approximation, but the actual rules.
 
 ---
 
 ## The Elevator Pitch
 
-> **"What if you could play D&D 3.5 as a MUD — with real opposed rolls, iterative attacks, 88 feats, 82 spells, 37 conditions, 10 combat maneuvers, 13 class abilities, and NPCs that talk back using AI?"**
+> **"What if you could play D&D 3.5 as a MUD — with real opposed rolls, iterative attacks, 88 feats, 82 spells, 6 metamagic types, 37 conditions, 10 combat maneuvers, 60 crafting recipes, 10 factions, 13 deities, dynamic weather, a 6-chapter story arc, player housing, a unique Kin-sense system, and NPCs that talk back using AI?"**
 
 ---
 
@@ -163,7 +163,7 @@ The full 3.5 feat system — 70 with mechanical effects that auto-apply:
 - **Weapon feats**: Weapon Focus (+1 attack), Greater Weapon Focus (+2), Weapon Specialization (+2 damage), Greater Weapon Specialization (+4)
 - **Toughness**: +3 HP applied at character creation
 - **Item creation feats**: Brew Potion, Scribe Scroll, Craft Magic Arms and Armor, Craft Wand, etc.
-- **Metamagic feats**: Enlarge Spell, Far Shot, etc.
+- **Metamagic feats**: Empower Spell, Maximize Spell, Quicken Spell, Extend Spell, Silent Spell, Still Spell — all usable via `metamagic <type> <spell>` with correct slot-level increases per D&D 3.5 rules
 
 Prerequisites are checked at selection time. A Fighter can't take Whirlwind Attack without Dex 13, Int 13, Combat Expertise, Dodge, Mobility, Spring Attack, and BAB +4.
 
@@ -230,9 +230,10 @@ Respawn teleports you to the chapel at 50% HP with a 10% XP penalty. Conditions 
 | Channel | Command | Scope |
 |---------|---------|-------|
 | Say | `say <msg>` | Room (with language garbling for unknown languages) |
+| RP Say | `rpsay <msg>` | Room — LLM-capable NPCs overhear and may react in character |
 | Tell | `tell <player> <msg>` | Private (with AFK auto-reply, ignore list) |
 | Reply | `reply <msg>` | Reply to last tell |
-| Shout | `shout <msg>` | Area-wide |
+| Shout | `shout <msg>` | Area-wide (BFS radius 3 rooms through open exits) |
 | OOC | `ooc <msg>` | Global out-of-character |
 | Newbie | `newbie <msg>` | Global helper channel |
 | Party | `gtell <msg>` | Party members only |
@@ -372,7 +373,11 @@ Containers have capacity limits. Inventory shows container item counts.
 | `finger <player>` | Player info (online or offline) |
 | `achievements` | Achievement progress and earned titles |
 | `time` | Current game time and date |
-| `weather` | Current weather and gameplay effects |
+| `weather` | Current weather and gameplay effects (dynamic per region) |
+| `weather forecast` | Predicted next weather for your region |
+| `story` | Narrative progress and chapter status |
+| `lore <topic>` | World lore entries (17 topics) |
+| `metamagic list` | Available metamagic feats and their effects |
 
 ---
 
@@ -380,17 +385,23 @@ Containers have capacity limits. Inventory shows container item counts.
 
 ### Crafting System
 
-5 starter recipes with expandable JSON database:
+60 recipes across 7 craft disciplines:
 
-| Recipe | Skill | DC | Materials |
-|--------|-------|----|-----------|
-| Iron Dagger | Craft (weaponsmithing) | 12 | 1 iron ingot |
-| Leather Armor | Craft (leatherworking) | 12 | 2 leather hides |
-| Healing Potion | Craft (alchemy) | 15 | 2 healing herbs + 1 glass vial |
-| Iron Longsword | Craft (weaponsmithing) | 15 | 2 iron ingots + 1 leather strip |
-| Steel Shield | Craft (armorsmithing) | 15 | 2 steel ingots + 1 leather strip |
+| Discipline | Recipes | Example Items |
+|------------|---------|---------------|
+| Weaponsmithing | 8 | Iron Dagger, Iron Longsword, Embersteel Blade, Volcanic Glass Dagger |
+| Armorsmithing | 6 | Steel Shield, Chain Shirt, Embersteel Plate |
+| Leatherworking | 4 | Leather Armor, Wind-silk Cloak, Cured Hide |
+| Alchemy | 6 | Healing Potion, Amber-sap Elixir, Antitoxin |
+| Weaving | 3 | Wind-silk Robes, Spell Component Pouch |
+| Jewelrycrafting | 3 | Riverstone Amulet, Moonwhisper Ring |
+| Runic Crafting | 2 | Rune-carved Focus, Warding Stone |
 
-Critical failure (DC-5): materials destroyed. Normal failure: materials preserved.
+- DC checks with success, critical success, and critical failure mechanics
+- Material requirements and gold costs per recipe
+- Feat and caster level requirements for magical crafting
+- Oreka-specific materials (Embersteel, Wind-silk, Riverstone, Volcanic Glass, Giant-bone, Moonwhisper Silver)
+- Critical failure (DC-5): materials destroyed. Normal failure: materials preserved.
 
 ### Enchanting System
 
@@ -435,14 +446,65 @@ Stone Golem says: "This is the Quadrant of the Lord of Stone.
 Ancient beyond your years, mortal."
 ```
 
-The dialogue system uses a hybrid approach:
+The dialogue system uses a three-tier approach:
 
-1. **Template responses** for common interactions (fast, no API cost)
-2. **Local LLM** via Ollama or LM Studio for complex conversations (runs on your hardware)
-3. **Personality system** — Each NPC has defined traits, speech style, knowledge domains, and mood
-4. **Context-aware** — NPCs know their location, the time of day, their schedule, and the player's level
+1. **Scripted dialogue** — Authored responses from mob data (instant, zero cost)
+2. **Template-based keyword matching** — 280+ keyword-triggered responses with role-based templates (shopkeeper, trainer, banker, blacksmith, guard, innkeeper). Fast, no API cost. Deterministic seeding per NPC ensures consistent personality.
+3. **Local LLM** via Ollama or LM Studio — Rich roleplay conversations for complex interactions. Personality built from mob data (name, type, flags, alignment, description). Context-aware: NPCs know their location, the time of day, their schedule, and the player's level.
 
 No cloud API required. No per-token costs. Runs entirely on local hardware.
+
+### Combat AI
+
+Mobs fight intelligently, not randomly:
+
+- **Flee logic** — 30% chance to flee when below 20% HP (unless boss or no_flee flag)
+- **Target selection** — Prefer current target, or switch to lowest-HP player
+- **Special attacks** — 25% chance to use special_attacks from mob data
+- **Combat maneuvers** — Mobs with relevant feats use Trip, Disarm, Grapple, Bull Rush, or Sunder (20% chance)
+- **Decision tree** — Full CombatAction class evaluates options each round
+
+### AI Chat Game — Deep NPC Conversations
+
+Beyond the `talk` command, the `chat` command enters a full AI conversation mode:
+
+```
+> chat elia
+
+  ~ You feel yourself drift...
+
+  The Central Altar hums with quiet warmth. Guide Priestess Elia
+  looks up from her work as you approach.
+
+  Elia says: "Ah. Another traveler steps through. Welcome to Oreka.
+  I am Elia — I will not keep you long, but there are things you
+  should know before you venture out."
+
+[Chat: Guide Priestess Elia] > What are the Elemental Lords?
+
+  Guide Priestess Elia [reverent] says:
+  "Four primordial beings shaped this world — Stone, Fire, Sea, and
+  Wind. Their resonance flows through all Kin. You feel it now, in
+  your Kin-sense. That warmth is them."
+
+[Chat: Guide Priestess Elia] > endchat
+
+  Guide Priestess Elia says: "Walk carefully, traveler. The world
+  remembers those who pay attention to it."
+  ~ You return from the dreamlight.
+```
+
+- **NPC personas** — Each NPC has authored personality: voice, motivation, secrets, knowledge domains, speech style, forbidden topics, and faction attitudes
+- **NPC memory** — NPCs remember past conversations with each player across sessions
+- **Lore integration** — 17 canon lore entries injected into AI context based on NPC expertise
+- **World bleed** — Real-world events (other players speaking, combat, world events) inject into the conversation as `[~WORLD~]` messages
+- **Game actions** — NPCs can modify reputation, grant quests, give items, and store memories during conversation
+- **Shadow Presence** — Chatting players appear as dreaming presences visible to others, registering as "echo" resonance on Kin-sense
+- **Materialize** — Type `enter world` to step out of the dreamlight into the NPC's room as a full player
+- **RP Say** — `rpsay` broadcasts speech in the room and LLM-capable NPCs overhear and may chime in. Guards might comment on threats, shopkeepers on trade talk, priests on blessings. Responses arrive 1-3 seconds later with natural staggering if multiple NPCs react.
+- **Model tiers** — Premium models for faction leaders and lore keepers, standard for merchants, fast for guards
+- **Conversation summarization** — Long conversations auto-compress to stay within context limits
+- **Session logging** — Complete conversation history saved for review
 
 ---
 
@@ -456,7 +518,7 @@ NPCs don't stand in one spot. They follow schedules:
 - **Ambient room echoes** — Forests rustle, caves drip, towns murmur, waves lap. Random atmospheric messages every 60 seconds.
 - **12 months** with names: Deepwinter, Icemelt, Springseed, Rainmoon, Greengrass, Summertide, Highsun, Harvestend, Leaffall, Frostfall, Darknight, Yearsend
 - **Day/night affects** room lighting, visibility, and NPC behavior
-- **Weather system** — Rain (-2 ranged, -4 Spot), Storm (half movement, +4 concentration DC), Heat (+1 fire CL), Cold (+1 cold CL)
+- **Dynamic weather engine** — Weather changes per region every ~5 minutes based on biome and season. 8 weather types (clear, rain, storm, heat, cold, snow, fog, wind). Per-region biome weights (desert favors heat, marshes favor rain, steppe favors wind). Players see atmospheric broadcasts when weather changes. Mechanical effects in combat: rain/wind -2/-4 ranged attacks, storm -4 ranged and +4 concentration DC, fog -4 Spot. `weather forecast` shows what's coming.
 
 ---
 
@@ -481,12 +543,153 @@ Quests track progress, support optional/hidden objectives, chain together, and a
 
 ---
 
+## Kin-Sense — Oreka's Signature Mechanic
+
+Every living being in Oreka resonates with elemental energy. All Kin share a supernatural sixth sense — **not magic**, cannot be dispelled or suppressed by anti-magic — that detects nearby presences as distinct resonance patterns:
+
+| Resonance | Feel | Who |
+|-----------|------|-----|
+| **Harmonic** | Warm presence, race and element readable | All Kin races (Elves, Dwarves, Humans, Halflings, Half-Giants) |
+| **Wild Static** | Present, alive, fundamentally different | Tanuki, Oreka-native beasts |
+| **Warm Static** | Faint background noise | Simple animals, insects, plants |
+| **Breach Static** | Alien, unsettling wrongness | Goblins, Wargs, Hobgoblins, Orcs, Ogres |
+| **Null** | A wound; absence that hurts | Silentborn, Severed, Oath-Broken |
+| **Void** | Deliberate predatory wrongness | Domnathar, true Deceivers |
+| **None** | Simply absent — undetectable | Undead, Constructs, Farborn |
+| **Raw Static** | Overwhelming elemental force | Pure elementals |
+
+- **Base range**: 60 feet (one room), passes through barriers up to 5 feet thick
+- **Racial detection bonuses**: Half-Giant +4, Elves/Dwarves +2, Halfling +1, Humans +0, Farborn -99 (cannot use)
+- **Room modifiers**: Dead zones (Glass Wastes), flickering zones (Lament of Kings), amplified zones (Windstones)
+- **Suppression methods**: Deceiver's Feat, False Silence, worked Domnathar metal
+- **Elemental feel**: Earth = "deep and steady", Fire = "warm and restless", Water = "cool and flowing", Wind = "bright and sharp"
+
+This isn't flavor text — it's a detection system with mechanical consequences. Silentborn are invisible to Kin-sense. Farborn can't use it at all. Dead zones silence it entirely. Amplified zones make every presence ring clear.
+
+---
+
+## Religion — Pray, Worship, Ascend
+
+### 13 Deities
+
+**4 Elemental Lords** (primordial, never player-controlled):
+Lord of Stone (comatose), Lady of Fire, Lady of the Sea, Youngest Brother (Wind/exiled)
+
+**9 Ascended Gods** (were mortals, can be player-linked):
+Dagdan the United Sun, Hareem the Golden Rose, Kaile'a, Cinvarin the Five Witnesses, Semyon, Apela Kelsoe, Ludus Galerius, Gonmareck Ritler, The Hand Unanswered
+
+### Prayer System
+- Pray at shrines for deity-specific buffs (healing, stat bonuses, resistances)
+- Patron deity's shrine gives stronger effects
+- Each deity grants different mechanical benefits
+
+### Player Ascension
+Admins can create new deities (`@deity create`) and link them to player accounts (`@deity link`). Player-gods get:
+- `divine bless` — Bless nearby followers
+- `divine smite` — Strike enemies
+- `divine manifest` — Appear visibly at a shrine
+- `divine speak` — Echo voice through all shrines worldwide
+- `divine grant` — Bestow titles on followers
+
+### Wandering Gods
+Invisible deity entities roam between their shrines. Your patron deity is visible to you. Others sensed via Wisdom checks. Elemental Lords felt as environmental surges.
+
+---
+
+## Factions & Reputation
+
+10 factions with a reputation system ranging from -500 (hostile) to +600 (allied):
+
+| Faction | Type | Description |
+|---------|------|-------------|
+| Circle of Deeproot | Joinable | Druid order monitoring elemental health |
+| Golden Roses | Joinable | Law enforcement, Harreem cult monitors |
+| Far Riders | Joinable | Mytrone/Pasua cavalry brotherhood |
+| Sand Wardens | Joinable | Desert pilgrim/patrol order |
+| Trade Houses | Joinable | Mercantile guilds of Twin Rivers |
+| The Unstrung | Secret | 600-year-old criminal organization |
+| Silent Concord | Race-locked | Silentborn organization with 5 Choirs |
+| Chainless Legion | Race-locked | Farborn veterans |
+| Gatefall Remnant | Reputation only | Survivors at Tomb of Kings |
+| Brotherhood of Steppe | Reputation only | Mytrone cultural alliance |
+
+- Joinable factions have 5 ranks with auto-promotion on reputation thresholds
+- NPC shop prices modified by faction standing
+- Territory hostility detection — enter hostile territory and guards react
+- Reputation gains/losses from quest completion and player actions
+
+---
+
+## Special Materials
+
+12 material types — 6 standard D&D and 6 unique to Oreka:
+
+| Material | Element | Special Properties |
+|----------|---------|-------------------|
+| **Embersteel** | Fire | +1d4 fire on crit, fire resist 5 |
+| **Wind-silk** | Wind | Quarter weight, +5 movement, -15% spell failure |
+| **Riverstone** | Water | +1 CL water/cold spells as focus |
+| **Moonwhisper Silver** | Wind | Silver DR bypass, no damage penalty, +1d4 cold vs fey/undead |
+| **Volcanic Glass** | Fire | Expanded crit range, fragile |
+| **Giant-bone** | Earth | +1 CL earth/acid as focus, +1 bludgeon damage |
+
+Plus standard D&D: Adamantine, Darkwood, Mithral, Cold Iron, Alchemical Silver, Dragonhide. Material pricing tables affect crafted item values.
+
+---
+
+## 83 Location Effects
+
+The world reacts to characters mechanically through 5 types of room effects:
+
+| Effect Type | Count | Examples |
+|-------------|-------|---------|
+| Kin-sense modifier | 14 | Dead zones (Glass Wastes), flickering (Lament of Kings), amplified (Windstones) |
+| Elemental resonance | 10 | Fire at Kharazhad forges (+1 CL fire spells), water at river shrines |
+| Environmental hazard | 5 | Desert heat (DC 12 CON), volcanic gas (DC 14 poison), mountain cold |
+| Rune-circle | 12 | Teleport, heal, amplify, ward, weather — study/activate/repair with Craft checks |
+| Sanctuary | 14 | Deity-linked shrines with healing bonuses, rest bonuses, XP modifiers, PvP restrictions |
+
+---
+
 ## Player Housing, Mail & Auction
 
-### Player Housing
-- `buyroom` — Purchase a room (500 gold, requires housing flag)
-- `setdesc <text>` — Customize your room's description
-- `home` — Teleport to your owned room
+### Player Housing — Full System
+
+4 house types with scaling cost, rooms, and storage:
+
+| Type | Cost | Rooms | Storage | Description |
+|------|------|-------|---------|-------------|
+| Cottage | 5,000 gp | 2 | 20 | A cozy stone cottage |
+| Townhouse | 15,000 gp | 4 | 50 | A comfortable two-story townhouse |
+| Manor | 50,000 gp | 8 | 100 | An impressive manor house |
+| Guild Hall | 100,000 gp | 12 | 200 | A great hall fit for a guild |
+
+**Furniture with mechanical effects:**
+
+| Furniture | Cost | Effect |
+|-----------|------|--------|
+| Comfortable Bed | 100 gp | +25% HP on rest at home |
+| Storage Chest | 200 gp | +10 storage slots each |
+| Crafting Workbench | 500 gp | +2 to Craft checks at home |
+| Prayer Altar | 1,000 gp | Prayer effects last longer |
+| Bookshelf | 250 gp | +2 to Knowledge checks |
+| Herb Garden | 600 gp | Produces 1 healing herb per day |
+| Trophy Case | 300 gp | Display achievements and rare items |
+| Fireplace | 400 gp | Comfort and light |
+
+| Command | Function |
+|---------|----------|
+| `house buy <type>` | Purchase a house |
+| `house sell` | Sell for 50% refund |
+| `house visit <player>` | Visit another player's home |
+| `furnish list` | Browse available furniture |
+| `furnish buy <item>` | Buy and place furniture |
+| `storage list` | View stored items |
+| `storage store <item>` | Store inventory item |
+| `storage take <item>` | Retrieve stored item |
+| `home` | Teleport to your house |
+
+Housing effects are mechanically active — crafting at your workbench adds +2 to skill checks, resting with a bed heals 25% extra HP.
 
 ### Mail System
 - `sendmail <player> <subject> = <body>` — Send mail (1 gold, requires mailbox)
@@ -496,9 +699,82 @@ Quests track progress, support optional/hidden objectives, chain together, and a
 ### Auction House
 - `auction sell <item> <price> [buyout]` — List for 7 days
 - `auction list` — Browse listings
-- `auction bid <#> <amount>` — Place bid
+- `auction bid <#> <amount>` — Place bid (outbid refunds returned)
 - `auction buyout <#>` — Instant purchase
 - `auction collect` — Collect won items/gold
+
+---
+
+## Narrative & Story Progression
+
+### Main Story Arc — The Silence Breach
+
+A 6-chapter narrative tracks the world's central conflict — the growing Silence Breach in Gatefall Reach:
+
+| Chapter | Trigger | Title Earned |
+|---------|---------|-------------|
+| The Awakening | Level 1 | — |
+| Whispers of the Breach | Level 5 | — |
+| Choosing Allegiances | Faction rep 100+ | — |
+| The Elemental Trials | Level 10 | Elemental Aspirant |
+| The Silence Deepens | Level 15 | Breach Warden |
+| The Lords' Gambit | Level 20 | Champion of Oreka |
+
+Chapters trigger automatically on level-up, room entry, mob kills, and faction reputation changes. Each delivers an ANSI-rendered cutscene with narrative text and rewards (XP, titles).
+
+**Narrative hooks fire from real gameplay:**
+- Enter Gatefall Reach and sense the Breach
+- Kill creatures near the Silence and trigger story fragments
+- Level up through the story's power thresholds
+- Earn faction reputation and unlock allegiance chapters
+
+### Lore System
+
+17 canonical lore entries accessible via `lore <topic>`:
+- Elemental Lords, Ascended Gods, Kin-Sense mechanics
+- Aldenheim, EarthForge, House Buarath
+- Regional histories (Twin Rivers, Infinite Desert, Deepwater Marches, Gatefall Reach, Kinsweave)
+- Factions (Sand Wardens, Trade Houses, The Unstrung, Silent Concord)
+- The Silence Breach and its spreading void
+
+`story` shows your narrative progress. `story <chapter_id>` replays a completed chapter's cutscene.
+
+---
+
+## Metamagic System
+
+Spellcasters with metamagic feats can modify their spells per D&D 3.5 rules:
+
+| Metamagic | Feat Required | Slot Increase | Effect |
+|-----------|--------------|---------------|--------|
+| `metamagic empower <spell>` | Empower Spell | +2 levels | +50% variable numeric effects (damage/healing) |
+| `metamagic maximize <spell>` | Maximize Spell | +3 levels | Maximize all variable effects |
+| `metamagic quicken <spell>` | Quicken Spell | +4 levels | Cast as swift action |
+| `metamagic extend <spell>` | Extend Spell | +1 level | Double spell duration |
+| `metamagic silent <spell>` | Silent Spell | +1 level | No verbal component |
+| `metamagic still <spell>` | Still Spell | +1 level | No somatic component |
+
+Prepare metamagic, then cast — the spell uses a higher-level slot. `metamagic list` shows available options and which feats you have.
+
+---
+
+## Area Reset System
+
+Rooms periodically reset to their default state:
+- Items, doors, and containers restored on configurable timers
+- Rooms with players in combat are skipped
+- Players in affected rooms see a notification
+- Admin controls: `@resets status`, `@resets force <area>`, `@resets interval <area> <seconds>`
+- Default 15-minute reset cycle for tutorial areas
+
+---
+
+## Account Management
+
+| Command | Function |
+|---------|----------|
+| `changepassword <old> <new>` | Change your password |
+| `deletechar <password> CONFIRM` | Permanently delete character (safe rename, not true delete) |
 
 ---
 
@@ -529,15 +805,30 @@ At level 20, players can `remort`:
 
 ## The World of Oreka
 
-### Original Lore
+### 1,624 Rooms Across 7 Regions
 
-Oreka isn't a generic fantasy setting. It has its own cosmology:
+Oreka isn't a generic fantasy setting. It's a continent shaped by four Elemental Lords, divided by the Giant's Teeth mountain ranges and an equatorial desert corridor.
+
+| Region | Location | Rooms | Character | Key Cities |
+|--------|----------|-------|-----------|------------|
+| **Twin Rivers** | Northwest | 338 | Densest population, river trade, canopy cities | Custos do Aeternos (25K), Liraveth (22K), Aerithal (15K) |
+| **Kinsweave** | North-center | 167 | Highland quarries, haunted ruins, pilgrimage | Stonefall, Rivertop, Highridge + 6 ruins |
+| **Tidebloom Reach** | Northeast | 225 | Tidal farming, Mithril Chains, lake trade | Branmill Cove, Velathenor, Tiravel + 4 ruins |
+| **Infinite Desert** | Equatorial | 149 | Pilgrim roads, oasis cities, volcanic forges | Kharazhad (20K), Dunewell, Solhaven |
+| **Eternal Steppe** | South-center | 161 | Horse breeding, cavalry, nomadic camps | Tavranek (6K) + 8 semi-permanent camps |
+| **Gatefall Reach** | Southeast | 193 | Frontier, Silence Breach, Wind-Riders | Hillwatch, Silkenbough, Glimmerholt |
+| **Deepwater Marches** | Southwest | 240 | Dense jungle, Warg settlements, intelligence trade | Titan's Rest (28K), Canopy Hold, Thornwall |
+
+Plus: Chapel tutorial (25 rooms), Chainless Legion (80 rooms), ShadeharmonGlade (8 rooms), Wilderness Connectors (38 rooms).
+
+### Original Cosmology
 
 - **Four Elemental Lords** — The Lord of Stone (comatose), The Lady of Fire (active), The Lady of the Sea (active), The Youngest Brother/Wind Lord (exiled)
-- **Eight Ascended Gods** — Mortals who achieved apotheosis after the Fall of Aldenheim. Cinvarin (unity), Hareem (revenge), Tarvek Wen (liberation), Ludus Galerius (exploration), Apela Kelsoe (freedom), Kaile'a (mariners), Gonmareck Ritler (smithing), Semyon (healing), The Hand Unanswered (compassion), The Unnamed Warrior King (war).
+- **Nine Ascended Gods** — Mortals who achieved apotheosis after the Fall of Aldenheim
 - **Elemental affinities** — Every Kin race aligns with a primal element (Fire, Water, Earth, Wind, or All-Element Concord for Half-Giants)
-- **Kin-sense** — Supernatural awareness system. Characters sense nearby beings as harmonic, wild_static, breach_static, null, or void resonance patterns.
-- **The Central Aetherial Altar** — Starting location where all four elements converge.
+- **Kin-sense** — Supernatural awareness system unique to Oreka
+- **373 placed mobs** — Guards, merchants, quest-givers, wandering beasts, and bosses
+- **238 bestiary templates** — D&D 3.5 compatible creature library for expansion
 
 ### Starting Area
 
@@ -587,20 +878,52 @@ All saved to `data/feedback.json` with timestamp, reporter, and room context.
 
 ---
 
+## Veil Client — Play in Your Browser
+
+OrekaMUD3 ships with the **Veil Client**, a built-in HTML/WebSocket client that runs in any modern browser:
+
+- **No download required** — Open `veil_client.html` or connect to the WebSocket endpoint
+- **WebSocket server** on port 8765 — Bidirectional proxy to the telnet game server
+- **ANSI color rendering** — Full color support matching terminal MUD clients
+- **GMCP integration** — Real-time character vitals, room info, quest state, and Kin-sense data pushed to the client
+- **Keep-alive** — 30-second ping/pong heartbeat for stable connections
+- **Dual transport** — Players on telnet and WebSocket play in the same world simultaneously
+
+### GMCP Protocol Support
+
+Full Generic MUD Communication Protocol implementation for rich client integration:
+
+| GMCP Package | Data Sent |
+|--------------|-----------|
+| `Char.Vitals` | HP, AC, movement, gold, TNL, level |
+| `Char.Status` | Conditions, spell slots per day, class, race |
+| `Char.Factions` | All faction reputation values |
+| `Char.Deity` | Patron deity, shrine status, active buffs |
+| `Char.KinSense` | Elemental detections with range and room modifiers |
+| `Char.Quest` | Active quests with state, completed quest list |
+| `Room.Info` | Vnum, name, description, region, exits, effects, terrain |
+| `Room.Mobs` | Living mobs with health state (unhurt/wounded/near death) |
+
+Works with MudLet, TinTin++, Veil Client, and any GMCP-compatible client.
+
+---
+
 ## Technical Details
 
 | Spec | Value |
 |------|-------|
 | Language | Python 3.13 |
 | Architecture | Async I/O (asyncio + telnetlib3) |
-| Protocol | Telnet (port 4000) |
-| Data format | JSON (rooms, mobs, items, spells, quests) |
+| Protocols | Telnet (port 4000) + WebSocket (port 8765) + GMCP |
+| Client | Veil Client (built-in HTML/WebSocket), MudLet, TinTin++ |
+| Data format | JSON (rooms, mobs, items, spells, quests, events) |
 | Character persistence | Atomic JSON saves with timestamped backups |
 | AI backend | Ollama / LM Studio (local, no cloud API) |
-| Test suite | 300 automated tests (pytest) |
-| Commands | 403 registered commands |
-| Codebase size | ~20,000+ lines |
-| Dependencies | telnetlib3, ollama (optional) |
+| Test suite | 298 automated tests (pytest) across 12 test files |
+| Commands | 340+ registered commands |
+| Source modules | 42 Python files + main.py |
+| Codebase size | ~35,000+ lines |
+| Dependencies | telnetlib3, websockets, ollama (optional) |
 
 ---
 
@@ -608,8 +931,13 @@ All saved to `data/feedback.json` with timestamp, reporter, and room context.
 
 | System | Count |
 |--------|-------|
-| Registered commands | 403 |
-| Races | 20 (14 playable + 6 creature races) |
+| Lines of code | 35,000+ across 42 source modules |
+| Registered commands | 340+ |
+| World rooms | 1,624 across 13 areas |
+| Placed mobs | 373 (276 hostile, 85 friendly, 5 tutorial) |
+| Bestiary templates | 238 (D&D 3.5 compatible creature library) |
+| Items | 88 |
+| Races | 20 (15 playable + 5 creature races) |
 | Classes | 12 (including custom Magi with 3 paths) |
 | Feats | 88 (70 with mechanical effects) |
 | Spells | 82 across 8 schools |
@@ -617,68 +945,116 @@ All saved to `data/feedback.json` with timestamp, reporter, and room context.
 | Conditions | 37 with mechanical modifiers |
 | Combat maneuvers | 10 + charge/defense stances |
 | Class abilities | 13 unique commands |
+| Crafting recipes | 60 across 7 disciplines |
+| Special materials | 12 (6 standard D&D + 6 Oreka-exclusive) |
+| Factions | 10 (5 joinable, 1 secret, 2 race-locked, 2 reputation-only) |
+| Deities | 13 (4 Elemental Lords + 9 Ascended Gods) |
+| Location effects | 83 active room effects (5 types) |
 | Social verbs | 60 |
 | Equipment slots | 14 |
 | Cleric domains | 23+ |
-| Deities | 13 |
 | Help entries | 90+ |
-| Crafting recipes | 5 (expandable via JSON) |
 | Achievements | 9+ |
-| Chat channels | 9 |
-| Automated tests | 300 |
+| Chat channels | 10 (including RP Say with NPC AI reactions) |
+| GMCP packages | 12 real-time data streams (8 game + 4 chat) |
+| Metamagic types | 6 (Empower, Maximize, Quicken, Extend, Silent, Still) |
+| Story chapters | 6 main arc + room/kill narrative fragments |
+| House types | 4 (cottage, townhouse, manor, guild hall) |
+| Furniture items | 8 with mechanical effects |
+| Lore entries | 17 canonical world lore topics |
+| Weather types | 8 dynamic per-region (clear, rain, storm, heat, cold, snow, fog, wind) |
+| Automated tests | 298 across 12 test files |
 
 ---
 
 ## What's Ready Today
 
+### Core Engine
 - Full character creation (20 races with stat mods, 12 classes, 88 feats, 82 spells, 38 skills, 13 deities, 9 alignments)
 - Complete D&D 3.5 combat (initiative, action economy, 10 maneuvers, dual wield, ranged, sneak attack, charge, defense stances, AoO on flee, concentration checks, spell resistance, damage reduction, weapon properties, size modifiers)
 - 13 class abilities (Rage, Inspire, Turn Undead, Wild Shape, Flurry, Smite, Lay on Hands, Divine Grace, Favored Enemy, Evasion, Uncanny Dodge, Combat Style)
+- Combat AI (flee logic, target selection, special attacks, maneuver usage)
 - Equipment system (14 slots, AC recalculation, stat bonuses auto-applied, material durability, item repair)
 - Corpse and loot system (CR-scaled drops, decay timers, auto-loot/auto-gold)
+
+### World
+- 1,624 rooms across 13 area files, 7 distinct regions with unique identity
+- 373 placed mobs (276 hostile, 85 friendly NPCs, 5 tutorial)
+- 238 bestiary creature templates (D&D 3.5 compatible, ready for placement)
+- 88 items with 12 special material types (6 Oreka-exclusive)
+- 83 active location effects (Kin-sense modifiers, elemental resonance, hazards, rune-circles, sanctuaries)
+- 100% room connectivity verified by AI bot explorer
+- 6 wilderness corridors connecting regions through mountain passes and desert roads
+
+### Systems
+- Spellcasting (prepared/spontaneous, components consumed, saves, SR, buffs, healing, AoE, dispel, 23+ domains)
+- Crafting (60 recipes across 7 disciplines, skill checks, material consumption, Oreka-specific recipes)
+- Enchanting (weapons/armor, +1 to +5, Spellcraft check)
+- Religion (13 deities, prayer at shrines, patron buffs, player ascension to godhood, wandering deity entities)
+- Factions (10 factions with reputation -500 to +600, 5 joinable with ranks, shop price modifiers, territory hostility)
+- Kin-sense (unique sixth sense, 9 resonance categories, room modifiers, racial detection bonuses)
+- Quest system (10 objective types, progress tracking, chain quests, rewards)
 - Shop system (buy/sell/appraise with auto-restock) + bank + auction house
-- Spellcasting (prepared/spontaneous, components consumed, saves, SR, buffs, healing, AoE, dispel, domains)
 - Death/respawn (D&D dying rules, chapel respawn, XP penalty)
 - Rest and recovery (long/short rest, inn bonus, spell slot restoration)
-- Quest system (10 objective types, progress tracking, rewards)
-- AI NPC dialogue (local LLM, personality system, context-aware)
-- NPC schedules (day/night cycle, room movement, activity descriptions, ambient echoes)
-- Mob respawn (configurable timers, boss/unique/quest flags)
+
+### Multiplayer & Social
 - PvP combat + formal duel system (non-lethal)
 - Party system (group, follow, assist, rescue, XP split)
 - Guild/clan system (create, ranks, bank, MOTD)
 - Chat system (say with language garbling, tell with AFK/ignore, whisper, reply, shout, OOC, newbie, emote, 60 socials)
+- Mail, bulletin boards, auction house
+- Leaderboards, finger/whois, language system
+
+### AI & Dialogue
+- Three-tier NPC dialogue (scripted, 280+ keyword templates, local LLM via Ollama/LM Studio)
+- AI NPC personality system with role-based responses (shopkeeper, trainer, banker, blacksmith, guard, innkeeper)
+- NPC schedules (day/night cycle, room movement, activity descriptions, ambient echoes)
+- Combat AI with decision trees (flee, target switching, maneuvers, special attacks)
+
+### Client Support
+- Telnet on port 4000 (MudLet, TinTin++, any MUD client)
+- WebSocket on port 8765 (Veil Client, custom integrations)
+- GMCP protocol (12 data packages: vitals, status, factions, deity, kin-sense, quests, room info, mobs + 4 chat packages)
+- Built-in Veil Client (HTML/WebSocket, plays in any browser, no download)
+- Interactive world map viewer (HTML/Canvas, all 1,624 rooms visualized)
+
+### Quality of Life
 - Stealth (hide, sneak, search, spot opposition)
 - Doors and traps (lock/unlock/pick, trap detection/disarm/trigger)
 - Containers (put/get/peek with capacity)
-- Crafting (5 recipes, skill checks, material consumption)
-- Enchanting (weapons/armor, +1 to +5, Spellcraft check)
 - Mount, companion, summon, and familiar systems
-- Player housing (buy, customize, teleport home)
-- Mail, bulletin boards, auction house
-- Achievements with title rewards
+- Player housing (4 types, 8 furniture items with mechanical bonuses, persistent storage)
+- Achievements with title rewards (auto-granted on kill, level, craft, explore)
 - Remort system at level 20
-- Hunger/thirst with survival mode (penalties at 0, fatigued/exhausted conditions)
+- Hunger/thirst with survival mode
 - Light sources (torches/lanterns illuminate dark rooms)
 - Fishing, mining, gathering (resource nodes by room flag)
-- Gambling (dice and coinflip at taverns)
-- Encumbrance (carry weight based on STR)
-- Body positions (sit/stand/kneel with movement/combat restrictions)
+- Gambling, encumbrance, body positions
 - Speedwalk, aliases, custom prompts, config toggles
+- Account management (password change, character deletion)
 - 90+ help entries, bug/typo/idea reporting
-- Leaderboards, finger/whois, language system
-- Swimming/drowning, flying, poison/disease with cure
-- 403 commands, 300 automated tests
-- Complete builder/admin toolset (OLC)
+- Mob respawn (configurable timers, boss/unique/quest flags)
+- Area resets (configurable room/item/door restoration on timers)
+- Event logging (player actions, combat, deaths, quests, economy)
+- 340+ commands, 298 automated tests, complete builder/admin OLC toolset
 - Character persistence with atomic saves and backup rollback
+
+### Dynamic Systems
+- Dynamic weather engine (8 types, per-region biome weights, seasonal modifiers, combat integration)
+- Narrative engine (6-chapter story arc, room/kill/level/faction triggers, cutscene rendering)
+- Area reset system (configurable timers, admin controls, combat-safe)
+- Metamagic casting (6 types with D&D 3.5 slot-level rules)
+- ANSI UI rendering library (progress bars, score cards, combat prompts)
+- World event system (weather changes, mob surges, shrine bonuses via DM/MCP bridge)
 
 ## What It Needs
 
-- **World content** — More rooms, areas, and zones to explore
-- **More mobs placed in the world** — The bestiary has entries ready; most need room assignments
-- **Quest content** — The system works; it needs authored quest chains
+- **Quest content** — The quest system is fully built (10 objective types, chains, rewards). It needs authored quest chains filling the 1,624-room world.
+- **More bestiary placement** — 238 creature templates in the bestiary library await room assignments across the regions.
+- **Continued world polish** — The 7 regions are built and connected. Flavor text, hidden areas, and regional storylines deepen the experience.
 
-The engine is built. The rules are implemented. It needs a world to play in.
+The engine is complete. Every system is built, wired, and tested. The world is built. It needs stories to tell.
 
 ---
 
@@ -686,7 +1062,7 @@ The engine is built. The rules are implemented. It needs a world to play in.
 
 ```bash
 # Install dependencies
-pip install telnetlib3
+pip install telnetlib3 websockets
 
 # Optional: Install Ollama for AI NPC dialogue
 # https://ollama.ai
@@ -695,8 +1071,11 @@ pip install telnetlib3
 cd oreka_mud
 python main.py
 
-# Connect
+# Connect via telnet
 telnet localhost 4000
+
+# Or open the Veil Client in your browser
+# veil_client.html (connects via WebSocket on port 8765)
 ```
 
-Create a character. Kill something. Loot the corpse. Buy a sword. Cast a spell. Talk to an NPC. Die and respawn. Group up with friends. Join a guild. Duel a rival. Enchant your weapon. Remort at level 20. It all works.
+Create a character. Kill something. Loot the corpse. Buy a sword. Cast a spell. Pray at a shrine. Join a faction. Craft an Embersteel blade. Talk to an NPC. Die and respawn. Group up with friends. Join a guild. Duel a rival. Enchant your weapon. Remort at level 20. It all works.

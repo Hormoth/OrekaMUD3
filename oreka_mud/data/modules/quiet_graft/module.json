@@ -1,0 +1,11 @@
+{
+  "module_id": "quiet_graft",
+  "title": "The Quiet Graft",
+  "version": "0.1.0",
+  "author": "Jessie",
+  "requires_engine": ">=3.5.0",
+  "depends_on_modules": [],
+  "summary": "A Domnathar kingmaker cultivates a half-Farborn heir while the Unstrung quietly learn what he's shopping for.",
+  "tags": ["conspiracy", "domnathar", "unstrung", "farborn"],
+  "content_warnings": ["grief", "family-separation", "political-violence-implied"]
+}

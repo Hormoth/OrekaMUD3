@@ -18,6 +18,16 @@ class Room:
         self.area_file = area_file
         self.effects = effects or []  # Location effects: Kin-sense, hazards, rune-circles, etc.
 
+        # Room ambience for LLM prompts (loaded from area JSON if present)
+        self.ambience = None
+        ambience_data = kwargs.get('ambience')
+        if ambience_data and isinstance(ambience_data, dict):
+            try:
+                from src.ai_schemas.room_ambience import RoomAmbience
+                self.ambience = RoomAmbience.from_dict(ambience_data)
+            except ImportError:
+                pass  # Schemas not loaded yet
+
     def to_dict(self):
         """Serialize room for saving (excluding live mobs/players)."""
         d = {
@@ -44,3 +54,11 @@ class Room:
         if self.effects:
             d["effects"] = self.effects
         return d
+
+    def get_shadow_presences(self):
+        """Get all shadow presences in this room."""
+        try:
+            from src.shadow_presence import shadow_manager
+            return shadow_manager.get_by_room(self.vnum)
+        except Exception:
+            return []

@@ -1,213 +1,973 @@
 {
-  "description": "Magi Spell List — Oreka: Echoes of the Elemental Dawn. The Magi draws from druid, cleric, wizard, and bard traditions through a unified elemental lens. When a spell appears on multiple class lists at different levels, the Magi uses the HIGHEST level. ABSOLUTE EXCLUSIONS: The Magi has no access to death magic, negative energy effects, teleportation, planar travel, conjured illusions, alignment-locked spells, or extraplanar summoning (potentially). Only two economy-related spells appear on the list: Diminish Plants (retain falling resonance) and Death Ward (fortifies resonance against death effects).",
+  "description": "Magi Spell List -- Oreka: Echoes of the Elemental Dawn. The Magi draws from druid, cleric, wizard, and bard traditions through a unified elemental lens. When a spell appears on multiple class lists at different levels, the Magi uses the HIGHEST level. ABSOLUTE EXCLUSIONS: The Magi has no access to death magic, negative energy effects, teleportation, planar travel, conjured illusions, alignment-locked spells, or extraplanar summoning (potentially). Only two economy-related spells appear on the list: Diminish Plants (retain falling resonance) and Death Ward (fortifies resonance against death effects).",
   "0": [
-    {"name": "Create Water", "school": "Conjuration", "description": "Create elemental water"},
-    {"name": "Cure Minor Wounds", "school": "Conjuration", "description": "Channels elemental vitality"},
-    {"name": "Detect Magic", "school": "Divination", "description": "Detect elemental and magical resonance"},
-    {"name": "Detect Poison", "school": "Divination", "description": "Detect harmful elemental imbalance"},
-    {"name": "Flare", "school": "Evocation", "description": "Burst of elemental hot light"},
-    {"name": "Ghost Sound", "school": "Illusion", "description": "Wind elemental produces minor deceptive illusions"},
-    {"name": "Know Direction", "school": "Divination", "description": "Reads the Wind Lord's breath"},
-    {"name": "Lullaby (V)", "school": "Enchantment", "description": "Humming resonance makes wakefulness difficult"},
-    {"name": "Mending", "school": "Transmutation", "description": "Re-harmonizes broken elemental structure"},
-    {"name": "Message", "school": "Transmutation", "description": "Carries words on the Wind Lord's breath"},
-    {"name": "Purify Food and Drink", "school": "Transmutation", "description": "Elemental purification"},
-    {"name": "Ray of Frost", "school": "Evocation", "description": "Pale frost from all elemental cold"},
-    {"name": "Read Magic", "school": "Divination", "description": "Perceive magical script"},
-    {"name": "Resistance", "school": "Abjuration", "description": "Bolster elemental harmony"},
-    {"name": "Virtue", "school": "Transmutation", "description": "Strengthens elemental vitality"}
+    {
+      "name": "Create Water",
+      "school": "Conjuration",
+      "description": "Create elemental water"
+    },
+    {
+      "name": "Cure Minor Wounds",
+      "school": "Conjuration",
+      "description": "Channels elemental vitality"
+    },
+    {
+      "name": "Detect Magic",
+      "school": "Divination",
+      "description": "Detect elemental and magical resonance"
+    },
+    {
+      "name": "Detect Poison",
+      "school": "Divination",
+      "description": "Detect harmful elemental imbalance"
+    },
+    {
+      "name": "Flare",
+      "school": "Evocation",
+      "description": "Burst of elemental hot light"
+    },
+    {
+      "name": "Ghost Sound",
+      "school": "Illusion",
+      "description": "Wind elemental produces minor deceptive illusions"
+    },
+    {
+      "name": "Know Direction",
+      "school": "Divination",
+      "description": "Reads the Wind Lord's breath"
+    },
+    {
+      "name": "Lullaby (V)",
+      "school": "Enchantment",
+      "description": "Humming resonance makes wakefulness difficult"
+    },
+    {
+      "name": "Mending",
+      "school": "Transmutation",
+      "description": "Re-harmonizes broken elemental structure"
+    },
+    {
+      "name": "Message",
+      "school": "Transmutation",
+      "description": "Carries words on the Wind Lord's breath"
+    },
+    {
+      "name": "Purify Food and Drink",
+      "school": "Transmutation",
+      "description": "Elemental purification"
+    },
+    {
+      "name": "Ray of Frost",
+      "school": "Evocation",
+      "description": "Pale frost from all elemental cold"
+    },
+    {
+      "name": "Read Magic",
+      "school": "Divination",
+      "description": "Perceive magical script"
+    },
+    {
+      "name": "Resistance",
+      "school": "Abjuration",
+      "description": "Bolster elemental harmony"
+    },
+    {
+      "name": "Virtue",
+      "school": "Transmutation",
+      "description": "Strengthens elemental vitality"
+    }
   ],
   "1": [
-    {"name": "Alarm", "school": "Abjuration", "description": "Elemental resonance alerts the caster"},
-    {"name": "Bless (V)", "school": "Enchantment", "description": "Voice resonance steadies allies' courage"},
-    {"name": "Burning Hands", "school": "Evocation", "description": "Fan of elemental fire"},
-    {"name": "Calm Animals", "school": "Enchantment", "description": "Kin-Sense soothes beast-level resonance"},
-    {"name": "Charm Animal", "school": "Enchantment", "description": "Extends personal resonance to befriend a beast"},
-    {"name": "Command (V)", "school": "Enchantment", "description": "Word of elemental authority"},
-    {"name": "Comprehend Languages (K)", "school": "Divination", "description": "Resonance-aided linguistic comprehension"},
-    {"name": "Cure Light Wounds", "school": "Conjuration", "description": "Channels elemental vitality to mend flesh"},
-    {"name": "Detect Animals or Plants", "school": "Divination", "description": "EXCEPTION: reads living elemental resonance"},
-    {"name": "Detect Snares and Pits", "school": "Divination", "description": "Senses disturbances in earth and stone"},
-    {"name": "Endure Elements", "school": "Transmutation", "description": "Compels plain growth through earth resonance"},
-    {"name": "Faerie Fire", "school": "Evocation", "description": "Outlines creatures in elemental luminance"},
-    {"name": "Goodberry", "school": "Transmutation", "description": "Infuses berries with elemental vitality"},
-    {"name": "Identify (K)", "school": "Divination", "description": "Reads an item's elemental history"},
-    {"name": "Longstrider", "school": "Transmutation", "description": "Wind resonance quickens the step"},
-    {"name": "Magic Stone", "school": "Transmutation", "description": "Charges stones with elemental force"},
-    {"name": "Magic Weapon", "school": "Transmutation", "description": "Sharpens weapon with elemental force"},
-    {"name": "Obscuring Mist", "school": "Conjuration", "description": "Lady Tempest's veil"},
-    {"name": "Pass without Trace", "school": "Transmutation", "description": "Earth resonance erases your marks"},
-    {"name": "Produce Flame", "school": "Evocation", "description": "Calls fire into the palm"},
-    {"name": "Protection from Energy", "school": "Abjuration", "description": "Shields against a single element's extremes"},
-    {"name": "Remove Fear", "school": "Abjuration", "description": "Resonance calms subject's resonance"},
-    {"name": "Sanctuary", "school": "Abjuration", "description": "Resonance ward turns hostile attention aside"},
-    {"name": "Shield of Faith", "school": "Transmutation", "description": "Infuse wood with earth-strength"},
-    {"name": "Shillelagh", "school": "Transmutation", "description": "Infuse wood with earth strength"}
+    {
+      "name": "Alarm",
+      "school": "Abjuration",
+      "description": "Elemental resonance alerts the caster"
+    },
+    {
+      "name": "Bless (V)",
+      "school": "Enchantment",
+      "description": "Voice resonance steadies allies' courage"
+    },
+    {
+      "name": "Burning Hands",
+      "school": "Evocation",
+      "description": "Fan of elemental fire"
+    },
+    {
+      "name": "Calm Animals",
+      "school": "Enchantment",
+      "description": "Kin-Sense soothes beast-level resonance"
+    },
+    {
+      "name": "Charm Animal",
+      "school": "Enchantment",
+      "description": "Extends personal resonance to befriend a beast"
+    },
+    {
+      "name": "Command (V)",
+      "school": "Enchantment",
+      "description": "Word of elemental authority"
+    },
+    {
+      "name": "Comprehend Languages (K)",
+      "school": "Divination",
+      "description": "Resonance-aided linguistic comprehension"
+    },
+    {
+      "name": "Cure Light Wounds",
+      "school": "Conjuration",
+      "description": "Channels elemental vitality to mend flesh"
+    },
+    {
+      "name": "Detect Animals or Plants",
+      "school": "Divination",
+      "description": "EXCEPTION: reads living elemental resonance"
+    },
+    {
+      "name": "Detect Snares and Pits",
+      "school": "Divination",
+      "description": "Senses disturbances in earth and stone"
+    },
+    {
+      "name": "Endure Elements",
+      "school": "Transmutation",
+      "description": "Compels plain growth through earth resonance"
+    },
+    {
+      "name": "Faerie Fire",
+      "school": "Evocation",
+      "description": "Outlines creatures in elemental luminance"
+    },
+    {
+      "name": "Goodberry",
+      "school": "Transmutation",
+      "description": "Infuses berries with elemental vitality"
+    },
+    {
+      "name": "Identify (K)",
+      "school": "Divination",
+      "description": "Reads an item's elemental history"
+    },
+    {
+      "name": "Longstrider",
+      "school": "Transmutation",
+      "description": "Wind resonance quickens the step"
+    },
+    {
+      "name": "Magic Stone",
+      "school": "Transmutation",
+      "description": "Charges stones with elemental force"
+    },
+    {
+      "name": "Magic Weapon",
+      "school": "Transmutation",
+      "description": "Sharpens weapon with elemental force"
+    },
+    {
+      "name": "Obscuring Mist",
+      "school": "Conjuration",
+      "description": "Lady Tempest's veil"
+    },
+    {
+      "name": "Pass without Trace",
+      "school": "Transmutation",
+      "description": "Earth resonance erases your marks"
+    },
+    {
+      "name": "Produce Flame",
+      "school": "Evocation",
+      "description": "Calls fire into the palm"
+    },
+    {
+      "name": "Protection from Energy",
+      "school": "Abjuration",
+      "description": "Shields against a single element's extremes"
+    },
+    {
+      "name": "Remove Fear",
+      "school": "Abjuration",
+      "description": "Resonance calms subject's resonance"
+    },
+    {
+      "name": "Sanctuary",
+      "school": "Abjuration",
+      "description": "Resonance ward turns hostile attention aside"
+    },
+    {
+      "name": "Shield of Faith",
+      "school": "Transmutation",
+      "description": "Infuse wood with earth-strength"
+    },
+    {
+      "name": "Shillelagh",
+      "school": "Transmutation",
+      "description": "Infuse wood with earth strength"
+    }
   ],
   "2": [
-    {"name": "Aid (V)", "school": "Enchantment", "description": "Bolsters vitality and courage through resonance"},
-    {"name": "Animal Messenger", "school": "Enchantment", "description": "Makes a beast an elemental hand-courier"},
-    {"name": "Animal Trance", "school": "Enchantment", "description": "Kin-Sense mesmerizes animal-level resonance"},
-    {"name": "Barkskin", "school": "Transmutation", "description": "Earth-bark resonance toughens skin"},
-    {"name": "Bear's Endurance", "school": "Transmutation", "description": "Stone-stubborn vitality"},
-    {"name": "Bull's Strength", "school": "Transmutation", "description": "Earth-heavy muscle"},
-    {"name": "Calm Emotions (V)", "school": "Enchantment", "description": "Smooths turbulent emotional resonance"},
-    {"name": "Cat's Grace", "school": "Transmutation", "description": "Wind-grace suppleness infusion"},
-    {"name": "Chill Metal", "school": "Transmutation", "description": "Pours ice into fire-forged metal"},
-    {"name": "Cure Moderate Wounds", "school": "Conjuration", "description": "Deeper elemental vitality"},
-    {"name": "Delay Poison", "school": "Conjuration", "description": "Slows harmful substance's progress"},
-    {"name": "Detect Thoughts (K)", "school": "Divination", "description": "Reads resonance patterns of surface thought"},
-    {"name": "Eagle's Splendor", "school": "Transmutation", "description": "Wind-born clarity, brightness presence"},
-    {"name": "Flame Blade", "school": "Evocation", "description": "Blade of elemental fire"},
-    {"name": "Flaming Sphere", "school": "Evocation", "description": "Rolling sphere of elemental fire"},
-    {"name": "Fox's Cunning", "school": "Transmutation", "description": "Water-quickened intelligence"},
-    {"name": "Gust of Wind", "school": "Evocation", "description": "Blast from the Wind Lord"},
-    {"name": "Heat Metal", "school": "Transmutation", "description": "Lady of Fire's wrath in metal"},
-    {"name": "Lesser Restoration", "school": "Transmutation", "description": "Restores drained harmony"},
-    {"name": "Make Whole", "school": "Transmutation", "description": "Deep elemental mending"},
-    {"name": "Owl's Wisdom", "school": "Transmutation", "description": "Deepens perception through resonance"},
-    {"name": "Reduce Animal", "school": "Transmutation", "description": "Compresses beast-resonance"},
-    {"name": "Remove Paralysis", "school": "Conjuration", "description": "Heals elemental stagnation"},
-    {"name": "Resist Energy", "school": "Abjuration", "description": "Hardens resonance against energy"},
-    {"name": "See Invisibility", "school": "Divination", "description": "Perceive disruptions in elemental currents"},
-    {"name": "Shield Other", "school": "Abjuration", "description": "Shares resonance with ally"},
-    {"name": "Silence", "school": "Illusion", "description": "Stills air onto a Point of Glass balance"},
-    {"name": "Soften Earth and Stone", "school": "Transmutation", "description": "Loosens the Lord of Stone's grip"},
-    {"name": "Sound Burst (V)", "school": "Evocation", "description": "Concentrated sonic force"},
-    {"name": "Speak with Animals", "school": "Divination", "description": "Expands resonance comprehension"},
-    {"name": "Tree Shape", "school": "Transmutation", "description": "Merges form with root resonance"},
-    {"name": "Warp Wood", "school": "Transmutation", "description": "Earth-and-water elemental warps timber"},
-    {"name": "Wood Shape", "school": "Transmutation", "description": "Reshapes wood through earth resonance"}
+    {
+      "name": "Aid (V)",
+      "school": "Enchantment",
+      "description": "Bolsters vitality and courage through resonance"
+    },
+    {
+      "name": "Animal Messenger",
+      "school": "Enchantment",
+      "description": "Makes a beast an elemental hand-courier"
+    },
+    {
+      "name": "Animal Trance",
+      "school": "Enchantment",
+      "description": "Kin-Sense mesmerizes animal-level resonance"
+    },
+    {
+      "name": "Barkskin",
+      "school": "Transmutation",
+      "description": "Earth-bark resonance toughens skin"
+    },
+    {
+      "name": "Bear's Endurance",
+      "school": "Transmutation",
+      "description": "Stone-stubborn vitality"
+    },
+    {
+      "name": "Bull's Strength",
+      "school": "Transmutation",
+      "description": "Earth-heavy muscle"
+    },
+    {
+      "name": "Calm Emotions (V)",
+      "school": "Enchantment",
+      "description": "Smooths turbulent emotional resonance"
+    },
+    {
+      "name": "Cat's Grace",
+      "school": "Transmutation",
+      "description": "Wind-grace suppleness infusion"
+    },
+    {
+      "name": "Chill Metal",
+      "school": "Transmutation",
+      "description": "Pours ice into fire-forged metal"
+    },
+    {
+      "name": "Cure Moderate Wounds",
+      "school": "Conjuration",
+      "description": "Deeper elemental vitality"
+    },
+    {
+      "name": "Delay Poison",
+      "school": "Conjuration",
+      "description": "Slows harmful substance's progress"
+    },
+    {
+      "name": "Detect Thoughts (K)",
+      "school": "Divination",
+      "description": "Reads resonance patterns of surface thought"
+    },
+    {
+      "name": "Eagle's Splendor",
+      "school": "Transmutation",
+      "description": "Wind-born clarity, brightness presence"
+    },
+    {
+      "name": "Flame Blade",
+      "school": "Evocation",
+      "description": "Blade of elemental fire"
+    },
+    {
+      "name": "Flaming Sphere",
+      "school": "Evocation",
+      "description": "Rolling sphere of elemental fire"
+    },
+    {
+      "name": "Fox's Cunning",
+      "school": "Transmutation",
+      "description": "Water-quickened intelligence"
+    },
+    {
+      "name": "Gust of Wind",
+      "school": "Evocation",
+      "description": "Blast from the Wind Lord"
+    },
+    {
+      "name": "Heat Metal",
+      "school": "Transmutation",
+      "description": "Lady of Fire's wrath in metal"
+    },
+    {
+      "name": "Lesser Restoration",
+      "school": "Transmutation",
+      "description": "Restores drained harmony"
+    },
+    {
+      "name": "Make Whole",
+      "school": "Transmutation",
+      "description": "Deep elemental mending"
+    },
+    {
+      "name": "Owl's Wisdom",
+      "school": "Transmutation",
+      "description": "Deepens perception through resonance"
+    },
+    {
+      "name": "Reduce Animal",
+      "school": "Transmutation",
+      "description": "Compresses beast-resonance"
+    },
+    {
+      "name": "Remove Paralysis",
+      "school": "Conjuration",
+      "description": "Heals elemental stagnation"
+    },
+    {
+      "name": "Resist Energy",
+      "school": "Abjuration",
+      "description": "Hardens resonance against energy"
+    },
+    {
+      "name": "See Invisibility",
+      "school": "Divination",
+      "description": "Perceive disruptions in elemental currents"
+    },
+    {
+      "name": "Shield Other",
+      "school": "Abjuration",
+      "description": "Shares resonance with ally"
+    },
+    {
+      "name": "Silence",
+      "school": "Illusion",
+      "description": "Stills air onto a Point of Glass balance"
+    },
+    {
+      "name": "Soften Earth and Stone",
+      "school": "Transmutation",
+      "description": "Loosens the Lord of Stone's grip"
+    },
+    {
+      "name": "Sound Burst (V)",
+      "school": "Evocation",
+      "description": "Concentrated sonic force"
+    },
+    {
+      "name": "Speak with Animals",
+      "school": "Divination",
+      "description": "Expands resonance comprehension"
+    },
+    {
+      "name": "Tree Shape",
+      "school": "Transmutation",
+      "description": "Merges form with root resonance"
+    },
+    {
+      "name": "Warp Wood",
+      "school": "Transmutation",
+      "description": "Earth-and-water elemental warps timber"
+    },
+    {
+      "name": "Wood Shape",
+      "school": "Transmutation",
+      "description": "Reshapes wood through earth resonance"
+    }
   ],
   "3": [
-    {"name": "Call Lightning", "school": "Evocation", "description": "Wind Lord's wrath from storm-static"},
-    {"name": "Clairaudience/Clairvoyance", "school": "Divination", "description": "Extends Kin-sense to distant hearing"},
-    {"name": "Cure Serious Wounds", "school": "Conjuration", "description": "Potent life-current healing"},
-    {"name": "Daylight", "school": "Evocation", "description": "Brilliant elemental luminance"},
-    {"name": "Dispel Magic", "school": "Abjuration", "description": "Resonance disrupts construct-magics"},
-    {"name": "Divination", "school": "Divination", "description": "Deep reading of elemental currents"},
-    {"name": "Fireball", "school": "Evocation", "description": "Concentrated elemental fire detonation"},
-    {"name": "Greater Magic Weapon", "school": "Transmutation", "description": "Deep elemental tempering"},
-    {"name": "Helping Hand", "school": "Evocation", "description": "Reaches out through earth resonance"},
-    {"name": "Lightning Bolt", "school": "Evocation", "description": "Wind lightning channeled in a line"},
-    {"name": "Magic Circle against Evil (A)", "school": "Abjuration", "description": "Resonance Ward (HA radius)"},
-    {"name": "Meld into Stone", "school": "Transmutation", "description": "Merges body into stone"},
-    {"name": "Neutralize Poison", "school": "Conjuration", "description": "Eliminates harmful substance"},
-    {"name": "Plant Growth", "school": "Transmutation", "description": "Earth and water accelerate growth"},
-    {"name": "Prayer (V)", "school": "Enchantment", "description": "Resonant invocation bolsters allies"},
-    {"name": "Protection from Energy", "school": "Abjuration", "description": "Shields against elemental damage"},
-    {"name": "Remove Curse", "school": "Abjuration", "description": "Heals imposed disharmony curse"},
-    {"name": "Sleet Storm", "school": "Conjuration", "description": "Ice-and-wind storm conjured"},
-    {"name": "Slow", "school": "Transmutation", "description": "Drags on temporal resonance"},
-    {"name": "Speak with Plants", "school": "Divination", "description": "Communes with earth-memory in plants"},
-    {"name": "Stone Shape", "school": "Transmutation", "description": "Reshapes stone through deep communion"},
-    {"name": "Summon Nature's Ally III", "school": "Conjuration", "description": "Calls elemental creatures"},
-    {"name": "Water Breathing", "school": "Transmutation", "description": "Lady Tempest's omen"},
-    {"name": "Water Walk", "school": "Transmutation", "description": "Treads lightly on water's amplifies surface tension"},
-    {"name": "Wind Wall", "school": "Evocation", "description": "Wind Lord's static"}
+    {
+      "name": "Call Lightning",
+      "school": "Evocation",
+      "description": "Wind Lord's wrath from storm-static"
+    },
+    {
+      "name": "Clairaudience/Clairvoyance",
+      "school": "Divination",
+      "description": "Extends Kin-sense to distant hearing"
+    },
+    {
+      "name": "Cure Serious Wounds",
+      "school": "Conjuration",
+      "description": "Potent life-current healing"
+    },
+    {
+      "name": "Daylight",
+      "school": "Evocation",
+      "description": "Brilliant elemental luminance"
+    },
+    {
+      "name": "Dispel Magic",
+      "school": "Abjuration",
+      "description": "Resonance disrupts construct-magics"
+    },
+    {
+      "name": "Divination",
+      "school": "Divination",
+      "description": "Deep reading of elemental currents"
+    },
+    {
+      "name": "Fireball",
+      "school": "Evocation",
+      "description": "Concentrated elemental fire detonation"
+    },
+    {
+      "name": "Greater Magic Weapon",
+      "school": "Transmutation",
+      "description": "Deep elemental tempering"
+    },
+    {
+      "name": "Helping Hand",
+      "school": "Evocation",
+      "description": "Reaches out through earth resonance"
+    },
+    {
+      "name": "Lightning Bolt",
+      "school": "Evocation",
+      "description": "Wind lightning channeled in a line"
+    },
+    {
+      "name": "Magic Circle against Evil (A)",
+      "school": "Abjuration",
+      "description": "Resonance Ward (HA radius)"
+    },
+    {
+      "name": "Meld into Stone",
+      "school": "Transmutation",
+      "description": "Merges body into stone"
+    },
+    {
+      "name": "Neutralize Poison",
+      "school": "Conjuration",
+      "description": "Eliminates harmful substance"
+    },
+    {
+      "name": "Plant Growth",
+      "school": "Transmutation",
+      "description": "Earth and water accelerate growth"
+    },
+    {
+      "name": "Prayer (V)",
+      "school": "Enchantment",
+      "description": "Resonant invocation bolsters allies"
+    },
+    {
+      "name": "Protection from Energy",
+      "school": "Abjuration",
+      "description": "Shields against elemental damage"
+    },
+    {
+      "name": "Remove Curse",
+      "school": "Abjuration",
+      "description": "Heals imposed disharmony curse"
+    },
+    {
+      "name": "Sleet Storm",
+      "school": "Conjuration",
+      "description": "Ice-and-wind storm conjured"
+    },
+    {
+      "name": "Slow",
+      "school": "Transmutation",
+      "description": "Drags on temporal resonance"
+    },
+    {
+      "name": "Speak with Plants",
+      "school": "Divination",
+      "description": "Communes with earth-memory in plants"
+    },
+    {
+      "name": "Stone Shape",
+      "school": "Transmutation",
+      "description": "Reshapes stone through deep communion"
+    },
+    {
+      "name": "Summon Nature's Ally III",
+      "school": "Conjuration",
+      "description": "Calls elemental creatures"
+    },
+    {
+      "name": "Water Breathing",
+      "school": "Transmutation",
+      "description": "Lady Tempest's omen"
+    },
+    {
+      "name": "Water Walk",
+      "school": "Transmutation",
+      "description": "Treads lightly on water's amplifies surface tension"
+    },
+    {
+      "name": "Wind Wall",
+      "school": "Evocation",
+      "description": "Wind Lord's static"
+    }
   ],
   "4": [
-    {"name": "Air Walk", "school": "Transmutation", "description": "Wind resonance supports body in air"},
-    {"name": "Antiplant Shell", "school": "Abjuration", "description": "Expels plant resonance from area"},
-    {"name": "Command Plants", "school": "Transmutation", "description": "Earth dominance compels plant obedience"},
-    {"name": "Control Water", "school": "Transmutation", "description": "Commands water through tidal resonance"},
-    {"name": "Cure Critical Wounds", "school": "Conjuration", "description": "Maximum healing surge"},
-    {"name": "Death Ward", "school": "Necromancy", "description": "EXCEPTION: fortifies resonance against death effects"},
-    {"name": "Direct Scrying", "school": "Divination", "description": "Senses beings resonance probing"},
-    {"name": "Flame Strike", "school": "Evocation", "description": "Pillar of divine fire"},
-    {"name": "Freedom of Movement", "school": "Abjuration", "description": "Wind and water prevent physical restraint"},
-    {"name": "Giant Vermin", "school": "Transmutation", "description": "Earth-kin resonance swells vermin"},
-    {"name": "Ice Storm", "school": "Evocation", "description": "Conjures ice and hail"},
-    {"name": "Restoration (S)", "school": "Transmutation", "description": "Full elemental rebalancing"},
-    {"name": "Repel Vermin", "school": "Abjuration", "description": "Disrupts vermin resonance"},
-    {"name": "Rusting Grasp", "school": "Transmutation", "description": "Accelerates elemental decay of metal"},
-    {"name": "Stoneskin", "school": "Abjuration", "description": "Earth-armor conjured through reflective surface"},
-    {"name": "Shout (V)", "school": "Evocation", "description": "Devastating voice blast"},
-    {"name": "Spell Immunity", "school": "Abjuration", "description": "Elemental harmony blocks specific spells"},
-    {"name": "Summon Nature's Ally IV", "school": "Conjuration", "description": "Calls more powerful elemental creatures"},
-    {"name": "Wall of Fire", "school": "Evocation", "description": "Curtain of elemental flame"},
-    {"name": "Commune with Nature", "school": "Divination", "description": "Deep communion with local earth/resonance"}
+    {
+      "name": "Air Walk",
+      "school": "Transmutation",
+      "description": "Wind resonance supports body in air"
+    },
+    {
+      "name": "Antiplant Shell",
+      "school": "Abjuration",
+      "description": "Expels plant resonance from area"
+    },
+    {
+      "name": "Command Plants",
+      "school": "Transmutation",
+      "description": "Earth dominance compels plant obedience"
+    },
+    {
+      "name": "Control Water",
+      "school": "Transmutation",
+      "description": "Commands water through tidal resonance"
+    },
+    {
+      "name": "Cure Critical Wounds",
+      "school": "Conjuration",
+      "description": "Maximum healing surge"
+    },
+    {
+      "name": "Death Ward",
+      "school": "Necromancy",
+      "description": "EXCEPTION: fortifies resonance against death effects"
+    },
+    {
+      "name": "Direct Scrying",
+      "school": "Divination",
+      "description": "Senses beings resonance probing"
+    },
+    {
+      "name": "Flame Strike",
+      "school": "Evocation",
+      "description": "Pillar of divine fire"
+    },
+    {
+      "name": "Freedom of Movement",
+      "school": "Abjuration",
+      "description": "Wind and water prevent physical restraint"
+    },
+    {
+      "name": "Giant Vermin",
+      "school": "Transmutation",
+      "description": "Earth-kin resonance swells vermin"
+    },
+    {
+      "name": "Ice Storm",
+      "school": "Evocation",
+      "description": "Conjures ice and hail"
+    },
+    {
+      "name": "Restoration (S)",
+      "school": "Transmutation",
+      "description": "Full elemental rebalancing"
+    },
+    {
+      "name": "Repel Vermin",
+      "school": "Abjuration",
+      "description": "Disrupts vermin resonance"
+    },
+    {
+      "name": "Rusting Grasp",
+      "school": "Transmutation",
+      "description": "Accelerates elemental decay of metal"
+    },
+    {
+      "name": "Stoneskin",
+      "school": "Abjuration",
+      "description": "Earth-armor conjured through reflective surface"
+    },
+    {
+      "name": "Shout (V)",
+      "school": "Evocation",
+      "description": "Devastating voice blast"
+    },
+    {
+      "name": "Spell Immunity",
+      "school": "Abjuration",
+      "description": "Elemental harmony blocks specific spells"
+    },
+    {
+      "name": "Summon Nature's Ally IV",
+      "school": "Conjuration",
+      "description": "Calls more powerful elemental creatures"
+    },
+    {
+      "name": "Wall of Fire",
+      "school": "Evocation",
+      "description": "Curtain of elemental flame"
+    },
+    {
+      "name": "Commune with Nature",
+      "school": "Divination",
+      "description": "Deep communion with local earth/resonance"
+    }
   ],
   "5": [
-    {"name": "Animal Growth", "school": "Transmutation", "description": "Swells animal with elemental vitality"},
-    {"name": "Awaken", "school": "Transmutation", "description": "Kindles sapience through elemental spark"},
-    {"name": "Breach Elemental", "school": "Divination", "description": "Detects hostile magic through disrupted resonance"},
-    {"name": "Call Lightning Storm", "school": "Evocation", "description": "Greater lightning summoned"},
-    {"name": "Cone of Cold", "school": "Evocation", "description": "Absolute chill of tidal-frost"},
-    {"name": "Control Winds", "school": "Transmutation", "description": "Commands atmospheric currents"},
-    {"name": "Cure Light Wounds, Mass", "school": "Conjuration", "description": "Radiating wave of healing"},
-    {"name": "Dispel Magic, Greater", "school": "Abjuration", "description": "Overwhelming resonance disruption"},
-    {"name": "Greater Reversion (V)", "school": "Enchantment", "description": "Blazing inner resonance"},
-    {"name": "Prying Eyes (K)", "school": "Divination", "description": "Floating sensory nodes of resonance"},
-    {"name": "Spell Resistance", "school": "Abjuration", "description": "Resonance deflects hostile magic"},
-    {"name": "Stone Tell", "school": "Divination", "description": "Listens to memory held in stone"},
-    {"name": "Transmute Nature's Gift", "school": "Transmutation", "description": "Reshapes earth permanently"},
-    {"name": "Transmute Mud to Rock", "school": "Transmutation", "description": "Hardens earth permanently"},
-    {"name": "Transmute Rock to Mud", "school": "Transmutation", "description": "Softens stone permanently"},
-    {"name": "Tree Stride (V)", "school": "Transmutation", "description": "Steps between trees through earth-link"},
-    {"name": "True Seeing", "school": "Divination", "description": "Perceives through pure elemental truth"},
-    {"name": "Wall of Stone", "school": "Conjuration", "description": "Earth and plant resonance barrier"},
-    {"name": "Wall of Thorns", "school": "Conjuration", "description": "Earth and plant resonance barrier"}
+    {
+      "name": "Animal Growth",
+      "school": "Transmutation",
+      "description": "Swells animal with elemental vitality"
+    },
+    {
+      "name": "Awaken",
+      "school": "Transmutation",
+      "description": "Kindles sapience through elemental spark"
+    },
+    {
+      "name": "Breach Elemental",
+      "school": "Divination",
+      "description": "Detects hostile magic through disrupted resonance"
+    },
+    {
+      "name": "Call Lightning Storm",
+      "school": "Evocation",
+      "description": "Greater lightning summoned"
+    },
+    {
+      "name": "Cone of Cold",
+      "school": "Evocation",
+      "description": "Absolute chill of tidal-frost"
+    },
+    {
+      "name": "Control Winds",
+      "school": "Transmutation",
+      "description": "Commands atmospheric currents"
+    },
+    {
+      "name": "Cure Light Wounds, Mass",
+      "school": "Conjuration",
+      "description": "Radiating wave of healing"
+    },
+    {
+      "name": "Dispel Magic, Greater",
+      "school": "Abjuration",
+      "description": "Overwhelming resonance disruption"
+    },
+    {
+      "name": "Greater Reversion (V)",
+      "school": "Enchantment",
+      "description": "Blazing inner resonance"
+    },
+    {
+      "name": "Prying Eyes (K)",
+      "school": "Divination",
+      "description": "Floating sensory nodes of resonance"
+    },
+    {
+      "name": "Spell Resistance",
+      "school": "Abjuration",
+      "description": "Resonance deflects hostile magic"
+    },
+    {
+      "name": "Stone Tell",
+      "school": "Divination",
+      "description": "Listens to memory held in stone"
+    },
+    {
+      "name": "Transmute Nature's Gift",
+      "school": "Transmutation",
+      "description": "Reshapes earth permanently"
+    },
+    {
+      "name": "Transmute Mud to Rock",
+      "school": "Transmutation",
+      "description": "Hardens earth permanently"
+    },
+    {
+      "name": "Transmute Rock to Mud",
+      "school": "Transmutation",
+      "description": "Softens stone permanently"
+    },
+    {
+      "name": "Tree Stride (V)",
+      "school": "Transmutation",
+      "description": "Steps between trees through earth-link"
+    },
+    {
+      "name": "True Seeing",
+      "school": "Divination",
+      "description": "Perceives through pure elemental truth"
+    },
+    {
+      "name": "Wall of Stone",
+      "school": "Conjuration",
+      "description": "Earth and plant resonance barrier"
+    },
+    {
+      "name": "Wall of Thorns",
+      "school": "Conjuration",
+      "description": "Earth and plant resonance barrier"
+    }
   ],
   "6": [
-    {"name": "Animate Plants", "school": "Transmutation", "description": "Awakens plants into guardians"},
-    {"name": "Changestaff", "school": "Transmutation", "description": "Staff becomes mighty treant guardian"},
-    {"name": "Control Weather", "school": "Transmutation", "description": "Commands weather patterns"},
-    {"name": "Creeping Doom", "school": "Conjuration", "description": "Earth resonance summons swarm legion"},
-    {"name": "Cure Serious Wounds, Mass", "school": "Conjuration", "description": "Devastating healing wave"},
-    {"name": "Earthquake", "school": "Evocation", "description": "Lord of Stone's wrath"},
-    {"name": "Fire Storm", "school": "Evocation", "description": "Lady of Fire's will conjured"},
-    {"name": "Greater Scrying", "school": "Divination", "description": "Full remote Kin-sense projection"},
-    {"name": "Refuge", "school": "Conjuration", "description": "Resonance anchor pulls bearer to safety"},
-    {"name": "Regeneration", "school": "Abjuration", "description": "Powerful resonance repair"},
-    {"name": "Restoration, Greater", "school": "Conjuration", "description": "Complete elemental reharmonization"},
-    {"name": "Spell Turning", "school": "Evocation", "description": "Concentrated elemental light fire"},
-    {"name": "Summon Nature's Ally VII", "school": "Conjuration", "description": "Calls Greater elemental"},
-    {"name": "Transmute Metal to Wood", "school": "Transmutation", "description": "Transforms metal to organic"},
-    {"name": "Vision (K)", "school": "Divination", "description": "Intense resonance communion"}
+    {
+      "name": "Animate Plants",
+      "school": "Transmutation",
+      "description": "Awakens plants into guardians"
+    },
+    {
+      "name": "Changestaff",
+      "school": "Transmutation",
+      "description": "Staff becomes mighty treant guardian"
+    },
+    {
+      "name": "Control Weather",
+      "school": "Transmutation",
+      "description": "Commands weather patterns"
+    },
+    {
+      "name": "Creeping Doom",
+      "school": "Conjuration",
+      "description": "Earth resonance summons swarm legion"
+    },
+    {
+      "name": "Cure Serious Wounds, Mass",
+      "school": "Conjuration",
+      "description": "Devastating healing wave"
+    },
+    {
+      "name": "Earthquake",
+      "school": "Evocation",
+      "description": "Lord of Stone's wrath"
+    },
+    {
+      "name": "Fire Storm",
+      "school": "Evocation",
+      "description": "Lady of Fire's will conjured"
+    },
+    {
+      "name": "Greater Scrying",
+      "school": "Divination",
+      "description": "Full remote Kin-sense projection"
+    },
+    {
+      "name": "Refuge",
+      "school": "Conjuration",
+      "description": "Resonance anchor pulls bearer to safety"
+    },
+    {
+      "name": "Regeneration",
+      "school": "Abjuration",
+      "description": "Powerful resonance repair"
+    },
+    {
+      "name": "Restoration, Greater",
+      "school": "Conjuration",
+      "description": "Complete elemental reharmonization"
+    },
+    {
+      "name": "Spell Turning",
+      "school": "Evocation",
+      "description": "Concentrated elemental light fire"
+    },
+    {
+      "name": "Summon Nature's Ally VII",
+      "school": "Conjuration",
+      "description": "Calls Greater elemental"
+    },
+    {
+      "name": "Transmute Metal to Wood",
+      "school": "Transmutation",
+      "description": "Transforms metal to organic"
+    },
+    {
+      "name": "Vision (K)",
+      "school": "Divination",
+      "description": "Intense resonance communion"
+    }
   ],
   "7": [
-    {"name": "Animate Plants", "school": "Transmutation", "description": "Awakens plants into guardians"},
-    {"name": "Changestaff", "school": "Transmutation", "description": "Staff becomes mighty treant guardian"},
-    {"name": "Control Weather", "school": "Transmutation", "description": "Commands weather patterns"},
-    {"name": "Creeping Doom", "school": "Conjuration", "description": "Earth resonance summons swarm legion"},
-    {"name": "Cure Serious Wounds, Mass", "school": "Conjuration", "description": "Devastating healing wave"},
-    {"name": "Earthquake", "school": "Evocation", "description": "Lord of Stone's wrath"},
-    {"name": "Fire Storm", "school": "Evocation", "description": "Lady of Fire's will conjured"},
-    {"name": "Greater Scrying", "school": "Divination", "description": "Full remote Kin-sense projection"},
-    {"name": "Refuge", "school": "Conjuration", "description": "Resonance anchor pulls bearer to safety"},
-    {"name": "Summon Nature's Ally VII", "school": "Conjuration", "description": "Calls Greater elemental"},
-    {"name": "Transmute Metal to Wood", "school": "Transmutation", "description": "Transforms metal to organic"},
-    {"name": "Vision (K)", "school": "Divination", "description": "Intense resonance communion"}
+    {
+      "name": "Animate Plants",
+      "school": "Transmutation",
+      "description": "Awakens plants into guardians"
+    },
+    {
+      "name": "Changestaff",
+      "school": "Transmutation",
+      "description": "Staff becomes mighty treant guardian"
+    },
+    {
+      "name": "Control Weather",
+      "school": "Transmutation",
+      "description": "Commands weather patterns"
+    },
+    {
+      "name": "Creeping Doom",
+      "school": "Conjuration",
+      "description": "Earth resonance summons swarm legion"
+    },
+    {
+      "name": "Cure Serious Wounds, Mass",
+      "school": "Conjuration",
+      "description": "Devastating healing wave"
+    },
+    {
+      "name": "Earthquake",
+      "school": "Evocation",
+      "description": "Lord of Stone's wrath"
+    },
+    {
+      "name": "Fire Storm",
+      "school": "Evocation",
+      "description": "Lady of Fire's will conjured"
+    },
+    {
+      "name": "Greater Scrying",
+      "school": "Divination",
+      "description": "Full remote Kin-sense projection"
+    },
+    {
+      "name": "Refuge",
+      "school": "Conjuration",
+      "description": "Resonance anchor pulls bearer to safety"
+    },
+    {
+      "name": "Summon Nature's Ally VII",
+      "school": "Conjuration",
+      "description": "Calls Greater elemental"
+    },
+    {
+      "name": "Transmute Metal to Wood",
+      "school": "Transmutation",
+      "description": "Transforms metal to organic"
+    },
+    {
+      "name": "Vision (K)",
+      "school": "Divination",
+      "description": "Intense resonance communion"
+    }
   ],
   "8": [
-    {"name": "Antipathy Field", "school": "Abjuration", "description": "Total resonance suppression"},
-    {"name": "Antipathy (V)", "school": "Enchantment", "description": "Object radiates compelling repulsion"},
-    {"name": "Control Plants", "school": "Transmutation", "description": "Total earth-dominance over plant life"},
-    {"name": "Cure Critical Wounds, Mass", "school": "Conjuration", "description": "Devastating healing wave"},
-    {"name": "Discern Location", "school": "Divination", "description": "Ultimate Kin-sense extension"},
-    {"name": "Heal, Mass", "school": "Conjuration", "description": "Ultimate life-current restoration"},
-    {"name": "Incendiary Cloud", "school": "Conjuration", "description": "Cloud of elemental fire-smoke"},
-    {"name": "Iron Body", "school": "Transmutation", "description": "Earth resonance transforms body"},
-    {"name": "Repel Metal or Stone", "school": "Abjuration", "description": "Earth resonance drives away worked materials"},
-    {"name": "Spell Immunity, Greater", "school": "Abjuration", "description": "Stronger magical immunity"},
-    {"name": "Summon Nature's Ally VIII", "school": "Conjuration", "description": "Calls Elder elemental"},
-    {"name": "Sunburst", "school": "Evocation", "description": "Blinding fire and light explosion"},
-    {"name": "Sympathy (V)", "school": "Enchantment", "description": "Object radiates compelling resonance"},
-    {"name": "Whirlwind", "school": "Evocation", "description": "Wind Lord's full fury"},
-    {"name": "Word of Recall", "school": "Conjuration", "description": "Resonance-snap to sanctuary"}
+    {
+      "name": "Antipathy Field",
+      "school": "Abjuration",
+      "description": "Total resonance suppression"
+    },
+    {
+      "name": "Antipathy (V)",
+      "school": "Enchantment",
+      "description": "Object radiates compelling repulsion"
+    },
+    {
+      "name": "Control Plants",
+      "school": "Transmutation",
+      "description": "Total earth-dominance over plant life"
+    },
+    {
+      "name": "Cure Critical Wounds, Mass",
+      "school": "Conjuration",
+      "description": "Devastating healing wave"
+    },
+    {
+      "name": "Discern Location",
+      "school": "Divination",
+      "description": "Ultimate Kin-sense extension"
+    },
+    {
+      "name": "Heal, Mass",
+      "school": "Conjuration",
+      "description": "Ultimate life-current restoration"
+    },
+    {
+      "name": "Incendiary Cloud",
+      "school": "Conjuration",
+      "description": "Cloud of elemental fire-smoke"
+    },
+    {
+      "name": "Iron Body",
+      "school": "Transmutation",
+      "description": "Earth resonance transforms body"
+    },
+    {
+      "name": "Repel Metal or Stone",
+      "school": "Abjuration",
+      "description": "Earth resonance drives away worked materials"
+    },
+    {
+      "name": "Spell Immunity, Greater",
+      "school": "Abjuration",
+      "description": "Stronger magical immunity"
+    },
+    {
+      "name": "Summon Nature's Ally VIII",
+      "school": "Conjuration",
+      "description": "Calls Elder elemental"
+    },
+    {
+      "name": "Sunburst",
+      "school": "Evocation",
+      "description": "Blinding fire and light explosion"
+    },
+    {
+      "name": "Sympathy (V)",
+      "school": "Enchantment",
+      "description": "Object radiates compelling resonance"
+    },
+    {
+      "name": "Whirlwind",
+      "school": "Evocation",
+      "description": "Wind Lord's full fury"
+    },
+    {
+      "name": "Word of Recall",
+      "school": "Conjuration",
+      "description": "Resonance-snap to sanctuary"
+    }
   ],
   "9": [
-    {"name": "Elemental Swarm", "school": "Conjuration", "description": "Tide of elemental beings"},
-    {"name": "Foresight", "school": "Divination", "description": "Perfect elemental precognition"},
-    {"name": "Freedom", "school": "Abjuration", "description": "Breaks imprisonment through elemental liberation"},
-    {"name": "Irresistible Dance (V)", "school": "Enchantment", "description": "Overwhelming rhythmic resonance"},
-    {"name": "Meteor Swarm", "school": "Evocation", "description": "Rocks of elemental fire from sky"},
-    {"name": "Prismatic Sphere", "school": "Abjuration", "description": "Seven-layered elemental defense"},
-    {"name": "Shambler", "school": "Conjuration", "description": "Creates shambling mound guardians"},
-    {"name": "Shapechange", "school": "Transmutation", "description": "Elemental form becomes fluid"},
-    {"name": "Storm of Vengeance", "school": "Conjuration", "description": "All four elements unleashed"},
-    {"name": "Summon Nature's Ally IX", "school": "Conjuration", "description": "Mightiest elemental beings"},
-    {"name": "True Resurrection", "school": "Conjuration", "description": "Speaks subject's true elemental name"}
+    {
+      "name": "Elemental Swarm",
+      "school": "Conjuration",
+      "description": "Tide of elemental beings"
+    },
+    {
+      "name": "Foresight",
+      "school": "Divination",
+      "description": "Perfect elemental precognition"
+    },
+    {
+      "name": "Freedom",
+      "school": "Abjuration",
+      "description": "Breaks imprisonment through elemental liberation"
+    },
+    {
+      "name": "Irresistible Dance (V)",
+      "school": "Enchantment",
+      "description": "Overwhelming rhythmic resonance"
+    },
+    {
+      "name": "Meteor Swarm",
+      "school": "Evocation",
+      "description": "Rocks of elemental fire from sky"
+    },
+    {
+      "name": "Prismatic Sphere",
+      "school": "Abjuration",
+      "description": "Seven-layered elemental defense"
+    },
+    {
+      "name": "Shambler",
+      "school": "Conjuration",
+      "description": "Creates shambling mound guardians"
+    },
+    {
+      "name": "Shapechange",
+      "school": "Transmutation",
+      "description": "Elemental form becomes fluid"
+    },
+    {
+      "name": "Storm of Vengeance",
+      "school": "Conjuration",
+      "description": "All four elements unleashed"
+    },
+    {
+      "name": "Summon Nature's Ally IX",
+      "school": "Conjuration",
+      "description": "Mightiest elemental beings"
+    },
+    {
+      "name": "True Resurrection",
+      "school": "Conjuration",
+      "description": "Speaks subject's true elemental name"
+    }
   ]
 }

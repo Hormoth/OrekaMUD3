@@ -24,6 +24,10 @@ class ShadowPresence:
     visible: bool = True
     materialized: bool = False
     created_at: float = field(default_factory=time.time)
+    session_id: str = ""
+    is_telnet: bool = False
+    character_ref: Optional[object] = None  # Reference to Character for telnet sessions
+    last_active: float = field(default_factory=time.time)
 
     def room_description(self) -> str:
         """How this shadow appears in room 'look' output."""
@@ -45,13 +49,15 @@ class ShadowPresence:
 
     def inject_player_speech(self, speaker: str, text: str):
         """A real MUD player speaks in the room — inject into AI conversation context."""
+        event_text = f"{speaker} says nearby: \"{text}\""
         self.conversation_history.append({
             "role": "system",
             "content": (
-                f"[WORLD EVENT] {speaker} says nearby: \"{text}\". "
+                f"[WORLD EVENT] {event_text}. "
                 f"You and {self.npc_name} can both hear this."
             )
         })
+        self._send_world_bleed(event_text)
 
     def inject_combat(self, description: str):
         """Combat starts nearby — inject into AI context."""
@@ -59,6 +65,7 @@ class ShadowPresence:
             "role": "system",
             "content": f"[WORLD EVENT] Nearby: {description}."
         })
+        self._send_world_bleed(description)
 
     def inject_room_event(self, event_text: str):
         """Generic world event — inject into AI context."""
@@ -66,6 +73,23 @@ class ShadowPresence:
             "role": "system",
             "content": f"[WORLD EVENT] {event_text}"
         })
+        self._send_world_bleed(event_text)
+
+    def _send_world_bleed(self, text: str):
+        """Send [~WORLD~] text to the telnet player if in chat mode."""
+        if self.is_telnet and self.character_ref:
+            char = self.character_ref
+            # Also inject into the active ChatSession
+            if getattr(char, 'active_chat_session', None):
+                char.active_chat_session.add_world_event(text)
+            # Display to the player
+            if hasattr(char, '_writer'):
+                try:
+                    char._writer.write(
+                        f"\n\033[0;33m[~WORLD~] {text}\033[0m\n"
+                    )
+                except Exception:
+                    pass
 
 
 class ShadowPresenceManager:
@@ -125,6 +149,35 @@ class ShadowPresenceManager:
         if shadow:
             logger.info(f"Shadow removed: {shadow.player_name}")
         return shadow
+
+    def create_for_telnet(self, character, npc, room_vnum: int,
+                          session_id: str = "") -> ShadowPresence:
+        """Create a shadow presence for a telnet player entering AI chat."""
+        shadow = ShadowPresence(
+            player_id=character.name,
+            player_name=character.name,
+            npc_id=getattr(npc, 'vnum', 0),
+            npc_name=getattr(npc, 'name', 'Unknown'),
+            room_vnum=room_vnum,
+            session_id=session_id,
+            is_telnet=True,
+            character_ref=character,
+        )
+        self.shadows[character.name] = shadow
+        logger.info(f"Telnet shadow created: {character.name} at room {room_vnum} with {npc.name}")
+        return shadow
+
+    def touch(self, player_id: str):
+        """Update last_active timestamp for a shadow."""
+        shadow = self.shadows.get(player_id)
+        if shadow:
+            shadow.last_active = time.time()
+
+    def get_stale(self, timeout_seconds: int = 1800) -> List[ShadowPresence]:
+        """Return shadows inactive for longer than timeout."""
+        now = time.time()
+        return [s for s in self.shadows.values()
+                if (now - s.last_active) > timeout_seconds]
 
     def get_all(self) -> dict:
         """Get all active shadows."""

@@ -1,0 +1,58 @@
+{
+  "rooms": [
+    {
+      "vnum": 5240,
+      "name": "Thornbend -- Village Road",
+      "description": "A packed-earth road winds between vineyard rows and stone cottages. Thornbend is the kind of settlement people retire to -- warm, unhurried, smelling of grape must and turned soil. A wooden sign points south toward the Long Road and north toward Spur Tower. The largest building is the taproom, its door propped open, laughter and the clink of cups drifting out.",
+      "exits": {"north": 5210, "east": 5242, "south": 5260, "west": 5243},
+      "flags": ["safe", "outdoor", "road"]
+    },
+    {
+      "vnum": 5242,
+      "name": "Thornbend -- The Vineyard Tap",
+      "description": "A low-ceilinged taproom with smoke-darkened beams and mismatched chairs. Vineyard workers in earth-stained clothes share tables with Long Road caravan drivers nursing mugs of something amber. The barkeep is a heavy-armed woman who pours without being asked. Two conversations hum at adjacent tables -- one loud, one quiet -- and the smell of road dust mingles with grape brandy.",
+      "exits": {"west": 5240},
+      "flags": ["safe", "indoor", "tavern"],
+      "ambience": {
+        "mood": "warm and gossipy",
+        "sounds": ["laughter", "the clink of ceramic mugs", "two conversations at once -- one about a missing girl, one about someone asking questions at Dry Fork"],
+        "smells": ["grape brandy", "road dust", "bread baking somewhere close"],
+        "textures": ["the table is sticky with old wine rings"],
+        "ambient_details": [
+          "A caravan driver gestures broadly: '...Griff's been up and down the road three times this season...'",
+          "At a quieter table, a clerk lowers his voice: '...someone named Michele, at the weigh station...'"
+        ],
+        "npc_relevance": {
+          "9530": "A caravan driver who knows Griff. Will talk freely.",
+          "9531": "A weigh-station clerk who heard the name Michele. Will not talk freely."
+        }
+      }
+    },
+    {
+      "vnum": 5243,
+      "name": "Thornbend -- Tessaly's Cottage",
+      "description": "A stone cottage half-swallowed by grapevines. The door is open. Inside, shelves that once held academic journals now hold wine bottles and pressed flowers. A calibrated lodestone sits on the kitchen table, holding down a stack of grape harvest receipts. The owner is out in the vineyards. A note on the door says: 'Back by evening. Help yourself to the brandy.'",
+      "exits": {"east": 5240},
+      "flags": ["safe", "indoor"],
+      "ambience": {
+        "mood": "retired contentment",
+        "sounds": ["bees in the vine flowers outside", "a clock ticking"],
+        "smells": ["dried flowers", "old paper", "grape must"],
+        "ambient_details": ["The lodestone pulses faintly. It remembers what it was built for, even as a paperweight."]
+      }
+    },
+    {
+      "vnum": 5244,
+      "name": "Thornbend -- Vineyards",
+      "description": "Rows of grapevines stretch across a south-facing hillside, their leaves catching afternoon light. Workers move between the rows, tying runners and checking fruit. A woman in her late sixties with ink-stained fingers and a sunburned nose is arguing with a vine about its growth direction. She appears to be losing.",
+      "exits": {"east": 5240},
+      "flags": ["safe", "outdoor"],
+      "ambience": {
+        "mood": "pastoral",
+        "sounds": ["birdsong", "the snip of pruning shears", "an old woman talking to a plant"],
+        "smells": ["turned earth", "warm grapes", "green leaves"],
+        "npc_relevance": {"9510": "Tessaly Venn. Retired archivist. Currently losing an argument with a grapevine."}
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "narrative_hooks": [
+    {
+      "type": "room_enter",
+      "trigger_vnum": 5210,
+      "chapter_id": null,
+      "arc_check": {"arc_id": "quiet_graft", "item_id": "visited_spur_tower"},
+      "message": null
+    },
+    {
+      "type": "room_enter",
+      "trigger_vnum": 5240,
+      "chapter_id": null,
+      "arc_check": {"arc_id": "quiet_graft", "item_id": "visited_thornbend"},
+      "message": null
+    },
+    {
+      "type": "room_enter",
+      "trigger_vnum": 5250,
+      "chapter_id": null,
+      "arc_check": {"arc_id": "quiet_graft", "item_id": "visited_dry_fork"},
+      "message": null
+    },
+    {
+      "type": "room_enter",
+      "trigger_vnum": 5215,
+      "chapter_id": null,
+      "arc_check": {"arc_id": "quiet_graft", "item_id": "met_vaerix"},
+      "message": "\n\u001b[1;31mYour Kin-sense floods with void. Deliberate. Predatory. Wrong. Someone is here.\u001b[0m\n"
+    }
+  ]
+}

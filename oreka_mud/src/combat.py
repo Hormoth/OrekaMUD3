@@ -436,23 +436,9 @@ class CombatInstance:
                         results.append(f"{combatant.name} strikes from the shadows! (+{sneak_dmg} sneak attack)")
                     combatant.hidden = False
 
-                # Execute auto-attack
+                # Execute auto-attack (attack() handles XP, loot, and kill messages internally)
                 result = attack(combatant, target)
                 results.append(result)
-
-                # Check if target died
-                if hasattr(target, 'hp') and target.hp <= 0:
-                    if hasattr(target, 'alive'):
-                        target.alive = False
-                    results.append(f"{target.name} has been slain!")
-
-                    # Quest trigger for kills
-                    if hasattr(combatant, 'quest_log'):
-                        from src import quests
-                        mob_type = getattr(target, 'mob_type', target.name.lower())
-                        quest_updates = quests.on_mob_killed(combatant, mob_type)
-                        for update in quest_updates:
-                            results.append(f"[Quest] {update}")
         elif not target:
             results.append(f"{combatant.name} has no target!")
         else:
@@ -536,6 +522,20 @@ def start_combat(room: 'Room', initiator, target) -> CombatInstance:
     if not combat.is_active:
         combat.start_combat()
 
+    # GMCP: notify players in the room of mob state change
+    _emit_room_mobs_to_players(room)
+
+    # Inject into shadow presences (world bleed for AI chat)
+    try:
+        from src.shadow_presence import shadow_manager
+        i_name = getattr(initiator, 'name', 'Someone')
+        t_name = getattr(target, 'name', 'something')
+        shadow_manager.broadcast_combat(
+            room.vnum, f"Combat erupts nearby — {i_name} attacks {t_name}."
+        )
+    except Exception:
+        pass
+
     return combat
 
 
@@ -544,6 +544,19 @@ def end_combat(room: 'Room'):
     if room.vnum in _active_combats:
         _active_combats[room.vnum].end_combat()
         del _active_combats[room.vnum]
+
+    # GMCP: notify players in the room of mob state change
+    _emit_room_mobs_to_players(room)
+
+
+def _emit_room_mobs_to_players(room: 'Room'):
+    """Emit Room.Mobs GMCP to all players in a room."""
+    try:
+        from src.gmcp import emit_room_mobs
+        for player in getattr(room, 'players', []):
+            emit_room_mobs(player, room)
+    except Exception:
+        pass
 
 
 # =============================================================================
@@ -719,7 +732,8 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
     power_attack_penalty = getattr(attacker, 'power_attack_amt', 0)
 
     # Feat bonuses (Weapon Focus, Greater Weapon Focus, etc.)
-    feat_bonus = feat_module.get_attack_feat_bonus(attacker, target)
+    weapon_name = getattr(getattr(attacker, 'equipped', {}).get('main_hand', None), 'name', None)
+    feat_bonus = feat_module.get_attack_feat_bonus(attacker, weapon_name)
 
     # Condition penalties using centralized conditions system
     condition_penalty = 0
@@ -764,9 +778,39 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
     # Fighting defensively penalty (-4 to attack)
     fd_penalty = 4 if getattr(attacker, '_fighting_defensively', False) else 0
 
+    # Weather modifier for ranged attacks
+    weather_penalty = 0
+    room = getattr(attacker, 'room', None)
+    if room and 'indoor' not in getattr(room, 'flags', []):
+        weather = getattr(room, 'weather', None)
+        if not weather:
+            try:
+                from src.weather import get_weather_manager
+                wm = get_weather_manager()
+                weather = wm.get_weather(room.vnum)
+            except Exception:
+                pass
+        # Check if using ranged weapon
+        is_ranged = False
+        if hasattr(attacker, 'get_equipped_weapon'):
+            w = attacker.get_equipped_weapon()
+            if w and getattr(w, 'item_type', '') == 'ranged':
+                is_ranged = True
+            elif w and 'ranged' in getattr(w, 'properties', []):
+                is_ranged = True
+        if is_ranged and weather:
+            if weather == "rain":
+                weather_penalty = 2
+            elif weather == "storm":
+                weather_penalty = 4
+            elif weather == "wind":
+                weather_penalty = 4
+            elif weather == "fog":
+                weather_penalty = 2
+
     return (bab + stat_mod - power_attack_penalty + feat_bonus + condition_penalty
             + condition_bonus + flanking_bonus + smite_bonus + inspire_atk
-            + size_mod + temp_attack - fd_penalty)
+            + size_mod + temp_attack - fd_penalty - weather_penalty)
 
 
 def calculate_damage(attacker, is_crit: bool = False, target=None) -> int:
@@ -1232,9 +1276,16 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
                 # Quest trigger for mob kills
                 if hasattr(attacker, 'quest_log'):
                     mob_type = getattr(target, 'mob_type', target.name.lower())
-                    quest_updates = quest_module.on_mob_killed(attacker, mob_type)
-                    for update in quest_updates:
-                        hit_msg += f"\n[Quest] {update}"
+                    try:
+                        quest_updates = quest_module.on_mob_killed(
+                            attacker, mob_type,
+                            getattr(attacker, 'quest_log', None),
+                            quest_module.get_quest_manager() if hasattr(quest_module, 'get_quest_manager') else None
+                        )
+                        for update in quest_updates:
+                            hit_msg += f"\n[Quest] {update}"
+                    except Exception:
+                        pass
 
                 # Cleave feat
                 if hasattr(attacker, 'has_feat') and attacker.has_feat("Cleave"):
@@ -1253,13 +1304,6 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
                                     hit_msg += f"\n{attack(attacker, next_target, power_attack_amt)}"
 
             results.append(hit_msg)
-
-            # Check combat end
-            if combat:
-                ended, end_msg = combat.check_combat_end()
-                if ended:
-                    results.append(end_msg)
-                    end_combat(room)
         else:
             results.append(f"{attacker.name} attacks {target.name} - MISS ({roll}+{attack_bonus}={roll+attack_bonus} vs AC {ac})")
 
@@ -1337,10 +1381,94 @@ def award_xp(attacker, target) -> int:
     if hasattr(attacker, 'kill_count'):
         attacker.kill_count = getattr(attacker, 'kill_count', 0) + 1
 
+    # PcSheet hooks: record kill event + notable kills for boss/unique mobs
+    try:
+        from src.ai_schemas.pc_sheet import record_event, record_notable_kill
+        rp_sheet = getattr(attacker, 'rp_sheet', None)
+        if rp_sheet:
+            room_name = getattr(getattr(attacker, 'room', None), 'name', '?')
+            record_event(rp_sheet, f"Killed {target.name} in {room_name}.", "combat", weight=1.2)
+            # Boss/unique mobs are notable kills
+            target_flags = set(f.lower() for f in (getattr(target, 'flags', None) or []))
+            if target_flags & {'boss', 'unique', 'quest'}:
+                record_notable_kill(rp_sheet, target.name)
+                record_event(rp_sheet, f"Defeated {target.name} (boss).", "combat", weight=1.8)
+    except Exception:
+        pass
+
+    # Narrative kill hook
+    try:
+        from src.narrative import get_narrative_manager
+        nm = get_narrative_manager()
+        narr_triggered = nm.on_kill(attacker, target)
+        if narr_triggered and hasattr(attacker, '_writer'):
+            for chapter in narr_triggered:
+                text, rewards = nm.trigger_chapter(attacker, chapter)
+                try:
+                    attacker._writer.write(text + "\n")
+                    if rewards and "xp" in rewards:
+                        attacker.xp += rewards["xp"]
+                        attacker._writer.write(f"Gained {rewards['xp']} XP!\n")
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
+    # Achievement check after kill
+    try:
+        from src.commands import CommandParser
+        # Use a lightweight achievement check
+        _check_achievements_inline(attacker)
+    except Exception:
+        pass
+
     if hasattr(attacker, 'save'):
         attacker.save()
 
     return xp_award
+
+
+def _check_achievements_inline(character):
+    """Lightweight achievement check called from combat."""
+    import json, os
+    try:
+        ach_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'achievements.json')
+        if not os.path.exists(ach_path):
+            return
+        with open(ach_path, 'r', encoding='utf-8') as f:
+            achievements = json.load(f)
+    except Exception:
+        return
+
+    earned = getattr(character, 'achievements', [])
+    for ach in achievements:
+        if ach['id'] in earned:
+            continue
+        trigger = ach['trigger']
+        threshold = ach['threshold']
+        value = 0
+        if trigger == 'kill_count':
+            value = getattr(character, 'kill_count', 0)
+        elif trigger == 'level':
+            value = getattr(character, 'level', 1)
+        elif trigger == 'gold':
+            value = getattr(character, 'gold', 0)
+        elif trigger == 'craft_count':
+            value = getattr(character, 'craft_count', 0)
+        elif trigger == 'rooms_visited':
+            value = len(getattr(character, 'rooms_visited', set()))
+        else:
+            continue
+
+        if value >= threshold:
+            earned.append(ach['id'])
+            character.achievements = earned
+            _w = getattr(character, '_writer', None) or getattr(character, 'writer', None)
+            if _w:
+                try:
+                    _w.write(f"\n\033[1;33m[Achievement Unlocked]\033[0m {ach['name']} - {ach['description']}\n")
+                except Exception:
+                    pass
 
 
 def generate_loot(target, room, attacker=None) -> str:
@@ -1354,7 +1482,56 @@ def generate_loot(target, room, attacker=None) -> str:
     except:
         return ""
 
-    # Loot table by CR
+    # Check for mob-specific loot table first
+    mob_loot_table = getattr(target, 'loot_table', None)
+    if mob_loot_table:
+        loot_msgs = []
+        corpse_gold = max(1, random.randint(1, 6))  # Always some gold
+        corpse_items = []
+        loot_msgs.append(f"Loot: {corpse_gold} gp")
+
+        for entry in mob_loot_table:
+            chance = entry.get('chance', 0.5)
+            if random.random() < chance:
+                vnum = entry.get('vnum')
+                if vnum:
+                    try:
+                        from src.items import Item
+                        from src import items as itemdb
+                        item = itemdb.get_item_by_vnum(vnum)
+                        if item:
+                            corpse_items.append(item)
+                            loot_msgs.append(f"{item.name} drops!")
+                    except Exception:
+                        pass
+
+        # Create corpse
+        if room and (corpse_gold > 0 or corpse_items):
+            import time
+            from src.items import Corpse
+            mob_name = getattr(target, 'name', 'Unknown')
+            corpse = Corpse(mob_name=mob_name, items=corpse_items, gold=corpse_gold)
+            corpse._created_at = time.time()
+            room.corpses.append(corpse)
+            loot_msgs.append(f"The corpse of {mob_name} lies here.")
+
+        # Auto-gold/auto-loot
+        if attacker is not None:
+            if hasattr(attacker, 'auto_gold') and attacker.auto_gold and corpse_gold > 0:
+                attacker.gold = getattr(attacker, 'gold', 0) + corpse_gold
+                loot_msgs.append(f"[Auto-gold] You receive {corpse_gold} gold.")
+                if room and hasattr(room, 'corpses') and room.corpses:
+                    room.corpses[-1].gold = 0
+            if hasattr(attacker, 'auto_loot') and attacker.auto_loot and corpse_items:
+                for item in list(corpse_items):
+                    attacker.inventory.append(item)
+                loot_msgs.append(f"[Auto-loot] You receive: {', '.join(i.name for i in corpse_items)}")
+                if room and hasattr(room, 'corpses') and room.corpses:
+                    room.corpses[-1].items.clear()
+
+        return " ".join(loot_msgs)
+
+    # Default CR-based loot table
     loot_table = [
         (0, 1, (1, 6, 0), 0.05, 'mundane'),
         (2, 4, (2, 8, 0), 0.10, 'mundane'),
@@ -1389,17 +1566,35 @@ def generate_loot(target, room, attacker=None) -> str:
                     pass
             break
 
+    # Create a corpse with gold and items for looting
+    if room and (corpse_gold > 0 or corpse_items):
+        import time
+        from src.items import Corpse
+        mob_name = getattr(target, 'name', 'Unknown')
+        # Remove items from room floor — they go into the corpse instead
+        for item in corpse_items:
+            if item in room.items:
+                room.items.remove(item)
+        corpse = Corpse(mob_name=mob_name, items=corpse_items, gold=corpse_gold)
+        corpse._created_at = time.time()
+        room.corpses.append(corpse)
+        loot_msgs.append(f"The corpse of {mob_name} lies here.")
+
     # Auto-gold and auto-loot
     if attacker is not None:
         if hasattr(attacker, 'auto_gold') and attacker.auto_gold and corpse_gold > 0:
             attacker.gold = getattr(attacker, 'gold', 0) + corpse_gold
             loot_msgs.append(f"[Auto-gold] You receive {corpse_gold} gold.")
+            # Remove gold from corpse since auto-collected
+            if room and hasattr(room, 'corpses') and room.corpses:
+                room.corpses[-1].gold = 0
         if hasattr(attacker, 'auto_loot') and attacker.auto_loot and corpse_items:
             for item in list(corpse_items):
-                if item in room.items:
-                    room.items.remove(item)
                 attacker.inventory.append(item)
             loot_msgs.append(f"[Auto-loot] You receive: {', '.join(i.name for i in corpse_items)}")
+            # Clear items from corpse since auto-collected
+            if room and hasattr(room, 'corpses') and room.corpses:
+                room.corpses[-1].items.clear()
 
     return " ".join(loot_msgs)
 
@@ -1550,9 +1745,16 @@ def spell_attack(caster, target, spell_data: dict) -> str:
             # Quest trigger for mob kills (spell damage)
             if hasattr(caster, 'quest_log'):
                 mob_type = getattr(target, 'mob_type', target.name.lower())
-                quest_updates = quest_module.on_mob_killed(caster, mob_type)
-                for update in quest_updates:
-                    results.append(f"[Quest] {update}")
+                try:
+                    quest_updates = quest_module.on_mob_killed(
+                        caster, mob_type,
+                        getattr(caster, 'quest_log', None),
+                        quest_module.get_quest_manager() if hasattr(quest_module, 'get_quest_manager') else None
+                    )
+                    for update in quest_updates:
+                        results.append(f"[Quest] {update}")
+                except Exception:
+                    pass
 
     # Apply conditions
     if 'applies_condition' in spell_data:

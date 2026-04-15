@@ -1,0 +1,34 @@
+{
+  "_comment": "NPC persona template for module personas/ directory.",
+  "vnum": 0,
+  "name": "",
+  "voice": "",
+  "motivation": "",
+  "speech_style": "casual | formal | cryptic | clipped | reverent | boisterous | wary | scholarly | soldierly | archaic",
+  "opening_line": "",
+  "farewell_line": "",
+  "knowledge_domains": [],
+  "forbidden_topics": [],
+  "lore_tags": [],
+  "secrets": [
+    "casual:secret text",
+    "warm:secret text",
+    "trusted:secret text",
+    "allied:secret text"
+  ],
+  "faction_attitudes": [
+    {"faction_id": "", "baseline": "neutral", "notes": ""}
+  ],
+  "relationship_hooks": [],
+  "chat_eligible": true,
+  "model_tier": "standard | premium | fast",
+  "default_emotion": "neutral",
+  "arcs_known": [],
+  "arc_reactions": [
+    {
+      "when": "item_id.state == checked",
+      "flavor": "What to inject into the prompt when this condition matches",
+      "loudness": "natural | loud | subtle"
+    }
+  ]
+}

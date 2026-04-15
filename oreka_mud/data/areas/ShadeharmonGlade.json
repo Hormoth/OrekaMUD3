@@ -1,0 +1,87 @@
+[
+  {
+    "vnum": 5206,
+    "name": "Eastern Forest Road",
+    "description": "A well-worn path leads east from Custos do Aeternos into the old-growth forest. The trees here are tall and ancient, their canopy filtering the light into shifting patterns of green and gold. The road narrows as it leaves the city behind, and the sounds of civilization fade into birdsong and the creak of branches. A weathered signpost points east: 'Shadeharm Glade - DO NOT ENTER.'",
+    "exits": {
+      "west": 4024,
+      "east": 5207
+    },
+    "flags": ["forest", "road"]
+  },
+  {
+    "vnum": 5207,
+    "name": "Forest Approach",
+    "description": "The forest deepens around you. The trees are older here than anything near the city, their trunks wide enough to hide behind. The undergrowth is thick with fern and creeping vine. The air smells faintly electrical, like the moments before a storm, though the sky above the canopy is clear. Signs in four languages are nailed to the trees at intervals: 'Shadeharm Glade - Restricted Area - Do Not Enter.' The path splits north and south along the treeline ahead.",
+    "exits": {
+      "west": 5206,
+      "north": 5208,
+      "south": 5209,
+      "east": 5210
+    },
+    "flags": ["forest"]
+  },
+  {
+    "vnum": 5208,
+    "name": "Northern Treeline",
+    "description": "The northern edge of the Shadeharm Glade. The trees here form an almost deliberate wall, their roots intertwined beneath the earth. You can feel a faint pressure in the air, like standing at the edge of a waterfall you cannot see. Through gaps in the foliage, you glimpse the valley floor below -- a sea of dense fern stretching to a low stone structure at the center.",
+    "exits": {
+      "south": 5207,
+      "east": 5210
+    },
+    "flags": ["forest", "glade"]
+  },
+  {
+    "vnum": 5209,
+    "name": "Southern Treeline",
+    "description": "The southern approach to the Shadeharm Glade. Massive old-growth trees cast deep shadows here. The undergrowth has been recently disturbed -- broken fern fronds, scuffed earth, the faint impression of boots in soft soil. Someone has been spending time here. A low ridge of exposed rock provides a natural lookout over the approach from the city road.",
+    "exits": {
+      "north": 5207,
+      "east": 5210
+    },
+    "flags": ["forest", "glade"]
+  },
+  {
+    "vnum": 5210,
+    "name": "The Harmony Ward",
+    "description": "You step past the treeline and feel... nothing. The ward lets you through without resistance, which means your Kin-sense is intact. The valley opens before you: a shallow bowl of land roughly four hundred feet across, blanketed in waist-high fern. The air is different here -- still, watchful, charged with something older than the city. At the center of the valley, barely visible through the undergrowth, a low stone cairn squats like a patient sentinel. To the east, near the ward's inner boundary, a patch of ground has been cleared and marked with chalk lines.",
+    "exits": {
+      "west": 5207,
+      "north": 5211,
+      "east": 5212,
+      "south": 5213
+    },
+    "flags": ["glade", "ward"]
+  },
+  {
+    "vnum": 5211,
+    "name": "Glade Interior - North",
+    "description": "Dense fern rises to your waist as you push through the glade's interior. The silence here is profound -- no birdsong, no insects, not even wind. The harmony ward saturates everything with a low, thrumming stillness. The stone cairn is visible to the south, and the northern treeline behind you. The fern here is undisturbed. Whatever is happening in this glade, it's concentrated to the east and south.",
+    "exits": {
+      "south": 5210,
+      "east": 5212
+    },
+    "flags": ["glade"]
+  },
+  {
+    "vnum": 5212,
+    "name": "The Probe Array",
+    "description": "A crescent of seven small stone tokens has been carefully planted in the earth, linked by precise chalk lines that glow faintly in the dim light. This is no natural formation -- someone with knowledge of abjuration magic has been methodically probing the harmony ward's resonance frequency. The chalk lines pulse with a rhythm that almost, but not quite, matches the ward's own hum. Whoever built this has been working for days. They are close to finding the ward's blind spot.",
+    "exits": {
+      "west": 5210,
+      "south": 5213,
+      "north": 5211
+    },
+    "flags": ["glade", "quest"]
+  },
+  {
+    "vnum": 5213,
+    "name": "The Sealed Cairn",
+    "description": "At the very center of the Shadeharm Glade stands a low stone structure -- a cairn roughly twelve feet across, built from fitted granite blocks so precisely joined that no mortar was needed. There is no door, no visible mechanism, no handle or keyhole. The surface is etched with symbols in a pre-Shattering script that seems to shift when you look at it directly.\n\nThrough a narrow gap between two of the capstones, barely visible: a crystalline object about the size of a fist, emitting a very dim amber pulse. It is not Kin-sense. It is not elemental resonance. It is something older than the city. You cannot reach it. The gap is just wide enough to see it, and nothing else.",
+    "exits": {
+      "north": 5210,
+      "east": 5212
+    },
+    "flags": ["glade", "cairn", "quest"]
+  }
+]

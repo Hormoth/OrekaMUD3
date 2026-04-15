@@ -129,6 +129,25 @@ class Mob:
         self.buy_rate = buy_rate  # Multiplier for buying from player (e.g., 1.0 = 100% value)
         self.sell_rate = sell_rate  # Multiplier for selling to player (e.g., 1.0 = 100% value)
         self.dialogue = dialogue
+        self.loot_table = kwargs.get('loot_table', None)  # Mob-specific loot drops
+        self.ai_persona = kwargs.get('ai_persona', None)  # AI chat personality dict
+        self.npc_type = kwargs.get('npc_type', None)  # e.g. 'quest', 'merchant', 'lore_keeper'
+
+    def is_chat_eligible(self):
+        """Check if this NPC can be used for AI chat sessions."""
+        # Explicit ai_persona field makes NPC eligible
+        if self.ai_persona and self.ai_persona.get("chat_eligible", False):
+            return True
+        # Friendly NPCs with no_attack flag are eligible by default
+        flags = self.flags or []
+        if 'no_attack' in flags:
+            return True
+        # NPCs with specific roles are eligible
+        eligible_flags = ('shopkeeper', 'trainer', 'banker', 'blacksmith',
+                          'guard', 'innkeeper', 'quest')
+        if any(f in flags for f in eligible_flags):
+            return True
+        return False
 
     def is_shopkeeper(self):
         return 'shopkeeper' in (self.flags or []) or self.shop_inventory
@@ -170,56 +189,6 @@ class Mob:
 
     def reset_aoo(self):
         self.aoo_count = 0
-        data = {
-            "vnum": self.vnum,
-            "name": self.name,
-            "level": self.level,
-            "hp_dice": getattr(self, 'hp_dice', [1, 8, 0]),
-            "ac": self.ac,
-            "damage_dice": self.damage_dice,
-            "flags": self.flags,
-            "type_": self.type_,
-            "alignment": self.alignment,
-            "ability_scores": self.ability_scores,
-            "initiative": self.initiative,
-            "speed": self.speed,
-            "attacks": self.attacks,
-            "special_attacks": self.special_attacks,
-            "special_qualities": self.special_qualities,
-            "feats": self.feats,
-            "skills": self.skills,
-            "saves": self.saves,
-            "environment": self.environment,
-            "organization": self.organization,
-            "cr": self.cr,
-            "advancement": self.advancement,
-            "description": self.description,
-            # Save room_vnum for placement
-            "room_vnum": getattr(self, 'room_vnum', None)
-        }
-        # Shopkeeper fields
-        if self.shop_inventory:
-            data["shop_inventory"] = self.shop_inventory
-        if self.shop_type:
-            data["shop_type"] = self.shop_type
-        if getattr(self, "buy_rate", None) is not None:
-            data["buy_rate"] = self.buy_rate
-        if getattr(self, "sell_rate", None) is not None:
-            data["sell_rate"] = self.sell_rate
-        if getattr(self, "dialogue", None):
-            data["dialogue"] = self.dialogue
-        return data
-        for feat_name in self.feats:
-            feat = FEATS.get(feat_name)
-            if feat and feat.effect:
-                value = feat.apply(self, skill=skill, value=value)
-        # Passive check for Acrobatic, Agile, Alertness even if not in feats (for futureproofing)
-        for passive in ("Acrobatic", "Agile", "Alertness"):
-            if passive in self.feats:
-                feat = FEATS.get(passive)
-                if feat and feat.effect:
-                    value = feat.apply(self, skill=skill, value=value)
-        return value
 
     def get_save(self, save):
         # Base save plus passive feat bonuses
@@ -349,7 +318,29 @@ class Mob:
                         attack_bonus += 1
         # Dodge: target may have +1 AC if dodging this mob
         ac = target.get_ac(attacker=self)
-        # TODO: Add other feat/condition/skill modifiers
+        # Condition modifiers on attacker
+        if self.has_condition('shaken') or self.has_condition('frightened'):
+            attack_bonus -= 2
+        if self.has_condition('sickened'):
+            attack_bonus -= 2
+        if self.has_condition('fatigued'):
+            attack_bonus -= 2
+        if self.has_condition('exhausted'):
+            attack_bonus -= 6
+        if self.has_condition('prone'):
+            attack_bonus -= 4
+        if self.has_condition('blinded'):
+            attack_bonus -= 2  # 50% miss chance handled separately
+        if self.has_condition('invisible'):
+            attack_bonus += 2
+        # Flanking bonus
+        if self.has_condition('flanking'):
+            attack_bonus += 2
+        # Feat: Weapon Specialization (+2 damage added in damage calc below)
+        # Feat: Greater Weapon Focus
+        if self.has_feat("Greater Weapon Focus"):
+            attack_bonus += 1
+        # Skill: target's Tumble reduces AoO threat (not attack mod)
         if roll == 1:
             return "Miss!"
         if roll == 20 or roll + attack_bonus >= ac:

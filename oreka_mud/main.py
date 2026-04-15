@@ -227,7 +227,9 @@ def make_starting_items(equipment_names):
 
 async def handle_client(reader, writer, world, parser):
     logger.info("New client connected")
-    writer = wrap_writer(writer)
+    # Only wrap if it's a telnetlib3 writer (legacy), skip for our TelnetWriter
+    if not isinstance(writer, object) or not hasattr(writer, '_writer'):
+        writer = wrap_writer(writer)
     character = None
     # Display MOTD
     try:
@@ -237,6 +239,8 @@ async def handle_client(reader, writer, world, parser):
             writer.write(_f.read() + "\n")
     except Exception:
         writer.write("Welcome to Oreka MUD!\n")
+    if hasattr(writer, 'drain'):
+        await writer.drain()
     import hashlib
     import os
     global ACTIVE_SESSIONS
@@ -246,6 +250,8 @@ async def handle_client(reader, writer, world, parser):
     # Main login/creation loop
     while True:
         writer.write("Do you have an existing character? (y/n): ")
+        if hasattr(writer, 'drain'):
+            await writer.drain()
         resp = (await reader.readline()).strip().lower()
         if not resp:
             continue
@@ -381,37 +387,9 @@ async def handle_client(reader, writer, world, parser):
                     ):
                         del ACTIVE_SESSIONS[username]
                     return
-                # Actually load the character object for regular users
-                character = Character(
-                    name=pdata.get("name", username),
-                    title=pdata.get("title"),
-                    race=pdata.get("race"),
-                    level=pdata.get("level", 1),
-                    hp=pdata.get("hp", 10),
-                    max_hp=pdata.get("max_hp", 10),
-                    ac=pdata.get("ac", 10),
-                    room=world.rooms.get(pdata.get("room_vnum", 1000), world.rooms[1000]),
-                    is_immortal=pdata.get("is_immortal", False),
-                    elemental_affinity=pdata.get("elemental_affinity"),
-                    str_score=pdata.get("str_score", 10),
-                    dex_score=pdata.get("dex_score", 10),
-                    con_score=pdata.get("con_score", 10),
-                    int_score=pdata.get("int_score", 10),
-                    wis_score=pdata.get("wis_score", 10),
-                    cha_score=pdata.get("cha_score", 10),
-                    # mana removed
-                    # max_mana removed
-                    move=pdata.get("move", 100),
-                    max_move=pdata.get("max_move", 100),
-                    alignment=pdata.get("alignment"),
-                    deity=pdata.get("deity"),
-                    feats=pdata.get("feats", []),
-                    domains=pdata.get("domains", []),
-                    char_class=pdata.get("char_class"),
-                    skills=pdata.get("skills", []),
-                    spells_known=pdata.get("spells_known", {}),
-                )
-                character.is_ai = pdata.get("is_ai", False)
+                # Load character using from_dict (handles all fields including inventory, equipment, etc.)
+                character = Character.from_dict(pdata, world=world)
+                character.room = world.rooms.get(pdata.get("room_vnum", 1000), world.rooms[1000])
                 break
         elif resp == "n":
             # New character creation flow
@@ -862,13 +840,10 @@ async def handle_client(reader, writer, world, parser):
 
     def format_room_output(room, look_result, exits, prompt, add_space=False):
         space = "\n" if add_space else ""
-        exit_list = ', '.join(exits)
-        return (
-            f"{space}{YELLOW}{room.name}{RESET}\n"
-            f"{WHITE}{look_result}{RESET}\n"
-            f"{CYAN}[Exits: {exit_list}]{RESET}\n"
-            f"{prompt} "
-        )
+        # cmd_look now includes the room name as a heading, so just pass through
+        result = f"{space}{WHITE}{look_result}{RESET}\n"
+        result += f"\n{prompt}"
+        return result
 
     # Register GMCP handler for this connection
     try:
@@ -898,9 +873,86 @@ async def handle_client(reader, writer, world, parser):
         )
     )
     last_room_vnum = character.room.vnum
+    COMBAT_TICK_RATE = 4  # seconds between auto-attack rounds
     while True:
         try:
-            data = await reader.readline()
+            # In combat: use timeout so combat auto-ticks even without input
+            from src.character import State as _State
+            from src.combat import get_combat as _get_combat
+            in_combat = (character.state == _State.COMBAT
+                         and _get_combat(character.room)
+                         and _get_combat(character.room).is_active)
+            if in_combat:
+                try:
+                    data = await asyncio.wait_for(reader.readline(), timeout=COMBAT_TICK_RATE)
+                except asyncio.TimeoutError:
+                    # No input — auto-tick combat
+                    combat = _get_combat(character.room)
+                    if combat and combat.is_active:
+                        combat_messages = []
+                        should_end, end_msg = combat.check_combat_end()
+                        if should_end:
+                            combat_messages.append(end_msg)
+                            combat.end_combat()
+                            character.clear_combat_target()
+                            character.state = _State.EXPLORING
+                        else:
+                            turn_msg = combat.advance_turn()
+                            if turn_msg:
+                                combat_messages.append(turn_msg)
+                            current = combat.get_current_combatant()
+                            if current:
+                                turn_result = combat.execute_turn(current.combatant, parser)
+                                combat_messages.append(turn_result)
+                                should_end, end_msg = combat.check_combat_end()
+                                if should_end:
+                                    combat_messages.append(end_msg)
+                                    combat.end_combat()
+                                    character.clear_combat_target()
+                                    character.state = _State.EXPLORING
+                        if combat_messages:
+                            writer.write(f"{WHITE}" + "\n".join(combat_messages) + f"\n{character.get_prompt()} {RESET}")
+                            await writer.drain()
+                    continue
+            elif character.state == _State.CHATTING and character.active_chat_session:
+                # Chat mode: route input to AI conversation
+                _chat_session = character.active_chat_session
+                _chat_prompt = f"\033[1;35m[Chat: {_chat_session.npc_name}]\033[0m > "
+                try:
+                    data = await reader.readline()
+                except Exception:
+                    break
+                if not data:
+                    break
+                text = data.strip()
+                if not text:
+                    writer.write(_chat_prompt)
+                    await writer.drain()
+                    continue
+                text_lower = text.lower()
+                # Escape commands
+                if text_lower in ("endchat", "/quit", "/end", "/exit"):
+                    result = parser.cmd_endchat(character, "")
+                    writer.write(f"{WHITE}{result}\n{character.get_prompt()} {RESET}")
+                    await writer.drain()
+                    continue
+                if text_lower in ("enter world", "enterworld", "/enter"):
+                    result = parser.cmd_enter_world(character, "")
+                    writer.write(f"{WHITE}{result}\n{character.get_prompt()} {RESET}")
+                    await writer.drain()
+                    continue
+                # Route to AI chat
+                from src.chat_session import process_player_input as _chat_input
+                _NPC_COLOR = "\033[0;36m"
+                try:
+                    response = await _chat_input(_chat_session, character, text)
+                    writer.write(f"\n{_NPC_COLOR}{response}{RESET}\n\n{_chat_prompt}")
+                except Exception as _chat_err:
+                    writer.write(f"\n{_chat_session.npc_name} seems distracted.\n\n{_chat_prompt}")
+                await writer.drain()
+                continue
+            else:
+                data = await reader.readline()
             if not data:
                 break
             data = data.strip()
@@ -912,6 +964,28 @@ async def handle_client(reader, writer, world, parser):
             cmd = command[0].lower()
             args = command[1] if len(command) > 1 else ""
 
+            # Quit / logout
+            if cmd in ("quit", "logout"):
+                writer.write("\033[1;33mSaving your character...\033[0m\n")
+                try:
+                    from src.chat import broadcast_to_room
+                    broadcast_to_room(character.room, f"{character.name} has left the world.", exclude=character)
+                except Exception:
+                    pass
+                try:
+                    from src.gmcp import unregister_handler as gmcp_unreg
+                    gmcp_unreg(character)
+                except Exception:
+                    pass
+                try:
+                    from src.event_log import log_event
+                    log_event(character.name, "logout", {}, room_vnum=character.room.vnum)
+                except Exception:
+                    pass
+                writer.write("\033[1;33mFarewell, adventurer. Until next time.\033[0m\n")
+                await writer.drain()
+                break
+
             # Alias expansion
             if hasattr(character, 'aliases') and cmd in getattr(character, 'aliases', {}):
                 _expanded = character.aliases[cmd]
@@ -921,9 +995,10 @@ async def handle_client(reader, writer, world, parser):
                 cmd = _parts[0].lower()
                 args = _parts[1] if len(_parts) > 1 else ""
 
-            # Speedwalk detection (e.g., "nnnwws")
+            # Speedwalk detection (e.g., "nnnwws") — exclude diagonal shortcuts
             _dir_chars = {'n': 'north', 's': 'south', 'e': 'east', 'w': 'west', 'u': 'up', 'd': 'down'}
-            if len(cmd) > 1 and all(c in _dir_chars for c in cmd) and cmd not in parser.commands:
+            _diagonal_shortcuts = {"ne", "nw", "se", "sw"}
+            if len(cmd) > 1 and cmd not in _diagonal_shortcuts and all(c in _dir_chars for c in cmd) and cmd not in parser.commands:
                 _sw_results = []
                 for _ch in cmd:
                     _dir = _dir_chars[_ch]
@@ -939,14 +1014,31 @@ async def handle_client(reader, writer, world, parser):
             add_space = False
             prev_room_vnum = character.room.vnum
 
-            if cmd in parser.commands:
-                result = parser.commands[cmd](character, args)
+            # Check if cmd is a room exit direction (for special exits like "in", "guild", "northeast")
+            is_room_exit = hasattr(character, 'room') and character.room and cmd in character.room.exits
+
+            # Prefix matching: if cmd isn't an exact match, find commands that start with it
+            resolved_cmd = cmd
+            if cmd not in parser.commands and len(cmd) >= 2 and not is_room_exit:
+                matches = [c for c in parser.commands if c.startswith(cmd)]
+                if len(matches) == 1:
+                    resolved_cmd = matches[0]
+                elif len(matches) > 1 and len(matches) <= 5:
+                    writer.write(
+                        f"{WHITE}Did you mean: {', '.join(sorted(matches))}?\n"
+                        f"{character.get_prompt()} {RESET}"
+                    )
+                    await writer.drain()
+                    continue
+
+            if resolved_cmd in parser.commands and not is_room_exit:
+                result = parser.commands[resolved_cmd](character, args)
                 # Handle async commands
                 if asyncio.iscoroutine(result):
                     result = await result
                 if result is None:
                     result = ""
-                if cmd == "look" or cmd == "l":
+                if resolved_cmd in ("look", "l"):
                     writer.write(
                         format_room_output(
                             character.room,
@@ -959,21 +1051,22 @@ async def handle_client(reader, writer, world, parser):
                     writer.write(
                         f"{WHITE}{result}\n{character.get_prompt()} {RESET}"
                     )
-            elif cmd in ["north", "south", "east", "west", "up", "down", "n", "s", "e", "w", "u", "d"]:
+            elif cmd in ["north", "south", "east", "west", "up", "down", "n", "s", "e", "w", "u", "d",
+                         "northeast", "northwest", "southeast", "southwest", "ne", "nw", "se", "sw"] or is_room_exit:
                 # Map shortcuts to full direction names
-                direction_map = {"n": "north", "s": "south", "e": "east", "w": "west", "u": "up", "d": "down"}
+                direction_map = {"n": "north", "s": "south", "e": "east", "w": "west", "u": "up", "d": "down",
+                                 "ne": "northeast", "nw": "northwest", "se": "southeast", "sw": "southwest"}
                 direction = direction_map.get(cmd, cmd)
                 result = parser.cmd_move(character, direction)
                 if result is None:
                     result = ""
-                # Check if room changed
+                # Check if room changed — cmd_move already includes look output
                 add_space = character.room.vnum != prev_room_vnum
-                if "move" in result.lower():
-                    look_result = parser.cmd_look(character, "")
+                if add_space:
                     writer.write(
                         format_room_output(
                             character.room,
-                            look_result,
+                            result,
                             character.room.exits.keys(),
                             character.get_prompt(),
                             add_space=add_space,
@@ -1012,50 +1105,7 @@ async def handle_client(reader, writer, world, parser):
             except Exception:
                 break
 
-        # =====================================================================
-        # COMBAT LOOP - Auto-advance turns when in combat
-        # =====================================================================
-        from src.character import State
-        from src.combat import get_combat, start_combat as init_combat
-
-        if character.state == State.COMBAT:
-            combat = get_combat(character.room)
-            if combat and combat.is_active:
-                # Process combat round
-                combat_messages = []
-
-                # Check if combat should end
-                should_end, end_msg = combat.check_combat_end()
-                if should_end:
-                    combat_messages.append(end_msg)
-                    combat.end_combat()
-                    character.clear_combat_target()
-                    character.state = State.EXPLORING
-                else:
-                    # Advance to next turn
-                    turn_msg = combat.advance_turn()
-                    if turn_msg:
-                        combat_messages.append(turn_msg)
-
-                    # Get current combatant
-                    current = combat.get_current_combatant()
-                    if current:
-                        # Execute the turn (auto-attack or queued action)
-                        turn_result = combat.execute_turn(current.combatant, parser)
-                        combat_messages.append(turn_result)
-
-                        # Check again if combat should end after this action
-                        should_end, end_msg = combat.check_combat_end()
-                        if should_end:
-                            combat_messages.append(end_msg)
-                            combat.end_combat()
-                            character.clear_combat_target()
-                            character.state = State.EXPLORING
-
-                # Send all combat messages
-                if combat_messages:
-                    writer.write(f"{WHITE}" + "\n".join(combat_messages) + f"\n{character.get_prompt()} {RESET}")
-                    await writer.drain()
+        # Combat auto-advance is handled by the timeout loop above
 
         if getattr(character, "is_ai", False):
             ai_result = await character.ai_decide(world)
@@ -1760,6 +1810,46 @@ async def wandering_gods_tick(world):
             logger.error(f"Error in wandering gods tick: {e}")
 
 
+async def chat_despawn_tick(world):
+    """Auto-despawn stale chat sessions (30 min inactive)."""
+    while True:
+        try:
+            await asyncio.sleep(60)  # Check every 60 seconds
+            from src.shadow_presence import shadow_manager
+            from src.chat_session import force_end_timeout
+            stale = shadow_manager.get_stale(timeout_seconds=1800)
+            for shadow in stale:
+                if shadow.is_telnet and shadow.character_ref:
+                    char = shadow.character_ref
+                    if getattr(char, 'active_chat_session', None):
+                        force_end_timeout(char.active_chat_session, char)
+                else:
+                    shadow_manager.remove(shadow.player_id)
+        except Exception as e:
+            logger.error(f"Error in chat despawn tick: {e}")
+
+
+async def townsfolk_tick(world):
+    """Move wandering townsfolk and send ambient messages to nearby players."""
+    from src.townsfolk import get_townsfolk_manager
+    mgr = get_townsfolk_manager()
+    mgr.initialize(world)
+    while True:
+        try:
+            await asyncio.sleep(30)  # Check every 30 seconds
+            messages = mgr.tick(world)
+            for vnum, msg in messages:
+                if vnum in world.rooms:
+                    for player in world.rooms[vnum].players:
+                        if hasattr(player, '_writer'):
+                            try:
+                                player._writer.write(f"\n\033[0;90m{msg}\033[0m\n")
+                            except Exception:
+                                pass
+        except Exception as e:
+            logger.error(f"Error in townsfolk tick: {e}")
+
+
 async def spawn_respawn_tick(world):
     """Periodically check for dead mobs and respawn them."""
     spawn_mgr = get_spawn_manager()
@@ -1850,6 +1940,63 @@ async def ambient_echo_tick(world):
             logger.error(f"Error in ambient echo tick: {e}")
 
 
+async def weather_tick(world):
+    """Periodic tick to update dynamic weather per region."""
+    from src.weather import get_weather_manager
+    wm = get_weather_manager()
+    while True:
+        await asyncio.sleep(30)  # Check every 30 seconds (timer managed internally)
+        try:
+            await wm.update(world)
+        except Exception as e:
+            logger.error(f"Error in weather tick: {e}")
+
+
+async def area_reset_tick(world):
+    """Periodic tick to check and perform area resets."""
+    from src.area_resets import get_reset_manager
+    rm = get_reset_manager()
+    while True:
+        await asyncio.sleep(60)  # Check every 60 seconds
+        try:
+            await rm.check_resets(world)
+        except Exception as e:
+            logger.error(f"Error in area reset tick: {e}")
+
+
+async def narrative_tick(world):
+    """Periodic tick to check narrative triggers for online players."""
+    from src.narrative import get_narrative_manager
+    nm = get_narrative_manager()
+    while True:
+        await asyncio.sleep(120)  # Check every 2 minutes
+        try:
+            for player in world.players:
+                if getattr(player, 'is_ai', False):
+                    continue
+                triggered = nm.check_triggers(player)
+                for chapter in triggered:
+                    text, rewards = nm.trigger_chapter(player, chapter)
+                    _w = getattr(player, '_writer', None) or getattr(player, 'writer', None)
+                    if _w:
+                        try:
+                            _w.write(text + "\n")
+                            if rewards:
+                                if "xp" in rewards:
+                                    player.xp = getattr(player, 'xp', 0) + rewards["xp"]
+                                    _w.write(f"Gained {rewards['xp']} XP!\n")
+                                if "title" in rewards:
+                                    if not hasattr(player, 'titles'):
+                                        player.titles = []
+                                    if rewards["title"] not in player.titles:
+                                        player.titles.append(rewards["title"])
+                                    _w.write(f"Earned title: {rewards['title']}\n")
+                        except Exception:
+                            pass
+        except Exception as e:
+            logger.error(f"Error in narrative tick: {e}")
+
+
 async def main():
     world = OrekaWorld()
     world.load_data()
@@ -1911,25 +2058,159 @@ async def main():
     world.players.append(hareem)
     world.rooms[1000].players.append(hareem)
 
-    logger.info("Starting Oreka MUD server on localhost:4000 (telnetlib3)")
+    logger.info("Starting Oreka MUD server on 0.0.0.0:4000 (raw asyncio TCP)")
 
-    async def telnet_shell(reader, writer):
-        try:
-            await handle_client(reader, writer, world, parser)
-        except Exception as e:
-            logger.error(f"Client handler crashed: {e}")
-            import traceback
-            traceback.print_exc()
+    # =====================================================================
+    # RAW TCP SERVER — replaces telnetlib3 for universal client compatibility
+    # =====================================================================
+    IAC, WILL, WONT, DO, DONT, SB, SE = 255, 251, 252, 253, 254, 250, 240
+    GMCP_OPT = 201
+
+    class TelnetReader:
+        """Wraps asyncio.StreamReader with telnet-aware readline."""
+        def __init__(self, stream_reader):
+            self._reader = stream_reader
+            self._buffer = ""
+
+        async def readline(self):
+            """Read until newline, stripping telnet IAC sequences."""
+            while '\n' not in self._buffer:
+                try:
+                    raw = await asyncio.wait_for(self._reader.read(4096), timeout=300)
+                except asyncio.TimeoutError:
+                    return ""
+                if not raw:
+                    return ""
+                # Strip telnet negotiation bytes
+                clean = self._strip_iac(raw)
+                self._buffer += clean.decode('utf-8', errors='replace')
+
+            line, self._buffer = self._buffer.split('\n', 1)
+            return line.strip('\r')
+
+        async def read(self, n):
+            """Read up to n chars, stripping telnet IAC."""
+            while len(self._buffer) < n:
+                try:
+                    raw = await asyncio.wait_for(self._reader.read(4096), timeout=300)
+                except asyncio.TimeoutError:
+                    break
+                if not raw:
+                    break
+                clean = self._strip_iac(raw)
+                self._buffer += clean.decode('utf-8', errors='replace')
+                if self._buffer:
+                    break  # Got something, return it
+
+            result = self._buffer[:n]
+            self._buffer = self._buffer[n:]
+            return result
+
+        def _strip_iac(self, data):
+            """Remove all telnet IAC negotiation sequences from raw bytes."""
+            result = bytearray()
+            i = 0
+            while i < len(data):
+                if data[i] == IAC and i + 1 < len(data):
+                    cmd = data[i + 1]
+                    if cmd in (WILL, WONT, DO, DONT):
+                        i += 3  # IAC + cmd + option
+                    elif cmd == SB:
+                        # Skip subnegotiation until IAC SE
+                        j = i + 2
+                        while j < len(data) - 1:
+                            if data[j] == IAC and data[j + 1] == SE:
+                                j += 2
+                                break
+                            j += 1
+                        i = j
+                    elif cmd == IAC:
+                        result.append(IAC)
+                        i += 2
+                    else:
+                        i += 2
+                else:
+                    result.append(data[i])
+                    i += 1
+            return bytes(result)
+
+    class TelnetWriter:
+        """Wraps asyncio.StreamWriter with write/close/drain and _writer for GMCP."""
+        def __init__(self, stream_writer):
+            self._writer = stream_writer
+            self._transport = stream_writer.transport if hasattr(stream_writer, 'transport') else None
+
+        def write(self, text):
+            """Send text to client."""
+            if isinstance(text, str):
+                text = text.encode('utf-8', errors='replace')
             try:
-                writer.close()
+                self._writer.write(text)
             except Exception:
                 pass
 
-    server = await telnetlib3.create_server(host='0.0.0.0', port=4000, shell=telnet_shell, connect_maxwait=0.5)
+        async def drain(self):
+            try:
+                await self._writer.drain()
+            except Exception:
+                pass
+
+        def close(self):
+            try:
+                self._writer.close()
+            except Exception:
+                pass
+
+    async def tcp_client_handler(stream_reader, stream_writer):
+        """Handle a raw TCP connection."""
+        addr = stream_writer.get_extra_info('peername')
+        logger.info(f"Connection from {addr}")
+
+        reader = TelnetReader(stream_reader)
+        writer = TelnetWriter(stream_writer)
+
+        # Send minimal telnet negotiation (don't wait for response)
+        try:
+            stream_writer.write(bytes([IAC, WILL, GMCP_OPT]))  # Advertise GMCP
+            await stream_writer.drain()
+        except Exception:
+            pass
+
+        # Small delay to let client negotiate, then proceed regardless
+        await asyncio.sleep(0.3)
+
+        try:
+            await handle_client(reader, writer, world, parser)
+        except ConnectionError as e:
+            logger.info(f"Client disconnected: {addr} - {e}")
+        except Exception as e:
+            logger.error(f"Client handler crashed for {addr}: {type(e).__name__}: {e}")
+            import traceback
+            traceback.print_exc()
+        finally:
+            # Clean up active chat session on disconnect
+            try:
+                if character and getattr(character, 'active_chat_session', None):
+                    from src.chat_session import end_session as _end_chat
+                    _end_chat(character.active_chat_session, character)
+            except Exception:
+                pass
+            logger.info(f"Connection closed for {addr}")
+            writer.close()
+
+    server = await asyncio.start_server(tcp_client_handler, '0.0.0.0', 4000)
 
     # Start MCP Bridge (internal REST API on port 8001)
     mcp_set_world(world)
     start_mcp_bridge_thread()
+
+    # Load modules (arcs, personas, rooms, quests, hooks)
+    try:
+        from src.module_loader import apply_all_modules_to_world
+        mod_result = apply_all_modules_to_world(world)
+        logger.info(f"Module loader: {mod_result}")
+    except Exception as e:
+        logger.error(f"Module loading failed: {e}")
 
     # Start background ticks
     asyncio.create_task(log_players(world))
@@ -1939,11 +2220,26 @@ async def main():
     asyncio.create_task(spawn_respawn_tick(world))
     asyncio.create_task(wandering_gods_tick(world))
     asyncio.create_task(location_effects_tick(world))
+    asyncio.create_task(townsfolk_tick(world))
+
+    # Start chat session auto-despawn tick
+    asyncio.create_task(chat_despawn_tick(world))
+
+    # Start dynamic weather tick
+    asyncio.create_task(weather_tick(world))
+
+    # Start area reset tick
+    asyncio.create_task(area_reset_tick(world))
+
+    # Start narrative check tick
+    asyncio.create_task(narrative_tick(world))
 
     # Start WebSocket server (for Veil Client)
+    # Keep a reference to prevent garbage collection of the task
+    _ws_task = None
     try:
         from src.websocket_server import start_websocket_server
-        asyncio.create_task(start_websocket_server())
+        _ws_task = asyncio.create_task(start_websocket_server())
     except Exception as e:
         logger.warning(f"WebSocket server not started: {e}")
 

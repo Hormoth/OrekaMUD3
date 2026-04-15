@@ -108,6 +108,16 @@ class ReligionManager:
                     lines.append(f"\033[1;35mYou sense a divine presence stir in response.\033[0m")
                     break
 
+        # GMCP: notify client of deity/shrine state change
+        try:
+            from src.gmcp import emit_deity, emit_vitals
+            at_shrine = True
+            shrine = deity_name if deity else None
+            emit_deity(character, at_shrine=at_shrine, shrine_name=shrine)
+            emit_vitals(character)  # HP may have changed from prayer healing
+        except Exception:
+            pass
+
         return "\n".join(lines), notify_player
 
     def _apply_buff(self, character, buff, deity):
@@ -200,6 +210,14 @@ class ReligionManager:
             "duration": 200,
             "resist": {}
         }
+        # GMCP: notify target client of deity buff and vitals change
+        try:
+            from src.gmcp import emit_deity, emit_vitals, emit_status
+            emit_deity(target_char)
+            emit_vitals(target_char)
+            emit_status(target_char)
+        except Exception:
+            pass
         return (
             f"\033[1;33m{deity_char.name}'s divine light washes over {target_char.name}!\033[0m\n"
             f"  Fully healed. +2 to all physical and mental attributes for 200 rounds."

@@ -62,6 +62,7 @@ class OrekaWorld:
                             rooms_data = data
                         for room_data in rooms_data:
                             room = Room(**room_data)
+                            room._world = self  # Back-reference for BFS traversal (shout, etc.)
                             self.rooms[room.vnum] = room
                     except Exception as e:
                         print(f"Error loading {filename}: {e}")
@@ -69,6 +70,24 @@ class OrekaWorld:
         # Load mobs from JSON
         with open(os.path.join("data", "mobs.json"), "r", encoding="utf-8") as f:
             mobs_data = json.load(f)
+
+        # Validate any ai_persona blocks present in mob data (warn, not fatal)
+        try:
+            from src.ai_schemas import validate_persona
+            import logging
+            _persona_logger = logging.getLogger("OrekaMUD.PersonaValidation")
+            for m in mobs_data:
+                persona = m.get("ai_persona")
+                if persona:
+                    errors = validate_persona(persona)
+                    if errors:
+                        for err in errors:
+                            _persona_logger.warning(
+                                f"Persona validation: vnum {m.get('vnum')} ({m.get('name', '?')}): {err}"
+                            )
+        except ImportError:
+            pass  # ai_schemas not available; skip validation
+
         for mob_data in mobs_data:
             mob = Mob(**{k: v for k, v in mob_data.items() if k != "room_vnum"})
             self.mobs[mob.vnum] = mob

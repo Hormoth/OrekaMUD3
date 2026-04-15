@@ -48,6 +48,9 @@ class Item:
         self.material = material
         self.complexity = complexity
         self.charges = charges  # For wands — None means not a charged item
+        # Default containers to capacity 10 if not specified
+        if capacity == 0 and item_type == "container":
+            capacity = 10
         self.capacity = capacity  # Container capacity (0 = not a container)
         self.contents = contents if contents is not None else ([] if capacity > 0 else None)
         # HP system

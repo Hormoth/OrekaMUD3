@@ -1,0 +1,94 @@
+{
+  "rooms": [
+    {
+      "vnum": 5210,
+      "name": "Spur Tower -- Main Hall",
+      "description": "A broad stone hall with Domnathar-precise geometry -- every angle exact, every join invisible. Orekan staff move between desks and filing cabinets with quiet efficiency. The air smells of old paper and lamp oil. A directory board lists departments in three scripts: Domnathar formal, Eke Concordant standard, and river-trader shorthand. Stairs lead up into administrative levels that the directory does not list.",
+      "exits": {"south": 5240, "up": 5211, "east": 5213},
+      "flags": ["safe", "indoor"],
+      "ambience": {
+        "mood": "bureaucratic",
+        "sounds": ["the scratch of pens", "shuffling paper", "footsteps on stone"],
+        "smells": ["old paper", "lamp oil", "ink"],
+        "textures": ["stone floors worn smooth by centuries of foot traffic"],
+        "ambient_details": ["A clerk carries a stack of files taller than her head.", "Someone coughs in a back office. The sound echoes longer than it should."]
+      }
+    },
+    {
+      "vnum": 5211,
+      "name": "Spur Tower -- Main Archives",
+      "description": "Floor-to-ceiling shelves line every wall, packed with bound ledgers, scrolled correspondence, and filing boxes labeled in a hand that hasn't changed in decades. A Halfling sits at the central desk, surrounded by a fortress of organized paperwork. A heavy door at the back bears a small depression in its frame -- a resonance lock, currently sealed. A note sits on the desk in neat, unsigned handwriting.",
+      "exits": {"down": 5210, "north": 5212},
+      "flags": ["safe", "indoor"],
+      "ambience": {
+        "mood": "watchful",
+        "sounds": ["the whisper of pages turning", "a faint hum from behind the sealed door"],
+        "smells": ["old leather bindings", "preservation dust"],
+        "textures": ["the shelves vibrate faintly -- resonance trapped in forty years of sealed documents"],
+        "ambient_details": ["A note on the desk catches the lamplight. The handwriting is precise, unhurried, and unsigned.", "The sealed door hums at a frequency you can feel in your Kin-sense but cannot name."],
+        "npc_relevance": {"9511": "Heln runs this archive. She takes instructions from the person upstairs she has never met."}
+      }
+    },
+    {
+      "vnum": 5212,
+      "name": "Spur Tower -- Restricted Stacks",
+      "description": "The resonance lock unsealed with a click you felt through your bones. Inside: decades of correspondence, research notes, and intelligence summaries filed with inhuman precision. Every document is cross-referenced. Every date is exact. The filing system is itself a kind of mind -- patient, thorough, and forty years deep. Your Kin-sense hums in here. The sealed documents still carry traces of the hands that filed them.",
+      "exits": {"south": 5211},
+      "flags": ["safe", "indoor"],
+      "ambience": {
+        "mood": "revelatory",
+        "sounds": ["silence so deep it presses on the ears", "your own breathing"],
+        "smells": ["preservation dust", "something older -- stone and ozone"],
+        "textures": ["every drawer pulls smoothly, as if oiled yesterday"],
+        "ambient_details": ["A filing drawer labeled 'Farborn Inquiry -- Year 1697-1700' sits at eye level.", "The handwriting on every label is the same. Forty years of the same hand."]
+      }
+    },
+    {
+      "vnum": 5213,
+      "name": "Spur Tower -- Envoy-Scholar Quarter",
+      "description": "A residential corridor off the main hall where visiting scholars and Domnathar envoys keep quarters. The rooms are modest but well-maintained -- stone walls softened with tapestries that depict river trade and mountain passes. A Domnathar man and a Farborn woman share a doorway at the end of the hall. He is talking. She is listening with the careful stillness of someone who has learned to be quiet in a place where she does not quite belong.",
+      "exits": {"west": 5210, "north": 5214},
+      "flags": ["safe", "indoor"],
+      "ambience": {
+        "mood": "domestic tension",
+        "sounds": ["muffled conversation behind a closed door", "the scratch of a pen on paper"],
+        "smells": ["cooking spices unfamiliar to this region -- Long Road spices"],
+        "textures": ["the stone floor is warm here, heated from below"],
+        "ambient_details": ["A stack of unsent letters sits on a windowsill, weighted with a river stone.", "The tapestries show scenes of the Long Road. Someone hung them recently."],
+        "npc_relevance": {
+          "9501": "Sarre Indorach lives here with Maeren. He is friendly, eager to discuss research.",
+          "9502": "Maeren is here. Guarded. Quiet. The Long Road spices are hers."
+        }
+      }
+    },
+    {
+      "vnum": 5214,
+      "name": "Spur Tower -- Upper Stairs",
+      "description": "A narrow stone staircase spiraling upward into the administrative levels the directory downstairs does not list. The air changes as you climb -- colder, drier, the smell of old stone replacing lamp oil. Kin-sense flickers here. Something above registers as void -- deliberate, predatory wrongness -- and then it's gone, as if whatever is up there noticed you noticing and withdrew.",
+      "exits": {"south": 5213, "up": 5215},
+      "flags": ["indoor"],
+      "ambience": {
+        "mood": "dread",
+        "sounds": ["your footsteps echo upward and do not come back", "silence that listens"],
+        "smells": ["cold stone", "the absence of human occupation"],
+        "textures": ["the banister is dust-free but cold, as if cleaned by hands that don't leave warmth"],
+        "ambient_details": ["A flicker of void on your Kin-sense, then nothing. Like a candle blown out in a room you can't see into."]
+      }
+    },
+    {
+      "vnum": 5215,
+      "name": "Spur Tower -- Records Adjutant's Office",
+      "description": "The door is open. That's wrong. It has been closed for decades. Inside: a desk, a chair, filing cabinets that match the ones downstairs but older. The lamp is lit. The chair is occupied. A figure sits behind the desk with the patience of someone who has been waiting -- not for you specifically, but for the inevitability of someone like you. Your Kin-sense floods with void. Deliberate. Predatory. Wrong. He looks up. He is not surprised.",
+      "exits": {"down": 5214},
+      "flags": ["indoor"],
+      "ambience": {
+        "mood": "confrontation",
+        "sounds": ["the scratch of a pen stopping", "your own heartbeat"],
+        "smells": ["old paper", "something metallic -- worked Domnathar metal"],
+        "textures": ["the air is thick with void resonance, like standing in a bruise"],
+        "ambient_details": ["The desk is perfectly organized. Every document aligned. Every drawer labeled. Forty years of a man's life, filed with inhuman precision."],
+        "npc_relevance": {"9500": "Vaerix Caelnorath. 280 years old. He has been waiting."}
+      }
+    }
+  ]
+}

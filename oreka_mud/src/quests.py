@@ -121,6 +121,7 @@ class QuestReward:
     unlock_quests: List[int] = field(default_factory=list)  # Quest IDs to unlock
     class_feature: str = ""       # Special class feature or ability
     title: str = ""               # Title to grant
+    quest_points: int = 0         # Quest points (spend at quest dealer)
 
     def to_dict(self) -> Dict:
         """Serialize reward to dict."""
@@ -132,6 +133,7 @@ class QuestReward:
             "unlock_quests": self.unlock_quests,
             "class_feature": self.class_feature,
             "title": self.title,
+            "quest_points": self.quest_points,
         }
 
     @classmethod
@@ -145,6 +147,7 @@ class QuestReward:
             unlock_quests=data.get("unlock_quests", []),
             class_feature=data.get("class_feature", ""),
             title=data.get("title", ""),
+            quest_points=data.get("quest_points", 0),
         )
 
 
@@ -403,11 +406,21 @@ class QuestLog:
     Manages a player's quests.
     """
 
-    def __init__(self):
+    def __init__(self, owner=None):
         self.active_quests: Dict[int, ActiveQuest] = {}  # quest_id -> ActiveQuest
         self.completed_quests: Set[int] = set()          # Quest IDs completed
         self.failed_quests: Set[int] = set()             # Quest IDs failed
         self.abandoned_quests: Set[int] = set()          # Quest IDs abandoned
+        self.owner = owner  # Reference to owning Character (for GMCP)
+
+    def _emit_gmcp_quest(self):
+        """Emit GMCP Char.Quest if an owner character is set."""
+        if self.owner:
+            try:
+                from src.gmcp import emit_quest
+                emit_quest(self.owner)
+            except Exception:
+                pass
 
     def accept_quest(self, quest: Quest) -> Tuple[bool, str]:
         """Accept a new quest."""
@@ -445,6 +458,7 @@ class QuestLog:
         )
 
         self.active_quests[quest.id] = active_quest
+        self._emit_gmcp_quest()
         return True, f"Quest accepted: {quest.name}"
 
     def abandon_quest(self, quest_id: int) -> Tuple[bool, str]:
@@ -454,6 +468,7 @@ class QuestLog:
 
         del self.active_quests[quest_id]
         self.abandoned_quests.add(quest_id)
+        self._emit_gmcp_quest()
         return True, "Quest abandoned."
 
     def complete_quest(self, quest_id: int) -> Tuple[bool, str]:
@@ -466,6 +481,7 @@ class QuestLog:
         active_quest = self.active_quests[quest_id]
         active_quest.state = QuestState.COMPLETE
         active_quest.completion_time = time.time()
+        self._emit_gmcp_quest()
         return True, "Quest objectives complete!"
 
     def turn_in_quest(self, quest_id: int) -> Tuple[bool, str]:
@@ -480,6 +496,20 @@ class QuestLog:
         # Move to completed
         del self.active_quests[quest_id]
         self.completed_quests.add(quest_id)
+        self._emit_gmcp_quest()
+
+        # PcSheet: record quest completion
+        try:
+            owner = getattr(self, 'owner', None)
+            if owner:
+                from src.ai_schemas.pc_sheet import record_event
+                rp_sheet = getattr(owner, 'rp_sheet', None)
+                if rp_sheet:
+                    quest_name = active_quest.quest_name if hasattr(active_quest, 'quest_name') else f"quest #{quest_id}"
+                    record_event(rp_sheet, f"Completed quest: {quest_name}.", "quest", weight=1.3)
+        except Exception:
+            pass
+
         return True, "Quest turned in!"
 
     def fail_quest(self, quest_id: int, reason: str = "") -> Tuple[bool, str]:
@@ -489,6 +519,7 @@ class QuestLog:
 
         del self.active_quests[quest_id]
         self.failed_quests.add(quest_id)
+        self._emit_gmcp_quest()
         return True, f"Quest failed{': ' + reason if reason else '.'}"
 
     def update_objective(
@@ -866,6 +897,101 @@ class QuestManager:
         )
         self.register_quest(quest6)
 
+        # =================================================================
+        # Quest 7: The Silence in the Glade (ECL 1-3)
+        # =================================================================
+        quest7 = Quest(
+            id=7,
+            name="The Silence in the Glade",
+            description="The Aetherial Veil has been flickering. Mayor Windweaver's aide, "
+                       "Emren Quillsong, needs someone to discreetly investigate the "
+                       "Shadeharm Glade east of the city and deal with whatever is "
+                       "causing the disturbance.",
+            level=1,
+            category="main",
+            giver_npc="Emren Quillsong",
+            giver_room=4086,
+            turnin_npc="Emren Quillsong",
+            turnin_room=4086,
+            prerequisites=QuestPrerequisite(
+                min_level=1,
+                max_level=5,
+            ),
+            objectives=[
+                QuestObjective(
+                    id="investigate_market",
+                    objective_type=ObjectiveType.TALK,
+                    description="Ask around the Central Market about strangers (talk to Porun Ashstitch)",
+                    target="Porun Ashstitch",
+                    required_count=1,
+                    optional=True,
+                    order=0,
+                ),
+                QuestObjective(
+                    id="reach_glade",
+                    objective_type=ObjectiveType.EXPLORE,
+                    description="Reach the Shadeharm Glade",
+                    target="5210",
+                    required_count=1,
+                    order=1,
+                ),
+                QuestObjective(
+                    id="deal_with_tevel",
+                    objective_type=ObjectiveType.KILL,
+                    description="Deal with the Unstrung lookout (Tevel)",
+                    target="tevel",
+                    required_count=1,
+                    order=2,
+                ),
+                QuestObjective(
+                    id="deal_with_maret",
+                    objective_type=ObjectiveType.KILL,
+                    description="Deal with the Unstrung cell leader (Maret)",
+                    target="maret",
+                    required_count=1,
+                    order=2,
+                ),
+                QuestObjective(
+                    id="find_sera",
+                    objective_type=ObjectiveType.TALK,
+                    description="Find and confront Sera at the probe array",
+                    target="Sera",
+                    required_count=1,
+                    order=3,
+                ),
+                QuestObjective(
+                    id="examine_cairn",
+                    objective_type=ObjectiveType.EXPLORE,
+                    description="Examine the sealed cairn at the center of the Glade",
+                    target="5213",
+                    required_count=1,
+                    optional=True,
+                    order=4,
+                ),
+            ],
+            rewards=QuestReward(
+                xp=1000,
+                gold=100,
+                quest_points=5,
+                reputation={"Custos do Aeternos": 50},
+                title="Glade Warden",
+            ),
+            accept_text="\"Thank the stars. Head east through the East River Gate to the "
+                       "Shadeharm Glade. Walk the perimeter, find out what's happening, "
+                       "and deal with it if you can. The Mayor is offering 60 gold for a "
+                       "report, and 40 more if you resolve the threat. You might want to "
+                       "ask around the Central Market first — strangers in town tend to "
+                       "get noticed. Discretion is appreciated.\"",
+            progress_text="\"Have you been to the Glade yet? The Veil flickered again last night. "
+                        "Please hurry.\"",
+            complete_text="\"The Unstrung... I see. The Mayor will want to hear this. You've done "
+                        "well — the Glade is secure for now, though I suspect this is not the "
+                        "last we'll hear of the Veil's troubles. Here is your payment, with the "
+                        "Mayor's gratitude. She says you should not have seen what was in the "
+                        "cairn, and that you should not speak of it. She did not explain why.\"",
+        )
+        self.register_quest(quest7)
+
     def register_quest(self, quest: Quest):
         """Register a quest in the manager."""
         self.quests[quest.id] = quest
@@ -1103,6 +1229,12 @@ def apply_quest_rewards(character, quest: Quest, quest_log: QuestLog) -> List[st
         old_gold = getattr(character, 'gold', 0)
         character.gold = old_gold + rewards.gold
         messages.append(f"You receive {rewards.gold} gold pieces!")
+
+    # Quest points reward
+    if rewards.quest_points > 0:
+        old_qp = getattr(character, 'quest_points', 0)
+        character.quest_points = old_qp + rewards.quest_points
+        messages.append(f"You earn {rewards.quest_points} quest points! (Total: {character.quest_points})")
 
     # Item rewards
     for item_name in rewards.items:
