@@ -7,7 +7,10 @@
       "west": 4024,
       "east": 5207
     },
-    "flags": ["forest", "road"]
+    "flags": [
+      "forest",
+      "road"
+    ]
   },
   {
     "vnum": 5207,
@@ -19,7 +22,9 @@
       "south": 5209,
       "east": 5210
     },
-    "flags": ["forest"]
+    "flags": [
+      "forest"
+    ]
   },
   {
     "vnum": 5208,
@@ -29,7 +34,10 @@
       "south": 5207,
       "east": 5210
     },
-    "flags": ["forest", "glade"]
+    "flags": [
+      "forest",
+      "glade"
+    ]
   },
   {
     "vnum": 5209,
@@ -39,7 +47,10 @@
       "north": 5207,
       "east": 5210
     },
-    "flags": ["forest", "glade"]
+    "flags": [
+      "forest",
+      "glade"
+    ]
   },
   {
     "vnum": 5210,
@@ -51,7 +62,10 @@
       "east": 5212,
       "south": 5213
     },
-    "flags": ["glade", "ward"]
+    "flags": [
+      "glade",
+      "ward"
+    ]
   },
   {
     "vnum": 5211,
@@ -61,7 +75,9 @@
       "south": 5210,
       "east": 5212
     },
-    "flags": ["glade"]
+    "flags": [
+      "glade"
+    ]
   },
   {
     "vnum": 5212,
@@ -69,19 +85,24 @@
     "description": "A crescent of seven small stone tokens has been carefully planted in the earth, linked by precise chalk lines that glow faintly in the dim light. This is no natural formation -- someone with knowledge of abjuration magic has been methodically probing the harmony ward's resonance frequency. The chalk lines pulse with a rhythm that almost, but not quite, matches the ward's own hum. Whoever built this has been working for days. They are close to finding the ward's blind spot.",
     "exits": {
       "west": 5210,
-      "south": 5213,
       "north": 5211
     },
-    "flags": ["glade", "quest"]
+    "flags": [
+      "glade",
+      "quest"
+    ]
   },
   {
     "vnum": 5213,
     "name": "The Sealed Cairn",
     "description": "At the very center of the Shadeharm Glade stands a low stone structure -- a cairn roughly twelve feet across, built from fitted granite blocks so precisely joined that no mortar was needed. There is no door, no visible mechanism, no handle or keyhole. The surface is etched with symbols in a pre-Shattering script that seems to shift when you look at it directly.\n\nThrough a narrow gap between two of the capstones, barely visible: a crystalline object about the size of a fist, emitting a very dim amber pulse. It is not Kin-sense. It is not elemental resonance. It is something older than the city. You cannot reach it. The gap is just wide enough to see it, and nothing else.",
     "exits": {
-      "north": 5210,
-      "east": 5212
+      "north": 5210
     },
-    "flags": ["glade", "cairn", "quest"]
+    "flags": [
+      "glade",
+      "cairn",
+      "quest"
+    ]
   }
 ]
