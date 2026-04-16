@@ -2112,7 +2112,7 @@ async def main():
     world.players_by_name[hareem.name.lower()] = hareem
     world.rooms[1000].players.append(hareem)
 
-    logger.info("Starting Oreka MUD server on 0.0.0.0:4000 (raw asyncio TCP)")
+    logger.info("Starting Oreka MUD server on 127.0.0.1:4000 (raw asyncio TCP)")
 
     # =====================================================================
     # RAW TCP SERVER — replaces telnetlib3 for universal client compatibility
@@ -2252,7 +2252,7 @@ async def main():
             logger.info(f"Connection closed for {addr}")
             writer.close()
 
-    server = await asyncio.start_server(tcp_client_handler, '0.0.0.0', 4000)
+    server = await asyncio.start_server(tcp_client_handler, '127.0.0.1', 4000)
 
     # Start MCP Bridge (internal REST API on port 8001)
     mcp_set_world(world)

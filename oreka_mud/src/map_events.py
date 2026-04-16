@@ -42,7 +42,7 @@ logger = logging.getLogger("OrekaMUD.Map")
 # ---------------------------------------------------------------------------
 
 MAP_WS_PORT = int(os.environ.get("OREKA_MAP_WS_PORT", "8766"))
-MAP_WS_HOST = os.environ.get("OREKA_MAP_WS_HOST", "0.0.0.0")
+MAP_WS_HOST = os.environ.get("OREKA_MAP_WS_HOST", "127.0.0.1")
 SNAPSHOT_INTERVAL = 2.0          # seconds between full snapshots
 ERROR_RING_SIZE = 100            # retained recent errors
 AUTH_TIMEOUT = 10.0              # seconds to send auth before disconnect

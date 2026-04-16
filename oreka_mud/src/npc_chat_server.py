@@ -23,7 +23,7 @@ from typing import Any, Dict, Optional
 logger = logging.getLogger("OrekaMUD.NPCChat")
 
 NPC_CHAT_PORT = 8767
-NPC_CHAT_HOST = "0.0.0.0"
+NPC_CHAT_HOST = "127.0.0.1"
 
 
 # ---------------------------------------------------------------------------

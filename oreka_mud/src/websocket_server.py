@@ -16,7 +16,7 @@ import logging
 logger = logging.getLogger("OrekaMUD.WebSocket")
 
 WS_PORT = 8765
-WS_HOST = '0.0.0.0'
+WS_HOST = '127.0.0.1'
 
 # Telnet bytes used for GMCP extraction
 IAC = 255
