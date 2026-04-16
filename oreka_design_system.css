@@ -1,0 +1,307 @@
+/*
+ * OREKA DESIGN SYSTEM
+ * Based on the Art Direction Bible v1
+ *
+ * "Late-afternoon best: still warm, still alive, still genuinely
+ *  beautiful — but with the quality of light that comes when you
+ *  look too long at something lovely and notice it is slightly
+ *  more fragile than it appeared."
+ *
+ * HARD STOPS: Not Tolkien. Not generic D&D. Not grimdark.
+ *             Not Eurocentric. Not symmetric or pristine.
+ *             Kin-sense is never visible.
+ *
+ * Three registers: Living World / Deep World / Wrong World
+ * Five palettes:   Warm Earth / Cool Forest / Volcanic / Water & Sea / Void
+ * Four elements:   Earth (amber-ochre) / Fire (deep orange, NO YELLOW) /
+ *                  Water (teal-green) / Wind (pale gold to silver)
+ */
+
+/* ================================================================
+   FONTS — not Cinzel (generic fantasy). Cormorant for weight
+   without "I'm a fantasy game" signaling. Crimson Text for body.
+   ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --font-display: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --font-body: 'Crimson Text', Georgia, 'Times New Roman', serif;
+
+  /* ==============================================================
+     LIVING WORLD REGISTER (default)
+     Warm, working, late-afternoon light. This is the baseline.
+     ============================================================== */
+  --register-bg:      #1c1610;
+  --register-surface: #241c14;
+  --register-card:    #2a2018;
+  --register-border:  #3d2e1a;
+  --register-text:    #d4c5a0;
+  --register-dim:     #8a7a5a;
+  --register-muted:   #665533;
+  --register-light:   #f0e4cc;
+
+  /* ==============================================================
+     WARM EARTH PALETTE (Kinsweave, Steppe, Desert) — default
+     ============================================================== */
+  --palette-1: #c9a84c;  /* Steppe Gold */
+  --palette-2: #8b6b3d;  /* Worn Saddle */
+  --palette-3: #a04520;  /* Red Earth */
+  --palette-4: #b87830;  /* Deep Ochre */
+  --palette-5: #5a3a20;  /* Scorched Wood */
+  --palette-6: #c4b078;  /* Dry Grass */
+
+  /* Accent = primary from the active palette */
+  --accent:       var(--palette-1);
+  --accent-warm:  var(--palette-4);
+  --accent-deep:  var(--palette-5);
+
+  /* ==============================================================
+     ELEMENTAL LIGHT SIGNATURES
+     ============================================================== */
+  --elem-earth:  #b8914a;  /* amber-ochre, steady, weight */
+  --elem-fire:   #cc5500;  /* deep orange to copper-white, NO YELLOW */
+  --elem-water:  #3a8a7a;  /* teal-green, refractive */
+  --elem-wind:   #c4c8a0;  /* pale gold to electric silver */
+
+  /* ==============================================================
+     UI SIZING
+     ============================================================== */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --border-thin: 1px solid var(--register-border);
+  --border-accent: 1px solid var(--accent);
+}
+
+/* ==============================================================
+   COOL FOREST PALETTE (Twin Rivers, Gatefall, Tidebloom)
+   Applied via .palette-forest on a container
+   ============================================================== */
+.palette-forest {
+  --palette-1: #3a7a6a;  /* River Teal */
+  --palette-2: #3a5a3a;  /* Deepwood */
+  --palette-3: #8aaa70;  /* Leaf Light */
+  --palette-4: #5a7a5a;  /* Canopy Mid */
+  --palette-5: #3a3020;  /* Forest Floor */
+  --palette-6: #a8c4a0;  /* Fern Pale */
+  --accent: var(--palette-1);
+  --accent-warm: var(--palette-3);
+  --accent-deep: var(--palette-5);
+}
+
+/* ==============================================================
+   VOLCANIC PALETTE (Scorchspires, Kharazhad, Highridge)
+   ============================================================== */
+.palette-volcanic {
+  --palette-1: #cc5500;  /* Forge Orange */
+  --palette-2: #4a1208;  /* Deep Lava */
+  --palette-3: #b88830;  /* Forge Gold */
+  --palette-4: #2a2220;  /* Ash Dark */
+  --palette-5: #1a1a1a;  /* Obsidian */
+  --palette-6: #c4a888;  /* Hot Ash Pale */
+  --accent: var(--palette-1);
+  --accent-warm: var(--palette-3);
+  --accent-deep: var(--palette-2);
+  --register-bg: #140c08;
+  --register-surface: #1e140e;
+  --register-card: #281c14;
+}
+
+/* ==============================================================
+   WATER & SEA PALETTE (Tidebloom, Deepwater, Apelian, Kailian)
+   ============================================================== */
+.palette-water {
+  --palette-1: #2a6a6a;  /* Apelian Teal */
+  --palette-2: #1a3a5a;  /* Kailian Deep */
+  --palette-3: #4a8a8a;  /* Tidal Mid */
+  --palette-4: #88bba8;  /* Sea Foam */
+  --palette-5: #3a5a3a;  /* Mangrove */
+  --palette-6: #c4d4c8;  /* Shore Pale */
+  --accent: var(--palette-1);
+  --accent-warm: var(--palette-3);
+  --accent-deep: var(--palette-2);
+  --register-bg: #0e1418;
+  --register-surface: #141e24;
+  --register-card: #1a2830;
+}
+
+/* ==============================================================
+   VOID & WRONG PALETTE (Dómnathar, Breach, Glass Wastes)
+   Used sparingly — for Wrong World moments only
+   ============================================================== */
+.palette-void {
+  --palette-1: #5a5a68;  /* Dead Zone */
+  --palette-2: #0a0a12;  /* Abyss */
+  --palette-3: #3a3a40;  /* Glass Waste */
+  --palette-4: #12121a;  /* Void Deep */
+  --palette-5: #1a1a2a;  /* False Dark */
+  --palette-6: #8a8a90;  /* Ash Pale */
+  --accent: var(--palette-1);
+  --accent-warm: var(--palette-6);
+  --accent-deep: var(--palette-2);
+  --register-bg: #08080e;
+  --register-surface: #10101a;
+  --register-card: #18182a;
+  --register-text: #8a8a98;
+  --register-border: #2a2a3a;
+}
+
+/* ==============================================================
+   THREE LIGHT REGISTERS (page modes)
+   ============================================================== */
+
+/* Living World — default, already set in :root */
+
+/* Deep World — ancient, enormous, Giant-scale */
+.register-deep {
+  --register-bg:      #120e0a;
+  --register-surface: #1a150f;
+  --register-card:    #221b14;
+  --register-text:    #b8a880;
+  --register-dim:     #706040;
+  --register-muted:   #504030;
+  --accent:           #a08850;
+}
+
+/* Wrong World — light goes neutral then wrong */
+.register-wrong {
+  --register-bg:      #0e0e12;
+  --register-surface: #16161e;
+  --register-card:    #1e1e28;
+  --register-border:  #2a2a38;
+  --register-text:    #9898a0;
+  --register-dim:     #585860;
+  --register-muted:   #404048;
+  --accent:           #6868a0;
+}
+
+/* ==============================================================
+   BASE ELEMENT STYLES
+   ============================================================== */
+body {
+  font-family: var(--font-body);
+  background: var(--register-bg);
+  color: var(--register-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ==============================================================
+   COMMON COMPONENTS
+   ============================================================== */
+
+/* Card — the primary container. Not pristine: slightly asymmetric
+   border-radius, subtle variation suggests maintained-not-new. */
+.oreka-card {
+  background: var(--register-card);
+  border: var(--border-thin);
+  border-radius: var(--radius-md) var(--radius-lg) var(--radius-md) var(--radius-sm);
+  padding: 16px;
+  position: relative;
+}
+
+/* Accent border — used for important containers */
+.oreka-card--accent {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.03);
+}
+
+/* Section header — horizontal rule with label */
+.oreka-section-title {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--register-border);
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+}
+
+/* Button — warm, weighted, not shiny */
+.oreka-btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 8px 20px;
+  background: var(--accent);
+  color: var(--register-bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.oreka-btn:hover {
+  background: var(--accent-warm);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* Input — recessed, warm, maintained */
+.oreka-input {
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 8px 12px;
+  background: var(--register-bg);
+  color: var(--register-text);
+  border: 1px solid var(--register-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.oreka-input:focus {
+  border-color: var(--accent);
+}
+
+/* Tag / chip — for feats, spells, etc. */
+.oreka-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--register-border);
+  border-radius: 12px;
+  font-size: 11px;
+  color: var(--register-dim);
+  background: var(--register-bg);
+}
+
+/* ==============================================================
+   MAINTAINED-SURFACE TEXTURE
+   Bible: "Maintained things have patches, worn edges, and
+   practical additions." Asymmetric corner radii simulate this.
+   ============================================================== */
+.oreka-surface {
+  background: var(--register-surface);
+  border: var(--border-thin);
+  /* Deliberately asymmetric radii — nothing is perfectly square */
+  border-radius: 3px 5px 4px 2px;
+}
+
+/* Subtle noise texture via CSS — simulates aged/patched surfaces */
+.oreka-textured::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.015'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ==============================================================
+   RACE-TO-PALETTE MAPPING
+   Applied to body or sheet container based on character data.
+   ============================================================== */
+/* Earth-aligned: Orean, Visetri, Pasua — Warm Earth (default) */
+/* Fire-aligned: Taraf-Imro, Rarozhki, Kovaka */
+.race-taraf-imro, .race-rarozhki, .race-kovaka { }
+body.race-taraf-imro, body.race-rarozhki, body.race-kovaka {
+  /* Volcanic palette via class */
+}
+/* Water-aligned: Eruskan, Pekakarlik, Hasura */
+/* Wind-aligned: Mytroan, Na'wasua */
