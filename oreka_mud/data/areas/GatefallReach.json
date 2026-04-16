@@ -2771,7 +2771,8 @@
       "down": 12271,
       "east": 12275,
       "west": 12277,
-      "north": 12276
+      "north": 12276,
+      "south": 12273
     },
     "flags": [
       "indoor",
@@ -2972,7 +2973,8 @@
     "description": "A long room with a raised dais at the far end, above which hangs a simple black banner bearing no device. The floor is marked with concentric rings of inlaid silver, each smaller than the last, focused on the dais. Anyone kneeling at the innermost ring may speak; anyone beyond the outer ring is expected to have come armed, and to fight.",
     "exits": {
       "south": 12284,
-      "north": 12288
+      "north": 12288,
+      "west": 12286
     },
     "flags": [
       "indoor",

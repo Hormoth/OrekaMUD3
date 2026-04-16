@@ -2801,7 +2801,8 @@
     "description": "A long corridor whose walls are inlaid with unfamiliar runes that absorb sound. Visitors' footfalls stop echoing after three paces; whispered words do not travel. A Dark Dwarf lore-keeper, milky-eyed and ancient, stands as the corridor's warden. An obsidian Void-Construct waits at the far end beside the throne doors. Neither speaks.",
     "exits": {
       "south": 9390,
-      "north": 9392
+      "north": 9392,
+      "down": 9389
     },
     "flags": [
       "indoor",

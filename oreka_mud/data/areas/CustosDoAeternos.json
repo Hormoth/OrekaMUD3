@@ -2542,7 +2542,8 @@
     "description": "A dressed-stone hall with columns shaped like kneeling figures. One column has moved since the hall was built: the sixth from the door stands closer to the center than the others, and its shaped arms hang at slightly different angles. The dust on its shoulders looks freshly disturbed.",
     "exits": {
       "west": 4219,
-      "east": 4223
+      "east": 4223,
+      "south": 4222
     },
     "flags": [
       "indoor",
@@ -2880,7 +2881,8 @@
     "name": "Upriver Gate",
     "description": "A small stone landing marks the east-bank approach the River-Gate guards use when they patrol downriver. The path from the city's East River Gate comes in along the top of the bank. The Muddywake lies west; the river flats of Kinsweave lie east.",
     "exits": {
-      "west": 4308
+      "west": 4308,
+      "south": 4024
     },
     "flags": [
       "outdoor",

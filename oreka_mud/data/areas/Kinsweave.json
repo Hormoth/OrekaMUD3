@@ -2443,7 +2443,8 @@
       "north": 5312,
       "south": 5315,
       "east": 5316,
-      "down": 5317
+      "down": 5317,
+      "west": 5313
     },
     "flags": [
       "indoor",

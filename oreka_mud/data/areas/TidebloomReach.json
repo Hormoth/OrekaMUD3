@@ -3235,7 +3235,8 @@
     "description": "A longhouse of salvaged timber where the village's elders gather for council. Low benches, a central hearth now cold, and a carved wooden chair at the hall's head bearing an empty iron circle worked into its back. The hall is empty at the moment. The village elder is not here.",
     "exits": {
       "west": 6267,
-      "north": 6275
+      "north": 6275,
+      "south": 6269
     },
     "flags": [
       "indoor",
