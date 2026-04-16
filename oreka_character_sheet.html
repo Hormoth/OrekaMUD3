@@ -380,6 +380,26 @@ document.getElementById('login-btn').addEventListener('click', () => {
 });
 document.getElementById('password').addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('login-btn').click(); });
 connect();
+
+// Auto-login if credentials passed via URL params (from Veil Portal)
+const urlParams = new URLSearchParams(window.location.search);
+const autoUser = urlParams.get('user');
+const autoPass = urlParams.get('pass');
+if (autoUser && autoPass) {
+  document.getElementById('username').value = autoUser;
+  document.getElementById('password').value = autoPass;
+  // Wait for WebSocket to connect, then auto-send auth
+  const autoLogin = setInterval(() => {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+      clearInterval(autoLogin);
+      ws.send(JSON.stringify({type: 'auth', username: autoUser, password: autoPass}));
+      // Clean the URL so password isn't visible in address bar
+      if (window.history.replaceState) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+  }, 200);
+}
 </script>
 </body>
 </html>

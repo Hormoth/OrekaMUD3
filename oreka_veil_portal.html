@@ -285,8 +285,11 @@ document.getElementById('path-chat').addEventListener('click', () => {
 });
 
 document.getElementById('path-sheet').addEventListener('click', () => {
-  const host = location.hostname || '127.0.0.1';
-  window.open('oreka_character_sheet.html', '_blank');
+  // Pass credentials so the sheet auto-logs in
+  const user = document.getElementById('username').value.trim();
+  const pass = document.getElementById('password').value.trim();
+  const params = user && pass ? '?user=' + encodeURIComponent(user) + '&pass=' + encodeURIComponent(pass) : '';
+  window.open('oreka_character_sheet.html' + params, '_blank');
 });
 
 // ==================== BACK BUTTON ====================
