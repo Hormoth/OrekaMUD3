@@ -44455,5 +44455,1430 @@
     "captive_captor_type": "Half-Dómnathar researchers",
     "captive_state": "bound",
     "rescue_type": "quest_giver"
+  },
+  {
+    "vnum": 4321,
+    "name": "the chained farmer",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Phi Krahang group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A prisoner gagged and tied, who goes rigid at the sound of strangers entering. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 9403,
+    "loot_table": [],
+    "captive_family": "deepwater_pasua",
+    "captive_template": "merchant",
+    "captive_captor_type": "Phi Krahang group",
+    "captive_state": "bound",
+    "rescue_type": "leader"
+  },
+  {
+    "vnum": 4322,
+    "name": "the roped-up villager",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Si'Lāt group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 9277,
+    "loot_table": [],
+    "captive_family": "deepwater_pasua",
+    "captive_template": "scout",
+    "captive_captor_type": "Si'Lāt group",
+    "captive_state": "bound",
+    "rescue_type": "homesick"
+  },
+  {
+    "vnum": 4323,
+    "name": "the shackled scout",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Ooze Mephit group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A quiet figure whose bindings are recent and whose eyes have seen things. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 9426,
+    "loot_table": [],
+    "captive_family": "deepwater_pasua",
+    "captive_template": "scholar",
+    "captive_captor_type": "Ooze Mephit group",
+    "captive_state": "bound",
+    "rescue_type": "homesick"
+  },
+  {
+    "vnum": 4324,
+    "name": "the bound captive",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Krasue group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 9404,
+    "loot_table": [],
+    "captive_family": "deepwater_pasua",
+    "captive_template": "scout",
+    "captive_captor_type": "Krasue group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4325,
+    "name": "the tied-up traveler",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Aranea group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 10437,
+    "loot_table": [],
+    "captive_family": "custos_scholar",
+    "captive_template": "scout",
+    "captive_captor_type": "Aranea group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4326,
+    "name": "the shackled scout",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of River Serpent group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A quiet figure whose bindings are recent and whose eyes have seen things. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 10043,
+    "loot_table": [],
+    "captive_family": "custos_scholar",
+    "captive_template": "scout",
+    "captive_captor_type": "River Serpent group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4327,
+    "name": "the bound captive",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Badger group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A weary figure roped to a post, face bruised, eyes uncertain. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 10417,
+    "loot_table": [],
+    "captive_family": "silent_concord_cell",
+    "captive_template": "scholar",
+    "captive_captor_type": "Badger group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4328,
+    "name": "the chained farmer",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Zombie group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A prisoner gagged and tied, who goes rigid at the sound of strangers entering. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 5221,
+    "loot_table": [],
+    "captive_family": "kinsweave_taraf",
+    "captive_template": "scholar",
+    "captive_captor_type": "Zombie group",
+    "captive_state": "bound",
+    "rescue_type": "self_rescue"
+  },
+  {
+    "vnum": 4329,
+    "name": "the bound captive",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Dread Wraith group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A prisoner gagged and tied, who goes rigid at the sound of strangers entering. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 5442,
+    "loot_table": [],
+    "captive_family": "kinsweave_taraf",
+    "captive_template": "child",
+    "captive_captor_type": "Dread Wraith group",
+    "captive_state": "bound",
+    "rescue_type": "leader"
+  },
+  {
+    "vnum": 4330,
+    "name": "the shackled scout",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Mohrg group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A weary figure roped to a post, face bruised, eyes uncertain. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 5304,
+    "loot_table": [],
+    "captive_family": "kinsweave_taraf",
+    "captive_template": "scout",
+    "captive_captor_type": "Mohrg group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4331,
+    "name": "the bound captive",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Allip group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A quiet figure whose bindings are recent and whose eyes have seen things. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 5224,
+    "loot_table": [],
+    "captive_family": "kinsweave_taraf",
+    "captive_template": "merchant",
+    "captive_captor_type": "Allip group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4332,
+    "name": "the chained farmer",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Orc group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A weary figure roped to a post, face bruised, eyes uncertain. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 12233,
+    "loot_table": [],
+    "captive_family": "gatefall_briarshade",
+    "captive_template": "child",
+    "captive_captor_type": "Orc group",
+    "captive_state": "bound",
+    "rescue_type": "dinner"
+  },
+  {
+    "vnum": 4333,
+    "name": "the shackled scout",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Cù Sìth group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A bloodied captive propped against the wall, semi-conscious. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 12236,
+    "loot_table": [],
+    "captive_family": "gatefall_briarshade",
+    "captive_template": "farmer",
+    "captive_captor_type": "Cù Sìth group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4334,
+    "name": "the roped-up villager",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Yuki-Onna group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A bloodied captive propped against the wall, semi-conscious. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 12238,
+    "loot_table": [],
+    "captive_family": "gatefall_briarshade",
+    "captive_template": "farmer",
+    "captive_captor_type": "Yuki-Onna group",
+    "captive_state": "bound",
+    "rescue_type": "homesick"
+  },
+  {
+    "vnum": 4335,
+    "name": "the gagged prisoner",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Skeleton group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A prisoner gagged and tied, who goes rigid at the sound of strangers entering. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 7215,
+    "loot_table": [],
+    "captive_family": "ridgeborn_kin",
+    "captive_template": "child",
+    "captive_captor_type": "Skeleton group",
+    "captive_state": "bound",
+    "rescue_type": "dinner"
+  },
+  {
+    "vnum": 4336,
+    "name": "the bound captive",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Annis Hag group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 7244,
+    "loot_table": [],
+    "captive_family": "ridgeborn_kin",
+    "captive_template": "child",
+    "captive_captor_type": "Annis Hag group",
+    "captive_state": "bound",
+    "rescue_type": "leader"
+  },
+  {
+    "vnum": 4337,
+    "name": "the tied-up traveler",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Yer-Sub group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A weary figure roped to a post, face bruised, eyes uncertain. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 7211,
+    "loot_table": [],
+    "captive_family": "ridgeborn_kin",
+    "captive_template": "scout",
+    "captive_captor_type": "Yer-Sub group",
+    "captive_state": "bound",
+    "rescue_type": "homesick"
+  },
+  {
+    "vnum": 4338,
+    "name": "the chained farmer",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Gnoll group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 7205,
+    "loot_table": [],
+    "captive_family": "steppe_dalan",
+    "captive_template": "scholar",
+    "captive_captor_type": "Gnoll group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4339,
+    "name": "the roped-up villager",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Rust Monster group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A weary figure roped to a post, face bruised, eyes uncertain. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 8093,
+    "loot_table": [],
+    "captive_family": "desert_ashgarin",
+    "captive_template": "scout",
+    "captive_captor_type": "Rust Monster group",
+    "captive_state": "bound",
+    "rescue_type": "quest_giver"
+  },
+  {
+    "vnum": 4340,
+    "name": "the roped-up villager",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Hieracosphinx group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 8260,
+    "loot_table": [],
+    "captive_family": "desert_ashgarin",
+    "captive_template": "farmer",
+    "captive_captor_type": "Hieracosphinx group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4341,
+    "name": "the shackled scout",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Amphisbaena group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A bloodied captive propped against the wall, semi-conscious. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 8307,
+    "loot_table": [],
+    "captive_family": "pekakarlik_gharoz",
+    "captive_template": "child",
+    "captive_captor_type": "Amphisbaena group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4342,
+    "name": "the shackled scout",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Sand Wraith group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A slumped form in travel-stained clothes, wrists cut raw by binding rope. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 8221,
+    "loot_table": [],
+    "captive_family": "desert_ashgarin",
+    "captive_template": "scholar",
+    "captive_captor_type": "Sand Wraith group",
+    "captive_state": "bound",
+    "rescue_type": "quest_giver"
+  },
+  {
+    "vnum": 4343,
+    "name": "the roped-up villager",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Assassin Vine group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A quiet figure whose bindings are recent and whose eyes have seen things. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 6325,
+    "loot_table": [],
+    "captive_family": "tidebloom_myruvane",
+    "captive_template": "merchant",
+    "captive_captor_type": "Assassin Vine group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4344,
+    "name": "the gagged prisoner",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Tipua group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A bloodied captive propped against the wall, semi-conscious. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 6304,
+    "loot_table": [],
+    "captive_family": "tidebloom_kovaka",
+    "captive_template": "scout",
+    "captive_captor_type": "Tipua group",
+    "captive_state": "bound",
+    "rescue_type": "token_bearer"
+  },
+  {
+    "vnum": 4345,
+    "name": "the chained farmer",
+    "level": 1,
+    "hp_dice": [
+      1,
+      8,
+      2
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      3,
+      0
+    ],
+    "flags": [
+      "captive",
+      "nonaggressive",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 10,
+      "Con": 10,
+      "Int": 11,
+      "Wis": 11,
+      "Cha": 10
+    },
+    "initiative": 0,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 0,
+      "Will": 1
+    },
+    "environment": "Captive of Zombie group",
+    "organization": "solitary captive",
+    "cr": null,
+    "advancement": "-",
+    "description": "A bloodied captive propped against the wall, semi-conscious. Their clothing suggests they come from somewhere nearby.",
+    "room_vnum": 6234,
+    "loot_table": [],
+    "captive_family": "tidebloom_myruvane",
+    "captive_template": "merchant",
+    "captive_captor_type": "Zombie group",
+    "captive_state": "bound",
+    "rescue_type": "leader"
   }
 ]
