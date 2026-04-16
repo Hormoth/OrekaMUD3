@@ -1,0 +1,603 @@
+{
+  "entries": [
+    {
+      "id": "region_kinsweave",
+      "keywords": [
+        "kinsweave",
+        "stonefall",
+        "rivertop",
+        "lakewell",
+        "highridge",
+        "highland quarries"
+      ],
+      "priority": 10,
+      "content": "Kinsweave is the north-central region of Oreka, characterized by highland quarries, haunted ruins, and pilgrimage routes. It is the site of the Aldenheim ruins and contested Stonefall quarries. Six ruins dot the highlands. The region's spiritual landscape is shaped by the Lament of Kings and nearly all Ascended Gods are actively worshipped here.",
+      "max_tokens": 115
+    },
+    {
+      "id": "region_deepwater",
+      "keywords": [
+        "deepwater marches",
+        "deepwater",
+        "apelian sea",
+        "canopy hold",
+        "thornwall",
+        "wargbond"
+      ],
+      "priority": 9,
+      "content": "The Deepwater Marches are the southwest frontier -- dense jungle, warm year-round, the least governed region. Home to Wargbond tribes, Flamewarg cults, and the Domnathar stronghold rebuilt over 300 years. Titan's Rest is the Farborn anchor city.",
+      "max_tokens": 81
+    },
+    {
+      "id": "region_eternal_steppe",
+      "keywords": [
+        "eternal steppe",
+        "steppe",
+        "tavranek",
+        "mytroan homeland"
+      ],
+      "priority": 9,
+      "content": "The Eternal Steppe is the heart of Mytroan civilization. Tavranek anchors trade around the Great Windstone. Seven camps radiate outward. Dominated by the Mytrone people and connected to the Pasua through the Brotherhood of the Steppe.",
+      "max_tokens": 80
+    },
+    {
+      "id": "region_infinite_desert",
+      "keywords": [
+        "infinite desert",
+        "desert",
+        "glass wastes",
+        "oasis",
+        "pilgrimage"
+      ],
+      "priority": 9,
+      "content": "The Infinite Desert is the oldest civilized land, where Giants raised their greatest cities. Today it is a land of pilgrimage and peril with oasis cities maintained by the Sand Wardens. The Glass Wastes are dead zones where Kin-sense goes silent.",
+      "max_tokens": 82
+    },
+    {
+      "id": "region_gatefall",
+      "keywords": [
+        "gatefall reach",
+        "gatefall",
+        "silence breach",
+        "frontier"
+      ],
+      "priority": 8,
+      "content": "Gatefall Reach is the southeastern frontier defined by the Silence Breach -- an expanding zone where Kin-sense dies. Wind-Riders patrol while the Gatefall Remnant stands watch. Something is moving in the Breach.",
+      "max_tokens": 80
+    },
+    {
+      "id": "region_tidebloom",
+      "keywords": [
+        "tidebloom",
+        "tidebloom reach",
+        "kailian sea",
+        "branmill",
+        "velathenor"
+      ],
+      "priority": 8,
+      "content": "Tidebloom rings the Kailian Sea. Five living cities are connected by Mithril Chains -- Giant-era barge infrastructure. Four burned cities (the Ashen Hollows) remain haunted from the Deceivers' War.",
+      "max_tokens": 80
+    },
+    {
+      "id": "region_twin_rivers",
+      "keywords": [
+        "twin rivers",
+        "custos region",
+        "great river confluence"
+      ],
+      "priority": 8,
+      "content": "The Twin Rivers region centers on Custos Do Aeternos, the largest city, where the rivers converge. It is the administrative and mercantile heart of Oreka.",
+      "max_tokens": 80
+    },
+    {
+      "id": "event_aldenheim",
+      "keywords": [
+        "aldenheim",
+        "fall of aldenheim",
+        "lament of kings",
+        "earthforge",
+        "house buarath"
+      ],
+      "priority": 9,
+      "content": "Aldenheim fell three centuries ago when House Buarath seized the EarthForge beneath it. Before the fall it was a center of learning. The site is called the Lament of Kings and draws annual pilgrimages.",
+      "max_tokens": 80
+    },
+    {
+      "id": "event_deceivers_war",
+      "keywords": [
+        "deceivers war",
+        "domnathar invasion",
+        "running war",
+        "deceivers' war"
+      ],
+      "priority": 9,
+      "content": "The Deceivers' War was a cataclysmic invasion by the Domnathar. The main host marched north through the Steppe. Far Riders and Pasua intercepted them in the Running War. Dark Dawn on the ninth night was the climax -- one in ten survived, but the Kin held.",
+      "max_tokens": 85
+    },
+    {
+      "id": "event_dark_dawn",
+      "keywords": [
+        "dark dawn",
+        "dark dawn battlefield",
+        "battle of dark dawn"
+      ],
+      "priority": 8,
+      "content": "Dark Dawn Battlefield covers forty square miles on the Eternal Steppe. Kin-sense flickers across it; the center is a dead zone. Glass-fused craters mark the site. Horses shy and a smell of hot pitch rises on windless nights.",
+      "max_tokens": 80
+    },
+    {
+      "id": "event_shattering",
+      "keywords": [
+        "shattering",
+        "shattering of man",
+        "concordant collapse"
+      ],
+      "priority": 9,
+      "content": "The Shattering was the catastrophic failure of the Eke Concordant when the Third Crowned Keeper proved too feeble. Oasis thrones were abandoned, rune-circles failed, and the continent's political structure fractured permanently.",
+      "max_tokens": 80
+    },
+    {
+      "id": "event_silence_breach",
+      "keywords": [
+        "silence breach",
+        "expanding anomaly",
+        "void incursion",
+        "dorrach kael"
+      ],
+      "priority": 8,
+      "content": "The Silence Breach is an expanding anomaly in Gatefall where Kin-sense fails entirely. Creatures from within register as nothing. The Gatefall Remnant monitors its growth. It is one of the world's greatest mysteries.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_kin_sense",
+      "keywords": [
+        "kin-sense",
+        "kin sense",
+        "elemental sixth sense",
+        "resonance detection"
+      ],
+      "priority": 9,
+      "content": "Kin-sense is the elemental sixth sense shared by all Kin races. It detects resonance within 60 feet, passes through 5-foot barriers, cannot be dispelled. Nine categories: Harmonic (Kin), Wild Static (beasts), Null (Silentborn), Void (Domnathar), Echo (dreaming), None (undead/Farborn), Raw Static (elementals).",
+      "max_tokens": 103
+    },
+    {
+      "id": "concept_elemental_lords",
+      "keywords": [
+        "elemental lords",
+        "four creators",
+        "lord of stone",
+        "lady of fire",
+        "lady of the sea",
+        "youngest brother"
+      ],
+      "priority": 9,
+      "content": "Four Elemental Lords shaped Oreka: Lord of Stone (comatose), Lady of Fire (active, volatile), Lady of the Sea (active, patient), Youngest Brother/Wind Lord (exiled, return prophesied). They influence through elemental resonance and Kin-sense.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_ascended_gods",
+      "keywords": [
+        "ascended gods",
+        "mortal apotheosis",
+        "nine gods"
+      ],
+      "priority": 8,
+      "content": "Nine mortals achieved divinity after Aldenheim: Dagdan (United Sun), Harreem (Golden Rose), Kailea (Waves), Cinvarin (Five Witnesses), Semyon (Hearth Mother), Apela Kelsoe (Windrider), Ludus Galerius (Stone's Hand), Gonmareck (Anvil Saint), The Hand Unanswered.",
+      "max_tokens": 87
+    },
+    {
+      "id": "concept_domnathar",
+      "keywords": [
+        "domnathar",
+        "deceivers",
+        "void resonance",
+        "alien invaders"
+      ],
+      "priority": 9,
+      "content": "The Domnathar are the Deceivers -- an alien civilization that invaded Oreka. They register as Void on Kin-sense. They enslaved Farborn, Goblins, and Wargs as infantry. Remnants survive as the Shattered Host in hidden strongholds.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_deceivers_feat",
+      "keywords": [
+        "deceiver's feat",
+        "deceivers feat",
+        "kin-sense suppression",
+        "unstrung practice"
+      ],
+      "priority": 7,
+      "content": "The Deceiver's Feat is the forbidden art of suppressing one's Kin-sense signature, becoming invisible to detection. Practiced by The Unstrung criminal organization.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_sand_wraith",
+      "keywords": [
+        "sand wraith",
+        "sand wraiths",
+        "kin spirits",
+        "desert haunting",
+        "echo resonance"
+      ],
+      "priority": 7,
+      "content": "Sand Wraiths are Kin spirits born from anguished death. They haunt ruins across the Desert and Lament of Kings, sometimes protective, sometimes hostile. They register as Echo on Kin-sense.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_earthforge",
+      "keywords": [
+        "earthforge",
+        "earth forge",
+        "elemental transmutation",
+        "buarath"
+      ],
+      "priority": 8,
+      "content": "The EarthForge is an ancient forge beneath Aldenheim built by the Elemental Lords. It transmutes raw elemental material into any substance. House Buarath has controlled it for 300 years.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_eke_concordant",
+      "keywords": [
+        "eke concordant",
+        "concordant",
+        "crowned keepers"
+      ],
+      "priority": 8,
+      "content": "The Eke Concordant was centralized governance under Crowned Keepers. It built oasis thrones, rune-circles, and pilgrimage routes. The Third Keeper's weakness caused the Shattering.",
+      "max_tokens": 80
+    },
+    {
+      "id": "concept_tomb_of_kings",
+      "keywords": [
+        "tomb of kings",
+        "giant burial",
+        "seven tombs",
+        "guardian constructs"
+      ],
+      "priority": 7,
+      "content": "The Tomb of Kings is one of seven great Giant burial sites. Massive chambers extend deep underground with ancient guardian constructs still functioning. Sacred and a pilgrimage site.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_far_riders",
+      "keywords": [
+        "far riders",
+        "mounted cavalry",
+        "warden kael",
+        "steppe patrol"
+      ],
+      "priority": 7,
+      "content": "The Far Riders are the mounted cavalry of the Mytrone and Pasua peoples. Led by Warden Kael Ridgeborn from Tavranek, they are the steppe's first and last defense.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_golden_roses",
+      "keywords": [
+        "golden roses",
+        "law enforcement",
+        "harreem cult"
+      ],
+      "priority": 7,
+      "content": "The Golden Roses monitor Harreem cult activity across Oreka. Named after the goddess of retribution, they are feared by the corrupt and welcomed by the righteous.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_circle_deeproot",
+      "keywords": [
+        "circle of deeproot",
+        "druids",
+        "elemental health",
+        "aeloria"
+      ],
+      "priority": 6,
+      "content": "The Circle of Deeproot is a druid order monitoring Oreka's elemental health. Their groves are living barometers. Led by Aeloria Sapwhisper.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_sand_wardens",
+      "keywords": [
+        "sand wardens",
+        "desert patrol",
+        "oasis circuit"
+      ],
+      "priority": 7,
+      "content": "The Sand Wardens maintain the Infinite Desert's oasis circuit, keeping routes safe and Giant shrines honored. Membership requires surviving a solo Glass Wastes crossing.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_chainless_legion",
+      "keywords": [
+        "chainless legion",
+        "farborn veterans",
+        "freed slaves",
+        "titan's rest"
+      ],
+      "priority": 7,
+      "content": "The Chainless Legion are Farborn who forged freedom through martial excellence at Dark Dawn. Based at Titan's Rest, they are Oreka's finest heavy cavalry.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_trade_houses",
+      "keywords": [
+        "trade houses",
+        "mercantile guilds",
+        "twin rivers commerce"
+      ],
+      "priority": 7,
+      "content": "The Trade Houses control commerce across the Twin Rivers. Seven houses compete fiercely but unite against outside interference.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_unstrung",
+      "keywords": [
+        "unstrung",
+        "criminal organization",
+        "600 years old"
+      ],
+      "priority": 8,
+      "content": "The Unstrung is a 600-year-old criminal order whose members practice the Deceiver's Feat -- becoming invisible to Kin-sense. They operate in all seven regions.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_silent_concord",
+      "keywords": [
+        "silent concord",
+        "silentborn protectors",
+        "five choirs"
+      ],
+      "priority": 7,
+      "content": "The Silent Concord protects Silentborn and Half-Domnathar from persecution. They operate through five specialized Choirs.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_shattered_host",
+      "keywords": [
+        "shattered host",
+        "domnathar remnants",
+        "spur tower"
+      ],
+      "priority": 8,
+      "content": "The Shattered Host are Domnathar remnants in hidden strongholds -- chiefly the Gatefall foothills and the Spur Tower. Hostile to all Kin-sense cultures.",
+      "max_tokens": 80
+    },
+    {
+      "id": "faction_flamewarg_cults",
+      "keywords": [
+        "flamewarg",
+        "flamewarg cults",
+        "fire worship",
+        "crossed-out sun"
+      ],
+      "priority": 6,
+      "content": "Flamewarg Cults descend from Deceiver-era war-warg handlers. They revere the Deceivers' return and mark themselves with crossed-out-sun burn scars.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_eruskan",
+      "keywords": [
+        "eruskan",
+        "eruskan human",
+        "sea-blue eyes",
+        "water affinity"
+      ],
+      "priority": 7,
+      "content": "Eruskan Humans have sea-blue eyes and water magic affinity. They are Oreka's sailors and mariners, dominating river trade.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_mytroan",
+      "keywords": [
+        "mytroan",
+        "mytroan human",
+        "steppe nomad",
+        "horseback culture"
+      ],
+      "priority": 7,
+      "content": "Mytroan Humans are steppe nomads with air magic affinity. Governed by consensus, they value freedom over central authority.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_taraf_imro",
+      "keywords": [
+        "taraf-imro",
+        "taraf imro",
+        "red hair",
+        "amber eyes",
+        "fire affinity"
+      ],
+      "priority": 7,
+      "content": "Taraf-Imro Humans have red hair, amber eyes, and fire magic affinity. They inhabit volcanic regions and are known for passion and martial prowess.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_pasua",
+      "keywords": [
+        "pasua",
+        "pasua elf",
+        "steppe elves",
+        "wind-riders",
+        "mounted archers"
+      ],
+      "priority": 6,
+      "content": "Pasua Elves are steppe-dwelling mounted archers. Integral to the Far Riders cavalry, they share culture with the Mytrone.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_pekakarlik",
+      "keywords": [
+        "pekakarlik",
+        "water dwarves",
+        "boat-builders",
+        "hydraulic engineers"
+      ],
+      "priority": 7,
+      "content": "Pekakarlik Dwarves have water affinity and are master boat-builders. They maintain river settlements and rebuilt Rivertop after the Shattering.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_rarozhki",
+      "keywords": [
+        "rarozhki",
+        "volcanic dwarves",
+        "forge-smiths",
+        "embersteel"
+      ],
+      "priority": 7,
+      "content": "Rarozhki Dwarves are volcanic forge-smiths with fire affinity, concentrated in Kharazhad. They produce Embersteel weapons.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_silentborn",
+      "keywords": [
+        "silentborn",
+        "null resonance",
+        "kin-domnathar hybrid"
+      ],
+      "priority": 7,
+      "content": "Silentborn are Kin-Domnathar hybrids who register as Null on Kin-sense. The Silent Concord protects them from persecution.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_farborn",
+      "keywords": [
+        "farborn",
+        "non-kin humans",
+        "freed slaves",
+        "wild static"
+      ],
+      "priority": 7,
+      "content": "Farborn are non-Kin humans who register as Wild Static. They arrived as Domnathar slaves, broke free at Dark Dawn, and built Titan's Rest.",
+      "max_tokens": 80
+    },
+    {
+      "id": "race_giants",
+      "keywords": [
+        "giants",
+        "firstborn",
+        "ancient civilization",
+        "rune-circles",
+        "extinct"
+      ],
+      "priority": 8,
+      "content": "Giants were the Firstborn who shaped Oreka's geography. Their greatest cities were in the Desert. They built rune-circles and structures that still function. Extinct as a living race.",
+      "max_tokens": 80
+    },
+    {
+      "id": "god_dagdan",
+      "keywords": [
+        "dagdan",
+        "united sun",
+        "first ascended"
+      ],
+      "priority": 7,
+      "content": "Dagdan, The United Sun, was the first mortal to achieve apotheosis. Domains: Sun, Good, Magic, Strength. Most widely worshipped Ascended God.",
+      "max_tokens": 80
+    },
+    {
+      "id": "god_harreem",
+      "keywords": [
+        "harreem",
+        "golden rose",
+        "revenge",
+        "retribution",
+        "judged the kings"
+      ],
+      "priority": 7,
+      "content": "Harreem, The Golden Rose, judged the twelve kings and found them wanting. She represents revenge and justice. The Golden Roses order is named after her.",
+      "max_tokens": 80
+    },
+    {
+      "id": "god_kailea",
+      "keywords": [
+        "kailea",
+        "mistress of waves",
+        "healing",
+        "mercy"
+      ],
+      "priority": 7,
+      "content": "Kailea, Mistress of Waves, taught that water heals what fire cannot. Most beloved Ascended God, worshipped by sailors and healers.",
+      "max_tokens": 80
+    },
+    {
+      "id": "god_cinvarin",
+      "keywords": [
+        "cinvarin",
+        "five witnesses",
+        "sacrifice",
+        "druids ascended"
+      ],
+      "priority": 7,
+      "content": "Cinvarin represents five druids who sacrificed themselves to melt a mountain and destroy the Deceiver host at Aldenheim. Holy symbol: five interlocking rings.",
+      "max_tokens": 80
+    },
+    {
+      "id": "god_semyon",
+      "keywords": [
+        "semyon",
+        "hearth mother",
+        "family",
+        "healing"
+      ],
+      "priority": 6,
+      "content": "Semyon, The Hearth Mother, is worshipped at every hearth. Her promise: family is defined by love, not blood.",
+      "max_tokens": 80
+    },
+    {
+      "id": "city_custos",
+      "keywords": [
+        "custos do aeternos",
+        "custos",
+        "largest city",
+        "trade capital"
+      ],
+      "priority": 8,
+      "content": "Custos do Aeternos (25,000) is the largest city in Oreka, where the Twin Rivers converge. Administrative and mercantile heart of the continent.",
+      "max_tokens": 80
+    },
+    {
+      "id": "city_tavranek",
+      "keywords": [
+        "tavranek",
+        "windstone",
+        "mytroan capital"
+      ],
+      "priority": 8,
+      "content": "Tavranek (6,000) is the Eternal Steppe capital around the Great Windstone. Governed by Boss Sarava Windmane.",
+      "max_tokens": 80
+    },
+    {
+      "id": "city_kharazhad",
+      "keywords": [
+        "kharazhad",
+        "volcanic forge",
+        "embersteel",
+        "high thane"
+      ],
+      "priority": 8,
+      "content": "Kharazhad (20,000) is a fortress-forge in a volcanic caldera. Central forge burning 3,000 years. Produces Embersteel weapons. Governed by High Thane Karveth Stonefire.",
+      "max_tokens": 80
+    },
+    {
+      "id": "city_highridge",
+      "keywords": [
+        "highridge",
+        "scorchspires",
+        "taraf-imro stronghold"
+      ],
+      "priority": 7,
+      "content": "Highridge (6,000) is the Taraf-Imro stronghold. Produces Embersteel Blades. A Deceiver artifact burns in the lava tubes beneath it.",
+      "max_tokens": 80
+    },
+    {
+      "id": "city_titans_rest",
+      "keywords": [
+        "titan's rest",
+        "titans rest",
+        "farborn city",
+        "chainless legion home"
+      ],
+      "priority": 8,
+      "content": "Titan's Rest (28,000) is the largest Farborn settlement, home to the Chainless Legion. At the foot of the Lone Titan, whose roots disrupt Domnathar scrying.",
+      "max_tokens": 80
+    }
+  ]
+}

@@ -300,21 +300,57 @@ async def _handle_client(ws, world):
                 if not text:
                     continue
 
-                # Call the AI response pipeline with the real or ghost player
+                # Unified prompt pipeline — same function the MUD uses
                 try:
-                    from src import ai
-                    response = await ai.get_npc_response(
+                    from src.prompt_pipeline import (
+                        build_npc_prompt, extract_and_save_memory
+                    )
+                    from src.ai import _call_ollama, _config
+
+                    system_prompt, user_prompt = build_npc_prompt(
                         npc=session.npc,
                         player=session.player,
                         message=text,
                         room=session.room,
-                        use_llm=True,
+                        conversation_history=session.history,
+                        mode="chat",
                     )
+                    if _config["enabled"]:
+                        response = await _call_ollama(user_prompt,
+                                                       system_prompt)
+                        if response:
+                            response = response.strip().strip('"').strip("'")
+                            if len(response) > 500:
+                                response = response[:497] + "..."
+                        else:
+                            response = "(The NPC says nothing.)"
+                    else:
+                        response = "(AI is currently disabled.)"
                 except Exception as e:
-                    response = f"(The NPC stares blankly. AI error: {e})"
+                    # Fallback to old direct path
+                    try:
+                        from src import ai
+                        response = await ai.get_npc_response(
+                            npc=session.npc,
+                            player=session.player,
+                            message=text,
+                            room=session.room,
+                            use_llm=True,
+                        )
+                    except Exception:
+                        response = f"(AI error: {e})"
 
                 session.history.append(("player", text))
                 session.history.append(("npc", response))
+
+                # Save NPC memory every 5 exchanges
+                if len(session.history) % 10 == 0:
+                    try:
+                        extract_and_save_memory(session.npc,
+                                                 session.player,
+                                                 session.history)
+                    except Exception:
+                        pass
 
                 npc_name = getattr(session.npc, "name", "NPC")
                 await ws.send(json.dumps({
