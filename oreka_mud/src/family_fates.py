@@ -286,7 +286,7 @@ class FamilyFateManager:
                 world.mobs[mob.vnum] = mob
                 room.mobs.append(mob)
                 trail.wave_mobs.append(mob)
-            # Notify the character
+            # Notify the character and auto-initiate combat
             if character is not None:
                 try:
                     from src.chat import send_to_player
@@ -296,6 +296,14 @@ class FamilyFateManager:
                         f"broken doorway, blades drawn.\033[0m")
                 except Exception:
                     pass
+                # Auto-start combat: first wave mob attacks the player
+                if trail.wave_mobs and character is not None:
+                    try:
+                        from src.combat import start_combat
+                        first_mob = trail.wave_mobs[-wave_size]  # first of this wave
+                        start_combat(room, first_mob, character)
+                    except Exception as e:
+                        logger.debug("wave auto-combat failed: %s", e)
         except Exception as e:
             logger.exception("wave spawn failed: %s", e)
 

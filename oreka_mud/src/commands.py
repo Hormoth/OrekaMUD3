@@ -15037,23 +15037,90 @@ def cmd_present(self, character, args):
         return f"You aren't carrying anything matching '{args}'."
 
     from src.captives import is_captive_token, on_token_delivered
-    if not is_captive_token(token):
-        return f"The {getattr(token, 'name', 'item')} isn't a captive-token."
 
-    # Try every NPC in the room until one recognizes it
-    npcs = [m for m in getattr(room, 'mobs', []) or [] if m is not None]
-    for npc in npcs:
-        result = on_token_delivered(character, token, npc)
-        if result is not None:
-            # Consume the token
+    # --- Path A: captive-token delivery ---
+    if is_captive_token(token):
+        npcs = [m for m in getattr(room, 'mobs', []) or [] if m is not None]
+        for npc in npcs:
+            result = on_token_delivered(character, token, npc)
+            if result is not None:
+                try:
+                    character.inventory.remove(token)
+                except Exception:
+                    pass
+                return result
+        return ("You look around, but no one here seems to recognize "
+                "the token. Perhaps you're in the wrong town.")
+
+    # --- Path B: faction hand-in items (Cipher-Tablets, etc.) ---
+    # Items with "faction" in properties can be traded to faction NPCs
+    # for reputation + gold.
+    FACTION_HANDINS = {
+        708: {  # Dómnathar Cipher-Tablet
+            "accepted_factions": ["gatefall_remnant", "far_riders", "silent_concord", "golden_roses"],
+            "rep_amount": 30,
+            "gold": 50,
+            "narrative": (
+                "takes the tablet carefully and holds it up to the light.\n"
+                "\"Dómnathar cipher-work. Our scribes will have this translated by "
+                "nightfall. You've done us a genuine service.\""
+            ),
+        },
+    }
+    item_vnum = getattr(token, 'vnum', None)
+    handin = FACTION_HANDINS.get(item_vnum)
+    if handin is None:
+        # Check properties for generic "faction" tag
+        props = [str(p).lower() for p in getattr(token, 'properties', []) or []]
+        if "faction" not in props:
+            return f"The {getattr(token, 'name', 'item')} isn't something anyone here wants."
+
+    if handin:
+        npcs = [m for m in getattr(room, 'mobs', []) or [] if m is not None]
+        for npc in npcs:
+            npc_flags = {str(f).lower() for f in getattr(npc, 'flags', []) or []}
+            if not ("family_rep" in npc_flags or "quest_giver" in npc_flags):
+                continue
+            # Check if this NPC's faction accepts the item
+            # Match via the family-anchor data
             try:
-                character.inventory.remove(token)
+                from src.captives import get_data as _cd
+                families = _cd().families
+                npc_name = getattr(npc, 'name', '').lower()
+                for fam in families.values():
+                    if fam['representative_npc'].lower() in npc_name \
+                       or npc_name in fam['representative_npc'].lower():
+                        if fam.get('faction_id') in handin['accepted_factions']:
+                            # Match! Hand in the item.
+                            try:
+                                character.inventory.remove(token)
+                            except Exception:
+                                pass
+                            gold = handin['gold']
+                            character.gold = getattr(character, 'gold', 0) + gold
+                            rep = handin['rep_amount']
+                            faction_msg = ""
+                            try:
+                                from src.factions import get_faction_manager
+                                fm = get_faction_manager()
+                                result = fm.modify_reputation(
+                                    character, fam['faction_id'], rep,
+                                    reason=f"delivered intelligence to {fam['family_name']}")
+                                if isinstance(result, tuple) and result:
+                                    faction_msg = "\n" + str(result[-1])
+                            except Exception:
+                                pass
+                            return (
+                                f"\033[1;36m{npc.name} {handin['narrative']}\033[0m\n"
+                                f"\033[1;33m{npc.name} presses {gold} gold into "
+                                f"your palm.\033[0m"
+                                + faction_msg
+                            )
             except Exception:
                 pass
-            return result
+        return ("You look around, but no one here wants what you're offering.")
 
-    return ("You look around, but no one here seems to recognize "
-            "the token. Perhaps you're in the wrong town.")
+    return f"The {getattr(token, 'name', 'item')} isn't something anyone here wants."
 
 
 def cmd_spawn_captive(self, character, args):

@@ -45880,5 +45880,2236 @@
     "captive_captor_type": "Zombie group",
     "captive_state": "bound",
     "rescue_type": "leader"
+  },
+  {
+    "name": "Wight",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      0
+    ],
+    "ac": 15,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- a wight is elemental absence, the dead animated by hunger without any of the elemental identity that defined them in life"
+    ],
+    "room_vnum": 5204,
+    "type_": "Undead",
+    "alignment": "Always lawful evil",
+    "ability_scores": {
+      "Str": 12,
+      "Dex": 12,
+      "Con": null,
+      "Int": 11,
+      "Wis": 13,
+      "Cha": 15
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "slam",
+        "bonus": 3,
+        "damage": "1d4+1 plus energy drain"
+      }
+    ],
+    "special_attacks": [
+      "Create spawn",
+      "energy drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "undead traits",
+      "elemental resonance (none - hungry absence)"
+    ],
+    "feats": [
+      "Alertness",
+      "Blind-Fight"
+    ],
+    "skills": {
+      "Hide": 8,
+      "Listen": 7,
+      "Move Silently": 16,
+      "Spot": 7
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 2,
+      "Will": 5
+    },
+    "environment": "Any (barrows, crypts, battlefields, and sealed burial-chambers across Oreka -- wherever the dead were interred without proper rites or where necromantic contamination has reached preserved corpses)",
+    "organization": "Solitary, pair, gang (3-5), or pack (6-11)",
+    "cr": 3,
+    "advancement": "5-8 HD (Medium)",
+    "description": "The barrow opens into a chamber that has not been touched by light since it was sealed. The figure inside is standing -- not lying, not seated, but standing against the back wall with its arms at its sides and its eyes open. It was Kin once. You can tell by the bone-structure, the remnants of clothing, the corroded weapon still gripped in one hand. But the eyes are wrong -- flat, lightless, and lit from within by something that is not life. It sees you. It steps forward. The temperature drops.",
+    "vnum": 4346,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 700,
+        "chance": 0.2
+      }
+    ]
+  },
+  {
+    "name": "Stirge",
+    "level": 1,
+    "hp_dice": [
+      1,
+      10,
+      0
+    ],
+    "ac": 16,
+    "damage_dice": [
+      0,
+      0,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:None -- stirges have no elemental resonance; they are blood-feeding parasites that register on Kin-sense as barely-there biological noise, too small and too simple to carry elemental identity"
+    ],
+    "room_vnum": 5220,
+    "type_": "Magical Beast",
+    "alignment": "Always neutral",
+    "ability_scores": {
+      "Str": 3,
+      "Dex": 19,
+      "Con": 10,
+      "Int": 1,
+      "Wis": 12,
+      "Cha": 6
+    },
+    "initiative": 4,
+    "speed": {
+      "land": 10,
+      "fly": 40
+    },
+    "attacks": [
+      {
+        "type": "touch",
+        "bonus": 7,
+        "damage": "attach"
+      }
+    ],
+    "special_attacks": [
+      "Attach",
+      "blood drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "scent",
+      "elemental resonance (none - vermin-analogue)"
+    ],
+    "feats": [
+      "Alertness",
+      "Weapon FinesseB"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 4,
+      "Spot": 4
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 6,
+      "Will": 1
+    },
+    "environment": "Deepwater Marches (the warm, humid marshlands and swamp-forests of the Deepwater Marches -- specifically the stagnant pools, reed-beds, and dense undergrowth where stirge swarms breed in standing water)",
+    "organization": "Colony (2-4), flock (5-8), or storm (9-14)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "The first one lands on your neck before you feel it. That is the thing about stirges -- they are small, they are quiet, and they latch on before you know they are there. The proboscis is thin as a needle and slides into your skin with a precision that a surgeon would envy. By the time you slap at it, the first pint is already gone. The second stirge lands on your arm. The third is on the horse. There are more in the air -- a dozen, two dozen, darting and hovering like oversized mosquitoes with ...",
+    "vnum": 4347,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Sand Wraith",
+    "level": 5,
+    "hp_dice": [
+      5,
+      12,
+      0
+    ],
+    "ac": 15,
+    "damage_dice": [
+      1,
+      6,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:All four Elemental Lords (fragmented); strongest resonance with the Lord of Stone -- a Sand Wraith's elemental signature is the shattered remnant of a Giant's full four-element harmony, broken and looping like a record stuck in a groove"
+    ],
+    "room_vnum": 5225,
+    "type_": "Undead",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": null,
+      "Dex": 16,
+      "Con": null,
+      "Int": 8,
+      "Wis": 14,
+      "Cha": 15
+    },
+    "initiative": 3,
+    "speed": {
+      "fly": 30
+    },
+    "attacks": [
+      {
+        "type": "desiccating touch",
+        "bonus": 5,
+        "damage": "1d6 plus desiccation"
+      }
+    ],
+    "special_attacks": [
+      "Desiccating touch",
+      "sand shriek"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "incorporeal traits",
+      "undead traits",
+      "sand form",
+      "elemental resonance (all four - fragmented Giant echo)",
+      "Kin-sense signature"
+    ],
+    "feats": [
+      "Alertness",
+      "Improved Initiative"
+    ],
+    "skills": {
+      "Hide": 11,
+      "Listen": 10,
+      "Search": 7,
+      "Spot": 10
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 4,
+      "Will": 6
+    },
+    "environment": "The Infinite Desert (Giant ruins, dune-seas; thickest concentration at the Sunken Thrones, Tharok's Pillar, and the deep dune-seas; rare sightings at the Apelian Sea's submerged Giant piers in the Deepwater Marches)",
+    "organization": "Solitary, pair, or mourning (3-6)",
+    "cr": 5,
+    "advancement": "6-10 HD (Medium); 11-15 HD (Large)",
+    "description": "The ruin ahead is half-buried -- the upper columns of what was once a Giant plaza project from the dune like the ribs of a vast skeleton, and the sand between them moves in patterns that have nothing to do with the wind. A shape gathers in the air above the columns: tall, vaguely humanoid, composed entirely of swirling sand and grit. Dim amber light burns where its eyes should be. The sound it produces is less a voice than a sustained, low howl of desert wind forced through a space too narrow ...",
+    "vnum": 4348,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 700,
+        "chance": 0.2
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "level": 1,
+    "hp_dice": [
+      1,
+      12,
+      0
+    ],
+    "ac": 13,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- skeletons are animated objects, not elemental beings; they have no resonance, no signature, and no connection to the elemental system -- they are bones made to move by magic, nothing more"
+    ],
+    "room_vnum": 5243,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 13,
+      "Dex": 13,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": 5,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "claws",
+        "bonus": 1,
+        "damage": "1d4+1"
+      },
+      {
+        "type": "short sword",
+        "bonus": 1,
+        "damage": "1d6+1/19-20"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Damage reduction 5/bludgeoning",
+      "darkvision 60 ft.",
+      "immunity to cold",
+      "undead traits",
+      "elemental resonance (none - animated bone)"
+    ],
+    "feats": [
+      "Improved Initiative"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 1,
+      "Will": 2
+    },
+    "environment": "Any (wherever the dead are raised -- battlefields, crypts, Dómnathar tunnels, necromantic workshops, cursed sites where ambient death-energy animates remains without a spellcaster's intervention)",
+    "organization": "Any",
+    "cr": 0.33,
+    "advancement": "--",
+    "description": "Medium Undead",
+    "vnum": 4349,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Storm Wisp",
+    "level": 3,
+    "hp_dice": [
+      3,
+      8,
+      0
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:Youngest Brother (Air) -- raw; the purest, most unrefined expression of the Youngest Brother's domain, wind as playful electrical discharge, the air-element at its most mischievous and least controlled"
+    ],
+    "room_vnum": 5244,
+    "type_": "Elemental",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 4,
+      "Dex": 17,
+      "Con": 10,
+      "Int": 4,
+      "Wis": 12,
+      "Cha": 13
+    },
+    "initiative": 7,
+    "speed": {
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "electric touch",
+        "bonus": 7,
+        "damage": "1d6 electricity"
+      }
+    ],
+    "special_attacks": [
+      "Electric touch",
+      "static burst"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "electricity immunity",
+      "natural invisibility",
+      "wind dependent",
+      "gaseous form",
+      "earth/acid vulnerability",
+      "elemental resonance (air - raw static)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Improved Initiative",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 7,
+      "Move Silently": 9,
+      "Spot": 7
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 6,
+      "Will": 2
+    },
+    "environment": "Great Forests (primary -- the forest canopy and clearings during storm season) and Eternal Steppe (secondary -- open grasslands during thunderstorms); anywhere with frequent storms and sustained wind",
+    "organization": "Solitary, pair, or swirl (3-6)",
+    "cr": 2,
+    "advancement": "4-6 HD (Tiny); 7-9 HD (Small -- transition toward Storm Herald)",
+    "description": "The air crackles. A blue-white sphere of light -- no larger than a fist, but bright enough to leave afterimages -- darts between the trees, pauses, darts again. It moves like a dragonfly: sudden direction-changes, instantaneous stops, bursts of speed that defy any creature with mass. Your arm-hair stands up. The taste of metal fills your mouth. The Pasua scout beside you grins. 'Wisp,' she says. 'Don't touch. Don't touch anything metal.'",
+    "vnum": 4350,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Stirge",
+    "level": 1,
+    "hp_dice": [
+      1,
+      10,
+      0
+    ],
+    "ac": 16,
+    "damage_dice": [
+      0,
+      0,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:None -- stirges have no elemental resonance; they are blood-feeding parasites that register on Kin-sense as barely-there biological noise, too small and too simple to carry elemental identity"
+    ],
+    "room_vnum": 5245,
+    "type_": "Magical Beast",
+    "alignment": "Always neutral",
+    "ability_scores": {
+      "Str": 3,
+      "Dex": 19,
+      "Con": 10,
+      "Int": 1,
+      "Wis": 12,
+      "Cha": 6
+    },
+    "initiative": 4,
+    "speed": {
+      "land": 10,
+      "fly": 40
+    },
+    "attacks": [
+      {
+        "type": "touch",
+        "bonus": 7,
+        "damage": "attach"
+      }
+    ],
+    "special_attacks": [
+      "Attach",
+      "blood drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "scent",
+      "elemental resonance (none - vermin-analogue)"
+    ],
+    "feats": [
+      "Alertness",
+      "Weapon FinesseB"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 4,
+      "Spot": 4
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 6,
+      "Will": 1
+    },
+    "environment": "Deepwater Marches (the warm, humid marshlands and swamp-forests of the Deepwater Marches -- specifically the stagnant pools, reed-beds, and dense undergrowth where stirge swarms breed in standing water)",
+    "organization": "Colony (2-4), flock (5-8), or storm (9-14)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "The first one lands on your neck before you feel it. That is the thing about stirges -- they are small, they are quiet, and they latch on before you know they are there. The proboscis is thin as a needle and slides into your skin with a precision that a surgeon would envy. By the time you slap at it, the first pint is already gone. The second stirge lands on your arm. The third is on the horse. There are more in the air -- a dozen, two dozen, darting and hovering like oversized mosquitoes with ...",
+    "vnum": 4351,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Ember Drake",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      8
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      2
+    ],
+    "flags": [
+      "elemental_affinity:Lady of Fire (Fire) -- pure, undiluted fire-affinity; the ember drake is the Lady's domain in its most accessible form"
+    ],
+    "room_vnum": 5260,
+    "type_": "Dragon",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 14,
+      "Dex": 15,
+      "Con": 14,
+      "Int": 6,
+      "Wis": 12,
+      "Cha": 10
+    },
+    "initiative": 2,
+    "speed": {
+      "land": 30,
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "bite",
+        "bonus": 7,
+        "damage": "1d6+2 plus 1d4 fire"
+      },
+      {
+        "type": "claws",
+        "bonus": 5,
+        "damage": "1d4+1"
+      }
+    ],
+    "special_attacks": [
+      "Breath weapon"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "immunity to fire",
+      "vulnerability to cold",
+      "heat aura",
+      "forge bond",
+      "elemental resonance (Fire)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Multiattack",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 10,
+      "Listen": 8,
+      "Spot": 8
+    },
+    "saves": {
+      "Fort": 6,
+      "Ref": 6,
+      "Will": 5
+    },
+    "environment": "Scorchspires (volcanic vents, lava tubes, caldera edges, and Rarozhki forge-halls); secondary presence in the Emberfang Mountains, Ashen Crown, and volcanic vents in the Infinite Desert",
+    "organization": "Solitary or clutch (2-4)",
+    "cr": 3,
+    "advancement": "5-8 HD (Small); see Elder Drake and Emberfang Wyrm for mature forms",
+    "description": "It sits on the forge-rim like a cat sits on a warm hearth -- compact, content, and radiating heat that makes the air shimmer. It is the size of a large dog, scaled in overlapping plates of orange-red that shift to white-hot at the edges, and its eyes glow like coals. A thin trail of smoke curls from each nostril. The Rarozhki smith working at the forge does not look up. The drake has been here longer than he has. It was here when his grandfather lit this forge for the first time, and it will b...",
+    "vnum": 4352,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "level": 1,
+    "hp_dice": [
+      1,
+      12,
+      0
+    ],
+    "ac": 13,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- skeletons are animated objects, not elemental beings; they have no resonance, no signature, and no connection to the elemental system -- they are bones made to move by magic, nothing more"
+    ],
+    "room_vnum": 5261,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 13,
+      "Dex": 13,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": 5,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "claws",
+        "bonus": 1,
+        "damage": "1d4+1"
+      },
+      {
+        "type": "short sword",
+        "bonus": 1,
+        "damage": "1d6+1/19-20"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Damage reduction 5/bludgeoning",
+      "darkvision 60 ft.",
+      "immunity to cold",
+      "undead traits",
+      "elemental resonance (none - animated bone)"
+    ],
+    "feats": [
+      "Improved Initiative"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 1,
+      "Will": 2
+    },
+    "environment": "Any (wherever the dead are raised -- battlefields, crypts, Dómnathar tunnels, necromantic workshops, cursed sites where ambient death-energy animates remains without a spellcaster's intervention)",
+    "organization": "Any",
+    "cr": 0.33,
+    "advancement": "--",
+    "description": "Medium Undead",
+    "vnum": 4353,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "level": 1,
+    "hp_dice": [
+      1,
+      12,
+      0
+    ],
+    "ac": 13,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- skeletons are animated objects, not elemental beings; they have no resonance, no signature, and no connection to the elemental system -- they are bones made to move by magic, nothing more"
+    ],
+    "room_vnum": 5280,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 13,
+      "Dex": 13,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": 5,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "claws",
+        "bonus": 1,
+        "damage": "1d4+1"
+      },
+      {
+        "type": "short sword",
+        "bonus": 1,
+        "damage": "1d6+1/19-20"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Damage reduction 5/bludgeoning",
+      "darkvision 60 ft.",
+      "immunity to cold",
+      "undead traits",
+      "elemental resonance (none - animated bone)"
+    ],
+    "feats": [
+      "Improved Initiative"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 1,
+      "Will": 2
+    },
+    "environment": "Any (wherever the dead are raised -- battlefields, crypts, Dómnathar tunnels, necromantic workshops, cursed sites where ambient death-energy animates remains without a spellcaster's intervention)",
+    "organization": "Any",
+    "cr": 0.33,
+    "advancement": "--",
+    "description": "Medium Undead",
+    "vnum": 4354,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.3
+      },
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Zombie",
+    "level": 2,
+    "hp_dice": [
+      2,
+      12,
+      3
+    ],
+    "ac": 11,
+    "damage_dice": [
+      1,
+      6,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- a zombie's resonance is absence, like a wight's, but less -- a wight hungers, a zombie does not even have that; it is the absolute minimum of undeath, meat animated by the thinnest thread of necromantic energy, registering on Kin-sense as 'dead thing moving' with no further complexity"
+    ],
+    "room_vnum": 5283,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 12,
+      "Dex": 8,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": -1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "slam",
+        "bonus": 2,
+        "damage": "1d6+1"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Single actions only",
+      "damage reduction 5/slashing",
+      "darkvision 60 ft.",
+      "undead traits",
+      "elemental resonance (none - rotting absence)"
+    ],
+    "feats": [
+      "Toughness"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": -1,
+      "Will": 3
+    },
+    "environment": "Any (zombies appear wherever necromantic contamination meets preserved corpses -- battlefields, mass graves, Dómnathar-influenced zones, and locations where the boundary between life and death has been thinned by catastrophe or dark magic)",
+    "organization": "Solitary, pair, group (3-5), or mob (6-20)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "It walks. That is the horror of it -- not the rot, not the smell, not the exposed bone or the grey-green skin or the blank, staring eyes. The horror is that it walks. It was a person. You can see the person it was -- the build, the clothing, the face. And now it walks toward you with its arms out and its mouth open and no thought behind the eyes at all. Nothing. Not hunger, not malice, not pain. Nothing. It is meat that remembers how to move and has forgotten everything else.",
+    "vnum": 4355,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "name": "Stirge",
+    "level": 1,
+    "hp_dice": [
+      1,
+      10,
+      0
+    ],
+    "ac": 16,
+    "damage_dice": [
+      0,
+      0,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:None -- stirges have no elemental resonance; they are blood-feeding parasites that register on Kin-sense as barely-there biological noise, too small and too simple to carry elemental identity"
+    ],
+    "room_vnum": 5284,
+    "type_": "Magical Beast",
+    "alignment": "Always neutral",
+    "ability_scores": {
+      "Str": 3,
+      "Dex": 19,
+      "Con": 10,
+      "Int": 1,
+      "Wis": 12,
+      "Cha": 6
+    },
+    "initiative": 4,
+    "speed": {
+      "land": 10,
+      "fly": 40
+    },
+    "attacks": [
+      {
+        "type": "touch",
+        "bonus": 7,
+        "damage": "attach"
+      }
+    ],
+    "special_attacks": [
+      "Attach",
+      "blood drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "scent",
+      "elemental resonance (none - vermin-analogue)"
+    ],
+    "feats": [
+      "Alertness",
+      "Weapon FinesseB"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 4,
+      "Spot": 4
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 6,
+      "Will": 1
+    },
+    "environment": "Deepwater Marches (the warm, humid marshlands and swamp-forests of the Deepwater Marches -- specifically the stagnant pools, reed-beds, and dense undergrowth where stirge swarms breed in standing water)",
+    "organization": "Colony (2-4), flock (5-8), or storm (9-14)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "The first one lands on your neck before you feel it. That is the thing about stirges -- they are small, they are quiet, and they latch on before you know they are there. The proboscis is thin as a needle and slides into your skin with a precision that a surgeon would envy. By the time you slap at it, the first pint is already gone. The second stirge lands on your arm. The third is on the horse. There are more in the air -- a dozen, two dozen, darting and hovering like oversized mosquitoes with ...",
+    "vnum": 4356,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "level": 1,
+    "hp_dice": [
+      1,
+      12,
+      0
+    ],
+    "ac": 13,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- skeletons are animated objects, not elemental beings; they have no resonance, no signature, and no connection to the elemental system -- they are bones made to move by magic, nothing more"
+    ],
+    "room_vnum": 5300,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 13,
+      "Dex": 13,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": 5,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "claws",
+        "bonus": 1,
+        "damage": "1d4+1"
+      },
+      {
+        "type": "short sword",
+        "bonus": 1,
+        "damage": "1d6+1/19-20"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Damage reduction 5/bludgeoning",
+      "darkvision 60 ft.",
+      "immunity to cold",
+      "undead traits",
+      "elemental resonance (none - animated bone)"
+    ],
+    "feats": [
+      "Improved Initiative"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 1,
+      "Will": 2
+    },
+    "environment": "Any (wherever the dead are raised -- battlefields, crypts, Dómnathar tunnels, necromantic workshops, cursed sites where ambient death-energy animates remains without a spellcaster's intervention)",
+    "organization": "Any",
+    "cr": 0.33,
+    "advancement": "--",
+    "description": "Medium Undead",
+    "vnum": 4357,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Stirge",
+    "level": 1,
+    "hp_dice": [
+      1,
+      10,
+      0
+    ],
+    "ac": 16,
+    "damage_dice": [
+      0,
+      0,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:None -- stirges have no elemental resonance; they are blood-feeding parasites that register on Kin-sense as barely-there biological noise, too small and too simple to carry elemental identity"
+    ],
+    "room_vnum": 5300,
+    "type_": "Magical Beast",
+    "alignment": "Always neutral",
+    "ability_scores": {
+      "Str": 3,
+      "Dex": 19,
+      "Con": 10,
+      "Int": 1,
+      "Wis": 12,
+      "Cha": 6
+    },
+    "initiative": 4,
+    "speed": {
+      "land": 10,
+      "fly": 40
+    },
+    "attacks": [
+      {
+        "type": "touch",
+        "bonus": 7,
+        "damage": "attach"
+      }
+    ],
+    "special_attacks": [
+      "Attach",
+      "blood drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "scent",
+      "elemental resonance (none - vermin-analogue)"
+    ],
+    "feats": [
+      "Alertness",
+      "Weapon FinesseB"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 4,
+      "Spot": 4
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 6,
+      "Will": 1
+    },
+    "environment": "Deepwater Marches (the warm, humid marshlands and swamp-forests of the Deepwater Marches -- specifically the stagnant pools, reed-beds, and dense undergrowth where stirge swarms breed in standing water)",
+    "organization": "Colony (2-4), flock (5-8), or storm (9-14)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "The first one lands on your neck before you feel it. That is the thing about stirges -- they are small, they are quiet, and they latch on before you know they are there. The proboscis is thin as a needle and slides into your skin with a precision that a surgeon would envy. By the time you slap at it, the first pint is already gone. The second stirge lands on your arm. The third is on the horse. There are more in the air -- a dozen, two dozen, darting and hovering like oversized mosquitoes with ...",
+    "vnum": 4358,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Wight",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      0
+    ],
+    "ac": 15,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- a wight is elemental absence, the dead animated by hunger without any of the elemental identity that defined them in life"
+    ],
+    "room_vnum": 5302,
+    "type_": "Undead",
+    "alignment": "Always lawful evil",
+    "ability_scores": {
+      "Str": 12,
+      "Dex": 12,
+      "Con": null,
+      "Int": 11,
+      "Wis": 13,
+      "Cha": 15
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "slam",
+        "bonus": 3,
+        "damage": "1d4+1 plus energy drain"
+      }
+    ],
+    "special_attacks": [
+      "Create spawn",
+      "energy drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "undead traits",
+      "elemental resonance (none - hungry absence)"
+    ],
+    "feats": [
+      "Alertness",
+      "Blind-Fight"
+    ],
+    "skills": {
+      "Hide": 8,
+      "Listen": 7,
+      "Move Silently": 16,
+      "Spot": 7
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 2,
+      "Will": 5
+    },
+    "environment": "Any (barrows, crypts, battlefields, and sealed burial-chambers across Oreka -- wherever the dead were interred without proper rites or where necromantic contamination has reached preserved corpses)",
+    "organization": "Solitary, pair, gang (3-5), or pack (6-11)",
+    "cr": 3,
+    "advancement": "5-8 HD (Medium)",
+    "description": "The barrow opens into a chamber that has not been touched by light since it was sealed. The figure inside is standing -- not lying, not seated, but standing against the back wall with its arms at its sides and its eyes open. It was Kin once. You can tell by the bone-structure, the remnants of clothing, the corroded weapon still gripped in one hand. But the eyes are wrong -- flat, lightless, and lit from within by something that is not life. It sees you. It steps forward. The temperature drops.",
+    "vnum": 4359,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 700,
+        "chance": 0.2
+      }
+    ]
+  },
+  {
+    "name": "Ember Drake",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      8
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      2
+    ],
+    "flags": [
+      "elemental_affinity:Lady of Fire (Fire) -- pure, undiluted fire-affinity; the ember drake is the Lady's domain in its most accessible form"
+    ],
+    "room_vnum": 5303,
+    "type_": "Dragon",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 14,
+      "Dex": 15,
+      "Con": 14,
+      "Int": 6,
+      "Wis": 12,
+      "Cha": 10
+    },
+    "initiative": 2,
+    "speed": {
+      "land": 30,
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "bite",
+        "bonus": 7,
+        "damage": "1d6+2 plus 1d4 fire"
+      },
+      {
+        "type": "claws",
+        "bonus": 5,
+        "damage": "1d4+1"
+      }
+    ],
+    "special_attacks": [
+      "Breath weapon"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "immunity to fire",
+      "vulnerability to cold",
+      "heat aura",
+      "forge bond",
+      "elemental resonance (Fire)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Multiattack",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 10,
+      "Listen": 8,
+      "Spot": 8
+    },
+    "saves": {
+      "Fort": 6,
+      "Ref": 6,
+      "Will": 5
+    },
+    "environment": "Scorchspires (volcanic vents, lava tubes, caldera edges, and Rarozhki forge-halls); secondary presence in the Emberfang Mountains, Ashen Crown, and volcanic vents in the Infinite Desert",
+    "organization": "Solitary or clutch (2-4)",
+    "cr": 3,
+    "advancement": "5-8 HD (Small); see Elder Drake and Emberfang Wyrm for mature forms",
+    "description": "It sits on the forge-rim like a cat sits on a warm hearth -- compact, content, and radiating heat that makes the air shimmer. It is the size of a large dog, scaled in overlapping plates of orange-red that shift to white-hot at the edges, and its eyes glow like coals. A thin trail of smoke curls from each nostril. The Rarozhki smith working at the forge does not look up. The drake has been here longer than he has. It was here when his grandfather lit this forge for the first time, and it will b...",
+    "vnum": 4360,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Stirge",
+    "level": 1,
+    "hp_dice": [
+      1,
+      10,
+      0
+    ],
+    "ac": 16,
+    "damage_dice": [
+      0,
+      0,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:None -- stirges have no elemental resonance; they are blood-feeding parasites that register on Kin-sense as barely-there biological noise, too small and too simple to carry elemental identity"
+    ],
+    "room_vnum": 5431,
+    "type_": "Magical Beast",
+    "alignment": "Always neutral",
+    "ability_scores": {
+      "Str": 3,
+      "Dex": 19,
+      "Con": 10,
+      "Int": 1,
+      "Wis": 12,
+      "Cha": 6
+    },
+    "initiative": 4,
+    "speed": {
+      "land": 10,
+      "fly": 40
+    },
+    "attacks": [
+      {
+        "type": "touch",
+        "bonus": 7,
+        "damage": "attach"
+      }
+    ],
+    "special_attacks": [
+      "Attach",
+      "blood drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "scent",
+      "elemental resonance (none - vermin-analogue)"
+    ],
+    "feats": [
+      "Alertness",
+      "Weapon FinesseB"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 4,
+      "Spot": 4
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 6,
+      "Will": 1
+    },
+    "environment": "Deepwater Marches (the warm, humid marshlands and swamp-forests of the Deepwater Marches -- specifically the stagnant pools, reed-beds, and dense undergrowth where stirge swarms breed in standing water)",
+    "organization": "Colony (2-4), flock (5-8), or storm (9-14)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "The first one lands on your neck before you feel it. That is the thing about stirges -- they are small, they are quiet, and they latch on before you know they are there. The proboscis is thin as a needle and slides into your skin with a precision that a surgeon would envy. By the time you slap at it, the first pint is already gone. The second stirge lands on your arm. The third is on the horse. There are more in the air -- a dozen, two dozen, darting and hovering like oversized mosquitoes with ...",
+    "vnum": 4361,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Storm Wisp",
+    "level": 3,
+    "hp_dice": [
+      3,
+      8,
+      0
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:Youngest Brother (Air) -- raw; the purest, most unrefined expression of the Youngest Brother's domain, wind as playful electrical discharge, the air-element at its most mischievous and least controlled"
+    ],
+    "room_vnum": 5432,
+    "type_": "Elemental",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 4,
+      "Dex": 17,
+      "Con": 10,
+      "Int": 4,
+      "Wis": 12,
+      "Cha": 13
+    },
+    "initiative": 7,
+    "speed": {
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "electric touch",
+        "bonus": 7,
+        "damage": "1d6 electricity"
+      }
+    ],
+    "special_attacks": [
+      "Electric touch",
+      "static burst"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "electricity immunity",
+      "natural invisibility",
+      "wind dependent",
+      "gaseous form",
+      "earth/acid vulnerability",
+      "elemental resonance (air - raw static)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Improved Initiative",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 7,
+      "Move Silently": 9,
+      "Spot": 7
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 6,
+      "Will": 2
+    },
+    "environment": "Great Forests (primary -- the forest canopy and clearings during storm season) and Eternal Steppe (secondary -- open grasslands during thunderstorms); anywhere with frequent storms and sustained wind",
+    "organization": "Solitary, pair, or swirl (3-6)",
+    "cr": 2,
+    "advancement": "4-6 HD (Tiny); 7-9 HD (Small -- transition toward Storm Herald)",
+    "description": "The air crackles. A blue-white sphere of light -- no larger than a fist, but bright enough to leave afterimages -- darts between the trees, pauses, darts again. It moves like a dragonfly: sudden direction-changes, instantaneous stops, bursts of speed that defy any creature with mass. Your arm-hair stands up. The taste of metal fills your mouth. The Pasua scout beside you grins. 'Wisp,' she says. 'Don't touch. Don't touch anything metal.'",
+    "vnum": 4362,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Ember Drake",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      8
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      2
+    ],
+    "flags": [
+      "elemental_affinity:Lady of Fire (Fire) -- pure, undiluted fire-affinity; the ember drake is the Lady's domain in its most accessible form"
+    ],
+    "room_vnum": 5433,
+    "type_": "Dragon",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 14,
+      "Dex": 15,
+      "Con": 14,
+      "Int": 6,
+      "Wis": 12,
+      "Cha": 10
+    },
+    "initiative": 2,
+    "speed": {
+      "land": 30,
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "bite",
+        "bonus": 7,
+        "damage": "1d6+2 plus 1d4 fire"
+      },
+      {
+        "type": "claws",
+        "bonus": 5,
+        "damage": "1d4+1"
+      }
+    ],
+    "special_attacks": [
+      "Breath weapon"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "immunity to fire",
+      "vulnerability to cold",
+      "heat aura",
+      "forge bond",
+      "elemental resonance (Fire)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Multiattack",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 10,
+      "Listen": 8,
+      "Spot": 8
+    },
+    "saves": {
+      "Fort": 6,
+      "Ref": 6,
+      "Will": 5
+    },
+    "environment": "Scorchspires (volcanic vents, lava tubes, caldera edges, and Rarozhki forge-halls); secondary presence in the Emberfang Mountains, Ashen Crown, and volcanic vents in the Infinite Desert",
+    "organization": "Solitary or clutch (2-4)",
+    "cr": 3,
+    "advancement": "5-8 HD (Small); see Elder Drake and Emberfang Wyrm for mature forms",
+    "description": "It sits on the forge-rim like a cat sits on a warm hearth -- compact, content, and radiating heat that makes the air shimmer. It is the size of a large dog, scaled in overlapping plates of orange-red that shift to white-hot at the edges, and its eyes glow like coals. A thin trail of smoke curls from each nostril. The Rarozhki smith working at the forge does not look up. The drake has been here longer than he has. It was here when his grandfather lit this forge for the first time, and it will b...",
+    "vnum": 4363,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "level": 1,
+    "hp_dice": [
+      1,
+      12,
+      0
+    ],
+    "ac": 13,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- skeletons are animated objects, not elemental beings; they have no resonance, no signature, and no connection to the elemental system -- they are bones made to move by magic, nothing more"
+    ],
+    "room_vnum": 5434,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 13,
+      "Dex": 13,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": 5,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "claws",
+        "bonus": 1,
+        "damage": "1d4+1"
+      },
+      {
+        "type": "short sword",
+        "bonus": 1,
+        "damage": "1d6+1/19-20"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Damage reduction 5/bludgeoning",
+      "darkvision 60 ft.",
+      "immunity to cold",
+      "undead traits",
+      "elemental resonance (none - animated bone)"
+    ],
+    "feats": [
+      "Improved Initiative"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 1,
+      "Will": 2
+    },
+    "environment": "Any (wherever the dead are raised -- battlefields, crypts, Dómnathar tunnels, necromantic workshops, cursed sites where ambient death-energy animates remains without a spellcaster's intervention)",
+    "organization": "Any",
+    "cr": 0.33,
+    "advancement": "--",
+    "description": "Medium Undead",
+    "vnum": 4364,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Ember Drake",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      8
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      2
+    ],
+    "flags": [
+      "elemental_affinity:Lady of Fire (Fire) -- pure, undiluted fire-affinity; the ember drake is the Lady's domain in its most accessible form"
+    ],
+    "room_vnum": 5435,
+    "type_": "Dragon",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 14,
+      "Dex": 15,
+      "Con": 14,
+      "Int": 6,
+      "Wis": 12,
+      "Cha": 10
+    },
+    "initiative": 2,
+    "speed": {
+      "land": 30,
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "bite",
+        "bonus": 7,
+        "damage": "1d6+2 plus 1d4 fire"
+      },
+      {
+        "type": "claws",
+        "bonus": 5,
+        "damage": "1d4+1"
+      }
+    ],
+    "special_attacks": [
+      "Breath weapon"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "low-light vision",
+      "immunity to fire",
+      "vulnerability to cold",
+      "heat aura",
+      "forge bond",
+      "elemental resonance (Fire)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Multiattack",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 10,
+      "Listen": 8,
+      "Spot": 8
+    },
+    "saves": {
+      "Fort": 6,
+      "Ref": 6,
+      "Will": 5
+    },
+    "environment": "Scorchspires (volcanic vents, lava tubes, caldera edges, and Rarozhki forge-halls); secondary presence in the Emberfang Mountains, Ashen Crown, and volcanic vents in the Infinite Desert",
+    "organization": "Solitary or clutch (2-4)",
+    "cr": 3,
+    "advancement": "5-8 HD (Small); see Elder Drake and Emberfang Wyrm for mature forms",
+    "description": "It sits on the forge-rim like a cat sits on a warm hearth -- compact, content, and radiating heat that makes the air shimmer. It is the size of a large dog, scaled in overlapping plates of orange-red that shift to white-hot at the edges, and its eyes glow like coals. A thin trail of smoke curls from each nostril. The Rarozhki smith working at the forge does not look up. The drake has been here longer than he has. It was here when his grandfather lit this forge for the first time, and it will b...",
+    "vnum": 4365,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Sand Wraith",
+    "level": 5,
+    "hp_dice": [
+      5,
+      12,
+      0
+    ],
+    "ac": 15,
+    "damage_dice": [
+      1,
+      6,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:All four Elemental Lords (fragmented); strongest resonance with the Lord of Stone -- a Sand Wraith's elemental signature is the shattered remnant of a Giant's full four-element harmony, broken and looping like a record stuck in a groove"
+    ],
+    "room_vnum": 8204,
+    "type_": "Undead",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": null,
+      "Dex": 16,
+      "Con": null,
+      "Int": 8,
+      "Wis": 14,
+      "Cha": 15
+    },
+    "initiative": 3,
+    "speed": {
+      "fly": 30
+    },
+    "attacks": [
+      {
+        "type": "desiccating touch",
+        "bonus": 5,
+        "damage": "1d6 plus desiccation"
+      }
+    ],
+    "special_attacks": [
+      "Desiccating touch",
+      "sand shriek"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "incorporeal traits",
+      "undead traits",
+      "sand form",
+      "elemental resonance (all four - fragmented Giant echo)",
+      "Kin-sense signature"
+    ],
+    "feats": [
+      "Alertness",
+      "Improved Initiative"
+    ],
+    "skills": {
+      "Hide": 11,
+      "Listen": 10,
+      "Search": 7,
+      "Spot": 10
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 4,
+      "Will": 6
+    },
+    "environment": "The Infinite Desert (Giant ruins, dune-seas; thickest concentration at the Sunken Thrones, Tharok's Pillar, and the deep dune-seas; rare sightings at the Apelian Sea's submerged Giant piers in the Deepwater Marches)",
+    "organization": "Solitary, pair, or mourning (3-6)",
+    "cr": 5,
+    "advancement": "6-10 HD (Medium); 11-15 HD (Large)",
+    "description": "The ruin ahead is half-buried -- the upper columns of what was once a Giant plaza project from the dune like the ribs of a vast skeleton, and the sand between them moves in patterns that have nothing to do with the wind. A shape gathers in the air above the columns: tall, vaguely humanoid, composed entirely of swirling sand and grit. Dim amber light burns where its eyes should be. The sound it produces is less a voice than a sustained, low howl of desert wind forced through a space too narrow ...",
+    "vnum": 4366,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 700,
+        "chance": 0.2
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Spectre",
+    "level": 7,
+    "hp_dice": [
+      7,
+      12,
+      0
+    ],
+    "ac": 15,
+    "damage_dice": [
+      1,
+      8,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:Lady of Fire (Fire) -- extinguished; the resonance of fire that has gone out, heat that has been removed, the Lady of Fire's domain inverted into its opposite -- not cold (which is the absence of heat) but the memory of heat, the agonising awareness of warmth that no longer exists"
+    ],
+    "room_vnum": 8207,
+    "type_": "Undead",
+    "alignment": "Always lawful evil",
+    "ability_scores": {
+      "Str": null,
+      "Dex": 16,
+      "Con": null,
+      "Int": 14,
+      "Wis": 14,
+      "Cha": 15
+    },
+    "initiative": 7,
+    "speed": {
+      "land": 40,
+      "fly": 80
+    },
+    "attacks": [
+      {
+        "type": "incorporeal touch",
+        "bonus": 6,
+        "damage": "1d8 plus energy drain"
+      }
+    ],
+    "special_attacks": [
+      "Energy drain",
+      "create spawn"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "incorporeal traits",
+      "undead traits",
+      "+2 turn resistance",
+      "sunlight powerlessness",
+      "unnatural aura",
+      "elemental resonance (fire - extinguished",
+      "inverted)"
+    ],
+    "feats": [
+      "Alertness",
+      "Blind-Fight",
+      "Improved Initiative"
+    ],
+    "skills": {
+      "Hide": 13,
+      "Intimidate": 12,
+      "Listen": 14,
+      "Search": 12,
+      "Spot": 14,
+      "Survival": 9
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 5,
+      "Will": 7
+    },
+    "environment": "Ashen Hollows (the dead volcanic valleys of the Scorchspire foothills -- places where volcanic activity ceased, where the Lady of Fire's presence once burned and now does not, leaving a residue of elemental grief that produces the most powerful incorporeal undead in the region)",
+    "organization": "Solitary or gang (2-4)",
+    "cr": 7,
+    "advancement": "8-14 HD (Medium)",
+    "description": "The Ashen Hollows are the places where fire died -- the volcanic valleys of the Scorchspire foothills where eruptions once poured lava and now pour nothing, where the ground is cold and grey and the trees are petrified stumps. Nothing lives here. That is the first sign that something dead does. The shape that rises from the grey earth is not smoke -- it is darker than smoke, more defined, and it moves with the deliberate purpose of something that remembers being alive and hates you for still be...",
+    "vnum": 4367,
+    "loot_table": [
+      {
+        "vnum": 700,
+        "chance": 0.2
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Storm Wisp",
+    "level": 3,
+    "hp_dice": [
+      3,
+      8,
+      0
+    ],
+    "ac": 17,
+    "damage_dice": [
+      1,
+      6,
+      0
+    ],
+    "flags": [
+      "elemental_affinity:Youngest Brother (Air) -- raw; the purest, most unrefined expression of the Youngest Brother's domain, wind as playful electrical discharge, the air-element at its most mischievous and least controlled"
+    ],
+    "room_vnum": 6202,
+    "type_": "Elemental",
+    "alignment": "Usually neutral",
+    "ability_scores": {
+      "Str": 4,
+      "Dex": 17,
+      "Con": 10,
+      "Int": 4,
+      "Wis": 12,
+      "Cha": 13
+    },
+    "initiative": 7,
+    "speed": {
+      "fly": 60
+    },
+    "attacks": [
+      {
+        "type": "electric touch",
+        "bonus": 7,
+        "damage": "1d6 electricity"
+      }
+    ],
+    "special_attacks": [
+      "Electric touch",
+      "static burst"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "electricity immunity",
+      "natural invisibility",
+      "wind dependent",
+      "gaseous form",
+      "earth/acid vulnerability",
+      "elemental resonance (air - raw static)",
+      "the Harmony"
+    ],
+    "feats": [
+      "Improved Initiative",
+      "Weapon Finesse"
+    ],
+    "skills": {
+      "Hide": 14,
+      "Listen": 7,
+      "Move Silently": 9,
+      "Spot": 7
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 6,
+      "Will": 2
+    },
+    "environment": "Great Forests (primary -- the forest canopy and clearings during storm season) and Eternal Steppe (secondary -- open grasslands during thunderstorms); anywhere with frequent storms and sustained wind",
+    "organization": "Solitary, pair, or swirl (3-6)",
+    "cr": 2,
+    "advancement": "4-6 HD (Tiny); 7-9 HD (Small -- transition toward Storm Herald)",
+    "description": "The air crackles. A blue-white sphere of light -- no larger than a fist, but bright enough to leave afterimages -- darts between the trees, pauses, darts again. It moves like a dragonfly: sudden direction-changes, instantaneous stops, bursts of speed that defy any creature with mass. Your arm-hair stands up. The taste of metal fills your mouth. The Pasua scout beside you grins. 'Wisp,' she says. 'Don't touch. Don't touch anything metal.'",
+    "vnum": 4368,
+    "loot_table": [
+      {
+        "vnum": 203,
+        "chance": 0.4
+      }
+    ]
+  },
+  {
+    "name": "Draugr",
+    "level": 6,
+    "hp_dice": [
+      6,
+      12,
+      0
+    ],
+    "ac": 19,
+    "damage_dice": [
+      1,
+      8,
+      7
+    ],
+    "flags": [
+      "elemental_affinity:Corrupted -- the draugr carries a distorted echo of the Vestri Earth/Fire resonance, broken by death and further warped by the Dómnathar raising that failed to hold"
+    ],
+    "room_vnum": 6220,
+    "type_": "Undead",
+    "alignment": "Usually lawful neutral",
+    "ability_scores": {
+      "Str": 20,
+      "Dex": 12,
+      "Con": null,
+      "Int": 6,
+      "Wis": 14,
+      "Cha": 14
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 20
+    },
+    "attacks": [
+      {
+        "type": "warhammer",
+        "bonus": 8,
+        "damage": "1d8+7"
+      },
+      {
+        "type": "slam",
+        "bonus": 3,
+        "damage": "1d6+2"
+      }
+    ],
+    "special_attacks": [
+      "Death grip",
+      "barrow stench"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "damage reduction 5/magic",
+      "undead traits",
+      "turn resistance +2",
+      "cold resistance 10",
+      "elemental resonance (corrupted Earth/Fire)",
+      "Dómnathar scar"
+    ],
+    "feats": [
+      "Cleave",
+      "Power Attack",
+      "Weapon Focus (warhammer)"
+    ],
+    "skills": {
+      "Intimidate": 8,
+      "Listen": 8,
+      "Spot": 8
+    },
+    "saves": {
+      "Fort": 2,
+      "Ref": 3,
+      "Will": 7
+    },
+    "environment": "Tidebloom Reach and northern Kinsweave (barrow-mounds, battlefield graves, and ruined fortifications along the route the Deceiver host marched from Hillmeet to Aldenheim -- the 'Dead Road'); secondary presence in the Lament of Kings perimeter",
+    "organization": "Solitary, pair, or warband (3-8)",
+    "cr": 5,
+    "advancement": "7-12 HD (Medium)",
+    "description": "The barrow-mound splits open. It has not been opened by tools -- the stone capstone has been pushed aside from within, scraped along the ground by hands that are still strong after three hundred years. What climbs out is wearing the remains of Vestri plate-armour -- Mithral Legion insignia still visible beneath the corrosion, the breastplate cracked where the killing blow landed. Its eyes glow the dull orange of banked forge-coals. Its beard, once braided in the Vestri warrior tradition, hangs ...",
+    "vnum": 4369,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 700,
+        "chance": 0.2
+      },
+      {
+        "vnum": 301,
+        "chance": 0.15
+      }
+    ]
+  },
+  {
+    "name": "Zombie",
+    "level": 2,
+    "hp_dice": [
+      2,
+      12,
+      3
+    ],
+    "ac": 11,
+    "damage_dice": [
+      1,
+      6,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- a zombie's resonance is absence, like a wight's, but less -- a wight hungers, a zombie does not even have that; it is the absolute minimum of undeath, meat animated by the thinnest thread of necromantic energy, registering on Kin-sense as 'dead thing moving' with no further complexity"
+    ],
+    "room_vnum": 6222,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 12,
+      "Dex": 8,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": -1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "slam",
+        "bonus": 2,
+        "damage": "1d6+1"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Single actions only",
+      "damage reduction 5/slashing",
+      "darkvision 60 ft.",
+      "undead traits",
+      "elemental resonance (none - rotting absence)"
+    ],
+    "feats": [
+      "Toughness"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": -1,
+      "Will": 3
+    },
+    "environment": "Any (zombies appear wherever necromantic contamination meets preserved corpses -- battlefields, mass graves, Dómnathar-influenced zones, and locations where the boundary between life and death has been thinned by catastrophe or dark magic)",
+    "organization": "Solitary, pair, group (3-5), or mob (6-20)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "It walks. That is the horror of it -- not the rot, not the smell, not the exposed bone or the grey-green skin or the blank, staring eyes. The horror is that it walks. It was a person. You can see the person it was -- the build, the clothing, the face. And now it walks toward you with its arms out and its mouth open and no thought behind the eyes at all. Nothing. Not hunger, not malice, not pain. Nothing. It is meat that remembers how to move and has forgotten everything else.",
+    "vnum": 4370,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "name": "Skeleton",
+    "level": 1,
+    "hp_dice": [
+      1,
+      12,
+      0
+    ],
+    "ac": 13,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- skeletons are animated objects, not elemental beings; they have no resonance, no signature, and no connection to the elemental system -- they are bones made to move by magic, nothing more"
+    ],
+    "room_vnum": 6222,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 13,
+      "Dex": 13,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": 5,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "claws",
+        "bonus": 1,
+        "damage": "1d4+1"
+      },
+      {
+        "type": "short sword",
+        "bonus": 1,
+        "damage": "1d6+1/19-20"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Damage reduction 5/bludgeoning",
+      "darkvision 60 ft.",
+      "immunity to cold",
+      "undead traits",
+      "elemental resonance (none - animated bone)"
+    ],
+    "feats": [
+      "Improved Initiative"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": 1,
+      "Will": 2
+    },
+    "environment": "Any (wherever the dead are raised -- battlefields, crypts, Dómnathar tunnels, necromantic workshops, cursed sites where ambient death-energy animates remains without a spellcaster's intervention)",
+    "organization": "Any",
+    "cr": 0.33,
+    "advancement": "--",
+    "description": "Medium Undead",
+    "vnum": 4371,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.3
+      }
+    ]
+  },
+  {
+    "name": "Zombie",
+    "level": 2,
+    "hp_dice": [
+      2,
+      12,
+      3
+    ],
+    "ac": 11,
+    "damage_dice": [
+      1,
+      6,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- a zombie's resonance is absence, like a wight's, but less -- a wight hungers, a zombie does not even have that; it is the absolute minimum of undeath, meat animated by the thinnest thread of necromantic energy, registering on Kin-sense as 'dead thing moving' with no further complexity"
+    ],
+    "room_vnum": 6235,
+    "type_": "Undead",
+    "alignment": "Always neutral evil",
+    "ability_scores": {
+      "Str": 12,
+      "Dex": 8,
+      "Con": null,
+      "Int": null,
+      "Wis": 10,
+      "Cha": 1
+    },
+    "initiative": -1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "slam",
+        "bonus": 2,
+        "damage": "1d6+1"
+      }
+    ],
+    "special_attacks": [],
+    "special_qualities": [
+      "Single actions only",
+      "damage reduction 5/slashing",
+      "darkvision 60 ft.",
+      "undead traits",
+      "elemental resonance (none - rotting absence)"
+    ],
+    "feats": [
+      "Toughness"
+    ],
+    "skills": {},
+    "saves": {
+      "Fort": 0,
+      "Ref": -1,
+      "Will": 3
+    },
+    "environment": "Any (zombies appear wherever necromantic contamination meets preserved corpses -- battlefields, mass graves, Dómnathar-influenced zones, and locations where the boundary between life and death has been thinned by catastrophe or dark magic)",
+    "organization": "Solitary, pair, group (3-5), or mob (6-20)",
+    "cr": 0.5,
+    "advancement": "--",
+    "description": "It walks. That is the horror of it -- not the rot, not the smell, not the exposed bone or the grey-green skin or the blank, staring eyes. The horror is that it walks. It was a person. You can see the person it was -- the build, the clothing, the face. And now it walks toward you with its arms out and its mouth open and no thought behind the eyes at all. Nothing. Not hunger, not malice, not pain. Nothing. It is meat that remembers how to move and has forgotten everything else.",
+    "vnum": 4372,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      }
+    ]
+  },
+  {
+    "name": "Wight",
+    "level": 4,
+    "hp_dice": [
+      4,
+      12,
+      0
+    ],
+    "ac": 15,
+    "damage_dice": [
+      1,
+      4,
+      1
+    ],
+    "flags": [
+      "elemental_affinity:None -- a wight is elemental absence, the dead animated by hunger without any of the elemental identity that defined them in life"
+    ],
+    "room_vnum": 6236,
+    "type_": "Undead",
+    "alignment": "Always lawful evil",
+    "ability_scores": {
+      "Str": 12,
+      "Dex": 12,
+      "Con": null,
+      "Int": 11,
+      "Wis": 13,
+      "Cha": 15
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [
+      {
+        "type": "slam",
+        "bonus": 3,
+        "damage": "1d4+1 plus energy drain"
+      }
+    ],
+    "special_attacks": [
+      "Create spawn",
+      "energy drain"
+    ],
+    "special_qualities": [
+      "Darkvision 60 ft.",
+      "undead traits",
+      "elemental resonance (none - hungry absence)"
+    ],
+    "feats": [
+      "Alertness",
+      "Blind-Fight"
+    ],
+    "skills": {
+      "Hide": 8,
+      "Listen": 7,
+      "Move Silently": 16,
+      "Spot": 7
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 2,
+      "Will": 5
+    },
+    "environment": "Any (barrows, crypts, battlefields, and sealed burial-chambers across Oreka -- wherever the dead were interred without proper rites or where necromantic contamination has reached preserved corpses)",
+    "organization": "Solitary, pair, gang (3-5), or pack (6-11)",
+    "cr": 3,
+    "advancement": "5-8 HD (Medium)",
+    "description": "The barrow opens into a chamber that has not been touched by light since it was sealed. The figure inside is standing -- not lying, not seated, but standing against the back wall with its arms at its sides and its eyes open. It was Kin once. You can tell by the bone-structure, the remnants of clothing, the corroded weapon still gripped in one hand. But the eyes are wrong -- flat, lightless, and lit from within by something that is not life. It sees you. It steps forward. The temperature drops.",
+    "vnum": 4373,
+    "loot_table": [
+      {
+        "vnum": 2,
+        "chance": 0.25
+      },
+      {
+        "vnum": 700,
+        "chance": 0.2
+      }
+    ]
   }
 ]
