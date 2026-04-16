@@ -996,7 +996,7 @@ class CommandParser:
             return "Usage: @saveplayer <name>"
         try:
             # This assumes the player is loaded in memory; otherwise, load from file
-            for player in self.world.players:
+            for player in list(self.world.players):
                 if player.name.lower() == name.lower():
                     player.save()
                     return f"Player {name} saved."
@@ -1026,7 +1026,7 @@ class CommandParser:
             return "Usage: @backupplayer <name>"
         try:
             # Just call save, which now always creates a backup
-            for player in self.world.players:
+            for player in list(self.world.players):
                 if player.name.lower() == name.lower():
                     player.save()
                     return f"Backup created for {name}."
@@ -2535,7 +2535,7 @@ class CommandParser:
         return None
 
     def _find_player_by_name(self, name):
-        for player in self.world.players:
+        for player in list(self.world.players):
             if player.name.lower() == name.lower():
                 return player
         return None
@@ -3643,6 +3643,71 @@ class CommandParser:
             lines.append("Quest Log: None")
         return "\n".join(lines)
 
+    # Help category system
+    _help_categories_cache = None
+
+    def _get_help_categories(self):
+        if self._help_categories_cache is not None:
+            return self._help_categories_cache
+        import json, os
+        path = os.path.join(os.path.dirname(__file__), '..', 'data', 'help_categories.json')
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                CommandParser._help_categories_cache = json.load(f)
+        except Exception:
+            CommandParser._help_categories_cache = {}
+        return CommandParser._help_categories_cache
+
+    def _render_help_index(self):
+        cats = self._get_help_categories()
+        W = 72
+        lines = [
+            "+" + "=" * W + "+",
+            "|" + " OREKA HELP ".center(W) + "|",
+            "|" + " Type 'help <category>' for commands in that group ".center(W) + "|",
+            "|" + " Type 'help <command>' for detailed help on a command ".center(W) + "|",
+            "+" + "=" * W + "+",
+            "",
+        ]
+        for cat_name, cat_data in cats.items():
+            desc = cat_data.get("description", "")
+            count = len(cat_data.get("topics", []))
+            key = cat_name.lower().replace(" & ", "_").replace(" ", "_")
+            lines.append(f"  \033[1;33m{cat_name:24s}\033[0m {desc}")
+            lines.append(f"  {'':24s} \033[0;37m({count} topics — type: help {key})\033[0m")
+            lines.append("")
+        lines.append("+" + "-" * W + "+")
+        return "\n".join(lines)
+
+    def _check_help_category(self, topic):
+        cats = self._get_help_categories()
+        # Match by lowercased key: "combat" matches "Combat", "getting_started" matches "Getting Started"
+        for cat_name, cat_data in cats.items():
+            key = cat_name.lower().replace(" & ", "_").replace(" ", "_")
+            if topic == key or topic == cat_name.lower():
+                topics = sorted(cat_data.get("topics", []))
+                W = 72
+                lines = [
+                    "+" + "=" * W + "+",
+                    "|" + f" {cat_name} ".center(W) + "|",
+                    "|" + f" {cat_data.get('description', '')} ".center(W) + "|",
+                    "+" + "-" * W + "+",
+                    "",
+                ]
+                # Display in columns of 4
+                row = []
+                for t in topics:
+                    row.append(f"{t:18s}")
+                    if len(row) == 4:
+                        lines.append("  " + "".join(row))
+                        row = []
+                if row:
+                    lines.append("  " + "".join(row))
+                lines.append("")
+                lines.append(f"Type 'help <command>' for details on any command above.")
+                return "\n".join(lines)
+        return None
+
     # All known help topics for prefix matching
     _HELP_TOPICS = {
         "prompt", "combat", "maneuvers", "maneuver", "chat", "movement",
@@ -3665,15 +3730,29 @@ class CommandParser:
     def cmd_help(self, character, args):
         topic = args.strip().lower() if args else None
 
+        # No args: show categorized help index
+        if not topic:
+            return self._render_help_index()
+
+        # Check if topic is a category name
+        cat_result = self._check_help_category(topic)
+        if cat_result:
+            return cat_result
+
         # Prefix matching on help topics: "help skil" -> "help skills"
-        if topic and topic not in self._HELP_TOPICS:
-            # Also check data-driven topics
+        if topic not in self._HELP_TOPICS:
             all_topics = set(self._HELP_TOPICS)
             if hasattr(self, 'world') and self.world and hasattr(self.world, 'help_topics'):
                 all_topics.update(self.world.help_topics.keys())
+            # Also check category names
+            all_topics.update(self._get_help_categories().keys())
             matches = [t for t in all_topics if t.startswith(topic)]
             if len(matches) == 1:
                 topic = matches[0]
+                # Re-check if it's a category
+                cat_result = self._check_help_category(topic)
+                if cat_result:
+                    return cat_result
             elif len(matches) > 1 and len(matches) <= 8:
                 return f"Which help topic? {', '.join(sorted(matches))}"
 
@@ -3997,7 +4076,7 @@ class CommandParser:
         results = []
         if not args:
             # List all non-AI players
-            for player in self.world.players:
+            for player in list(self.world.players):
                 if getattr(player, 'is_ai', False):
                     continue
                 room = getattr(player, 'room', None)
@@ -4435,7 +4514,7 @@ class CommandParser:
         now = _time.time()
         lines = []
         count = 0
-        for player in self.world.players:
+        for player in list(self.world.players):
             if getattr(player, 'is_ai', False):
                 continue
             # Level range filter
@@ -6263,7 +6342,7 @@ class CommandParser:
                 return "You are not in a guild."
             if char_rank != "Leader":
                 return "Only the Leader can disband the guild."
-            for player in self.world.players:
+            for player in list(self.world.players):
                 if getattr(player, 'guild_name', None) == char_guild:
                     player.guild_name = None
                     player.guild_rank = None
@@ -6276,7 +6355,7 @@ class CommandParser:
                 return "You are not in a guild."
             g = guilds[char_guild]
             online_members = []
-            for player in self.world.players:
+            for player in list(self.world.players):
                 if getattr(player, 'guild_name', None) == char_guild:
                     rank = g['members'].get(player.name, "Member")
                     online_members.append(f"  {player.name} [{rank}]")
