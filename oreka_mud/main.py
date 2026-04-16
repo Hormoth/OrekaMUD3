@@ -16,7 +16,7 @@ from src.feats import FEATS
 from src.spells import SPELLS
 from src.spawning import get_spawn_manager
 from src.wandering_gods import get_wandering_gods
-from src.mcp_bridge import set_world as mcp_set_world, start_mcp_bridge_thread
+from src.mcp_bridge import set_world as mcp_set_world, set_event_loop as mcp_set_loop, start_mcp_bridge_thread
 
 
 import telnetlib3
@@ -260,6 +260,9 @@ async def handle_client(reader, writer, world, parser):
             username = (await reader.readline()).strip()
             if not username:
                 writer.write("No username entered. Try again.\n")
+                continue
+            if len(username) > 20 or len(username) < 2 or not username.replace('_', '').replace('-', '').isalnum():
+                writer.write("Invalid name. Use 2-20 alphanumeric characters.\n")
                 continue
             # Duplicate login handling
             if username in ACTIVE_SESSIONS:
@@ -824,6 +827,7 @@ async def handle_client(reader, writer, world, parser):
     character.writer = writer
     character.reader = reader
     world.players.append(character)
+    world.players_by_name[character.name.lower()] = character
     character.room.players.append(character)
     # Do not announce Dagdan on startup
     if character.name.lower() != "dagdan":
@@ -862,6 +866,16 @@ async def handle_client(reader, writer, world, parser):
     except Exception:
         pass
 
+    # Notify shadow presences in this room that a player logged in
+    try:
+        from src.shadow_presence import shadow_manager
+        shadow_manager.broadcast_event(
+            character.room.vnum,
+            f"{character.name} has entered the world nearby."
+        )
+    except Exception:
+        pass
+
     # Initial room display
     look_result = parser.cmd_look(character, "")
     writer.write(
@@ -874,6 +888,8 @@ async def handle_client(reader, writer, world, parser):
     )
     last_room_vnum = character.room.vnum
     COMBAT_TICK_RATE = 4  # seconds between auto-attack rounds
+    _cmd_times = []  # Rate limiting: timestamps of recent commands
+    _CMD_RATE_LIMIT = 8  # max commands per second
     while True:
         try:
             # In combat: use timeout so combat auto-ticks even without input
@@ -960,6 +976,16 @@ async def handle_client(reader, writer, world, parser):
                 writer.write(f"{character.get_prompt()} ")
                 await writer.drain()
                 continue
+
+            # Rate limiting — prevent command floods
+            _now = time.time()
+            _cmd_times = [t for t in _cmd_times if t > _now - 1.0]
+            if len(_cmd_times) >= _CMD_RATE_LIMIT:
+                writer.write(f"Slow down! ({_CMD_RATE_LIMIT} commands/sec max)\n{character.get_prompt()} ")
+                await writer.drain()
+                continue
+            _cmd_times.append(_now)
+
             command = data.split(maxsplit=1)
             cmd = command[0].lower()
             args = command[1] if len(command) > 1 else ""
@@ -1089,6 +1115,7 @@ async def handle_client(reader, writer, world, parser):
                 gh = gmcp_get(character)
                 if gh:
                     gh.emit_vitals(character)
+                    gh.emit_inventory(character)
                     # Emit room on movement
                     if character.room.vnum != prev_room_vnum:
                         gh.emit_room(character.room, character)
@@ -1130,6 +1157,7 @@ async def handle_client(reader, writer, world, parser):
 
     # Save character on disconnect
     world.players.remove(character)
+    world.players_by_name.pop(character.name.lower(), None)
     character.room.players.remove(character)
     try:
         character.save()
@@ -2047,6 +2075,7 @@ async def main():
     ai_character.is_ai = True
     ai_character.quests.append(world.quests[1])
     world.players.append(ai_character)
+    world.players_by_name[ai_character.name.lower()] = ai_character
     world.rooms[1000].players.append(ai_character)
 
     # Immortal Character: Hareem, The Golden Rose
@@ -2080,6 +2109,7 @@ async def main():
     )
     hareem.is_ai = False
     world.players.append(hareem)
+    world.players_by_name[hareem.name.lower()] = hareem
     world.rooms[1000].players.append(hareem)
 
     logger.info("Starting Oreka MUD server on 0.0.0.0:4000 (raw asyncio TCP)")
@@ -2226,6 +2256,7 @@ async def main():
 
     # Start MCP Bridge (internal REST API on port 8001)
     mcp_set_world(world)
+    mcp_set_loop(asyncio.get_running_loop())
     start_mcp_bridge_thread()
 
     # Load modules (arcs, personas, rooms, quests, hooks)
@@ -2276,6 +2307,14 @@ async def main():
         _ws_task = asyncio.create_task(start_websocket_server())
     except Exception as e:
         logger.warning(f"WebSocket server not started: {e}")
+
+    # Start standalone NPC chat server (port 8767)
+    _npc_chat_task = None
+    try:
+        from src.npc_chat_server import start_npc_chat_server
+        _npc_chat_task = asyncio.create_task(start_npc_chat_server(world))
+    except Exception as e:
+        logger.warning(f"NPC Chat server not started: {e}")
 
     # Start live-map WebSocket server + snapshot broadcaster
     _map_ws_task = None
