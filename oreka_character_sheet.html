@@ -2,183 +2,256 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Oreka — Character Sheet</title>
+<title>Oreka — D&D 3.5 Character Sheet</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: #e0e0e0; min-height: 100vh; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #2a2520; color: #1a1a1a; min-height: 100vh; }
 
-#auth-bar { background: #0f3460; padding: 10px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #e94560; }
-#auth-bar h1 { color: #e94560; font-size: 16px; letter-spacing: 2px; }
-#auth-bar input { padding: 5px 10px; background: #1a1a2e; color: #e0e0e0; border: 1px solid #0f3460; border-radius: 4px; font-size: 13px; width: 140px; }
-#auth-bar button { padding: 5px 14px; background: #e94560; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
-#auth-bar .status { color: #888; font-size: 12px; margin-left: auto; }
+/* Auth bar */
+#auth-bar { background: #1a1a1a; padding: 8px 16px; display: flex; align-items: center; gap: 10px; }
+#auth-bar h1 { color: #c4a265; font-size: 14px; letter-spacing: 2px; }
+#auth-bar input { padding: 4px 8px; background: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 3px; font-size: 12px; width: 120px; }
+#auth-bar button { padding: 4px 12px; background: #c4a265; color: #1a1a1a; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; font-weight: bold; }
+#auth-bar .status { color: #888; font-size: 11px; margin-left: auto; }
 
-#sheet { display: none; max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+/* Sheet container - parchment look */
+#sheet { display: none; max-width: 850px; margin: 12px auto; background: #f4ecd8; border: 2px solid #8b7355; padding: 16px 20px; font-size: 11px; color: #1a1a1a; position: relative; }
 
-/* Header */
-.sheet-header { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 20px; padding: 16px; background: #12203a; border-radius: 8px; border: 1px solid #1a3050; }
-.sheet-header .name { font-size: 24px; color: #e94560; font-weight: bold; }
-.sheet-header .detail { color: #999; font-size: 13px; margin-top: 4px; }
-.sheet-header .hp-bar { margin-top: 8px; }
-.sheet-header .hp-bar .bar { height: 20px; background: #333; border-radius: 10px; overflow: hidden; }
-.sheet-header .hp-bar .fill { height: 100%; background: linear-gradient(90deg, #e94560, #3ddc6b); border-radius: 10px; transition: width 0.5s; }
-.sheet-header .hp-text { font-size: 14px; color: #7ec8e3; margin-top: 4px; }
+/* Header row */
+.header-row { display: grid; grid-template-columns: 250px 1fr; gap: 8px; margin-bottom: 10px; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; }
+.char-name-box { border: 2px solid #1a1a1a; padding: 4px 8px; text-align: center; }
+.char-name-box .name { font-size: 20px; font-weight: bold; }
+.char-name-box .label { font-size: 8px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+.header-details { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
+.hd-cell { border: 1px solid #999; padding: 2px 6px; }
+.hd-cell .val { font-weight: bold; font-size: 12px; }
+.hd-cell .lbl { font-size: 7px; color: #666; text-transform: uppercase; }
 
-/* Sections */
-.section { background: #12203a; border: 1px solid #1a3050; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
-.section h2 { color: #e94560; font-size: 14px; letter-spacing: 1px; margin-bottom: 12px; border-bottom: 1px solid #1a3050; padding-bottom: 6px; }
+/* Main layout: left abilities + saves, center combat/HP, right skills */
+.main-grid { display: grid; grid-template-columns: 200px 1fr 250px; gap: 10px; }
 
-/* Abilities */
-.abilities { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
-.ability-box { text-align: center; background: #0a0a1a; border: 1px solid #1a3050; border-radius: 8px; padding: 12px 8px; cursor: pointer; transition: all 0.2s; }
-.ability-box:hover { border-color: #e94560; background: #162040; }
-.ability-box .label { font-size: 11px; color: #7ec8e3; letter-spacing: 1px; }
-.ability-box .score { font-size: 28px; color: #e0e0e0; font-weight: bold; margin: 4px 0; }
-.ability-box .mod { font-size: 16px; color: #e94560; }
+/* Left column: abilities + saves */
+.left-col {}
 
-/* Saves + Combat */
-.combat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.stat-box { text-align: center; background: #0a0a1a; border: 1px solid #1a3050; border-radius: 8px; padding: 12px; cursor: pointer; transition: all 0.2s; }
-.stat-box:hover { border-color: #e94560; }
-.stat-box .label { font-size: 11px; color: #7ec8e3; }
-.stat-box .value { font-size: 22px; color: #e0e0e0; font-weight: bold; margin-top: 4px; }
+/* Ability scores - diamond style */
+.ability-block { margin-bottom: 8px; }
+.ability-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; border-bottom: 1px solid #999; margin-bottom: 6px; padding-bottom: 2px; }
+.ability-row { display: grid; grid-template-columns: 50px 50px 50px; gap: 2px; align-items: center; margin-bottom: 3px; cursor: pointer; padding: 2px; border-radius: 3px; }
+.ability-row:hover { background: #e8dcc8; }
+.ability-name { font-size: 10px; font-weight: bold; text-transform: uppercase; }
+.ability-score { text-align: center; border: 2px solid #1a1a1a; padding: 3px; font-size: 16px; font-weight: bold; background: #fff; }
+.ability-mod { text-align: center; border: 2px solid #1a1a1a; padding: 2px; font-size: 14px; font-weight: bold; background: #e8dcc8; transform: rotate(45deg); width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
+.ability-mod span { transform: rotate(-45deg); }
 
-/* Skills */
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.skill-row { display: flex; justify-content: space-between; padding: 4px 8px; background: #0a0a1a; border-radius: 4px; cursor: pointer; font-size: 13px; }
-.skill-row:hover { background: #162040; }
-.skill-row .mod { color: #e94560; font-weight: bold; }
+/* Saves */
+.saves-block { margin-bottom: 8px; }
+.saves-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; border-bottom: 1px solid #999; margin-bottom: 4px; padding-bottom: 2px; }
+.save-header { display: grid; grid-template-columns: 60px 40px 40px; gap: 2px; font-size: 7px; text-align: center; color: #666; text-transform: uppercase; margin-bottom: 2px; }
+.save-row { display: grid; grid-template-columns: 60px 40px 40px; gap: 2px; margin-bottom: 2px; cursor: pointer; padding: 1px; border-radius: 2px; }
+.save-row:hover { background: #e8dcc8; }
+.save-name { font-size: 10px; font-weight: bold; }
+.save-cell { text-align: center; border: 1px solid #999; padding: 2px; font-size: 12px; font-weight: bold; background: #fff; }
+.save-total { background: #e8dcc8; border: 2px solid #1a1a1a; }
 
-/* Feats + Spells */
-.tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.tag { display: inline-block; padding: 4px 10px; background: #0a0a1a; border: 1px solid #1a3050; border-radius: 14px; font-size: 12px; color: #7ec8e3; }
+/* Base attack / grapple */
+.bab-block { margin-bottom: 8px; }
+.bab-row { display: flex; justify-content: space-between; padding: 3px 6px; border: 1px solid #999; margin-bottom: 2px; cursor: pointer; }
+.bab-row:hover { background: #e8dcc8; }
+.bab-label { font-size: 9px; font-weight: bold; text-transform: uppercase; }
+.bab-value { font-size: 14px; font-weight: bold; }
 
-/* Equipment */
-.equip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.equip-slot { display: flex; justify-content: space-between; padding: 6px 10px; background: #0a0a1a; border-radius: 4px; font-size: 13px; }
-.equip-slot .slot-name { color: #888; }
+/* Center column: HP, AC, Speed, Attacks */
+.center-col {}
 
-/* Dice roller */
-#dice-tray { position: fixed; bottom: 0; left: 0; right: 0; background: #0f3460; border-top: 2px solid #e94560; padding: 12px 20px; display: flex; align-items: center; gap: 12px; z-index: 100; }
-#dice-tray .dice-buttons { display: flex; gap: 6px; }
-#dice-tray button { padding: 8px 14px; background: #1a1a2e; color: #e0e0e0; border: 1px solid #1a3050; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: bold; }
-#dice-tray button:hover { background: #e94560; color: #fff; border-color: #e94560; }
-#dice-result { font-size: 20px; color: #fff; font-weight: bold; min-width: 200px; text-align: center; }
-#dice-result .roll-type { font-size: 12px; color: #888; }
-#dice-result .roll-value { font-size: 28px; color: #e94560; }
-#dice-result .roll-detail { font-size: 12px; color: #999; }
-.nat20 { color: #3ddc6b !important; text-shadow: 0 0 10px rgba(61,220,107,0.5); }
-.nat1 { color: #e94560 !important; text-shadow: 0 0 10px rgba(233,69,96,0.5); }
+/* HP box */
+.hp-box { border: 2px solid #1a1a1a; padding: 8px; margin-bottom: 8px; text-align: center; }
+.hp-box h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.hp-display { font-size: 28px; font-weight: bold; }
+.hp-display .sep { color: #999; }
+.hp-bar-outer { height: 8px; background: #ddd; border-radius: 4px; margin-top: 4px; overflow: hidden; }
+.hp-bar-inner { height: 100%; background: linear-gradient(90deg, #c0392b, #27ae60); border-radius: 4px; }
 
-/* Two-column layout */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } .abilities { grid-template-columns: repeat(3, 1fr); } }
+/* AC box */
+.ac-box { border: 2px solid #1a1a1a; padding: 6px; margin-bottom: 8px; }
+.ac-box h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 4px; }
+.ac-main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; text-align: center; margin-bottom: 4px; }
+.ac-val { font-size: 24px; font-weight: bold; border: 2px solid #1a1a1a; padding: 4px; background: #fff; }
+.ac-label { font-size: 7px; color: #666; text-transform: uppercase; }
+.ac-breakdown { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; text-align: center; }
+.ac-comp { border: 1px solid #999; padding: 2px; }
+.ac-comp .val { font-size: 11px; font-weight: bold; }
+.ac-comp .lbl { font-size: 6px; color: #666; text-transform: uppercase; }
 
-/* Stats row */
-.stats-row { display: flex; gap: 20px; margin-top: 8px; font-size: 12px; color: #888; }
-.stats-row span { color: #7ec8e3; }
+/* Speed + Initiative */
+.speed-init { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 8px; }
+.si-box { border: 1px solid #999; padding: 4px; text-align: center; }
+.si-box .val { font-size: 16px; font-weight: bold; }
+.si-box .lbl { font-size: 7px; color: #666; text-transform: uppercase; }
+
+/* Attacks */
+.attacks-block { border: 2px solid #1a1a1a; padding: 6px; margin-bottom: 8px; }
+.attacks-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.attack-row { display: grid; grid-template-columns: 80px 50px 60px 1fr; gap: 2px; margin-bottom: 2px; font-size: 10px; cursor: pointer; padding: 2px; }
+.attack-row:hover { background: #e8dcc8; }
+.attack-row .cell { border: 1px solid #999; padding: 2px 4px; background: #fff; }
+.attack-row .cell.label { background: transparent; border: none; font-weight: bold; font-size: 8px; color: #666; }
+
+/* Right column: Skills */
+.right-col {}
+.skills-block { border: 2px solid #1a1a1a; padding: 6px; }
+.skills-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; border-bottom: 1px solid #999; margin-bottom: 4px; padding-bottom: 2px; }
+.skill-header { display: grid; grid-template-columns: 1fr 30px 30px; gap: 2px; font-size: 7px; text-align: center; color: #666; text-transform: uppercase; margin-bottom: 2px; }
+.skill-row { display: grid; grid-template-columns: 1fr 30px 30px; gap: 2px; margin-bottom: 1px; cursor: pointer; padding: 1px; font-size: 10px; }
+.skill-row:hover { background: #e8dcc8; }
+.skill-row .sname { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.skill-row .scell { text-align: center; border: 1px solid #ccc; background: #fff; font-weight: bold; }
+
+/* Bottom sections */
+.bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.feat-block, .equip-block { border: 2px solid #1a1a1a; padding: 6px; min-height: 80px; }
+.feat-block h3, .equip-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #999; margin-bottom: 4px; padding-bottom: 2px; }
+.feat-list { font-size: 10px; line-height: 1.6; }
+.equip-list { font-size: 10px; line-height: 1.5; }
+.equip-item { display: flex; justify-content: space-between; border-bottom: 1px dotted #ccc; padding: 1px 0; }
+.gold-box { margin-top: 6px; display: flex; gap: 12px; font-weight: bold; }
+.gold-box .coin { border: 1px solid #999; padding: 2px 8px; background: #fff; }
+
+/* Dice tray */
+#dice-tray { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 2px solid #c4a265; padding: 8px 16px; display: flex; align-items: center; gap: 10px; z-index: 100; }
+#dice-tray button { padding: 6px 12px; background: #333; color: #c4a265; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; }
+#dice-tray button:hover { background: #c4a265; color: #1a1a1a; }
+#dice-result { color: #fff; min-width: 250px; text-align: center; }
+#dice-result .roll-type { font-size: 11px; color: #888; }
+#dice-result .roll-value { font-size: 24px; color: #c4a265; font-weight: bold; }
+#dice-result .roll-detail { font-size: 10px; color: #666; }
+.nat20 { color: #27ae60 !important; }
+.nat1 { color: #c0392b !important; }
+
+.spacer { height: 60px; }
+
+@media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <div id="auth-bar">
-  <h1>OREKA CHARACTER SHEET</h1>
-  <input id="username" type="text" placeholder="Username">
+  <h1>OREKA D&D 3.5 CHARACTER SHEET</h1>
+  <input id="username" type="text" placeholder="Username" autofocus>
   <input id="password" type="password" placeholder="Password">
-  <button id="login-btn">Load Sheet</button>
+  <button id="login-btn">Load</button>
   <span class="status" id="status">Connecting...</span>
 </div>
 
 <div id="sheet">
-  <!-- Header -->
-  <div class="sheet-header">
-    <div>
-      <div class="name" id="char-name">—</div>
-      <div class="detail" id="char-detail">—</div>
-      <div class="detail" id="char-alignment">—</div>
+  <!-- HEADER -->
+  <div class="header-row">
+    <div class="char-name-box">
+      <div class="name" id="h-name">—</div>
+      <div class="label">Character Name</div>
     </div>
-    <div>
-      <div class="hp-bar">
-        <div style="font-size:12px; color:#888; margin-bottom:4px;">Hit Points</div>
-        <div class="bar"><div class="fill" id="hp-fill" style="width:100%"></div></div>
-        <div class="hp-text" id="hp-text">— / —</div>
+    <div class="header-details">
+      <div class="hd-cell"><div class="val" id="h-class">—</div><div class="lbl">Class & Level</div></div>
+      <div class="hd-cell"><div class="val" id="h-race">—</div><div class="lbl">Race</div></div>
+      <div class="hd-cell"><div class="val" id="h-align">—</div><div class="lbl">Alignment</div></div>
+      <div class="hd-cell"><div class="val" id="h-deity">—</div><div class="lbl">Deity</div></div>
+      <div class="hd-cell"><div class="val" id="h-size">Medium</div><div class="lbl">Size</div></div>
+      <div class="hd-cell"><div class="val" id="h-xp">—</div><div class="lbl">Experience Points</div></div>
+    </div>
+  </div>
+
+  <!-- MAIN 3-COLUMN -->
+  <div class="main-grid">
+
+    <!-- LEFT: Abilities + Saves + BAB -->
+    <div class="left-col">
+      <div class="ability-block">
+        <h3>Ability Scores</h3>
+        <div id="abilities"></div>
+      </div>
+      <div class="saves-block">
+        <h3>Saving Throws</h3>
+        <div class="save-header"><div>Save</div><div>Total</div><div>Mod</div></div>
+        <div id="saves"></div>
+      </div>
+      <div class="bab-block">
+        <div class="bab-row" id="bab-melee"><span class="bab-label">Melee Attack</span><span class="bab-value" id="v-melee">+0</span></div>
+        <div class="bab-row" id="bab-ranged"><span class="bab-label">Ranged Attack</span><span class="bab-value" id="v-ranged">+0</span></div>
       </div>
     </div>
-    <div style="text-align:right;">
-      <div class="detail">AC: <span id="char-ac" style="font-size:22px; color:#e94560; font-weight:bold;">—</span></div>
-      <div class="detail">XP: <span id="char-xp" style="color:#7ec8e3;">—</span></div>
-      <div class="detail">Gold: <span id="char-gold" style="color:#ffd700;">—</span></div>
-      <div class="stats-row">
-        Kills: <span id="stat-kills">0</span> &nbsp;
-        Rescues: <span id="stat-rescues">0</span> &nbsp;
-        Explored: <span id="stat-rooms">0</span>
+
+    <!-- CENTER: HP + AC + Speed + Attacks -->
+    <div class="center-col">
+      <div class="hp-box">
+        <h3>Hit Points</h3>
+        <div class="hp-display"><span id="hp-cur">—</span><span class="sep"> / </span><span id="hp-max">—</span></div>
+        <div class="hp-bar-outer"><div class="hp-bar-inner" id="hp-bar" style="width:100%"></div></div>
+      </div>
+      <div class="ac-box">
+        <h3>Armor Class</h3>
+        <div class="ac-main">
+          <div><div class="ac-val" id="ac-total">—</div><div class="ac-label">Total</div></div>
+          <div><div class="ac-val" id="ac-touch">—</div><div class="ac-label">Touch</div></div>
+          <div><div class="ac-val" id="ac-flat">—</div><div class="ac-label">Flat-Footed</div></div>
+        </div>
+        <div class="ac-breakdown">
+          <div class="ac-comp"><div class="val" id="ac-armor">—</div><div class="lbl">Armor</div></div>
+          <div class="ac-comp"><div class="val" id="ac-shield">—</div><div class="lbl">Shield</div></div>
+          <div class="ac-comp"><div class="val" id="ac-dex">—</div><div class="lbl">Dex</div></div>
+          <div class="ac-comp"><div class="val" id="ac-size">—</div><div class="lbl">Size</div></div>
+          <div class="ac-comp"><div class="val" id="ac-natural">—</div><div class="lbl">Natural</div></div>
+          <div class="ac-comp"><div class="val" id="ac-deflect">—</div><div class="lbl">Deflect</div></div>
+        </div>
+      </div>
+      <div class="speed-init">
+        <div class="si-box"><div class="val">30 ft</div><div class="lbl">Speed</div></div>
+        <div class="si-box" style="cursor:pointer" onclick="rollDice(20,0,'Initiative')"><div class="val" id="v-init">+0</div><div class="lbl">Initiative</div></div>
+      </div>
+      <div class="attacks-block">
+        <h3>Attacks</h3>
+        <div class="attack-row"><div class="cell label">Weapon</div><div class="cell label">Atk</div><div class="cell label">Damage</div><div class="cell label">Notes</div></div>
+        <div id="attacks"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Skills -->
+    <div class="right-col">
+      <div class="skills-block">
+        <h3>Skills</h3>
+        <div class="skill-header"><div>Skill Name</div><div>Mod</div><div>Rank</div></div>
+        <div id="skills"></div>
       </div>
     </div>
   </div>
 
-  <!-- Abilities -->
-  <div class="section">
-    <h2>ABILITY SCORES</h2>
-    <div class="abilities" id="abilities"></div>
-  </div>
-
-  <div class="two-col">
-    <!-- Saves -->
-    <div class="section">
-      <h2>SAVING THROWS</h2>
-      <div class="combat-grid" id="saves"></div>
+  <!-- BOTTOM: Feats + Equipment -->
+  <div class="bottom-row">
+    <div class="feat-block">
+      <h3>Feats & Special Abilities</h3>
+      <div class="feat-list" id="feats"></div>
     </div>
-    <!-- Combat -->
-    <div class="section">
-      <h2>COMBAT</h2>
-      <div class="combat-grid" id="combat"></div>
+    <div class="equip-block">
+      <h3>Equipment</h3>
+      <div class="equip-list" id="equipment"></div>
+      <div class="gold-box">
+        <span>GP: <span class="coin" id="gold-val">0</span></span>
+      </div>
     </div>
   </div>
 
-  <div class="two-col">
-    <!-- Skills -->
-    <div class="section">
-      <h2>SKILLS</h2>
-      <div class="skills-grid" id="skills"></div>
-    </div>
-    <!-- Feats -->
-    <div class="section">
-      <h2>FEATS</h2>
-      <div class="tag-list" id="feats"></div>
-      <h2 style="margin-top:16px;">SPELLS KNOWN</h2>
-      <div class="tag-list" id="spells"></div>
-    </div>
-  </div>
-
-  <div class="two-col">
-    <!-- Equipment -->
-    <div class="section">
-      <h2>EQUIPMENT</h2>
-      <div class="equip-grid" id="equipment"></div>
-    </div>
-    <!-- Inventory -->
-    <div class="section">
-      <h2>INVENTORY</h2>
-      <div id="inventory"></div>
-    </div>
-  </div>
-
-  <div style="height: 80px;"></div><!-- spacer for dice tray -->
+  <div class="spacer"></div>
 </div>
 
-<!-- Dice Tray -->
+<!-- DICE TRAY -->
 <div id="dice-tray">
-  <div class="dice-buttons">
-    <button onclick="rollDice(4)">d4</button>
-    <button onclick="rollDice(6)">d6</button>
-    <button onclick="rollDice(8)">d8</button>
-    <button onclick="rollDice(10)">d10</button>
-    <button onclick="rollDice(12)">d12</button>
-    <button onclick="rollDice(20)">d20</button>
-    <button onclick="rollDice(100)">d100</button>
-  </div>
+  <button onclick="rollDice(4)">d4</button>
+  <button onclick="rollDice(6)">d6</button>
+  <button onclick="rollDice(8)">d8</button>
+  <button onclick="rollDice(10)">d10</button>
+  <button onclick="rollDice(12)">d12</button>
+  <button onclick="rollDice(20)">d20</button>
+  <button onclick="rollDice(100)">d100</button>
   <div id="dice-result">
-    <div class="roll-type">Click a die or a stat to roll</div>
+    <div class="roll-type">Click a stat or die to roll</div>
     <div class="roll-value">—</div>
     <div class="roll-detail"></div>
   </div>
@@ -186,197 +259,190 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: 
 
 <script>
 let ws = null;
-let sheetData = null;
 
-// ==================== DICE ====================
 function rollDice(sides, modifier, label) {
   modifier = modifier || 0;
   label = label || ('d' + sides);
   const roll = Math.floor(Math.random() * sides) + 1;
   const total = roll + modifier;
-  const resultEl = document.getElementById('dice-result');
-  const typeEl = resultEl.querySelector('.roll-type');
-  const valueEl = resultEl.querySelector('.roll-value');
-  const detailEl = resultEl.querySelector('.roll-detail');
-
-  typeEl.textContent = label;
-  valueEl.textContent = total;
-  valueEl.className = 'roll-value';
-  if (sides === 20 && roll === 20) { valueEl.classList.add('nat20'); valueEl.textContent = total + ' ★ NAT 20!'; }
-  if (sides === 20 && roll === 1) { valueEl.classList.add('nat1'); valueEl.textContent = total + ' ✗ NAT 1'; }
-  detailEl.textContent = modifier !== 0 ? ('Roll: ' + roll + ' + ' + modifier + ' modifier') : ('Roll: ' + roll);
-
-  // Brief animation
-  valueEl.style.transform = 'scale(1.3)';
-  setTimeout(() => { valueEl.style.transform = 'scale(1)'; }, 200);
+  const r = document.getElementById('dice-result');
+  r.querySelector('.roll-type').textContent = label;
+  const v = r.querySelector('.roll-value');
+  v.textContent = total;
+  v.className = 'roll-value';
+  if (sides === 20 && roll === 20) { v.classList.add('nat20'); v.textContent += ' NAT 20!'; }
+  if (sides === 20 && roll === 1) { v.classList.add('nat1'); v.textContent += ' NAT 1!'; }
+  r.querySelector('.roll-detail').textContent = modifier ? 'Roll: ' + roll + ' + ' + modifier : 'Roll: ' + roll;
+  v.style.transform = 'scale(1.2)';
+  setTimeout(() => v.style.transform = 'scale(1)', 150);
 }
 
-function rollCheck(mod, label) { rollDice(20, mod, label + ' Check (d20+' + mod + ')'); }
-function rollSave(mod, label) { rollDice(20, mod, label + ' Save (d20+' + mod + ')'); }
-function rollAttack(mod, label) { rollDice(20, mod, label + ' Attack (d20+' + mod + ')'); }
+function rollCheck(mod, label) { rollDice(20, mod, label + ' (d20' + (mod>=0?'+':'') + mod + ')'); }
 
-// ==================== SHEET RENDERING ====================
 function renderSheet(d) {
-  sheetData = d;
   document.getElementById('sheet').style.display = 'block';
+  const m = (s) => { const v = (s-10)>>1; return v >= 0 ? '+'+v : ''+v; };
+  const fmt = (v) => v >= 0 ? '+'+v : ''+v;
 
   // Header
-  document.getElementById('char-name').textContent = d.name;
-  document.getElementById('char-detail').textContent =
-    'Level ' + d.level + ' ' + d.race + ' ' + d.char_class + (d.title ? ' — ' + d.title : '');
-  document.getElementById('char-alignment').textContent =
-    (d.alignment || 'Neutral') + (d.deity ? ' • ' + d.deity : '');
-  document.getElementById('char-ac').textContent = d.ac;
-  document.getElementById('char-xp').textContent = d.xp.toLocaleString();
-  document.getElementById('char-gold').textContent = d.gold.toLocaleString();
-  document.getElementById('stat-kills').textContent = d.kill_count;
-  document.getElementById('stat-rescues').textContent = d.rescued_captives;
-  document.getElementById('stat-rooms').textContent = d.rooms_visited;
+  document.getElementById('h-name').textContent = d.name;
+  document.getElementById('h-class').textContent = d.char_class + ' ' + d.level;
+  document.getElementById('h-race').textContent = d.race;
+  document.getElementById('h-align').textContent = d.alignment || 'Neutral';
+  document.getElementById('h-deity').textContent = d.deity || 'None';
+  document.getElementById('h-xp').textContent = (d.xp||0).toLocaleString();
 
-  // HP bar
-  const hpPct = d.max_hp > 0 ? Math.max(0, d.hp / d.max_hp * 100) : 0;
-  document.getElementById('hp-fill').style.width = hpPct + '%';
-  document.getElementById('hp-text').textContent = d.hp + ' / ' + d.max_hp;
+  // HP
+  document.getElementById('hp-cur').textContent = d.hp;
+  document.getElementById('hp-max').textContent = d.max_hp;
+  const pct = d.max_hp > 0 ? Math.max(0, d.hp/d.max_hp*100) : 0;
+  document.getElementById('hp-bar').style.width = pct + '%';
+
+  // AC
+  const dexMod = d.abilities.DEX.mod;
+  document.getElementById('ac-total').textContent = d.ac;
+  document.getElementById('ac-touch').textContent = 10 + dexMod;
+  document.getElementById('ac-flat').textContent = d.ac - dexMod;
+  document.getElementById('ac-dex').textContent = fmt(dexMod);
+  // Try to extract armor bonus from equipment
+  let armorBonus = 0, shieldBonus = 0;
+  for (const [slot, item] of Object.entries(d.equipment||{})) {
+    if (!item) continue;
+    if (slot === 'body' || slot === 'armor') armorBonus += (item.ac_bonus||0);
+    if (slot === 'shield' || slot === 'off_hand') shieldBonus += (item.ac_bonus||0);
+  }
+  document.getElementById('ac-armor').textContent = armorBonus || '—';
+  document.getElementById('ac-shield').textContent = shieldBonus || '—';
+  document.getElementById('ac-size').textContent = '0';
+  document.getElementById('ac-natural').textContent = '0';
+  document.getElementById('ac-deflect').textContent = '0';
+
+  // Initiative
+  document.getElementById('v-init').textContent = fmt(dexMod);
 
   // Abilities
   const abEl = document.getElementById('abilities');
   abEl.innerHTML = '';
   for (const [name, data] of Object.entries(d.abilities)) {
-    const box = document.createElement('div');
-    box.className = 'ability-box';
-    box.innerHTML = '<div class="label">' + name + '</div><div class="score">' + data.score + '</div><div class="mod">' + (data.mod >= 0 ? '+' : '') + data.mod + '</div>';
-    box.onclick = () => rollCheck(data.mod, name);
-    abEl.appendChild(box);
+    const row = document.createElement('div');
+    row.className = 'ability-row';
+    row.onclick = () => rollCheck(data.mod, name);
+    row.innerHTML = '<div class="ability-name">' + name + '</div>' +
+      '<div class="ability-score">' + data.score + '</div>' +
+      '<div class="ability-mod"><span>' + fmt(data.mod) + '</span></div>';
+    abEl.appendChild(row);
   }
 
   // Saves
   const svEl = document.getElementById('saves');
   svEl.innerHTML = '';
-  for (const [name, val] of Object.entries(d.saves)) {
-    const box = document.createElement('div');
-    box.className = 'stat-box';
-    box.innerHTML = '<div class="label">' + name + '</div><div class="value">' + (val >= 0 ? '+' : '') + val + '</div>';
-    box.onclick = () => rollSave(val, name);
-    svEl.appendChild(box);
+  const saveAbility = {Fort: 'CON', Ref: 'DEX', Will: 'WIS'};
+  for (const [name, total] of Object.entries(d.saves)) {
+    const ab = saveAbility[name] || 'CON';
+    const abMod = d.abilities[ab] ? d.abilities[ab].mod : 0;
+    const row = document.createElement('div');
+    row.className = 'save-row';
+    row.onclick = () => rollCheck(total, name + ' Save');
+    row.innerHTML = '<div class="save-name">' + name + '</div>' +
+      '<div class="save-cell save-total">' + fmt(total) + '</div>' +
+      '<div class="save-cell">' + fmt(abMod) + '</div>';
+    svEl.appendChild(row);
   }
 
-  // Combat
-  const cbEl = document.getElementById('combat');
-  cbEl.innerHTML = '';
-  [{label: 'Melee', val: d.melee_attack}, {label: 'Ranged', val: d.ranged_attack}, {label: 'AC', val: d.ac}].forEach(s => {
-    const box = document.createElement('div');
-    box.className = 'stat-box';
-    box.innerHTML = '<div class="label">' + s.label + '</div><div class="value">' + (s.label !== 'AC' ? (s.val >= 0 ? '+' : '') : '') + s.val + '</div>';
-    if (s.label !== 'AC') box.onclick = () => rollAttack(s.val, s.label);
-    cbEl.appendChild(box);
-  });
+  // BAB
+  document.getElementById('v-melee').textContent = fmt(d.melee_attack);
+  document.getElementById('v-ranged').textContent = fmt(d.ranged_attack);
+  document.getElementById('bab-melee').onclick = () => rollCheck(d.melee_attack, 'Melee Attack');
+  document.getElementById('bab-ranged').onclick = () => rollCheck(d.ranged_attack, 'Ranged Attack');
+
+  // Attacks (from equipment weapons)
+  const atkEl = document.getElementById('attacks');
+  atkEl.innerHTML = '';
+  for (const [slot, item] of Object.entries(d.equipment||{})) {
+    if (!item || !item.damage) continue;
+    const dmg = item.damage;
+    const dmgStr = dmg[0]+'d'+dmg[1]+(dmg[2]?'+'+dmg[2]:'');
+    const row = document.createElement('div');
+    row.className = 'attack-row';
+    row.onclick = () => rollCheck(d.melee_attack, item.name + ' Attack');
+    row.innerHTML = '<div class="cell">' + item.name + '</div>' +
+      '<div class="cell">' + fmt(d.melee_attack) + '</div>' +
+      '<div class="cell">' + dmgStr + '</div>' +
+      '<div class="cell">' + slot + '</div>';
+    atkEl.appendChild(row);
+  }
+  if (atkEl.children.length === 0) {
+    atkEl.innerHTML = '<div class="attack-row"><div class="cell" style="grid-column:1/-1; color:#999;">No weapons equipped</div></div>';
+  }
 
   // Skills
   const skEl = document.getElementById('skills');
   skEl.innerHTML = '';
-  const skills = Object.entries(d.skills || {}).sort((a, b) => a[0].localeCompare(b[0]));
+  const skills = Object.entries(d.skills||{}).sort((a,b) => a[0].localeCompare(b[0]));
   skills.forEach(([name, val]) => {
     const row = document.createElement('div');
     row.className = 'skill-row';
-    row.innerHTML = '<span>' + name + '</span><span class="mod">' + (val >= 0 ? '+' : '') + val + '</span>';
     row.onclick = () => rollCheck(val, name);
+    row.innerHTML = '<div class="sname">' + name + '</div>' +
+      '<div class="scell">' + fmt(val) + '</div>' +
+      '<div class="scell">' + Math.max(0, val) + '</div>';
     skEl.appendChild(row);
   });
-  if (skills.length === 0) skEl.innerHTML = '<div style="color:#666; font-size:13px;">No trained skills.</div>';
+  if (skills.length === 0) skEl.innerHTML = '<div style="color:#999; padding:4px;">No trained skills</div>';
 
   // Feats
   const ftEl = document.getElementById('feats');
-  ftEl.innerHTML = '';
-  (d.feats || []).forEach(f => {
-    const tag = document.createElement('span');
-    tag.className = 'tag';
-    tag.textContent = f;
-    ftEl.appendChild(tag);
-  });
-  if (!d.feats || d.feats.length === 0) ftEl.innerHTML = '<span style="color:#666; font-size:13px;">None.</span>';
+  ftEl.textContent = (d.feats||[]).join(', ') || 'None';
 
-  // Spells
-  const spEl = document.getElementById('spells');
-  spEl.innerHTML = '';
-  const spells = d.spells_known || {};
-  let spellCount = 0;
-  for (const [level, list] of Object.entries(spells)) {
-    (Array.isArray(list) ? list : []).forEach(s => {
-      const tag = document.createElement('span');
-      tag.className = 'tag';
-      tag.textContent = s + ' (L' + level + ')';
-      spEl.appendChild(tag);
-      spellCount++;
-    });
-  }
-  if (spellCount === 0) spEl.innerHTML = '<span style="color:#666; font-size:13px;">None.</span>';
-
-  // Equipment
+  // Equipment + Inventory
   const eqEl = document.getElementById('equipment');
   eqEl.innerHTML = '';
-  for (const [slot, item] of Object.entries(d.equipment || {})) {
-    const row = document.createElement('div');
-    row.className = 'equip-slot';
-    row.innerHTML = '<span class="slot-name">' + slot + '</span><span>' + (item ? item.name : '(empty)') + '</span>';
-    eqEl.appendChild(row);
+  for (const [slot, item] of Object.entries(d.equipment||{})) {
+    if (!item) continue;
+    const div = document.createElement('div');
+    div.className = 'equip-item';
+    div.innerHTML = '<span>' + item.name + '</span><span style="color:#888">' + slot + '</span>';
+    eqEl.appendChild(div);
   }
-  if (Object.keys(d.equipment || {}).length === 0) eqEl.innerHTML = '<div style="color:#666;">No equipment data.</div>';
-
-  // Inventory
-  const invEl = document.getElementById('inventory');
-  invEl.innerHTML = '';
-  (d.inventory || []).forEach(item => {
-    const row = document.createElement('div');
-    row.className = 'equip-slot';
-    row.innerHTML = '<span>' + item.name + '</span><span style="color:#888;">' + item.type + (item.value ? ' (' + item.value + 'gp)' : '') + '</span>';
-    invEl.appendChild(row);
+  (d.inventory||[]).forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'equip-item';
+    div.innerHTML = '<span>' + item.name + '</span><span style="color:#888">' + item.type + '</span>';
+    eqEl.appendChild(div);
   });
-  if (!d.inventory || d.inventory.length === 0) invEl.innerHTML = '<div style="color:#666;">Empty.</div>';
+  document.getElementById('gold-val').textContent = (d.gold||0).toLocaleString();
 }
 
-// ==================== CONNECTION ====================
+// Connection
 function connect() {
   const host = (location.hostname || '127.0.0.1');
   const wsHost = (location.protocol === 'file:' || !host) ? '127.0.0.1' : host;
   ws = new WebSocket('ws://' + wsHost + ':8767/');
-  const statusEl = document.getElementById('status');
-
-  ws.onopen = () => { statusEl.textContent = 'Connected'; statusEl.style.color = '#7ec8e3'; };
+  const s = document.getElementById('status');
+  ws.onopen = () => { s.textContent = 'Connected'; s.style.color = '#7ec8e3'; };
   ws.onmessage = (ev) => {
-    let msg;
-    try { msg = JSON.parse(ev.data); } catch { return; }
-    if (msg.type === 'auth_result') {
-      if (msg.success) {
-        statusEl.textContent = 'Logged in as ' + msg.character_name;
-        statusEl.style.color = '#3ddc6b';
-        document.getElementById('login-btn').textContent = 'Refresh';
-        // Request sheet data
-        ws.send(JSON.stringify({ type: 'sheet' }));
-      } else {
-        statusEl.textContent = msg.message || 'Login failed';
-        statusEl.style.color = '#e94560';
-      }
+    let msg; try { msg = JSON.parse(ev.data); } catch { return; }
+    if (msg.type === 'auth_result' && msg.success) {
+      s.textContent = 'Loading ' + msg.character_name + '...';
+      s.style.color = '#27ae60';
+      ws.send(JSON.stringify({type: 'sheet'}));
+    } else if (msg.type === 'auth_result') {
+      s.textContent = msg.message || 'Login failed'; s.style.color = '#c0392b';
     } else if (msg.type === 'sheet_data') {
+      s.textContent = msg.name + ' loaded';
       renderSheet(msg);
-    } else if (msg.type === 'welcome') {
-      // NPC list received (we don't need it for the sheet, ignore)
     }
   };
-  ws.onerror = () => { statusEl.textContent = 'Connection failed'; statusEl.style.color = '#e94560'; };
-  ws.onclose = () => { statusEl.textContent = 'Disconnected'; statusEl.style.color = '#888'; };
+  ws.onerror = () => { s.textContent = 'Failed'; s.style.color = '#c0392b'; };
+  ws.onclose = () => { s.textContent = 'Disconnected'; s.style.color = '#888'; };
 }
-
 document.getElementById('login-btn').addEventListener('click', () => {
-  if (!ws || ws.readyState !== WebSocket.OPEN) return;
+  if (!ws || ws.readyState !== 1) return;
   const u = document.getElementById('username').value.trim();
   const p = document.getElementById('password').value.trim();
-  if (!u || !p) return;
-  ws.send(JSON.stringify({ type: 'auth', username: u, password: p }));
+  if (u && p) ws.send(JSON.stringify({type:'auth', username:u, password:p}));
 });
-document.getElementById('password').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') document.getElementById('login-btn').click();
-});
-
+document.getElementById('password').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('login-btn').click(); });
 connect();
 </script>
 </body>
