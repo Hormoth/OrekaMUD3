@@ -561,6 +561,12 @@ class Character:
                 if getattr(self, 'rp_sheet', None) and hasattr(self.rp_sheet, 'to_dict')
                 else None
             ),
+            # Captive rescue system persistence
+            "rescued_captives": getattr(self, 'rescued_captives', []),
+            "pending_rescue_rewards": getattr(self, 'pending_rescue_rewards', []),
+            # Reputation-gated quest reveal persistence
+            "revealed_quests": getattr(self, 'revealed_quests', []),
+            "completed_hidden_quests": getattr(self, 'completed_hidden_quests', []),
         }
 
     @staticmethod
@@ -725,6 +731,13 @@ class Character:
                 char.rp_sheet = PcSheet()
         except ImportError:
             char.rp_sheet = None
+
+        # Captive rescue system persistence
+        char.rescued_captives = data.get("rescued_captives", [])
+        char.pending_rescue_rewards = data.get("pending_rescue_rewards", [])
+        # Reputation-gated quest reveal persistence
+        char.revealed_quests = data.get("revealed_quests", [])
+        char.completed_hidden_quests = data.get("completed_hidden_quests", [])
 
         # Load equipment
         equipment_data = data.get("equipment", {})
