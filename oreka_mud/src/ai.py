@@ -171,9 +171,11 @@ def _build_persona_block(name: str, npc_type: str, persona: dict) -> str:
         parts.append("You refuse to discuss: " + ", ".join(persona["forbidden_topics"]))
 
     parts.append(
-        "Stay in character. Keep replies under 3 sentences unless the player "
-        "asks for detail. Never break the fourth wall. Never reveal secrets "
-        "unless trust is established."
+        "Stay in character. Always speak in first person as yourself. "
+        "Keep replies under 3 sentences unless the player asks for detail. "
+        "Never break the fourth wall. Never reveal secrets unless trust is established. "
+        "Never include bracketed stage directions, DM notes, or meta-commentary. "
+        "No asterisks for actions. No third-person self-narration."
     )
     return "\n".join(parts)
 
@@ -628,8 +630,10 @@ def build_unified_npc_prompt(
     if mode == "talk":
         parts.append("\nRULES:")
         parts.append("- Stay in character. Never mention: AI, language model, game, hit points, dice, stats, NPC.")
+        parts.append("- Always speak in first person as yourself. Do NOT narrate your own actions in third person.")
+        parts.append("- Never include bracketed text, stage directions, DM notes, or meta-commentary like [action] or (note).")
         parts.append("- Respond in 1-3 sentences unless the player asks for detail.")
-        parts.append("- Speak naturally. No markdown. No JSON.")
+        parts.append("- Speak naturally. No markdown. No JSON. No asterisks for actions.")
 
     elif mode == "rpsay":
         parts.append("\nRULES:")
@@ -642,6 +646,9 @@ def build_unified_npc_prompt(
     elif mode == "chat":
         parts.append("\nRULES:")
         parts.append("- Stay in character. Never mention: AI, language model, game, hit points, dice, stats, NPC.")
+        parts.append("- Always speak in first person as yourself. Do NOT narrate your own actions in third person.")
+        parts.append("- Never include bracketed text, stage directions, DM notes, or meta-commentary like [action] or (note).")
+        parts.append("- No asterisks for actions. No markdown formatting.")
         parts.append("- Respond in 2-4 sentences unless the player asks for detail.")
         parts.append("- If world events occurred, acknowledge them naturally.")
         parts.append("- Use arc_reactions guidance subtly. Never enumerate what you know about the player.")
