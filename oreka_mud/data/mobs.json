@@ -26561,7 +26561,7 @@
     "cr": 3,
     "advancement": "By character class",
     "description": "A warm-eyed priestess in flowing elemental robes. She welcomes all newcomers to Oreka and guides them through their first steps.",
-    "dialogue": "\"Welcome to Oreka, traveler! Use `talk <npc>` to speak with anyone you meet -- we all have guidance to offer. If you need equipment, `talk` to me and I will outfit you for your journey. Try `score` to see your character, `inventory` to check your gear, and `wear all` to equip it. Explore the four quadrants -- north, east, south, and west -- to learn the basics. And remember: killing within town walls is a grave offense that will cost you reputation with the townsfolk. The `who` command shows other players, and `help` lists all commands.\"",
+    "dialogue": "Welcome to Oreka, child of the elements. You stand at the Central Altar where the four Elemental Lords once spoke as one. Take a moment to look around -- type 'look' to see this room, 'score' to check your abilities, and 'exits' to see where you can go. Each quadrant of the Chapel honors a different Lord. Visit the priest who matches your elemental affinity -- north for Stone, east for Fire, south for Sea, west for Wind. They will teach you what it means to carry resonance. When you are ready for more, seek the Training Dummy in the Fire Quadrant to test your combat skills.",
     "npc_type": "trainer",
     "ai_persona": {
       "chat_eligible": true,
@@ -26652,7 +26652,7 @@
     "cr": 3,
     "advancement": "By character class",
     "description": "A broad-shouldered priest with granite-grey robes and steady, patient eyes. He guides newcomers in the ways of movement and navigation through Oreka's many halls and streets.",
-    "dialogue": "\"The earth is patient, and so must you be. Use `n`, `s`, `e`, `w` to move between rooms, and `exits` to see your options. Special exits like `in`, `guild`, or `northeast` appear when available. Use `scan` to see what lies in nearby rooms, and `map` for a broader view. You can `recall` to return here if you get lost. Be warned -- attacking townsfolk or players in safe areas will damage your reputation with factions, and shops may refuse to serve you.\"",
+    "dialogue": "I feel the weight of earth in you. Kin-sense tells me your resonance -- every living Kin carries an elemental signature. Type 'kinsense' to feel the presences around you. The Lord of Stone sleeps beneath the mountains, but his influence endures. When you are ready, go east to the Fire Quadrant and test yourself against the Training Dummy -- type 'kill dummy' to begin. Do not worry, it cannot truly hurt you. It is practice.",
     "ai_persona": {
       "voice": "Slow and deliberate. Long pauses between sentences as if weighing each word against bedrock. Gravelly baritone.",
       "motivation": "Tend the Lord of Stone's altar through the long sleep until the world remembers what stillness means.",
@@ -26754,7 +26754,7 @@
     "cr": 3,
     "advancement": "By character class",
     "description": "A fierce-eyed priestess with ember-red hair and robes that shimmer like heated metal. She teaches newcomers the fundamentals of combat, standing watch over the training grounds.",
-    "dialogue": "\"Fire tempers the blade, and battle tempers the warrior. Strike the Training Dummy with `kill dummy` -- combat proceeds automatically every few seconds. Use `flee` if things go badly, and `loot corpse` or `loot all` to claim your spoils. The dummy drops basic gear to get you started. Use `wear all` to equip what you find, and `eat` when you need food. When you `levelup`, spend your skill points with `practice <skill>` at a trainer. Never attack townsfolk or other players in town -- you will lose reputation with local factions, and guards do not forgive easily. Head to Forge Street (`forge` exit) to find Quartermaster Bren's shop for better gear.\"",
+    "dialogue": "The Lady of Fire burns in you -- I can feel it. Every element has a light signature: fire is deep orange, never yellow. The Training Dummy stands here for your practice. Type 'kill dummy' to strike it. If you need to escape a fight, type 'flee'. Practice both. Once you feel ready, find Quartermaster Brenn on Temple Street -- go south from the altar and follow the streets east. He will outfit you with proper gear before you step into the world.",
     "ai_persona": {
       "voice": "Crackles with energy. Quick phrases, sudden laughter. Animated hands. Voice rises and falls like flame.",
       "motivation": "Burn away what the seeker no longer needs. Shape new things in the heat.",
@@ -26887,7 +26887,8 @@
         "name": "Torch"
       }
     ],
-    "description": "A straw-stuffed practice dummy bolted to a wooden frame. It looks ready to absorb punishment."
+    "description": "A straw-stuffed practice dummy bolted to a wooden frame. It looks ready to absorb punishment.",
+    "dialogue": "A battered practice dummy made of straw and old leather. It does not fight back. Type 'kill dummy' to practice your attack. Type 'flee' to practice escaping. When you feel ready for real combat, find Quartermaster Brenn on Temple Street for equipment, then head south to Custos. The Deepwell Tavern cellar has real enemies waiting."
   },
   {
     "vnum": 9204,
@@ -26943,7 +26944,7 @@
     "cr": 3,
     "advancement": "By character class",
     "description": "A serene priestess with sea-blue robes that ripple like water. Her eyes hold the depth of ocean tides, and she teaches newcomers to read the Kin-Sense -- the elemental resonance that connects all living things in Oreka.",
-    "dialogue": "\"The sea knows all currents, seen and unseen. Your [Kin-Sense] appears when you enter a room, revealing the elemental nature of those nearby. Fire, water, earth, wind -- each resonance tells you something about a creature's strengths and weaknesses. Use `consider <target>` before a fight to judge how dangerous a foe is. Use `deities` to learn about the gods of Oreka, and `pray` at any altar for a blessing. Your reputation with factions matters -- use `reputation` to check your standing. Killing innocents or townspeople will mark you, and some quests may become unavailable.\"",
+    "dialogue": "The Lady of the Sea flows through your blood. Water heals what fire cannot -- remember that. Type 'kinsense' to feel the presences around you. Your resonance carries meaning to every Kin you meet. When you are ready to test your blade, visit the Training Dummy in the Fire Quadrant to the east. Then find Quartermaster Brenn on Temple Street for gear before heading into Custos.",
     "ai_persona": {
       "voice": "Low, even, with the rhythm of tides. Long sentences that flow into each other. Never raises her voice.",
       "motivation": "Help travellers learn to move with the world's currents instead of against them.",
@@ -27045,7 +27046,7 @@
     "cr": 3,
     "advancement": "By character class",
     "description": "A lithe priest with windswept silver hair and robes that billow in an unfelt breeze. He teaches newcomers the many ways to interact with the world of Oreka beyond sword and spell.",
-    "dialogue": "\"The wind touches everything. So too can you reach out to the world. Try `pray` at altars for blessings, `search` for hidden passages, `listen` for distant sounds, and `study` to examine magical effects. Use `talk <npc>` to speak with anyone -- most people have wisdom to share or quests to offer. Use `talkto <npc>` for quest business. The `config` command lets you set preferences like `autoloot` and `autogold`. You can set `alias` shortcuts for common commands. And never forget: your actions have consequences. Killing in towns costs reputation, and some doors close forever to those with a dark name.\"",
+    "dialogue": "The Youngest Brother whispers in your step. Wind is freedom, luck, and the road ahead. Use 'kinsense' to feel who stands near you -- it works through walls, up to sixty feet. Head east to the Fire Quadrant to practice combat with the Training Dummy. Type 'kill dummy' to begin. After that, Quartermaster Brenn on Temple Street will give you proper gear for the road.",
     "ai_persona": {
       "voice": "Whispers and silences in equal measure. Half-finished sentences. The air seems to move when he speaks.",
       "motivation": "Keep the Wind Lord's exile from being forgotten -- and watch for the day he returns.",
@@ -48111,5 +48112,116 @@
         "chance": 0.2
       }
     ]
+  },
+  {
+    "vnum": 9210,
+    "name": "Quartermaster Brenn",
+    "level": 5,
+    "hp_dice": [
+      5,
+      8,
+      10
+    ],
+    "ac": 14,
+    "damage_dice": [
+      1,
+      6,
+      1
+    ],
+    "flags": [
+      "no_attack",
+      "quest_giver",
+      "trainer"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 14,
+      "Dex": 12,
+      "Con": 13,
+      "Int": 11,
+      "Wis": 12,
+      "Cha": 13
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {
+      "Diplomacy": 4
+    },
+    "saves": {
+      "Fort": 3,
+      "Ref": 2,
+      "Will": 2
+    },
+    "environment": "Chapel tutorial zone",
+    "organization": "solitary",
+    "cr": 2,
+    "advancement": "-",
+    "description": "A stocky Orean man in a well-worn supply apron, surrounded by racks of basic gear. He sizes up newcomers with a practiced eye and hands out starter equipment with gruff efficiency.",
+    "room_vnum": 3003,
+    "loot_table": [],
+    "dialogue": "New arrival? Good. You will need gear before you step into the world. I have a blade, some armor, a torch, and enough food to keep you standing. Take what you need -- type 'say ready' and I will outfit you. Then head south along River Street to reach Custos. The Deepwell Tavern there has something lurking beneath it, if you are feeling brave."
+  },
+  {
+    "vnum": 9211,
+    "name": "Street Warden Corla",
+    "level": 5,
+    "hp_dice": [
+      5,
+      8,
+      10
+    ],
+    "ac": 16,
+    "damage_dice": [
+      1,
+      8,
+      2
+    ],
+    "flags": [
+      "no_attack",
+      "guard",
+      "quest_giver"
+    ],
+    "type_": "Humanoid",
+    "alignment": "Lawful Good",
+    "ability_scores": {
+      "Str": 15,
+      "Dex": 13,
+      "Con": 14,
+      "Int": 12,
+      "Wis": 14,
+      "Cha": 12
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [],
+    "feats": [],
+    "skills": {
+      "Sense Motive": 6,
+      "Spot": 5
+    },
+    "saves": {
+      "Fort": 4,
+      "Ref": 2,
+      "Will": 3
+    },
+    "environment": "Chapel tutorial zone",
+    "organization": "solitary",
+    "cr": 3,
+    "advancement": "-",
+    "description": "A lean Eruskan woman in City Watch leathers, leaning against the gate post with the easy alertness of someone who has watched a thousand newcomers walk south into Custos for the first time.",
+    "room_vnum": 3001,
+    "loot_table": [],
+    "dialogue": "Heading into Custos? Good. Three things to know: The Deepwell Tavern on River Street has a cellar that goes deeper than any tavern should -- rats and worse down there, good practice for a new blade. The Dockside Shrine of Semyon has a priestess who needs help with something in the river. And if you find anyone in chains out in the wilderness -- cut them free. The world rewards those who bring people home. Type 'help getting_started' if you need a reminder of the basics. Now go south -- Oreka is waiting."
   }
 ]
