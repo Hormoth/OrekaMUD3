@@ -107,21 +107,9 @@ VEIL_BANNER = """
  ╚══════════════════════════════════════════════════════════════╝
 \033[0m
   An entry portal to the world of OrekaMUD3.
-  Your character is the same whether you enter as Dreamer or Walker.
+  For NPC Chat or Character Sheet, use the Veil Portal (oreka_veil_portal.html).
 
 """
-
-MODE_MENU = """
-\033[1;36m  Choose your path:\033[0m
-
-    \033[1;33m1.\033[0m Walk OrekaMUD       — Full game. Combat, exploration, the
-                              whole world. Your body in the world.
-
-    \033[1;33m2.\033[0m Enter the Dream     — AI Chat with an NPC. Your body
-                              becomes a Shadow Presence. Type 'enter world'
-                              later to materialize, or 'endchat' to return.
-
-  > """
 
 
 async def _recv_line(websocket, timeout=120):
@@ -202,38 +190,11 @@ async def _veil_preauth(websocket):
 
         await websocket.send(f"\n\033[1;32m  [+] Welcome back, {username}.\033[0m\n")
 
-    # Mode selection
-    await websocket.send(MODE_MENU)
-    mode_resp = (await _recv_line(websocket) or "").strip()
-
+    # Go straight to MUD — NPC Chat is handled by the Veil Portal
+    mode = 'mud'
     chat_npc_vnum = None
     chat_npc_name = None
-
-    if mode_resp == '2':
-        # Chat mode — pick an NPC
-        npcs = list_chat_npcs()
-        await websocket.send(_format_npc_menu(npcs))
-        npc_resp = (await _recv_line(websocket) or "").strip()
-        try:
-            idx = int(npc_resp) - 1
-            if 0 <= idx < len(npcs):
-                chat_npc_vnum = npcs[idx]['vnum']
-                chat_npc_name = npcs[idx]['name']
-        except ValueError:
-            # Try name match
-            for npc in npcs:
-                if npc_resp.lower() in npc['name'].lower():
-                    chat_npc_vnum = npc['vnum']
-                    chat_npc_name = npc['name']
-                    break
-        if not chat_npc_vnum:
-            chat_npc_vnum = get_default_chat_npc()
-            chat_npc_name = "default guide"
-        mode = 'chat'
-        await websocket.send(f"\n\033[1;35m  [+] Entering the Dream with {chat_npc_name}...\033[0m\n\n")
-    else:
-        mode = 'mud'
-        await websocket.send("\n\033[1;32m  [+] Entering OrekaMUD...\033[0m\n\n")
+    await websocket.send("\n\033[1;32m  [+] Entering OrekaMUD...\033[0m\n\n")
 
     return {
         "username": username,
