@@ -389,7 +389,14 @@ async def _handle_client(ws, world):
                     "kill_count": getattr(char, "kill_count", 0),
                     "rooms_visited": len(getattr(char, "rooms_visited", set())),
                     "remort_count": getattr(char, "remort_count", 0),
+                    "factions": [],
                 }
+                # Build faction standings for the sheet
+                try:
+                    from src.character_dossier import _faction_stats
+                    sheet["factions"] = _faction_stats(char)
+                except Exception:
+                    pass
                 await ws.send(json.dumps(sheet))
 
             # --- Send a message to the NPC --------------------------------

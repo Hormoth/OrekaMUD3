@@ -2,447 +2,383 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Oreka — D&D 3.5 Character Sheet</title>
+<title>Oreka — Character Sheet</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #2a2520; color: #1a1a1a; min-height: 100vh; }
+body { font-family: 'Crimson Text', Georgia, serif; background: #0d0d0d; color: #d4c5a0; min-height: 100vh; }
 
-/* Auth bar */
-#auth-bar { background: #1a1a1a; padding: 8px 16px; display: flex; align-items: center; gap: 10px; }
-#auth-bar h1 { color: #c4a265; font-size: 14px; letter-spacing: 2px; }
-#auth-bar input { padding: 4px 8px; background: #333; color: #e0e0e0; border: 1px solid #555; border-radius: 3px; font-size: 12px; width: 120px; }
-#auth-bar button { padding: 4px 12px; background: #c4a265; color: #1a1a1a; border: none; border-radius: 3px; cursor: pointer; font-size: 12px; font-weight: bold; }
-#auth-bar .status { color: #888; font-size: 11px; margin-left: auto; }
+/* Auth */
+#auth-bar { background: linear-gradient(180deg, #1a1208 0%, #0d0d0d 100%); padding: 10px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #3d2e1a; }
+#auth-bar h1 { font-family: 'Cinzel', serif; color: #c4a265; font-size: 14px; letter-spacing: 3px; }
+#auth-bar input { padding: 5px 10px; background: #1a1208; color: #d4c5a0; border: 1px solid #3d2e1a; border-radius: 2px; font-family: inherit; font-size: 13px; width: 130px; }
+#auth-bar button { padding: 5px 16px; background: #c4a265; color: #0d0d0d; border: none; border-radius: 2px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+#auth-bar button:hover { background: #d4b875; }
+#auth-bar .status { color: #665533; font-size: 11px; margin-left: auto; }
 
-/* Sheet container - parchment look */
-#sheet { display: none; max-width: 850px; margin: 12px auto; background: #f4ecd8; border: 2px solid #8b7355; padding: 16px 20px; font-size: 11px; color: #1a1a1a; position: relative; }
+/* Tab bar */
+#tabs { display: none; max-width: 900px; margin: 12px auto 0; padding: 0 16px; }
+.tab-bar { display: flex; gap: 2px; }
+.tab-btn { padding: 10px 24px; background: #1a1208; border: 1px solid #3d2e1a; border-bottom: none; border-radius: 6px 6px 0 0; cursor: pointer; font-family: 'Cinzel', serif; font-size: 12px; color: #665533; letter-spacing: 1px; transition: all 0.2s; }
+.tab-btn:hover { color: #c4a265; }
+.tab-btn.active { background: #1f1810; color: #c4a265; border-color: #c4a265; border-bottom: 1px solid #1f1810; position: relative; z-index: 2; }
 
-/* Header row */
-.header-row { display: grid; grid-template-columns: 250px 1fr; gap: 8px; margin-bottom: 10px; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; }
-.char-name-box { border: 2px solid #1a1a1a; padding: 4px 8px; text-align: center; }
-.char-name-box .name { font-size: 20px; font-weight: bold; }
-.char-name-box .label { font-size: 8px; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-.header-details { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
-.hd-cell { border: 1px solid #999; padding: 2px 6px; }
-.hd-cell .val { font-weight: bold; font-size: 12px; }
-.hd-cell .lbl { font-size: 7px; color: #666; text-transform: uppercase; }
+/* Sheet page */
+.sheet-page { display: none; max-width: 900px; margin: 0 auto; background: #1f1810; border: 1px solid #c4a265; border-top: none; padding: 20px; position: relative; min-height: 600px; }
+.sheet-page.active { display: block; }
+.sheet-page::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%23c4a26508' stroke-width='0.5'/%3E%3C/svg%3E"); pointer-events: none; }
 
-/* Main layout: left abilities + saves, center combat/HP, right skills */
-.main-grid { display: grid; grid-template-columns: 200px 1fr 250px; gap: 10px; }
+/* Ornate border corners */
+.corner { position: absolute; width: 30px; height: 30px; border-color: #c4a265; }
+.corner.tl { top: 4px; left: 4px; border-top: 2px solid; border-left: 2px solid; }
+.corner.tr { top: 4px; right: 4px; border-top: 2px solid; border-right: 2px solid; }
+.corner.bl { bottom: 4px; left: 4px; border-bottom: 2px solid; border-left: 2px solid; }
+.corner.br { bottom: 4px; right: 4px; border-bottom: 2px solid; border-right: 2px solid; }
 
-/* Left column: abilities + saves */
-.left-col {}
+/* Section styling */
+.sec { margin-bottom: 14px; position: relative; z-index: 1; }
+.sec h2 { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 2px; color: #c4a265; border-bottom: 1px solid #3d2e1a; padding-bottom: 4px; margin-bottom: 8px; text-transform: uppercase; }
 
-/* Ability scores - diamond style */
-.ability-block { margin-bottom: 8px; }
-.ability-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; border-bottom: 1px solid #999; margin-bottom: 6px; padding-bottom: 2px; }
-.ability-row { display: grid; grid-template-columns: 50px 50px 50px; gap: 2px; align-items: center; margin-bottom: 3px; cursor: pointer; padding: 2px; border-radius: 3px; }
-.ability-row:hover { background: #e8dcc8; }
-.ability-name { font-size: 10px; font-weight: bold; text-transform: uppercase; }
-.ability-score { text-align: center; border: 2px solid #1a1a1a; padding: 3px; font-size: 16px; font-weight: bold; background: #fff; }
-.ability-mod { text-align: center; border: 2px solid #1a1a1a; padding: 2px; font-size: 14px; font-weight: bold; background: #e8dcc8; transform: rotate(45deg); width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
-.ability-mod span { transform: rotate(-45deg); }
+/* Header */
+.char-header { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.char-title { font-family: 'Cinzel', serif; }
+.char-title .name { font-size: 26px; color: #c4a265; font-weight: 700; }
+.char-title .sub { font-size: 13px; color: #8a7a5a; margin-top: 2px; }
+.hp-section { text-align: right; }
+.hp-big { font-family: 'Cinzel', serif; font-size: 32px; color: #c4a265; }
+.hp-big .sep { color: #3d2e1a; }
+.hp-track { height: 6px; background: #0d0d0d; border-radius: 3px; margin-top: 4px; border: 1px solid #3d2e1a; overflow: hidden; }
+.hp-fill { height: 100%; background: linear-gradient(90deg, #8b2020, #c4a265, #2d6b2d); border-radius: 2px; }
 
-/* Saves */
-.saves-block { margin-bottom: 8px; }
-.saves-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; border-bottom: 1px solid #999; margin-bottom: 4px; padding-bottom: 2px; }
-.save-header { display: grid; grid-template-columns: 60px 40px 40px; gap: 2px; font-size: 7px; text-align: center; color: #666; text-transform: uppercase; margin-bottom: 2px; }
-.save-row { display: grid; grid-template-columns: 60px 40px 40px; gap: 2px; margin-bottom: 2px; cursor: pointer; padding: 1px; border-radius: 2px; }
-.save-row:hover { background: #e8dcc8; }
-.save-name { font-size: 10px; font-weight: bold; }
-.save-cell { text-align: center; border: 1px solid #999; padding: 2px; font-size: 12px; font-weight: bold; background: #fff; }
-.save-total { background: #e8dcc8; border: 2px solid #1a1a1a; }
+/* Abilities */
+.ab-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.ab-box { text-align: center; border: 1px solid #3d2e1a; padding: 8px 4px; cursor: pointer; transition: all 0.2s; background: #150f08; border-radius: 4px; }
+.ab-box:hover { border-color: #c4a265; background: #2a1f12; box-shadow: 0 0 12px rgba(196,162,101,0.15); }
+.ab-box .lbl { font-family: 'Cinzel', serif; font-size: 9px; color: #665533; letter-spacing: 2px; }
+.ab-box .score { font-size: 24px; font-weight: 700; color: #d4c5a0; }
+.ab-box .mod { font-size: 16px; color: #c4a265; font-weight: 700; margin-top: 2px; }
 
-/* Base attack / grapple */
-.bab-block { margin-bottom: 8px; }
-.bab-row { display: flex; justify-content: space-between; padding: 3px 6px; border: 1px solid #999; margin-bottom: 2px; cursor: pointer; }
-.bab-row:hover { background: #e8dcc8; }
-.bab-label { font-size: 9px; font-weight: bold; text-transform: uppercase; }
-.bab-value { font-size: 14px; font-weight: bold; }
+/* Combat stats grid */
+.combat-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.c-box { text-align: center; border: 1px solid #3d2e1a; padding: 6px; background: #150f08; border-radius: 4px; cursor: pointer; transition: all 0.2s; }
+.c-box:hover { border-color: #c4a265; box-shadow: 0 0 8px rgba(196,162,101,0.1); }
+.c-box .lbl { font-size: 8px; color: #665533; text-transform: uppercase; letter-spacing: 1px; font-family: 'Cinzel', serif; }
+.c-box .val { font-size: 20px; font-weight: 700; color: #d4c5a0; margin-top: 2px; }
 
-/* Center column: HP, AC, Speed, Attacks */
-.center-col {}
+/* AC Breakdown */
+.ac-break { display: flex; gap: 4px; justify-content: center; margin-top: 6px; }
+.ac-chip { font-size: 9px; color: #665533; border: 1px solid #2a1f12; padding: 1px 6px; border-radius: 10px; background: #0d0d0d; }
 
-/* HP box */
-.hp-box { border: 2px solid #1a1a1a; padding: 8px; margin-bottom: 8px; text-align: center; }
-.hp-box h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-.hp-display { font-size: 28px; font-weight: bold; }
-.hp-display .sep { color: #999; }
-.hp-bar-outer { height: 8px; background: #ddd; border-radius: 4px; margin-top: 4px; overflow: hidden; }
-.hp-bar-inner { height: 100%; background: linear-gradient(90deg, #c0392b, #27ae60); border-radius: 4px; }
+/* Skills */
+.skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.sk-row { display: flex; justify-content: space-between; padding: 3px 8px; cursor: pointer; border-radius: 2px; font-size: 12px; }
+.sk-row:hover { background: #2a1f12; }
+.sk-row .sm { color: #c4a265; font-weight: 600; }
 
-/* AC box */
-.ac-box { border: 2px solid #1a1a1a; padding: 6px; margin-bottom: 8px; }
-.ac-box h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; margin-bottom: 4px; }
-.ac-main { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; text-align: center; margin-bottom: 4px; }
-.ac-val { font-size: 24px; font-weight: bold; border: 2px solid #1a1a1a; padding: 4px; background: #fff; }
-.ac-label { font-size: 7px; color: #666; text-transform: uppercase; }
-.ac-breakdown { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; text-align: center; }
-.ac-comp { border: 1px solid #999; padding: 2px; }
-.ac-comp .val { font-size: 11px; font-weight: bold; }
-.ac-comp .lbl { font-size: 6px; color: #666; text-transform: uppercase; }
-
-/* Speed + Initiative */
-.speed-init { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 8px; }
-.si-box { border: 1px solid #999; padding: 4px; text-align: center; }
-.si-box .val { font-size: 16px; font-weight: bold; }
-.si-box .lbl { font-size: 7px; color: #666; text-transform: uppercase; }
+/* Feats as tags */
+.feat-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.feat-tag { padding: 3px 10px; border: 1px solid #3d2e1a; border-radius: 12px; font-size: 11px; color: #8a7a5a; background: #150f08; }
 
 /* Attacks */
-.attacks-block { border: 2px solid #1a1a1a; padding: 6px; margin-bottom: 8px; }
-.attacks-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
-.attack-row { display: grid; grid-template-columns: 80px 50px 60px 1fr; gap: 2px; margin-bottom: 2px; font-size: 10px; cursor: pointer; padding: 2px; }
-.attack-row:hover { background: #e8dcc8; }
-.attack-row .cell { border: 1px solid #999; padding: 2px 4px; background: #fff; }
-.attack-row .cell.label { background: transparent; border: none; font-weight: bold; font-size: 8px; color: #666; }
+.atk-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.atk-table th { font-family: 'Cinzel', serif; font-size: 9px; color: #665533; text-transform: uppercase; letter-spacing: 1px; text-align: left; padding: 4px 8px; border-bottom: 1px solid #3d2e1a; }
+.atk-table td { padding: 4px 8px; border-bottom: 1px solid #1a1208; cursor: pointer; }
+.atk-table tr:hover td { background: #2a1f12; }
 
-/* Right column: Skills */
-.right-col {}
-.skills-block { border: 2px solid #1a1a1a; padding: 6px; }
-.skills-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; text-align: center; border-bottom: 1px solid #999; margin-bottom: 4px; padding-bottom: 2px; }
-.skill-header { display: grid; grid-template-columns: 1fr 30px 30px; gap: 2px; font-size: 7px; text-align: center; color: #666; text-transform: uppercase; margin-bottom: 2px; }
-.skill-row { display: grid; grid-template-columns: 1fr 30px 30px; gap: 2px; margin-bottom: 1px; cursor: pointer; padding: 1px; font-size: 10px; }
-.skill-row:hover { background: #e8dcc8; }
-.skill-row .sname { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.skill-row .scell { text-align: center; border: 1px solid #ccc; background: #fff; font-weight: bold; }
+/* PAGE 2: Spells */
+.spell-level-block { margin-bottom: 12px; }
+.spell-level-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #3d2e1a; padding-bottom: 2px; margin-bottom: 4px; }
+.spell-level-header .level { font-family: 'Cinzel', serif; color: #c4a265; font-size: 13px; }
+.spell-level-header .slots { font-size: 11px; color: #665533; }
+.spell-list { display: flex; flex-wrap: wrap; gap: 4px; }
+.spell-tag { padding: 3px 10px; border: 1px solid #3d2e1a; border-radius: 12px; font-size: 11px; color: #d4c5a0; background: #150f08; }
 
-/* Bottom sections */
-.bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-.feat-block, .equip-block { border: 2px solid #1a1a1a; padding: 6px; min-height: 80px; }
-.feat-block h3, .equip-block h3 { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #999; margin-bottom: 4px; padding-bottom: 2px; }
-.feat-list { font-size: 10px; line-height: 1.6; }
-.equip-list { font-size: 10px; line-height: 1.5; }
-.equip-item { display: flex; justify-content: space-between; border-bottom: 1px dotted #ccc; padding: 1px 0; }
-.gold-box { margin-top: 6px; display: flex; gap: 12px; font-weight: bold; }
-.gold-box .coin { border: 1px solid #999; padding: 2px 8px; background: #fff; }
+/* Notes area */
+.notes-area { min-height: 200px; padding: 12px; background: #150f08; border: 1px solid #3d2e1a; border-radius: 4px; font-size: 13px; line-height: 1.8; color: #8a7a5a; white-space: pre-wrap; }
+
+/* PAGE 3: Equipment + Journal */
+.equip-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.equip-table th { font-family: 'Cinzel', serif; font-size: 9px; color: #665533; text-transform: uppercase; letter-spacing: 1px; text-align: left; padding: 4px 8px; border-bottom: 1px solid #3d2e1a; }
+.equip-table td { padding: 4px 8px; border-bottom: 1px solid #1a1208; }
+
+.gold-display { display: flex; gap: 16px; margin-top: 8px; font-family: 'Cinzel', serif; }
+.gold-display .coin { border: 1px solid #3d2e1a; padding: 4px 12px; background: #150f08; border-radius: 4px; }
+.gold-display .coin .amt { font-size: 18px; color: #c4a265; font-weight: 700; }
+.gold-display .coin .lbl { font-size: 8px; color: #665533; letter-spacing: 1px; }
+
+/* Faction bars on page 3 */
+.faction-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 12px; }
+.faction-row .fname { width: 180px; color: #8a7a5a; }
+.faction-row .fbar { flex: 1; height: 8px; background: #0d0d0d; border-radius: 4px; border: 1px solid #3d2e1a; overflow: hidden; position: relative; }
+.faction-row .fbar .fill { height: 100%; border-radius: 3px; }
+.faction-row .frep { width: 50px; text-align: right; font-weight: 600; font-size: 11px; }
+.faction-row .fstanding { width: 80px; font-size: 10px; color: #665533; }
 
 /* Dice tray */
-#dice-tray { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 2px solid #c4a265; padding: 8px 16px; display: flex; align-items: center; gap: 10px; z-index: 100; }
-#dice-tray button { padding: 6px 12px; background: #333; color: #c4a265; border: 1px solid #555; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; }
-#dice-tray button:hover { background: #c4a265; color: #1a1a1a; }
-#dice-result { color: #fff; min-width: 250px; text-align: center; }
-#dice-result .roll-type { font-size: 11px; color: #888; }
-#dice-result .roll-value { font-size: 24px; color: #c4a265; font-weight: bold; }
-#dice-result .roll-detail { font-size: 10px; color: #666; }
-.nat20 { color: #27ae60 !important; }
-.nat1 { color: #c0392b !important; }
+#dice-tray { position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, #1a1208 0%, #0d0d0d 100%); border-top: 1px solid #c4a265; padding: 8px 20px; display: flex; align-items: center; gap: 8px; z-index: 100; }
+#dice-tray button { padding: 7px 14px; background: #150f08; color: #c4a265; border: 1px solid #3d2e1a; border-radius: 4px; cursor: pointer; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; transition: all 0.2s; }
+#dice-tray button:hover { background: #c4a265; color: #0d0d0d; border-color: #c4a265; box-shadow: 0 0 12px rgba(196,162,101,0.3); }
+#dice-result { text-align: center; min-width: 220px; }
+#dice-result .roll-type { font-size: 10px; color: #665533; font-family: 'Cinzel', serif; letter-spacing: 1px; }
+#dice-result .roll-value { font-size: 28px; color: #c4a265; font-weight: 700; font-family: 'Cinzel', serif; transition: transform 0.15s; }
+#dice-result .roll-detail { font-size: 10px; color: #3d2e1a; }
+.nat20 { color: #2d6b2d !important; text-shadow: 0 0 12px rgba(45,107,45,0.5); }
+.nat1 { color: #8b2020 !important; text-shadow: 0 0 12px rgba(139,32,32,0.5); }
 
 .spacer { height: 60px; }
 
-@media (max-width: 900px) { .main-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .ab-grid { grid-template-columns: repeat(3, 1fr); } .combat-row { grid-template-columns: repeat(3, 1fr); } .skill-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <div id="auth-bar">
-  <h1>OREKA D&D 3.5 CHARACTER SHEET</h1>
+  <h1>OREKA</h1>
   <input id="username" type="text" placeholder="Username" autofocus>
   <input id="password" type="password" placeholder="Password">
-  <button id="login-btn">Load</button>
+  <button id="login-btn">Load Sheet</button>
   <span class="status" id="status">Connecting...</span>
 </div>
 
-<div id="sheet">
-  <!-- HEADER -->
-  <div class="header-row">
-    <div class="char-name-box">
-      <div class="name" id="h-name">—</div>
-      <div class="label">Character Name</div>
-    </div>
-    <div class="header-details">
-      <div class="hd-cell"><div class="val" id="h-class">—</div><div class="lbl">Class & Level</div></div>
-      <div class="hd-cell"><div class="val" id="h-race">—</div><div class="lbl">Race</div></div>
-      <div class="hd-cell"><div class="val" id="h-align">—</div><div class="lbl">Alignment</div></div>
-      <div class="hd-cell"><div class="val" id="h-deity">—</div><div class="lbl">Deity</div></div>
-      <div class="hd-cell"><div class="val" id="h-size">Medium</div><div class="lbl">Size</div></div>
-      <div class="hd-cell"><div class="val" id="h-xp">—</div><div class="lbl">Experience Points</div></div>
-    </div>
+<div id="tabs">
+  <div class="tab-bar">
+    <div class="tab-btn active" data-page="page1">Character</div>
+    <div class="tab-btn" data-page="page2" id="tab-page2">Spells</div>
+    <div class="tab-btn" data-page="page3">Journal & Gear</div>
   </div>
+</div>
 
-  <!-- MAIN 3-COLUMN -->
-  <div class="main-grid">
-
-    <!-- LEFT: Abilities + Saves + BAB -->
-    <div class="left-col">
-      <div class="ability-block">
-        <h3>Ability Scores</h3>
-        <div id="abilities"></div>
-      </div>
-      <div class="saves-block">
-        <h3>Saving Throws</h3>
-        <div class="save-header"><div>Save</div><div>Total</div><div>Mod</div></div>
-        <div id="saves"></div>
-      </div>
-      <div class="bab-block">
-        <div class="bab-row" id="bab-melee"><span class="bab-label">Melee Attack</span><span class="bab-value" id="v-melee">+0</span></div>
-        <div class="bab-row" id="bab-ranged"><span class="bab-label">Ranged Attack</span><span class="bab-value" id="v-ranged">+0</span></div>
-      </div>
-    </div>
-
-    <!-- CENTER: HP + AC + Speed + Attacks -->
-    <div class="center-col">
-      <div class="hp-box">
-        <h3>Hit Points</h3>
-        <div class="hp-display"><span id="hp-cur">—</span><span class="sep"> / </span><span id="hp-max">—</span></div>
-        <div class="hp-bar-outer"><div class="hp-bar-inner" id="hp-bar" style="width:100%"></div></div>
-      </div>
-      <div class="ac-box">
-        <h3>Armor Class</h3>
-        <div class="ac-main">
-          <div><div class="ac-val" id="ac-total">—</div><div class="ac-label">Total</div></div>
-          <div><div class="ac-val" id="ac-touch">—</div><div class="ac-label">Touch</div></div>
-          <div><div class="ac-val" id="ac-flat">—</div><div class="ac-label">Flat-Footed</div></div>
-        </div>
-        <div class="ac-breakdown">
-          <div class="ac-comp"><div class="val" id="ac-armor">—</div><div class="lbl">Armor</div></div>
-          <div class="ac-comp"><div class="val" id="ac-shield">—</div><div class="lbl">Shield</div></div>
-          <div class="ac-comp"><div class="val" id="ac-dex">—</div><div class="lbl">Dex</div></div>
-          <div class="ac-comp"><div class="val" id="ac-size">—</div><div class="lbl">Size</div></div>
-          <div class="ac-comp"><div class="val" id="ac-natural">—</div><div class="lbl">Natural</div></div>
-          <div class="ac-comp"><div class="val" id="ac-deflect">—</div><div class="lbl">Deflect</div></div>
-        </div>
-      </div>
-      <div class="speed-init">
-        <div class="si-box"><div class="val">30 ft</div><div class="lbl">Speed</div></div>
-        <div class="si-box" style="cursor:pointer" onclick="rollDice(20,0,'Initiative')"><div class="val" id="v-init">+0</div><div class="lbl">Initiative</div></div>
-      </div>
-      <div class="attacks-block">
-        <h3>Attacks</h3>
-        <div class="attack-row"><div class="cell label">Weapon</div><div class="cell label">Atk</div><div class="cell label">Damage</div><div class="cell label">Notes</div></div>
-        <div id="attacks"></div>
-      </div>
-    </div>
-
-    <!-- RIGHT: Skills -->
-    <div class="right-col">
-      <div class="skills-block">
-        <h3>Skills</h3>
-        <div class="skill-header"><div>Skill Name</div><div>Mod</div><div>Rank</div></div>
-        <div id="skills"></div>
-      </div>
-    </div>
+<!-- PAGE 1: STATS -->
+<div class="sheet-page active" id="page1">
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+  <div class="char-header">
+    <div class="char-title"><div class="name" id="p1-name">—</div><div class="sub" id="p1-sub">—</div></div>
+    <div class="hp-section"><div class="hp-big"><span id="p1-hp">—</span><span class="sep"> / </span><span id="p1-maxhp">—</span></div><div style="font-size:10px; color:#665533;">HIT POINTS</div><div class="hp-track"><div class="hp-fill" id="p1-hpbar" style="width:100%"></div></div></div>
   </div>
-
-  <!-- BOTTOM: Feats + Equipment -->
-  <div class="bottom-row">
-    <div class="feat-block">
-      <h3>Feats & Special Abilities</h3>
-      <div class="feat-list" id="feats"></div>
-    </div>
-    <div class="equip-block">
-      <h3>Equipment</h3>
-      <div class="equip-list" id="equipment"></div>
-      <div class="gold-box">
-        <span>GP: <span class="coin" id="gold-val">0</span></span>
-      </div>
-    </div>
+  <div class="sec"><h2>Ability Scores</h2><div class="ab-grid" id="p1-abs"></div></div>
+  <div class="sec">
+    <h2>Combat</h2>
+    <div class="combat-row" id="p1-combat"></div>
+    <div class="ac-break" id="p1-acbreak"></div>
   </div>
+  <div class="sec"><h2>Attacks</h2><table class="atk-table"><thead><tr><th>Weapon</th><th>Attack</th><th>Damage</th><th>Type</th></tr></thead><tbody id="p1-attacks"></tbody></table></div>
+  <div class="sec"><h2>Skills</h2><div class="skill-grid" id="p1-skills"></div></div>
+  <div class="sec"><h2>Feats & Special Abilities</h2><div class="feat-tags" id="p1-feats"></div></div>
+  <div class="spacer"></div>
+</div>
 
+<!-- PAGE 2: SPELLS or NOTES -->
+<div class="sheet-page" id="page2">
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+  <div id="p2-spells"></div>
+  <div id="p2-notes" style="display:none;"></div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PAGE 3: JOURNAL & GEAR -->
+<div class="sheet-page" id="page3">
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+  <div class="sec"><h2>Equipment</h2><table class="equip-table"><thead><tr><th>Item</th><th>Slot / Type</th><th>Value</th></tr></thead><tbody id="p3-equip"></tbody></table><div class="gold-display"><div class="coin"><div class="amt" id="p3-gold">0</div><div class="lbl">Gold Pieces</div></div></div></div>
+  <div class="sec"><h2>Faction Standings</h2><div id="p3-factions"></div></div>
+  <div class="sec"><h2>Adventure Record</h2><div class="notes-area" id="p3-journal"></div></div>
+  <div class="sec"><h2>Background</h2><div class="notes-area" id="p3-background"></div></div>
   <div class="spacer"></div>
 </div>
 
 <!-- DICE TRAY -->
 <div id="dice-tray">
-  <button onclick="rollDice(4)">d4</button>
-  <button onclick="rollDice(6)">d6</button>
-  <button onclick="rollDice(8)">d8</button>
-  <button onclick="rollDice(10)">d10</button>
-  <button onclick="rollDice(12)">d12</button>
-  <button onclick="rollDice(20)">d20</button>
-  <button onclick="rollDice(100)">d100</button>
-  <div id="dice-result">
-    <div class="roll-type">Click a stat or die to roll</div>
-    <div class="roll-value">—</div>
-    <div class="roll-detail"></div>
-  </div>
+  <button onclick="roll(4)">d4</button>
+  <button onclick="roll(6)">d6</button>
+  <button onclick="roll(8)">d8</button>
+  <button onclick="roll(10)">d10</button>
+  <button onclick="roll(12)">d12</button>
+  <button onclick="roll(20)">d20</button>
+  <button onclick="roll(100)">d100</button>
+  <div id="dice-result"><div class="roll-type">Click a stat or die</div><div class="roll-value">—</div><div class="roll-detail"></div></div>
 </div>
 
 <script>
-let ws = null;
+let ws = null, D = null;
+const fmt = v => v >= 0 ? '+'+v : ''+v;
 
-function rollDice(sides, modifier, label) {
-  modifier = modifier || 0;
-  label = label || ('d' + sides);
-  const roll = Math.floor(Math.random() * sides) + 1;
-  const total = roll + modifier;
-  const r = document.getElementById('dice-result');
-  r.querySelector('.roll-type').textContent = label;
-  const v = r.querySelector('.roll-value');
-  v.textContent = total;
-  v.className = 'roll-value';
-  if (sides === 20 && roll === 20) { v.classList.add('nat20'); v.textContent += ' NAT 20!'; }
-  if (sides === 20 && roll === 1) { v.classList.add('nat1'); v.textContent += ' NAT 1!'; }
-  r.querySelector('.roll-detail').textContent = modifier ? 'Roll: ' + roll + ' + ' + modifier : 'Roll: ' + roll;
-  v.style.transform = 'scale(1.2)';
-  setTimeout(() => v.style.transform = 'scale(1)', 150);
+// === TABS ===
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sheet-page').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.page).classList.add('active');
+  });
+});
+
+// === DICE ===
+function roll(sides, mod, label) {
+  mod = mod || 0; label = label || ('d'+sides);
+  const r = Math.floor(Math.random()*sides)+1, total = r+mod;
+  const el = document.getElementById('dice-result');
+  el.querySelector('.roll-type').textContent = label;
+  const v = el.querySelector('.roll-value');
+  v.textContent = total; v.className = 'roll-value';
+  if (sides===20 && r===20) { v.classList.add('nat20'); v.textContent += ' \u2605 NAT 20'; }
+  if (sides===20 && r===1) { v.classList.add('nat1'); v.textContent += ' \u2717 NAT 1'; }
+  el.querySelector('.roll-detail').textContent = mod ? 'Roll: '+r+' + '+mod : 'Roll: '+r;
+  v.style.transform='scale(1.2)'; setTimeout(()=>v.style.transform='scale(1)',150);
 }
+function rc(mod,label) { roll(20,mod,label+' (d20'+fmt(mod)+')'); }
 
-function rollCheck(mod, label) { rollDice(20, mod, label + ' (d20' + (mod>=0?'+':'') + mod + ')'); }
-
+// === RENDER ===
 function renderSheet(d) {
-  document.getElementById('sheet').style.display = 'block';
-  const m = (s) => { const v = (s-10)>>1; return v >= 0 ? '+'+v : ''+v; };
-  const fmt = (v) => v >= 0 ? '+'+v : ''+v;
+  D = d;
+  document.getElementById('tabs').style.display = 'block';
+  document.querySelectorAll('.sheet-page').forEach(p => p.style.display = 'none');
+  document.getElementById('page1').style.display = 'block';
+  document.getElementById('page1').classList.add('active');
 
   // Header
-  document.getElementById('h-name').textContent = d.name;
-  document.getElementById('h-class').textContent = d.char_class + ' ' + d.level;
-  document.getElementById('h-race').textContent = d.race;
-  document.getElementById('h-align').textContent = d.alignment || 'Neutral';
-  document.getElementById('h-deity').textContent = d.deity || 'None';
-  document.getElementById('h-xp').textContent = (d.xp||0).toLocaleString();
-
-  // HP
-  document.getElementById('hp-cur').textContent = d.hp;
-  document.getElementById('hp-max').textContent = d.max_hp;
-  const pct = d.max_hp > 0 ? Math.max(0, d.hp/d.max_hp*100) : 0;
-  document.getElementById('hp-bar').style.width = pct + '%';
-
-  // AC
-  const dexMod = d.abilities.DEX.mod;
-  document.getElementById('ac-total').textContent = d.ac;
-  document.getElementById('ac-touch').textContent = 10 + dexMod;
-  document.getElementById('ac-flat').textContent = d.ac - dexMod;
-  document.getElementById('ac-dex').textContent = fmt(dexMod);
-  // Try to extract armor bonus from equipment
-  let armorBonus = 0, shieldBonus = 0;
-  for (const [slot, item] of Object.entries(d.equipment||{})) {
-    if (!item) continue;
-    if (slot === 'body' || slot === 'armor') armorBonus += (item.ac_bonus||0);
-    if (slot === 'shield' || slot === 'off_hand') shieldBonus += (item.ac_bonus||0);
-  }
-  document.getElementById('ac-armor').textContent = armorBonus || '—';
-  document.getElementById('ac-shield').textContent = shieldBonus || '—';
-  document.getElementById('ac-size').textContent = '0';
-  document.getElementById('ac-natural').textContent = '0';
-  document.getElementById('ac-deflect').textContent = '0';
-
-  // Initiative
-  document.getElementById('v-init').textContent = fmt(dexMod);
+  document.getElementById('p1-name').textContent = d.name;
+  document.getElementById('p1-sub').textContent = 'Level '+d.level+' '+d.race+' '+d.char_class+' \u2022 '+(d.alignment||'Neutral')+(d.deity?' \u2022 '+d.deity:'');
+  document.getElementById('p1-hp').textContent = d.hp;
+  document.getElementById('p1-maxhp').textContent = d.max_hp;
+  document.getElementById('p1-hpbar').style.width = (d.max_hp>0?Math.max(0,d.hp/d.max_hp*100):0)+'%';
 
   // Abilities
-  const abEl = document.getElementById('abilities');
-  abEl.innerHTML = '';
-  for (const [name, data] of Object.entries(d.abilities)) {
-    const row = document.createElement('div');
-    row.className = 'ability-row';
-    row.onclick = () => rollCheck(data.mod, name);
-    row.innerHTML = '<div class="ability-name">' + name + '</div>' +
-      '<div class="ability-score">' + data.score + '</div>' +
-      '<div class="ability-mod"><span>' + fmt(data.mod) + '</span></div>';
-    abEl.appendChild(row);
+  const abEl = document.getElementById('p1-abs'); abEl.innerHTML = '';
+  for (const [n,a] of Object.entries(d.abilities)) {
+    const b = document.createElement('div'); b.className='ab-box';
+    b.innerHTML = '<div class="lbl">'+n+'</div><div class="score">'+a.score+'</div><div class="mod">'+fmt(a.mod)+'</div>';
+    b.onclick = () => rc(a.mod, n); abEl.appendChild(b);
   }
 
-  // Saves
-  const svEl = document.getElementById('saves');
-  svEl.innerHTML = '';
-  const saveAbility = {Fort: 'CON', Ref: 'DEX', Will: 'WIS'};
-  for (const [name, total] of Object.entries(d.saves)) {
-    const ab = saveAbility[name] || 'CON';
-    const abMod = d.abilities[ab] ? d.abilities[ab].mod : 0;
-    const row = document.createElement('div');
-    row.className = 'save-row';
-    row.onclick = () => rollCheck(total, name + ' Save');
-    row.innerHTML = '<div class="save-name">' + name + '</div>' +
-      '<div class="save-cell save-total">' + fmt(total) + '</div>' +
-      '<div class="save-cell">' + fmt(abMod) + '</div>';
-    svEl.appendChild(row);
+  // Combat
+  const dexMod = d.abilities.DEX.mod;
+  const cEl = document.getElementById('p1-combat'); cEl.innerHTML = '';
+  [{l:'AC',v:d.ac},{l:'Touch',v:10+dexMod},{l:'Flat',v:d.ac-dexMod},{l:'Melee',v:d.melee_attack,c:true},{l:'Ranged',v:d.ranged_attack,c:true}].forEach(s => {
+    const b = document.createElement('div'); b.className='c-box';
+    b.innerHTML = '<div class="lbl">'+s.l+'</div><div class="val">'+(s.c?fmt(s.v):s.v)+'</div>';
+    if (s.c) b.onclick = () => rc(s.v, s.l+' Attack');
+    cEl.appendChild(b);
+  });
+  // Saves inline
+  for (const [n,v] of Object.entries(d.saves)) {
+    const b = document.createElement('div'); b.className='c-box'; b.style.cursor='pointer';
+    b.innerHTML = '<div class="lbl">'+n+' Save</div><div class="val">'+fmt(v)+'</div>';
+    b.onclick = () => rc(v, n+' Save'); cEl.appendChild(b);
   }
+  // Init + Speed
+  [{l:'Initiative',v:dexMod,c:true},{l:'Speed',v:'30ft'}].forEach(s => {
+    const b = document.createElement('div'); b.className='c-box';
+    b.innerHTML = '<div class="lbl">'+s.l+'</div><div class="val">'+(s.c?fmt(s.v):s.v)+'</div>';
+    if (s.c) b.onclick = () => rc(s.v, s.l); cEl.appendChild(b);
+  });
 
-  // BAB
-  document.getElementById('v-melee').textContent = fmt(d.melee_attack);
-  document.getElementById('v-ranged').textContent = fmt(d.ranged_attack);
-  document.getElementById('bab-melee').onclick = () => rollCheck(d.melee_attack, 'Melee Attack');
-  document.getElementById('bab-ranged').onclick = () => rollCheck(d.ranged_attack, 'Ranged Attack');
-
-  // Attacks (from equipment weapons)
-  const atkEl = document.getElementById('attacks');
-  atkEl.innerHTML = '';
+  // Attacks
+  const aEl = document.getElementById('p1-attacks'); aEl.innerHTML = '';
   for (const [slot, item] of Object.entries(d.equipment||{})) {
-    if (!item || !item.damage) continue;
-    const dmg = item.damage;
-    const dmgStr = dmg[0]+'d'+dmg[1]+(dmg[2]?'+'+dmg[2]:'');
-    const row = document.createElement('div');
-    row.className = 'attack-row';
-    row.onclick = () => rollCheck(d.melee_attack, item.name + ' Attack');
-    row.innerHTML = '<div class="cell">' + item.name + '</div>' +
-      '<div class="cell">' + fmt(d.melee_attack) + '</div>' +
-      '<div class="cell">' + dmgStr + '</div>' +
-      '<div class="cell">' + slot + '</div>';
-    atkEl.appendChild(row);
+    if (!item||!item.damage) continue;
+    const dm = item.damage, ds = dm[0]+'d'+dm[1]+(dm[2]?'+'+dm[2]:'');
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+item.name+'</td><td>'+fmt(d.melee_attack)+'</td><td>'+ds+'</td><td>'+slot+'</td>';
+    tr.style.cursor='pointer'; tr.onclick = () => rc(d.melee_attack, item.name);
+    aEl.appendChild(tr);
   }
-  if (atkEl.children.length === 0) {
-    atkEl.innerHTML = '<div class="attack-row"><div class="cell" style="grid-column:1/-1; color:#999;">No weapons equipped</div></div>';
-  }
+  if (!aEl.children.length) aEl.innerHTML = '<tr><td colspan="4" style="color:#665533">No weapons equipped</td></tr>';
 
   // Skills
-  const skEl = document.getElementById('skills');
-  skEl.innerHTML = '';
-  const skills = Object.entries(d.skills||{}).sort((a,b) => a[0].localeCompare(b[0]));
-  skills.forEach(([name, val]) => {
-    const row = document.createElement('div');
-    row.className = 'skill-row';
-    row.onclick = () => rollCheck(val, name);
-    row.innerHTML = '<div class="sname">' + name + '</div>' +
-      '<div class="scell">' + fmt(val) + '</div>' +
-      '<div class="scell">' + Math.max(0, val) + '</div>';
-    skEl.appendChild(row);
+  const sEl = document.getElementById('p1-skills'); sEl.innerHTML = '';
+  Object.entries(d.skills||{}).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([n,v]) => {
+    const r = document.createElement('div'); r.className='sk-row';
+    r.innerHTML = '<span>'+n+'</span><span class="sm">'+fmt(v)+'</span>';
+    r.onclick = () => rc(v, n); sEl.appendChild(r);
   });
-  if (skills.length === 0) skEl.innerHTML = '<div style="color:#999; padding:4px;">No trained skills</div>';
+  if (!Object.keys(d.skills||{}).length) sEl.innerHTML = '<div style="color:#665533; padding:4px;">No trained skills</div>';
 
   // Feats
-  const ftEl = document.getElementById('feats');
-  ftEl.textContent = (d.feats||[]).join(', ') || 'None';
+  const fEl = document.getElementById('p1-feats'); fEl.innerHTML = '';
+  (d.feats||[]).forEach(f => { const t=document.createElement('span'); t.className='feat-tag'; t.textContent=f; fEl.appendChild(t); });
+  if (!d.feats||!d.feats.length) fEl.innerHTML = '<span style="color:#665533">None</span>';
 
-  // Equipment + Inventory
-  const eqEl = document.getElementById('equipment');
-  eqEl.innerHTML = '';
+  // PAGE 2: Spells or Notes
+  const spells = d.spells_known || {};
+  const hasSpells = Object.values(spells).some(v => Array.isArray(v) && v.length > 0);
+  const tab2 = document.getElementById('tab-page2');
+  const spDiv = document.getElementById('p2-spells');
+  const ntDiv = document.getElementById('p2-notes');
+
+  if (hasSpells) {
+    tab2.textContent = 'Spells';
+    spDiv.style.display = 'block'; ntDiv.style.display = 'none';
+    spDiv.innerHTML = '<div class="sec"><h2>Spells Known</h2></div>';
+    for (const [level, list] of Object.entries(spells).sort((a,b)=>a[0]-b[0])) {
+      if (!Array.isArray(list)||!list.length) continue;
+      const block = document.createElement('div'); block.className = 'spell-level-block';
+      block.innerHTML = '<div class="spell-level-header"><span class="level">Level '+level+'</span><span class="slots">'+list.length+' known</span></div>';
+      const sl = document.createElement('div'); sl.className = 'spell-list';
+      list.forEach(s => { const t=document.createElement('span'); t.className='spell-tag'; t.textContent=s; sl.appendChild(t); });
+      block.appendChild(sl); spDiv.appendChild(block);
+    }
+  } else {
+    tab2.textContent = 'Notes';
+    spDiv.style.display = 'none'; ntDiv.style.display = 'block';
+    ntDiv.innerHTML = '<div class="sec"><h2>Class Features & Notes</h2><div class="notes-area">'+d.char_class+' Level '+d.level+'\n\nClass features and abilities go here.\n\nUse this page to track class-specific abilities,\nwild shape uses, rage rounds, turn undead attempts,\nor any other per-day resources.</div></div>';
+    ntDiv.innerHTML += '<div class="sec"><h2>Languages</h2><div class="notes-area">Common\n'+d.race+' (racial)</div></div>';
+    ntDiv.innerHTML += '<div class="sec"><h2>Campaign Notes</h2><div class="notes-area">Write your campaign notes here...</div></div>';
+  }
+
+  // PAGE 3: Equipment + Journal
+  const eqEl = document.getElementById('p3-equip'); eqEl.innerHTML = '';
   for (const [slot, item] of Object.entries(d.equipment||{})) {
     if (!item) continue;
-    const div = document.createElement('div');
-    div.className = 'equip-item';
-    div.innerHTML = '<span>' + item.name + '</span><span style="color:#888">' + slot + '</span>';
-    eqEl.appendChild(div);
+    eqEl.innerHTML += '<tr><td>'+item.name+'</td><td>'+slot+'</td><td>—</td></tr>';
   }
   (d.inventory||[]).forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'equip-item';
-    div.innerHTML = '<span>' + item.name + '</span><span style="color:#888">' + item.type + '</span>';
-    eqEl.appendChild(div);
+    eqEl.innerHTML += '<tr><td>'+item.name+'</td><td>'+item.type+'</td><td>'+(item.value||'—')+'</td></tr>';
   });
-  document.getElementById('gold-val').textContent = (d.gold||0).toLocaleString();
+  document.getElementById('p3-gold').textContent = (d.gold||0).toLocaleString();
+
+  // Factions
+  const facEl = document.getElementById('p3-factions'); facEl.innerHTML = '';
+  if (d.factions && d.factions.length) {
+    d.factions.forEach(f => {
+      const pct = Math.min(100, Math.max(0, (f.rep + 500) / 1500 * 100));
+      const color = f.rep > 100 ? '#2d6b2d' : f.rep < -100 ? '#8b2020' : '#665533';
+      facEl.innerHTML += '<div class="faction-row"><span class="fname">'+f.name+'</span><div class="fbar"><div class="fill" style="width:'+pct+'%; background:'+color+';"></div></div><span class="frep" style="color:'+color+'">'+f.rep+'</span><span class="fstanding">'+f.standing+'</span></div>';
+    });
+  } else { facEl.innerHTML = '<div style="color:#665533">No faction standings yet.</div>'; }
+
+  // Journal
+  const jEl = document.getElementById('p3-journal');
+  let journal = '';
+  journal += 'Captives Rescued: '+(d.rescued_captives||0)+'\n';
+  journal += 'Rooms Explored: '+(d.rooms_visited||0)+' / 1926\n';
+  journal += 'Kills: '+(d.kill_count||0)+'\n';
+  if (d.remort_count) journal += 'Remorts: '+d.remort_count+'\n';
+  jEl.textContent = journal;
+
+  document.getElementById('p3-background').textContent = d.race + ' ' + d.char_class + ' from Oreka.\n\nWrite your character background here...';
 }
 
-// Connection
+// === CONNECTION ===
 function connect() {
-  const host = (location.hostname || '127.0.0.1');
-  const wsHost = (location.protocol === 'file:' || !host) ? '127.0.0.1' : host;
-  ws = new WebSocket('ws://' + wsHost + ':8767/');
+  const h = (location.hostname||'127.0.0.1');
+  const wh = (location.protocol==='file:'||!h)?'127.0.0.1':h;
+  ws = new WebSocket('ws://'+wh+':8767/');
   const s = document.getElementById('status');
-  ws.onopen = () => { s.textContent = 'Connected'; s.style.color = '#7ec8e3'; };
-  ws.onmessage = (ev) => {
-    let msg; try { msg = JSON.parse(ev.data); } catch { return; }
-    if (msg.type === 'auth_result' && msg.success) {
-      s.textContent = 'Loading ' + msg.character_name + '...';
-      s.style.color = '#27ae60';
-      ws.send(JSON.stringify({type: 'sheet'}));
-    } else if (msg.type === 'auth_result') {
-      s.textContent = msg.message || 'Login failed'; s.style.color = '#c0392b';
-    } else if (msg.type === 'sheet_data') {
-      s.textContent = msg.name + ' loaded';
-      renderSheet(msg);
-    }
+  ws.onopen = () => { s.textContent='Connected'; s.style.color='#c4a265'; };
+  ws.onmessage = ev => {
+    let m; try{m=JSON.parse(ev.data);}catch{return;}
+    if (m.type==='auth_result'&&m.success) { s.textContent='Loading...'; s.style.color='#2d6b2d'; ws.send(JSON.stringify({type:'sheet'})); }
+    else if (m.type==='auth_result') { s.textContent=m.message||'Failed'; s.style.color='#8b2020'; }
+    else if (m.type==='sheet_data') { s.textContent=m.name; renderSheet(m); }
   };
-  ws.onerror = () => { s.textContent = 'Failed'; s.style.color = '#c0392b'; };
-  ws.onclose = () => { s.textContent = 'Disconnected'; s.style.color = '#888'; };
+  ws.onerror = () => { s.textContent='Error'; s.style.color='#8b2020'; };
+  ws.onclose = () => { s.textContent='Disconnected'; s.style.color='#665533'; };
 }
 document.getElementById('login-btn').addEventListener('click', () => {
-  if (!ws || ws.readyState !== 1) return;
-  const u = document.getElementById('username').value.trim();
-  const p = document.getElementById('password').value.trim();
-  if (u && p) ws.send(JSON.stringify({type:'auth', username:u, password:p}));
+  if (!ws||ws.readyState!==1) return;
+  const u=document.getElementById('username').value.trim(), p=document.getElementById('password').value.trim();
+  if (u&&p) ws.send(JSON.stringify({type:'auth',username:u,password:p}));
 });
-document.getElementById('password').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('login-btn').click(); });
+document.getElementById('password').addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('login-btn').click(); });
 connect();
 </script>
 </body>
