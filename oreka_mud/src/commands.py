@@ -2225,6 +2225,9 @@ class CommandParser:
             "@spawn_captive": self.cmd_spawn_captive,
             # System 43: Reputation-Gated Quest Reveal
             "hidden":         self.cmd_hidden_quests,
+            # System 44: Character Journal / Dossier
+            "journal":        self.cmd_journal,
+            "dossier":        self.cmd_journal,
             # System 39: Ignore / Block
             "ignore": self.cmd_ignore,
             "block": self.cmd_ignore,
@@ -15166,4 +15169,20 @@ def cmd_hidden_quests(self, character, args):
 
 
 CommandParser.cmd_hidden_quests = cmd_hidden_quests
+
+
+# =============================================================================
+# System 44: Character Journal / Dossier
+# =============================================================================
+
+def cmd_journal(self, character, args):
+    """View your adventure journal — rescues, factions, exploration, combat.
+    Usage: journal
+           dossier  (alias)
+    """
+    from src.character_dossier import render_journal
+    return render_journal(character)
+
+
+CommandParser.cmd_journal = cmd_journal
 

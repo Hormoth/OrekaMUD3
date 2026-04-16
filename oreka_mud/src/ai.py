@@ -524,13 +524,22 @@ def build_unified_npc_prompt(
                 f"{getattr(character, 'char_class', 'adventurer')}."
             )
 
-    # Faction standings
-    factions = getattr(character, 'reputation', None) or {}
-    nonzero = [(f, v) for f, v in factions.items() if v]
-    if nonzero:
-        parts.append("Faction standings:")
-        for f, v in nonzero[:8]:
-            parts.append(f"  {f}: {v}")
+    # Character dossier -- replaces the old simple faction-standings block
+    # with a richer summary that includes rescue history, behavioral tags,
+    # and exploration depth so NPCs can react to the player's reputation.
+    try:
+        from src.character_dossier import build_dossier_prompt_block
+        dossier_block = build_dossier_prompt_block(character)
+        if dossier_block:
+            parts.append(f"\n{dossier_block}")
+    except Exception:
+        # Fallback to basic faction standings
+        factions = getattr(character, 'reputation', None) or {}
+        nonzero = [(f, v) for f, v in factions.items() if v]
+        if nonzero:
+            parts.append("Faction standings:")
+            for f, v in nonzero[:8]:
+                parts.append(f"  {f}: {v}")
 
     # ── 3. Room ambience (or description fallback) ──────────────────
     if room:
@@ -1050,10 +1059,18 @@ def _build_chat_system_prompt(session, character, npc_memory: dict) -> str:
         if session.player_deity:
             parts.append(f"Deity: {session.player_deity}")
 
-    if session.player_factions:
-        faction_lines = [f"  {f}: {v}" for f, v in session.player_factions.items() if v != 0]
-        if faction_lines:
-            parts.append(f"Faction standings:\n" + "\n".join(faction_lines))
+    # Inject character dossier for richer NPC awareness
+    try:
+        from src.character_dossier import build_dossier_prompt_block
+        dossier_block = build_dossier_prompt_block(character)
+        if dossier_block:
+            parts.append(f"\n{dossier_block}")
+    except Exception:
+        # Fallback to raw faction standings
+        if session.player_factions:
+            faction_lines = [f"  {f}: {v}" for f, v in session.player_factions.items() if v != 0]
+            if faction_lines:
+                parts.append(f"Faction standings:\n" + "\n".join(faction_lines))
 
     # -------------- 3. ROOM AMBIENCE --------------
     ambience = getattr(room, 'ambience', None) if room else None
