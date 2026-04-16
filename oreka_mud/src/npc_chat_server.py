@@ -314,6 +314,84 @@ async def _handle_client(ws, world):
                     "greeting": greeting,
                 }))
 
+            # --- Character sheet data request -----------------------------
+            elif msg_type == "sheet":
+                if not session.authenticated:
+                    await ws.send(json.dumps({
+                        "type": "error",
+                        "message": "Log in first to view your character sheet.",
+                    }))
+                    continue
+                char = session.player
+                # Build the full stat block as JSON
+                def _mod(score):
+                    return (score - 10) // 2
+                abilities = {
+                    "STR": getattr(char, "str_score", 10),
+                    "DEX": getattr(char, "dex_score", 10),
+                    "CON": getattr(char, "con_score", 10),
+                    "INT": getattr(char, "int_score", 10),
+                    "WIS": getattr(char, "wis_score", 10),
+                    "CHA": getattr(char, "cha_score", 10),
+                }
+                saves = getattr(char, "saves", None)
+                if not saves or not isinstance(saves, dict):
+                    saves = {
+                        "Fort": _mod(abilities["CON"]) + getattr(char, "level", 1) // 2,
+                        "Ref":  _mod(abilities["DEX"]) + getattr(char, "level", 1) // 3,
+                        "Will": _mod(abilities["WIS"]) + getattr(char, "level", 1) // 3,
+                    }
+                # Attack bonus
+                bab = getattr(char, "level", 1)  # simplified BAB
+                melee_mod = bab + _mod(abilities["STR"])
+                ranged_mod = bab + _mod(abilities["DEX"])
+                # Equipment
+                equipment = {}
+                for slot, item in (getattr(char, "equipment", {}) or {}).items():
+                    if item:
+                        equipment[slot] = {
+                            "name": getattr(item, "name", "?"),
+                            "ac_bonus": getattr(item, "ac_bonus", 0),
+                            "damage": getattr(item, "damage", None),
+                        }
+                # Inventory
+                inv = []
+                for item in (getattr(char, "inventory", []) or []):
+                    inv.append({
+                        "name": getattr(item, "name", "?"),
+                        "type": getattr(item, "item_type", "?"),
+                        "value": getattr(item, "value", 0),
+                    })
+                sheet = {
+                    "type": "sheet_data",
+                    "name": getattr(char, "name", "?"),
+                    "race": getattr(char, "race", "?"),
+                    "char_class": getattr(char, "char_class", "?"),
+                    "level": getattr(char, "level", 1),
+                    "alignment": getattr(char, "alignment", "Neutral"),
+                    "deity": getattr(char, "deity", None),
+                    "title": getattr(char, "title", ""),
+                    "xp": getattr(char, "xp", 0),
+                    "hp": getattr(char, "hp", 0),
+                    "max_hp": getattr(char, "max_hp", 0),
+                    "ac": getattr(char, "ac", 10),
+                    "gold": getattr(char, "gold", 0),
+                    "abilities": {k: {"score": v, "mod": _mod(v)} for k, v in abilities.items()},
+                    "saves": saves,
+                    "melee_attack": melee_mod,
+                    "ranged_attack": ranged_mod,
+                    "feats": getattr(char, "feats", []),
+                    "skills": getattr(char, "skills", {}),
+                    "spells_known": getattr(char, "spells_known", {}),
+                    "equipment": equipment,
+                    "inventory": inv[:20],
+                    "rescued_captives": len(getattr(char, "rescued_captives", [])),
+                    "kill_count": getattr(char, "kill_count", 0),
+                    "rooms_visited": len(getattr(char, "rooms_visited", set())),
+                    "remort_count": getattr(char, "remort_count", 0),
+                }
+                await ws.send(json.dumps(sheet))
+
             # --- Send a message to the NPC --------------------------------
             elif msg_type == "message":
                 if session.npc is None:

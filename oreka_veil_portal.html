@@ -100,6 +100,11 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a0a1a; color: 
         <h3>Talk to an NPC</h3>
         <p>AI conversation with any NPC. They know your history, your reputation, your story.</p>
       </div>
+      <div class="path-card" id="path-sheet">
+        <div class="icon">&#128220;</div>
+        <h3>Character Sheet</h3>
+        <p>Full D&D 3.5 stat block with interactive dice rollers. Click any stat to roll.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -275,9 +280,13 @@ document.getElementById('path-mud').addEventListener('click', () => {
 });
 
 document.getElementById('path-chat').addEventListener('click', () => {
-  // Switch to inline chat view
   portal.style.display = 'none';
   chatView.style.display = 'flex';
+});
+
+document.getElementById('path-sheet').addEventListener('click', () => {
+  const host = location.hostname || '127.0.0.1';
+  window.open('oreka_character_sheet.html', '_blank');
 });
 
 // ==================== BACK BUTTON ====================
