@@ -23,11 +23,11 @@ logger = logging.getLogger("OrekaMUD.AI")
 _config = {
     "enabled": True,           # LLM enabled — Ollama is running
     "backend": "ollama",       # "ollama" or "lmstudio"
-    "ollama_host": "http://localhost:11434",
-    "ollama_model": "llama3",
-    "lmstudio_host": "http://localhost:1234",
+    "ollama_host": "http://10.1.79.28:11434",
+    "ollama_model": "qwen2.5:14b",
+    "lmstudio_host": "http://10.1.79.27:1234",
     "lmstudio_model": "local-model",
-    "timeout": 15,             # seconds
+    "timeout": 30,             # seconds (bumped for network latency)
 }
 
 
