@@ -1,0 +1,4304 @@
+{
+  "region": "infinitedesert",
+  "buckets": {
+    "3": [
+      {
+        "name": "Allip",
+        "vnum": 10010,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          12,
+          0
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Fragmented -- distorted remnant of original Kin's elemental identity"
+        ],
+        "type_": "Undead",
+        "alignment": "Always neutral evil",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 12,
+          "Con": null,
+          "Int": 11,
+          "Wis": 11,
+          "Cha": 18
+        },
+        "speed": {
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "incorporeal touch",
+            "bonus": 3,
+            "damage": "1d4 Wisdom drain"
+          }
+        ],
+        "special_attacks": [
+          "Babble",
+          "madness",
+          "Wisdom drain"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "incorporeal traits",
+          "+2 turn resistance",
+          "undead traits",
+          "undead resonance"
+        ],
+        "feats": [
+          "Improved Initiative",
+          "Lightning Reflexes"
+        ],
+        "skills": {
+          "Hide": 8,
+          "Intimidate": 7,
+          "Listen": 7,
+          "Search": 7,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 2,
+          "Will": 4
+        },
+        "environment": "Kinsweave (border-kingdom ruins, abandoned guild halls, fallen court chambers); Tidebloom Reach (drowned villages near Hillmeet and Foxfen, waterlogged libraries). Rare in the Infinite Desert near collapsed Giant record-halls.",
+        "organization": "Solitary",
+        "description": "It was a scholar, once. You can tell by the way it moves its hands -- still tracing letters on invisible pages, still turning invisible leaves. Its mouth opens and closes ceaselessly, pouring out a stream of whispered words that resolve into nothing, loop back on themselves, and begin again. The sound is not language. It is the sound of a mind that broke so completely that death could not stop it from trying to finish the thought."
+      },
+      {
+        "name": "Amphisbaena",
+        "vnum": 10028,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          10,
+          8
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth)"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 17,
+          "Con": 14,
+          "Int": 1,
+          "Wis": 12,
+          "Cha": 2
+        },
+        "speed": {
+          "land": 30,
+          "burrow": 10,
+          "climb": 20
+        },
+        "attacks": [
+          {
+            "type": "bites",
+            "bonus": 7,
+            "damage": "1d6+1 plus poison"
+          }
+        ],
+        "special_attacks": [
+          "Poison",
+          "split strike"
+        ],
+        "special_qualities": [
+          "All-around vision",
+          "darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "cold resistance 10",
+          "elemental resonance (Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Weapon Finesse",
+          "Combat Reflexes"
+        ],
+        "skills": {
+          "Hide": 9,
+          "Listen": 7,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 7,
+          "Will": 2
+        },
+        "environment": "The Infinite Desert (sandy gullies, rocky scree-fields, ruin-margins, canyon floors); secondary presence in the Glass Wastes and the arid foothills between the Giant's Teeth and the Scorchspires",
+        "organization": "Solitary, pair, or nest (3-8)",
+        "description": "Something moves in the sand ahead of you -- a ripple, like water over a submerged log. Then two heads emerge, one at each end of a body the colour of dried bone, and both heads open their mouths simultaneously, each displaying a set of thin, curved fangs wet with venom. The creature does not coil; it holds itself in a taut S-curve between the two heads, ready to strike in either direction without turning around."
+      },
+      {
+        "name": "Doppelganger",
+        "vnum": 10048,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          8,
+          4
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:None native -- doppelgangers are alien to Oreka; see Breach Resonance"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 13,
+          "Con": 12,
+          "Int": 13,
+          "Wis": 14,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 5,
+            "damage": "1d6+1"
+          }
+        ],
+        "special_attacks": [
+          "Detect thoughts"
+        ],
+        "special_qualities": [
+          "Alternate form",
+          "darkvision 60 ft.",
+          "immunity to sleep and charm",
+          "breach resonance"
+        ],
+        "feats": [
+          "Dodge",
+          "Great Fortitude"
+        ],
+        "skills": {
+          "Bluff": 12,
+          "Diplomacy": 6,
+          "Disguise": 12,
+          "Listen": 6,
+          "Sense Motive": 6,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 5,
+          "Will": 6
+        },
+        "environment": "Any settlement (doppelgangers are urban predators found wherever Kin populations are dense enough to provide cover -- primarily Kinsweave border-kingdoms, Eruskan river-cities, Tidebloom Reach towns, and the larger Pekakarlik oasis-settlements)",
+        "organization": "Solitary or pair",
+        "description": "It looks like you. It looks exactly like you -- your face, your build, your clothes (not real, just shaped flesh mimicking fabric), and the way you hold your shoulders when you are tired. It even smells like you, or close enough that a casual observer would not notice. But its thoughts are not your thoughts, and behind the mask of your face, something alien is calculating how long it can wear you before someone notices."
+      },
+      {
+        "name": "Dust Mephit",
+        "vnum": 10055,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          8,
+          0
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          3,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) / Lord of Stone (Earth) -- minor elemental; dust is where wind meets dry earth"
+        ],
+        "type_": "Outsider",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 17,
+          "Con": 10,
+          "Int": 6,
+          "Wis": 11,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 30,
+          "fly": 50
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 4,
+            "damage": "1d3"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "spell-like abilities",
+          "summon mephit"
+        ],
+        "special_qualities": [
+          "Damage reduction 5/magic",
+          "darkvision 60 ft.",
+          "fast healing 2 (in arid/dusty environments)",
+          "elemental resonance (Air/Earth)"
+        ],
+        "feats": [
+          "Dodge",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Bluff": 8,
+          "Hide": 13,
+          "Listen": 6,
+          "Diplomacy": 4,
+          "Move Silently": 9,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 6,
+          "Will": 3
+        },
+        "environment": "The Infinite Desert (sandstorms, dust-devils, ruin interiors, dry canyon systems); secondary presence wherever arid conditions meet high winds (Scorchspire valleys, Glass Wastes, Ashen Crown leeward slopes)",
+        "organization": "Solitary, pair, or gang (3-6)",
+        "description": "It materialises from the air itself -- or rather, from the dust in the air, drawing particles together into a shape roughly the size and temperament of an angry cat with wings. Its body is gritty, compacted sand and dust that shifts and hisses when it moves. Its eyes are two sparks of dull amber. Its voice, when it speaks (and it will speak -- dust mephits never shut up), sounds like sand pouring through a crack."
+      },
+      {
+        "name": "Ember Drake",
+        "vnum": 10068,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          12,
+          8
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          2
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) -- pure, undiluted fire-affinity; the ember drake is the Lady's domain in its most accessible form"
+        ],
+        "type_": "Dragon",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 15,
+          "Con": 14,
+          "Int": 6,
+          "Wis": 12,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30,
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 7,
+            "damage": "1d6+2 plus 1d4 fire"
+          },
+          {
+            "type": "claws",
+            "bonus": 5,
+            "damage": "1d4+1"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "immunity to fire",
+          "vulnerability to cold",
+          "heat aura",
+          "forge bond",
+          "elemental resonance (Fire)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Multiattack",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Hide": 10,
+          "Listen": 8,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 6,
+          "Will": 5
+        },
+        "environment": "Scorchspires (volcanic vents, lava tubes, caldera edges, and Rarozhki forge-halls); secondary presence in the Emberfang Mountains, Ashen Crown, and volcanic vents in the Infinite Desert",
+        "organization": "Solitary or clutch (2-4)",
+        "description": "It sits on the forge-rim like a cat sits on a warm hearth -- compact, content, and radiating heat that makes the air shimmer. It is the size of a large dog, scaled in overlapping plates of orange-red that shift to white-hot at the edges, and its eyes glow like coals. A thin trail of smoke curls from each nostril. The Rarozhki smith working at the forge does not look up. The drake has been here longer than he has. It was here when his grandfather lit this forge for the first time, and it will b..."
+      },
+      {
+        "name": "Grick",
+        "vnum": 10078,
+        "cr": 3.0,
+        "level": 2,
+        "hp_dice": [
+          2,
+          8,
+          2
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          2
+        ],
+        "flags": [
+          "elemental_affinity:None -- aberration; breach resonance indicates origin outside Oreka's elemental framework"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 14,
+          "Con": 13,
+          "Int": 3,
+          "Wis": 14,
+          "Cha": 5
+        },
+        "speed": {
+          "land": 30,
+          "climb": 20
+        },
+        "attacks": [
+          {
+            "type": "tentacles",
+            "bonus": 3,
+            "damage": "1d4+2"
+          },
+          {
+            "type": "bite",
+            "bonus": -2,
+            "damage": "1d3+1"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Damage reduction 10/magic",
+          "darkvision 60 ft.",
+          "scent",
+          "breach resonance"
+        ],
+        "feats": [
+          "Alertness",
+          "Track (B)"
+        ],
+        "skills": {
+          "Climb": 10,
+          "Hide": 3,
+          "Listen": 6,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 2,
+          "Will": 3
+        },
+        "environment": "Underground (natural cave systems, mine-tunnels, and Giant-era passages -- anywhere with consistent darkness, moisture, and sufficient prey)",
+        "organization": "Solitary or cluster (2-4)",
+        "description": "The tunnel narrows. The walls are wet. Something moves in the darkness ahead -- not quickly, not dramatically, but with the patient, questing motion of a creature that has all the time in the world and knows that everything in the tunnel eventually comes to it. You see tentacles first -- four of them, barbed, extending from the darkness like fingers testing the air. Then the beak."
+      },
+      {
+        "name": "Nak",
+        "vnum": 10133,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          10,
+          8
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          3
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- brackish; the murky, salt-tinged water where river meets sea, neither fully fresh nor fully salt"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 16,
+          "Dex": 14,
+          "Con": 14,
+          "Int": 5,
+          "Wis": 12,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 20,
+          "swim": 40,
+          "climb": 20
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 7,
+            "damage": "1d6+3 plus grab"
+          },
+          {
+            "type": "tail slap",
+            "bonus": 2,
+            "damage": "1d4+1"
+          }
+        ],
+        "special_attacks": [
+          "Improved grab",
+          "drag under",
+          "dock ambush"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "pylon-cling",
+          "elemental resonance (water-brackish)"
+        ],
+        "feats": [
+          "Alertness",
+          "Stealthy"
+        ],
+        "skills": {
+          "Climb": 11,
+          "Hide": 8,
+          "Listen": 5,
+          "Spot": 5,
+          "Swim": 11
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 6,
+          "Will": 2
+        },
+        "environment": "Pekakarlik Docks (the timber-pylon dock-complexes of Pekakarlik coastal and estuarine trading-posts -- the pilings, jetties, and harbour structures where river-barges meet sea-going vessels along the Apelian coast)",
+        "organization": "Solitary, pair, or colony (3-8)",
+        "description": "The dock is old Pekakarlik construction -- heavy timber pylons driven into the estuary-mud, planked with salt-treated oak, worn smooth by a century of barge-keels and bare feet. At the dock's end, where the pylons meet the water, something lives between the pilings. The children see it first -- they always do -- a crocodilian shape the size of a large dog, long-snouted and dark-scaled, watching the dock-traffic from the shadows between the timbers with bright, unblinking eyes. It is not a crocod..."
+      },
+      {
+        "name": "Salt Mephit",
+        "vnum": 10178,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          8,
+          6
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          3,
+          -1
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- crystalline desiccation; the resonance of salt-deposits, of water removed from earth until only the mineral skeleton remains, earth at its driest and most hostile to life"
+        ],
+        "type_": "Outsider",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 9,
+          "Dex": 8,
+          "Con": 15,
+          "Int": 6,
+          "Wis": 11,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 30,
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 3,
+            "damage": "1d3-1 plus desiccation"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "desiccation",
+          "summon mephit"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "fast healing 2 (in arid environments)",
+          "DR 5/magic",
+          "elemental resonance (earth - crystalline desiccation)"
+        ],
+        "feats": [
+          "Power Attack",
+          "Toughness"
+        ],
+        "skills": {
+          "Bluff": 8,
+          "Hide": 9,
+          "Listen": 6,
+          "Move Silently": 5,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 2,
+          "Will": 3
+        },
+        "environment": "Desert Salt Flats (the vast salt-pan expanses of the Infinite Desert -- specifically the dried lake-beds and mineral-flat zones where ancient water-sources evaporated millennia ago, leaving crystalline wastelands)",
+        "organization": "Solitary, gang (2-4), or pack (5-12)",
+        "description": "The salt flat shimmers in the heat. The crust is thin here -- thin enough that your boot punches through with each step, revealing the damp brine beneath. Something crunches to your left, and a shape rises from the salt-crust like a man rising from shallow water: small, angular, encrusted with crystalline deposits, with a face that is all sharp edges and a grin that contains too many teeth. It smells like a low-tide beach on a hot day. It is looking at your waterskin with the focused intensity..."
+      },
+      {
+        "name": "Flamewarg Cult Initiate (Sorcerer 3, Human)",
+        "vnum": 10312,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          4,
+          6
+        ],
+        "ac": 14,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "human",
+          "hostile",
+          "caster",
+          "cultist"
+        ],
+        "type_": "Humanoid (Human)",
+        "alignment": "Chaotic Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 13,
+          "Con": 14,
+          "Int": 10,
+          "Wis": 10,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "burning quarterstaff",
+            "bonus": 1,
+            "damage": "1d6+1d4 fire"
+          }
+        ],
+        "special_attacks": [
+          "Burning Hands 4/day (2d4)",
+          "Produce Flame at will (1d6+3)",
+          "Ritual self-immolation (healing others at cost of caster)"
+        ],
+        "special_qualities": [
+          "Fire resistance 5",
+          "Spells/day: 0th -- 6; 1st -- 6",
+          "Cult marks visible on the forearms -- crossed-out suns in burn-scars"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Toughness"
+        ],
+        "skills": {
+          "Bluff": 8,
+          "Concentration": 8,
+          "Knowledge (religion)": 4,
+          "Spellcraft": 4
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 2,
+          "Will": 3
+        },
+        "environment": "Eternal Steppe (Burnt Hollows collapsed burrow-forts, Dark Dawn Battlefield dead zones); underground; Gatefall Scar Road; occasional Infinite Desert oasis raid camps",
+        "organization": "cell (2-4 cultists plus 1 flamewarg and 2 goblins)",
+        "description": "A lean human woman with charred sleeves and a half-healed burn on her cheek in the shape of a hand. She believes the Deceivers will return, and she will be rewarded."
+      }
+    ],
+    "9": [
+      {
+        "name": "Androsphinx",
+        "vnum": 10011,
+        "cr": 9.0,
+        "level": 12,
+        "hp_dice": [
+          12,
+          10,
+          48
+        ],
+        "ac": 22,
+        "damage_dice": [
+          2,
+          4,
+          7
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) / Youngest Brother (Air) -- dual affinity"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always chaotic good",
+        "ability_scores": {
+          "Str": 25,
+          "Dex": 10,
+          "Con": 19,
+          "Int": 16,
+          "Wis": 17,
+          "Cha": 17
+        },
+        "speed": {
+          "land": 50,
+          "fly": 80
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 18,
+            "damage": "2d4+7"
+          }
+        ],
+        "special_attacks": [
+          "Pounce",
+          "rake 2d4+3",
+          "roar"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "elemental resonance (Earth/Air)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Cleave",
+          "Flyby Attack",
+          "Great Cleave",
+          "Power Attack",
+          "Track"
+        ],
+        "skills": {
+          "Intimidate": 12,
+          "Listen": 13,
+          "Spot": 13,
+          "Survival": 10
+        },
+        "saves": {
+          "Fort": 12,
+          "Ref": 8,
+          "Will": 7
+        },
+        "environment": "The Infinite Desert (Giant ruins, carved canyon approaches, exposed plateau-tops near the Sunken Thrones and Tharok's Pillar); secondary presence in the Glass Wastes (ridgelines overlooking the sand-flats)",
+        "organization": "Solitary or pair",
+        "description": "It sits on a slab of carved stone that was once a throne-room lintel, its lion's body perfectly still, its human face turned toward the horizon as though watching for something that will never come. Sand drifts against its flanks. Its mane, thick as a horse's tail, lifts in the desert wind. When it speaks -- and it will speak, if it judges you worthy of words -- its voice resonates in the chest like a struck bell, and the sand around it trembles."
+      },
+      {
+        "name": "Delver",
+        "vnum": 10045,
+        "cr": 9.0,
+        "level": 15,
+        "hp_dice": [
+          15,
+          8,
+          78
+        ],
+        "ac": 24,
+        "damage_dice": [
+          2,
+          6,
+          12
+        ],
+        "flags": [
+          "elemental_affinity:None -- delvers are alien aberrations; see Breach Resonance"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 27,
+          "Dex": 13,
+          "Con": 21,
+          "Int": 14,
+          "Wis": 14,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 30,
+          "burrow": 10
+        },
+        "attacks": [
+          {
+            "type": "slams",
+            "bonus": 17,
+            "damage": "2d6+12 plus 2d6 acid"
+          }
+        ],
+        "special_attacks": [
+          "Acid",
+          "corrosive slime"
+        ],
+        "special_qualities": [
+          "Blindsight 60 ft.",
+          "darkvision 60 ft.",
+          "immunity to acid",
+          "stone shape at will",
+          "tremorsense 60 ft.",
+          "breach resonance"
+        ],
+        "feats": [
+          "Alertness",
+          "Blind-Fight",
+          "Great Fortitude",
+          "Improved Initiative",
+          "Power Attack",
+          "Toughness"
+        ],
+        "skills": {
+          "Listen": 17,
+          "Move Silently": 10,
+          "Spot": 17,
+          "Survival": 15
+        },
+        "saves": {
+          "Fort": 12,
+          "Ref": 6,
+          "Will": 11
+        },
+        "environment": "Deep Underground (beneath any region; most commonly encountered in the deepest strata beneath the Infinite Desert and Giant's Teeth, where natural cave systems intersect alien geology)",
+        "organization": "Solitary",
+        "description": "The wall is moving. Not collapsing -- moving, deliberately, as though the stone were being dissolved from within. Something vast and pale presses through the rock face, its body slick with the acid that eats the tunnel open ahead of it. It is the size of a house. It is the shape of a slug designed by something that thought in terms of bore-diameters and load-bearing capacities. Its hide glistens. The stone hisses and smokes where it passes."
+      },
+      {
+        "name": "Lamassu",
+        "vnum": 10106,
+        "cr": 9.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          27
+        ],
+        "ac": 21,
+        "damage_dice": [
+          1,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:All four Elemental Lords -- primordial; the unbroken harmony of the Giant age, carried forward in living stone and wind"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually lawful good",
+        "ability_scores": {
+          "Str": 23,
+          "Dex": 14,
+          "Con": 16,
+          "Int": 16,
+          "Wis": 20,
+          "Cha": 18
+        },
+        "speed": {
+          "land": 30,
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 14,
+            "damage": "1d6+6"
+          },
+          {
+            "type": "gore",
+            "bonus": 12,
+            "damage": "1d8+3"
+          }
+        ],
+        "special_attacks": [
+          "Spell-like abilities",
+          "ruin-ward"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "damage reduction 5/magic",
+          "protective aura",
+          "spell resistance 19",
+          "elemental resonance (all four)"
+        ],
+        "feats": [
+          "Alertness",
+          "Flyby Attack",
+          "Iron Will",
+          "Multiattack"
+        ],
+        "skills": {
+          "Diplomacy": 13,
+          "Listen": 14,
+          "Sense Motive": 14,
+          "Spot": 14
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 8,
+          "Will": 8
+        },
+        "environment": "Giant Ruins (the great ruin-complexes of the Infinite Desert -- the Sunken Thrones, Tharok's Pillar, and the partially-collapsed temple-cities of the Glass Wastes' edge; rare sightings at Giant-era bridges and gate-complexes in the Giant's Teeth foothills)",
+        "organization": "Solitary, pair, or vigil (3-5)",
+        "description": "The ruin is silent -- that particular silence of places where someone carved stone with purpose ten thousand years ago and the stone remembers. You round the fallen pillar and something is watching you from the colonnade's shadow. A body like a bull cast in granite, shoulders broad enough to block the passage, wings folded tight against its flanks -- eagle's wings, massive, the feathers carved from living bronze. And the face. The face is not a bull's face. It is older than anything you have me..."
+      },
+      {
+        "name": "N\u0101ga (Oreka)",
+        "vnum": 10132,
+        "cr": 9.0,
+        "level": 12,
+        "hp_dice": [
+          12,
+          10,
+          60
+        ],
+        "ac": 23,
+        "damage_dice": [
+          2,
+          8,
+          8
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) / Lord of Stone (Earth) -- ancient; the deep riverbed, the slow power of water that has carved stone for millennia"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually lawful neutral",
+        "ability_scores": {
+          "Str": 26,
+          "Dex": 16,
+          "Con": 20,
+          "Int": 18,
+          "Wis": 18,
+          "Cha": 17
+        },
+        "speed": {
+          "land": 30,
+          "swim": 50
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 18,
+            "damage": "2d8+8 plus poison"
+          },
+          {
+            "type": "tail slap",
+            "bonus": 16,
+            "damage": "2d6+4"
+          }
+        ],
+        "special_attacks": [
+          "Constrict 2d8+12",
+          "improved grab",
+          "poison",
+          "spells"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "darkvision 60 ft.",
+          "spell resistance 22",
+          "damage reduction 5/magic",
+          "elemental resonance (deep water-earth)"
+        ],
+        "feats": [
+          "Alertness",
+          "Combat Casting",
+          "Empower Spell",
+          "Improved Natural Attack (bite)",
+          "Multiattack"
+        ],
+        "skills": {
+          "Concentration": 17,
+          "Diplomacy": 13,
+          "Listen": 14,
+          "Sense Motive": 14,
+          "Spellcraft": 14,
+          "Spot": 14,
+          "Swim": 16
+        },
+        "saves": {
+          "Fort": 13,
+          "Ref": 11,
+          "Will": 10
+        },
+        "environment": "Deep Great River (the deepest, oldest stretches of the Great River -- the canyon-passages where the river runs through stone gorges hundreds of feet deep, the confluence-pools where major tributaries meet, and the sacred deep-holes that Pekakarlik rivermen mark on their charts with respect-symbols)",
+        "organization": "Solitary or mated pair",
+        "description": "The river is deep here -- so deep the bottom vanishes into green-black shadow, and the current runs slow and heavy as though the water itself were old. The Pekakarlik rivermen cut their engines and let the barge drift. They have been quiet for the last mile, speaking only in hand-signs, and when you ask why, the barge-master points to the water and puts a finger to his lips. Something vast is coiled on the riverbed below you -- a serpentine shape forty feet long, its scales iridescent even in t..."
+      }
+    ],
+    "5": [
+      {
+        "name": "Basilisk",
+        "vnum": 10017,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          10,
+          12
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          8,
+          3
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth)"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 15,
+          "Dex": 8,
+          "Con": 15,
+          "Int": 2,
+          "Wis": 12,
+          "Cha": 11
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 8,
+            "damage": "1d8+3"
+          }
+        ],
+        "special_attacks": [
+          "Petrifying gaze"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "elemental affinity (Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Blind-Fight",
+          "Great Fortitude"
+        ],
+        "skills": {
+          "Hide": 0,
+          "Listen": 7,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 4,
+          "Will": 3
+        },
+        "environment": "The Infinite Desert (rocky gullies, canyon approaches, ruins with exposed stone foundations); secondary presence in the Glass Wastes (ridgeline scree-fields) and Scorchspires foothills (dry ravines)",
+        "organization": "Solitary or colony (3-6)",
+        "description": "It moves like a lizard that has never needed to learn haste -- a low, heavy-bodied crawler, its scales the grey-brown of sunbaked stone, its eight legs spreading its weight across the sand like a creature designed by someone who did not want it to sink. Its eyes are the problem. They are open, wet, and the colour of old amber, and everything they look at dies -- or wishes it had."
+      },
+      {
+        "name": "Cloaker",
+        "vnum": 10038,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          8,
+          18
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          6,
+          5
+        ],
+        "flags": [
+          "elemental_affinity:None -- cloakers are alien aberrations; see Breach Resonance"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually chaotic neutral",
+        "ability_scores": {
+          "Str": 21,
+          "Dex": 16,
+          "Con": 17,
+          "Int": 14,
+          "Wis": 15,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 10,
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "tail slap",
+            "bonus": 8,
+            "damage": "1d6+5"
+          },
+          {
+            "type": "bite",
+            "bonus": 3,
+            "damage": "1d4+2"
+          }
+        ],
+        "special_attacks": [
+          "Engulf",
+          "moan",
+          "tail slap"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "shadow shift",
+          "breach resonance"
+        ],
+        "feats": [
+          "Alertness",
+          "Combat Reflexes",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Hide": 12,
+          "Listen": 13,
+          "Move Silently": 12,
+          "Spot": 13
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 5,
+          "Will": 7
+        },
+        "environment": "Underground (deep cavern systems, D\u00f3mnathar tunnel networks, Giant ruin undercrofts); most commonly encountered beneath the Kinsweave and the Infinite Desert, where deep tunnels connect natural caverns to ancient infrastructure",
+        "organization": "Solitary, pair, or mob (3-6)",
+        "description": "The ceiling is low here, the stone damp, and the shadows beyond the torchlight are thick as wool. You almost walk under it -- would have walked under it -- except your companion's torch catches a ripple of movement overhead and something that looked like a hanging sheet of dark leather opens two red eyes and a mouth full of needle-teeth and drops."
+      },
+      {
+        "name": "Hieracosphinx",
+        "vnum": 10086,
+        "cr": 5.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          18
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          10,
+          5
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) -- faint; the hieracosphinx carries a diluted version of the four-element sphinx resonance, stripped to a single attenuated air-note"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 21,
+          "Dex": 14,
+          "Con": 15,
+          "Int": 6,
+          "Wis": 14,
+          "Cha": 11
+        },
+        "speed": {
+          "land": 30,
+          "fly": 90
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 13,
+            "damage": "1d10+5"
+          },
+          {
+            "type": "claws",
+            "bonus": 8,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Pounce",
+          "shriek"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "elemental resonance (Air",
+          "faint)"
+        ],
+        "feats": [
+          "Alertness",
+          "Cleave",
+          "Flyby Attack",
+          "Power Attack"
+        ],
+        "skills": {
+          "Listen": 8,
+          "Spot": 14
+        },
+        "saves": {
+          "Fort": 8,
+          "Ref": 8,
+          "Will": 5
+        },
+        "environment": "Infinite Desert (the Glass Wastes and surrounding dune-seas -- the same general region as gynosphinxes, but occupying the less desirable territories that the greater sphinxes do not claim)",
+        "organization": "Solitary or pair",
+        "description": "It has a hawk's head and a lion's body and none of the intelligence of its gynosphinx cousins. It does not pose riddles. It does not bargain. It sits on a sand-scoured ridge in the Glass Wastes and watches the desert below with eyes that calculate nothing except distance, angle, and speed."
+      },
+      {
+        "name": "Kinnari",
+        "vnum": 10099,
+        "cr": 5.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          6,
+          7
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) / Youngest Brother (Air) -- the kinnari is the waterfall-song, the place where water and air create music"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually neutral good",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 18,
+          "Con": 12,
+          "Int": 14,
+          "Wis": 16,
+          "Cha": 20
+        },
+        "speed": {
+          "land": 20,
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "talons",
+            "bonus": 7,
+            "damage": "1d4"
+          }
+        ],
+        "special_attacks": [
+          "Spell-like abilities",
+          "kinnari song"
+        ],
+        "special_qualities": [
+          "Damage reduction 5/cold iron",
+          "low-light vision",
+          "spell resistance 18",
+          "water-breathing",
+          "elemental resonance (Water/Air)"
+        ],
+        "feats": [
+          "Dodge",
+          "Skill Focus (Perform)",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Diplomacy": 15,
+          "Heal": 13,
+          "Listen": 13,
+          "Sense Motive": 13,
+          "Spot": 13
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 9,
+          "Will": 8
+        },
+        "environment": "Great River and Sea Falls (the major waterfalls of Oreka -- the Sea Falls along the Pekakarlik coast, the Grand Falls on the Great River, and the cascading river-systems of the Giant's Teeth; always at waterfalls, never in still water or open sky)",
+        "organization": "Solitary or choir (2-5)",
+        "description": "The music comes from the waterfall's mist. Not from behind the waterfall, not from above it -- from the mist itself, from the place where falling water becomes air. The voice is singing, and the voice is the most beautiful thing you have ever heard. It is a woman's voice, high and clear and resonant in a way that no mortal throat produces, and when the mist parts, you see her: bird-legged, bird-winged, woman-bodied, hovering in the spray-column with effortless grace, her feathers iridescent wi..."
+      },
+      {
+        "name": "Mummy",
+        "vnum": 10129,
+        "cr": 5.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          12,
+          0
+        ],
+        "ac": 20,
+        "damage_dice": [
+          1,
+          6,
+          10
+        ],
+        "flags": [
+          "elemental_affinity:None -- undead; but the body was once Giant, and traces of the all-four-element resonance linger in the preservation-runes like an echo in a sealed room"
+        ],
+        "type_": "Undead",
+        "alignment": "Usually lawful evil",
+        "ability_scores": {
+          "Str": 24,
+          "Dex": 10,
+          "Con": null,
+          "Int": 6,
+          "Wis": 14,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 11,
+            "damage": "1d6+10 plus mummy rot"
+          }
+        ],
+        "special_attacks": [
+          "Despair",
+          "mummy rot"
+        ],
+        "special_qualities": [
+          "Damage reduction 5/-",
+          "darkvision 60 ft.",
+          "undead traits",
+          "vulnerability to fire",
+          "+4 turn resistance",
+          "elemental resonance (undead-giant)"
+        ],
+        "feats": [
+          "Alertness",
+          "Great Fortitude",
+          "Toughness"
+        ],
+        "skills": {
+          "Hide": 7,
+          "Listen": 8,
+          "Move Silently": 7,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 2,
+          "Will": 8
+        },
+        "environment": "Giant Tombs (the sealed burial-complexes and mausoleum-vaults of Giant-era cities throughout the Infinite Desert -- the Sunken Thrones, the Dust-Vaults beneath Tharok's Pillar, and the deep tomb-complexes of the Giant's Teeth foothills)",
+        "organization": "Solitary, wardens (2-4), or tomb-guard (5-8)",
+        "description": "The sarcophagus is not dwarven. It is Giant -- carved from a single block of basalt in proportions that no Kin hands shaped, covered in rune-script that predates written Dwarven by millennia. The lid has been moved. From inside, the smell of preservation-resin and dust and something else -- something dry and electric that makes the hair on your arms stand up. The thing that climbs out does not rush. It has been waiting for longer than your civilisation has existed, and it has the patience of st..."
+      },
+      {
+        "name": "N\u00e4ck",
+        "vnum": 10131,
+        "cr": 5.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          6,
+          14
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          2
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- dark; the pull of deep water, the current beneath the surface that drags you under while the surface stays calm"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 16,
+          "Con": 14,
+          "Int": 15,
+          "Wis": 14,
+          "Cha": 20
+        },
+        "speed": {
+          "land": 30,
+          "swim": 50
+        },
+        "attacks": [
+          {
+            "type": "slams",
+            "bonus": 5,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Compelling music",
+          "drowning grasp",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "damage reduction 10/cold iron",
+          "fast healing 3 (in water)",
+          "low-light vision",
+          "spell resistance 17",
+          "waterfall bond",
+          "elemental resonance (fey-water dark)"
+        ],
+        "feats": [
+          "Ability Focus (compelling music)",
+          "Dodge",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 15,
+          "Diplomacy": 10,
+          "Hide": 13,
+          "Listen": 12,
+          "Spot": 12,
+          "Swim": 12
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 8,
+          "Will": 7
+        },
+        "environment": "Sea Falls (the great coastal waterfalls along the Pekakarlik sea-fall trade-route -- the plunge-pools, mist-caves, and spray-hollows where freshwater meets the Apelian; secondary presence at isolated inland waterfalls in the Great River system, always at falls with deep plunge-pools)",
+        "organization": "Solitary",
+        "description": "The Sea Falls roar, and beneath the roar there is music. Not the kinnari's waterfall-song -- you have heard that, and it was beautiful in a way that healed. This is beautiful in a way that takes. A violin, played from behind the curtain of falling water by hands you cannot see, producing a melody so perfect it hollows you out. Your feet are wet. You have walked into the pool at the falls' base without deciding to. The water is at your knees. The music is louder. The player steps through the sp..."
+      },
+      {
+        "name": "Phi Tai Hong",
+        "vnum": 10157,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          12,
+          0
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:None -- violent death imprint; a phi tai hong is the psychic scar of a violent or unjust death burned into a location, grief and rage so concentrated it persists after the body is gone"
+        ],
+        "type_": "Undead",
+        "alignment": "Always chaotic evil (the original person's alignment is irrelevant -- the phi tai hong is pure concentrated anguish, not a continuation of the deceased's personality)",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 14,
+          "Con": null,
+          "Int": 8,
+          "Wis": 14,
+          "Cha": 18
+        },
+        "speed": {
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "incorporeal touch",
+            "bonus": 5,
+            "damage": "1d6 plus grief-drain"
+          }
+        ],
+        "special_attacks": [
+          "Grief-drain",
+          "wail of anguish",
+          "death-mark"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "incorporeal traits",
+          "undead traits",
+          "+2 turn resistance",
+          "site-bound",
+          "elemental resonance (none - violent death imprint)"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Initiative",
+          "Ability Focus (wail of anguish)"
+        ],
+        "skills": {
+          "Hide": 11,
+          "Listen": 11,
+          "Search": 8,
+          "Spot": 11
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 4,
+          "Will": 7
+        },
+        "environment": "Great River Gorge (the narrow cliff-walled sections of the Great River where the water cuts through ancient stone -- particularly the deep gorges between Pekakarlik river-towns where the current is swift, the walls are high, and deaths by drowning, falling, or ambush are most common)",
+        "organization": "Solitary (always -- each phi tai hong is a unique death)",
+        "description": "The gorge narrows where the Great River cuts through the old rock, and in the narrowing the air changes. Not temperature -- something else. The Pekakarlik boatman has gone quiet. His pole rests against the gunwale, untouched, and the barge drifts on the current alone. He is watching the cliff-face, specifically the ledge thirty feet above the waterline where the wildflowers grow too thick and too bright for a place that gets no sunlight. 'Someone died there,' he says. 'Badly.' You look again. ..."
+      },
+      {
+        "name": "Sand Wraith",
+        "vnum": 10179,
+        "cr": 5.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          12,
+          0
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:All four Elemental Lords (fragmented); strongest resonance with the Lord of Stone -- a Sand Wraith's elemental signature is the shattered remnant of a Giant's full four-element harmony, broken and looping like a record stuck in a groove"
+        ],
+        "type_": "Undead",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 16,
+          "Con": null,
+          "Int": 8,
+          "Wis": 14,
+          "Cha": 15
+        },
+        "speed": {
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "desiccating touch",
+            "bonus": 5,
+            "damage": "1d6 plus desiccation"
+          }
+        ],
+        "special_attacks": [
+          "Desiccating touch",
+          "sand shriek"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "incorporeal traits",
+          "undead traits",
+          "sand form",
+          "elemental resonance (all four - fragmented Giant echo)",
+          "Kin-sense signature"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Hide": 11,
+          "Listen": 10,
+          "Search": 7,
+          "Spot": 10
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 4,
+          "Will": 6
+        },
+        "environment": "The Infinite Desert (Giant ruins, dune-seas; thickest concentration at the Sunken Thrones, Tharok's Pillar, and the deep dune-seas; rare sightings at the Apelian Sea's submerged Giant piers in the Deepwater Marches)",
+        "organization": "Solitary, pair, or mourning (3-6)",
+        "description": "The ruin ahead is half-buried -- the upper columns of what was once a Giant plaza project from the dune like the ribs of a vast skeleton, and the sand between them moves in patterns that have nothing to do with the wind. A shape gathers in the air above the columns: tall, vaguely humanoid, composed entirely of swirling sand and grit. Dim amber light burns where its eyes should be. The sound it produces is less a voice than a sustained, low howl of desert wind forced through a space too narrow ..."
+      },
+      {
+        "name": "Kobold Dragon-Priest (Cleric 5)",
+        "vnum": 10306,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          8,
+          6
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          8,
+          0
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 14,
+          "Con": 12,
+          "Int": 11,
+          "Wis": 17,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "heavy mace +1",
+            "bonus": 5,
+            "damage": "1d8+1"
+          }
+        ],
+        "special_attacks": [
+          "Inflict Serious Wounds 1/day (3d8+5)",
+          "Cause Fear 3/day",
+          "Rebuke Undead 4/day"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 5; 1st -- 5; 2nd -- 4; 3rd -- 3",
+          "Domains: Fire (fire resistance 10), Law",
+          "Turn or rebuke dragons 1/day"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Spell Penetration",
+          "Weapon Focus (heavy mace)"
+        ],
+        "skills": {
+          "Concentration": 9,
+          "Diplomacy": 6,
+          "Knowledge (religion)": 7,
+          "Spellcraft": 6
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 3,
+          "Will": 7
+        },
+        "environment": "Gatefall Reach, Deepwater Marches, Infinite Desert Glass Wastes, Eternal Steppe Burnt Hollows, and any active D\u00f3mnathar site; underground",
+        "organization": "solitary or leader (with 6-10 kobolds and 1 trapsmith)",
+        "description": "An old kobold priestess, scale-crest gone white, who serves the red dragon her clan believes to sleep beneath Pryee. Her robes smell of kerosene and incense."
+      },
+      {
+        "name": "Silentborn Researcher (Wizard 4)",
+        "vnum": 10319,
+        "cr": 5.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          4,
+          4
+        ],
+        "ac": 14,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "silentborn",
+          "hostile",
+          "caster",
+          "kin_silent"
+        ],
+        "type_": "Humanoid (Silentborn)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 9,
+          "Dex": 14,
+          "Con": 11,
+          "Int": 18,
+          "Wis": 13,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "dagger",
+            "bonus": 1,
+            "damage": "1d4-1"
+          }
+        ],
+        "special_attacks": [
+          "Scorching Ray (4d6)",
+          "Magic Missile (3 missiles)",
+          "Summon Monster II"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 60 ft.",
+          "Spells/day: 0th -- 4; 1st -- 4; 2nd -- 3",
+          "Specialization: Conjuration"
+        ],
+        "feats": [
+          "Scribe Scroll",
+          "Combat Casting",
+          "Skill Focus (Knowledge -- arcana)"
+        ],
+        "skills": {
+          "Concentration": 7,
+          "Decipher Script": 10,
+          "Knowledge (arcana)": 13,
+          "Spellcraft": 13
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 3,
+          "Will": 5
+        },
+        "environment": "Deepwater Marches Spur Tower breeding-lab; Eternal Steppe Second Breath Hideout; Infinite Desert Fusion-Cell Outpost",
+        "organization": "solitary (in a laboratory, with 2 loyalist guards)",
+        "description": "A slim figure with half-moon lenses, bent over a book written in two alphabets at once. She is the third Silentborn generation and has never set foot above ground."
+      }
+    ],
+    "8": [
+      {
+        "name": "Behir",
+        "vnum": 10018,
+        "cr": 8.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          45
+        ],
+        "ac": 20,
+        "damage_dice": [
+          2,
+          4,
+          12
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) / Lady of Fire (Fire) -- dual affinity; lightning is where wind meets heat"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 26,
+          "Dex": 13,
+          "Con": 21,
+          "Int": 7,
+          "Wis": 14,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 40,
+          "climb": 15
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 15,
+            "damage": "2d4+12"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "constrict 2d8+8",
+          "improved grab",
+          "rake 1d4+4",
+          "swallow whole"
+        ],
+        "special_qualities": [
+          "Can't be tripped",
+          "darkvision 60 ft.",
+          "immunity to electricity",
+          "low-light vision",
+          "scent",
+          "elemental resonance (Air/Fire)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Cleave",
+          "Power Attack",
+          "Track"
+        ],
+        "skills": {
+          "Climb": 16,
+          "Hide": 5,
+          "Listen": 8,
+          "Spot": 8,
+          "Survival": 6
+        },
+        "saves": {
+          "Fort": 11,
+          "Ref": 7,
+          "Will": 5
+        },
+        "environment": "The Infinite Desert (deep canyons, slot canyons, cliff-face lairs between the Sunken Thrones and the Glass Wastes); secondary presence in Giant's Teeth foothills (steep ravines)",
+        "organization": "Solitary or pair",
+        "description": "The canyon wall moves. What you took for a ridge of dark stone uncoils -- twelve legs unfold from its sides, a serpentine body longer than a merchant barge stretches across the gap between the cliff faces, and a head like a crocodile's opens to reveal a throat lit from within by crackling blue-white light. Lightning arcs between its teeth. The air smells of ozone and hot sand."
+      },
+      {
+        "name": "Gynosphinx",
+        "vnum": 10083,
+        "cr": 8.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          10,
+          8
+        ],
+        "ac": 21,
+        "damage_dice": [
+          1,
+          6,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:All Four Elemental Lords (fragmented) -- the gynosphinx carries the same four-element signature as the vanished Giants, but refracted, partial, and distorted through a bestial lens"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 19,
+          "Dex": 12,
+          "Con": 13,
+          "Int": 18,
+          "Wis": 19,
+          "Cha": 19
+        },
+        "speed": {
+          "land": 40,
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 11,
+            "damage": "1d6+4"
+          }
+        ],
+        "special_attacks": [
+          "Pounce",
+          "rake 1d6+2",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "elemental resonance (All Four",
+          "fragmented)",
+          "sphinx's bargain"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Improved Initiative",
+          "Iron Will"
+        ],
+        "skills": {
+          "Bluff": 15,
+          "Concentration": 12,
+          "Diplomacy": 8,
+          "Intimidate": 15,
+          "Listen": 15,
+          "Sense Motive": 15,
+          "Spot": 15
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 7,
+          "Will": 8
+        },
+        "environment": "Glass Wastes (the heat-fused sand expanses of the Infinite Desert's western margins, where the sand has been melted into glass by ancient elemental forces -- a landscape of razor-edged glass ridges and reflective plains that the sphinxes have claimed as their own)",
+        "organization": "Solitary or pair",
+        "description": "She is waiting for you. She has been waiting for you since before you entered the desert, since before you decided to take this route, since before you were born. She reclines on the sand-polished stone with the patience of a monument and the attention of a predator, and her face -- a woman's face, beautiful, ageless, and utterly without mercy -- watches you approach with an expression that might be curiosity or might be appetite. They are the same thing, to her."
+      },
+      {
+        "name": "Mushussu",
+        "vnum": 10130,
+        "cr": 8.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          10,
+          40
+        ],
+        "ac": 22,
+        "damage_dice": [
+          2,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:All four Elemental Lords -- fading; the all-element resonance of the Giant age, attenuated by millennia of isolation, guttering like a candle in its last hours"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually lawful neutral",
+        "ability_scores": {
+          "Str": 23,
+          "Dex": 14,
+          "Con": 18,
+          "Int": 6,
+          "Wis": 14,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 40
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 15,
+            "damage": "2d6+6 plus venom"
+          },
+          {
+            "type": "claws",
+            "bonus": 13,
+            "damage": "1d6+3"
+          },
+          {
+            "type": "tail slap",
+            "bonus": 13,
+            "damage": "1d8+3"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "poison",
+          "ruin-sentinel"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "damage reduction 5/magic",
+          "low-light vision",
+          "scent",
+          "spell resistance 18",
+          "elemental resonance (all four - fading)"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Natural Attack (bite)",
+          "Multiattack",
+          "Power Attack"
+        ],
+        "skills": {
+          "Listen": 10,
+          "Spot": 10,
+          "Survival": 10
+        },
+        "saves": {
+          "Fort": 11,
+          "Ref": 9,
+          "Will": 7
+        },
+        "environment": "Desert Ruins (the gate-complexes, processional avenues, and entrance-ways of the most intact Giant-era ruin-cities in the Infinite Desert -- the Sunken Thrones, Tharok's Pillar, and the partially-buried temple-complexes of the Glass Wastes)",
+        "organization": "Solitary, pair, or gate-vigil (3-5 at a major gate-complex)",
+        "description": "The ruin-gate is guarded. The guardian is not Giant -- it is something the Giants made, or something that lived with the Giants and stayed after they were gone. It has the body of a scaled serpent, the forelegs of a lion, the hind-legs of an eagle, and a neck that arches upward like a crane's, capped with a horned head whose eyes glow with a faint, steady amber light. It has been sitting in front of this gate for ten thousand years. The bones at its feet suggest that it takes its duties seriou..."
+      },
+      {
+        "name": "Dark Dwarf Void-Smith (Expert 7 / Wizard 1)",
+        "vnum": 10316,
+        "cr": 8.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          6,
+          16
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile",
+          "caster",
+          "crafter"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 13,
+          "Con": 15,
+          "Int": 18,
+          "Wis": 14,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "+1 smith's hammer",
+            "bonus": 5,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Craft Construct (partial)",
+          "Fabricate 1/day",
+          "Shield 4/day",
+          "Magic Weapon (self-cast) 2/day"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Spells/day: 0th -- 3; 1st -- 2",
+          "Void-forging: can craft items that suppress Kin-sense in a 5-ft radius"
+        ],
+        "feats": [
+          "Craft Wondrous Item",
+          "Craft Arms and Armor",
+          "Skill Focus (Craft - weaponsmithing)",
+          "Scribe Scroll"
+        ],
+        "skills": {
+          "Appraise": 15,
+          "Concentration": 9,
+          "Craft (armorsmithing)": 18,
+          "Craft (weaponsmithing)": 18,
+          "Knowledge (arcana)": 12,
+          "Spellcraft": 10
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 3,
+          "Will": 8
+        },
+        "environment": "Gatefall Reach, Deepwater Marches, Infinite Desert Glass Wastes, Eternal Steppe Burnt Hollows, and any active D\u00f3mnathar site; underground",
+        "organization": "solitary (with 2-3 warrior guards)",
+        "description": "A dwarf smith whose beard is threaded with silver wire and whose leather apron is embroidered with runes in a script not of this world. She makes the suppressor-irons that hide the Silentborn from Kin-sense."
+      }
+    ],
+    "7": [
+      {
+        "name": "Black Pudding",
+        "vnum": 10019,
+        "cr": 7.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          10,
+          60
+        ],
+        "ac": 3,
+        "damage_dice": [
+          2,
+          6,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:None -- oozes exist outside the elemental framework; see Elemental Null"
+        ],
+        "type_": "Ooze",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 17,
+          "Dex": 1,
+          "Con": 22,
+          "Int": null,
+          "Wis": 1,
+          "Cha": 1
+        },
+        "speed": {
+          "land": 20,
+          "climb": 20
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 8,
+            "damage": "2d6+4 plus 2d6 acid"
+          }
+        ],
+        "special_attacks": [
+          "Acid",
+          "constrict 2d6+4 plus 2d6 acid",
+          "improved grab"
+        ],
+        "special_qualities": [
+          "Blindsight 60 ft.",
+          "split",
+          "ooze traits",
+          "elemental null"
+        ],
+        "feats": [],
+        "skills": {
+          "Climb": 11
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": -2,
+          "Will": -2
+        },
+        "environment": "Underground (D\u00f3mnathar tunnel networks, Giant ruin undercrofts, natural cavern systems beneath any region); most commonly encountered in the deep tunnels of the Kinsweave, Gatefall Reach, and beneath the Infinite Desert",
+        "organization": "Solitary",
+        "description": "The tunnel floor is wet. That is not unusual -- water seeps through stone in the deep places of the world, collecting in low points, forming pools that reflect lamplight. But this pool does not reflect. It absorbs. The light falls into it and does not come back. And the pool is moving, creeping uphill against the grade, flowing toward the warmth of your torch with a slow, blind hunger."
+      },
+      {
+        "name": "Bulette",
+        "vnum": 10023,
+        "cr": 7.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          45
+        ],
+        "ac": 22,
+        "damage_dice": [
+          2,
+          8,
+          8
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth)"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 27,
+          "Dex": 15,
+          "Con": 20,
+          "Int": 2,
+          "Wis": 13,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 40,
+          "burrow": 10
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 16,
+            "damage": "2d8+8"
+          },
+          {
+            "type": "claws",
+            "bonus": 10,
+            "damage": "2d6+4"
+          }
+        ],
+        "special_attacks": [
+          "Leap"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "tremorsense 60 ft.",
+          "elemental resonance (Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Natural Attack (bite)",
+          "Iron Will",
+          "Track"
+        ],
+        "skills": {
+          "Jump": 18,
+          "Listen": 9,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 11,
+          "Ref": 8,
+          "Will": 6
+        },
+        "environment": "The Infinite Desert (deep sand-seas, dune-fields between the Sunken Thrones and the Glass Wastes); secondary presence in the Eternal Steppe (deep-soil grasslands, particularly along the Kinsweave border where soil is loosest)",
+        "organization": "Solitary or pair",
+        "description": "The ground heaves. A ridge of displaced earth rises like a wave in the sand -- six feet high, forty feet long, moving faster than a horse at gallop. It crests. The sand explodes upward, and something armored and enormous breaches the surface like a whale breaching water: a body the size of a wagon, plated in blue-grey chitin harder than castle stone, with a head that is mostly jaw and a jaw that is mostly teeth. It hangs in the air for one terrible second, blotting out the sun. Then it comes d..."
+      },
+      {
+        "name": "Chimera",
+        "vnum": 10036,
+        "cr": 7.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          27
+        ],
+        "ac": 19,
+        "damage_dice": [
+          2,
+          6,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) dominant, with traces of Lord of Stone (Earth) and Youngest Brother (Air) -- a creature of three natures, none fully integrated"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 19,
+          "Dex": 13,
+          "Con": 17,
+          "Int": 4,
+          "Wis": 13,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30,
+          "fly": 50
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 12,
+            "damage": "2d6+4"
+          },
+          {
+            "type": "gore",
+            "bonus": 12,
+            "damage": "1d8+4"
+          },
+          {
+            "type": "claws",
+            "bonus": 10,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "elemental resonance (Fire/Earth/Air)"
+        ],
+        "feats": [
+          "Alertness",
+          "Hover",
+          "Iron Will",
+          "Multiattack"
+        ],
+        "skills": {
+          "Hide": 4,
+          "Listen": 9,
+          "Spot": 9
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 7,
+          "Will": 6
+        },
+        "environment": "Steppe-Mountain Border (the rocky highlands where the Eternal Steppe meets the Giant's Teeth foothills; secondary presence in the Scorchspire foothills and the dry ridgelines between the Kinsweave and the Infinite Desert)",
+        "organization": "Solitary, pride (2-4), or flight (5-8)",
+        "description": "Three heads. That is the first thing you register -- three heads on a body that should not be able to support even one of them. The lion's head roars. The goat's head screams. The dragon's head, dark-scaled and smouldering, simply opens its mouth and breathes fire across the rocks where you were standing a moment ago. The body is massive, a fusion of lion and goat with bat-wings spreading wide enough to blot out the pass behind it. It does not look like something that was designed. It looks li..."
+      },
+      {
+        "name": "Criosphinx",
+        "vnum": 10041,
+        "cr": 7.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          10,
+          30
+        ],
+        "ac": 20,
+        "damage_dice": [
+          2,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) / Lord of Stone (Earth) -- dual affinity reflecting the forge-heat and volcanic stone of the Scorchspires"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 23,
+          "Dex": 10,
+          "Con": 17,
+          "Int": 10,
+          "Wis": 11,
+          "Cha": 11
+        },
+        "speed": {
+          "land": 30,
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "gore",
+            "bonus": 14,
+            "damage": "2d6+6"
+          },
+          {
+            "type": "claws",
+            "bonus": 11,
+            "damage": "1d6+3"
+          }
+        ],
+        "special_attacks": [
+          "Powerful charge",
+          "pounce"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "elemental resonance (Fire/Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Cleave",
+          "Improved Natural Attack (gore)",
+          "Power Attack"
+        ],
+        "skills": {
+          "Intimidate": 10,
+          "Listen": 10,
+          "Spot": 10
+        },
+        "saves": {
+          "Fort": 10,
+          "Ref": 7,
+          "Will": 5
+        },
+        "environment": "Scorchspire Foothills (rocky ridgelines, dry valleys, and exposed plateaus at the transition between the Scorchspires' volcanic slopes and the lowland desert or steppe); secondary presence in the Giant's Teeth foothills where dry, warm conditions prevail",
+        "organization": "Solitary",
+        "description": "The creature on the ridgeline has the body of a lion -- massive, tawny, heavy with muscle -- and the head of a ram, curling horns spiralling out from a skull broader than a man's chest. Its wings are folded against its flanks, eagle-feathered and enormous. It watches you approach with an expression that is neither hostile nor welcoming but evaluative, as though it is calculating something about you that you are not aware of."
+      },
+      {
+        "name": "Dragonne",
+        "vnum": 10050,
+        "cr": 7.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          27
+        ],
+        "ac": 18,
+        "damage_dice": [
+          2,
+          6,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) / Lord of Stone (Earth) -- dual affinity; the dragonne is a warm-stone predator, fire in a lion's body"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 19,
+          "Dex": 15,
+          "Con": 17,
+          "Int": 6,
+          "Wis": 12,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 40,
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 13,
+            "damage": "2d6+4"
+          },
+          {
+            "type": "claws",
+            "bonus": 10,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Pounce",
+          "roar"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "elemental resonance (Fire/Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Blind-Fight",
+          "Combat Reflexes",
+          "Improved Initiative",
+          "Track"
+        ],
+        "skills": {
+          "Listen": 11,
+          "Spot": 11
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 8,
+          "Will": 4
+        },
+        "environment": "Warm Mountains and Foothills (Scorchspire foothills, southern Giant's Teeth, dry ridgelines between the Infinite Desert and the Eternal Steppe)",
+        "organization": "Solitary, pair, or pride (3-6)",
+        "description": "It crouches on the ridgeline like something that could not decide whether to be a lion or a dragon and chose both. Its body is a lion's -- massive, tawny, thick with muscle -- but its head is elongated, half-snouted, with brass-coloured scales running from brow to shoulders. Enormous bat-leather wings fold along its flanks, and when it opens its mouth to roar, the sound that comes out is not a lion's roar and not a dragon's bellow but something between: a brassy, resonant blast that shakes the ..."
+      },
+      {
+        "name": "Medusa",
+        "vnum": 10121,
+        "cr": 7.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          8,
+          6
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- corrupted; petrification as a perverted expression of earth-affinity, turning living flesh to stone against its will"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Usually lawful evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 15,
+          "Con": 12,
+          "Int": 12,
+          "Wis": 13,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "snake bite",
+            "bonus": 3,
+            "damage": "1d4 plus poison"
+          }
+        ],
+        "special_attacks": [
+          "Petrifying gaze",
+          "poison"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "elemental resonance (earth-corrupted)"
+        ],
+        "feats": [
+          "Point Blank Shot",
+          "Precise Shot",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 9,
+          "Disguise": 9,
+          "Move Silently": 8,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 7,
+          "Will": 6
+        },
+        "environment": "Ruins and Marshes (abandoned structures throughout Oreka -- Giant ruins in the Infinite Desert, ruined border-settlements in the Kinsweave, crumbling watchtowers in the Tidebloom Reach; always in built environments where stone is plentiful and prey can be lured into enclosed spaces)",
+        "organization": "Solitary",
+        "description": "The gallery is a sculpture-garden -- or you thought it was. The figures are too detailed, too varied, too individual to be carved. The dwarf in the corner has a crack in his breastplate that no sculptor would include. The elf at the entrance has an expression of dawning recognition on her face that no art could capture. The woman at the centre of the gallery is veiled. She asks if you would like to see her collection. She asks very politely."
+      },
+      {
+        "name": "Remorhaz",
+        "vnum": 10170,
+        "cr": 7.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          10,
+          35
+        ],
+        "ac": 20,
+        "damage_dice": [
+          2,
+          8,
+          12
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) / Lord of Stone (Earth) -- subsurface inferno; the resonance of superheated rock, of magma channels too deep for even the Rarozhki to mine, of the earth's internal fire expressed through a living body"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 26,
+          "Dex": 13,
+          "Con": 21,
+          "Int": 5,
+          "Wis": 12,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30,
+          "burrow": 20
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 13,
+            "damage": "2d8+12"
+          }
+        ],
+        "special_attacks": [
+          "Improved grab",
+          "swallow whole",
+          "heat"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "tremorsense 60 ft.",
+          "fire immunity",
+          "cold vulnerability",
+          "heat",
+          "elemental resonance (fire-earth - subsurface inferno)"
+        ],
+        "feats": [
+          "Awesome Blow",
+          "Improved Bull Rush",
+          "Power Attack"
+        ],
+        "skills": {
+          "Listen": 8,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 10,
+          "Ref": 6,
+          "Will": 3
+        },
+        "environment": "Infinite Desert Hardpan (the baked, compressed substrata beneath the Infinite Desert's dune-fields -- the hardpan layer that lies between the surface sand and the deep rock, where temperatures are extreme and the geological pressure creates conditions that no surface creature can tolerate)",
+        "organization": "Solitary",
+        "description": "The hardpan cracks. Not like drought-cracking -- like something pressing up from beneath, a line of fractures racing across the baked earth faster than a horse can run. The Pekakarlik scout is already moving, already running, already screaming the word that every desert-traveller learns before any other: 'Below!' The ground splits open along the fracture-line and something erupts -- something enormous, segmented, centipede-shaped, its body radiating heat so intense that the air above it shimmer..."
+      },
+      {
+        "name": "Half-D\u00f3mnathar Cult-Leader (Sorcerer 6)",
+        "vnum": 10323,
+        "cr": 7.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          4,
+          6
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "half_domnathar",
+          "hostile",
+          "caster",
+          "cultist",
+          "boss"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Chaotic Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 14,
+          "Con": 12,
+          "Int": 13,
+          "Wis": 11,
+          "Cha": 19
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "flaming scimitar +1",
+            "bonus": 4,
+            "damage": "1d6+1 plus 1d6 fire"
+          }
+        ],
+        "special_attacks": [
+          "Fireball 2/day (6d6)",
+          "Scorching Ray at will",
+          "Flaming Sphere 3/day",
+          "Charm Person (DC 16) 3/day"
+        ],
+        "special_qualities": [
+          "Faintly luminous eyes in low light",
+          "Fire resistance 5 (heritage)",
+          "Spells/day: 0th -- 6; 1st -- 7; 2nd -- 6; 3rd -- 4",
+          "+2 racial to Bluff"
+        ],
+        "feats": [
+          "Spell Focus (evocation)",
+          "Combat Casting",
+          "Silent Spell"
+        ],
+        "skills": {
+          "Bluff": 15,
+          "Concentration": 10,
+          "Diplomacy": 7,
+          "Intimidate": 8,
+          "Spellcraft": 10
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 4,
+          "Will": 5
+        },
+        "environment": "Eternal Steppe (Burnt Hollows collapsed burrow-forts, Dark Dawn Battlefield dead zones); underground; scattered Flamewarg cell-leaders across Infinite Desert",
+        "organization": "solitary (with 6-10 flamewarg cultists)",
+        "description": "A tall figure in ember-stitched robes, her voice warm enough to win a crowd and her eyes hot enough to burn dissenters out of it. Her grandfather was a D\u00f3mnathar captain."
+      }
+    ],
+    "1": [
+      {
+        "name": "Darkmantle",
+        "vnum": 10044,
+        "cr": 1.0,
+        "level": 1,
+        "hp_dice": [
+          1,
+          10,
+          1
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          4,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- faint, ambient; the darkmantle is a cave creature through and through"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 16,
+          "Dex": 18,
+          "Con": 13,
+          "Int": 2,
+          "Wis": 10,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 20,
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 5,
+            "damage": "1d4+4"
+          }
+        ],
+        "special_attacks": [
+          "Darkness",
+          "improved grab",
+          "constrict 1d4+4"
+        ],
+        "special_qualities": [
+          "Blindsight 90 ft.",
+          "elemental resonance (Earth)"
+        ],
+        "feats": [
+          "Alertness"
+        ],
+        "skills": {
+          "Hide": 10,
+          "Listen": 5,
+          "Spot": 5
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 6,
+          "Will": 0
+        },
+        "environment": "Underground (natural cavern systems, Giant ruin undercrofts, D\u00f3mnathar tunnel fringes); found beneath any region with cave networks, most commonly reported in Vestri mining territories and the tunnels beneath the Infinite Desert",
+        "organization": "Solitary, pair, or clutch (3-9)",
+        "description": "The stalactite opens its eyes. That is what it looks like -- a cone of wet stone hanging from the cavern ceiling suddenly sprouts two tiny, reflective eyes and unfurls a membrane of leathery skin that was folded so tightly against its body that it was invisible. Then it drops."
+      },
+      {
+        "name": "Domovoi",
+        "vnum": 10047,
+        "cr": 1.0,
+        "level": 2,
+        "hp_dice": [
+          2,
+          6,
+          2
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          2,
+          -2
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) / Lord of Stone (Earth) -- fire dominant; the domovoi is a hearth-spirit, born where fire meets stone"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually lawful neutral",
+        "ability_scores": {
+          "Str": 6,
+          "Dex": 16,
+          "Con": 12,
+          "Int": 11,
+          "Wis": 14,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 6,
+            "damage": "1d2-2 plus 1 fire"
+          }
+        ],
+        "special_attacks": [
+          "Hearth-hex"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "damage reduction 5/cold iron",
+          "fire resistance 10",
+          "hearthbound",
+          "mend",
+          "elemental resonance (Fire/Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Hide": 16,
+          "Listen": 7,
+          "Move Silently": 8,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 6,
+          "Will": 5
+        },
+        "environment": "Scorchspires (Rarozhki dwarf forges, hearthstones, and workshops -- always inside a structure with an active fire source); rare secondary presence in Eruskan river-settlements and Pekakarlik oasis-forges",
+        "organization": "Solitary (one per hearth; never more)",
+        "description": "The forge-fire is banked for the night, the embers glowing low, and something moves in the warm space between the anvil and the hearthstone. It is small -- no taller than a dwarf-child -- and shaped like a very old dwarf who has been compressed by time until everything non-essential has been squeezed out, leaving only beard, eyes, and an expression of severe domestic judgment. It checks the fire. It checks the tools. It picks up a hammer that has been left on the wrong hook and places it on the..."
+      }
+    ],
+    "6": [
+      {
+        "name": "Ettin",
+        "vnum": 10071,
+        "cr": 6.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          8,
+          20
+        ],
+        "ac": 18,
+        "damage_dice": [
+          1,
+          8,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- fragmented, faint; the ettin carries the residual earth-resonance of the Giant heritage, corrupted by degeneration into something dull and heavy"
+        ],
+        "type_": "Giant",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 23,
+          "Dex": 16,
+          "Con": 15,
+          "Int": 6,
+          "Wis": 10,
+          "Cha": 7
+        },
+        "speed": {
+          "land": 40
+        },
+        "attacks": [
+          {
+            "type": "javelins",
+            "bonus": 9,
+            "damage": "1d8+6"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Low-light vision",
+          "superior two-weapon fighting",
+          "all-around vision (partial)",
+          "elemental resonance (Earth",
+          "fragmented)"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Overrun",
+          "Iron Will",
+          "Power Attack"
+        ],
+        "skills": {
+          "Listen": 10,
+          "Search": 1,
+          "Spot": 10
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 6,
+          "Will": 5
+        },
+        "environment": "Giant's Teeth (mountain caves, rocky overhangs, and abandoned Giant ruin-margins in the lower peaks; occasionally found in the Scorchspire foothills and the dry badlands between the Giant's Teeth and the Infinite Desert)",
+        "organization": "Solitary, pair, gang (3-4), troupe (1-2 plus 1-2 brown bears), or band (3-5 plus 1-2 brown bears)",
+        "description": "Two heads argue over which way to go. This is what you hear first -- the voices, deep and guttural, snapping at each other in a language that is almost Giant but not quite, the way a parrot's speech is almost language but not quite. Then the owner of the voices steps around the boulder and you see both heads on a body that is thirteen feet tall, hunched, broad as a cart, and carrying a morningstar in each hand. Both heads notice you simultaneously. They stop arguing. For the first time in minu..."
+      },
+      {
+        "name": "Karakoncolos",
+        "vnum": 10098,
+        "cr": 6.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          8,
+          14
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          6,
+          3
+        ],
+        "flags": [
+          "elemental_affinity:None -- the karakoncolos exists in the gap between elemental signatures, in the dead zones where Kin-sense cannot reach"
+        ],
+        "type_": "Outsider",
+        "alignment": "Always chaotic evil",
+        "ability_scores": {
+          "Str": 16,
+          "Dex": 14,
+          "Con": 14,
+          "Int": 14,
+          "Wis": 14,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 10,
+            "damage": "1d6+3 plus confusion touch"
+          }
+        ],
+        "special_attacks": [
+          "Confusion touch",
+          "riddle-bind",
+          "voice mimicry"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "damage reduction 5/cold iron",
+          "spell resistance 18",
+          "Kin-sense dead zone",
+          "shadow-step",
+          "vulnerability to sunlight"
+        ],
+        "feats": [
+          "Combat Reflexes",
+          "Improved Initiative",
+          "Stealthy"
+        ],
+        "skills": {
+          "Bluff": 13,
+          "Disguise": 13,
+          "Hide": 12,
+          "Intimidate": 13,
+          "Listen": 12,
+          "Move Silently": 12,
+          "Sense Motive": 12,
+          "Spot": 12
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 7,
+          "Will": 7
+        },
+        "environment": "Kin-Sense Dead Zones (areas where elemental resonance has been drained, suppressed, or corrupted -- typically near D\u00f3mnathar surface-breach points, in the ruins of D\u00f3mnathar outposts, and at the edges of False Silence fields)",
+        "organization": "Solitary or pair",
+        "description": "The dead zone is wrong. Not dead -- dead zones are common in Oreka, places where Kin-sense returns nothing, where the elemental resonance has been drained or suppressed or was never there. Those are empty. This place is not empty. This place is full, and you cannot hear what is filling it. Something stands in the silence where your Kin-sense should be, and it is looking at you through the gap in the world."
+      },
+      {
+        "name": "Lamia",
+        "vnum": 10107,
+        "cr": 6.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          9
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) / Lady of Fire (Fire) -- corrupted; desert heat twisted inward, consuming rather than warming"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 18,
+          "Dex": 15,
+          "Con": 12,
+          "Int": 13,
+          "Wis": 15,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 60
+        },
+        "attacks": [
+          {
+            "type": "touch",
+            "bonus": 12,
+            "damage": "1d4 Wisdom drain"
+          },
+          {
+            "type": "claws",
+            "bonus": 7,
+            "damage": "1d4+2"
+          }
+        ],
+        "special_attacks": [
+          "Spell-like abilities",
+          "Wisdom drain"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "elemental resonance (corrupted)"
+        ],
+        "feats": [
+          "Dodge",
+          "Iron Will",
+          "Mobility",
+          "Spring Attack"
+        ],
+        "skills": {
+          "Bluff": 12,
+          "Disguise": 7,
+          "Hide": 9,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 8,
+          "Will": 7
+        },
+        "environment": "Infinite Desert (the deep dune-seas and abandoned oases between Pekakarlik waystations -- particularly the Glass Wastes, where the ruins offer hiding-places and the oases draw prey; rare sightings along the Scorchspire foothills' desert edge)",
+        "organization": "Solitary or pair",
+        "description": "The woman standing at the oasis edge is beautiful. You notice that first -- the dark hair, the amber eyes, the confident stillness with which she watches your approach. You notice second that she is alone in the deep desert, a day's ride from the nearest Pekakarlik waystation, with no supplies, no mount, and no footprints leading to where she stands. You notice third -- and this is the last useful thing you will notice, because by now the Wisdom is already draining from behind your eyes -- that ..."
+      },
+      {
+        "name": "Olgoi-Khorkhoi",
+        "vnum": 10144,
+        "cr": 6.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          10,
+          32
+        ],
+        "ac": 18,
+        "damage_dice": [
+          2,
+          6,
+          5
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- deep, sick; a churning, acidic earth-resonance that reads as 'the ground digesting itself'"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 20,
+          "Dex": 10,
+          "Con": 18,
+          "Int": 2,
+          "Wis": 14,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 20,
+          "burrow": 30
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 12,
+            "damage": "2d6+5 plus acid"
+          }
+        ],
+        "special_attacks": [
+          "Acid spray",
+          "death jolt",
+          "acid bite"
+        ],
+        "special_qualities": [
+          "Blindsight 60 ft.",
+          "tremorsense 120 ft.",
+          "damage reduction 5/slashing",
+          "acid immunity",
+          "elemental resonance (earth - deep sick)"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Natural Attack (bite)",
+          "Weapon Focus (bite)"
+        ],
+        "skills": {
+          "Listen": 10,
+          "Survival": 8
+        },
+        "saves": {
+          "Fort": 10,
+          "Ref": 6,
+          "Will": 4
+        },
+        "environment": "Infinite Desert (the deep hardpan flats between dune-fields -- sun-baked clay-pan stretches where nothing grows, where the earth is cracked and dry, and where the olgoi-khorkhoi burrows beneath the surface waiting for vibrations)",
+        "organization": "Solitary",
+        "description": "The Mytroan scout dismounts fifty paces from the depression in the hardpan. He kneels and presses his palm flat against the baked earth -- a gesture you recognise from steppe-rider tradition, the earth-reading that Mytroan scouts use to detect burrowing threats. His face goes white. He stands, backs toward his horse without turning around, mounts, and says one word: khorkhoi. The other riders wheel their horses immediately. No one argues. No one asks questions. Everyone rides."
+      },
+      {
+        "name": "Peri",
+        "vnum": 10152,
+        "cr": 6.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          8,
+          16
+        ],
+        "ac": 19,
+        "damage_dice": [
+          2,
+          6,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire -- sacred; not the destructive fire of the Scorchspires but the illuminating, purifying fire of dawn, the fire that reveals truth and burns only corruption"
+        ],
+        "type_": "Outsider",
+        "alignment": "Usually neutral good",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 18,
+          "Con": 14,
+          "Int": 16,
+          "Wis": 17,
+          "Cha": 20
+        },
+        "speed": {
+          "land": 30,
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "flame touch",
+            "bonus": 12,
+            "damage": "2d6 fire plus purifying flame"
+          }
+        ],
+        "special_attacks": [
+          "Purifying flame",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Damage reduction 10/cold iron and evil",
+          "darkvision 60 ft.",
+          "fire immunity",
+          "spell resistance 20",
+          "cold vulnerability",
+          "elemental resonance (fire - sacred)"
+        ],
+        "feats": [
+          "Dodge",
+          "Mobility",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Concentration": 13,
+          "Diplomacy": 16,
+          "Heal": 14,
+          "Listen": 14,
+          "Sense Motive": 14,
+          "Spot": 14
+        },
+        "saves": {
+          "Fort": 8,
+          "Ref": 10,
+          "Will": 9
+        },
+        "environment": "Glass Wastes / Tharok's Pillar (the heat-blasted ruins of the Infinite Desert's most ancient Giant cities -- particularly the sacred sites where the Lady of Fire's influence is strongest, where the sand has been fused to glass by heat so old it predates memory)",
+        "organization": "Solitary or pair",
+        "description": "The Glass Wastes shimmer at midday, heat-haze turning the ruined columns of Tharok's Pillar into dancing shapes that could be anything -- pilgrims, mirage-beasts, or the melting edges of the world itself. And then one of the shimmering shapes steps out of the haze, and it is neither mirage nor heat-dream. It is a woman made of fire that does not burn -- golden-skinned, amber-eyed, with wings of flame that fold and unfold like a heartbeat. The air around her is warm, not hot. The light she produ..."
+      },
+      {
+        "name": "Ugallu",
+        "vnum": 10212,
+        "cr": 6.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          10,
+          32
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone / Lady of Fire (Earth/Fire) -- desert-edge sovereign; the resonance of the transition zone where the Infinite Desert's sun-baked sand meets the Giant's Teeth's volcanic stone -- the Lord and Lady's domains in arid, predatory equilibrium"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 22,
+          "Dex": 15,
+          "Con": 18,
+          "Int": 8,
+          "Wis": 16,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 13,
+            "damage": "1d6+6"
+          },
+          {
+            "type": "bite",
+            "bonus": 11,
+            "damage": "1d8+3"
+          }
+        ],
+        "special_attacks": [
+          "Pounce",
+          "roar",
+          "improved grab"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "damage reduction 5/magic",
+          "desert stride",
+          "elemental resonance (earth-fire - desert-edge sovereign)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Multiattack",
+          "Power Attack"
+        ],
+        "skills": {
+          "Hide": 7,
+          "Listen": 14,
+          "Spot": 14,
+          "Survival": 14
+        },
+        "saves": {
+          "Fort": 10,
+          "Ref": 8,
+          "Will": 5
+        },
+        "environment": "Desert Edge (the ridge-lines, rock-shelves, and boulder-fields at the transition between the Infinite Desert and the Giant's Teeth foothills -- specifically the caravan-routes and pass-mouths where travellers cross from sand to stone)",
+        "organization": "Solitary or pair (mated)",
+        "description": "The desert edge is where the sand meets the stone -- where the Infinite Desert's dune-fields break against the Giant's Teeth foothills like waves against a cliff. The creature standing on the ridge-line where sand becomes rock has the body of a lion and the head of a man, and the head is wrong. Not wrong the way a sphinx's head is wrong (a sphinx looks composed, deliberate, designed); wrong the way a storm-cloud is wrong -- massive, heavy-browed, bearded, with a mouth that could swallow a shiel..."
+      },
+      {
+        "name": "Dark Dwarf Fireforged (Fighter 5)",
+        "vnum": 10315,
+        "cr": 6.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          10,
+          15
+        ],
+        "ac": 21,
+        "damage_dice": [
+          1,
+          10,
+          4
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile",
+          "boss"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 18,
+          "Dex": 12,
+          "Con": 16,
+          "Int": 11,
+          "Wis": 12,
+          "Cha": 9
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "flaming dwarven waraxe +1",
+            "bonus": 10,
+            "damage": "1d10+5 plus 1d6 fire"
+          }
+        ],
+        "special_attacks": [
+          "Power Attack",
+          "Cleave",
+          "Fire Mastery (reroll 1s on fire damage)"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Fire resistance 10",
+          "Void-touch",
+          "Forge-Blessed: +2 saves vs heat/fire effects"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Weapon Focus (waraxe)",
+          "Weapon Specialization (waraxe)",
+          "Great Cleave"
+        ],
+        "skills": {
+          "Craft (weaponsmithing)": 10,
+          "Intimidate": 4,
+          "Listen": 3,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 8,
+          "Ref": 2,
+          "Will": 2
+        },
+        "environment": "Kinsweave Ruins (buried Deceiver artifact chambers in the Six Kings' ruins: Mytro, Kalite, Hylen, Thrush, Andrio, Pryee; Highridge lava-tubes); underground; Infinite Desert forge-sites",
+        "organization": "elite (1 fireforged plus 3-4 dark dwarf warriors)",
+        "description": "A dwarf whose right arm is scarred to the shoulder from forge-fire he stood in as part of his vow. His axe still smokes faintly from the heat of the chamber where it was quenched."
+      }
+    ],
+    "0": [
+      {
+        "name": "Goblin",
+        "vnum": 10074,
+        "cr": 0.33,
+        "level": 1,
+        "hp_dice": [
+          1,
+          8,
+          1
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:None -- goblinoids exist outside the elemental framework"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Usually neutral evil",
+        "ability_scores": {
+          "Str": 11,
+          "Dex": 13,
+          "Con": 12,
+          "Int": 10,
+          "Wis": 9,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "morningstar",
+            "bonus": 1,
+            "damage": "1d6"
+          },
+          {
+            "type": "javelin",
+            "bonus": 3,
+            "damage": "1d4"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "wild static (goblinoid)"
+        ],
+        "feats": [
+          "Alertness"
+        ],
+        "skills": {
+          "Hide": 5,
+          "Listen": 2,
+          "Move Silently": 5,
+          "Ride": 4
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 1,
+          "Will": -1
+        },
+        "environment": "Any (goblins are the most widespread non-Kin people in Oreka -- found in every region, in every terrain, in every conceivable ecological niche from Deepwood caves to desert ruins to mountain tunnels to steppe-margin camps)",
+        "organization": "Gang (4-9), band (10-100 plus 100% noncombatants plus 1 sergeant of 3rd level per 20 adults plus 1 leader of 4th-6th level), warband (10-24 with worg mounts), or settlement (40-400 plus 100% noncombatants plus 1 sergeant of 3rd level per 20 adults plus 1-2 lieutenants of 4th-5th level plus 1 leader of 6th-8th level plus 10-24 worg mounts plus 2-4 dire wolves)",
+        "description": "It is three feet tall, green-skinned, loud, and there are always more of them than you expected. The one crouching behind the rock has a knife. The one in the tree has a shortbow. The one you did not see has just stolen your waterskin. Goblins are not dangerous individually -- a single goblin against a single armed Kin is a mismatch that ends quickly. But goblins are never single, never alone, and never out of ideas."
+      },
+      {
+        "name": "Kobold",
+        "vnum": 10102,
+        "cr": 0.25,
+        "level": 1,
+        "hp_dice": [
+          1,
+          8,
+          0
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          3,
+          -1
+        ],
+        "flags": [
+          "elemental_affinity:None -- kobolds exist outside the elemental framework, but their reptilian physiology and deep-underground habitation give them a faint, false earth-resonance that reads as 'part of the stone'"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Usually lawful evil",
+        "ability_scores": {
+          "Str": 9,
+          "Dex": 13,
+          "Con": 10,
+          "Int": 10,
+          "Wis": 9,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "light pick",
+            "bonus": 1,
+            "damage": "1d3-1/\u00d74"
+          },
+          {
+            "type": "light crossbow",
+            "bonus": 3,
+            "damage": "1d6/19-20"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "light sensitivity",
+          "craft (trapmaking) +2",
+          "wild static (reptilian)"
+        ],
+        "feats": [
+          "Alertness"
+        ],
+        "skills": {
+          "Hide": 6,
+          "Listen": 2,
+          "Move Silently": 2,
+          "Search": 2
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 1,
+          "Will": -1
+        },
+        "environment": "Underground and D\u00f3mnathar Tunnels (natural cave systems, mine-tunnels, and -- significantly -- the outer corridors of D\u00f3mnathar tunnel-networks, where kobold warrens serve as a buffer-zone between the Deceivers and the surface)",
+        "organization": "Gang (4-9), band (10-100 plus 100% noncombatants plus 1 sergeant of 3rd level per 20 adults plus 1 leader of 4th-6th level), warband (10-24 plus 2-4 dire weasels), or tribe (40-400 plus 100% noncombatants plus 1 sergeant of 3rd level per 20 adults plus 1-2 lieutenants of 4th-5th level plus 1 leader of 6th-8th level plus 10-24 dire weasels)",
+        "description": "The tunnel is too small for you. That is the point -- everything in kobold territory is too small for you, too narrow, too low-ceilinged, too tight to swing a weapon. You are on your hands and knees in a passage two feet wide and eighteen inches tall, and somewhere ahead of you, in the dark, something is waiting with a crossbow loaded and a tripwire set and the patient, ancient hatred of a species that has survived everything by being smaller, faster, and more vindictive than anything that hun..."
+      }
+    ],
+    "4": [
+      {
+        "name": "Gray Ooze",
+        "vnum": 10076,
+        "cr": 4.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          10,
+          15
+        ],
+        "ac": 5,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:None -- oozes exist outside the elemental framework"
+        ],
+        "type_": "Ooze",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 1,
+          "Con": 21,
+          "Int": null,
+          "Wis": 1,
+          "Cha": 1
+        },
+        "speed": {
+          "land": 10
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 3,
+            "damage": "1d6+1 plus 1d6 acid"
+          }
+        ],
+        "special_attacks": [
+          "Acid",
+          "improved grab",
+          "constrict 1d6+1 plus 1d6 acid"
+        ],
+        "special_qualities": [
+          "Blindsight 60 ft.",
+          "immunity to cold and fire",
+          "ooze traits",
+          "transparent"
+        ],
+        "feats": [],
+        "skills": {},
+        "saves": {
+          "Fort": 6,
+          "Ref": -4,
+          "Will": -4
+        },
+        "environment": "Underground (any subterranean environment -- natural caves, mine-tunnels, Giant-era passages, D\u00f3mnathar corridors; most common in wet underground environments where runoff collects)",
+        "organization": "Solitary",
+        "description": "The stone floor is wet. Not water-wet -- acid-wet, the kind of wet that dissolves boot-leather in seconds and eats through chainmail in minutes. The puddle on the floor is not a puddle. It is three inches deep, six feet across, and moving toward you with the purposeful slowness of something that has never needed to hurry because nothing it touches survives long enough to escape."
+      },
+      {
+        "name": "Mimic",
+        "vnum": 10123,
+        "cr": 4.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          8,
+          21
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          8,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:None -- mimics exist outside the elemental framework entirely; their physiology registers as an absence that is not D\u00f3mnathar void but simply nothing"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 19,
+          "Dex": 12,
+          "Con": 17,
+          "Int": 10,
+          "Wis": 13,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 10
+        },
+        "attacks": [
+          {
+            "type": "slams",
+            "bonus": 9,
+            "damage": "1d8+4"
+          }
+        ],
+        "special_attacks": [
+          "Adhesive",
+          "crush"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "immunity to acid",
+          "mimic shape",
+          "elemental resonance (none - aberrant)"
+        ],
+        "feats": [
+          "Alertness",
+          "Lightning Reflexes",
+          "Weapon Focus (slam)"
+        ],
+        "skills": {
+          "Climb": 9,
+          "Disguise": 13,
+          "Listen": 8,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 5,
+          "Will": 6
+        },
+        "environment": "Giant Ruins (the interior rooms, corridors, and vaults of Giant-era ruin-complexes throughout the Infinite Desert -- any structure where there are objects to mimic and prey to attract; secondary populations in Vestri deep-mines and D\u00f3mnathar-adjacent tunnel-systems)",
+        "organization": "Solitary",
+        "description": "The chest is the only thing in the room that is not covered in dust. You notice this, but you notice it too late -- your hand is already on the lid, and the lid is already on your hand. The surface beneath your fingers is warm and wet, and the chest is opening in a direction that chests do not open, and the inside of the chest is full of teeth."
+      },
+      {
+        "name": "Vampire Spawn",
+        "vnum": 10215,
+        "cr": 4.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          12,
+          3
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:None -- a vampire spawn has no elemental resonance; it is dead matter animated by hunger, a body that feeds to sustain a semblance of existence without possessing any of the elemental connections that defined it in life"
+        ],
+        "type_": "Undead",
+        "alignment": "Always chaotic evil",
+        "ability_scores": {
+          "Str": 16,
+          "Dex": 14,
+          "Con": null,
+          "Int": 13,
+          "Wis": 13,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 5,
+            "damage": "1d6+4 plus energy drain"
+          }
+        ],
+        "special_attacks": [
+          "Blood drain",
+          "dominate",
+          "energy drain"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "damage reduction 5/silver",
+          "fast healing 2",
+          "gaseous form",
+          "resistance to cold 10 and electricity 10",
+          "spider climb",
+          "+2 turn resistance",
+          "undead traits",
+          "elemental resonance (none - dead hunger)"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Initiative",
+          "Toughness"
+        ],
+        "skills": {
+          "Bluff": 6,
+          "Climb": 8,
+          "Hide": 10,
+          "Listen": 8,
+          "Move Silently": 10,
+          "Search": 5,
+          "Sense Motive": 5,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 5,
+          "Will": 5
+        },
+        "environment": "Giant Tomb Complexes (the sealed burial-chambers, sarcophagus-halls, and crypt-networks of the Giant-era tomb complexes scattered through the Giant's Teeth and Infinite Desert -- places where the original Giants entombed their dead with rituals that preserved the bodies in conditions that, when combined with subsequent necromantic contamination, produced vampiric undead)",
+        "organization": "Solitary, pair, or pack (3-6)",
+        "description": "The tomb-air is dry and still and old, and the thing that steps out of the sarcophagus-shadow is not what you expected. You expected bone. You expected rot. What you get is a person -- pale, sharp-featured, dressed in the remnants of burial-finery that has held together through centuries of absolute darkness. Its eyes are open and aware and utterly, coldly hungry, and when it smiles, the canines are longer than they should be, and the smile does not contain a single molecule of warmth. It is n..."
+      },
+      {
+        "name": "Dark Dwarf Scavenger-Lord (Rogue 4)",
+        "vnum": 10313,
+        "cr": 4.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          6,
+          10
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          2
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile",
+          "rogue"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Neutral Evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 16,
+          "Con": 14,
+          "Int": 13,
+          "Wis": 11,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "short sword",
+            "bonus": 6,
+            "damage": "1d6+2"
+          },
+          {
+            "type": "hand crossbow",
+            "bonus": 6,
+            "damage": "1d4"
+          }
+        ],
+        "special_attacks": [
+          "Sneak Attack +2d6",
+          "Poisoned bolts (DC 12, 1d2 Con/1d2 Con)"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Trapfinding",
+          "Evasion",
+          "Void-touch: +2 vs mind-affecting effects",
+          "Trap sense +1"
+        ],
+        "feats": [
+          "Weapon Finesse",
+          "Two-Weapon Fighting",
+          "Alertness"
+        ],
+        "skills": {
+          "Appraise": 9,
+          "Disable Device": 11,
+          "Hide": 11,
+          "Move Silently": 11,
+          "Search": 9,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 7,
+          "Will": 2
+        },
+        "environment": "Infinite Desert (Glass Wastes fusion cells, buried Deceiver caches, Dust-Cache warrens); underground; Kinsweave ruin edges",
+        "organization": "solitary or leader (with 2-4 kobolds and captured slaves)",
+        "description": "A dwarf whose skin has gone the color of wet slate from long years in the Deceiver tunnels. His beard is braided with small brass rings, each one taken from a Kin scout who did not come home."
+      },
+      {
+        "name": "Dark Dwarf Warrior (Fighter 3)",
+        "vnum": 10314,
+        "cr": 4.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          10,
+          9
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          8,
+          3
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 17,
+          "Dex": 12,
+          "Con": 16,
+          "Int": 10,
+          "Wis": 11,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "dwarven waraxe",
+            "bonus": 7,
+            "damage": "1d10+4"
+          }
+        ],
+        "special_attacks": [
+          "Power Attack",
+          "+1 vs goblinoids and orcs"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Void-touch: +2 vs mind-affecting effects",
+          "+4 vs giant-type, +2 saves vs poison/spells"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Weapon Focus (waraxe)"
+        ],
+        "skills": {
+          "Appraise": 2,
+          "Craft (weapons)": 5,
+          "Intimidate": 3,
+          "Listen": 2,
+          "Spot": 2
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 2,
+          "Will": 1
+        },
+        "environment": "Gatefall Reach, Deepwater Marches, Infinite Desert Glass Wastes, Eternal Steppe Burnt Hollows, and any active D\u00f3mnathar site; underground",
+        "organization": "squad (2-4 warriors plus 1 fireforged)",
+        "description": "A broad, scarred dwarf in iron plate darkened with lamp-black. The Deceivers' War left his clan underground; four generations later, this is what the clan has become."
+      }
+    ],
+    "13": [
+      {
+        "name": "Humbaba",
+        "vnum": 10091,
+        "cr": 13.0,
+        "level": 16,
+        "hp_dice": [
+          16,
+          10,
+          30
+        ],
+        "ac": 28,
+        "damage_dice": [
+          2,
+          8,
+          9
+        ],
+        "flags": [
+          "elemental_affinity:All Four Elemental Lords -- integrated; the humbaba was built with the Firstborn's four-element mastery, its elemental core containing bound fragments of all four domains"
+        ],
+        "type_": "Construct",
+        "alignment": "Always lawful neutral",
+        "ability_scores": {
+          "Str": 28,
+          "Dex": 12,
+          "Con": null,
+          "Int": 12,
+          "Wis": 14,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slams",
+            "bonus": 20,
+            "damage": "2d8+9 plus 1d6 fire"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "terrifying roar",
+          "guardian's challenge"
+        ],
+        "special_qualities": [
+          "Construct traits",
+          "damage reduction 10/adamantine",
+          "darkvision 120 ft.",
+          "immunity to fire",
+          "immunity to magic (limited)",
+          "spell resistance 24",
+          "elemental core",
+          "guardian protocol",
+          "remnant resonance"
+        ],
+        "feats": [
+          "Alertness",
+          "Cleave",
+          "Great Cleave",
+          "Improved Bull Rush",
+          "Improved Sunder",
+          "Power Attack"
+        ],
+        "skills": {
+          "Intimidate": 16,
+          "Listen": 15,
+          "Search": 14,
+          "Sense Motive": 15,
+          "Spot": 15
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 6,
+          "Will": 7
+        },
+        "environment": "Giant Ruins (the interior of the best-preserved Giant-era structures -- specifically guarding doorways, halls, treasure-vaults, and sacred chambers; found in ruins across the Infinite Desert, Giant's Teeth, and Kinsweave deep-sites)",
+        "organization": "Solitary or pair (one per doorway, sometimes two flanking a major entrance)",
+        "description": "The door opens and the guardian is there. It has been there for seven thousand years. It is fifteen feet tall, built of stone and bronze and elemental fire bound into a framework that the Giants designed to last forever, and it has. Its face is a lion's face carved in basalt. Its body is a humanoid chassis of interlocking stone plates over a skeleton of Giant-forged bronze. Its eyes -- two points of white-hot elemental fire -- track you from the doorway to the threshold, and the voice that emer..."
+      }
+    ],
+    "2": [
+      {
+        "name": "Kappa",
+        "vnum": 10097,
+        "cr": 2.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          8,
+          6
+        ],
+        "ac": 18,
+        "damage_dice": [
+          1,
+          4,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- kappa are water-spirits given physical, mischievous form"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Usually chaotic neutral",
+        "ability_scores": {
+          "Str": 13,
+          "Dex": 14,
+          "Con": 14,
+          "Int": 8,
+          "Wis": 12,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 20,
+          "swim": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 5,
+            "damage": "1d4+1"
+          },
+          {
+            "type": "bite",
+            "bonus": 2,
+            "damage": "1d6+1"
+          }
+        ],
+        "special_attacks": [
+          "Improved grab",
+          "drowning drag"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "darkvision 60 ft.",
+          "head-water",
+          "supernatural strength (in water)",
+          "compulsive courtesy",
+          "elemental resonance (Water)"
+        ],
+        "feats": [
+          "Improved Grapple",
+          "Weapon Focus (bite)"
+        ],
+        "skills": {
+          "Escape Artist": 8,
+          "Hide": 10,
+          "Listen": 5,
+          "Spot": 5,
+          "Swim": 13
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 5,
+          "Will": 4
+        },
+        "environment": "Apelian Shoals (the shallow coastal waters, tidal pools, and estuaries of the Apelian Sea -- particularly the sheltered coves and reef-shallows along the Pekakarlik and Na'wasua coast)",
+        "organization": "Solitary, pair, or pod (3-6)",
+        "description": "The thing in the shallows looks like a turtle that decided to be a child. It is three feet tall, green-skinned, shell-backed, with a beak where its mouth should be and a shallow depression in the top of its skull filled with water. It is watching you from behind a rock with an expression that combines curiosity, malice, and hunger in roughly equal measure. The Pekakarlik fisherman who warned you about this stretch of coast said two things: 'they're strong enough to drown a horse' and 'if one ..."
+      }
+    ],
+    "12": [
+      {
+        "name": "Purple Worm",
+        "vnum": 10165,
+        "cr": 12.0,
+        "level": 16,
+        "hp_dice": [
+          16,
+          10,
+          112
+        ],
+        "ac": 19,
+        "damage_dice": [
+          2,
+          8,
+          12
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- tectonic; the resonance of geological movement, of continental plates grinding against each other, of the earth itself shifting -- not the quiet patience of mountain-stone but the active, destructive energy of the earth in motion"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 35,
+          "Dex": 6,
+          "Con": 25,
+          "Int": 1,
+          "Wis": 8,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 20,
+          "burrow": 20,
+          "swim": 10
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 25,
+            "damage": "2d8+12"
+          },
+          {
+            "type": "sting",
+            "bonus": 20,
+            "damage": "2d6+6 plus poison"
+          }
+        ],
+        "special_attacks": [
+          "Improved grab",
+          "swallow whole",
+          "poison"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "tremorsense 60 ft.",
+          "elemental resonance (earth - tectonic)"
+        ],
+        "feats": [
+          "Awesome Blow",
+          "Cleave",
+          "Great Cleave",
+          "Improved Bull Rush",
+          "Power Attack",
+          "Weapon Focus (bite)"
+        ],
+        "skills": {
+          "Listen": 18,
+          "Swim": 20
+        },
+        "saves": {
+          "Fort": 17,
+          "Ref": 8,
+          "Will": 4
+        },
+        "environment": "Deep Desert (the Infinite Desert's deepest hardpan zones, the substrata beneath the dune-fields, and the buried rock-layers that underlie the Glass Wastes -- the worm moves through the desert's bones, not its surface)",
+        "organization": "Solitary",
+        "description": "The desert does not move. That is the first thing every Pekakarlik caravan-guide learns and the last thing every dead caravan-guide forgot. The desert does not move -- and if it does, if the dunes shift when there is no wind, if the hardpan cracks along a line that is too straight and too long to be natural, if the ground beneath your feet begins to vibrate with a frequency that your bones recognise before your brain does, then you have exactly the amount of time it takes to scream before the ..."
+      },
+      {
+        "name": "Half-D\u00f3mnathar Research-Sorcerer (Wizard 10)",
+        "vnum": 10329,
+        "cr": 12.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          4,
+          10
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "half_domnathar",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 9,
+          "Dex": 13,
+          "Con": 13,
+          "Int": 20,
+          "Wis": 14,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "staff of dismissal +1",
+            "bonus": 4,
+            "damage": "1d6"
+          }
+        ],
+        "special_attacks": [
+          "Fireball 3/day (10d6)",
+          "Cone of Cold 1/day (10d6)",
+          "Dimension Door 2/day",
+          "Wall of Fire 1/day",
+          "Summon Monster V 2/day"
+        ],
+        "special_qualities": [
+          "Faintly luminous eyes",
+          "Spells/day: 0th -- 4; 1st -- 5+1; 2nd -- 5+1; 3rd -- 4+1; 4th -- 4+1; 5th -- 3+1",
+          "Specialization: Evocation (opposed: Necromancy, Enchantment)"
+        ],
+        "feats": [
+          "Scribe Scroll",
+          "Craft Wondrous Item",
+          "Craft Rod",
+          "Spell Focus (evocation)",
+          "Greater Spell Focus (evocation)",
+          "Empower Spell",
+          "Maximize Spell"
+        ],
+        "skills": {
+          "Concentration": 14,
+          "Decipher Script": 18,
+          "Knowledge (arcana)": 18,
+          "Knowledge (history)": 15,
+          "Knowledge (the planes)": 15,
+          "Spellcraft": 22
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 4,
+          "Will": 9
+        },
+        "environment": "Infinite Desert (Fusion-Cell Outpost under the Glass Wastes)",
+        "organization": "solitary (with 4 silentborn researchers and 2 dark dwarf smiths)",
+        "description": "A researcher with burn-scars crossing his hands and wrists, devoted to re-creating the Deceiver fusion-magic that melted the glass of the Wastes. He is brilliant, reserved, and patient. Give him five more years and he will succeed."
+      }
+    ],
+    "10": [
+      {
+        "name": "Rakshasa",
+        "vnum": 10168,
+        "cr": 10.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          8,
+          21
+        ],
+        "ac": 21,
+        "damage_dice": [
+          1,
+          4,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:None -- false; a rakshasa generates a convincing but artificial elemental resonance that matches whatever identity it is currently wearing, constructed through sheer force of will and centuries of practice; the false resonance is detectable as fake only on a DC 25 Kin-sense check"
+        ],
+        "type_": "Outsider",
+        "alignment": "Always lawful evil",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 14,
+          "Con": 16,
+          "Int": 13,
+          "Wis": 13,
+          "Cha": 17
+        },
+        "speed": {
+          "land": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 8,
+            "damage": "1d4+1"
+          },
+          {
+            "type": "bite",
+            "bonus": 3,
+            "damage": "1d6"
+          }
+        ],
+        "special_attacks": [
+          "Detect thoughts",
+          "spells"
+        ],
+        "special_qualities": [
+          "Change shape",
+          "damage reduction 15/good and piercing",
+          "darkvision 60 ft.",
+          "spell resistance 27",
+          "elemental resonance (false - constructed mimicry)"
+        ],
+        "feats": [
+          "Alertness",
+          "Combat Casting",
+          "Dodge"
+        ],
+        "skills": {
+          "Bluff": 17,
+          "Concentration": 13,
+          "Diplomacy": 9,
+          "Disguise": 21,
+          "Listen": 13,
+          "Move Silently": 12,
+          "Sense Motive": 11,
+          "Spellcraft": 11
+        },
+        "saves": {
+          "Fort": 8,
+          "Ref": 7,
+          "Will": 6
+        },
+        "environment": "Warm Settlements (the river-cities of the Eruskan, the oasis-towns of the Pekakarlik, the larger trading-posts of the Kinsweave border-kingdoms -- anywhere commerce creates wealth, complexity creates cover, and population density creates prey)",
+        "organization": "Solitary",
+        "description": "The merchant is perfect. His smile is warm, his voice is cultured, his robes are exactly the quality a man of his station would wear -- not ostentatious, not modest, the precise median. His hands are soft and well-manicured. His knowledge of the spice-trade is encyclopaedic. He has been a fixture of this Eruskan river-city for eleven years, and every person who knows him considers him reliable, generous, and utterly trustworthy. The only thing wrong with him -- the only thing -- is that his hand..."
+      }
+    ],
+    "11": [
+      {
+        "name": "Dark Dwarf Lore-Keeper (Cleric 9)",
+        "vnum": 10317,
+        "cr": 11.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          8,
+          18
+        ],
+        "ac": 22,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 11,
+          "Con": 16,
+          "Int": 14,
+          "Wis": 19,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "heavy mace +2",
+            "bonus": 11,
+            "damage": "1d8+4"
+          }
+        ],
+        "special_attacks": [
+          "Rebuke Undead 5/day",
+          "Inflict Critical Wounds (4d8+9)",
+          "Flame Strike 1/day (9d6)",
+          "Summon Monster V 2/day"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Void-touch",
+          "Spells/day: 0th -- 6; 1st -- 6+1; 2nd -- 5+1; 3rd -- 5+1; 4th -- 4+1; 5th -- 2+1",
+          "Domains: Knowledge, Fire"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Scribe Scroll",
+          "Spell Penetration",
+          "Greater Spell Penetration",
+          "Craft Wondrous Item"
+        ],
+        "skills": {
+          "Concentration": 15,
+          "Knowledge (arcana)": 14,
+          "Knowledge (history)": 14,
+          "Knowledge (religion)": 14,
+          "Spellcraft": 14
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 3,
+          "Will": 11
+        },
+        "environment": "Deepwater Marches (Spur Tower archive levels); Infinite Desert buried forge-vaults",
+        "organization": "solitary (in the heart of a major D\u00f3mnathar site)",
+        "description": "An ancient dwarf with milky eyes and a perfect memory. She is the living archive of the Shattered Host's remaining lineages, and she is the reason the D\u00f3mnathar remnants still know who they are."
+      },
+      {
+        "name": "D\u00f3mnathar Void-Construct",
+        "vnum": 10333,
+        "cr": 11.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          10,
+          30
+        ],
+        "ac": 24,
+        "damage_dice": [
+          2,
+          6,
+          5
+        ],
+        "flags": [
+          "construct",
+          "domnathar",
+          "hostile",
+          "boss"
+        ],
+        "type_": "Construct",
+        "alignment": "Always Neutral",
+        "ability_scores": {
+          "Str": 22,
+          "Dex": 10,
+          "Con": null,
+          "Int": null,
+          "Wis": 11,
+          "Cha": 1
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slam (\u00d72)",
+            "bonus": 15,
+            "damage": "2d6+6 plus 1d6 cold"
+          }
+        ],
+        "special_attacks": [
+          "Cold slam (bypasses fire resistance)",
+          "Silence aura (30 ft, DC 15 Will or silenced)"
+        ],
+        "special_qualities": [
+          "Construct traits (immune mind-affecting, fortification 50%, no Con)",
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Damage reduction 5/adamantine",
+          "Spell resistance 19",
+          "Magic immunity (except cold and acid)",
+          "Darkvision 120 ft."
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Improved Bull Rush"
+        ],
+        "skills": {},
+        "saves": {
+          "Fort": 3,
+          "Ref": 3,
+          "Will": 4
+        },
+        "environment": "Deepwater Spur Tower (command levels); Gatefall deep; Infinite Desert Fusion-Cell",
+        "organization": "solitary (as guard-construct)",
+        "description": "A man-shaped husk of grey-veined obsidian, eight feet tall, built around a core of absolutely empty air where most creatures would have breath. It moves in total silence even when it runs."
+      }
+    ]
+  }
+}

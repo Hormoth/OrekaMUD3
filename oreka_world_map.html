@@ -57,6 +57,26 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: 
       </label>
     </div>
     <div id="stats"></div>
+
+    <!-- LIVE VIEW CONTROLS --------------------------------------------- -->
+    <div id="live-panel" style="padding:10px; border-bottom:1px solid #0f3460;">
+      <label style="display:flex; align-items:center; font-size:12px; margin-bottom:6px;">
+        <span style="color:#7ec8e3; font-weight:bold; margin-right:6px;">LIVE VIEW</span>
+        <span id="live-status" style="color:#888;">disconnected</span>
+      </label>
+      <input type="password" id="live-token" placeholder="Admin token..." style="width:100%; padding:4px 6px; margin-bottom:4px; background:#1a1a2e; color:#e0e0e0; border:1px solid #0f3460; border-radius:3px; font-size:12px;">
+      <div style="display:flex; gap:4px;">
+        <button id="live-connect" style="flex:1; padding:4px; background:#0f3460; color:#e0e0e0; border:1px solid #1a5496; border-radius:3px; font-size:11px; cursor:pointer;">Connect</button>
+        <button id="live-disconnect" style="flex:1; padding:4px; background:#1a1a2e; color:#888; border:1px solid #0f3460; border-radius:3px; font-size:11px; cursor:pointer;" disabled>Disconnect</button>
+      </div>
+      <div id="live-summary" style="margin-top:8px; font-size:11px; color:#888; display:none;">
+        <div>Time: <span id="live-time">--:--</span> <span id="live-weather-summary" style="color:#666;"></span></div>
+        <div>Players: <span id="live-players-count" style="color:#7ec8e3;">0</span> online, <span id="live-combats-count" style="color:#e94560;">0</span> in combat</div>
+        <div>Stalkers: <span id="live-stalkers-count" style="color:#ff8c42;">0</span>, Chats: <span id="live-chats-count" style="color:#b370ff;">0</span>, Gods: <span id="live-gods-count" style="color:#ffd700;">0</span></div>
+      </div>
+      <div id="live-errors" style="margin-top:8px; max-height:100px; overflow-y:auto; font-size:10px; color:#e94560; font-family:monospace; display:none;"></div>
+    </div>
+
     <div id="room-info">
       <p style="color:#666; font-style:italic; padding:20px;">Click a room on the map to see details.</p>
     </div>
@@ -74,6 +94,137 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: 
 // DATA — injected inline from room data
 // =====================================================================
 let ROOM_DATA = {};
+
+// =====================================================================
+// LIVE STATE — populated by WebSocket snapshots
+// =====================================================================
+let LIVE_STATE = {
+  connected: false,
+  ws: null,
+  players: [],         // [{name, level, room_vnum, hp, max_hp, in_combat, in_chat, afk}]
+  combat_rooms: [],    // [vnum, ...]
+  stalkers: [],        // [{name, cr, room_vnum, target, target_room, region, engaged}]
+  chat_sessions: [],   // [{player, npc, room_vnum}]
+  gods: [],            // [{name, room_vnum}]
+  time_of_day: {hour: 0, is_daytime: true, is_nighttime: false},
+  weather: {},         // {region: string}
+  errors: [],          // rolling buffer of {level, source, message, timestamp}
+};
+
+function liveConnect() {
+  const token = document.getElementById('live-token').value.trim();
+  if (!token) { alert('Paste the admin token first.'); return; }
+  const host = (location.hostname || '127.0.0.1');
+  // If the map is opened from file://, fall back to localhost.
+  const wsHost = (location.protocol === 'file:' || !host) ? '127.0.0.1' : host;
+  const url = `ws://${wsHost}:8766/`;
+  const status = document.getElementById('live-status');
+  status.textContent = 'connecting…';
+  status.style.color = '#ffcc00';
+  try {
+    const ws = new WebSocket(url);
+    LIVE_STATE.ws = ws;
+    ws.onopen = () => {
+      ws.send(JSON.stringify({type: 'auth', token: token}));
+      status.textContent = 'authenticating…';
+    };
+    ws.onmessage = (ev) => {
+      let msg;
+      try { msg = JSON.parse(ev.data); } catch { return; }
+      if (msg.type === 'hello') {
+        LIVE_STATE.connected = true;
+        status.textContent = 'connected';
+        status.style.color = '#7ec8e3';
+        document.getElementById('live-connect').disabled = true;
+        document.getElementById('live-disconnect').disabled = false;
+        document.getElementById('live-summary').style.display = 'block';
+      } else if (msg.type === 'snapshot') {
+        LIVE_STATE.players       = msg.players || [];
+        LIVE_STATE.combat_rooms  = msg.combat_rooms || [];
+        LIVE_STATE.stalkers      = msg.stalkers || [];
+        LIVE_STATE.chat_sessions = msg.chat_sessions || [];
+        LIVE_STATE.gods          = msg.gods || [];
+        LIVE_STATE.time_of_day   = msg.time_of_day || LIVE_STATE.time_of_day;
+        LIVE_STATE.weather       = msg.weather || {};
+        if (msg.recent_errors) LIVE_STATE.errors = msg.recent_errors;
+        updateLiveSummary();
+      } else if (msg.type === 'error') {
+        LIVE_STATE.errors.push(msg);
+        if (LIVE_STATE.errors.length > 30) LIVE_STATE.errors.shift();
+        renderErrorLog();
+      }
+    };
+    ws.onerror = () => {
+      status.textContent = 'error';
+      status.style.color = '#e94560';
+    };
+    ws.onclose = (ev) => {
+      LIVE_STATE.connected = false;
+      status.textContent = 'disconnected';
+      status.style.color = '#888';
+      document.getElementById('live-connect').disabled = false;
+      document.getElementById('live-disconnect').disabled = true;
+      if (ev.code === 4001) alert('Auth timed out.');
+      else if (ev.code === 4003) alert('Auth failed. Check the token.');
+    };
+  } catch (e) {
+    status.textContent = 'connection failed';
+    status.style.color = '#e94560';
+  }
+}
+
+function liveDisconnect() {
+  if (LIVE_STATE.ws) {
+    try { LIVE_STATE.ws.close(); } catch {}
+    LIVE_STATE.ws = null;
+  }
+}
+
+function updateLiveSummary() {
+  const fmtHour = (h) => String(h).padStart(2, '0') + ':00';
+  document.getElementById('live-time').textContent =
+    fmtHour(LIVE_STATE.time_of_day.hour || 0)
+    + (LIVE_STATE.time_of_day.is_nighttime ? ' 🌙' : ' ☀');
+  const weatherKeys = Object.keys(LIVE_STATE.weather || {});
+  const weatherTypes = {};
+  weatherKeys.forEach(k => {
+    const w = LIVE_STATE.weather[k];
+    weatherTypes[w] = (weatherTypes[w] || 0) + 1;
+  });
+  const weatherStr = Object.entries(weatherTypes)
+    .map(([t, n]) => `${t}×${n}`).join(', ');
+  document.getElementById('live-weather-summary').textContent =
+    weatherStr ? `| ${weatherStr}` : '';
+  document.getElementById('live-players-count').textContent =
+    LIVE_STATE.players.length;
+  document.getElementById('live-combats-count').textContent =
+    LIVE_STATE.combat_rooms.length;
+  document.getElementById('live-stalkers-count').textContent =
+    LIVE_STATE.stalkers.length;
+  document.getElementById('live-chats-count').textContent =
+    LIVE_STATE.chat_sessions.length;
+  document.getElementById('live-gods-count').textContent =
+    LIVE_STATE.gods.length;
+  renderErrorLog();
+}
+
+function renderErrorLog() {
+  const el = document.getElementById('live-errors');
+  if (LIVE_STATE.errors.length === 0) {
+    el.style.display = 'none';
+    return;
+  }
+  el.style.display = 'block';
+  el.innerHTML = LIVE_STATE.errors.slice(-8).reverse().map(e => {
+    const t = e.timestamp
+      ? new Date(e.timestamp * 1000).toTimeString().slice(0,8)
+      : '--:--:--';
+    const lvl = (e.level || '').padEnd(5, ' ');
+    const src = (e.source || '').replace('OrekaMUD.', '');
+    const msg = (e.message || '').slice(0, 120);
+    return `<div style="margin-bottom:2px;"><span style="color:#666;">${t}</span> <span style="color:#ffcc00;">${lvl}</span> <span style="color:#999;">${src}</span> ${msg}</div>`;
+  }).join('');
+}
 
 // Area colors
 const AREA_COLORS = {
@@ -866,8 +1017,180 @@ function render() {
     ctx.fillText(label, cx, pillY);
   }
 
+  // Live overlays (players, combat, stalkers, chat, gods) drawn on top
+  // of rooms and labels but inside the same zoom/pan transform.
+  drawLiveOverlays(ctx);
+
   ctx.restore();
 }
+
+// =====================================================================
+// LIVE OVERLAYS — drawn on top of the static room layout
+// =====================================================================
+
+function pulseAlpha() {
+  // 0.5–1.0, ~500ms period
+  return 0.5 + 0.5 * Math.sin(Date.now() / 400);
+}
+
+function drawLiveOverlays(ctx) {
+  if (!LIVE_STATE.connected) return;
+
+  // --- Active combat rooms (red pulse under everything else) ----------
+  const pulse = pulseAlpha();
+  LIVE_STATE.combat_rooms.forEach(vnum => {
+    const pos = positions[vnum];
+    if (!pos) return;
+    const px = pos.x * CELL, py = pos.y * CELL;
+    ctx.save();
+    ctx.globalAlpha = 0.25 + 0.35 * pulse;
+    ctx.fillStyle = '#e94560';
+    ctx.beginPath();
+    ctx.arc(px, py, CELL * 0.55, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = '#ff6b81';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.restore();
+  });
+
+  // --- Chat / Shadow-Presence halo (purple dashed ring) ---------------
+  LIVE_STATE.chat_sessions.forEach(cs => {
+    const pos = positions[cs.room_vnum];
+    if (!pos) return;
+    const px = pos.x * CELL, py = pos.y * CELL;
+    ctx.save();
+    ctx.globalAlpha = 0.7;
+    ctx.strokeStyle = '#b370ff';
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([4, 3]);
+    ctx.beginPath();
+    ctx.arc(px, py, CELL * 0.48, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+  });
+
+  // --- Wandering gods (gold diamond) ----------------------------------
+  LIVE_STATE.gods.forEach(g => {
+    const pos = positions[g.room_vnum];
+    if (!pos) return;
+    const px = pos.x * CELL, py = pos.y * CELL;
+    const size = CELL * 0.28;
+    ctx.save();
+    ctx.fillStyle = '#ffd700';
+    ctx.strokeStyle = '#b8860b';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(px, py - size);
+    ctx.lineTo(px + size, py);
+    ctx.lineTo(px, py + size);
+    ctx.lineTo(px - size, py);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    // Name label
+    if (zoom > 0.6) {
+      ctx.fillStyle = '#ffd700';
+      ctx.font = `bold ${Math.max(7, 10/zoom)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      ctx.fillText(g.name || 'god', px, py - size - 3);
+    }
+    ctx.restore();
+  });
+
+  // --- Stalkers (red skull + target line) ------------------------------
+  LIVE_STATE.stalkers.forEach(s => {
+    const pos = positions[s.room_vnum];
+    if (!pos) return;
+    const px = pos.x * CELL, py = pos.y * CELL;
+    // Target line (if target room is known)
+    if (s.target_room && positions[s.target_room]) {
+      const tp = positions[s.target_room];
+      ctx.save();
+      ctx.globalAlpha = 0.4;
+      ctx.strokeStyle = s.engaged ? '#ff1a1a' : '#ff8c42';
+      ctx.lineWidth = 1.2;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(px, py);
+      ctx.lineTo(tp.x * CELL, tp.y * CELL);
+      ctx.stroke();
+      ctx.restore();
+    }
+    // Skull marker (triangle)
+    const size = CELL * 0.22;
+    ctx.save();
+    ctx.fillStyle = '#ff1a1a';
+    ctx.strokeStyle = '#880000';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(px, py - size);
+    ctx.lineTo(px + size * 0.9, py + size * 0.6);
+    ctx.lineTo(px - size * 0.9, py + size * 0.6);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    if (zoom > 0.7) {
+      ctx.fillStyle = '#ff1a1a';
+      ctx.font = `bold ${Math.max(7, 9/zoom)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      const cr = (s.cr != null) ? `CR ${s.cr}` : '';
+      ctx.fillText(`${s.name} ${cr}`.trim(), px, py + size + 2);
+    }
+    ctx.restore();
+  });
+
+  // --- Player dots (always on top, colored by HP %) -------------------
+  LIVE_STATE.players.forEach(p => {
+    const pos = positions[p.room_vnum];
+    if (!pos) return;
+    const px = pos.x * CELL, py = pos.y * CELL;
+    const hpPct = (p.max_hp > 0) ? (p.hp / p.max_hp) : 0;
+    const color = hpPct > 0.66 ? '#3ddc6b'
+                : hpPct > 0.33 ? '#ffcc00'
+                :                '#e94560';
+    // Main dot
+    const size = CELL * 0.22;
+    ctx.save();
+    ctx.fillStyle = color;
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = p.afk ? 0.45 : 1;
+    ctx.beginPath();
+    ctx.arc(px, py, size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    // HP bar beneath
+    const barW = size * 2.2, barH = 3;
+    ctx.fillStyle = '#000';
+    ctx.fillRect(px - barW/2, py + size + 2, barW, barH);
+    ctx.fillStyle = color;
+    ctx.fillRect(px - barW/2, py + size + 2, barW * Math.max(0, hpPct), barH);
+    // Name label (level + name)
+    if (zoom > 0.5) {
+      ctx.fillStyle = '#fff';
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 2;
+      ctx.font = `bold ${Math.max(8, 11/zoom)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      const label = `L${p.level} ${p.name}`;
+      ctx.strokeText(label, px, py - size - 3);
+      ctx.fillText(label, px, py - size - 3);
+    }
+    ctx.restore();
+  });
+}
+
+// Redraw at a slow tick so pulses animate even without new snapshots.
+setInterval(() => {
+  if (LIVE_STATE.connected) {
+    if (typeof render === 'function') render();
+  }
+}, 200);
 
 // =====================================================================
 // INTERACTION
@@ -1063,6 +1386,13 @@ async function init() {
 }
 
 window.addEventListener('resize', resize);
+
+// Wire live-view buttons once DOM is ready (elements exist in the sidebar).
+document.getElementById('live-connect').addEventListener('click', liveConnect);
+document.getElementById('live-disconnect').addEventListener('click', liveDisconnect);
+document.getElementById('live-token').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') liveConnect();
+});
 
 // CanvasRenderingContext2D.roundRect polyfill
 if (!CanvasRenderingContext2D.prototype.roundRect) {

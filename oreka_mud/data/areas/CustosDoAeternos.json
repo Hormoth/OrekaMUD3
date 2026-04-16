@@ -175,7 +175,8 @@
     "description": "A cozy, low-ceilinged tavern built half below street level, its walls lined with river-stone and hung with fishing trophies. Pekakarlik ale -- dark, mineral-rich, and faintly luminescent -- is the house specialty. A permanent card game occupies the corner booth, and river-shanties echo from the back room most evenings. The ceiling is uncomfortably low for tall folk, but the welcome is warm.",
     "exits": {
       "west": 4011,
-      "northeast": 4006
+      "northeast": 4006,
+      "down": 4200
     },
     "flags": [
       "tavern"
@@ -296,7 +297,8 @@
     "name": "Dockside Shrine of Semyon",
     "description": "A small, warm chapel tucked between warehouses, maintained by a kindly Pasua cleric. Inside, the hearthstone glows with Semyon's sigil, and the walls are lined with tokens left by sailors' families -- prayers for safe return, thanks for healing, small carved boats that children have brought. The chapel serves as an informal infirmary for dock injuries.",
     "exits": {
-      "east": 4019
+      "east": 4019,
+      "south": 4300
     },
     "flags": [
       "temple",
@@ -334,7 +336,8 @@
     "description": "The eastern gate straddles the Great River Road where it follows the bank toward Forkmeet and Stoneharbor. Built of the same crystal-veined granite as the South Gate, it features carved reliefs of river barges and the twin rivers that give the region its name. A toll booth collects bridge-crossing fees, and river traffic passes through a water-gate below.",
     "exits": {
       "west": 4023,
-      "east": 5206
+      "east": 5206,
+      "north": 4315
     },
     "flags": [
       "gate",
@@ -1965,7 +1968,8 @@
     "description": "A nondescript building in the heart of Dodger's Row with a reinforced door and no windows on the ground floor. Inside, a hidden cellar provides temporary refuge for those who need to disappear -- debtors, fugitives, and the occasional political refugee. The safe house has changed hands many times, and its current operators maintain careful neutrality among the quarter's competing interests.",
     "exits": {
       "east": 4140,
-      "south": 4143
+      "south": 4143,
+      "down": 4210
     },
     "flags": [
       "residential"
@@ -1989,7 +1993,8 @@
     "description": "A small, poorly maintained postern gate in the city wall that technically should be locked at night but somehow never is. The gate opens onto a muddy path that winds around the city's northeast wall and eventually connects to the North Road. The City Watch has sealed this gate seven times; it has been quietly reopened eight times.",
     "exits": {
       "west": 4137,
-      "north": 4143
+      "north": 4143,
+      "down": 4220
     },
     "flags": [
       "gate"
@@ -2091,7 +2096,8 @@
     "description": "An underground passage following one of the aqueduct channels that the Pekakarlik Dwarves maintain beneath the city. Lit by luminescent river-moss, the passage connects the Waterfolk Quarter to the Dock District and serves as both infrastructure access and dwarf-height shortcut. The sound of rushing water echoes from the stone walls.",
     "exits": {
       "southwest": 4010,
-      "east": 4016
+      "east": 4016,
+      "down": 4205
     },
     "flags": [
       "water"
@@ -2204,11 +2210,681 @@
     "name": "The Donation Vault",
     "description": "A cool, dry cellar beneath Artisan Square, maintained by the city for the benefit of all adventurers. Sturdy shelves line the walls, and a large stone chest sits in the center. Travelers leave gear they no longer need here for those who do. A brass plaque on the wall reads: Use 'drop <item>' to leave something for others, and 'get <item>' to take what you need. Take only what you will use -- the gods are watching.",
     "exits": {
-      "up": 4086
+      "up": 4086,
+      "east": 4215
     },
     "flags": [
       "safe",
       "donation"
+    ]
+  },
+  {
+    "vnum": 4200,
+    "name": "Under the Deepwell Tavern",
+    "description": "The old service well beneath the Deepwell Tavern opens into a low stone chamber that smells of spilled beer turned sour and wet rot. An iron ladder climbs back up to the tavern floor overhead, its lowest rungs orange with rust. Fragments of broken crockery litter the packed-earth floor, and a curved tunnel leads east along the old drain line.",
+    "exits": {
+      "up": 4012,
+      "east": 4201
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer"
+    ]
+  },
+  {
+    "vnum": 4201,
+    "name": "Sewer Main -- Market Branch",
+    "description": "This broad brick-lined passage carries the runoff from the market district above. A trickle of grey water runs along a central channel, and the air is thick with the smell of rotting vegetables and old blood from the butchers' stalls. Side drains open east and south; a collapsed section blocks the way further west.",
+    "exits": {
+      "west": 4200,
+      "east": 4202,
+      "south": 4203
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer"
+    ]
+  },
+  {
+    "vnum": 4202,
+    "name": "Sewer Grate -- Sludge Pool",
+    "description": "The brick vault opens over a pool of slow-moving sludge fed by three lesser drains. Pale streamers of mold hang from the ceiling and trail into the water. An iron grate above admits a single pencil of daylight -- it illuminates very little. The pool can be waded across, but the footing is treacherous.",
+    "exits": {
+      "west": 4201,
+      "east": 4204,
+      "down": 4203
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4203,
+    "name": "The Rat's Den",
+    "description": "What was once a collapsed cellar has become a warren. Piles of shredded burlap, gnawed bone, and stolen trinkets ring the walls, and the floor is a carpet of matted fur and droppings. The occupants scatter and regroup as intruders enter, their red eyes glinting in the torchlight.",
+    "exits": {
+      "north": 4201,
+      "up": 4202,
+      "east": 4207
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer"
+    ]
+  },
+  {
+    "vnum": 4204,
+    "name": "Collapsed Drain",
+    "description": "A cave-in years ago brought the far wall down into the sewer, and the resulting slope of broken brick and mud has never been cleared. A chill draft rises through the gap, smelling of wet stone and something older -- the mineral scent of deeper tunnels. A rough scramble down the rubble leads into the old cisterns.",
+    "exits": {
+      "west": 4202,
+      "down": 4208,
+      "east": 4205
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer"
+    ]
+  },
+  {
+    "vnum": 4205,
+    "name": "Canal Grate Chamber",
+    "description": "A heavy iron grate above pours a steady silver curtain of canal water into this small stone chamber, which drains through a vent on the far wall. The noise is a constant hiss. A rusted ladder climbs up through the grate to the Pekakarlik Canal Walk overhead; a passage leads north into older, drier brickwork.",
+    "exits": {
+      "up": 4152,
+      "west": 4204,
+      "north": 4206
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4206,
+    "name": "The Stirge Nest",
+    "description": "The brick ceiling here is crazed with cracks, and mossy growths hang from them in long curtains. Small leathery shapes cling to the vault overhead, their proboscises twitching at the scent of warm blood. The smell of ammonia is overpowering.",
+    "exits": {
+      "south": 4205,
+      "east": 4207
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer"
+    ]
+  },
+  {
+    "vnum": 4207,
+    "name": "The Alpha's Midden",
+    "description": "The sewer widens into a crude throne-chamber for something very large and very aggressive. Piled against the walls are the remains of dozens of meals: chewed leather boots, split bones, a broken shortsword still clutched in a gnawed hand. The master of this place is clearly in residence, and clearly not pleased.",
+    "exits": {
+      "west": 4206,
+      "south": 4203
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "sewer"
+    ]
+  },
+  {
+    "vnum": 4208,
+    "name": "Cistern Overflow",
+    "description": "The sewer brickwork abruptly gives way to much older stonework -- great rough-hewn blocks laid without mortar, slick with centuries of wet. This is one of the old Custos cisterns, built before the city reached its current size. Water laps softly somewhere ahead.",
+    "exits": {
+      "up": 4204,
+      "south": 4209,
+      "east": 4211
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4209,
+    "name": "Flooded Cistern",
+    "description": "Black water fills most of this circular chamber to knee depth, still as glass. Bloated shapes stir beneath the surface as you step in -- the dead of older centuries, preserved cold and wet and hungry. Something in this water remembers that it was once a person, and is furious about what it has become.",
+    "exits": {
+      "north": 4208,
+      "east": 4212
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4210,
+    "name": "Under the Safe House",
+    "description": "A rotten trapdoor overhead opens into a stone-lined cell no larger than a closet. A stub of candle on an iron shelf has been lit recently; beside it is a note in a crabbed hand that reads 'Lie still until dawn.' The cell opens west into older, colder stone.",
+    "exits": {
+      "up": 4142,
+      "west": 4211
+    },
+    "flags": [
+      "indoor",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4211,
+    "name": "The Broken Arch",
+    "description": "A grand arch once stood here, connecting the cisterns to something older still. Today it is reduced to a jagged semicircle of broken stone around a dark opening. A skeletal figure sits propped beside the arch in the pose of a bored sentry, and it has been sitting there a very long time. As you approach, it stands.",
+    "exits": {
+      "west": 4208,
+      "east": 4210,
+      "down": 4212
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4212,
+    "name": "Fetid Pool",
+    "description": "A dead cistern. The water here has been still so long that it has grown a skin of reddish-brown mold, and the smell rising from it is a clinging, sickly sweetness that coats the tongue. The mold is cold -- unnaturally so -- and draws warmth from everything that comes near.",
+    "exits": {
+      "up": 4211,
+      "west": 4209,
+      "south": 4213
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4213,
+    "name": "The Necromancer's Scratch",
+    "description": "Someone once practiced dark arts in this low-ceilinged cell, and the walls still show their work: scratched sigils in long repeating spirals, some rubbed smooth by centuries of passing bodies. The stone floor is dark with old blood. The present tenant eats what wanders in, and has been doing so for a long time.",
+    "exits": {
+      "north": 4212,
+      "south": 4214
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4214,
+    "name": "Drowned Stair",
+    "description": "A stone staircase descends into standing water; its lower steps vanish into blackness. The water is colder than any in the cisterns above, and the echoes that come back sound like they travel a long way. A dry upper landing connects east to Pekakarlik work -- tighter cut stone, different craft entirely.",
+    "exits": {
+      "north": 4213,
+      "east": 4215
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4215,
+    "name": "The Vault Breach",
+    "description": "A section of the Donation Vault's north wall has collapsed inward, revealing a tunnel dressed in the distinctive close-cut stonework of Pekakarlik work -- blocks fitted so tightly that no mortar was needed. The passage predates the vault above by centuries. Faint hammering sounds in the distance, from something that does not sleep.",
+    "exits": {
+      "west": 4161,
+      "east": 4216,
+      "up": 4214
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4216,
+    "name": "Tunnel Junction",
+    "description": "The Pekakarlik tunnel forks here into three branches, each marked by a carved rune in the corner of the jamb. Scratched over the runes in more recent charcoal are the crude tally-marks of kobold scouts, and a faint reek of lamp oil and unwashed fur drifts from the east branch.",
+    "exits": {
+      "west": 4215,
+      "north": 4218,
+      "east": 4217,
+      "south": 4219
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4217,
+    "name": "Kobold Warren -- East",
+    "description": "The Pekakarlik passage has been crudely expanded sideways to accommodate a squatter colony. Cook-fire ash blackens the ceiling, bundles of filthy blankets line the walls, and small yellow-eyed figures chitter and scramble for weapons at the sight of intruders. The floor is slick with spilled grease.",
+    "exits": {
+      "west": 4216,
+      "north": 4218
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4218,
+    "name": "Kobold Warren -- West",
+    "description": "A smaller chamber filled with the Warren's stores of stolen goods: tavern knives, dropped coin-purses cut open and drained, a half-finished wooden fetish of Tiamat carved with more enthusiasm than skill. The lone occupant crouches between the piles, guarding his hoard with furious little squeals.",
+    "exits": {
+      "south": 4216,
+      "east": 4217
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4219,
+    "name": "The Quarry Shaft",
+    "description": "The Pekakarlik tunnel widens here into a true quarry-shaft, its walls shaped into patient terraces that climb beyond the reach of any torch. A low crust of dust covers everything. At the base of the shaft, a lump of patient earth resolves itself -- as you watch -- into a shape with arms and attention.",
+    "exits": {
+      "north": 4216,
+      "east": 4221,
+      "south": 4220
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4220,
+    "name": "The Postern Shaft",
+    "description": "A knotted rope of the finest dwarven silk drops from a shaft in the ceiling -- the thieves' route down from Dodger's Gate. Shallow-cut handholds flank the rope for those who distrust knotted silk. The shaft rises into a lightless square far above; a low passage leads west into the maintenance tunnels proper.",
+    "exits": {
+      "up": 4144,
+      "north": 4219,
+      "west": 4222
+    },
+    "flags": [
+      "indoor",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4221,
+    "name": "Hall of the Quarry-Golem",
+    "description": "A dressed-stone hall with columns shaped like kneeling figures. One column has moved since the hall was built: the sixth from the door stands closer to the center than the others, and its shaped arms hang at slightly different angles. The dust on its shoulders looks freshly disturbed.",
+    "exits": {
+      "west": 4219,
+      "east": 4223
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4222,
+    "name": "Forge-Ward Passage",
+    "description": "A narrow maintenance passage with a low vaulted ceiling, its walls scorched black by the Pekakarlik foundries it once served. The heat is long gone; what remains is cold soot and the smell of old iron. Thick grey webs span the corners -- something patient lives here, and is not pleased to share.",
+    "exits": {
+      "east": 4220,
+      "north": 4221,
+      "south": 4223
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4223,
+    "name": "The Outer Vault Hall",
+    "description": "A grand hall of careful Pekakarlik stonework, lit only by a faint phosphoric glow from runes set into the capstones. The columns here are shaped like axe-heads pointing downward -- the old clan-seal of the tunnel-stewards. At the far end, a stone doorway has been sealed and then forced open again. Webs thick as cord sway in the still air.",
+    "exits": {
+      "west": 4222,
+      "north": 4221,
+      "east": 4224,
+      "south": 4225
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4224,
+    "name": "Pekakarlik Archive Chamber",
+    "description": "A long gallery lined with slate tablets set into the walls, each incised in the block-script the Pekakarlik used for maintenance records. The tablets detail pump-schedules, cistern depths, and the genealogies of the minor stewards who kept the undercity running. None of it is secret, but all of it is centuries old.",
+    "exits": {
+      "west": 4223,
+      "south": 4227
+    },
+    "flags": [
+      "indoor",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4225,
+    "name": "The Gel-Cube Chamber",
+    "description": "A square room whose floor is worn glassy-smooth in a perfect track along the walls -- something large and slow has been patrolling this chamber for a very long time. Bones lie in three tidy heaps in the corners, their marrow scooped clean. The air tastes faintly of acid.",
+    "exits": {
+      "north": 4223,
+      "east": 4226
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4226,
+    "name": "The Tinker's Workshop",
+    "description": "A small study that has not been swept since its owner died. A workbench holds tools laid out neat, each in its outline of accumulated dust. The craftsman's successor still fusses about the shop -- a small leathery creature with bat-like wings, which eyes you with something between resentment and recognition.",
+    "exits": {
+      "west": 4225,
+      "east": 4227
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4227,
+    "name": "The Treasure Cache",
+    "description": "A small strongroom, its door long since forced. Most of what was here has been taken over the centuries, but the thieves in their haste left items that were too heavy, too ugly, or too carefully locked. A Pekakarlik strongbox sits in the corner, its hinges stubborn with rust but still workable. The air smells of iron and old leather.",
+    "exits": {
+      "north": 4224,
+      "west": 4226,
+      "east": 4228
+    },
+    "flags": [
+      "indoor",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4228,
+    "name": "The Tunnel-Warden's Hall",
+    "description": "A broad stone hall built for ceremony, with a dais at the far end and a stone chair carved in the shape of an overturned anvil. Seated on the chair is the Warden: a Pekakarlik kept alive far past his time by the slow magic of the runes around him. His eyes open as you enter, and they are the eyes of something that has forgotten it ever was kind.",
+    "exits": {
+      "west": 4227,
+      "south": 4229
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4229,
+    "name": "Deep Pipe Terminus",
+    "description": "A dead-end chamber where three great stone pipes debouche into a pool of dark, motionless water. The water is deeper than it appears; divers have vanished here, and not come back. Something about the sound of dripping in this place feels more like a conversation than an accident.",
+    "exits": {
+      "north": 4228
+    },
+    "flags": [
+      "indoor",
+      "dangerous",
+      "underground",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4300,
+    "name": "Shrine Skiff Landing",
+    "description": "The priests of Semyon keep a flat-bottomed skiff tied at the eastern quay of the Dockside Shrine. A gravel path leads up from the water to the shrine's side door. The current here curls strangely against the bank, as if something upstream is bending the river's will. The priestess says she will pay for answers.",
+    "exits": {
+      "east": 4301,
+      "north": 4021
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4301,
+    "name": "Reed Shallows -- Eastern Flats",
+    "description": "The Great River slows here into a maze of reed-choked channels where the dredgers never reach. The water is tea-colored with tannin and barely knee-deep, but the mud beneath it is soft and treacherous. Small dark shapes glide through the reeds, and bubbles rise where larger things wait.",
+    "exits": {
+      "west": 4300,
+      "east": 4302,
+      "north": 4303
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4302,
+    "name": "Muddywake Bend",
+    "description": "The river swings into a slow bend here, leaving a wide crescent of wet mudflat before it. A fallen willow half-bridges the water, its trailing branches thick with skulking green things. The stench is that of a healthy swamp -- rich, alive, and actively rotting in three different directions at once.",
+    "exits": {
+      "west": 4301,
+      "east": 4308
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4303,
+    "name": "Reed-Hidden Sandbar",
+    "description": "Tall reeds screen a narrow sandbar from the shore, creating a natural blind. The sand is tracked with webbed footprints, all coming in, none going out. A pile of fish-bones, picked very clean, sits at the water's edge -- and a few of the bones are not fish.",
+    "exits": {
+      "south": 4301,
+      "north": 4304
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4304,
+    "name": "Half-Sunken Shrine Approach",
+    "description": "The reeds thin as the ground rises, revealing the tops of three weathered stone pillars that once flanked a shrine-path. The shrine itself lies north, mostly submerged now where the river has broken through its old foundations. A carving of Semyon's river-crown still faces downstream in silent benediction.",
+    "exits": {
+      "south": 4303,
+      "north": 4305
+    },
+    "flags": [
+      "outdoor",
+      "water"
+    ]
+  },
+  {
+    "vnum": 4305,
+    "name": "Sunken Shrine -- Steps",
+    "description": "Mossy stone steps descend into clear shallow water where once they climbed to the shrine porch. The river has claimed the lower third of the building. A slim figure sits on the submerged middle step, combing out her long green hair, and her smile at your approach is not entirely reassuring.",
+    "exits": {
+      "south": 4304,
+      "north": 4306
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4306,
+    "name": "Sunken Shrine -- Inner Porch",
+    "description": "The interior of the old shrine is dim and half-flooded, lit only by light filtering through broken roof-tiles. River-worn floor-mosaics show Semyon in her aspect as Lady of the Shallows. Where the tiles are missing, the water is deep and very cold -- it gets colder further in.",
+    "exits": {
+      "south": 4305,
+      "north": 4307
+    },
+    "flags": [
+      "indoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4307,
+    "name": "Sunken Shrine -- Altar Chamber",
+    "description": "The shrine's altar is still standing, though the idol that once rested on it has fallen and cracked. The water is chest-deep here and moves gently in patterns that have nothing to do with the river current outside. A small pale creature circles the altar like a swimmer doing patient laps.",
+    "exits": {
+      "south": 4306
+    },
+    "flags": [
+      "indoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4308,
+    "name": "The Old Weir Approach",
+    "description": "The river widens into a shallow plate where the old weir once regulated flow. The weir itself is broken in two places, but its surviving stones form a natural crossing to an islet of higher ground. The water boils suspiciously around one of the gaps -- something is lodged there.",
+    "exits": {
+      "west": 4302,
+      "east": 4309,
+      "south": 4310
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4309,
+    "name": "Stone Weir Passage",
+    "description": "A narrow walk along the surviving weir stones, wet and slippery. To either side the river drops into pools deep enough to hide a wagon. Something large has been digging -- or living -- beneath the stones on the north side; there are drag-marks in the silt where the current is weakest.",
+    "exits": {
+      "west": 4308,
+      "east": 4311
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4310,
+    "name": "Weir Channel",
+    "description": "A secondary channel below the broken weir carries most of the current when the river is high. A merfolk warrior waits here with a bone-tipped spear, watching the crossing with the hostile patience of a toll-keeper who has decided the toll will be blood. The water swirls dark behind him.",
+    "exits": {
+      "north": 4308,
+      "east": 4311
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous"
+    ]
+  },
+  {
+    "vnum": 4311,
+    "name": "Flooded Grotto Mouth",
+    "description": "The river forms a quiet pool at the foot of a limestone bluff whose face has been opened by erosion into a dark cavern mouth. The air coming out is cold and smells of minerals and deep water. A soft, almost musical sound echoes from within -- the voice of something old and patient speaking in the language of currents.",
+    "exits": {
+      "west": 4309,
+      "east": 4312
+    },
+    "flags": [
+      "outdoor",
+      "water",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4312,
+    "name": "Lantern Pool",
+    "description": "The grotto opens into a broad water-chamber lit by a single shaft of daylight that falls through a crack far above. The pool is fifteen feet across and fathoms deep. The walls are slick with carbonate and webbed with root-systems of whatever grows on the bluff above. The singing is louder here.",
+    "exits": {
+      "west": 4311,
+      "east": 4313,
+      "north": 4314
+    },
+    "flags": [
+      "indoor",
+      "water",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4313,
+    "name": "Grotto -- The Deep Chamber",
+    "description": "The grotto ends in a domed chamber whose pool is deeper than its diameter -- the water drops straight down into the river's old bed. The surface of the pool is not still; it is shaping itself into a broad, humanoid figure of moving water whose attention has just turned fully upon you. This is what is angry.",
+    "exits": {
+      "west": 4312
+    },
+    "flags": [
+      "indoor",
+      "water",
+      "dangerous",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4314,
+    "name": "Grotto -- Side Cache",
+    "description": "A narrow side-gallery dry enough to kneel in. Whoever last came here stashed their takings carefully under a ledge -- a small leather satchel, perhaps the work of a diver from long ago who never came back up. The satchel's contents have weathered the years better than the satchel itself.",
+    "exits": {
+      "south": 4312
+    },
+    "flags": [
+      "indoor",
+      "underground"
+    ]
+  },
+  {
+    "vnum": 4315,
+    "name": "Upriver Gate",
+    "description": "A small stone landing marks the east-bank approach the River-Gate guards use when they patrol downriver. The path from the city's East River Gate comes in along the top of the bank. The Muddywake lies west; the river flats of Kinsweave lie east.",
+    "exits": {
+      "west": 4308
+    },
+    "flags": [
+      "outdoor",
+      "water"
     ]
   }
 ]

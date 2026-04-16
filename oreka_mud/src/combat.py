@@ -1287,6 +1287,15 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
                     except Exception:
                         pass
 
+                # Faction reputation changes on kill
+                try:
+                    from src.faction_rep import on_mob_killed_rep
+                    rep_msgs = on_mob_killed_rep(attacker, target)
+                    for rmsg in rep_msgs:
+                        hit_msg += f"\n[Faction] {rmsg}"
+                except Exception:
+                    pass
+
                 # Cleave feat
                 if hasattr(attacker, 'has_feat') and attacker.has_feat("Cleave"):
                     cleave_target = find_cleave_target(attacker, target, all_targets)

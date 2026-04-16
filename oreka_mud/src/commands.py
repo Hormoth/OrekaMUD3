@@ -531,9 +531,22 @@ class CommandParser:
         if not npc:
             return f"You don't see '{parts[0]}' here."
 
+        # Reputation-gated quest reveal -- if this NPC is willing to
+        # reveal a hidden quest based on the player's rep, do that
+        # FIRST so the reveal prepends any other interaction output.
+        reveal_msg = None
+        try:
+            from src.quest_reveal import attempt_reveals
+            reveal_msg = attempt_reveals(character, npc)
+        except Exception:
+            pass
+
         # If no message given, use functional talkto (quests, gear, dialogue)
         if message is None:
-            return self.cmd_talkto(character, npc_name)
+            tt_result = self.cmd_talkto(character, npc_name)
+            if reveal_msg:
+                return reveal_msg + "\n\n" + tt_result
+            return tt_result
 
         # Use AI system for response
         from src import ai
@@ -545,10 +558,16 @@ class CommandParser:
                 room=character.room,
                 use_llm=True
             )
-            return f"{npc.name} says: \"{response}\""
+            ai_out = f"{npc.name} says: \"{response}\""
+            if reveal_msg:
+                return reveal_msg + "\n\n" + ai_out
+            return ai_out
         except Exception as e:
             # Fallback to simple response if AI fails
-            return f"{npc.name} looks at you but doesn't respond."
+            fb = f"{npc.name} looks at you but doesn't respond."
+            if reveal_msg:
+                return reveal_msg + "\n\n" + fb
+            return fb
 
     async def cmd_chat(self, character, args):
         """
@@ -2197,6 +2216,15 @@ class CommandParser:
             "bug": self.cmd_bug,
             "typo": self.cmd_typo,
             "idea": self.cmd_idea,
+            # System 41: Room Edit Logging
+            "logroom": self.cmd_logroom,
+            # System 42: Captive Rescue
+            "unbind":         self.cmd_unbind,
+            "free":           self.cmd_unbind,
+            "present":        self.cmd_present,
+            "@spawn_captive": self.cmd_spawn_captive,
+            # System 43: Reputation-Gated Quest Reveal
+            "hidden":         self.cmd_hidden_quests,
             # System 39: Ignore / Block
             "ignore": self.cmd_ignore,
             "block": self.cmd_ignore,
@@ -10545,14 +10573,16 @@ class CommandParser:
         fm = get_faction_manager()
 
         if not args:
-            return fm.format_faction_list(character)
+            from src.faction_rep import render_faction_sheet
+            return render_faction_sheet(character)
 
         parts = args.strip().split(None, 1)
         subcmd = parts[0].lower()
         subargs = parts[1] if len(parts) > 1 else ""
 
-        if subcmd == "list":
-            return fm.format_faction_list(character)
+        if subcmd == "list" or subcmd == "sheet":
+            from src.faction_rep import render_faction_sheet
+            return render_faction_sheet(character)
 
         elif subcmd == "info":
             if not subargs:
@@ -12334,32 +12364,12 @@ def _check_set_bonuses(self, character):
 
 
 def _cmd_reputation(self, character, args):
-    """Show all faction reputations and standings.
+    """Show all faction reputations as a visual standings sheet.
     Usage: reputation
+           rep
     """
-    rep = getattr(character, 'reputation', {})
-    if not rep:
-        return "You have no notable reputation with any faction."
-
-    def standing_label(value):
-        if value <= -100:
-            return "Hostile"
-        elif value < -25:
-            return "Unfriendly"
-        elif value < 25:
-            return "Neutral"
-        elif value < 100:
-            return "Friendly"
-        elif value < 200:
-            return "Honored"
-        else:
-            return "Revered"
-
-    lines = ["Faction Reputations:"]
-    for faction, value in sorted(rep.items()):
-        label = standing_label(value)
-        lines.append(f"  {faction}: {value:+d} ({label})")
-    return "\n".join(lines)
+    from src.faction_rep import render_faction_sheet
+    return render_faction_sheet(character)
 
 
 def _apply_reputation_decay(players):
@@ -13259,6 +13269,27 @@ def cmd_examine(self, character, args):
     for slot, item in getattr(character, 'equipment', {}).items():
         if item and target_name in item.name.lower():
             return _format_item_examine(item, equipped_slot=slot)
+
+    # Hidden-content check: active burnt-trail scenes surface objects
+    # (floorboard, vase, panel, hearth-stone) that can be examined.
+    try:
+        from src.family_fates import get_fate_manager, reveal_hidden_content
+        mgr = get_fate_manager()
+        overrides = mgr.room_overrides.get(
+            getattr(character.room, 'vnum', None), {})
+        hint = overrides.get("burnt_hint")
+        if hint is not None:
+            obj = hint.get("object", "")
+            if any(word in target_name for word in obj.lower().split()) \
+               or target_name in obj.lower() \
+               or target_name in ("floor", "floorboard", "vase", "panel",
+                                   "hearth", "hearthstone", "stone", "wall",
+                                   "wall-panel"):
+                msg = reveal_hidden_content(character, character.room)
+                if msg:
+                    return msg
+    except Exception:
+        pass
 
     return f"You don't see '{args}' here."
 
@@ -14839,3 +14870,233 @@ def cmd_disturb(self, character, args):
 
 
 CommandParser.cmd_disturb = cmd_disturb
+
+
+# =============================================================================
+# System 41: Room Edit Logging
+# =============================================================================
+
+def cmd_logroom(self, character, args):
+    """Log a problem with the current room for builders to review.
+
+    Usage: logroom                - preview what will be logged for this room
+           logroom <notes>        - file a room-edit report with your notes
+
+    The vnum, room name, and description are captured automatically.
+    Reports are saved per-room in data/room_edits/{vnum}.json.
+    """
+    import os, json
+    from datetime import datetime, timezone
+
+    room = getattr(character, 'room', None)
+    if room is None:
+        return "You are not in a room."
+
+    vnum = getattr(room, 'vnum', None)
+    if vnum is None:
+        return "This room has no vnum and cannot be logged."
+
+    name = getattr(room, 'name', '(unnamed)')
+    description = getattr(room, 'description', '') or ''
+
+    notes = (args or "").strip()
+
+    # Preview mode — show what would be logged
+    if not notes:
+        preview_desc = description if len(description) <= 400 else description[:400] + "..."
+        return (
+            "Room Edit Preview\n"
+            "-----------------\n"
+            "vnum: %s\n"
+            "name: %s\n"
+            "description: %s\n\n"
+            "To file the report, type: logroom <your notes>"
+        ) % (vnum, name, preview_desc)
+
+    # Build report directory
+    edits_dir = os.path.join(
+        os.path.dirname(__file__), '..', 'data', 'room_edits'
+    )
+    os.makedirs(edits_dir, exist_ok=True)
+
+    report_path = os.path.join(edits_dir, "%s.json" % vnum)
+
+    # Load existing entries for this room (if any)
+    try:
+        with open(report_path, 'r', encoding='utf-8') as f:
+            entries = json.load(f)
+        if not isinstance(entries, list):
+            entries = []
+    except (FileNotFoundError, json.JSONDecodeError):
+        entries = []
+
+    entry = {
+        "vnum": vnum,
+        "name": name,
+        "description": description,
+        "reporter": character.name,
+        "notes": notes,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    entries.append(entry)
+
+    # Atomic write
+    tmp_path = report_path + ".tmp"
+    with open(tmp_path, 'w', encoding='utf-8') as f:
+        json.dump(entries, f, indent=2)
+    os.replace(tmp_path, report_path)
+
+    return "Room edit logged for vnum %s. Thank you!" % vnum
+
+
+CommandParser.cmd_logroom = cmd_logroom
+
+
+# =============================================================================
+# System 42: Captive Rescue System
+# =============================================================================
+
+def cmd_unbind(self, character, args):
+    """Free any captives bound in this room (requires captors to be cleared).
+    Usage: unbind
+           free      (alias)
+    """
+    from src.captives import rescue_check, captors_still_present, is_captive
+
+    room = getattr(character, 'room', None)
+    if room is None:
+        return "You are nowhere to rescue anyone."
+
+    # Any captives here?
+    captives_here = [m for m in getattr(room, 'mobs', []) or []
+                     if is_captive(m)]
+    if not captives_here:
+        return "There is no one bound here to rescue."
+
+    # Hostiles still present?
+    if captors_still_present(room):
+        return ("The captors are still here. Deal with them first.")
+
+    # Free any bound captives
+    results = rescue_check(character, room)
+    if not results:
+        return "The captives here are already free."
+
+    if not hasattr(character, 'inventory'):
+        character.inventory = []
+
+    # For each freed captive that handed over a token, materialize the
+    # token as an Item and add to inventory
+    out_lines = []
+    for captive_mob, msg, token_data in results:
+        out_lines.append(msg)
+        if token_data:
+            try:
+                from src.items import Item
+                base = {k: v for k, v in token_data.items()
+                        if k in ("vnum", "name", "item_type", "weight",
+                                  "value", "description", "properties")}
+                tok = Item(**base)
+                # Attach captive-system metadata
+                for k in ("captive_token", "family_id"):
+                    if k in token_data:
+                        setattr(tok, k, token_data[k])
+                character.inventory.append(tok)
+                out_lines.append(f"\033[2;37m(Token added to your inventory.)\033[0m")
+            except Exception as e:
+                out_lines.append(f"\033[0;31m(Could not create token item: {e})\033[0m")
+    return "\n".join(out_lines)
+
+
+def cmd_present(self, character, args):
+    """Present a captive-token to an NPC in this room.
+    Usage: present <item>
+    """
+    if not args:
+        return "Usage: present <token name or partial>"
+
+    room = getattr(character, 'room', None)
+    if room is None:
+        return "You are nowhere."
+
+    # Find the token in inventory
+    query = args.strip().lower()
+    inv = getattr(character, 'inventory', []) or []
+    token = None
+    for it in inv:
+        iname = (getattr(it, 'name', '') or '').lower()
+        if query in iname:
+            # Prefer tokens
+            from src.captives import is_captive_token
+            if is_captive_token(it):
+                token = it
+                break
+            if token is None:
+                token = it  # fallback: match anything by name
+    if token is None:
+        return f"You aren't carrying anything matching '{args}'."
+
+    from src.captives import is_captive_token, on_token_delivered
+    if not is_captive_token(token):
+        return f"The {getattr(token, 'name', 'item')} isn't a captive-token."
+
+    # Try every NPC in the room until one recognizes it
+    npcs = [m for m in getattr(room, 'mobs', []) or [] if m is not None]
+    for npc in npcs:
+        result = on_token_delivered(character, token, npc)
+        if result is not None:
+            # Consume the token
+            try:
+                character.inventory.remove(token)
+            except Exception:
+                pass
+            return result
+
+    return ("You look around, but no one here seems to recognize "
+            "the token. Perhaps you're in the wrong town.")
+
+
+def cmd_spawn_captive(self, character, args):
+    """Admin: spawn a captive in the current room.
+    Usage: @spawn_captive [template] [family_id]
+           Defaults: template=scout, family=random
+    """
+    if not getattr(character, 'is_immortal', False):
+        return "Permission denied."
+
+    from src.captives import spawn_captive_in_room
+
+    parts = (args or "").split()
+    template = parts[0] if parts else "scout"
+    family = parts[1] if len(parts) > 1 else None
+
+    room = getattr(character, 'room', None)
+    if room is None:
+        return "You are nowhere."
+
+    ok, msg = spawn_captive_in_room(self.world, room.vnum,
+                                    template_id=template,
+                                    family_id=family,
+                                    captor_type="admin-spawned")
+    return msg
+
+
+CommandParser.cmd_unbind = cmd_unbind
+CommandParser.cmd_present = cmd_present
+CommandParser.cmd_spawn_captive = cmd_spawn_captive
+
+
+# =============================================================================
+# System 43: Reputation-Gated Quest Reveal
+# =============================================================================
+
+def cmd_hidden_quests(self, character, args):
+    """View hidden quests revealed to you by factions you've earned trust with.
+    Usage: hidden
+    """
+    from src.quest_reveal import render_hidden_quests
+    return render_hidden_quests(character)
+
+
+CommandParser.cmd_hidden_quests = cmd_hidden_quests
+

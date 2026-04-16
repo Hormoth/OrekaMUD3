@@ -1,0 +1,233 @@
+{
+  "_schema": {
+    "version": 1,
+    "comment": "Captive rescue-system data. Families are the home anchors captives get returned to. Templates are the stock personas used for procedural captive generation."
+  },
+
+  "families": {
+    "ridgeborn_kin": {
+      "id": "ridgeborn_kin",
+      "family_name": "the Ridgeborn family",
+      "region": "eternalsteppe",
+      "home_town": "Tavranek",
+      "home_room_vnum": 7006,
+      "representative_npc": "Matriarch Vessla Ridgeborn",
+      "representative_vnum": null,
+      "faction_id": "far_riders",
+      "reward_gold_range": [40, 120],
+      "reward_item_pool": "masterwork_mundane",
+      "quest_chain_seed": "the_lost_outriders"
+    },
+    "pekakarlik_gharoz": {
+      "id": "pekakarlik_gharoz",
+      "family_name": "Clan Gharoz",
+      "region": "infinitedesert",
+      "home_town": "Kharazhad",
+      "home_room_vnum": 8003,
+      "representative_npc": "Clan-Speaker Morrek Gharoz",
+      "representative_vnum": null,
+      "faction_id": "sand_wardens",
+      "reward_gold_range": [50, 150],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "windmark_oathbond": {
+      "id": "windmark_oathbond",
+      "family_name": "the Oathbond line",
+      "region": "gatefall",
+      "home_town": "Redtrail Hollow",
+      "home_room_vnum": 12109,
+      "representative_npc": "Grandfather Sarn Oathbond",
+      "representative_vnum": null,
+      "faction_id": "far_riders",
+      "reward_gold_range": [35, 100],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "liraveth_trade": {
+      "id": "liraveth_trade",
+      "family_name": "House Vaelun of Liraveth",
+      "region": "twinrivers",
+      "home_town": "Liraveth",
+      "home_room_vnum": 10220,
+      "representative_npc": "Factor Iralia Vaelun",
+      "representative_vnum": null,
+      "faction_id": "trade_houses",
+      "reward_gold_range": [60, 180],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "custos_scholar": {
+      "id": "custos_scholar",
+      "family_name": "the Archive-Line of Custos",
+      "region": "twinrivers",
+      "home_town": "Custos Do Aeternos",
+      "home_room_vnum": 4049,
+      "representative_npc": "Archivist Calren Vos",
+      "representative_vnum": null,
+      "faction_id": "trade_houses",
+      "reward_gold_range": [70, 200],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "tidebloom_kovaka": {
+      "id": "tidebloom_kovaka",
+      "family_name": "the Kovaka Shieldhearth",
+      "region": "tidebloom",
+      "home_town": "Velathenor",
+      "home_room_vnum": 6075,
+      "representative_npc": "Shieldfather Harn Kovaka",
+      "representative_vnum": null,
+      "faction_id": "circle_of_deeproot",
+      "reward_gold_range": [45, 130],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "deepwater_pasua": {
+      "id": "deepwater_pasua",
+      "family_name": "the Pasua of Canopy Hold",
+      "region": "deepwater",
+      "home_town": "Canopy Hold",
+      "home_room_vnum": 9245,
+      "representative_npc": "Elder Naerin Silverleaf",
+      "representative_vnum": null,
+      "faction_id": "circle_of_deeproot",
+      "reward_gold_range": [50, 140],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "kinsweave_taraf": {
+      "id": "kinsweave_taraf",
+      "family_name": "a Taraf-Imro forge-family",
+      "region": "kinsweave",
+      "home_town": "Highridge",
+      "home_room_vnum": 5108,
+      "representative_npc": "Forge-Mother Kharaz Fireforge",
+      "representative_vnum": null,
+      "faction_id": "brotherhood_of_steppe",
+      "reward_gold_range": [55, 160],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "steppe_dalan": {
+      "id": "steppe_dalan",
+      "family_name": "the Dalan line",
+      "region": "eternalsteppe",
+      "home_town": "Dalan's Hold",
+      "home_room_vnum": 7110,
+      "representative_npc": "Keeper Sunwend Dalan",
+      "representative_vnum": null,
+      "faction_id": "brotherhood_of_steppe",
+      "reward_gold_range": [40, 110],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "gatefall_briarshade": {
+      "id": "gatefall_briarshade",
+      "family_name": "the Briarshade tradesmiths",
+      "region": "gatefall",
+      "home_town": "Briarshade",
+      "home_room_vnum": 12143,
+      "representative_npc": "Guildmaster Henna Briarshade",
+      "representative_vnum": null,
+      "faction_id": "trade_houses",
+      "reward_gold_range": [45, 130],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "chainless_farborn": {
+      "id": "chainless_farborn",
+      "family_name": "the Chainless of Clifftide",
+      "region": "chainlesslegion",
+      "home_town": "Clifftide",
+      "home_room_vnum": 13005,
+      "representative_npc": "Captain Vaerd of the Chainless",
+      "representative_vnum": null,
+      "faction_id": "chainless_legion",
+      "reward_gold_range": [55, 150],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "silent_concord_cell": {
+      "id": "silent_concord_cell",
+      "family_name": "the Silent Concord's Custos cell",
+      "region": "twinrivers",
+      "home_town": "Custos Do Aeternos",
+      "home_room_vnum": 4139,
+      "representative_npc": "Concord Agent Sevren",
+      "representative_vnum": null,
+      "faction_id": "silent_concord",
+      "reward_gold_range": [65, 190],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "gatefall_remnant_hold": {
+      "id": "gatefall_remnant_hold",
+      "family_name": "the Remnant of the Tomb Watch",
+      "region": "gatefall",
+      "home_town": "Tomb of Kings Approach",
+      "home_room_vnum": 12245,
+      "representative_npc": "Warden-Elder Morun",
+      "representative_vnum": null,
+      "faction_id": "gatefall_remnant",
+      "reward_gold_range": [60, 170],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "tidebloom_myruvane": {
+      "id": "tidebloom_myruvane",
+      "family_name": "the Myruvane Pasua circle",
+      "region": "tidebloom",
+      "home_town": "Myruvane",
+      "home_room_vnum": 6117,
+      "representative_npc": "Circle-Speaker Lirien Thorn-Ear",
+      "representative_vnum": null,
+      "faction_id": "circle_of_deeproot",
+      "reward_gold_range": [50, 140],
+      "reward_item_pool": "masterwork_mundane"
+    },
+    "desert_ashgarin": {
+      "id": "desert_ashgarin",
+      "family_name": "the Ashgarin Rarozhki fold",
+      "region": "infinitedesert",
+      "home_town": "Ashgarin Fold",
+      "home_room_vnum": 8125,
+      "representative_npc": "Firemother Zhareni",
+      "representative_vnum": null,
+      "faction_id": "sand_wardens",
+      "reward_gold_range": [55, 160],
+      "reward_item_pool": "masterwork_mundane"
+    }
+  },
+
+  "templates": {
+    "scout": {
+      "name_pool": ["the scout", "the outrider", "the tracker"],
+      "description": "A weathered figure in travel-stained leathers. Eyes watchful, bearings clipped.",
+      "hooks": ["rescued while tracking a raiding party", "captured mid-patrol", "ambushed at a water stop"],
+      "valid_family_factions": ["far_riders", "circle_of_deeproot", "brotherhood_of_steppe"]
+    },
+    "farmer": {
+      "name_pool": ["the farmer", "the herder", "the homesteader"],
+      "description": "A careworn figure with hands that show decades of honest labor. Dust still clings to their clothes.",
+      "hooks": ["taken from a raided farmstead", "grabbed while traveling to market", "caught in a cult's tithe-round"],
+      "valid_family_factions": ["brotherhood_of_steppe", "trade_houses", "circle_of_deeproot"]
+    },
+    "merchant": {
+      "name_pool": ["the trader", "the factor's agent", "the caravan-master"],
+      "description": "A well-dressed figure whose fine cloak is now stained. They have the calm of someone used to making deals.",
+      "hooks": ["caravan taken on the road", "smuggler's debt come due", "hostage of a trade dispute"],
+      "valid_family_factions": ["trade_houses", "chainless_legion", "sand_wardens"]
+    },
+    "child": {
+      "name_pool": ["the child", "the young one", "the apprentice"],
+      "description": "A small frightened figure, clearly in far over their head. They will not meet your eyes.",
+      "hooks": ["abducted from a family homestead", "lost and caught by the wrong patrol", "taken as leverage against their parents"],
+      "valid_family_factions": ["any"]
+    },
+    "scholar": {
+      "name_pool": ["the scholar", "the scribe", "the translator"],
+      "description": "A bookish figure in worn robes, fingers stained with ink. They regard their captors with quiet hatred.",
+      "hooks": ["captured for forced translation work", "taken for their knowledge of a specific site", "grabbed en route to a library"],
+      "valid_family_factions": ["trade_houses", "silent_concord", "circle_of_deeproot"]
+    }
+  },
+
+  "reward_pools": {
+    "masterwork_mundane": {
+      "description": "Masterwork mundane items appropriate for levels 1-8",
+      "levels_1_4": [700, 701, 702, 705, 706],
+      "levels_5_8": [700, 701, 705, 709, 703],
+      "levels_9_14": [707, 710, 711],
+      "levels_15_plus": [707, 710, 711]
+    }
+  }
+}

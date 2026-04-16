@@ -1875,6 +1875,22 @@ async def spawn_respawn_tick(world):
             logger.error(f"Error in spawn tick: {e}")
 
 
+async def encounter_tick(world):
+    """Roll regional random encounters and advance active stalkers."""
+    from src.encounters import get_encounter_manager
+    from src.schedules import get_game_time
+    mgr = get_encounter_manager()
+    game_time = get_game_time()
+    while True:
+        try:
+            await asyncio.sleep(30)
+            messages = mgr.tick(world, game_time)
+            for msg in messages:
+                logger.info(f"Encounter: {msg}")
+        except Exception as e:
+            logger.error(f"Error in encounter tick: {e}")
+
+
 async def ambient_echo_tick(world):
     """Send ambient room echoes to players periodically."""
     import random as _rnd
@@ -2000,6 +2016,14 @@ async def narrative_tick(world):
 async def main():
     world = OrekaWorld()
     world.load_data()
+
+    # Initialize captive-rescue state on all statically-placed captives
+    try:
+        from src.captives import apply_captive_state_on_load
+        apply_captive_state_on_load(world)
+    except Exception as e:
+        logger.warning(f"Captive state init failed: {e}")
+
     parser = CommandParser(world)
 
     ai_character = Character(
@@ -2234,6 +2258,16 @@ async def main():
     # Start narrative check tick
     asyncio.create_task(narrative_tick(world))
 
+    # Start regional random-encounter tick
+    asyncio.create_task(encounter_tick(world))
+
+    # Start family-fate tick (burnt-trail timers, ambush waves, etc.)
+    try:
+        from src.family_fates import family_fate_tick
+        asyncio.create_task(family_fate_tick(world))
+    except Exception as e:
+        logger.warning(f"Family fate tick not started: {e}")
+
     # Start WebSocket server (for Veil Client)
     # Keep a reference to prevent garbage collection of the task
     _ws_task = None
@@ -2242,6 +2276,19 @@ async def main():
         _ws_task = asyncio.create_task(start_websocket_server())
     except Exception as e:
         logger.warning(f"WebSocket server not started: {e}")
+
+    # Start live-map WebSocket server + snapshot broadcaster
+    _map_ws_task = None
+    _map_snap_task = None
+    try:
+        from src.map_events import (start_map_ws_server,
+                                    snapshot_broadcast_loop,
+                                    install_log_handler)
+        install_log_handler()
+        _map_ws_task = asyncio.create_task(start_map_ws_server(world))
+        _map_snap_task = asyncio.create_task(snapshot_broadcast_loop(world))
+    except Exception as e:
+        logger.warning(f"Map WS server not started: {e}")
 
     async with server:
         await server.serve_forever()

@@ -1,0 +1,4593 @@
+{
+  "region": "deepwater",
+  "buckets": {
+    "3": [
+      {
+        "name": "Adze",
+        "vnum": 10003,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          8,
+          3
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          -1
+        ],
+        "flags": [
+          "elemental_affinity:None (Extraplanar -- summoned from the D\u00f3mnathar's home plane)"
+        ],
+        "type_": "Outsider",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 8,
+          "Dex": 17,
+          "Con": 12,
+          "Int": 10,
+          "Wis": 13,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 30,
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 7,
+            "damage": "1d4-1"
+          },
+          {
+            "type": "bite",
+            "bonus": 2,
+            "damage": "1d3-1"
+          }
+        ],
+        "special_attacks": [
+          "Blood drain",
+          "possession",
+          "disease"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "firefly form",
+          "damage reduction 5/cold iron",
+          "Abyssal Silence",
+          "unbarred passage",
+          "light sensitivity"
+        ],
+        "feats": [
+          "Weapon Finesse",
+          "Stealthy"
+        ],
+        "skills": {
+          "Bluff": 8,
+          "Disguise": 8,
+          "Hide": 13,
+          "Listen": 7,
+          "Move Silently": 13,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 6,
+          "Will": 4
+        },
+        "environment": "Deepwater Marches (halfling settlements, marsh villages, river-trading posts)",
+        "organization": "Solitary",
+        "description": "The lamp at the window gutters. A firefly drifts in through the gap beneath the door -- just one, glowing faintly amber in the dark. It lands on the sleeping child's arm. By morning, the child is pale, feverish, and will not wake. The firefly is gone. There is no wound to find."
+      },
+      {
+        "name": "Allip",
+        "vnum": 10010,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          12,
+          0
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Fragmented -- distorted remnant of original Kin's elemental identity"
+        ],
+        "type_": "Undead",
+        "alignment": "Always neutral evil",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 12,
+          "Con": null,
+          "Int": 11,
+          "Wis": 11,
+          "Cha": 18
+        },
+        "speed": {
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "incorporeal touch",
+            "bonus": 3,
+            "damage": "1d4 Wisdom drain"
+          }
+        ],
+        "special_attacks": [
+          "Babble",
+          "madness",
+          "Wisdom drain"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "incorporeal traits",
+          "+2 turn resistance",
+          "undead traits",
+          "undead resonance"
+        ],
+        "feats": [
+          "Improved Initiative",
+          "Lightning Reflexes"
+        ],
+        "skills": {
+          "Hide": 8,
+          "Intimidate": 7,
+          "Listen": 7,
+          "Search": 7,
+          "Spot": 7
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 2,
+          "Will": 4
+        },
+        "environment": "Kinsweave (border-kingdom ruins, abandoned guild halls, fallen court chambers); Tidebloom Reach (drowned villages near Hillmeet and Foxfen, waterlogged libraries). Rare in the Infinite Desert near collapsed Giant record-halls.",
+        "organization": "Solitary",
+        "description": "It was a scholar, once. You can tell by the way it moves its hands -- still tracing letters on invisible pages, still turning invisible leaves. Its mouth opens and closes ceaselessly, pouring out a stream of whispered words that resolve into nothing, loop back on themselves, and begin again. The sound is not language. It is the sound of a mind that broke so completely that death could not stop it from trying to finish the thought."
+      },
+      {
+        "name": "Ankheg",
+        "vnum": 10012,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          10,
+          12
+        ],
+        "ac": 18,
+        "damage_dice": [
+          2,
+          6,
+          7
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth)"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 21,
+          "Dex": 10,
+          "Con": 17,
+          "Int": 1,
+          "Wis": 13,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 30,
+          "burrow": 20
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 6,
+            "damage": "2d6+7 plus 1d4 acid"
+          }
+        ],
+        "special_attacks": [
+          "Improved grab",
+          "spit acid"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "tremorsense 60 ft.",
+          "elemental affinity (Earth)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Toughness"
+        ],
+        "skills": {
+          "Climb": 8,
+          "Listen": 6,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 3,
+          "Will": 1
+        },
+        "environment": "The Eternal Steppe (cultivated farmland and open grassland, especially along the Kinsweave border); secondary presence in Twin Rivers (tilled lowland fields near the Great River) and Tidebloom Reach (drained marshland converted to cropland near Hillmeet)",
+        "organization": "Solitary or cluster (2-4)",
+        "description": "The wheat shivers and collapses in a line, stalks folding inward like a wound stitching itself shut. Then the earth cracks open and something huge and chitinous erupts -- six legs driving it skyward, mandibles gaping, a hiss of acrid vapor rising from its mouth. It is the color of the soil it lives in, which means you never see it until the ground beneath you gives way."
+      },
+      {
+        "name": "Assassin Vine",
+        "vnum": 10029,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          8,
+          12
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          7
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) / Lady of the Sea (Water) -- dual affinity reflecting root-depth and water dependence"
+        ],
+        "type_": "Plant",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 20,
+          "Dex": 10,
+          "Con": 16,
+          "Int": null,
+          "Wis": 13,
+          "Cha": 9
+        },
+        "speed": {
+          "land": 5
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 7,
+            "damage": "1d6+7"
+          }
+        ],
+        "special_attacks": [
+          "Constrict 1d6+7",
+          "entangle",
+          "improved grab"
+        ],
+        "special_qualities": [
+          "Blindsight 30 ft.",
+          "camouflage",
+          "immunity to electricity",
+          "low-light vision",
+          "plant traits",
+          "cold resistance 10",
+          "elemental resonance (Earth/Water)"
+        ],
+        "feats": [],
+        "skills": {},
+        "saves": {
+          "Fort": 7,
+          "Ref": 1,
+          "Will": 2
+        },
+        "environment": "Great Forests (Deepwood, Twin Rivers old-growth, dense undergrowth near streams and springs); secondary presence in Tidebloom Reach (tidal forests) and Deepwater Marches (jungle undergrowth)",
+        "organization": "Solitary or patch (2-4)",
+        "description": "The trail narrows between two stands of old-growth trees, their canopy so thick that the forest floor is dim even at midday. Moss covers everything -- the tree trunks, the stones, the trail itself. There is no wind, but something moves at the edge of your vision: a vine, thick as a man's forearm, sliding across the path with a slow, purposeful motion that has nothing to do with the breeze. By the time you notice that the vines are moving on every side of you, they are already too close."
+      },
+      {
+        "name": "Encantado",
+        "vnum": 10069,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          6,
+          8
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- the encantado is the Lady's domain expressed as charm rather than force"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually chaotic neutral",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 17,
+          "Con": 14,
+          "Int": 14,
+          "Wis": 14,
+          "Cha": 19
+        },
+        "speed": {
+          "land": 30,
+          "swim": 60
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 5,
+            "damage": "1d4+1"
+          }
+        ],
+        "special_attacks": [
+          "Enchanting presence",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Alternate form",
+          "amphibious",
+          "damage reduction 5/cold iron",
+          "low-light vision",
+          "spell resistance 15",
+          "sea-longing",
+          "elemental resonance (Water)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Ability Focus (enchanting presence)",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 13,
+          "Diplomacy": 13,
+          "Disguise": 11,
+          "Listen": 9,
+          "Sense Motive": 9,
+          "Swim": 10
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 7,
+          "Will": 6
+        },
+        "environment": "Apelian Sea and Deepwater Marches coast (warm coastal shallows, river-mouths, tidal lagoons; in dolphin form, ranges across the full Apelian basin; in humanoid form, visits coastal settlements, particularly halfling fishing villages and the smaller Deepwater Marches trading-posts)",
+        "organization": "Solitary or pair",
+        "description": "The stranger walks out of the sea at dusk, barefoot on the wet sand, wearing a hat pulled low over their forehead. They are beautiful -- unnaturally, painfully beautiful -- and they move with a liquid grace that makes every step look like swimming. They smile at the fishing village and the fishing village smiles back, because it has been a long time since anyone beautiful came to these shores. The hat stays on. It always stays on. Beneath the hat, the blowhole is still wet."
+      },
+      {
+        "name": "Ettercap",
+        "vnum": 10070,
+        "cr": 3.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          8,
+          5
+        ],
+        "ac": 14,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- faint; the ettercap is a creature of the under-canopy, the dark spaces close to the ground"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually neutral evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 17,
+          "Con": 13,
+          "Int": 6,
+          "Wis": 15,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 30,
+          "climb": 30
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 5,
+            "damage": "1d8+2 plus poison"
+          },
+          {
+            "type": "claws",
+            "bonus": 3,
+            "damage": "1d3+1"
+          }
+        ],
+        "special_attacks": [
+          "Poison",
+          "web",
+          "web garrotte"
+        ],
+        "special_qualities": [
+          "Low-light vision",
+          "web-sense",
+          "elemental resonance (Earth)"
+        ],
+        "feats": [
+          "Alertness",
+          "Multiattack"
+        ],
+        "skills": {
+          "Climb": 10,
+          "Hide": 9,
+          "Listen": 6,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 4,
+          "Will": 6
+        },
+        "environment": "Great Forests (dense mid-canopy and undergrowth, particularly in humid lowland forest where spider populations are highest -- southern Deepwood, Tidebloom Reach tidal forests, and the jungle-margins of the Deepwater Marches)",
+        "organization": "Solitary, pair, or nest (3-6 plus 2-8 monstrous spiders)",
+        "description": "The web is wrong. Normal spider-webs are symmetrical, elegant, efficient -- this one is a sprawling mess of thick, ropy strands strung between trees at head-height, and it is not empty. Something crouches in the upper canopy where the anchor-lines converge: humanoid enough to have arms, legs, and a recognisable posture, but wrong in the details -- too many joints in the fingers, spinnerets where a chin should be, and eyes that are flat, black, and arranged in a cluster rather than a pair."
+      },
+      {
+        "name": "Krasue",
+        "vnum": 10105,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          12,
+          0
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:None -- undead"
+        ],
+        "type_": "Undead",
+        "alignment": "Always chaotic evil",
+        "ability_scores": {
+          "Str": 6,
+          "Dex": 17,
+          "Con": null,
+          "Int": 11,
+          "Wis": 12,
+          "Cha": 15
+        },
+        "speed": {
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 6,
+            "damage": "1d4 plus blood drain"
+          },
+          {
+            "type": "viscera lash",
+            "bonus": 3,
+            "damage": "1d4 plus disease"
+          }
+        ],
+        "special_attacks": [
+          "Blood drain",
+          "disease",
+          "entrancing glow",
+          "viscera grapple"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "undead traits",
+          "daylight vulnerability",
+          "body return",
+          "undead resonance (masked)"
+        ],
+        "feats": [
+          "Stealthy",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 9,
+          "Hide": 14,
+          "Listen": 8,
+          "Move Silently": 10,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 4,
+          "Will": 5
+        },
+        "environment": "Deepwater Marches (the wetland interior of the Deepwater Marches -- stagnant pools, reed-beds, and the foggy marsh-paths that halfling fishing-communities use to navigate between settlements)",
+        "organization": "Solitary",
+        "description": "The light in the marsh is not a lantern. It moves wrong -- bobbing, drifting, hovering at head-height with the lazy motion of something that is not subject to wind. When it moves closer, you see what is carrying the light: a woman's head. Just the head -- floating, trailing a mass of viscera beneath it like a jellyfish trails its tentacles. The organs glow faintly from within, producing the light that lured you here. The face is beautiful. The face is always beautiful. The face is smiling."
+      },
+      {
+        "name": "Mud Menders",
+        "vnum": 10128,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          8,
+          8
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) / Lord of Stone (Earth) -- constructive; the intersection of water and earth as building material, the quiet industry of riverbanks repairing themselves"
+        ],
+        "type_": "Elemental",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 13,
+          "Dex": 10,
+          "Con": 14,
+          "Int": 6,
+          "Wis": 12,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 20,
+          "swim": 30
+        },
+        "attacks": [
+          {
+            "type": "slams",
+            "bonus": 5,
+            "damage": "1d4+1 plus mudslick"
+          }
+        ],
+        "special_attacks": [
+          "Mudslick"
+        ],
+        "special_qualities": [
+          "Damage reduction 5/-",
+          "elemental traits",
+          "earth glide",
+          "mend terrain",
+          "vulnerability to fire",
+          "elemental resonance (water-earth gentle)"
+        ],
+        "feats": [
+          "Toughness",
+          "Weapon Focus (slam)"
+        ],
+        "skills": {
+          "Listen": 5,
+          "Spot": 5,
+          "Swim": 9
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 1,
+          "Will": 2
+        },
+        "environment": "Marshes and River Deltas (the Deepwater Marches' mudflats, the Great River's flood-plains, and the tidal estuaries where fresh water meets the Apelian -- anywhere that river-mud accumulates in sufficient depth and elemental water-earth energy is concentrated)",
+        "organization": "Work-crew (3-8) or colony (9-20)",
+        "description": "The riverbank is repairing itself. Where the spring flood tore a section away, leaving raw earth and exposed roots, something is working -- dozens of small, wet, vaguely humanoid shapes made of river-mud and clay, moving with the busy purposefulness of ants. They are packing mud into the wound, weaving roots through the fill, and smoothing the surface with hands that are more suggestion than anatomy. One of them notices you watching. It stops, tilts its featureless head, and extends a hand tha..."
+      },
+      {
+        "name": "Ooze Mephit",
+        "vnum": 10147,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          8,
+          6
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          3,
+          1
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- stagnant; the unmoving, brackish water of marshes where nothing flows, things decay, and the water itself seems to have given up"
+        ],
+        "type_": "Outsider",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 10,
+          "Con": 15,
+          "Int": 6,
+          "Wis": 11,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 30,
+          "swim": 30,
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 4,
+            "damage": "1d3+1 plus acid"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "acid touch",
+          "summon mephit",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Damage reduction 5/magic",
+          "darkvision 60 ft.",
+          "fast healing 2 (in swamp/marsh)",
+          "flight",
+          "elemental resonance (water - stagnant)"
+        ],
+        "feats": [
+          "Dodge",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 8,
+          "Hide": 10,
+          "Listen": 6,
+          "Spot": 6,
+          "Swim": 9
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 3,
+          "Will": 3
+        },
+        "environment": "Apelian Marshes (the coastal wetlands and tidal marshes where the Apelian Sea meets the Deepwater Marches -- brackish pools, reed-beds, mangrove-shallows, and anywhere that stagnant water accumulates in sufficient volume)",
+        "organization": "Solitary, gang (2-4), or swarm (5-12)",
+        "description": "The marsh is the wrong colour. Not the usual brown-green of Apelian wetland -- a sickly, iridescent sheen like oil on water, and it moves, shifting across the surface in patterns that are too regular to be current and too slow to be wind. A bubble rises from the muck and pops with a sound like a wet cough. Something climbs out of the bubble -- small, dripping, translucent, with a body that seems unable to decide whether it is liquid or solid. It has eyes, of a sort -- dark spots in the gelatinou..."
+      },
+      {
+        "name": "Kobold Sorcerer (Sorcerer 3)",
+        "vnum": 10302,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          4,
+          4
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "caster"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 8,
+          "Dex": 15,
+          "Con": 10,
+          "Int": 11,
+          "Wis": 10,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "dagger",
+            "bonus": 1,
+            "damage": "1d3-1"
+          }
+        ],
+        "special_attacks": [
+          "Burning Hands 3/day (2d4)",
+          "Magic Missile 4/day (2 missiles)",
+          "Mage Armor 4/day"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 6; 1st -- 6; 2nd -- 4",
+          "Spells known include: magic missile, mage armor, burning hands, scorching ray, invisibility"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Spell Focus (evocation)"
+        ],
+        "skills": {
+          "Concentration": 7,
+          "Knowledge (arcana)": 4,
+          "Listen": 2,
+          "Spellcraft": 5,
+          "Spot": 2
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 3,
+          "Will": 3
+        },
+        "environment": "Gatefall Reach and Deepwater Marches (D\u00f3mnathar-linked underground sites, Silence Breach Zones, Ashcrown Warren)",
+        "organization": "band (1 sorcerer plus 4-8 kobold scouts)",
+        "description": "A kobold whose scales have faded to ash-grey from long hours near ritual-flame. His eyes are bright yellow and his claws are stained with different colors of dried reagent."
+      },
+      {
+        "name": "Kobold Trapsmith (Rogue 3)",
+        "vnum": 10303,
+        "cr": 3.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          6,
+          0
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "rogue"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 16,
+          "Con": 10,
+          "Int": 14,
+          "Wis": 10,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "short sword",
+            "bonus": 5,
+            "damage": "1d6+1 plus poison"
+          }
+        ],
+        "special_attacks": [
+          "Sneak Attack +2d6",
+          "Poisoned blade (DC 14, 1d4 Dex/1d4 Dex)"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Trapfinding",
+          "Evasion",
+          "Trap sense +1"
+        ],
+        "feats": [
+          "Weapon Finesse",
+          "Stealthy"
+        ],
+        "skills": {
+          "Craft (trapmaking)": 9,
+          "Disable Device": 10,
+          "Hide": 12,
+          "Move Silently": 12,
+          "Search": 8,
+          "Spot": 4
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 6,
+          "Will": 1
+        },
+        "environment": "Gatefall Reach and Deepwater Marches (D\u00f3mnathar-linked underground sites, Silence Breach Zones, Ashcrown Warren); also Kinsweave ruins",
+        "organization": "band (1 trapsmith plus 2-4 scouts)",
+        "description": "A wiry kobold with a brass belt of loops full of iron teeth, caltrops, dart-needles, and glass phials. He smiles with very small very even teeth."
+      },
+      {
+        "name": "Hobgoblin Sergeant (Fighter 2)",
+        "vnum": 10309,
+        "cr": 3.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          10,
+          6
+        ],
+        "ac": 18,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "hobgoblin",
+          "hostile"
+        ],
+        "type_": "Humanoid (Goblinoid)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 15,
+          "Dex": 13,
+          "Con": 14,
+          "Int": 10,
+          "Wis": 10,
+          "Cha": 9
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "longsword",
+            "bonus": 6,
+            "damage": "1d8+2"
+          },
+          {
+            "type": "shortbow",
+            "bonus": 4,
+            "damage": "1d6"
+          }
+        ],
+        "special_attacks": [
+          "Power Attack",
+          "Cleave"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Discipline: adjacent hobgoblins gain +1 morale to attack and save vs fear"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Weapon Focus (longsword)",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Climb": 4,
+          "Intimidate": 4,
+          "Listen": 2,
+          "Move Silently": 4,
+          "Spot": 2
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 1,
+          "Will": 1
+        },
+        "environment": "Gatefall Reach and Deepwater Marches (D\u00f3mnathar-linked underground sites, Silence Breach Zones, Ashcrown Warren); Burnt Hollows",
+        "organization": "unit (1 sergeant plus 6-10 hobgoblins)",
+        "description": "A hobgoblin in well-kept D\u00f3mnathar-issue chain and red tabard. He salutes crisply, speaks rarely, and breaks men who speak out of turn."
+      }
+    ],
+    "6": [
+      {
+        "name": "Bunyip",
+        "vnum": 10024,
+        "cr": 6.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          10,
+          28
+        ],
+        "ac": 18,
+        "damage_dice": [
+          2,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water)"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 22,
+          "Dex": 16,
+          "Con": 18,
+          "Int": 3,
+          "Wis": 14,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 10,
+          "swim": 50
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 12,
+            "damage": "2d6+6"
+          },
+          {
+            "type": "tail slap",
+            "bonus": 7,
+            "damage": "1d8+3"
+          }
+        ],
+        "special_attacks": [
+          "Blood frenzy",
+          "terrifying bellow",
+          "capsize"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "amphibious",
+          "elemental resonance (Water)",
+          "the Harmony"
+        ],
+        "feats": [
+          "Alertness",
+          "Power Attack",
+          "Improved Natural Attack (bite)"
+        ],
+        "skills": {
+          "Hide": 5,
+          "Listen": 8,
+          "Spot": 8,
+          "Swim": 14
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 8,
+          "Will": 4
+        },
+        "environment": "Apelian Sea (coastal shallows, river-mouths, tidal pools, and sheltered coves along the Deepwater Marches coastline); secondary presence at the Sea Falls and in the brackish estuaries where the Great River meets the Apelian basin",
+        "organization": "Solitary or pair",
+        "description": "The water at the edge of the sea-lake goes still -- not the stillness of calm water, but the stillness of water holding its breath. Then a shape surfaces: seal-dark, heavy-shouldered, with a head that seems to shift between dog and crocodile depending on the angle. Its mouth opens and it produces a sound -- not a roar, not a bark, but something between the two, a bellowing cry that reverberates off the cliff face and turns the blood in your arms to ice water. The fisherfolk are already running...."
+      },
+      {
+        "name": "Shambling Mound",
+        "vnum": 10184,
+        "cr": 6.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          8,
+          24
+        ],
+        "ac": 20,
+        "damage_dice": [
+          2,
+          6,
+          5
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone / Lady of the Sea (Earth/Water) -- marsh-growth; the resonance of waterlogged earth producing uncontrolled growth, the border-zone where soil meets water and everything that falls in is consumed and converted to more growth"
+        ],
+        "type_": "Plant",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 21,
+          "Dex": 10,
+          "Con": 17,
+          "Int": 7,
+          "Wis": 10,
+          "Cha": 9
+        },
+        "speed": {
+          "land": 20,
+          "swim": 20
+        },
+        "attacks": [
+          {
+            "type": "slams",
+            "bonus": 11,
+            "damage": "2d6+5"
+          }
+        ],
+        "special_attacks": [
+          "Improved grab",
+          "constrict 2d6+7"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "immunity to electricity",
+          "fire resistance 10",
+          "plant traits",
+          "elemental resonance (earth-water - marsh-growth)"
+        ],
+        "feats": [
+          "Iron Will",
+          "Power Attack",
+          "Weapon Focus (slam)"
+        ],
+        "skills": {
+          "Hide": 3,
+          "Listen": 8,
+          "Move Silently": 8
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 2,
+          "Will": 4
+        },
+        "environment": "Forest-Marsh Border (the transitional wetlands between the Great Forests and the Deepwater Marches -- specifically the zones where standing water meets forest undergrowth, creating the dense, decaying vegetation that shambling mounds require)",
+        "organization": "Solitary",
+        "description": "The marsh-edge is dense with vegetation -- cattails, sedge-grass, moss-draped willows -- and the shapes in the undergrowth are the shapes of rotting logs and mounded compost. You have been walking past them for ten minutes. One of them stands up. It is fifteen feet tall, roughly humanoid, composed entirely of rotting vegetation -- vines and roots and decaying plant-matter compressed into a body that smells of compost and moves with a slow, deliberate power that belies its shambling gait. It has ..."
+      },
+      {
+        "name": "Will-O'-Wisp",
+        "vnum": 10228,
+        "cr": 6.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          8,
+          0
+        ],
+        "ac": 29,
+        "damage_dice": [
+          2,
+          8,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) -- deceptive; the resonance of air that misleads, the Youngest Brother's domain at its most treacherous -- not the honest wind of the steppe but the false light of the marsh, air that lies"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 1,
+          "Dex": 29,
+          "Con": 10,
+          "Int": 15,
+          "Wis": 16,
+          "Cha": 12
+        },
+        "speed": {
+          "fly": 50
+        },
+        "attacks": [
+          {
+            "type": "shock",
+            "bonus": 16,
+            "damage": "2d8 electricity"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "immunity to magic",
+          "natural invisibility",
+          "elemental resonance (air - deceptive light",
+          "false signal)"
+        ],
+        "feats": [
+          "Alertness",
+          "Dodge",
+          "Improved Initiative",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 13,
+          "Diplomacy": 5,
+          "Disguise": 1,
+          "Listen": 17,
+          "Search": 14,
+          "Spot": 17,
+          "Survival": 3
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 12,
+          "Will": 9
+        },
+        "environment": "Deepwater Marches (the deep-bog zones, reed-mazes, and flooded forests of the Deepwater Marches -- specifically the treacherous areas where solid ground and bottomless bog are indistinguishable and where a single wrong step means drowning)",
+        "organization": "Solitary or string (2-4)",
+        "description": "The marsh-light appears at dusk -- a pale, bobbing globe of blue-white luminescence that drifts between the reed-beds with a movement that looks deliberate. It looks like a lantern. It looks like a signal. It looks like someone is ahead of you, navigating the marsh, showing you the safe path. Follow it. Follow it deeper into the bog, where the ground becomes water and the water becomes mud and the mud closes over your ankles, your knees, your waist. The light stops. It turns. And you understan..."
+      },
+      {
+        "name": "Hobgoblin Captain (Fighter 5)",
+        "vnum": 10311,
+        "cr": 6.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          10,
+          10
+        ],
+        "ac": 21,
+        "damage_dice": [
+          1,
+          8,
+          4
+        ],
+        "flags": [
+          "hobgoblin",
+          "hostile",
+          "boss"
+        ],
+        "type_": "Humanoid (Goblinoid)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 17,
+          "Dex": 14,
+          "Con": 16,
+          "Int": 11,
+          "Wis": 12,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "greatsword +1",
+            "bonus": 10,
+            "damage": "2d6+7"
+          }
+        ],
+        "special_attacks": [
+          "Power Attack",
+          "Cleave",
+          "Great Cleave",
+          "Tactical orders (grant allies +2 initiative)"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Field Promotion: when the Captain takes a standard action to issue a command, all hobgoblins within 30 ft gain +1 to hit for 1 round"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Great Cleave",
+          "Weapon Focus (greatsword)",
+          "Weapon Specialization (greatsword)",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Climb": 8,
+          "Intimidate": 9,
+          "Listen": 4,
+          "Move Silently": 6,
+          "Ride": 6,
+          "Spot": 4
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 3,
+          "Will": 3
+        },
+        "environment": "Gatefall Reach and Deepwater Marches (D\u00f3mnathar-linked underground sites, Silence Breach Zones, Ashcrown Warren)",
+        "organization": "company-leader (with 2 sergeants, 12-20 hobgoblins, 4 war-wargs)",
+        "description": "A hobgoblin captain in articulated plate, wearing an iron lamellar sash of rank worked with the seven broken-chain marks of the Shattered Host."
+      },
+      {
+        "name": "Silentborn Battle-Priest (Cleric 5)",
+        "vnum": 10320,
+        "cr": 6.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          8,
+          10
+        ],
+        "ac": 20,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "silentborn",
+          "hostile",
+          "caster",
+          "kin_silent",
+          "boss"
+        ],
+        "type_": "Humanoid (Silentborn)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 12,
+          "Con": 14,
+          "Int": 11,
+          "Wis": 16,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "heavy flail +1",
+            "bonus": 8,
+            "damage": "1d10+3"
+          }
+        ],
+        "special_attacks": [
+          "Inflict Serious Wounds 1/day",
+          "Silence 1/day",
+          "Rebuke Undead 4/day",
+          "Searing Light 2/day"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Spells/day: 0th -- 5; 1st -- 4+1; 2nd -- 3+1; 3rd -- 2+1",
+          "Domains: Death, Trickery"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Weapon Focus (heavy flail)",
+          "Power Attack"
+        ],
+        "skills": {
+          "Bluff": 6,
+          "Concentration": 10,
+          "Knowledge (religion)": 6,
+          "Spellcraft": 6
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 2,
+          "Will": 7
+        },
+        "environment": "Eternal Steppe (Burnt Hollows collapsed burrow-forts, Dark Dawn Battlefield dead zones); underground; Deepwater Spur Tower",
+        "organization": "solitary (with 4-6 loyalists)",
+        "description": "A Silentborn priestess in brass-bossed black leather, who serves no god known to the Kin. Her holy symbol is a closed circle with nothing inside."
+      }
+    ],
+    "7": [
+      {
+        "name": "Chuul",
+        "vnum": 10037,
+        "cr": 7.0,
+        "level": 11,
+        "hp_dice": [
+          11,
+          8,
+          44
+        ],
+        "ac": 22,
+        "damage_dice": [
+          2,
+          6,
+          5
+        ],
+        "flags": [
+          "elemental_affinity:None -- chuuls are alien to Oreka's elemental framework; see Breach Resonance"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 20,
+          "Dex": 16,
+          "Con": 18,
+          "Int": 10,
+          "Wis": 14,
+          "Cha": 5
+        },
+        "speed": {
+          "land": 30,
+          "swim": 20
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 12,
+            "damage": "2d6+5"
+          }
+        ],
+        "special_attacks": [
+          "Constrict 3d6+5",
+          "improved grab",
+          "paralytic tentacles"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "darkvision 60 ft.",
+          "immunity to poison",
+          "breach resonance"
+        ],
+        "feats": [
+          "Alertness",
+          "Blind-Fight",
+          "Combat Reflexes",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Hide": 13,
+          "Listen": 11,
+          "Spot": 11,
+          "Swim": 13
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 6,
+          "Will": 9
+        },
+        "environment": "Apelian Sea (coastal shallows, tidal caves, submerged ruins along the Apelian basin); secondary presence in Tidebloom Reach (brackish tidal pools, flooded Giant ruins at Hillmeet and Foxfen)",
+        "organization": "Solitary or pack (2-5)",
+        "description": "It rises from the shallows like a nightmare designed by committee -- lobster pincers the size of shields, a segmented carapace slick with brine, and a mass of writhing tentacles where its mouth should be. Its eyes, set on short stalks, swivel independently, tracking two different targets at once. It does not look like it belongs in this water. It does not look like it belongs anywhere. It looks like something that crawled out of a place that has different rules about what shapes are acceptable."
+      },
+      {
+        "name": "Leviathan-Shard",
+        "vnum": 10110,
+        "cr": 7.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          8,
+          27
+        ],
+        "ac": 20,
+        "damage_dice": [
+          1,
+          6,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- alien; so ancient and so deep that it reads as something from before the Lady shaped the waters"
+        ],
+        "type_": "Aberration",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 18,
+          "Dex": 16,
+          "Con": 16,
+          "Int": 4,
+          "Wis": 14,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 20,
+          "swim": 40
+        },
+        "attacks": [
+          {
+            "type": "tendrils",
+            "bonus": 10,
+            "damage": "1d6+4 plus psychic static"
+          }
+        ],
+        "special_attacks": [
+          "Psychic static"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "blindsight 60 ft.",
+          "damage reduction 5/slashing",
+          "fast healing 3",
+          "amorphous",
+          "elemental resonance (alien depth)"
+        ],
+        "feats": [
+          "Ability Focus (psychic static)",
+          "Improved Initiative",
+          "Weapon Focus (tendril)"
+        ],
+        "skills": {
+          "Listen": 9,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 5,
+          "Will": 8
+        },
+        "environment": "Any coastal or wetland (Leviathan-shards wash ashore on the Apelian Sea coast and are found in free goblin camps throughout the Deepwater Marches; specimens have been transported as far as the Tidebloom Reach by goblin traders)",
+        "organization": "Solitary or clutch (2-4, usually in a goblin camp)",
+        "description": "You smell it before you see it -- brine and depth and something older, a pressure-smell like the deep ocean forced into a space too small to contain it. The goblin camp ahead has arranged its tents in a wide semicircle around a pit lined with wet stones, and in the pit there is a thing. A mass of translucent flesh, pale blue and shot through with veins of bioluminescence that pulse in a slow rhythm unrelated to anything on land. It is the size of a cart-horse, and it is alive in a way that mak..."
+      },
+      {
+        "name": "Mapinguari",
+        "vnum": 10119,
+        "cr": 7.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          10,
+          45
+        ],
+        "ac": 20,
+        "damage_dice": [
+          2,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- corrupted; ancient, sick, the resonance of soil that has turned toxic"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 23,
+          "Dex": 8,
+          "Con": 20,
+          "Int": 4,
+          "Wis": 14,
+          "Cha": 7
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 15,
+            "damage": "2d6+6"
+          },
+          {
+            "type": "belly bite",
+            "bonus": 13,
+            "damage": "1d8+3 plus disease"
+          }
+        ],
+        "special_attacks": [
+          "Belly bite",
+          "disease",
+          "stench"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "damage reduction 5/slashing",
+          "low-light vision",
+          "scent",
+          "thick hide",
+          "blight aura",
+          "elemental resonance (earth-corrupted)"
+        ],
+        "feats": [
+          "Cleave",
+          "Improved Natural Attack (claw)",
+          "Multiattack",
+          "Power Attack"
+        ],
+        "skills": {
+          "Listen": 8,
+          "Spot": 8,
+          "Survival": 8
+        },
+        "saves": {
+          "Fort": 11,
+          "Ref": 5,
+          "Will": 5
+        },
+        "environment": "Deepwater Marches (the dense interior jungle of the Marches -- the oldest-growth, most inaccessible regions where goblin settlements are sparse and the canopy blocks all sunlight at ground level)",
+        "organization": "Solitary",
+        "description": "The jungle went quiet three days ago. Not the quiet of nightfall or the quiet of a predator passing through -- the quiet of everything leaving. The birds are gone. The monkeys are gone. The insects are muted. Something enormous is moving through the Deepwater canopy, and the stench reached you before the sound did: a rotting, animal musk so powerful it burns the back of your throat. You see it through the trees -- bipedal, shaggy, taller than a man on horseback, with one milky eye set in the ce..."
+      },
+      {
+        "name": "Medusa",
+        "vnum": 10121,
+        "cr": 7.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          8,
+          6
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- corrupted; petrification as a perverted expression of earth-affinity, turning living flesh to stone against its will"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Usually lawful evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 15,
+          "Con": 12,
+          "Int": 12,
+          "Wis": 13,
+          "Cha": 15
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "snake bite",
+            "bonus": 3,
+            "damage": "1d4 plus poison"
+          }
+        ],
+        "special_attacks": [
+          "Petrifying gaze",
+          "poison"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "elemental resonance (earth-corrupted)"
+        ],
+        "feats": [
+          "Point Blank Shot",
+          "Precise Shot",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 9,
+          "Disguise": 9,
+          "Move Silently": 8,
+          "Spot": 8
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 7,
+          "Will": 6
+        },
+        "environment": "Ruins and Marshes (abandoned structures throughout Oreka -- Giant ruins in the Infinite Desert, ruined border-settlements in the Kinsweave, crumbling watchtowers in the Tidebloom Reach; always in built environments where stone is plentiful and prey can be lured into enclosed spaces)",
+        "organization": "Solitary",
+        "description": "The gallery is a sculpture-garden -- or you thought it was. The figures are too detailed, too varied, too individual to be carved. The dwarf in the corner has a crack in his breastplate that no sculptor would include. The elf at the entrance has an expression of dawning recognition on her face that no art could capture. The woman at the centre of the gallery is veiled. She asks if you would like to see her collection. She asks very politely."
+      },
+      {
+        "name": "Half-D\u00f3mnathar Broker (Bard 5 / Rogue 2)",
+        "vnum": 10322,
+        "cr": 7.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          6,
+          7
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "half_domnathar",
+          "hostile",
+          "boss"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 15,
+          "Con": 12,
+          "Int": 15,
+          "Wis": 12,
+          "Cha": 18
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "rapier +1",
+            "bonus": 7,
+            "damage": "1d6+1"
+          }
+        ],
+        "special_attacks": [
+          "Sneak Attack +1d6",
+          "Bardic Music 5/day",
+          "Suggestion (via music, DC 16)"
+        ],
+        "special_qualities": [
+          "Faintly luminous eyes in low light",
+          "Spells/day: 0th -- 3; 1st -- 3; 2nd -- 2",
+          "Bardic Knowledge +9",
+          "Trapfinding",
+          "Evasion",
+          "+2 racial to Bluff and Diplomacy"
+        ],
+        "feats": [
+          "Weapon Finesse",
+          "Persuasive",
+          "Negotiator",
+          "Skill Focus (Diplomacy)"
+        ],
+        "skills": {
+          "Appraise": 9,
+          "Bluff": 16,
+          "Diplomacy": 18,
+          "Gather Information": 14,
+          "Perform (oratory)": 12,
+          "Sense Motive": 10
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 8,
+          "Will": 5
+        },
+        "environment": "Twin Rivers (Gorge-Bridge infiltrator cells, Unstrung Philosophers' hidden refuges in the Riverwind Heights); Deepwater Ashcrown Warren as an embedded broker",
+        "organization": "solitary (with 2-4 silentborn attendants)",
+        "description": "A handsome, neatly-dressed figure with slightly elongated ears who passes for human at any social distance. She has a perfect smile and a perfect memory for names."
+      }
+    ],
+    "11": [
+      {
+        "name": "Dread Wraith",
+        "vnum": 10052,
+        "cr": 11.0,
+        "level": 16,
+        "hp_dice": [
+          16,
+          12,
+          0
+        ],
+        "ac": 25,
+        "damage_dice": [
+          2,
+          6,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:None -- a dread wraith is elemental negation, a wound in the fabric where resonance used to exist"
+        ],
+        "type_": "Undead",
+        "alignment": "Always lawful evil",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 28,
+          "Con": null,
+          "Int": 17,
+          "Wis": 18,
+          "Cha": 24
+        },
+        "speed": {
+          "fly": 60
+        },
+        "attacks": [
+          {
+            "type": "incorporeal touch",
+            "bonus": 16,
+            "damage": "2d6 plus 1d8 Constitution drain"
+          }
+        ],
+        "special_attacks": [
+          "Constitution drain",
+          "create spawn",
+          "lifesense"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "daylight powerlessness",
+          "incorporeal traits",
+          "+4 turn resistance",
+          "undead traits",
+          "unnatural aura",
+          "undead resonance"
+        ],
+        "feats": [
+          "Alertness",
+          "Blind-Fight",
+          "Combat Reflexes",
+          "Improved Initiative",
+          "Improved Natural Attack (incorporeal touch)",
+          "Spring Attack"
+        ],
+        "skills": {
+          "Diplomacy": 13,
+          "Hide": 24,
+          "Intimidate": 26,
+          "Listen": 25,
+          "Search": 22,
+          "Sense Motive": 15,
+          "Spot": 25,
+          "Survival": 4
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 14,
+          "Will": 14
+        },
+        "environment": "Any (found wherever sufficient death-energy has accumulated -- the Lament of Kings, major battlefields of the Deceivers' War, the ruins of Hillmeet and Foxfen, and deep Giant tombs where the Thalorien's grief pooled into darkness)",
+        "organization": "Solitary or gang (2-5 wraiths led by 1 dread wraith)",
+        "description": "It comes through the wall without opening the wall. One moment the corridor is empty; the next, a shape of absolute darkness occupies the space where the torchlight ends -- not shadow, because shadow is the absence of light, and this is the presence of something else. It is cold the way a blade is sharp: not a quality of the air but a quality of the thing itself, radiating outward, turning breath to frost at thirty feet. Its face -- if the darkness where a face should be can be called a face -- ..."
+      },
+      {
+        "name": "Zmey Gorynych",
+        "vnum": 10237,
+        "cr": 11.0,
+        "level": 15,
+        "hp_dice": [
+          15,
+          12,
+          75
+        ],
+        "ac": 27,
+        "damage_dice": [
+          2,
+          8,
+          8
+        ],
+        "flags": [
+          "elemental_affinity:Lady of Fire (Fire) -- volcanic intelligence; the resonance of fire at its most calculating, the Lady's domain in its predatory, thinking aspect -- not the mindless burn of a wildfire or the nurturing warmth of a forge-bond but the deliberate, patient, strategic heat of magma that chooses where to flow"
+        ],
+        "type_": "Dragon",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 27,
+          "Dex": 12,
+          "Con": 21,
+          "Int": 16,
+          "Wis": 16,
+          "Cha": 18
+        },
+        "speed": {
+          "land": 40,
+          "fly": 80
+        },
+        "attacks": [
+          {
+            "type": "bites",
+            "bonus": 21,
+            "damage": "2d8+8 plus 1d6 fire"
+          },
+          {
+            "type": "claws",
+            "bonus": 19,
+            "damage": "2d6+4"
+          },
+          {
+            "type": "tail slap",
+            "bonus": 19,
+            "damage": "2d6+12"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "frightful presence",
+          "rend"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "low-light vision",
+          "scent",
+          "damage reduction 10/magic",
+          "spell resistance 24",
+          "fire immunity",
+          "cold vulnerability",
+          "head regeneration",
+          "triple awareness",
+          "elemental resonance (Fire - volcanic intelligence",
+          "three-fold)"
+        ],
+        "feats": [
+          "Flyby Attack",
+          "Hover",
+          "Multiattack",
+          "Power Attack",
+          "Snatch",
+          "Wingover"
+        ],
+        "skills": {
+          "Bluff": 22,
+          "Intimidate": 22,
+          "Listen": 21,
+          "Search": 21,
+          "Sense Motive": 21,
+          "Spot": 21,
+          "Survival": 21
+        },
+        "saves": {
+          "Fort": 14,
+          "Ref": 10,
+          "Will": 12
+        },
+        "environment": "Scorchspires (Rarozhki) -- the deep volcanic valleys, caldera-rims, and magma-lake caverns of the Scorchspires' inner range -- specifically the zones too hot for any creature without fire immunity, where the zmey gorynych lairs in comfort while everything else is kept at bay by temperature alone",
+        "organization": "Solitary or mated pair",
+        "description": "Three heads. That is what the Rarozhki scouts reported, and three heads is what you see: three serpentine necks rising from a body built like a fortress of red-black scales, each head armoured, horned, and breathing independently. The left head watches you. The centre head watches the sky. The right head watches the tunnel behind it. Nothing approaches a zmey gorynych from a single direction, because the zmey gorynych is watching every direction simultaneously. Each mouth trails smoke. Each e..."
+      },
+      {
+        "name": "Dark Dwarf Lore-Keeper (Cleric 9)",
+        "vnum": 10317,
+        "cr": 11.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          8,
+          18
+        ],
+        "ac": 22,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 11,
+          "Con": 16,
+          "Int": 14,
+          "Wis": 19,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "heavy mace +2",
+            "bonus": 11,
+            "damage": "1d8+4"
+          }
+        ],
+        "special_attacks": [
+          "Rebuke Undead 5/day",
+          "Inflict Critical Wounds (4d8+9)",
+          "Flame Strike 1/day (9d6)",
+          "Summon Monster V 2/day"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Void-touch",
+          "Spells/day: 0th -- 6; 1st -- 6+1; 2nd -- 5+1; 3rd -- 5+1; 4th -- 4+1; 5th -- 2+1",
+          "Domains: Knowledge, Fire"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Scribe Scroll",
+          "Spell Penetration",
+          "Greater Spell Penetration",
+          "Craft Wondrous Item"
+        ],
+        "skills": {
+          "Concentration": 15,
+          "Knowledge (arcana)": 14,
+          "Knowledge (history)": 14,
+          "Knowledge (religion)": 14,
+          "Spellcraft": 14
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 3,
+          "Will": 11
+        },
+        "environment": "Deepwater Marches (Spur Tower archive levels); Infinite Desert buried forge-vaults",
+        "organization": "solitary (in the heart of a major D\u00f3mnathar site)",
+        "description": "An ancient dwarf with milky eyes and a perfect memory. She is the living archive of the Shattered Host's remaining lineages, and she is the reason the D\u00f3mnathar remnants still know who they are."
+      },
+      {
+        "name": "D\u00f3mnathar Void-Construct",
+        "vnum": 10333,
+        "cr": 11.0,
+        "level": 10,
+        "hp_dice": [
+          10,
+          10,
+          30
+        ],
+        "ac": 24,
+        "damage_dice": [
+          2,
+          6,
+          5
+        ],
+        "flags": [
+          "construct",
+          "domnathar",
+          "hostile",
+          "boss"
+        ],
+        "type_": "Construct",
+        "alignment": "Always Neutral",
+        "ability_scores": {
+          "Str": 22,
+          "Dex": 10,
+          "Con": null,
+          "Int": null,
+          "Wis": 11,
+          "Cha": 1
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slam (\u00d72)",
+            "bonus": 15,
+            "damage": "2d6+6 plus 1d6 cold"
+          }
+        ],
+        "special_attacks": [
+          "Cold slam (bypasses fire resistance)",
+          "Silence aura (30 ft, DC 15 Will or silenced)"
+        ],
+        "special_qualities": [
+          "Construct traits (immune mind-affecting, fortification 50%, no Con)",
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Damage reduction 5/adamantine",
+          "Spell resistance 19",
+          "Magic immunity (except cold and acid)",
+          "Darkvision 120 ft."
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Improved Bull Rush"
+        ],
+        "skills": {},
+        "saves": {
+          "Fort": 3,
+          "Ref": 3,
+          "Will": 4
+        },
+        "environment": "Deepwater Spur Tower (command levels); Gatefall deep; Infinite Desert Fusion-Cell",
+        "organization": "solitary (as guard-construct)",
+        "description": "A man-shaped husk of grey-veined obsidian, eight feet tall, built around a core of absolutely empty air where most creatures would have breath. It moves in total silence even when it runs."
+      }
+    ],
+    "5": [
+      {
+        "name": "Dybbuk",
+        "vnum": 10056,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          12,
+          0
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:None -- goblinoid dead carry the same absence of elemental resonance as living goblinoids, but twisted by undeath into something colder"
+        ],
+        "type_": "Undead",
+        "alignment": "Usually chaotic neutral",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 13,
+          "Con": null,
+          "Int": 12,
+          "Wis": 16,
+          "Cha": 18
+        },
+        "speed": {
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "incorporeal touch",
+            "bonus": 4,
+            "damage": "1d4 Wisdom damage"
+          }
+        ],
+        "special_attacks": [
+          "Wisdom damage",
+          "possession",
+          "wail of the unfinished"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "incorporeal traits",
+          "+2 turn resistance",
+          "undead traits",
+          "goblinoid resonance",
+          "unfinished purpose"
+        ],
+        "feats": [
+          "Ability Focus (possession)",
+          "Improved Initiative",
+          "Iron Will"
+        ],
+        "skills": {
+          "Bluff": 13,
+          "Hide": 10,
+          "Intimidate": 13,
+          "Listen": 12,
+          "Search": 10,
+          "Sense Motive": 12,
+          "Spot": 12
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 3,
+          "Will": 7
+        },
+        "environment": "Any area with goblinoid populations (Deepwater Marches free goblin settlements, Eternal Steppe Warg communities that harbour goblins, D\u00f3mnathar tunnel fringes where goblin auxiliaries are stationed)",
+        "organization": "Solitary (always)",
+        "description": "The goblin stops mid-sentence. Its companions notice the silence first -- Krikkit never stops talking, has not stopped talking since the day it learned Common from a halfling trader -- and then they notice the eyes. Krikkit's eyes have gone flat. Not dead. Not vacant. Full, the way a cup is full when someone has poured something different into it. The goblin's mouth opens and a voice comes out that is not Krikkit's voice. It is older, heavier, and it speaks Goblin with an accent that hasn't bee..."
+      },
+      {
+        "name": "Green Hag",
+        "vnum": 10077,
+        "cr": 5.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          8,
+          9
+        ],
+        "ac": 22,
+        "damage_dice": [
+          1,
+          4,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- corrupted; the green hag is the Lady's domain gone stagnant and poisonous"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Always chaotic evil",
+        "ability_scores": {
+          "Str": 19,
+          "Dex": 12,
+          "Con": 12,
+          "Int": 13,
+          "Wis": 13,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 30,
+          "swim": 30
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 13,
+            "damage": "1d4+4"
+          }
+        ],
+        "special_attacks": [
+          "Spell-like abilities",
+          "weakness",
+          "mimicry"
+        ],
+        "special_qualities": [
+          "Darkvision 90 ft.",
+          "spell resistance 18",
+          "water breathing",
+          "elemental resonance (Water",
+          "corrupted)"
+        ],
+        "feats": [
+          "Alertness",
+          "Blind-Fight",
+          "Combat Casting",
+          "Great Fortitude"
+        ],
+        "skills": {
+          "Concentration": 7,
+          "Hide": 9,
+          "Listen": 11,
+          "Spot": 11,
+          "Swim": 12
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 7,
+          "Will": 7
+        },
+        "environment": "Tidebloom Marshes (the tidal marshlands of the Tidebloom Reach, particularly the deep-marsh zones where freshwater rivers meet saltwater tidal intrusions and the water is neither one thing nor the other)",
+        "organization": "Solitary or covey (3 hags of any kind plus other creatures)",
+        "description": "She lives where the water goes bad. Not where the water is dangerous -- that is different, honest danger, the kind you can see. She lives where the water is wrong: where the marsh-pools turn the wrong colour, where the fish float belly-up without visible cause, where the air tastes of sweetness that your body tells you means rot. She is there, somewhere in the murk, watching you with yellow eyes that she has not had to disguise in decades because no one comes here anymore."
+      },
+      {
+        "name": "Manticore",
+        "vnum": 10118,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          10,
+          24
+        ],
+        "ac": 17,
+        "damage_dice": [
+          2,
+          4,
+          5
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) / Lady of Fire (Fire) -- predatory; the dry heat of sun-baked stone, the patience of rock that waits to fall"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually lawful evil",
+        "ability_scores": {
+          "Str": 20,
+          "Dex": 15,
+          "Con": 19,
+          "Int": 7,
+          "Wis": 12,
+          "Cha": 9
+        },
+        "speed": {
+          "land": 30,
+          "fly": 50
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 10,
+            "damage": "2d4+5"
+          },
+          {
+            "type": "bite",
+            "bonus": 8,
+            "damage": "1d8+2"
+          },
+          {
+            "type": "tail spikes",
+            "bonus": 8,
+            "damage": "1d8+2/19-20"
+          }
+        ],
+        "special_attacks": [
+          "Tail spikes"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "elemental resonance (earth-fire)"
+        ],
+        "feats": [
+          "Flyby Attack",
+          "Multiattack",
+          "Weapon Focus (tail spike)"
+        ],
+        "skills": {
+          "Listen": 5,
+          "Spot": 9,
+          "Survival": 3
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 7,
+          "Will": 3
+        },
+        "environment": "Warm Hills and Marshes (the low, scrub-covered hills between the Eternal Steppe and the Scorchspires -- the transitional terrain where grassland gives way to volcanic foothills; secondary populations along the Tidebloom Reach's drier margins)",
+        "organization": "Solitary, pair, or pride (3-6)",
+        "description": "The thing on the ridge has the body of a lion, the face of a man, and a tail bristling with spines the length of crossbow bolts. It has been watching your party for the better part of an hour with the patient, calculating intelligence of a predator that understands geometry. It is not attacking because the range is wrong and it knows the range is wrong. When you cross the open ground between the tree-line and the ridge -- that killing-ground of bare earth and low scrub where there is nothing t..."
+      },
+      {
+        "name": "Phi Pop",
+        "vnum": 10156,
+        "cr": 5.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          12,
+          0
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          2
+        ],
+        "flags": [
+          "elemental_affinity:None -- undead; a parasitic undead resonance that masks itself beneath the ambient signal of its host community"
+        ],
+        "type_": "Undead",
+        "alignment": "Always neutral evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 17,
+          "Con": null,
+          "Int": 13,
+          "Wis": 14,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 6,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Organ-feed",
+          "possess corpse",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Undead traits",
+          "darkvision 60 ft.",
+          "damage reduction 5/silver",
+          "turn resistance +2",
+          "disguise form",
+          "sunlight vulnerability",
+          "elemental resonance (undead - parasitic)"
+        ],
+        "feats": [
+          "Deceitful",
+          "Improved Initiative",
+          "Stealthy"
+        ],
+        "skills": {
+          "Bluff": 14,
+          "Disguise": 14,
+          "Hide": 14,
+          "Move Silently": 14,
+          "Spot": 10
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 5,
+          "Will": 8
+        },
+        "environment": "Deepwater Marches (halfling settlements and their surrounding marsh-communities -- not in the deep swamp but in the settlements, hiding among the living)",
+        "organization": "Solitary (always)",
+        "description": "The halfling village is dying. Not suddenly -- slowly, from the inside, the way a tree dies when something is eating its roots. The strongest men sicken. The healthiest children pale and thin. The healers find nothing -- no disease, no poison, no curse that their remedies can identify. But at night, when the village sleeps, something moves through the houses. Not through the doors -- through the walls, through the floors, through the spaces between. It feeds while they sleep, and what it feeds o..."
+      },
+      {
+        "name": "Sand Wraith",
+        "vnum": 10179,
+        "cr": 5.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          12,
+          0
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:All four Elemental Lords (fragmented); strongest resonance with the Lord of Stone -- a Sand Wraith's elemental signature is the shattered remnant of a Giant's full four-element harmony, broken and looping like a record stuck in a groove"
+        ],
+        "type_": "Undead",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": null,
+          "Dex": 16,
+          "Con": null,
+          "Int": 8,
+          "Wis": 14,
+          "Cha": 15
+        },
+        "speed": {
+          "fly": 30
+        },
+        "attacks": [
+          {
+            "type": "desiccating touch",
+            "bonus": 5,
+            "damage": "1d6 plus desiccation"
+          }
+        ],
+        "special_attacks": [
+          "Desiccating touch",
+          "sand shriek"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "incorporeal traits",
+          "undead traits",
+          "sand form",
+          "elemental resonance (all four - fragmented Giant echo)",
+          "Kin-sense signature"
+        ],
+        "feats": [
+          "Alertness",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Hide": 11,
+          "Listen": 10,
+          "Search": 7,
+          "Spot": 10
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 4,
+          "Will": 6
+        },
+        "environment": "The Infinite Desert (Giant ruins, dune-seas; thickest concentration at the Sunken Thrones, Tharok's Pillar, and the deep dune-seas; rare sightings at the Apelian Sea's submerged Giant piers in the Deepwater Marches)",
+        "organization": "Solitary, pair, or mourning (3-6)",
+        "description": "The ruin ahead is half-buried -- the upper columns of what was once a Giant plaza project from the dune like the ribs of a vast skeleton, and the sand between them moves in patterns that have nothing to do with the wind. A shape gathers in the air above the columns: tall, vaguely humanoid, composed entirely of swirling sand and grit. Dim amber light burns where its eyes should be. The sound it produces is less a voice than a sustained, low howl of desert wind forced through a space too narrow ..."
+      },
+      {
+        "name": "Troll",
+        "vnum": 10209,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          8,
+          36
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) -- feral vitality; the resonance of earth-as-regeneration, the Lord of Stone's domain expressed as the relentless, unkillable persistence of stone -- break it and it reforms, chip it and it grows back, erode it and it replaces itself"
+        ],
+        "type_": "Giant",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 23,
+          "Dex": 14,
+          "Con": 23,
+          "Int": 6,
+          "Wis": 9,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 9,
+            "damage": "1d6+6"
+          },
+          {
+            "type": "bite",
+            "bonus": 4,
+            "damage": "1d6+3"
+          }
+        ],
+        "special_attacks": [
+          "Rend 2d6+9"
+        ],
+        "special_qualities": [
+          "Darkvision 90 ft.",
+          "low-light vision",
+          "regeneration 5",
+          "scent",
+          "elemental resonance (earth - feral vitality)"
+        ],
+        "feats": [
+          "Alertness",
+          "Iron Will",
+          "Track"
+        ],
+        "skills": {
+          "Listen": 5,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 11,
+          "Ref": 4,
+          "Will": 3
+        },
+        "environment": "Cold Mountains / Marshes (the northern Giant's Teeth foothills, the cold marshes bordering the Eternal Steppe's northern reaches, and the fog-wrapped mountain-valleys where trolls establish lairs -- anywhere cold, wet, and remote enough to support a large predator that eats constantly)",
+        "organization": "Solitary or gang (2-4)",
+        "description": "The thing comes out of the marsh at a lope -- six limbs of disproportionate length, a body like a collection of angles that someone forgot to soften, and a face that is all mouth. It is green, in the way that rot is green, and it smells like a compost-heap in summer, and it is very fast for something its size. But the thing about the troll -- the thing that every survivor mentions first -- is not the speed or the claws or the jaw. It is the arm you cut off that grows back. It is the wound that c..."
+      },
+      {
+        "name": "Kobold Dragon-Priest (Cleric 5)",
+        "vnum": 10306,
+        "cr": 5.0,
+        "level": 6,
+        "hp_dice": [
+          6,
+          8,
+          6
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          8,
+          0
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 14,
+          "Con": 12,
+          "Int": 11,
+          "Wis": 17,
+          "Cha": 12
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "heavy mace +1",
+            "bonus": 5,
+            "damage": "1d8+1"
+          }
+        ],
+        "special_attacks": [
+          "Inflict Serious Wounds 1/day (3d8+5)",
+          "Cause Fear 3/day",
+          "Rebuke Undead 4/day"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 5; 1st -- 5; 2nd -- 4; 3rd -- 3",
+          "Domains: Fire (fire resistance 10), Law",
+          "Turn or rebuke dragons 1/day"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Spell Penetration",
+          "Weapon Focus (heavy mace)"
+        ],
+        "skills": {
+          "Concentration": 9,
+          "Diplomacy": 6,
+          "Knowledge (religion)": 7,
+          "Spellcraft": 6
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 3,
+          "Will": 7
+        },
+        "environment": "Gatefall Reach, Deepwater Marches, Infinite Desert Glass Wastes, Eternal Steppe Burnt Hollows, and any active D\u00f3mnathar site; underground",
+        "organization": "solitary or leader (with 6-10 kobolds and 1 trapsmith)",
+        "description": "An old kobold priestess, scale-crest gone white, who serves the red dragon her clan believes to sleep beneath Pryee. Her robes smell of kerosene and incense."
+      },
+      {
+        "name": "Silentborn Researcher (Wizard 4)",
+        "vnum": 10319,
+        "cr": 5.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          4,
+          4
+        ],
+        "ac": 14,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "silentborn",
+          "hostile",
+          "caster",
+          "kin_silent"
+        ],
+        "type_": "Humanoid (Silentborn)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 9,
+          "Dex": 14,
+          "Con": 11,
+          "Int": 18,
+          "Wis": 13,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "dagger",
+            "bonus": 1,
+            "damage": "1d4-1"
+          }
+        ],
+        "special_attacks": [
+          "Scorching Ray (4d6)",
+          "Magic Missile (3 missiles)",
+          "Summon Monster II"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 60 ft.",
+          "Spells/day: 0th -- 4; 1st -- 4; 2nd -- 3",
+          "Specialization: Conjuration"
+        ],
+        "feats": [
+          "Scribe Scroll",
+          "Combat Casting",
+          "Skill Focus (Knowledge -- arcana)"
+        ],
+        "skills": {
+          "Concentration": 7,
+          "Decipher Script": 10,
+          "Knowledge (arcana)": 13,
+          "Spellcraft": 13
+        },
+        "saves": {
+          "Fort": 1,
+          "Ref": 3,
+          "Will": 5
+        },
+        "environment": "Deepwater Marches Spur Tower breeding-lab; Eternal Steppe Second Breath Hideout; Infinite Desert Fusion-Cell Outpost",
+        "organization": "solitary (in a laboratory, with 2 loyalist guards)",
+        "description": "A slim figure with half-moon lenses, bent over a book written in two alphabets at once. She is the third Silentborn generation and has never set foot above ground."
+      }
+    ],
+    "4": [
+      {
+        "name": "Harpy",
+        "vnum": 10085,
+        "cr": 4.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          8,
+          0
+        ],
+        "ac": 13,
+        "damage_dice": [
+          1,
+          3,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) -- corrupted; the harpy is the wind made cruel, the Youngest Brother's domain twisted into a lure"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 15,
+          "Con": 10,
+          "Int": 7,
+          "Wis": 12,
+          "Cha": 17
+        },
+        "speed": {
+          "land": 20,
+          "fly": 80
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 2,
+            "damage": "1d3"
+          }
+        ],
+        "special_attacks": [
+          "Captivating song"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "elemental resonance (Air",
+          "corrupted)"
+        ],
+        "feats": [
+          "Dodge",
+          "Flyby Attack",
+          "Persuasive"
+        ],
+        "skills": {
+          "Bluff": 11,
+          "Intimidate": 7,
+          "Listen": 7,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 7,
+          "Will": 6
+        },
+        "environment": "Cliffs and Marshes (coastal cliffs along the Apelian Sea, the marshy fringes of the Tidebloom Reach, and the ruin-studded cliffsides of the Kinsweave -- anywhere that combines elevation with nearby prey-populations)",
+        "organization": "Solitary, pair, or flight (7-12)",
+        "description": "The singing starts before you see her. It comes from above -- from the cliff-face, from the marsh-edge, from the ruin's upper story -- and it is beautiful. Not just pleasant. Beautiful in the way that makes you stop walking, stop thinking, stop being afraid. Your legs move toward the sound before your brain can object. By the time you see what is singing -- the matted feathers, the human face twisted by cruelty, the taloned feet -- you are already too close."
+      },
+      {
+        "name": "Hydra",
+        "vnum": 10092,
+        "cr": 4.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          10,
+          28
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          10,
+          3
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- hydras are creatures of the deep marsh, saturated with stagnant water-energy"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 17,
+          "Dex": 12,
+          "Con": 20,
+          "Int": 2,
+          "Wis": 10,
+          "Cha": 9
+        },
+        "speed": {
+          "land": 20,
+          "swim": 20
+        },
+        "attacks": [
+          {
+            "type": "bites",
+            "bonus": 6,
+            "damage": "1d10+3"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "fast healing 15",
+          "low-light vision",
+          "scent",
+          "elemental resonance (Water)"
+        ],
+        "feats": [
+          "Combat Reflexes",
+          "Iron Will",
+          "Toughness"
+        ],
+        "skills": {
+          "Listen": 6,
+          "Spot": 6,
+          "Swim": 11
+        },
+        "saves": {
+          "Fort": 9,
+          "Ref": 5,
+          "Will": 3
+        },
+        "environment": "Marshes (the Tidebloom Reach, the Deepwater Marches wetlands, and the marshy lowlands where the Great River spreads into seasonal flood-plains -- any warm, wet, low-lying terrain with sufficient prey)",
+        "organization": "Solitary",
+        "description": "Five heads. Five necks. One body. The body is the size of a horse and scaled in dark, wet green; the necks are each ten feet long and independently mobile, weaving and striking like snakes operated by a single furious brain. When one head lunges, the others cover it. When one head is hurt, the others strike at the attacker. The creature does not think -- five heads do not produce five times the intelligence, they produce five times the aggression."
+      },
+      {
+        "name": "Phi Krahang",
+        "vnum": 10155,
+        "cr": 4.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          8,
+          10
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          2
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- corrupted marsh; the stagnant water of a swamp that has curdled, the marsh at its worst, decay given predatory purpose"
+        ],
+        "type_": "Monstrous Humanoid",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 15,
+          "Dex": 17,
+          "Con": 14,
+          "Int": 10,
+          "Wis": 12,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 30,
+          "fly": 50
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 7,
+            "damage": "1d6+2 plus filth-curse"
+          },
+          {
+            "type": "bite",
+            "bonus": 5,
+            "damage": "1d4+1"
+          }
+        ],
+        "special_attacks": [
+          "Filth-curse",
+          "diving strike",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "fly (supernatural)",
+          "phosphorescence",
+          "damage reduction 5/magic",
+          "sunlight weakness",
+          "elemental resonance (water - corrupted marsh)"
+        ],
+        "feats": [
+          "Flyby Attack",
+          "Multiattack"
+        ],
+        "skills": {
+          "Hide": 11,
+          "Listen": 9,
+          "Move Silently": 11,
+          "Spot": 9,
+          "Survival": 9
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 7,
+          "Will": 5
+        },
+        "environment": "Deepwater Marshes (the outer edges of the Deepwater Marches -- the deep-marsh zones where mangrove gives way to open swamp, far from halfling settlements, active at night)",
+        "organization": "Solitary or pair",
+        "description": "The marsh-lights are wrong tonight. The halfling fishers of the outer Deepwater Marches know their marsh -- they know the will-o'-wisps, the phosphorescent fungi, the bioluminescent insects that make the swamp glow after dark. These lights are different. They move against the wind, in formation, and they are approaching the fishing-platforms at a speed that no natural light-source produces. Then the figure emerges from the tree-line -- a man, or something shaped like a man, riding two rice-winn..."
+      },
+      {
+        "name": "Kobold Wizard (Wizard 4)",
+        "vnum": 10304,
+        "cr": 4.0,
+        "level": 5,
+        "hp_dice": [
+          5,
+          4,
+          5
+        ],
+        "ac": 14,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "caster"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 7,
+          "Dex": 15,
+          "Con": 11,
+          "Int": 16,
+          "Wis": 12,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "quarterstaff",
+            "bonus": 1,
+            "damage": "1d6-2"
+          }
+        ],
+        "special_attacks": [
+          "Fireball 1/day (5d6)",
+          "Scorching Ray 1/day (4d6)",
+          "Magic Missile 3/day (3 missiles)",
+          "Summon Monster II 1/day"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 5; 1st -- 5; 2nd -- 4; 3rd -- 2",
+          "Specialization: Evocation (opposed: Enchantment, Illusion)",
+          "Familiar (Tiny Viper)"
+        ],
+        "feats": [
+          "Scribe Scroll",
+          "Spell Focus (evocation)",
+          "Combat Casting"
+        ],
+        "skills": {
+          "Concentration": 9,
+          "Decipher Script": 6,
+          "Knowledge (arcana)": 11,
+          "Knowledge (history)": 5,
+          "Spellcraft": 13
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 3,
+          "Will": 5
+        },
+        "environment": "Kinsweave Ruins (buried Deceiver artifact chambers in the Six Kings' ruins: Mytro, Kalite, Hylen, Thrush, Andrio, Pryee; Highridge lava-tubes); underground; also Gatefall, Deepwater",
+        "organization": "circle (1 wizard plus 2 apprentice-sorcerers)",
+        "description": "An elder kobold in a high-collared robe sewn with brass reading-lenses. She has catalogued and copied more Deceiver scrolls than any living Kin scholar; she simply does not share."
+      },
+      {
+        "name": "Dark Dwarf Warrior (Fighter 3)",
+        "vnum": 10314,
+        "cr": 4.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          10,
+          9
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          8,
+          3
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 17,
+          "Dex": 12,
+          "Con": 16,
+          "Int": 10,
+          "Wis": 11,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "dwarven waraxe",
+            "bonus": 7,
+            "damage": "1d10+4"
+          }
+        ],
+        "special_attacks": [
+          "Power Attack",
+          "+1 vs goblinoids and orcs"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Void-touch: +2 vs mind-affecting effects",
+          "+4 vs giant-type, +2 saves vs poison/spells"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Weapon Focus (waraxe)"
+        ],
+        "skills": {
+          "Appraise": 2,
+          "Craft (weapons)": 5,
+          "Intimidate": 3,
+          "Listen": 2,
+          "Spot": 2
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 2,
+          "Will": 1
+        },
+        "environment": "Gatefall Reach, Deepwater Marches, Infinite Desert Glass Wastes, Eternal Steppe Burnt Hollows, and any active D\u00f3mnathar site; underground",
+        "organization": "squad (2-4 warriors plus 1 fireforged)",
+        "description": "A broad, scarred dwarf in iron plate darkened with lamp-black. The Deceivers' War left his clan underground; four generations later, this is what the clan has become."
+      },
+      {
+        "name": "Silentborn Loyalist (Warrior 3 / Rogue 1)",
+        "vnum": 10318,
+        "cr": 4.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          8,
+          8
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "silentborn",
+          "hostile",
+          "kin_silent"
+        ],
+        "type_": "Humanoid (Silentborn)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 15,
+          "Dex": 15,
+          "Con": 13,
+          "Int": 11,
+          "Wis": 10,
+          "Cha": 8
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "longsword",
+            "bonus": 6,
+            "damage": "1d8+2"
+          }
+        ],
+        "special_attacks": [
+          "Sneak Attack +1d6"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Appears fully Kin at casual observation (Spot DC 20 to spot the faint luminosity in their eyes)",
+          "Trapfinding"
+        ],
+        "feats": [
+          "Weapon Focus (longsword)",
+          "Dodge",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Bluff": 5,
+          "Disguise": 5,
+          "Hide": 6,
+          "Move Silently": 6,
+          "Spot": 4
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 5,
+          "Will": 1
+        },
+        "environment": "Eternal Steppe (Burnt Hollows collapsed burrow-forts, Dark Dawn Battlefield dead zones); underground; Deepwater Spur Tower; Tidebloom hidden enclaves",
+        "organization": "squad (3-6 loyalists plus 1 silentborn assassin)",
+        "description": "A figure who would pass for human -- unless you stared at her eyes in dim light and caught the faint luminous yellow-green behind the pupils. She was born in the D\u00f3mnathar breeding program and never raised to any other."
+      }
+    ],
+    "1": [
+      {
+        "name": "Mazzikin",
+        "vnum": 10120,
+        "cr": 1.0,
+        "level": 2,
+        "hp_dice": [
+          2,
+          6,
+          0
+        ],
+        "ac": 18,
+        "damage_dice": [
+          1,
+          3,
+          -2
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) -- mischievous; the air that steals your hat, the wind that snuffs your candle"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually chaotic neutral",
+        "ability_scores": {
+          "Str": 6,
+          "Dex": 18,
+          "Con": 10,
+          "Int": 13,
+          "Wis": 12,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "dagger",
+            "bonus": 7,
+            "damage": "1d3-2/19-20"
+          }
+        ],
+        "special_attacks": [
+          "Spell-like abilities",
+          "mischief"
+        ],
+        "special_qualities": [
+          "Damage reduction 2/cold iron",
+          "greater invisibility",
+          "low-light vision",
+          "evasion",
+          "elemental resonance (fey-wild static)"
+        ],
+        "feats": [
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Disable Device": 8,
+          "Escape Artist": 9,
+          "Hide": 17,
+          "Move Silently": 9,
+          "Sleight of Hand": 11,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 0,
+          "Ref": 7,
+          "Will": 4
+        },
+        "environment": "Any (mazzikin are found wherever goblins gather -- goblin camps, trading-posts, and caravans in the Deepwater Marches, but also goblin-Kin border-communities, Eruskan market-towns with goblin populations, and isolated settlements where the boundary between fey and mortal is thin)",
+        "organization": "Solitary, pair, or nuisance (3-12)",
+        "description": "You cannot see them. That is the point -- mazzikin are invisible, bodiless, and everywhere, and the only evidence of their presence is the mischief. Your bootlaces are tied together. Your waterskin is empty though you filled it an hour ago. The goblin trader's pack has been rearranged so that the heavy items are on top and the fragile items are on the bottom. From somewhere near the ceiling, something giggles -- a high, musical laugh that sounds like a child who has never been told no."
+      },
+      {
+        "name": "Nixie",
+        "vnum": 10137,
+        "cr": 1.0,
+        "level": 1,
+        "hp_dice": [
+          1,
+          6,
+          0
+        ],
+        "ac": 14,
+        "damage_dice": [
+          1,
+          4,
+          -2
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- gentle; the clear water of shallow lakes, sunlight on the surface, the warmth of still pools"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 7,
+          "Dex": 16,
+          "Con": 11,
+          "Int": 12,
+          "Wis": 13,
+          "Cha": 18
+        },
+        "speed": {
+          "land": 20,
+          "swim": 30
+        },
+        "attacks": [
+          {
+            "type": "short sword",
+            "bonus": 4,
+            "damage": "1d4-2/19-20"
+          },
+          {
+            "type": "light crossbow",
+            "bonus": 4,
+            "damage": "1d6/19-20"
+          }
+        ],
+        "special_attacks": [
+          "Charm person",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "damage reduction 5/cold iron",
+          "low-light vision",
+          "wild empathy",
+          "elemental resonance (fey-water gentle)"
+        ],
+        "feats": [
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Bluff": 8,
+          "Escape Artist": 7,
+          "Handle Animal": 8,
+          "Hide": 7,
+          "Listen": 6,
+          "Sense Motive": 5,
+          "Spot": 6,
+          "Swim": 6
+        },
+        "saves": {
+          "Fort": 0,
+          "Ref": 5,
+          "Will": 3
+        },
+        "environment": "Rivers and Lakes (freshwater lakes, slow rivers, mill-ponds, and spring-fed pools throughout the Great River system and the Deepwater Marches -- anywhere that still, clear freshwater collects in sufficient depth)",
+        "organization": "Gang (2-4), band (6-11), or tribe (20-80)",
+        "description": "The lake is clear and shallow at the edges, the kind of place where children wade and fishermen cast from the bank. You see the light first -- a flicker of green-gold beneath the surface, like sunlight catching a fish-scale, except the light moves with purpose. A head breaks the surface: small, angular, green-skinned, with large dark eyes and hair the colour of waterweed. She treads water effortlessly and regards you with the frank curiosity of something that owns this lake and considers you a..."
+      },
+      {
+        "name": "Water Elemental, Small",
+        "vnum": 10218,
+        "cr": 1.0,
+        "level": 2,
+        "hp_dice": [
+          2,
+          8,
+          2
+        ],
+        "ac": 17,
+        "damage_dice": [
+          1,
+          6,
+          3
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water)"
+        ],
+        "type_": "Elemental",
+        "alignment": "Usually neutral",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 10,
+          "Con": 13,
+          "Int": 4,
+          "Wis": 11,
+          "Cha": 11
+        },
+        "speed": {
+          "land": 20,
+          "swim": 90
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 4,
+            "damage": "1d6+3"
+          }
+        ],
+        "special_attacks": [
+          "Water mastery",
+          "drench",
+          "vortex"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "elemental traits",
+          "elemental resonance (Water)"
+        ],
+        "feats": [
+          "Power Attack"
+        ],
+        "skills": {
+          "Listen": 2,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 0,
+          "Will": 0
+        },
+        "environment": "Any body of water; most common in the Great River and its tributaries, the Kailian and Apelian Seas, and the Deepwater Marches",
+        "organization": "Solitary",
+        "description": "The river rises. Not floods -- the water level does not change -- but a column of river-water pulls itself upright, shaping limbs and a torso and something that might be a head from the current itself. It stands on the river's surface like a person stands on a floor, and within its translucent body you can see river-debris turning slowly: pebbles, weeds, a small fish swimming in confused circles. When it moves, the sound is rain on stone."
+      },
+      {
+        "name": "Kobold Scout (Sorcerer 1)",
+        "vnum": 10300,
+        "cr": 1.0,
+        "level": 2,
+        "hp_dice": [
+          2,
+          4,
+          2
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "caster"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 8,
+          "Dex": 15,
+          "Con": 10,
+          "Int": 10,
+          "Wis": 9,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "shortspear",
+            "bonus": 2,
+            "damage": "1d4-1"
+          },
+          {
+            "type": "light crossbow",
+            "bonus": 3,
+            "damage": "1d6"
+          }
+        ],
+        "special_attacks": [
+          "Magic Missile (1/day, 1d4+1)"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Spells known: 0th -- acid splash, ray of frost, resistance; 1st -- magic missile"
+        ],
+        "feats": [
+          "Alertness"
+        ],
+        "skills": {
+          "Hide": 6,
+          "Listen": 2,
+          "Move Silently": 3,
+          "Spellcraft": 2,
+          "Spot": 2
+        },
+        "saves": {
+          "Fort": 0,
+          "Ref": 3,
+          "Will": 2
+        },
+        "environment": "Gatefall Reach and Deepwater Marches (D\u00f3mnathar-linked underground sites, Silence Breach Zones, Ashcrown Warren)",
+        "organization": "gang (2-4) or raid (5-12 plus 1 sorcerer)",
+        "description": "A crest-scaled kobold with a focused, calculating stare. Dust-stained sleeves conceal the sigil-ink on her arms where she has drawn her spell foci."
+      }
+    ],
+    "2": [
+      {
+        "name": "Nang Tani",
+        "vnum": 10134,
+        "cr": 2.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          6,
+          4
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Lord of Stone (Earth) / Lady of the Sea (Water) -- nurturing; the dark soil of cultivated groves, the patient water that feeds roots, growth expressed as care"
+        ],
+        "type_": "Fey",
+        "alignment": "Usually neutral good",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 14,
+          "Con": 12,
+          "Int": 12,
+          "Wis": 15,
+          "Cha": 17
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "slam",
+            "bonus": 4,
+            "damage": "1d4"
+          }
+        ],
+        "special_attacks": [
+          "Thorn lash",
+          "grove-wrath",
+          "spell-like abilities"
+        ],
+        "special_qualities": [
+          "Damage reduction 5/cold iron",
+          "low-light vision",
+          "tree bond",
+          "grove blessing",
+          "elemental resonance (fey earth-water gentle)"
+        ],
+        "feats": [
+          "Alertness",
+          "Weapon Finesse"
+        ],
+        "skills": {
+          "Heal": 9,
+          "Hide": 9,
+          "Listen": 9,
+          "Spot": 9
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 6,
+          "Will": 6
+        },
+        "environment": "Halfling Orchards (the fruit-groves and crop-orchards of the Deepwater Marches and Tidebloom Reach halfling communities -- particularly old-growth banana, mango, and breadfruit groves that have been tended for generations)",
+        "organization": "Solitary",
+        "description": "The banana grove is older than the halfling settlement that tends it. The trees are tall and thick-trunked, their broad leaves casting the kind of shade that turns midday into twilight, and the air beneath them is sweet with the smell of ripening fruit and damp earth. You notice one tree at the grove's heart that is different -- not larger, but present in a way the others are not. A green silk ribbon is tied around its trunk, and at its base, a scattering of fresh flowers, a small clay cup of ..."
+      },
+      {
+        "name": "Shocker Lizard",
+        "vnum": 10186,
+        "cr": 2.0,
+        "level": 2,
+        "hp_dice": [
+          2,
+          10,
+          0
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:Youngest Brother (Air) -- bioelectric; the resonance of living electricity, the air-element expressed through biological discharge rather than atmospheric phenomena"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 15,
+          "Con": 11,
+          "Int": 2,
+          "Wis": 14,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 40,
+          "climb": 20,
+          "swim": 20
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 3,
+            "damage": "1d4"
+          }
+        ],
+        "special_attacks": [
+          "Stunning shock",
+          "lethal shock"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "electricity sense",
+          "immunity to electricity",
+          "low-light vision",
+          "elemental resonance (air - bioelectric crackle)"
+        ],
+        "feats": [
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Climb": 11,
+          "Hide": 11,
+          "Listen": 4,
+          "Spot": 4,
+          "Swim": 10
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 5,
+          "Will": 2
+        },
+        "environment": "Deepwater Marches (the warm freshwater marshes, swamp-pools, and reed-beds of the Deepwater Marches -- specifically the shallow, still-water zones where shocker lizard colonies can establish overlapping electrical fields)",
+        "organization": "Solitary, pair, clutch (3-5), or colony (6-12)",
+        "description": "The marsh-pool ahead is shallow and murky, and the thing sitting on the half-submerged log is about the size of a house cat -- blue-grey, smooth-skinned, with a wide flat head and eyes that track your movement with reptilian precision. It looks harmless. Then the air crackles, your arm-hairs stand up, and the log lights up -- blue-white sparks arcing between the lizard's flanks and the water's surface. The second lizard surfaces to your left. The third is behind you. The water between them begi..."
+      },
+      {
+        "name": "Kobold Cultist (Cleric 2)",
+        "vnum": 10301,
+        "cr": 2.0,
+        "level": 3,
+        "hp_dice": [
+          3,
+          8,
+          3
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "kobold",
+          "hostile",
+          "caster"
+        ],
+        "type_": "Humanoid (Reptilian)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 9,
+          "Dex": 14,
+          "Con": 11,
+          "Int": 10,
+          "Wis": 14,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "morningstar",
+            "bonus": 3,
+            "damage": "1d6"
+          }
+        ],
+        "special_attacks": [
+          "Inflict Light Wounds (1d8+2, 3/day)",
+          "Rebuke Undead 3/day"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 4 (cure minor, detect magic); 1st -- 3 (bane, shield of faith, inflict light wounds)"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Weapon Focus (morningstar)"
+        ],
+        "skills": {
+          "Concentration": 6,
+          "Knowledge (religion)": 4,
+          "Listen": 3,
+          "Spellcraft": 4,
+          "Spot": 3
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 2,
+          "Will": 5
+        },
+        "environment": "Kinsweave Ruins (buried Deceiver artifact chambers in the Six Kings' ruins: Mytro, Kalite, Hylen, Thrush, Andrio, Pryee; Highridge lava-tubes); underground; also Gatefall and Deepwater",
+        "organization": "gang (2-6 plus 1 kobold sorcerer)",
+        "description": "A stooped kobold in scorched temple-robes, a small silver ampoule of D\u00f3mnathar Void-Oil hung at her neck. She tends the warren's sick and the warren's dead with equal patience."
+      },
+      {
+        "name": "Goblin Shaman (Adept 3)",
+        "vnum": 10308,
+        "cr": 2.0,
+        "level": 4,
+        "hp_dice": [
+          4,
+          6,
+          4
+        ],
+        "ac": 15,
+        "damage_dice": [
+          1,
+          6,
+          0
+        ],
+        "flags": [
+          "goblin",
+          "hostile",
+          "caster"
+        ],
+        "type_": "Humanoid (Goblinoid)",
+        "alignment": "Neutral Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 13,
+          "Con": 12,
+          "Int": 10,
+          "Wis": 14,
+          "Cha": 11
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "morningstar",
+            "bonus": 3,
+            "damage": "1d6"
+          }
+        ],
+        "special_attacks": [
+          "Cause Fear 1/day",
+          "Burning Hands 1/day (1d4)"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "Spells/day: 0th -- 3 (cure minor, detect magic, ghost sound); 1st -- 2 (cause fear, burning hands); 2nd -- 1 (invisibility)"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Weapon Focus (morningstar)"
+        ],
+        "skills": {
+          "Concentration": 4,
+          "Hide": 4,
+          "Listen": 5,
+          "Spellcraft": 3,
+          "Spot": 5
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 2,
+          "Will": 5
+        },
+        "environment": "Deepwater Marches (Ashcrown Warren burrow-forts, Spur Tower outer tunnels); underground jungle; Ashen Hollows raider camps",
+        "organization": "solitary or pack leader (with 4-8 goblins)",
+        "description": "A wizened goblin with tattoos of crossed-out suns -- the mark of the Flamewarg faith. He reads the future in the smoke of burnt hair."
+      }
+    ],
+    "8": [
+      {
+        "name": "Nuckelavee",
+        "vnum": 10139,
+        "cr": 8.0,
+        "level": 12,
+        "hp_dice": [
+          12,
+          8,
+          48
+        ],
+        "ac": 20,
+        "damage_dice": [
+          1,
+          8,
+          7
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- inverted; the absolute negation of water's nurturing principle, corruption given physical form"
+        ],
+        "type_": "Aberration",
+        "alignment": "Always chaotic evil",
+        "ability_scores": {
+          "Str": 24,
+          "Dex": 14,
+          "Con": 18,
+          "Int": 10,
+          "Wis": 14,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 50,
+          "swim": 40
+        },
+        "attacks": [
+          {
+            "type": "claws",
+            "bonus": 15,
+            "damage": "1d8+7 plus plague-touch"
+          },
+          {
+            "type": "bite",
+            "bonus": 13,
+            "damage": "2d6+3"
+          },
+          {
+            "type": "hooves",
+            "bonus": 13,
+            "damage": "1d6+3"
+          }
+        ],
+        "special_attacks": [
+          "Plague-touch",
+          "Mortasheen breath",
+          "trample 1d6+10"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "darkvision 60 ft.",
+          "damage reduction 5/fire",
+          "fast healing 3",
+          "vulnerability (fresh water)",
+          "aura of corruption",
+          "elemental resonance (anti-water)"
+        ],
+        "feats": [
+          "Cleave",
+          "Improved Natural Attack (claw)",
+          "Multiattack",
+          "Power Attack",
+          "Track"
+        ],
+        "skills": {
+          "Intimidate": 15,
+          "Listen": 14,
+          "Spot": 14,
+          "Swim": 19,
+          "Survival": 14
+        },
+        "saves": {
+          "Fort": 8,
+          "Ref": 6,
+          "Will": 10
+        },
+        "environment": "Tidebloom Reach (the salt-marshes, tidal flats, and coastal wetlands of the Tidebloom Reach -- the border-zone where brackish water meets the Apelian Sea, particularly the areas where the tides carry pollution and decay inland)",
+        "organization": "Solitary (always)",
+        "description": "The Tidebloom stinks of rot. Not the clean rot of marshland decomposition -- something chemical, something that burns the sinuses and leaves a taste like copper and bile on the back of your tongue. The water has turned the colour of old blood. The fish are floating belly-up in the shallows, and the reed-beds are black and dying in concentric rings radiating from a point you cannot yet see. Then you see it -- rising from the fouled water like something being born from a wound. Horse and rider, f..."
+      },
+      {
+        "name": "Dark Dwarf Void-Smith (Expert 7 / Wizard 1)",
+        "vnum": 10316,
+        "cr": 8.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          6,
+          16
+        ],
+        "ac": 16,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "dwarf",
+          "dark_dwarf",
+          "hostile",
+          "caster",
+          "crafter"
+        ],
+        "type_": "Humanoid (Dwarf)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 12,
+          "Dex": 13,
+          "Con": 15,
+          "Int": 18,
+          "Wis": 14,
+          "Cha": 10
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "+1 smith's hammer",
+            "bonus": 5,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Craft Construct (partial)",
+          "Fabricate 1/day",
+          "Shield 4/day",
+          "Magic Weapon (self-cast) 2/day"
+        ],
+        "special_qualities": [
+          "Darkvision 120 ft.",
+          "Stonecunning",
+          "Spells/day: 0th -- 3; 1st -- 2",
+          "Void-forging: can craft items that suppress Kin-sense in a 5-ft radius"
+        ],
+        "feats": [
+          "Craft Wondrous Item",
+          "Craft Arms and Armor",
+          "Skill Focus (Craft - weaponsmithing)",
+          "Scribe Scroll"
+        ],
+        "skills": {
+          "Appraise": 15,
+          "Concentration": 9,
+          "Craft (armorsmithing)": 18,
+          "Craft (weaponsmithing)": 18,
+          "Knowledge (arcana)": 12,
+          "Spellcraft": 10
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 3,
+          "Will": 8
+        },
+        "environment": "Gatefall Reach, Deepwater Marches, Infinite Desert Glass Wastes, Eternal Steppe Burnt Hollows, and any active D\u00f3mnathar site; underground",
+        "organization": "solitary (with 2-3 warrior guards)",
+        "description": "A dwarf smith whose beard is threaded with silver wire and whose leather apron is embroidered with runes in a script not of this world. She makes the suppressor-irons that hide the Silentborn from Kin-sense."
+      },
+      {
+        "name": "D\u00f3mnathar Infiltrator (Rogue 6 / Fighter 2)",
+        "vnum": 10330,
+        "cr": 8.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          6,
+          8
+        ],
+        "ac": 18,
+        "damage_dice": [
+          1,
+          6,
+          2
+        ],
+        "flags": [
+          "domnathar",
+          "hostile",
+          "kin_silent",
+          "boss"
+        ],
+        "type_": "Humanoid (D\u00f3mnathar)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 14,
+          "Dex": 18,
+          "Con": 13,
+          "Int": 15,
+          "Wis": 13,
+          "Cha": 14
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "+2 short sword",
+            "bonus": 11,
+            "damage": "1d6+4"
+          },
+          {
+            "type": "+1 dagger (off-hand)",
+            "bonus": 9,
+            "damage": "1d4+2"
+          }
+        ],
+        "special_attacks": [
+          "Sneak Attack +3d6",
+          "Poison use (DC 14, 1d4 Con/1d4 Con)"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 120 ft.",
+          "Trapfinding",
+          "Evasion",
+          "Uncanny Dodge",
+          "Trap sense +2",
+          "Light sensitivity (dazzled in bright sunlight)"
+        ],
+        "feats": [
+          "Weapon Finesse",
+          "Two-Weapon Fighting",
+          "Improved Two-Weapon Fighting",
+          "Improved Initiative",
+          "Dodge",
+          "Mobility"
+        ],
+        "skills": {
+          "Bluff": 13,
+          "Diplomacy": 5,
+          "Disguise": 13,
+          "Hide": 15,
+          "Move Silently": 15,
+          "Open Lock": 11,
+          "Spot": 12
+        },
+        "saves": {
+          "Fort": 5,
+          "Ref": 10,
+          "Will": 4
+        },
+        "environment": "Gatefall Reach (Silence Breach approaches, Fortress of Dorrach-Vel command); Deepwater Spur Tower outer",
+        "organization": "solitary",
+        "description": "A tall, slender figure with skin the color of wet slate and eyes that catch the torchlight at an odd angle. His ears are so pointed they look sculpted. He has been killing Kin officers since the War and has not aged a day."
+      }
+    ],
+    "0": [
+      {
+        "name": "Orc",
+        "vnum": 10148,
+        "cr": 0.5,
+        "level": 1,
+        "hp_dice": [
+          1,
+          8,
+          1
+        ],
+        "ac": 13,
+        "damage_dice": [
+          2,
+          4,
+          4
+        ],
+        "flags": [
+          "elemental_affinity:None -- wild static; orcs, like goblins, register on Kin-sense as static rather than a clean elemental signature, though orc static is coarser and more aggressive than goblin static"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Often chaotic evil",
+        "ability_scores": {
+          "Str": 17,
+          "Dex": 11,
+          "Con": 12,
+          "Int": 8,
+          "Wis": 7,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "falchion",
+            "bonus": 4,
+            "damage": "2d4+4/18-20"
+          },
+          {
+            "type": "javelin",
+            "bonus": 1,
+            "damage": "1d6+3"
+          }
+        ],
+        "special_attacks": [],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "light sensitivity",
+          "elemental resonance (wild static - martial)"
+        ],
+        "feats": [
+          "Alertness"
+        ],
+        "skills": {
+          "Listen": 1,
+          "Spot": 1
+        },
+        "saves": {
+          "Fort": 3,
+          "Ref": 0,
+          "Will": -2
+        },
+        "environment": "Any (hill-country, cave-systems, ruins, forest-edges, and the margins between Kin territories -- anywhere that provides shelter, defensible ground, and access to raiding targets)",
+        "organization": "Gang (2-4), squad (11-20 plus 2 3rd-level sergeants and 1 leader of 4th-6th level), or band (30-100 plus 150% noncombatants plus 1 3rd-level sergeant per 10 adults, 5 5th-level lieutenants, and 3 7th-level captains)",
+        "description": "The raiders come out of the ravine at a run -- fast, organised, and angry. There are a dozen of them, grey-skinned and heavy-jawed, wearing patchwork armour assembled from three different cultures' discarded kit. The one in front carries an axe that was Orean-forged before someone reground the edge to a crueler angle. They do not shout. They do not threaten. They come in silent, trained, and focused, which means these are not the disorganised raiders the border-patrols warned you about. These ..."
+      },
+      {
+        "name": "Stirge",
+        "vnum": 10194,
+        "cr": 0.5,
+        "level": 1,
+        "hp_dice": [
+          1,
+          10,
+          0
+        ],
+        "ac": 16,
+        "damage_dice": [
+          0,
+          0,
+          0
+        ],
+        "flags": [
+          "elemental_affinity:None -- stirges have no elemental resonance; they are blood-feeding parasites that register on Kin-sense as barely-there biological noise, too small and too simple to carry elemental identity"
+        ],
+        "type_": "Magical Beast",
+        "alignment": "Always neutral",
+        "ability_scores": {
+          "Str": 3,
+          "Dex": 19,
+          "Con": 10,
+          "Int": 1,
+          "Wis": 12,
+          "Cha": 6
+        },
+        "speed": {
+          "land": 10,
+          "fly": 40
+        },
+        "attacks": [
+          {
+            "type": "touch",
+            "bonus": 7,
+            "damage": "attach"
+          }
+        ],
+        "special_attacks": [
+          "Attach",
+          "blood drain"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "low-light vision",
+          "scent",
+          "elemental resonance (none - vermin-analogue)"
+        ],
+        "feats": [
+          "Alertness",
+          "Weapon FinesseB"
+        ],
+        "skills": {
+          "Hide": 14,
+          "Listen": 4,
+          "Spot": 4
+        },
+        "saves": {
+          "Fort": 2,
+          "Ref": 6,
+          "Will": 1
+        },
+        "environment": "Deepwater Marches (the warm, humid marshlands and swamp-forests of the Deepwater Marches -- specifically the stagnant pools, reed-beds, and dense undergrowth where stirge swarms breed in standing water)",
+        "organization": "Colony (2-4), flock (5-8), or storm (9-14)",
+        "description": "The first one lands on your neck before you feel it. That is the thing about stirges -- they are small, they are quiet, and they latch on before you know they are there. The proboscis is thin as a needle and slides into your skin with a precision that a surgeon would envy. By the time you slap at it, the first pint is already gone. The second stirge lands on your arm. The third is on the horse. There are more in the air -- a dozen, two dozen, darting and hovering like oversized mosquitoes with ..."
+      }
+    ],
+    "13": [
+      {
+        "name": "Phaya Nak",
+        "vnum": 10154,
+        "cr": 13.0,
+        "level": 20,
+        "hp_dice": [
+          20,
+          12,
+          140
+        ],
+        "ac": 32,
+        "damage_dice": [
+          4,
+          6,
+          12
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- deep, ancient; the pressure and darkness of the deepest ocean, the water that has never seen sunlight, old beyond reckoning"
+        ],
+        "type_": "Dragon",
+        "alignment": "Usually lawful neutral",
+        "ability_scores": {
+          "Str": 34,
+          "Dex": 10,
+          "Con": 24,
+          "Int": 20,
+          "Wis": 20,
+          "Cha": 22
+        },
+        "speed": {
+          "land": 30,
+          "swim": 80
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 28,
+            "damage": "4d6+12"
+          },
+          {
+            "type": "claws",
+            "bonus": 26,
+            "damage": "2d8+6"
+          },
+          {
+            "type": "tail slap",
+            "bonus": 26,
+            "damage": "2d8+6"
+          }
+        ],
+        "special_attacks": [
+          "Breath weapon",
+          "crush",
+          "frightful presence",
+          "spells",
+          "telepathy"
+        ],
+        "special_qualities": [
+          "Amphibious",
+          "blindsense 120 ft.",
+          "damage reduction 10/magic",
+          "darkvision 120 ft.",
+          "immunity to electricity",
+          "immunity to sleep",
+          "immunity to paralysis",
+          "spell resistance 28",
+          "elemental resonance (deep water - ancient)"
+        ],
+        "feats": [
+          "Awesome Blow",
+          "Cleave",
+          "Great Cleave",
+          "Improved Bull Rush",
+          "Multiattack",
+          "Power Attack",
+          "Quicken Spell-Like Ability (lightning bolt)"
+        ],
+        "skills": {
+          "Concentration": 27,
+          "Diplomacy": 26,
+          "Intimidate": 26,
+          "Listen": 25,
+          "Sense Motive": 25,
+          "Spellcraft": 25,
+          "Spot": 25,
+          "Swim": 20
+        },
+        "saves": {
+          "Fort": 19,
+          "Ref": 12,
+          "Will": 17
+        },
+        "environment": "Deep Apelian Sea (the abyssal trenches of the eastern Apelian continental shelf -- lightless, pressurised depths that no Kin diver can reach, surfacing only rarely along the Tidebloom and Deepwater Marches coastlines)",
+        "organization": "Solitary",
+        "description": "The Apelian Sea is deep in places that even the Na'wasua do not map. There are trenches along the eastern continental shelf that descend beyond light, beyond pressure, beyond the reach of any diving magic that Kin have devised. The halfling deep-sea fishers of the Tidebloom coast know these places -- not because they go there, but because sometimes something comes up from them. A shape in the water, so vast it darkens the surface from below like a cloud passing in front of the sun, except the ..."
+      }
+    ],
+    "9": [
+      {
+        "name": "Spirit Naga",
+        "vnum": 10193,
+        "cr": 9.0,
+        "level": 9,
+        "hp_dice": [
+          9,
+          8,
+          36
+        ],
+        "ac": 19,
+        "damage_dice": [
+          2,
+          4,
+          6
+        ],
+        "flags": [
+          "elemental_affinity:Lady of the Sea (Water) -- corrupted; the resonance of water that has been claimed and twisted by an intelligence that uses the Lady's domain for its own purposes -- river-current directed by will rather than gravity, water that serves a master"
+        ],
+        "type_": "Aberration",
+        "alignment": "Usually chaotic evil",
+        "ability_scores": {
+          "Str": 18,
+          "Dex": 13,
+          "Con": 18,
+          "Int": 16,
+          "Wis": 17,
+          "Cha": 18
+        },
+        "speed": {
+          "land": 40,
+          "swim": 20
+        },
+        "attacks": [
+          {
+            "type": "bite",
+            "bonus": 9,
+            "damage": "2d4+6 plus poison"
+          }
+        ],
+        "special_attacks": [
+          "Charming gaze",
+          "poison",
+          "spells"
+        ],
+        "special_qualities": [
+          "Darkvision 60 ft.",
+          "elemental resonance (water - corrupted current)"
+        ],
+        "feats": [
+          "Ability Focus (charming gaze)",
+          "Combat Casting",
+          "Eschew Materials",
+          "Lightning Reflexes"
+        ],
+        "skills": {
+          "Bluff": 16,
+          "Concentration": 16,
+          "Diplomacy": 12,
+          "Listen": 14,
+          "Spellcraft": 15,
+          "Spot": 14
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 6,
+          "Will": 9
+        },
+        "environment": "Corrupted Waterways (stretches of river, creek, or lake where a spirit naga has established territorial dominance -- the water itself changes, becoming sluggish, discoloured, and hostile to normal aquatic life; most commonly found along Great River tributaries and the smaller waterways of the Kinsweave and Deepwater Marches)",
+        "organization": "Solitary or nest (2-4)",
+        "description": "The waterway ahead is wrong. The current runs sluggishly, the colour is off -- a faint yellow-green tinge beneath the surface -- and the reeds along the bank are wilted despite adequate water. Something has corrupted this stretch of river, and the corruption has a voice. It speaks from the water: a woman's voice, cultured, persuasive, and utterly, chillingly reasonable, explaining why you should come closer, why you should listen, why resistance to the inevitable is wasteful. The voice belongs ..."
+      },
+      {
+        "name": "Half-D\u00f3mnathar Battle-Priest (Cleric 7)",
+        "vnum": 10325,
+        "cr": 9.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          8,
+          14
+        ],
+        "ac": 21,
+        "damage_dice": [
+          1,
+          8,
+          2
+        ],
+        "flags": [
+          "half_domnathar",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 15,
+          "Dex": 12,
+          "Con": 14,
+          "Int": 12,
+          "Wis": 17,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 20
+        },
+        "attacks": [
+          {
+            "type": "warhammer +2",
+            "bonus": 10,
+            "damage": "1d8+4"
+          }
+        ],
+        "special_attacks": [
+          "Inflict Serious Wounds 2/day (3d8+7)",
+          "Flame Strike 1/day (7d6)",
+          "Searing Light 3/day",
+          "Rebuke Undead 6/day"
+        ],
+        "special_qualities": [
+          "Faintly luminous eyes",
+          "Spells/day: 0th -- 6; 1st -- 5+1; 2nd -- 4+1; 3rd -- 3+1; 4th -- 2+1",
+          "Domains: War, Destruction"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Power Attack",
+          "Weapon Focus (warhammer)",
+          "Spell Penetration"
+        ],
+        "skills": {
+          "Concentration": 12,
+          "Knowledge (religion)": 11,
+          "Spellcraft": 11
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 3,
+          "Will": 9
+        },
+        "environment": "Deepwater Marches (Spur Tower command levels); Gatefall Fortress of Dorrach-Vel",
+        "organization": "solitary (with 4-6 silentborn loyalists)",
+        "description": "A Half-D\u00f3mnathar in blackened full plate, the chapter-priest of the Spur Tower's war-temple. His prayers call on an absence rather than a presence."
+      },
+      {
+        "name": "Half-D\u00f3mnathar Mother-Superior (Cleric 8)",
+        "vnum": 10326,
+        "cr": 9.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          8,
+          8
+        ],
+        "ac": 19,
+        "damage_dice": [
+          1,
+          6,
+          1
+        ],
+        "flags": [
+          "half_domnathar",
+          "hostile",
+          "caster",
+          "boss"
+        ],
+        "type_": "Humanoid",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 11,
+          "Dex": 12,
+          "Con": 13,
+          "Int": 15,
+          "Wis": 19,
+          "Cha": 16
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "mace of silence +1",
+            "bonus": 7,
+            "damage": "1d6+1 plus silence for 1 round"
+          }
+        ],
+        "special_attacks": [
+          "Summon Monster IV 2/day",
+          "Hold Person 2/day (DC 17)",
+          "Silence 2/day",
+          "Dispel Magic 2/day"
+        ],
+        "special_qualities": [
+          "Faintly luminous eyes",
+          "Spells/day: 0th -- 6; 1st -- 5+1; 2nd -- 5+1; 3rd -- 4+1; 4th -- 3+1; 5th -- 2+1",
+          "Domains: Knowledge, Protection"
+        ],
+        "feats": [
+          "Combat Casting",
+          "Skill Focus (Heal)",
+          "Leadership",
+          "Craft Wondrous Item"
+        ],
+        "skills": {
+          "Concentration": 12,
+          "Diplomacy": 14,
+          "Heal": 15,
+          "Knowledge (arcana)": 10,
+          "Knowledge (religion)": 15,
+          "Sense Motive": 15,
+          "Spellcraft": 13
+        },
+        "saves": {
+          "Fort": 7,
+          "Ref": 3,
+          "Will": 11
+        },
+        "environment": "Eternal Steppe (Second Breath Hideout); Deepwater Spur Tower",
+        "organization": "solitary (with 6-8 silentborn and 2-3 dark dwarf attendants)",
+        "description": "A stern matriarch with grey-streaked hair coiled under a circle of iron. She rebuilds the breeding program the Kin thought they burned, and she tells herself the children will one day thank her."
+      },
+      {
+        "name": "D\u00f3mnathar Remnant-Officer (Fighter 7)",
+        "vnum": 10331,
+        "cr": 9.0,
+        "level": 7,
+        "hp_dice": [
+          7,
+          10,
+          14
+        ],
+        "ac": 22,
+        "damage_dice": [
+          1,
+          10,
+          4
+        ],
+        "flags": [
+          "domnathar",
+          "hostile",
+          "kin_silent",
+          "boss"
+        ],
+        "type_": "Humanoid (D\u00f3mnathar)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 18,
+          "Dex": 14,
+          "Con": 16,
+          "Int": 13,
+          "Wis": 12,
+          "Cha": 13
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "+2 longsword",
+            "bonus": 13,
+            "damage": "1d8+6"
+          }
+        ],
+        "special_attacks": [
+          "Power Attack",
+          "Cleave",
+          "Great Cleave"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 120 ft.",
+          "Light sensitivity"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Great Cleave",
+          "Weapon Focus (longsword)",
+          "Weapon Specialization (longsword)",
+          "Greater Weapon Focus (longsword)",
+          "Improved Initiative"
+        ],
+        "skills": {
+          "Climb": 10,
+          "Diplomacy": 5,
+          "Intimidate": 9,
+          "Listen": 6,
+          "Sense Motive": 6,
+          "Spot": 6
+        },
+        "saves": {
+          "Fort": 8,
+          "Ref": 4,
+          "Will": 3
+        },
+        "environment": "Tidebloom Reach (Ashen Hollows raider camps, hidden D\u00f3mnathar refugee enclaves near the Tomb of Kings); forest; Deepwater Spur Tower",
+        "organization": "solitary or enclave-leader (with 6-8 half-domnathar)",
+        "description": "A D\u00f3mnathar officer who has hidden among Kin for three hundred years. His insignia-of-rank is a small iron disc worn inside the cheek so that no Kin will ever see it."
+      }
+    ],
+    "10": [
+      {
+        "name": "D\u00f3mnathar Sorcerer (Sorcerer 8)",
+        "vnum": 10332,
+        "cr": 10.0,
+        "level": 8,
+        "hp_dice": [
+          8,
+          4,
+          16
+        ],
+        "ac": 18,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "domnathar",
+          "hostile",
+          "caster",
+          "kin_silent",
+          "boss"
+        ],
+        "type_": "Humanoid (D\u00f3mnathar)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 14,
+          "Con": 14,
+          "Int": 15,
+          "Wis": 13,
+          "Cha": 20
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "+2 quarterstaff",
+            "bonus": 6,
+            "damage": "1d6+2"
+          }
+        ],
+        "special_attacks": [
+          "Fireball 3/day (8d6)",
+          "Lightning Bolt 2/day (8d6)",
+          "Haste 2/day",
+          "Hold Person 3/day (DC 17)",
+          "Dispel Magic 3/day"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 120 ft.",
+          "Void Resonance (Su): on a confirmed hit with any spell, target must save or take 1 point of Wisdom drain as reality feels wrong.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 6; 1st -- 7; 2nd -- 7; 3rd -- 7; 4th -- 5"
+        ],
+        "feats": [
+          "Spell Focus (evocation)",
+          "Greater Spell Focus (evocation)",
+          "Empower Spell",
+          "Combat Casting",
+          "Silent Spell"
+        ],
+        "skills": {
+          "Bluff": 16,
+          "Concentration": 13,
+          "Diplomacy": 8,
+          "Intimidate": 12,
+          "Knowledge (arcana)": 13,
+          "Spellcraft": 13
+        },
+        "saves": {
+          "Fort": 4,
+          "Ref": 4,
+          "Will": 7
+        },
+        "environment": "Deepwater Spur Tower; Gatefall deep tunnels",
+        "organization": "solitary",
+        "description": "A D\u00f3mnathar caster whose spell-focus is a small blank glass sphere she carries on a silver chain. When she casts, the sphere fills with black smoke for a moment and then clears."
+      }
+    ],
+    "14": [
+      {
+        "name": "D\u00f3mnathar Void-Sorcerer (Sorcerer 12)",
+        "vnum": 10334,
+        "cr": 14.0,
+        "level": 12,
+        "hp_dice": [
+          12,
+          4,
+          24
+        ],
+        "ac": 20,
+        "damage_dice": [
+          1,
+          4,
+          0
+        ],
+        "flags": [
+          "domnathar",
+          "hostile",
+          "caster",
+          "kin_silent",
+          "boss"
+        ],
+        "type_": "Humanoid (D\u00f3mnathar)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 10,
+          "Dex": 14,
+          "Con": 14,
+          "Int": 16,
+          "Wis": 14,
+          "Cha": 22
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "+3 quarterstaff of silence",
+            "bonus": 9,
+            "damage": "1d6+3 plus silence on target 1 round"
+          }
+        ],
+        "special_attacks": [
+          "Meteor Swarm 1/day (24d6 scattered)",
+          "Disintegrate 2/day (DC 22)",
+          "Greater Dispel Magic 3/day",
+          "Wall of Force 2/day",
+          "Dominate Person 2/day (DC 19)"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 120 ft.",
+          "Void Resonance (Su): on a confirmed hit with any spell, target must save or take 1 point of Wisdom drain as reality feels wrong.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 6; 1st -- 7; 2nd -- 7; 3rd -- 7; 4th -- 7; 5th -- 6; 6th -- 4",
+          "Aura of Silence: 10-ft radius of Silence spell, will (DC 20)"
+        ],
+        "feats": [
+          "Spell Focus (evocation)",
+          "Greater Spell Focus (evocation)",
+          "Spell Focus (enchantment)",
+          "Empower Spell",
+          "Maximize Spell",
+          "Silent Spell",
+          "Combat Casting"
+        ],
+        "skills": {
+          "Bluff": 20,
+          "Concentration": 17,
+          "Diplomacy": 12,
+          "Intimidate": 16,
+          "Knowledge (arcana)": 18,
+          "Knowledge (the planes)": 15,
+          "Spellcraft": 20
+        },
+        "saves": {
+          "Fort": 6,
+          "Ref": 6,
+          "Will": 10
+        },
+        "environment": "Deepwater Spur Tower Void Chamber",
+        "organization": "solitary (with 1 void-construct and 4 silentborn guards)",
+        "description": "A D\u00f3mnathar sorceress whose skin has the faint sheen of something submerged, whose eyes glow a muted yellow-green in any light less than noon-sun. Her voice is surprisingly kind."
+      }
+    ],
+    "17": [
+      {
+        "name": "D\u00f3mnathar House Leader (Sorcerer 15 / Fighter 2)",
+        "vnum": 10335,
+        "cr": 17.0,
+        "level": 17,
+        "hp_dice": [
+          17,
+          4,
+          51
+        ],
+        "ac": 25,
+        "damage_dice": [
+          1,
+          8,
+          4
+        ],
+        "flags": [
+          "domnathar",
+          "hostile",
+          "caster",
+          "kin_silent",
+          "boss",
+          "legendary"
+        ],
+        "type_": "Humanoid (D\u00f3mnathar)",
+        "alignment": "Lawful Evil",
+        "ability_scores": {
+          "Str": 16,
+          "Dex": 16,
+          "Con": 18,
+          "Int": 18,
+          "Wis": 16,
+          "Cha": 24
+        },
+        "speed": {
+          "land": 30
+        },
+        "attacks": [
+          {
+            "type": "+3 longsword of void-edge",
+            "bonus": 17,
+            "damage": "1d8+7 plus 1d6 Wis drain"
+          }
+        ],
+        "special_attacks": [
+          "Time Stop 1/day",
+          "Meteor Swarm 2/day (24d6)",
+          "Gate 1/day",
+          "Power Word Stun 1/day",
+          "Dominate Person 3/day (DC 20)",
+          "Horrid Wilting 1/day (DC 23, 17d6)"
+        ],
+        "special_qualities": [
+          "Kin-Sense Silence (Ex): undetectable by Kin-sense; registers as no-signature at all, as if dead. DC 25 Will save or relevant class-level check to overcome.",
+          "Darkvision 120 ft.",
+          "Void Resonance (Su): on a confirmed hit with any spell, target must save or take 1 point of Wisdom drain as reality feels wrong.",
+          "Light sensitivity",
+          "Spells/day: 0th -- 6; 1st -- 8; 2nd -- 8; 3rd -- 8; 4th -- 7; 5th -- 7; 6th -- 7; 7th -- 6; 8th -- 3",
+          "Master of House: all D\u00f3mnathar within 60 ft gain +2 morale to attack, save, and skill checks",
+          "Pre-Invasion Blessing: heals 10 HP per round as long as the Spur Tower's Void Chamber is intact",
+          "Spell resistance 23"
+        ],
+        "feats": [
+          "Power Attack",
+          "Cleave",
+          "Weapon Focus (longsword)",
+          "Spell Focus (evocation)",
+          "Greater Spell Focus (evocation)",
+          "Empower Spell",
+          "Maximize Spell",
+          "Quicken Spell",
+          "Silent Spell",
+          "Still Spell",
+          "Craft Staff",
+          "Craft Wondrous Item",
+          "Spell Penetration",
+          "Greater Spell Penetration"
+        ],
+        "skills": {
+          "Bluff": 27,
+          "Concentration": 24,
+          "Diplomacy": 18,
+          "Intimidate": 22,
+          "Knowledge (arcana)": 24,
+          "Knowledge (history)": 20,
+          "Knowledge (the planes)": 20,
+          "Spellcraft": 24,
+          "Spot": 20
+        },
+        "saves": {
+          "Fort": 12,
+          "Ref": 10,
+          "Will": 15
+        },
+        "environment": "Deepwater Marches (Spur Tower throne level)",
+        "organization": "unique (the last living pre-invasion House Leader)",
+        "description": "He is four hundred and eighty-seven years old and has not changed in four hundred of them. He remembers the Scattering the way most Kin remember last summer. He was a general once; he remains a general now. His name is not spoken by his servants, and he does not remember what his mother called him."
+      }
+    ]
+  }
+}

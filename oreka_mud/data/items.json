@@ -1,98 +1,1181 @@
 [
-  {"vnum": 1, "name": "Club", "item_type": "weapon", "weight": 3, "value": 0, "description": "A simple wooden club.", "damage": [1,6,0], "properties": ["simple"]},
-  {"vnum": 2, "name": "Dagger", "item_type": "weapon", "weight": 1, "value": 2, "description": "A small, easily concealed blade.", "damage": [1,4,0], "properties": ["simple", "light", "thrown"]},
-  {"vnum": 3, "name": "Greatsword", "item_type": "weapon", "weight": 8, "value": 50, "description": "A massive two-handed sword.", "damage": [2,6,0], "properties": ["martial", "two-handed"]},
-  {"vnum": 4, "name": "Longbow", "item_type": "weapon", "weight": 3, "value": 75, "description": "A tall bow for ranged attacks.", "damage": [1,8,0], "properties": ["martial", "ranged"]},
-  {"vnum": 5, "name": "Shortsword", "item_type": "weapon", "weight": 2, "value": 10, "description": "A short, stabbing sword.", "damage": [1,6,0], "properties": ["martial", "light"]},
-  {"vnum": 6, "name": "Battleaxe", "item_type": "weapon", "weight": 6, "value": 10, "description": "A sturdy axe for battle.", "damage": [1,8,0], "properties": ["martial"]},
-  {"vnum": 7, "name": "Mace, Heavy", "item_type": "weapon", "weight": 8, "value": 12, "description": "A heavy, bludgeoning mace.", "damage": [1,8,0], "properties": ["simple"]},
-  {"vnum": 8, "name": "Quarterstaff", "item_type": "weapon", "weight": 4, "value": 0, "description": "A long wooden staff.", "damage": [1,6,0], "properties": ["simple", "two-handed"]},
-
-  {"vnum": 101, "name": "Padded Armor", "item_type": "armor", "weight": 10, "value": 5, "description": "Quilted layers of cloth.", "ac_bonus": 1, "properties": ["light"]},
-  {"vnum": 102, "name": "Leather Armor", "item_type": "armor", "weight": 15, "value": 10, "description": "Cured leather armor.", "ac_bonus": 2, "properties": ["light"]},
-  {"vnum": 103, "name": "Chain Shirt", "item_type": "armor", "weight": 25, "value": 100, "description": "A shirt of interlocking metal rings.", "ac_bonus": 4, "properties": ["light"]},
-  {"vnum": 104, "name": "Scale Mail", "item_type": "armor", "weight": 30, "value": 50, "description": "Armor of overlapping metal scales.", "ac_bonus": 4, "properties": ["medium"]},
-  {"vnum": 105, "name": "Breastplate", "item_type": "armor", "weight": 30, "value": 200, "description": "A solid metal chestplate.", "ac_bonus": 5, "properties": ["medium"]},
-  {"vnum": 106, "name": "Full Plate", "item_type": "armor", "weight": 50, "value": 1500, "description": "The best protection money can buy.", "ac_bonus": 8, "properties": ["heavy"]},
-  {"vnum": 107, "name": "Shield, Heavy Steel", "item_type": "shield", "weight": 15, "value": 20, "description": "A large steel shield.", "ac_bonus": 2, "properties": ["shield"]},
-  {"vnum": 108, "name": "Shield, Light Wooden", "item_type": "shield", "weight": 5, "value": 3, "description": "A small wooden shield.", "ac_bonus": 1, "properties": ["shield"]},
-
-  {"vnum": 201, "name": "Backpack", "item_type": "container", "weight": 2, "value": 2, "capacity": 15, "description": "A sturdy backpack for carrying gear."},
-  {"vnum": 202, "name": "Rope, 50 ft.", "item_type": "gear", "weight": 10, "value": 1, "description": "A 50-foot coil of hempen rope."},
-  {"vnum": 203, "name": "Torch", "item_type": "light", "weight": 0.2, "value": 0.01, "slot": "off_hand", "description": "A simple wooden torch."},
-  {"vnum": 204, "name": "Rations", "item_type": "food", "weight": 1, "value": 0.5, "description": "Enough food for one day."},
-  {"vnum": 205, "name": "Waterskin", "item_type": "drink", "weight": 4, "value": 1, "description": "A leather container for water."},
-  {"vnum": 206, "name": "Bedroll", "item_type": "gear", "weight": 5, "value": 0.1, "description": "A simple bedroll for sleeping."},
-  {"vnum": 207, "name": "Flint and Steel", "item_type": "gear", "weight": 0, "value": 1, "description": "Used to start fires."},
-  {"vnum": 208, "name": "Lantern, Hooded", "item_type": "gear", "weight": 2, "value": 7, "description": "A lantern with a hood to control light."},
-
-  {"vnum": 301, "name": "Potion of Cure Light Wounds", "item_type": "potion", "weight": 0.1, "value": 50, "description": "Heals 1d8+1 HP."},
-  {"vnum": 302, "name": "Potion of Bull's Strength", "item_type": "potion", "weight": 0.1, "value": 300, "description": "+4 Strength for 3 minutes."},
-  {"vnum": 303, "name": "Scroll of Magic Missile", "item_type": "scroll", "weight": 0.1, "value": 25, "description": "Casts Magic Missile."},
-  {"vnum": 304, "name": "Scroll of Fireball", "item_type": "scroll", "weight": 0.1, "value": 375, "description": "Casts Fireball."},
-
-  {"vnum": 401, "name": "+1 Longsword", "item_type": "weapon", "weight": 4, "value": 2315, "description": "A longsword with a +1 enhancement bonus.", "damage": [1,8,1], "magical": true, "properties": ["martial"]},
-  {"vnum": 402, "name": "+1 Chain Shirt", "item_type": "armor", "weight": 25, "value": 1250, "description": "A chain shirt with a +1 enhancement bonus.", "ac_bonus": 5, "magical": true, "properties": ["light"]},
-  {"vnum": 403, "name": "Cloak of Resistance +1", "item_type": "wondrous", "weight": 1, "value": 1000, "description": "+1 resistance bonus on all saves.", "properties": ["wondrous"]},
-  {"vnum": 404, "name": "Bag of Holding", "item_type": "wondrous", "weight": 15, "value": 2500, "description": "A bag that can hold far more than its size suggests.", "properties": ["wondrous"]},
-  {"vnum": 405, "name": "Ring of Protection +1", "item_type": "ring", "weight": 0, "value": 2000, "description": "+1 deflection bonus to AC.", "properties": ["ring"]},
-  {"vnum": 406, "name": "Amulet of Natural Armor +1", "item_type": "amulet", "weight": 0.1, "value": 2000, "description": "+1 natural armor bonus to AC.", "properties": ["amulet"]},
-
-  {"vnum": 500, "name": "Masterwork Longsword", "item_type": "weapon", "weight": 4, "value": 315, "description": "A beautifully crafted longsword. +1 to attack rolls.", "damage": [1,8,0], "properties": ["martial", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 501, "name": "Masterwork Shortsword", "item_type": "weapon", "weight": 2, "value": 310, "description": "A finely honed shortsword. +1 to attack rolls.", "damage": [1,6,0], "properties": ["martial", "light", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 502, "name": "Masterwork Battleaxe", "item_type": "weapon", "weight": 6, "value": 310, "description": "A masterfully forged battleaxe. +1 to attack rolls.", "damage": [1,8,0], "properties": ["martial", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 503, "name": "Masterwork Dagger", "item_type": "weapon", "weight": 1, "value": 302, "description": "A razor-sharp dagger of exceptional quality. +1 to attack rolls.", "damage": [1,4,0], "properties": ["simple", "light", "thrown", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 504, "name": "Masterwork Leather Armor", "item_type": "armor", "weight": 15, "value": 160, "description": "Supple leather armor of superior craftsmanship.", "ac_bonus": 2, "properties": ["light", "masterwork"], "complexity": "masterwork", "material": "leather"},
-  {"vnum": 505, "name": "Masterwork Chain Shirt", "item_type": "armor", "weight": 25, "value": 250, "description": "A finely linked chain shirt. Reduced armor check penalty.", "ac_bonus": 4, "properties": ["light", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 506, "name": "Masterwork Scale Mail", "item_type": "armor", "weight": 30, "value": 200, "description": "Expertly fitted scale mail with polished plates.", "ac_bonus": 4, "properties": ["medium", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 507, "name": "Masterwork Heavy Steel Shield", "item_type": "shield", "weight": 15, "value": 170, "description": "A heavy shield of superior craftsmanship.", "ac_bonus": 2, "properties": ["shield", "masterwork"], "complexity": "masterwork", "material": "steel"},
-  {"vnum": 508, "name": "Masterwork Longbow", "item_type": "weapon", "weight": 3, "value": 375, "description": "A precision-crafted longbow. +1 to attack rolls.", "damage": [1,8,0], "properties": ["martial", "ranged", "masterwork"], "complexity": "masterwork", "material": "wood"},
-
-  {"vnum": 510, "name": "+1 Shortsword", "item_type": "weapon", "weight": 2, "value": 2310, "description": "A shortsword with a +1 enhancement bonus. Glows faintly.", "damage": [1,6,1], "magical": true, "properties": ["martial", "light"]},
-  {"vnum": 511, "name": "+1 Battleaxe", "item_type": "weapon", "weight": 6, "value": 2310, "description": "A battleaxe with a +1 enhancement bonus. Hums with power.", "damage": [1,8,1], "magical": true, "properties": ["martial"]},
-  {"vnum": 512, "name": "+1 Dagger", "item_type": "weapon", "weight": 1, "value": 2302, "description": "A dagger with a +1 enhancement bonus. Never dulls.", "damage": [1,4,1], "magical": true, "properties": ["simple", "light", "thrown"]},
-  {"vnum": 513, "name": "+1 Leather Armor", "item_type": "armor", "weight": 15, "value": 1160, "description": "Leather armor with a +1 enhancement bonus.", "ac_bonus": 3, "magical": true, "properties": ["light"]},
-  {"vnum": 514, "name": "+1 Scale Mail", "item_type": "armor", "weight": 30, "value": 1200, "description": "Scale mail with a +1 enhancement bonus.", "ac_bonus": 5, "magical": true, "properties": ["medium"]},
-  {"vnum": 515, "name": "+1 Heavy Steel Shield", "item_type": "shield", "weight": 15, "value": 1170, "description": "A heavy steel shield with a +1 enhancement bonus.", "ac_bonus": 3, "magical": true, "properties": ["shield"]},
-  {"vnum": 516, "name": "+1 Longbow", "item_type": "weapon", "weight": 3, "value": 2375, "description": "A longbow with a +1 enhancement bonus. Arrows fly true.", "damage": [1,8,1], "magical": true, "properties": ["martial", "ranged"]},
-
-  {"vnum": 520, "name": "+2 Longsword", "item_type": "weapon", "weight": 4, "value": 8315, "description": "A longsword with a +2 enhancement bonus. Blazes with inner light.", "damage": [1,8,2], "magical": true, "properties": ["martial"]},
-  {"vnum": 521, "name": "+2 Chain Shirt", "item_type": "armor", "weight": 25, "value": 4250, "description": "A chain shirt with a +2 enhancement bonus.", "ac_bonus": 6, "magical": true, "properties": ["light"]},
-  {"vnum": 522, "name": "+2 Heavy Steel Shield", "item_type": "shield", "weight": 15, "value": 4170, "description": "A heavy steel shield with a +2 enhancement bonus.", "ac_bonus": 4, "magical": true, "properties": ["shield"]},
-  {"vnum": 523, "name": "Cloak of Resistance +2", "item_type": "cloak", "weight": 1, "value": 4000, "description": "+2 resistance bonus on all saves.", "slot": "shoulders", "properties": ["wondrous"]},
-  {"vnum": 524, "name": "Ring of Protection +2", "item_type": "ring", "weight": 0, "value": 8000, "description": "+2 deflection bonus to AC.", "properties": ["ring"]},
-  {"vnum": 525, "name": "Gauntlets of Ogre Power", "item_type": "gauntlets", "weight": 4, "value": 4000, "description": "+2 enhancement bonus to Strength.", "slot": "hands", "stat_bonuses": {"Str": 2}, "magical": true, "properties": ["wondrous"]},
-
-  {"vnum": 600, "name": "Arcane Ink", "item_type": "material", "weight": 0.1, "value": 10, "description": "Shimmering ink infused with arcane energy, used for scroll scribing."},
-  {"vnum": 601, "name": "Blank Parchment", "item_type": "material", "weight": 0.1, "value": 1, "description": "A sheet of fine parchment suitable for scroll scribing."},
-  {"vnum": 602, "name": "Blank Scroll Case", "item_type": "material", "weight": 0.2, "value": 5, "description": "A reinforced scroll case for higher-level scrolls."},
-  {"vnum": 603, "name": "Purified Water", "item_type": "material", "weight": 1, "value": 2, "description": "Ritually purified water, essential for potion brewing."},
-  {"vnum": 604, "name": "Alchemical Reagent", "item_type": "material", "weight": 0.5, "value": 15, "description": "A volatile mixture of rare compounds used in alchemy."},
-  {"vnum": 605, "name": "Enchanting Dust", "item_type": "material", "weight": 0.1, "value": 50, "description": "Fine crystalline dust that resonates with magical energy. Essential for enchanting."},
-  {"vnum": 606, "name": "Elemental Essence (Fire)", "item_type": "material", "weight": 0.2, "value": 100, "description": "A captured fragment of elemental fire, pulsing with heat."},
-  {"vnum": 607, "name": "Elemental Essence (Cold)", "item_type": "material", "weight": 0.2, "value": 100, "description": "A shard of crystallized cold, painfully frigid to the touch."},
-  {"vnum": 608, "name": "Elemental Essence (Lightning)", "item_type": "material", "weight": 0.2, "value": 100, "description": "A crackling mote of captured lightning, contained in a glass sphere."},
-  {"vnum": 609, "name": "Elemental Essence (Acid)", "item_type": "material", "weight": 0.2, "value": 100, "description": "A bubbling vial of concentrated elemental acid."},
-  {"vnum": 610, "name": "Mystical Gemstone", "item_type": "material", "weight": 0.3, "value": 200, "description": "A gemstone that pulses with inner magical light. Used in rings and wondrous items."},
-  {"vnum": 611, "name": "Wand Blank (Oak)", "item_type": "material", "weight": 0.5, "value": 25, "description": "A carefully shaped oak rod prepared for wand crafting."},
-  {"vnum": 612, "name": "Wand Blank (Yew)", "item_type": "material", "weight": 0.5, "value": 50, "description": "A yew rod of exceptional quality, suitable for powerful wands."},
-  {"vnum": 613, "name": "Rod Core", "item_type": "material", "weight": 2, "value": 150, "description": "A dense metallic core around which magical rods are constructed."},
-  {"vnum": 614, "name": "Staff Shaft", "item_type": "material", "weight": 3, "value": 200, "description": "A length of ancient wood, perfectly suited for staff crafting."},
-  {"vnum": 615, "name": "Base Ring (Silver)", "item_type": "material", "weight": 0.1, "value": 30, "description": "A plain silver ring band, ready to be enchanted."},
-  {"vnum": 616, "name": "Base Ring (Gold)", "item_type": "material", "weight": 0.1, "value": 100, "description": "A plain gold ring band of high purity."},
-  {"vnum": 617, "name": "Base Ring (Mithral)", "item_type": "material", "weight": 0.1, "value": 500, "description": "A mithral ring band that hums faintly with latent magic."},
-  {"vnum": 618, "name": "Pristine Crystal", "item_type": "material", "weight": 0.5, "value": 75, "description": "A flawless crystal that focuses and amplifies magical energy."},
-  {"vnum": 619, "name": "Phoenix Feather", "item_type": "material", "weight": 0.1, "value": 500, "description": "A radiant feather from a phoenix, warm to the touch. Extremely rare."},
-  {"vnum": 620, "name": "Unicorn Hair", "item_type": "material", "weight": 0.1, "value": 250, "description": "A single hair from a unicorn's mane, shimmering with purity."},
-  {"vnum": 621, "name": "Essence of Divination", "item_type": "material", "weight": 0.2, "value": 100, "description": "A swirling liquid that shows glimpses of possible futures."},
-  {"vnum": 622, "name": "Shadow Silk", "item_type": "material", "weight": 0.3, "value": 80, "description": "Fabric woven from shadowstuff. Light seems to bend around it."},
-  {"vnum": 623, "name": "Celestial Thread", "item_type": "material", "weight": 0.1, "value": 300, "description": "Thread spun from celestial essence, glowing with soft golden light."},
-  {"vnum": 624, "name": "Infernal Binding", "item_type": "material", "weight": 0.5, "value": 250, "description": "Dark chains of condensed fiendish energy, used in rod and staff crafting."},
-  {"vnum": 625, "name": "Mage's Quicksilver", "item_type": "material", "weight": 0.3, "value": 50, "description": "Liquid metal that responds to magical intention. A universal enchanting catalyst."},
-  {"vnum": 650, "name": "Glass Vial", "item_type": "material", "weight": 0.1, "value": 1, "description": "A small glass vial suitable for holding potions."},
-  {"vnum": 651, "name": "Leather Strip", "item_type": "material", "weight": 0.2, "value": 0.5, "description": "A prepared strip of leather for weapon grips and armor bindings."},
-  {"vnum": 652, "name": "Silver Wire", "item_type": "material", "weight": 0.1, "value": 5, "description": "Fine silver wire used in jewelry and amulet crafting."},
-  {"vnum": 653, "name": "Gem Dust", "item_type": "material", "weight": 0.1, "value": 25, "description": "Finely ground gemstone powder used in enchanting."},
-  {"vnum": 654, "name": "Masterwork Weapon Kit", "item_type": "material", "weight": 2, "value": 300, "description": "Specialized tools and premium materials for creating masterwork weapons."},
-  {"vnum": 655, "name": "Masterwork Armor Kit", "item_type": "material", "weight": 3, "value": 150, "description": "Specialized tools and premium materials for creating masterwork armor."}
+  {
+    "vnum": 1,
+    "name": "Club",
+    "item_type": "weapon",
+    "weight": 3,
+    "value": 0,
+    "description": "A simple wooden club.",
+    "damage": [
+      1,
+      6,
+      0
+    ],
+    "properties": [
+      "simple"
+    ]
+  },
+  {
+    "vnum": 2,
+    "name": "Dagger",
+    "item_type": "weapon",
+    "weight": 1,
+    "value": 2,
+    "description": "A small, easily concealed blade.",
+    "damage": [
+      1,
+      4,
+      0
+    ],
+    "properties": [
+      "simple",
+      "light",
+      "thrown"
+    ]
+  },
+  {
+    "vnum": 3,
+    "name": "Greatsword",
+    "item_type": "weapon",
+    "weight": 8,
+    "value": 50,
+    "description": "A massive two-handed sword.",
+    "damage": [
+      2,
+      6,
+      0
+    ],
+    "properties": [
+      "martial",
+      "two-handed"
+    ]
+  },
+  {
+    "vnum": 4,
+    "name": "Longbow",
+    "item_type": "weapon",
+    "weight": 3,
+    "value": 75,
+    "description": "A tall bow for ranged attacks.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "martial",
+      "ranged"
+    ]
+  },
+  {
+    "vnum": 5,
+    "name": "Shortsword",
+    "item_type": "weapon",
+    "weight": 2,
+    "value": 10,
+    "description": "A short, stabbing sword.",
+    "damage": [
+      1,
+      6,
+      0
+    ],
+    "properties": [
+      "martial",
+      "light"
+    ]
+  },
+  {
+    "vnum": 6,
+    "name": "Battleaxe",
+    "item_type": "weapon",
+    "weight": 6,
+    "value": 10,
+    "description": "A sturdy axe for battle.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "martial"
+    ]
+  },
+  {
+    "vnum": 7,
+    "name": "Mace, Heavy",
+    "item_type": "weapon",
+    "weight": 8,
+    "value": 12,
+    "description": "A heavy, bludgeoning mace.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "simple"
+    ]
+  },
+  {
+    "vnum": 8,
+    "name": "Quarterstaff",
+    "item_type": "weapon",
+    "weight": 4,
+    "value": 0,
+    "description": "A long wooden staff.",
+    "damage": [
+      1,
+      6,
+      0
+    ],
+    "properties": [
+      "simple",
+      "two-handed"
+    ]
+  },
+  {
+    "vnum": 101,
+    "name": "Padded Armor",
+    "item_type": "armor",
+    "weight": 10,
+    "value": 5,
+    "description": "Quilted layers of cloth.",
+    "ac_bonus": 1,
+    "properties": [
+      "light"
+    ]
+  },
+  {
+    "vnum": 102,
+    "name": "Leather Armor",
+    "item_type": "armor",
+    "weight": 15,
+    "value": 10,
+    "description": "Cured leather armor.",
+    "ac_bonus": 2,
+    "properties": [
+      "light"
+    ]
+  },
+  {
+    "vnum": 103,
+    "name": "Chain Shirt",
+    "item_type": "armor",
+    "weight": 25,
+    "value": 100,
+    "description": "A shirt of interlocking metal rings.",
+    "ac_bonus": 4,
+    "properties": [
+      "light"
+    ]
+  },
+  {
+    "vnum": 104,
+    "name": "Scale Mail",
+    "item_type": "armor",
+    "weight": 30,
+    "value": 50,
+    "description": "Armor of overlapping metal scales.",
+    "ac_bonus": 4,
+    "properties": [
+      "medium"
+    ]
+  },
+  {
+    "vnum": 105,
+    "name": "Breastplate",
+    "item_type": "armor",
+    "weight": 30,
+    "value": 200,
+    "description": "A solid metal chestplate.",
+    "ac_bonus": 5,
+    "properties": [
+      "medium"
+    ]
+  },
+  {
+    "vnum": 106,
+    "name": "Full Plate",
+    "item_type": "armor",
+    "weight": 50,
+    "value": 1500,
+    "description": "The best protection money can buy.",
+    "ac_bonus": 8,
+    "properties": [
+      "heavy"
+    ]
+  },
+  {
+    "vnum": 107,
+    "name": "Shield, Heavy Steel",
+    "item_type": "shield",
+    "weight": 15,
+    "value": 20,
+    "description": "A large steel shield.",
+    "ac_bonus": 2,
+    "properties": [
+      "shield"
+    ]
+  },
+  {
+    "vnum": 108,
+    "name": "Shield, Light Wooden",
+    "item_type": "shield",
+    "weight": 5,
+    "value": 3,
+    "description": "A small wooden shield.",
+    "ac_bonus": 1,
+    "properties": [
+      "shield"
+    ]
+  },
+  {
+    "vnum": 201,
+    "name": "Backpack",
+    "item_type": "container",
+    "weight": 2,
+    "value": 2,
+    "capacity": 15,
+    "description": "A sturdy backpack for carrying gear."
+  },
+  {
+    "vnum": 202,
+    "name": "Rope, 50 ft.",
+    "item_type": "gear",
+    "weight": 10,
+    "value": 1,
+    "description": "A 50-foot coil of hempen rope."
+  },
+  {
+    "vnum": 203,
+    "name": "Torch",
+    "item_type": "light",
+    "weight": 0.2,
+    "value": 0.01,
+    "slot": "off_hand",
+    "description": "A simple wooden torch."
+  },
+  {
+    "vnum": 204,
+    "name": "Rations",
+    "item_type": "food",
+    "weight": 1,
+    "value": 0.5,
+    "description": "Enough food for one day."
+  },
+  {
+    "vnum": 205,
+    "name": "Waterskin",
+    "item_type": "drink",
+    "weight": 4,
+    "value": 1,
+    "description": "A leather container for water."
+  },
+  {
+    "vnum": 206,
+    "name": "Bedroll",
+    "item_type": "gear",
+    "weight": 5,
+    "value": 0.1,
+    "description": "A simple bedroll for sleeping."
+  },
+  {
+    "vnum": 207,
+    "name": "Flint and Steel",
+    "item_type": "gear",
+    "weight": 0,
+    "value": 1,
+    "description": "Used to start fires."
+  },
+  {
+    "vnum": 208,
+    "name": "Lantern, Hooded",
+    "item_type": "gear",
+    "weight": 2,
+    "value": 7,
+    "description": "A lantern with a hood to control light."
+  },
+  {
+    "vnum": 301,
+    "name": "Potion of Cure Light Wounds",
+    "item_type": "potion",
+    "weight": 0.1,
+    "value": 50,
+    "description": "Heals 1d8+1 HP."
+  },
+  {
+    "vnum": 302,
+    "name": "Potion of Bull's Strength",
+    "item_type": "potion",
+    "weight": 0.1,
+    "value": 300,
+    "description": "+4 Strength for 3 minutes."
+  },
+  {
+    "vnum": 303,
+    "name": "Scroll of Magic Missile",
+    "item_type": "scroll",
+    "weight": 0.1,
+    "value": 25,
+    "description": "Casts Magic Missile."
+  },
+  {
+    "vnum": 304,
+    "name": "Scroll of Fireball",
+    "item_type": "scroll",
+    "weight": 0.1,
+    "value": 375,
+    "description": "Casts Fireball."
+  },
+  {
+    "vnum": 401,
+    "name": "+1 Longsword",
+    "item_type": "weapon",
+    "weight": 4,
+    "value": 2315,
+    "description": "A longsword with a +1 enhancement bonus.",
+    "damage": [
+      1,
+      8,
+      1
+    ],
+    "magical": true,
+    "properties": [
+      "martial"
+    ]
+  },
+  {
+    "vnum": 402,
+    "name": "+1 Chain Shirt",
+    "item_type": "armor",
+    "weight": 25,
+    "value": 1250,
+    "description": "A chain shirt with a +1 enhancement bonus.",
+    "ac_bonus": 5,
+    "magical": true,
+    "properties": [
+      "light"
+    ]
+  },
+  {
+    "vnum": 403,
+    "name": "Cloak of Resistance +1",
+    "item_type": "wondrous",
+    "weight": 1,
+    "value": 1000,
+    "description": "+1 resistance bonus on all saves.",
+    "properties": [
+      "wondrous"
+    ]
+  },
+  {
+    "vnum": 404,
+    "name": "Bag of Holding",
+    "item_type": "wondrous",
+    "weight": 15,
+    "value": 2500,
+    "description": "A bag that can hold far more than its size suggests.",
+    "properties": [
+      "wondrous"
+    ]
+  },
+  {
+    "vnum": 405,
+    "name": "Ring of Protection +1",
+    "item_type": "ring",
+    "weight": 0,
+    "value": 2000,
+    "description": "+1 deflection bonus to AC.",
+    "properties": [
+      "ring"
+    ]
+  },
+  {
+    "vnum": 406,
+    "name": "Amulet of Natural Armor +1",
+    "item_type": "amulet",
+    "weight": 0.1,
+    "value": 2000,
+    "description": "+1 natural armor bonus to AC.",
+    "properties": [
+      "amulet"
+    ]
+  },
+  {
+    "vnum": 500,
+    "name": "Masterwork Longsword",
+    "item_type": "weapon",
+    "weight": 4,
+    "value": 315,
+    "description": "A beautifully crafted longsword. +1 to attack rolls.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "martial",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 501,
+    "name": "Masterwork Shortsword",
+    "item_type": "weapon",
+    "weight": 2,
+    "value": 310,
+    "description": "A finely honed shortsword. +1 to attack rolls.",
+    "damage": [
+      1,
+      6,
+      0
+    ],
+    "properties": [
+      "martial",
+      "light",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 502,
+    "name": "Masterwork Battleaxe",
+    "item_type": "weapon",
+    "weight": 6,
+    "value": 310,
+    "description": "A masterfully forged battleaxe. +1 to attack rolls.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "martial",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 503,
+    "name": "Masterwork Dagger",
+    "item_type": "weapon",
+    "weight": 1,
+    "value": 302,
+    "description": "A razor-sharp dagger of exceptional quality. +1 to attack rolls.",
+    "damage": [
+      1,
+      4,
+      0
+    ],
+    "properties": [
+      "simple",
+      "light",
+      "thrown",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 504,
+    "name": "Masterwork Leather Armor",
+    "item_type": "armor",
+    "weight": 15,
+    "value": 160,
+    "description": "Supple leather armor of superior craftsmanship.",
+    "ac_bonus": 2,
+    "properties": [
+      "light",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "leather"
+  },
+  {
+    "vnum": 505,
+    "name": "Masterwork Chain Shirt",
+    "item_type": "armor",
+    "weight": 25,
+    "value": 250,
+    "description": "A finely linked chain shirt. Reduced armor check penalty.",
+    "ac_bonus": 4,
+    "properties": [
+      "light",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 506,
+    "name": "Masterwork Scale Mail",
+    "item_type": "armor",
+    "weight": 30,
+    "value": 200,
+    "description": "Expertly fitted scale mail with polished plates.",
+    "ac_bonus": 4,
+    "properties": [
+      "medium",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 507,
+    "name": "Masterwork Heavy Steel Shield",
+    "item_type": "shield",
+    "weight": 15,
+    "value": 170,
+    "description": "A heavy shield of superior craftsmanship.",
+    "ac_bonus": 2,
+    "properties": [
+      "shield",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "steel"
+  },
+  {
+    "vnum": 508,
+    "name": "Masterwork Longbow",
+    "item_type": "weapon",
+    "weight": 3,
+    "value": 375,
+    "description": "A precision-crafted longbow. +1 to attack rolls.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "martial",
+      "ranged",
+      "masterwork"
+    ],
+    "complexity": "masterwork",
+    "material": "wood"
+  },
+  {
+    "vnum": 510,
+    "name": "+1 Shortsword",
+    "item_type": "weapon",
+    "weight": 2,
+    "value": 2310,
+    "description": "A shortsword with a +1 enhancement bonus. Glows faintly.",
+    "damage": [
+      1,
+      6,
+      1
+    ],
+    "magical": true,
+    "properties": [
+      "martial",
+      "light"
+    ]
+  },
+  {
+    "vnum": 511,
+    "name": "+1 Battleaxe",
+    "item_type": "weapon",
+    "weight": 6,
+    "value": 2310,
+    "description": "A battleaxe with a +1 enhancement bonus. Hums with power.",
+    "damage": [
+      1,
+      8,
+      1
+    ],
+    "magical": true,
+    "properties": [
+      "martial"
+    ]
+  },
+  {
+    "vnum": 512,
+    "name": "+1 Dagger",
+    "item_type": "weapon",
+    "weight": 1,
+    "value": 2302,
+    "description": "A dagger with a +1 enhancement bonus. Never dulls.",
+    "damage": [
+      1,
+      4,
+      1
+    ],
+    "magical": true,
+    "properties": [
+      "simple",
+      "light",
+      "thrown"
+    ]
+  },
+  {
+    "vnum": 513,
+    "name": "+1 Leather Armor",
+    "item_type": "armor",
+    "weight": 15,
+    "value": 1160,
+    "description": "Leather armor with a +1 enhancement bonus.",
+    "ac_bonus": 3,
+    "magical": true,
+    "properties": [
+      "light"
+    ]
+  },
+  {
+    "vnum": 514,
+    "name": "+1 Scale Mail",
+    "item_type": "armor",
+    "weight": 30,
+    "value": 1200,
+    "description": "Scale mail with a +1 enhancement bonus.",
+    "ac_bonus": 5,
+    "magical": true,
+    "properties": [
+      "medium"
+    ]
+  },
+  {
+    "vnum": 515,
+    "name": "+1 Heavy Steel Shield",
+    "item_type": "shield",
+    "weight": 15,
+    "value": 1170,
+    "description": "A heavy steel shield with a +1 enhancement bonus.",
+    "ac_bonus": 3,
+    "magical": true,
+    "properties": [
+      "shield"
+    ]
+  },
+  {
+    "vnum": 516,
+    "name": "+1 Longbow",
+    "item_type": "weapon",
+    "weight": 3,
+    "value": 2375,
+    "description": "A longbow with a +1 enhancement bonus. Arrows fly true.",
+    "damage": [
+      1,
+      8,
+      1
+    ],
+    "magical": true,
+    "properties": [
+      "martial",
+      "ranged"
+    ]
+  },
+  {
+    "vnum": 520,
+    "name": "+2 Longsword",
+    "item_type": "weapon",
+    "weight": 4,
+    "value": 8315,
+    "description": "A longsword with a +2 enhancement bonus. Blazes with inner light.",
+    "damage": [
+      1,
+      8,
+      2
+    ],
+    "magical": true,
+    "properties": [
+      "martial"
+    ]
+  },
+  {
+    "vnum": 521,
+    "name": "+2 Chain Shirt",
+    "item_type": "armor",
+    "weight": 25,
+    "value": 4250,
+    "description": "A chain shirt with a +2 enhancement bonus.",
+    "ac_bonus": 6,
+    "magical": true,
+    "properties": [
+      "light"
+    ]
+  },
+  {
+    "vnum": 522,
+    "name": "+2 Heavy Steel Shield",
+    "item_type": "shield",
+    "weight": 15,
+    "value": 4170,
+    "description": "A heavy steel shield with a +2 enhancement bonus.",
+    "ac_bonus": 4,
+    "magical": true,
+    "properties": [
+      "shield"
+    ]
+  },
+  {
+    "vnum": 523,
+    "name": "Cloak of Resistance +2",
+    "item_type": "cloak",
+    "weight": 1,
+    "value": 4000,
+    "description": "+2 resistance bonus on all saves.",
+    "slot": "shoulders",
+    "properties": [
+      "wondrous"
+    ]
+  },
+  {
+    "vnum": 524,
+    "name": "Ring of Protection +2",
+    "item_type": "ring",
+    "weight": 0,
+    "value": 8000,
+    "description": "+2 deflection bonus to AC.",
+    "properties": [
+      "ring"
+    ]
+  },
+  {
+    "vnum": 525,
+    "name": "Gauntlets of Ogre Power",
+    "item_type": "gauntlets",
+    "weight": 4,
+    "value": 4000,
+    "description": "+2 enhancement bonus to Strength.",
+    "slot": "hands",
+    "stat_bonuses": {
+      "Str": 2
+    },
+    "magical": true,
+    "properties": [
+      "wondrous"
+    ]
+  },
+  {
+    "vnum": 600,
+    "name": "Arcane Ink",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 10,
+    "description": "Shimmering ink infused with arcane energy, used for scroll scribing."
+  },
+  {
+    "vnum": 601,
+    "name": "Blank Parchment",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 1,
+    "description": "A sheet of fine parchment suitable for scroll scribing."
+  },
+  {
+    "vnum": 602,
+    "name": "Blank Scroll Case",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 5,
+    "description": "A reinforced scroll case for higher-level scrolls."
+  },
+  {
+    "vnum": 603,
+    "name": "Purified Water",
+    "item_type": "material",
+    "weight": 1,
+    "value": 2,
+    "description": "Ritually purified water, essential for potion brewing."
+  },
+  {
+    "vnum": 604,
+    "name": "Alchemical Reagent",
+    "item_type": "material",
+    "weight": 0.5,
+    "value": 15,
+    "description": "A volatile mixture of rare compounds used in alchemy."
+  },
+  {
+    "vnum": 605,
+    "name": "Enchanting Dust",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 50,
+    "description": "Fine crystalline dust that resonates with magical energy. Essential for enchanting."
+  },
+  {
+    "vnum": 606,
+    "name": "Elemental Essence (Fire)",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 100,
+    "description": "A captured fragment of elemental fire, pulsing with heat."
+  },
+  {
+    "vnum": 607,
+    "name": "Elemental Essence (Cold)",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 100,
+    "description": "A shard of crystallized cold, painfully frigid to the touch."
+  },
+  {
+    "vnum": 608,
+    "name": "Elemental Essence (Lightning)",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 100,
+    "description": "A crackling mote of captured lightning, contained in a glass sphere."
+  },
+  {
+    "vnum": 609,
+    "name": "Elemental Essence (Acid)",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 100,
+    "description": "A bubbling vial of concentrated elemental acid."
+  },
+  {
+    "vnum": 610,
+    "name": "Mystical Gemstone",
+    "item_type": "material",
+    "weight": 0.3,
+    "value": 200,
+    "description": "A gemstone that pulses with inner magical light. Used in rings and wondrous items."
+  },
+  {
+    "vnum": 611,
+    "name": "Wand Blank (Oak)",
+    "item_type": "material",
+    "weight": 0.5,
+    "value": 25,
+    "description": "A carefully shaped oak rod prepared for wand crafting."
+  },
+  {
+    "vnum": 612,
+    "name": "Wand Blank (Yew)",
+    "item_type": "material",
+    "weight": 0.5,
+    "value": 50,
+    "description": "A yew rod of exceptional quality, suitable for powerful wands."
+  },
+  {
+    "vnum": 613,
+    "name": "Rod Core",
+    "item_type": "material",
+    "weight": 2,
+    "value": 150,
+    "description": "A dense metallic core around which magical rods are constructed."
+  },
+  {
+    "vnum": 614,
+    "name": "Staff Shaft",
+    "item_type": "material",
+    "weight": 3,
+    "value": 200,
+    "description": "A length of ancient wood, perfectly suited for staff crafting."
+  },
+  {
+    "vnum": 615,
+    "name": "Base Ring (Silver)",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 30,
+    "description": "A plain silver ring band, ready to be enchanted."
+  },
+  {
+    "vnum": 616,
+    "name": "Base Ring (Gold)",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 100,
+    "description": "A plain gold ring band of high purity."
+  },
+  {
+    "vnum": 617,
+    "name": "Base Ring (Mithral)",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 500,
+    "description": "A mithral ring band that hums faintly with latent magic."
+  },
+  {
+    "vnum": 618,
+    "name": "Pristine Crystal",
+    "item_type": "material",
+    "weight": 0.5,
+    "value": 75,
+    "description": "A flawless crystal that focuses and amplifies magical energy."
+  },
+  {
+    "vnum": 619,
+    "name": "Phoenix Feather",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 500,
+    "description": "A radiant feather from a phoenix, warm to the touch. Extremely rare."
+  },
+  {
+    "vnum": 620,
+    "name": "Unicorn Hair",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 250,
+    "description": "A single hair from a unicorn's mane, shimmering with purity."
+  },
+  {
+    "vnum": 621,
+    "name": "Essence of Divination",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 100,
+    "description": "A swirling liquid that shows glimpses of possible futures."
+  },
+  {
+    "vnum": 622,
+    "name": "Shadow Silk",
+    "item_type": "material",
+    "weight": 0.3,
+    "value": 80,
+    "description": "Fabric woven from shadowstuff. Light seems to bend around it."
+  },
+  {
+    "vnum": 623,
+    "name": "Celestial Thread",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 300,
+    "description": "Thread spun from celestial essence, glowing with soft golden light."
+  },
+  {
+    "vnum": 624,
+    "name": "Infernal Binding",
+    "item_type": "material",
+    "weight": 0.5,
+    "value": 250,
+    "description": "Dark chains of condensed fiendish energy, used in rod and staff crafting."
+  },
+  {
+    "vnum": 625,
+    "name": "Mage's Quicksilver",
+    "item_type": "material",
+    "weight": 0.3,
+    "value": 50,
+    "description": "Liquid metal that responds to magical intention. A universal enchanting catalyst."
+  },
+  {
+    "vnum": 650,
+    "name": "Glass Vial",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 1,
+    "description": "A small glass vial suitable for holding potions."
+  },
+  {
+    "vnum": 651,
+    "name": "Leather Strip",
+    "item_type": "material",
+    "weight": 0.2,
+    "value": 0.5,
+    "description": "A prepared strip of leather for weapon grips and armor bindings."
+  },
+  {
+    "vnum": 652,
+    "name": "Silver Wire",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 5,
+    "description": "Fine silver wire used in jewelry and amulet crafting."
+  },
+  {
+    "vnum": 653,
+    "name": "Gem Dust",
+    "item_type": "material",
+    "weight": 0.1,
+    "value": 25,
+    "description": "Finely ground gemstone powder used in enchanting."
+  },
+  {
+    "vnum": 654,
+    "name": "Masterwork Weapon Kit",
+    "item_type": "material",
+    "weight": 2,
+    "value": 300,
+    "description": "Specialized tools and premium materials for creating masterwork weapons."
+  },
+  {
+    "vnum": 655,
+    "name": "Masterwork Armor Kit",
+    "item_type": "material",
+    "weight": 3,
+    "value": 150,
+    "description": "Specialized tools and premium materials for creating masterwork armor."
+  },
+  {
+    "vnum": 700,
+    "name": "Masterwork Shortsword",
+    "item_type": "weapon",
+    "weight": 2,
+    "value": 310,
+    "description": "A well-balanced shortsword with a blued steel blade and a leather-wrapped grip. The workmanship grants a +1 bonus to attack rolls.",
+    "damage": [
+      1,
+      6,
+      0
+    ],
+    "properties": [
+      "martial",
+      "masterwork"
+    ]
+  },
+  {
+    "vnum": 701,
+    "name": "Masterwork Studded Leather",
+    "item_type": "armor",
+    "weight": 20,
+    "value": 175,
+    "description": "Supple leather armor reinforced with closely-spaced iron studs. The exacting fit reduces its armor check penalty and allows freer movement.",
+    "ac_bonus": 3,
+    "properties": [
+      "medium",
+      "masterwork"
+    ]
+  },
+  {
+    "vnum": 702,
+    "name": "Pekakarlik Signet Ring",
+    "item_type": "ring",
+    "weight": 0,
+    "value": 50,
+    "description": "A ring of dull grey stone polished smooth, its face carved with the overturned-anvil mark of the Pekakarlik tunnel-stewards. It is not magical, but Pekakarlik who see it worn tend to notice.",
+    "properties": [
+      "ring",
+      "flavor"
+    ]
+  },
+  {
+    "vnum": 703,
+    "name": "Waterward Amulet",
+    "item_type": "amulet",
+    "weight": 0.1,
+    "value": 300,
+    "description": "A carved river-pearl hung on a silver chain, blessed at a shrine of Semyon. Grants resistance 5 against cold damage.",
+    "properties": [
+      "amulet",
+      "minor_magic"
+    ]
+  },
+  {
+    "vnum": 704,
+    "name": "Shrine Pendant of Semyon",
+    "item_type": "amulet",
+    "weight": 0.1,
+    "value": 200,
+    "description": "A small bronze pendant stamped with Semyon's river-crown. Grants a +1 sacred bonus on Will saves made against water-elemental effects.",
+    "properties": [
+      "amulet",
+      "minor_magic"
+    ]
+  },
+  {
+    "vnum": 705,
+    "name": "Dark-Iron Dagger",
+    "item_type": "weapon",
+    "weight": 1,
+    "value": 310,
+    "description": "A dwarven-forged dagger of iron smelted in a Deceiver-era foundry. The metal is blacker than ordinary iron and takes and keeps an edge superbly. Masterwork: +1 to attack.",
+    "damage": [
+      1,
+      4,
+      0
+    ],
+    "properties": [
+      "simple",
+      "masterwork"
+    ]
+  },
+  {
+    "vnum": 706,
+    "name": "Kobold Fire-Cloak",
+    "item_type": "cloak",
+    "weight": 1,
+    "value": 200,
+    "description": "A shoulder-cloak of overlapping reddish kobold scales stitched on canvas backing. The scales are dense enough to shrug aside small fires; grants +1 circumstance bonus on saves against fire effects.",
+    "slot": "shoulders",
+    "properties": [
+      "cloak",
+      "minor_magic"
+    ]
+  },
+  {
+    "vnum": 707,
+    "name": "Void-Touched Warhammer",
+    "item_type": "weapon",
+    "weight": 8,
+    "value": 2310,
+    "description": "A +1 warhammer whose head is banded with bars of dark iron. In dim light, the iron seems to swallow illumination rather than reflect it. On a critical hit, target saves vs Will DC 15 or is silenced for 1 round.",
+    "damage": [
+      1,
+      8,
+      1
+    ],
+    "properties": [
+      "martial",
+      "magical",
+      "+1"
+    ]
+  },
+  {
+    "vnum": 708,
+    "name": "Dómnathar Cipher-Tablet",
+    "item_type": "gear",
+    "weight": 2,
+    "value": 100,
+    "description": "A slate tablet engraved with Dómnathar rank-cipher, small enough to fit in a belt-pouch. Of no combat value; but Kin intelligence-officers will pay handsomely for a clean copy, and the Wind-Riders will extend faction credit to whoever brings one in.",
+    "properties": [
+      "quest",
+      "faction"
+    ]
+  },
+  {
+    "vnum": 709,
+    "name": "Dark-Iron Longsword",
+    "item_type": "weapon",
+    "weight": 4,
+    "value": 315,
+    "description": "A longsword forged in Deceiver foundries from dark iron. The blade is blacker than night steel and takes an edge beautifully. Masterwork: +1 to attack.",
+    "damage": [
+      1,
+      8,
+      0
+    ],
+    "properties": [
+      "martial",
+      "masterwork"
+    ]
+  },
+  {
+    "vnum": 710,
+    "name": "Suppressor-Iron Collar",
+    "item_type": "wondrous",
+    "weight": 2,
+    "value": 4000,
+    "description": "A collar of dark iron worked with runes not of Kin script. When worn, the wearer registers as dead to Kin-sense -- the same effect the Dómnathar use to hide captives from search-magic. Neutral in alignment, dangerous in intent.",
+    "slot": "neck",
+    "properties": [
+      "wondrous",
+      "magical"
+    ]
+  },
+  {
+    "vnum": 711,
+    "name": "Void-Rod of the Silent Host",
+    "item_type": "wondrous",
+    "weight": 3,
+    "value": 12000,
+    "description": "A smooth black rod of unknown material, warm to the touch. 3/day the bearer may cast Silence (DC 15) centered on a target within 60 ft. 1/day the bearer may cast Dispel Magic at caster level 12.",
+    "properties": [
+      "wondrous",
+      "magical",
+      "charged"
+    ]
+  }
 ]

@@ -1,0 +1,130 @@
+{
+  "_schema": {
+    "version": 1,
+    "comment": "Hidden quests revealed by NPCs only when player rep passes the threshold. Each quest has a delivery_mode that determines the narrative framing of the reveal."
+  },
+  "quests": [
+    {
+      "id": "far_riders_deserter",
+      "faction_id": "far_riders",
+      "min_rep": 300,
+      "npc_match": "Matriarch Vessla Ridgeborn",
+      "delivery_mode": "step_close",
+      "title": "The Rider Who Did Not Desert",
+      "hook": "There's a rider who went missing three weeks ago. Official story says he deserted. The Captain doesn't believe it. Neither do I.",
+      "location_hint": "Last seen near the Varkhon Rise windstones",
+      "reward_gold_range": [100, 220],
+      "reward_rep_amount": 50
+    },
+    {
+      "id": "far_riders_horse_rite",
+      "faction_id": "far_riders",
+      "min_rep": 600,
+      "npc_match": "Matriarch Vessla Ridgeborn",
+      "delivery_mode": "follow_me",
+      "title": "The Amber Foal",
+      "hook": "The glowing foal at Zhoraven Ring -- its kin-sense signature is something no Pasua trainer has seen. Something is coming into the world through that animal. We need to know what.",
+      "location_hint": "Zhoraven Ring Training Yards",
+      "reward_gold_range": [180, 320],
+      "reward_rep_amount": 75
+    },
+    {
+      "id": "gatefall_deep_tunnels",
+      "faction_id": "gatefall_remnant",
+      "min_rep": 300,
+      "npc_match": "Warden-Elder Morun",
+      "delivery_mode": "private",
+      "title": "The Deeper Silence",
+      "hook": "A Wind-Rider scout I trust told me the silence south of the Breach has grown wider this moon. Something down there is waking that should stay asleep. I need eyes I trust in those tunnels.",
+      "location_hint": "Silence Breach Approach",
+      "reward_gold_range": [140, 280],
+      "reward_rep_amount": 60
+    },
+    {
+      "id": "silent_concord_sibling",
+      "faction_id": "silent_concord",
+      "min_rep": 100,
+      "npc_match": "Concord Agent Sevren",
+      "delivery_mode": "follow_me",
+      "title": "A Sibling Lost",
+      "hook": "We have reason to believe a Silentborn who grew up outside the breeding program is living in Liraveth, unaware of what she is. The Spur Tower is hunting her. We need to reach her first.",
+      "location_hint": "Somewhere in Liraveth",
+      "reward_gold_range": [150, 300],
+      "reward_rep_amount": 80
+    },
+    {
+      "id": "silent_concord_archive",
+      "faction_id": "silent_concord",
+      "min_rep": 600,
+      "npc_match": "Concord Agent Sevren",
+      "delivery_mode": "later",
+      "appointment_hour": 2,
+      "appointment_text": "before dawn, when Custos is quiet",
+      "title": "The Spur's Archive, Stolen",
+      "hook": "My sources say the Dark Dwarf lore-keeper inside the Spur Tower is the only reason the Shattered Host still knows its own history. End her, and the House Leader's line loses its foundation.",
+      "location_hint": "Deepwater Marches -- the Spur Tower archive level",
+      "reward_gold_range": [400, 700],
+      "reward_rep_amount": 150
+    },
+    {
+      "id": "golden_roses_cell",
+      "faction_id": "golden_roses",
+      "min_rep": 300,
+      "npc_match": "",
+      "delivery_mode": "demand",
+      "title": "Hit the Unstrung Tonight",
+      "hook": "You. The Unstrung are running goods up the Riverwind tonight. Take six of the company and put a stop to it. You'll find them at the Heights -- bring their Philosopher's head in a sack.",
+      "location_hint": "Unstrung Refuge in Riverwind Heights",
+      "reward_gold_range": [250, 450],
+      "reward_rep_amount": 100
+    },
+    {
+      "id": "circle_of_deeproot_grove",
+      "faction_id": "circle_of_deeproot",
+      "min_rep": 300,
+      "npc_match": "Circle-Speaker Lirien Thorn-Ear",
+      "delivery_mode": "follow_me",
+      "title": "The Grove That Went Silent",
+      "hook": "There's a stand of black-oak in the deep Tidewoods that has gone wrong. The trees won't speak to us. If you are what I think you are, walk with me there and see what I have seen.",
+      "location_hint": "Deep Tidewoods",
+      "reward_gold_range": [120, 260],
+      "reward_rep_amount": 55
+    },
+    {
+      "id": "trade_houses_smuggler",
+      "faction_id": "trade_houses",
+      "min_rep": 300,
+      "npc_match": "Factor Iralia Vaelun",
+      "delivery_mode": "step_close",
+      "hook": "There's a factor in Liraveth moving Dómnathar trinkets through our river routes under my House's seal. I need it stopped, and I need the seal back, and I can't be seen asking for either.",
+      "location_hint": "Gorge-Bridge smuggling cell, Liraveth",
+      "title": "The Seal That Was Copied",
+      "reward_gold_range": [160, 300],
+      "reward_rep_amount": 60
+    },
+    {
+      "id": "sand_wardens_oasis",
+      "faction_id": "sand_wardens",
+      "min_rep": 300,
+      "npc_match": "Firemother Zhareni",
+      "delivery_mode": "private",
+      "title": "The Ember Vault Seal",
+      "hook": "The old forge-seal beneath Kharazhad is failing. My warrior-kin will not admit it. If the fire below wakes fully, it will not stop at our city. Take my blessing and go below in my place.",
+      "location_hint": "Beneath Kharazhad -- Ember Vault",
+      "reward_gold_range": [200, 400],
+      "reward_rep_amount": 80
+    },
+    {
+      "id": "brotherhood_forge_family",
+      "faction_id": "brotherhood_of_steppe",
+      "min_rep": 600,
+      "npc_match": "Forge-Mother Kharaz Fireforge",
+      "delivery_mode": "demand",
+      "title": "The Artifact Beneath My City",
+      "hook": "There is a Deceiver artifact in my city's lava-tubes. I know who put it there and why. I cannot be the one to recover it. You will be. Bring it to me. Tell no one, and kill anyone who asks.",
+      "location_hint": "Highridge Lava-Tube Artifact Chamber",
+      "reward_gold_range": [350, 600],
+      "reward_rep_amount": 120
+    }
+  ]
+}

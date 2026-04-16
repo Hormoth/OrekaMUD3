@@ -132,6 +132,13 @@ class Mob:
         self.loot_table = kwargs.get('loot_table', None)  # Mob-specific loot drops
         self.ai_persona = kwargs.get('ai_persona', None)  # AI chat personality dict
         self.npc_type = kwargs.get('npc_type', None)  # e.g. 'quest', 'merchant', 'lore_keeper'
+        # Captive-rescue system (see src/captives.py). Populated from
+        # mobs.json for static captives; set at runtime for spawned ones.
+        self.captive_family = kwargs.get('captive_family', None)
+        self.captive_template = kwargs.get('captive_template', None)
+        self.captive_captor_type = kwargs.get('captive_captor_type', None)
+        self.captive_state = kwargs.get('captive_state', None)
+        self.rescue_type = kwargs.get('rescue_type', None)
 
     def is_chat_eligible(self):
         """Check if this NPC can be used for AI chat sessions."""
