@@ -363,7 +363,16 @@ function renderSheet(d) {
 function connect() {
   const h = (location.hostname||'127.0.0.1');
   const wh = (location.protocol==='file:'||!h)?'127.0.0.1':h;
-  ws = new WebSocket('ws://'+wh+':8767/');
+  // Smart WS URL: wss://chat.domain on Cloudflare, ws://localhost locally
+  let wsUrl;
+  if (wh === '127.0.0.1' || wh === 'localhost') {
+    wsUrl = 'ws://127.0.0.1:8767/';
+  } else if (wh.includes('orekaworld.com')) {
+    wsUrl = 'wss://chat.orekaworld.com/';
+  } else {
+    wsUrl = 'ws://' + wh + ':8767/';
+  }
+  ws = new WebSocket(wsUrl);
   const s = document.getElementById('status');
   ws.onopen = () => { s.textContent='Connected'; s.style.color='#c4a265'; };
   ws.onmessage = ev => {

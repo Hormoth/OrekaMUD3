@@ -297,9 +297,17 @@ function addMsg(text, type, sender) {
 }
 
 function connect() {
-  const h = (location.hostname || '127.0.0.1');
-  const wh = (location.protocol === 'file:' || !h) ? '127.0.0.1' : h;
-  ws = new WebSocket('ws://' + wh + ':8767/');
+  // Smart WebSocket URL: use wss://chat.domain on Cloudflare, ws://localhost:8767 locally
+  const h = location.hostname || '127.0.0.1';
+  let wsUrl;
+  if (h === '127.0.0.1' || h === 'localhost' || location.protocol === 'file:') {
+    wsUrl = 'ws://127.0.0.1:8767/';
+  } else if (h.includes('orekaworld.com')) {
+    wsUrl = 'wss://chat.orekaworld.com/';
+  } else {
+    wsUrl = 'ws://' + h + ':8767/';
+  }
+  ws = new WebSocket(wsUrl);
   ws.onopen = () => { connStatus.textContent = 'Connected to Oreka.'; connStatus.style.color = 'var(--accent)'; };
   ws.onmessage = (ev) => {
     let msg; try { msg = JSON.parse(ev.data); } catch { return; }
