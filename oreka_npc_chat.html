@@ -150,7 +150,13 @@ function connect() {
       bannerDesc.textContent = msg.npc_description || '';
       bannerRoom.textContent = msg.room_name ? `Location: ${msg.room_name}` : '';
       bannerEl.style.display = 'block';
-      addMessage(`You are now speaking with ${msg.npc_name}.`, 'system');
+      if (msg.auth_note) addMessage(msg.auth_note, 'system');
+      // Show the NPC's greeting as the opening message
+      if (msg.greeting) {
+        addMessage(msg.greeting, 'npc', msg.npc_name);
+      } else {
+        addMessage(`You are now speaking with ${msg.npc_name}.`, 'system');
+      }
     }
     else if (msg.type === 'response') {
       typingEl.style.display = 'none';

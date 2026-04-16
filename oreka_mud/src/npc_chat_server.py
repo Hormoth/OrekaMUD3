@@ -279,12 +279,39 @@ async def _handle_client(ws, world):
                 auth_note = (f" (chatting as {session.player.name})"
                              if session.authenticated else
                              " (guest mode — log in for the full experience)")
+
+                # Pick a rep-gated greeting if enriched persona exists
+                greeting = None
+                try:
+                    from src.prompt_pipeline import get_enriched_persona
+                    persona = get_enriched_persona(mob)
+                    if persona:
+                        # Find the player's highest rep with this NPC's faction
+                        rep_map = getattr(session.player, "reputation", {}) or {}
+                        max_rep = max(rep_map.values()) if rep_map else 0
+                        if max_rep >= 600 and persona.get("greeting_revered"):
+                            greeting = persona["greeting_revered"]
+                        elif max_rep >= 300 and persona.get("greeting_honored"):
+                            greeting = persona["greeting_honored"]
+                        elif max_rep >= 100 and persona.get("greeting_friendly"):
+                            greeting = persona["greeting_friendly"]
+                        else:
+                            greeting = persona.get("greeting")
+                except Exception:
+                    pass
+                if not greeting:
+                    greeting = getattr(mob, "dialogue", None) or f"{npc_name} regards you with interest."
+
+                # Seed the conversation history with the greeting
+                session.history.append(("npc", greeting))
+
                 await ws.send(json.dumps({
                     "type": "started",
                     "npc_name": npc_name,
                     "npc_description": getattr(mob, "description", ""),
                     "room_name": session.room.name if session.room else "unknown",
                     "auth_note": auth_note,
+                    "greeting": greeting,
                 }))
 
             # --- Send a message to the NPC --------------------------------
@@ -316,8 +343,18 @@ async def _handle_client(ws, world):
                         mode="chat",
                     )
                     if _config["enabled"]:
+                        # Load per-NPC generation params if available
+                        gen_params = None
+                        try:
+                            from src.prompt_pipeline import get_enriched_persona
+                            persona = get_enriched_persona(session.npc)
+                            if persona and persona.get("generation"):
+                                gen_params = persona["generation"]
+                        except Exception:
+                            pass
                         response = await _call_ollama(user_prompt,
-                                                       system_prompt)
+                                                       system_prompt,
+                                                       generation_params=gen_params)
                         if response:
                             response = response.strip().strip('"').strip("'")
                             if len(response) > 500:

@@ -352,9 +352,27 @@ def _get_template_response(npc, player, message, room) -> str:
 # LLM Response System
 # =========================================================================
 
-async def _call_ollama(prompt: str, system_prompt: str) -> str:
-    """Call Ollama API for a response."""
+async def _call_ollama(prompt: str, system_prompt: str, *,
+                       generation_params: dict = None) -> str:
+    """Call Ollama API for a response.
+
+    ``generation_params`` optionally overrides temperature, top_p,
+    num_predict (max_tokens), presence_penalty, and frequency_penalty
+    on a per-NPC basis.  If None, uses sensible defaults.
+    """
     import urllib.request
+
+    gp = generation_params or {}
+    options = {
+        "temperature":       gp.get("temperature", 0.8),
+        "top_p":             gp.get("top_p", 0.9),
+        "num_predict":       gp.get("max_tokens", 150),
+    }
+    # Ollama supports these as top-level options
+    if "presence_penalty" in gp:
+        options["repeat_penalty"] = 1.0 + gp["presence_penalty"]
+    if "frequency_penalty" in gp:
+        options["frequency_penalty"] = gp["frequency_penalty"]
 
     url = f"{_config['ollama_host']}/api/generate"
     payload = json.dumps({
@@ -362,11 +380,7 @@ async def _call_ollama(prompt: str, system_prompt: str) -> str:
         "prompt": prompt,
         "system": system_prompt,
         "stream": False,
-        "options": {
-            "temperature": 0.8,
-            "top_p": 0.9,
-            "num_predict": 150,  # Keep responses concise for MUD
-        }
+        "options": options,
     }).encode("utf-8")
 
     req = urllib.request.Request(url, data=payload, method="POST")
