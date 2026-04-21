@@ -13,7 +13,14 @@ logger = logging.getLogger("OrekaMUD.MCPBridge")
 
 # Reference to the world object — set by main.py on startup
 _world = None
+_event_loop = None
 MCP_PORT = 8001
+
+
+def set_event_loop(loop):
+    """Store the main async event loop for cross-thread coroutine scheduling."""
+    global _event_loop
+    _event_loop = loop
 
 
 def set_world(world):
@@ -303,10 +310,13 @@ class MCPRequestHandler(BaseHTTPRequestHandler):
             message = body.get("message", body.get("description", ""))
             effects = body.get("mechanical_effects")
 
-            # Run async broadcast in the event loop
+            # Run async broadcast in the main event loop (stored reference)
             from src.events import broadcast_event
             try:
-                loop = asyncio.get_event_loop()
+                loop = _event_loop
+                if loop is None:
+                    self._send_json({"status": "error", "error": "Event loop not initialized"}, 503)
+                    return
                 future = asyncio.run_coroutine_threadsafe(
                     broadcast_event(_world, scope, target, message, effects), loop
                 )

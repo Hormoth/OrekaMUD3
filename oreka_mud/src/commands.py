@@ -2256,6 +2256,8 @@ class CommandParser:
             "changepassword": self.cmd_changepassword,
             "passwd": self.cmd_changepassword,
             "deletechar": self.cmd_deletechar,
+            "@purgechar": self.cmd_purgechar,
+            "dm": self.cmd_dm,
             # Metamagic
             "metamagic": self.cmd_metamagic,
             "meta": self.cmd_metamagic,
@@ -5696,6 +5698,34 @@ class CommandParser:
                 valid = ", ".join(sorted(CLASSES.keys()))
                 return f"Unknown class '{class_name}'. Valid classes: {valid}"
             target_class = class_name
+
+        # D&D 3.5 multiclass restrictions
+        _align = (getattr(character, 'alignment', '') or '').lower()
+        _class_levels = getattr(character, 'class_levels', {}) or {}
+        _current_class = getattr(character, 'char_class', '')
+        _is_new_class = target_class not in _class_levels and target_class != _current_class
+
+        # Alignment gates on class entry (applies whenever taking a level, not just first)
+        _align_rules = {
+            'Paladin':   (lambda a: a == 'lawful good', "Paladins must be Lawful Good."),
+            'Monk':      (lambda a: a.startswith('lawful'), "Monks must be Lawful."),
+            'Barbarian': (lambda a: not a.startswith('lawful'), "Barbarians cannot be Lawful."),
+            'Bard':      (lambda a: not a.startswith('lawful'), "Bards cannot be Lawful."),
+            'Druid':     (lambda a: 'neutral' in a, "Druids must have Neutral in their alignment."),
+        }
+        if target_class in _align_rules:
+            ok, msg = _align_rules[target_class][0](_align), _align_rules[target_class][1]
+            if not ok:
+                return f"Cannot take {target_class} level: {msg} (current alignment: {_align.title() or 'unset'})"
+
+        # Paladin/Monk once-out-always-out
+        for _strict in ('Paladin', 'Monk'):
+            if target_class == _strict and _class_levels:
+                other_levels = [c for c in _class_levels if c != _strict]
+                if other_levels:
+                    return (f"Cannot return to {_strict}: once a {_strict} takes a level in another "
+                            f"class, they can never advance as a {_strict} again. (You have levels in: "
+                            f"{', '.join(other_levels)}.)")
 
         # Apply the level
         old_level = getattr(character, 'class_level', 1)
@@ -9711,8 +9741,18 @@ class CommandParser:
 
         messages = [f"You uncork and drink {item.name}."]
 
-        # Apply healing
-        healing = item.stats.get("healing", 0)
+        # Apply healing. Supports int or dice string like "1d8+1".
+        healing_spec = item.stats.get("healing", 0) if getattr(item, "stats", None) else 0
+        healing = 0
+        if isinstance(healing_spec, int):
+            healing = healing_spec
+        elif isinstance(healing_spec, str) and healing_spec.strip():
+            import re as _re, random as _random
+            m = _re.match(r'\s*(\d+)d(\d+)\s*([+-]\s*\d+)?\s*$', healing_spec)
+            if m:
+                n = int(m.group(1)); d = int(m.group(2))
+                bonus = int(m.group(3).replace(' ', '')) if m.group(3) else 0
+                healing = sum(_random.randint(1, d) for _ in range(n)) + bonus
         if healing:
             old_hp = character.hp
             character.hp = min(character.max_hp, character.hp + healing)
@@ -14390,7 +14430,10 @@ async def _rpsay_npc_responses(character, message, npc_list, room):
                     except Exception:
                         pass
         except Exception:
-            pass
+            import logging
+            logging.getLogger("OrekaMUD.AI").exception(
+                f"rpsay NPC response failed (npc={getattr(npc,'name','?')})"
+            )
 
         # Stagger responses from multiple NPCs
         await asyncio.sleep(0.8 + random.random() * 1.2)
@@ -15264,4 +15307,160 @@ def cmd_journal(self, character, args):
 
 
 CommandParser.cmd_journal = cmd_journal
+
+
+# =============================================================================
+# @purgechar — admin wipe: save + backups + chat sessions + event lines + Veil
+# =============================================================================
+
+def cmd_purgechar(self, character, args):
+    """@purgechar <name> CONFIRM | Irrevocably purge a character from all stores.
+
+    Moves the player save, every backup, and every AI chat session into
+    data/deleted/<name>_<timestamp>/ as a safety net, strips that character's
+    lines from data/events/player_events.jsonl, force-removes them from the
+    live world, and deletes veil:user:<name> from Redis if reachable.
+    """
+    if not getattr(character, 'is_immortal', False):
+        return "Permission denied: You are not an admin."
+
+    parts = (args or "").strip().split()
+    if len(parts) < 2 or parts[-1] != "CONFIRM":
+        return ("Usage: @purgechar <name> CONFIRM\n"
+                "WARNING: irreversible short of restoring the deleted/ folder.")
+
+    name = parts[0]
+    lname = name.lower()
+    import os, json, shutil, time, logging
+    log = logging.getLogger("OrekaMUD")
+
+    data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+    players_dir = os.path.join(data_dir, 'players')
+    sessions_dir = os.path.join(data_dir, 'chat_sessions')
+    events_path = os.path.join(data_dir, 'events', 'player_events.jsonl')
+
+    ts = time.strftime("%Y%m%d_%H%M%S")
+    trash = os.path.join(data_dir, 'deleted', f"{lname}_{ts}")
+    os.makedirs(os.path.join(trash, 'players'), exist_ok=True)
+    os.makedirs(os.path.join(trash, 'chat_sessions'), exist_ok=True)
+
+    moved_saves = 0
+    if os.path.isdir(players_dir):
+        for fn in os.listdir(players_dir):
+            flow = fn.lower()
+            if flow == f"{lname}.json" or flow.startswith(f"{lname}.") and flow.endswith('.json'):
+                shutil.move(os.path.join(players_dir, fn), os.path.join(trash, 'players', fn))
+                moved_saves += 1
+
+    moved_sessions = 0
+    if os.path.isdir(sessions_dir):
+        prefix = f"{name}_"
+        for fn in os.listdir(sessions_dir):
+            if fn.startswith(prefix):
+                shutil.move(os.path.join(sessions_dir, fn), os.path.join(trash, 'chat_sessions', fn))
+                moved_sessions += 1
+
+    stripped_events = 0
+    if os.path.exists(events_path):
+        shutil.copy2(events_path, os.path.join(trash, 'player_events.pre_purge.jsonl'))
+        kept = []
+        with open(events_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                try:
+                    evt = json.loads(line)
+                    actor = (evt.get('character') or evt.get('player') or evt.get('actor') or '').lower()
+                    if actor == lname:
+                        stripped_events += 1
+                        continue
+                except Exception:
+                    pass
+                kept.append(line)
+        with open(events_path, 'w', encoding='utf-8') as f:
+            f.writelines(kept)
+
+    kicked = False
+    for p in list(getattr(self.world, 'players', []) or []):
+        if p.name.lower() == lname:
+            if p.room and p in getattr(p.room, 'players', []):
+                p.room.players.remove(p)
+            self.world.players.remove(p)
+            kicked = True
+
+    veil_note = "skipped (redis unreachable)"
+    try:
+        import redis
+        r = redis.Redis(host='localhost', port=6379, socket_connect_timeout=1)
+        n = r.delete(f"veil:user:{lname}")
+        veil_note = f"deleted {n} key(s)"
+    except Exception as e:
+        veil_note = f"skipped ({e.__class__.__name__})"
+
+    log.warning(
+        f"@purgechar by {character.name}: {name} — saves={moved_saves} "
+        f"sessions={moved_sessions} events={stripped_events} veil={veil_note} "
+        f"online_kicked={kicked} trash={trash}"
+    )
+
+    return (f"Purged {name}.\n"
+            f"  saves moved: {moved_saves}\n"
+            f"  chat sessions moved: {moved_sessions}\n"
+            f"  event lines stripped: {stripped_events}\n"
+            f"  veil redis: {veil_note}\n"
+            f"  online session removed: {kicked}\n"
+            f"  trash: {trash}")
+
+
+CommandParser.cmd_purgechar = cmd_purgechar
+
+
+# =============================================================================
+# dm — talk to The Voice (DM Player, Phase 1)
+# =============================================================================
+
+def cmd_dm(self, character, args):
+    """Speak to The Voice — your personal Dungeon Master.
+
+    Usage: dm <message>            Talk to The Voice about anything.
+           dm                      Get the last thing The Voice said.
+    The Voice narrates scenes, voices NPCs, asks for skill checks, and
+    remembers across sessions. It does not control your character.
+    """
+    import asyncio as _asyncio
+    from src.dm_player import speak as _dm_speak, load_or_create as _dm_load
+
+    msg = (args or "").strip()
+    if not msg:
+        sess = _dm_load(character.name)
+        if sess.conversation_history:
+            last = next((h for h in reversed(sess.conversation_history) if h.get('role') == 'dm'), None)
+            if last:
+                return f"\033[0;36m[Narration]\033[0m {last.get('content','')}"
+        return ("The Voice is listening. Type `dm <something>` to speak.\n"
+                "e.g. `dm I want to know more about the Pekakarlik tunnels`")
+
+    async def _deliver():
+        try:
+            response = await _dm_speak(character, msg)
+        except Exception as e:
+            import logging
+            logging.getLogger("OrekaMUD.DM").exception(f"DM speak failed for {character.name}: {e}")
+            response = "(The Voice falters. Something went wrong — try again in a moment.)"
+        w = getattr(character, '_writer', None) or getattr(character, 'writer', None)
+        if not w:
+            return
+        try:
+            w.write(f"\n\033[0;36m[Narration]\033[0m {response}\n{character.get_prompt()} ")
+            if hasattr(w, 'drain'):
+                try:
+                    await w.drain()
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+    _asyncio.ensure_future(_deliver())
+    return "\033[0;90m(The Voice gathers itself...)\033[0m"
+
+
+CommandParser.cmd_dm = cmd_dm
 

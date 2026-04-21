@@ -320,10 +320,16 @@ class NarrativeManager:
             quest_log = getattr(character, "quest_log", None)
             if quest_log is None:
                 return False
-            return any(
-                q.get("id") == quest_id and q.get("state") == "turned_in"
-                for q in (quest_log.to_dict() if hasattr(quest_log, "to_dict") else {}).get("quests", [])
-            )
+            # Check completed quests set directly (int IDs)
+            if quest_id in getattr(quest_log, 'completed_quests', set()):
+                return True
+            # Also check active quests for turned_in state
+            for qid, aq in getattr(quest_log, 'active_quests', {}).items():
+                if qid == quest_id and getattr(aq, 'state', None) is not None:
+                    state_val = aq.state.value if hasattr(aq.state, 'value') else str(aq.state)
+                    if state_val == "turned_in":
+                        return True
+            return False
 
         if ttype == "room":
             room = getattr(character, "room", None)

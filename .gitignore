@@ -1,1 +1,32 @@
 /venv
+*.pyc
+__pycache__/
+
+# Runtime logs
+*.log
+cloudflared_oreka.log
+gateway.log
+mud_server.log
+veil_client.log
+http_server.log
+
+# Per-player / runtime state that churns every session
+oreka_mud/data/dm_audit/
+oreka_mud/data/dm_proposals/
+oreka_mud/data/dm_sessions/
+oreka_mud/data/dm_scene_state/
+oreka_mud/data/companions/
+oreka_mud/data/area_layouts/
+oreka_mud/data/chat_sessions/
+oreka_mud/data/npc_memories/
+oreka_mud/data/deleted/
+oreka_mud/data/events/player_events.jsonl
+
+# Auto-generated backups
+oreka_mud/data/**/*.bak.json
+oreka_mud/data/**/*.rest_bak.*
+oreka_mud/data/**/*.captives_bak.*
+oreka_mud/data/**/*.newbie_vendors_bak.*
+oreka_mud/data/**/*.rename_bak.*
+oreka_mud/data/**/*.mapedit_bak.*
+oreka_mud/data/**/*.help_bak.*

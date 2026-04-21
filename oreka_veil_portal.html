@@ -358,7 +358,11 @@ document.getElementById('guest-link').addEventListener('click', () => {
 
 document.getElementById('path-mud').addEventListener('click', () => {
   const h = location.hostname || '127.0.0.1';
-  window.open('http://' + h + ':5173', '_blank');
+  if (h.includes('orekaworld.com')) {
+    window.open('https://play.orekaworld.com', '_blank');
+  } else {
+    window.open('http://' + h + ':5173', '_blank');
+  }
 });
 document.getElementById('path-chat').addEventListener('click', () => {
   portal.style.display = 'none'; chatView.style.display = 'flex';

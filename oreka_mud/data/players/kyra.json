@@ -1,0 +1,322 @@
+{
+  "name": "Kyra",
+  "title": "of Highridge",
+  "race": "Taraf-Imro Human",
+  "level": 4,
+  "char_class": "Sorcerer",
+  "class_level": 4,
+  "class_features": [
+    "Summon Familiar",
+    "Arcane Spells"
+  ],
+  "spells_known": {
+    "Detect Magic": {
+      "name": "Detect Magic",
+      "level": 0
+    },
+    "Dancing Lights": {
+      "name": "Dancing Lights",
+      "level": 0
+    },
+    "Light": {
+      "name": "Light",
+      "level": 0
+    },
+    "Message": {
+      "name": "Message",
+      "level": 0
+    },
+    "Mage Hand": {
+      "name": "Mage Hand",
+      "level": 0
+    },
+    "Flare": {
+      "name": "Flare",
+      "level": 0
+    },
+    "Burning Hands": {
+      "name": "Burning Hands",
+      "level": 1
+    },
+    "Magic Missile": {
+      "name": "Magic Missile",
+      "level": 1
+    },
+    "Comprehend Languages": {
+      "name": "Comprehend Languages",
+      "level": 1
+    },
+    "Kelgore's Fire Bolt": {
+      "name": "Kelgore's Fire Bolt",
+      "level": 1
+    },
+    "Mage Armor": {
+      "name": "Mage Armor",
+      "level": 1
+    },
+    "Charm Person": {
+      "name": "Charm Person",
+      "level": 1
+    },
+    "Flaming Sphere": {
+      "name": "Flaming Sphere",
+      "level": 2
+    },
+    "Scorching Ray": {
+      "name": "Scorching Ray",
+      "level": 2
+    },
+    "Pyrotechnics": {
+      "name": "Pyrotechnics",
+      "level": 2
+    },
+    "Rock Sending": {
+      "name": "Rock Sending",
+      "level": 2,
+      "notes": "custom Oreka spell \u2014 placeholder until statted"
+    }
+  },
+  "spells_per_day": {
+    "0": 6,
+    "1": 7,
+    "2": 3
+  },
+  "spells_used": {
+    "0": 0,
+    "1": 0,
+    "2": 0
+  },
+  "hp": 8,
+  "max_hp": 21,
+  "ac": 13,
+  "room_vnum": 4086,
+  "quests": [],
+  "quest_log": {
+    "active_quests": {},
+    "completed_quests": [],
+    "failed_quests": [],
+    "abandoned_quests": []
+  },
+  "reputation": {},
+  "titles": [
+    "Champion of Highridge"
+  ],
+  "state": "EXPLORING",
+  "is_ai": false,
+  "is_immortal": false,
+  "elemental_affinity": "fire",
+  "str_score": 16,
+  "dex_score": 16,
+  "con_score": 17,
+  "int_score": 13,
+  "wis_score": 10,
+  "cha_score": 19,
+  "move": 100,
+  "max_move": 100,
+  "xp": 6225,
+  "show_all": false,
+  "inventory": [],
+  "equipment": {
+    "head": null,
+    "face": null,
+    "neck": null,
+    "shoulders": null,
+    "body": null,
+    "torso": null,
+    "arms": null,
+    "hands": null,
+    "ring_left": null,
+    "ring_right": null,
+    "waist": null,
+    "feet": null,
+    "main_hand": null,
+    "off_hand": null
+  },
+  "gold": 500,
+  "feats": [
+    "Improved Initiative",
+    "Combat Casting",
+    "Spell Focus (Evocation)"
+  ],
+  "skills": {
+    "Appraise": 1,
+    "Balance": 3,
+    "Bluff": 8,
+    "Climb": 3,
+    "Concentration": 3,
+    "Craft (Metal)": 3,
+    "Decipher Script": 1,
+    "Diplomacy": 7,
+    "Disable Device": 1,
+    "Disguise": 4,
+    "Escape Artist": 3,
+    "Forgery": 1,
+    "Gather Information": 10,
+    "Handle Animal": 4,
+    "Heal": 0,
+    "Hide": 3,
+    "Intimidate": 8,
+    "Jump": 3,
+    "Knowledge (local)": 1,
+    "Knowledge (arcana)": 1,
+    "Open Lock": 3,
+    "Perform (any)": 4,
+    "Ride": 3,
+    "Search": 1,
+    "Sense Motive": 0,
+    "Sleight of Hand": 3,
+    "Spellcraft": 1,
+    "Spot": 4,
+    "Survival": 0,
+    "Swim": 3,
+    "Tumble": 3,
+    "Use Magic Device": 4,
+    "Use Rope": 3,
+    "Listen": 4,
+    "Move Silently": 3
+  },
+  "domains": [],
+  "alignment": "Chaotic Good",
+  "deity": "Cinvarin, the Five Witnesses (The Fivefold Flame)",
+  "is_builder": false,
+  "is_stable": true,
+  "conditions": [],
+  "active_conditions": {},
+  "auto_attack_enabled": true,
+  "color_enabled": true,
+  "email": null,
+  "resistances": {
+    "fire": 2
+  },
+  "immunities": [],
+  "build_mode": false,
+  "hashed_password": "b836fe4887e0d8bb52854c59789dc22c776aff24049ea334360933f89e87d32c",
+  "power_attack_amt": 0,
+  "combat_expertise_amt": 0,
+  "active_buffs": [],
+  "temp_str_bonus": 0,
+  "temp_dex_bonus": 0,
+  "temp_con_bonus": 0,
+  "temp_ac_bonus": 0,
+  "temp_attack_bonus": 0,
+  "temp_save_bonus": 0,
+  "chosen_path": null,
+  "wimpy": 0,
+  "bank_gold": 0,
+  "hidden": false,
+  "hide_check": 0,
+  "sneaking": false,
+  "class_levels": {
+    "Sorcerer": 4
+  },
+  "achievements": [
+    "first_kill"
+  ],
+  "kill_count": 3,
+  "craft_count": 0,
+  "rooms_visited": [
+    4097,
+    4098,
+    4101,
+    4102,
+    4104,
+    4001,
+    4002,
+    4009,
+    4013,
+    4014,
+    4016,
+    4017,
+    4018,
+    4019,
+    4020,
+    4021,
+    4022,
+    4152,
+    3001,
+    3009,
+    4161,
+    4300,
+    4215,
+    4216,
+    4217,
+    1000,
+    1001,
+    1002,
+    1003,
+    4205,
+    4086,
+    4087,
+    4088,
+    4089,
+    4090,
+    4214
+  ],
+  "hunger": 100,
+  "thirst": 100,
+  "survival_mode": false,
+  "guild_name": null,
+  "guild_rank": null,
+  "auto_loot": false,
+  "auto_gold": false,
+  "aliases": {},
+  "practice_points": 0,
+  "quest_points": 0,
+  "trained_abilities": [],
+  "brief_mode": false,
+  "compact_mode": false,
+  "auto_exit": true,
+  "familiar_type": null,
+  "remort_count": 0,
+  "ignored_players": [],
+  "favored_enemies": [],
+  "auto_sac": false,
+  "pending_feats": null,
+  "narrative_progress": {},
+  "arc_sheets": {},
+  "rp_sheet": {
+    "bio": "Kyra Callaghan of Highridge \u2014 a Taraf-Imro Human champion, fire-touched and proud of it. Mountain forges raised her; the Fivefold Flame claimed her. She carries a forearm scar earned in her first real fight and displays it half-hidden, half-shown. She is used to winning and unbothered by the rare times she hasn't.",
+    "personality": "Confident to the edge of arrogance. Quick smile, certain of outcomes. Runs hot in every sense. Respects challenge, disdains cowardice, laughs with her whole body.",
+    "goals": [
+      "Earn her name beyond the Highridge forges \u2014 be known across Oreka.",
+      "Master the Fivefold Flame's fire without being consumed by it.",
+      "Find opponents who actually push her."
+    ],
+    "quirks": [
+      "Sparks answer her when she flexes her fingers. She doesn't hide it.",
+      "A subtle, constant heat lingers in the air around her.",
+      "Arrives in rooms rather than enters them \u2014 shoulders back, chin high."
+    ],
+    "pronouns": "she/her",
+    "recent_events": [
+      {
+        "text": "Killed Training Dummy in Quadrant of the Lady of Fire (East).",
+        "timestamp": 1776703927.2754285,
+        "category": "combat",
+        "weight": 1.2
+      },
+      {
+        "text": "Killed Training Dummy in Quadrant of the Lady of Fire (East).",
+        "timestamp": 1776703961.6198974,
+        "category": "combat",
+        "weight": 1.2
+      },
+      {
+        "text": "Killed Kobold Raider in Kobold Warren -- East.",
+        "timestamp": 1776703979.2563725,
+        "category": "combat",
+        "weight": 1.2
+      }
+    ],
+    "titles_earned": [],
+    "notable_kills": [],
+    "deaths": 0,
+    "remorts": 0,
+    "npc_relationships": {},
+    "sheet_visible_in_prompts": true
+  },
+  "rescued_captives": [],
+  "pending_rescue_rewards": [],
+  "revealed_quests": [],
+  "completed_hidden_quests": []
+}

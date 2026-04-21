@@ -43,6 +43,7 @@ class OrekaWorld:
         self.rooms = {}
         self.mobs = {}
         self.players = []
+        self.players_by_name = {}  # name.lower() -> Character for O(1) lookup
         self.quests = {
             1: {"id": 1, "name": "Starweave Ritual", "description": "Perform the Starweave in Guild Street.", "location": 3001}
         }

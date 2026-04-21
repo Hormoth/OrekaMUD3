@@ -30,7 +30,8 @@
     "properties": [
       "simple",
       "light",
-      "thrown"
+      "thrown",
+      "finesse"
     ]
   },
   {
@@ -81,7 +82,8 @@
     ],
     "properties": [
       "martial",
-      "light"
+      "light",
+      "finesse"
     ]
   },
   {
@@ -301,7 +303,12 @@
     "item_type": "potion",
     "weight": 0.1,
     "value": 50,
-    "description": "Heals 1d8+1 HP."
+    "description": "Heals 1d8+1 HP.",
+    "stats": {
+      "healing": "1d8+1",
+      "spell_level": 1,
+      "caster_level": 1
+    }
   },
   {
     "vnum": 302,
@@ -309,7 +316,14 @@
     "item_type": "potion",
     "weight": 0.1,
     "value": 300,
-    "description": "+4 Strength for 3 minutes."
+    "description": "+4 Strength for 3 minutes.",
+    "stats": {
+      "spell": "Bull's Strength",
+      "spell_value": 4,
+      "duration": 30,
+      "spell_level": 2,
+      "caster_level": 3
+    }
   },
   {
     "vnum": 303,
@@ -435,7 +449,8 @@
     "properties": [
       "martial",
       "light",
-      "masterwork"
+      "masterwork",
+      "finesse"
     ],
     "complexity": "masterwork",
     "material": "steel"
@@ -475,7 +490,8 @@
       "simple",
       "light",
       "thrown",
-      "masterwork"
+      "masterwork",
+      "finesse"
     ],
     "complexity": "masterwork",
     "material": "steel"
@@ -575,7 +591,8 @@
     "magical": true,
     "properties": [
       "martial",
-      "light"
+      "light",
+      "finesse"
     ]
   },
   {
@@ -611,7 +628,8 @@
     "properties": [
       "simple",
       "light",
-      "thrown"
+      "thrown",
+      "finesse"
     ]
   },
   {

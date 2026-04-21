@@ -1,0 +1,1208 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>InfiniteDesert — OrekaMUD3 Area Map</title>
+<style>
+ body { background:#0b0d12; color:#d9dce6; font-family: system-ui, sans-serif; margin: 0; padding: 24px; }
+ header { margin-bottom: 16px; }
+ h1 { font-weight: 500; margin: 0 0 4px 0; }
+ .meta { color:#8593a8; font-size: 13px; }
+ a { color:#6cb38f; }
+ .map-wrap { overflow: auto; border:1px solid #2a3141; border-radius:8px; background:#0f1117; }
+ .legend span { margin-right: 14px; }
+ .warp { color:#d88080; }
+</style></head><body>
+<header>
+  <h1>InfiniteDesert</h1>
+  <div class="meta">181 rooms · 261 grid edges · 18 off-grid exits · 40 orphans · <span class="warp">64 warped edges</span> ·
+  <a href="../index.html">← back to map index</a></div>
+  <div class="meta legend">
+    <span>Hover a room for description.</span>
+    <span>Border: <span style="color:#6cb38f;">green=safe/temple</span>, <span style="color:#c79a5e;">gold=shop/street</span></span>
+    <span class="warp">red dashed edges = asymmetric or collision-shoved (map distortion)</span>
+  </div>
+</header>
+<div class="map-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5948 2840" width="5948" height="2840" style="background:#0f1117;font-family:system-ui,sans-serif;">
+<line x1="1272.0" y1="1716.0" x2="1272.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1716.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1716.0" x2="1568.0" y2="1716.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="1568.0" x2="1272.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1568.0" x2="1716.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="1568.0" x2="1420.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1420.0" x2="1272.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1420.0" x2="1420.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1420.0" x2="1124.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1272.0" x2="1420.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1272.0" x2="1124.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1272.0" x2="1420.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="1272.0" x2="1568.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="1124.0" x2="1272.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1124.0" x2="1420.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1124.0" x2="1124.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="1124.0" x2="1272.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="1420.0" x2="976.0" y2="1420.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1568.0" y1="1420.0" x2="1420.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="976.0" y1="1420.0" x2="1420.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="1420.0" x2="1272.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="1420.0" x2="976.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1716.0" x2="1124.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="828.0" x2="1124.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="828.0" x2="1568.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="828.0" x2="1864.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="828.0" x2="1420.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="828.0" x2="1124.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1568.0" x2="1420.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1568.0" x2="1864.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1568.0" x2="1864.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1420.0" x2="1420.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1420.0" x2="1568.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1272.0" x2="1568.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1124.0" x2="1568.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="976.0" x2="1124.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1864.0" y1="976.0" x2="1864.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="976.0" x2="1124.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="976.0" x2="1568.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1864.0" y1="1716.0" x2="1568.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1864.0" y1="1716.0" x2="2012.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="1272.0" x2="1420.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="1272.0" x2="1568.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="1124.0" x2="1716.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1568.0" x2="1124.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="1568.0" x2="1124.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1420.0" y1="1568.0" x2="1124.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1124.0" y1="1420.0" x2="1124.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="1272.0" x2="1272.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="1272.0" x2="1124.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="1124.0" x2="976.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="976.0" x2="1124.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="828.0" x2="1568.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="828.0" x2="976.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="828.0" x2="976.0" y2="1716.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1716.0" y1="828.0" x2="1864.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="976.0" x2="2012.0" y2="680.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2160.0" y1="976.0" x2="88.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1124.0" y1="1568.0" x2="1124.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="976.0" x2="976.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1716.0" y1="976.0" x2="2012.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="976.0" y1="976.0" x2="1272.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="976.0" x2="1420.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="1568.0" x2="1124.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="1716.0" x2="1124.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="1716.0" x2="1124.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="1568.0" x2="976.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="1568.0" x2="1864.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1568.0" y1="1568.0" x2="1864.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1716.0" x2="1420.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="88.0" y1="976.0" x2="2012.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="236.0" y1="2752.0" x2="384.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="384.0" y1="2752.0" x2="532.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="532.0" y1="2752.0" x2="680.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="2752.0" x2="236.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="532.0" y1="1124.0" x2="680.0" y2="1420.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="532.0" y1="1124.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="1420.0" x2="384.0" y2="1420.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="680.0" y1="1420.0" x2="680.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="236.0" x2="532.0" y2="1716.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="680.0" y1="1716.0" x2="1864.0" y2="384.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2308.0" x2="1716.0" y2="1864.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1420.0" y1="2308.0" x2="1420.0" y2="2456.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="384.0" y1="1420.0" x2="532.0" y2="1716.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="384.0" y1="1420.0" x2="1272.0" y2="384.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="532.0" y1="1716.0" x2="680.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="384.0" x2="1420.0" y2="2308.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="384.0" x2="1716.0" y2="1864.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2456.0" x2="532.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2456.0" x2="2308.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="1568.0" x2="384.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="1568.0" x2="1420.0" y2="2308.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="384.0" x2="2308.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="384.0" x2="1864.0" y2="384.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="1568.0" x2="828.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1568.0" x2="2012.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="1568.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1568.0" x2="828.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1568.0" x2="1568.0" y2="828.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="1568.0" x2="384.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="976.0" x2="2012.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="976.0" x2="2456.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="976.0" x2="236.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="976.0" x2="976.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1568.0" x2="2160.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1568.0" x2="384.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2012.0" y1="1568.0" x2="2604.0" y2="828.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2456.0" y1="976.0" x2="2160.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="236.0" y1="976.0" x2="236.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="1568.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="384.0" y1="1568.0" x2="236.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1716.0" x2="2160.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="828.0" x2="828.0" y2="1716.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="828.0" x2="1716.0" y2="1716.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2604.0" y1="828.0" x2="384.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="828.0" x2="828.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="828.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="828.0" x2="236.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1716.0" x2="236.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="384.0" y1="1124.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="680.0" x2="1272.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="680.0" x2="828.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1272.0" y1="680.0" x2="976.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="532.0" x2="1420.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="532.0" x2="1124.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="532.0" x2="1420.0" y2="384.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="532.0" x2="1124.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="384.0" x2="1716.0" y2="384.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1124.0" y1="680.0" x2="1420.0" y2="680.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1716.0" y1="384.0" x2="1124.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="680.0" x2="976.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="1124.0" x2="2308.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="1124.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="1124.0" x2="236.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2308.0" y1="1124.0" x2="2308.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="976.0" x2="2604.0" y2="976.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2308.0" y1="976.0" x2="2456.0" y2="680.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="236.0" y1="1124.0" x2="236.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2604.0" y1="976.0" x2="2604.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="236.0" y1="1272.0" x2="2604.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2604.0" y1="1124.0" x2="236.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2456.0" y1="680.0" x2="2604.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2456.0" y1="680.0" x2="2308.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1420.0" x2="1864.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1420.0" x2="1716.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1420.0" x2="532.0" y2="1420.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1864.0" y1="1420.0" x2="1864.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1272.0" x2="1864.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1272.0" x2="532.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="532.0" y1="1420.0" x2="1568.0" y2="236.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1864.0" y1="1272.0" x2="532.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="1272.0" x2="2308.0" y2="680.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1864.0" y1="1272.0" x2="2160.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="532.0" y1="1272.0" x2="532.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="532.0" y1="1272.0" x2="976.0" y2="680.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1568.0" y1="236.0" x2="2308.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="680.0" x2="2160.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="680.0" x2="976.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="532.0" x2="1568.0" y2="532.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="976.0" y1="532.0" x2="976.0" y2="384.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="532.0" x2="1716.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="384.0" x2="1716.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="532.0" x2="1864.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="532.0" x2="2012.0" y2="88.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2012.0" y1="88.0" x2="976.0" y2="532.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="2752.0" x2="1124.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="976.0" x2="532.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="976.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="532.0" y1="976.0" x2="532.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="532.0" y1="976.0" x2="384.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="532.0" y1="828.0" x2="680.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="384.0" y1="976.0" x2="680.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1420.0" x2="2160.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1420.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="1420.0" x2="2752.0" y2="680.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2752.0" y1="680.0" x2="2900.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2900.0" y1="680.0" x2="2012.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1124.0" x2="828.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1124.0" x2="2012.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="1124.0" x2="680.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1124.0" x2="976.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1272.0" x2="828.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="828.0" y1="1272.0" x2="1716.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2012.0" y1="1124.0" x2="2160.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1124.0" x2="2012.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1124.0" x2="2160.0" y2="828.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="680.0" y1="1124.0" x2="532.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="1124.0" x2="828.0" y2="828.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="828.0" y1="1420.0" x2="828.0" y2="1568.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="1124.0" x2="2308.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1272.0" x2="2160.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1272.0" x2="828.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="1272.0" x2="2012.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="828.0" x2="2012.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="828.0" x2="2308.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="828.0" x2="680.0" y2="976.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2308.0" y1="828.0" x2="2456.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2456.0" y1="828.0" x2="2752.0" y2="828.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="2752.0" y1="828.0" x2="1716.0" y2="1420.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2752.0" y1="828.0" x2="2900.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2900.0" y1="828.0" x2="1272.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="1124.0" x2="1716.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="976.0" y1="1124.0" x2="828.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="1124.0" x2="1864.0" y2="828.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1716.0" y1="1124.0" x2="1864.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="828.0" x2="2012.0" y2="828.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1864.0" y1="1124.0" x2="1568.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="828.0" x2="2012.0" y2="680.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="976.0" y1="1272.0" x2="1420.0" y2="1864.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="976.0" y1="1272.0" x2="680.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1420.0" y1="1864.0" x2="1420.0" y2="2012.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2012.0" x2="1420.0" y2="2160.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2012.0" x2="1568.0" y2="2012.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2160.0" x2="1420.0" y2="2308.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2160.0" x2="1568.0" y2="2160.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="1272.0" x2="1124.0" y2="1864.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="680.0" y1="1272.0" x2="680.0" y2="1124.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="680.0" y1="1272.0" x2="384.0" y2="1272.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="680.0" y1="1272.0" x2="1568.0" y2="384.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1568.0" y1="2012.0" x2="1568.0" y2="2160.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="2012.0" x2="1716.0" y2="2012.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="2160.0" x2="1864.0" y2="384.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1124.0" y1="1864.0" x2="1124.0" y2="2012.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="384.0" y1="1272.0" x2="532.0" y2="1568.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="532.0" y1="1568.0" x2="680.0" y2="1864.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="680.0" y1="1864.0" x2="1420.0" y2="2160.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="2012.0" x2="1568.0" y2="2160.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="2012.0" x2="2456.0" y2="1124.0" stroke="#b54a4a" stroke-width="2" stroke-dasharray="6,4" />
+<line x1="1568.0" y1="384.0" x2="976.0" y2="1272.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="384.0" x2="1420.0" y2="1864.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2456.0" y1="1124.0" x2="1864.0" y2="384.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1272.0" y1="2752.0" x2="1420.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2752.0" x2="1568.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2752.0" x2="1716.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1420.0" y1="2752.0" x2="1864.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1568.0" y1="2752.0" x2="2160.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="1716.0" y1="2752.0" x2="1864.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="2752.0" x2="2308.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2012.0" y1="2752.0" x2="2456.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2160.0" y1="2752.0" x2="2308.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2456.0" y1="2752.0" x2="2604.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="2752.0" y1="2752.0" x2="2900.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3048.0" y1="2752.0" x2="3196.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3492.0" y1="2752.0" x2="3640.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3492.0" y1="2752.0" x2="3788.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3492.0" y1="2752.0" x2="4084.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3492.0" y1="2752.0" x2="4676.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3640.0" y1="2752.0" x2="3788.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3788.0" y1="2752.0" x2="3936.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3788.0" y1="2752.0" x2="4972.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3936.0" y1="2752.0" x2="5268.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="3936.0" y1="2752.0" x2="4232.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="4084.0" y1="2752.0" x2="4232.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="4232.0" y1="2752.0" x2="4380.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="4380.0" y1="2752.0" x2="4528.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="4528.0" y1="2752.0" x2="4972.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="4528.0" y1="2752.0" x2="5120.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="4676.0" y1="2752.0" x2="4824.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="5120.0" y1="2752.0" x2="5268.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="5268.0" y1="2752.0" x2="5416.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<line x1="5712.0" y1="2752.0" x2="5860.0" y2="2752.0" stroke="#3e4a63" stroke-width="2" />
+<g><title>vnum 8000
+Kharazhad â€' Caldera Gate
+
+The great iron gate of Kharazhad stands open beneath an arch of black volcanic stone, its surface etched with reliefs of the Lady of Fire's forge-flame. Heat rolls outward from the caldera city beyond in visible waves, and the air tastes of sulfur and hot metal. Rarozhki Dwarf guards in ember-scarred plate watch arrivals with the unhurried confidence of warriors who know nothing survives the mountain that they did not permit.</title><rect x="1212" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8000</text><text x="1272.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Calder…</text>
+</g>
+<g><title>vnum 8001
+Kharazhad â€' Gate Road
+
+A broad avenue of fire-tempered basalt leads from the Caldera Gate into the city's heart, its stones worn smooth by three thousand years of Rarozhki boots. Smoke-blackened lanterns cast amber pools of light even at midday, and the distant heartbeat of the great forge carries through the stone beneath your feet like a second pulse. Stalls selling ember-bread and roasted cave-fungus line the eastern edge.</title><rect x="1212" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8001</text><text x="1272.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Gate R…</text>
+</g>
+<g><title>vnum 8002
+Kharazhad â€' Central Market
+
+The central market of Kharazhad is a covered hall whose ceiling vaults are crusted with centuries of forge-smoke and cooled lava drips. Rarozhki smiths sell Embersteel blades from stalls of black iron, while Taraf-Imro traders display volcanic gems in leather-lined cases. The air is thick and hot, and every surface glows faintly with residual heat from the forge-vents below.</title><rect x="1212" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1272.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8002</text><text x="1272.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Centra…</text>
+</g>
+<g><title>vnum 8003
+Kharazhad â€' High Thane's Hall
+
+The Hall of the High Thane is carved directly from the caldera wall, its interior polished obsidian reflecting the eternal flame of a lava-channel that runs along the western wall. Stone banners bearing the Stonefire clan's sigil â€' a fist clutching a lightning-bolt flame â€' hang from iron rods. This is where High Thane Karveth Stonefire has held court for over three centuries, and the hall carries the weight of every decision made within its walls.</title><rect x="1212" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8003</text><text x="1272.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' High T…</text>
+<text x="1272.0" y="1324" text-anchor="middle" fill="#6a84a8" font-size="10">down→8050</text>
+</g>
+<g><title>vnum 8004
+Kharazhad â€' Temple of the Lady of Fire
+
+The temple rises in tiers of red-veined basalt, each level hotter than the last, until the inner sanctum shimmers with heat-haze visible to the naked eye. A lava-fed font at the altar's center burns with the Eternal Flame that has not been extinguished in three millennia. Priests in fire-resistant robes tend the flame in silence, and the air smells of hot iron and burning herbs.</title><rect x="1212" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8004</text><text x="1272.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Temple…</text>
+</g>
+<g><title>vnum 8005
+Kharazhad â€' Embersteel Forges (East Wing)
+
+The eastern forge-wing is a cathedral of industry â€' ranked anvils, roaring bellows, and lava-channels that carry molten Embersteel from the vent to the quench-tanks in a controlled flow. Apprentice smiths work in careful silence under the eyes of masters who learned their craft from masters three generations dead. The heat here is punishing; visitors without fire resistance feel it as a persistent, bone-deep ache.</title><rect x="1508" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8005</text><text x="1568.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Embers…</text>
+<text x="1568.0" y="1472" text-anchor="middle" fill="#6a84a8" font-size="10">down→8051</text>
+</g>
+<g><title>vnum 8006
+Kharazhad â€' Embersteel Forges (Central)
+
+The central forge is the heart of Kharazhad's economic and spiritual life. The primary magma vent rises here through a channel of Giant-carved stone, its controlled flow a piece of engineering that has baffled outside scholars for centuries. The vent's heat is sufficient to work Embersteel â€' a metal found nowhere else on Oreka â€' and the forge-masters guard the techniques of its working as a sacred trust.</title><rect x="916" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8006</text><text x="976.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Embers…</text>
+<text x="976.0" y="1472" text-anchor="middle" fill="#6a84a8" font-size="10">down→8052</text>
+</g>
+<g><title>vnum 8007
+Kharazhad â€' Embersteel Forges (West Wing)
+
+The western forge-wing handles the finishing and testing of Embersteel weapons and tools. Grinding wheels screech against blade edges, and sparks shower from polishing benches in constant orange curtains. Forgekeeper Agama Stonefire is often found here, testing each weapon personally before it leaves the complex. His voice carries easily over the noise when he finds a blade that fails his standards.</title><rect x="1360" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8007</text><text x="1420.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Embers…</text>
+<text x="1420.0" y="1768" text-anchor="middle" fill="#6a84a8" font-size="10">down→8053</text>
+</g>
+<g><title>vnum 8008
+Kharazhad â€' Barracks (East)
+
+The eastern barracks house a permanent garrison of three hundred Rarozhki warriors, their beds carved from the caldera wall itself in tiers of stone bunks. Weapons are racked in precise order along every aisle, and the smell of oil and leather overlays the ever-present forge-smoke. Off-duty soldiers sharpen blades and tell stories in the low rumble of Rarozhki Dwarven that newcomers find difficult to follow.</title><rect x="1212" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8008</text><text x="1272.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Barrac…</text>
+</g>
+<g><title>vnum 8009
+Kharazhad â€' Barracks (West)
+
+The western barracks serve as both garrison quarters and training ground for the Stonefire Guard, the High Thane's personal household troops. A sparring pit occupies the center of the hall, and even when occupied by sleepers, the room smells of effort and hot stone. The guard roster is posted on a slab of polished basalt by the entrance, updated daily.</title><rect x="1064" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1124.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8009</text><text x="1124.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Barrac…</text>
+</g>
+<g><title>vnum 8010
+Kharazhad â€' Residential Quarter (East)
+
+The eastern residential quarter is a warren of carved stone apartments stacked four and five levels high along the caldera's inner wall, connected by ramp-roads rather than stairs. Each family's door is marked by a clan sigil hammered in copper. Children dart between the ramps while elders sit in carved niches and watch the forge-smoke rise through the caldera's open top.</title><rect x="1656" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1716.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8010</text><text x="1716.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Reside…</text>
+</g>
+<g><title>vnum 8011
+Kharazhad â€' Gem-Cutter's Row
+
+Volcanic gems from the Scorchspires are cut and polished in this row of specialized workshops, their windows fitted with fine mesh to catch gem-dust. Pekakarlik gem-cutters work alongside Rarozhki jewelers in one of the few areas of the city where inter-kin collaboration is genuinely common. Display cases in the front rooms show finished pieces â€' fire rubies, lava opals, and the rare ember-diamonds that form only in active vents.</title><rect x="1360" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1420.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8011</text><text x="1420.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Gem-Cu…</text>
+</g>
+<g><title>vnum 8012
+Kharazhad â€' Council Chamber
+
+The Council Chamber is a circular room of polished red stone where the Forge Council meets to advise the High Thane. Stone chairs in concentric rings face a raised central dais, and the walls are carved with the genealogy of every Rarozhki clan that has contributed to Kharazhad's governance. The chamber is closed to visitors during session and eerily quiet between meetings.</title><rect x="1360" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1420.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8012</text><text x="1420.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Counci…</text>
+</g>
+<g><title>vnum 8013
+Kharazhad â€' Temple Approach
+
+A processional corridor of black basalt leads from the forge complex to the Temple of the Lady of Fire, its walls carved with the history of the Flame Offering festival. Every ten years, a smith destroys their finest work in the central forge as sacrifice to the Lady â€' the carvings depict this act with a reverence that outsiders often misread as tragedy. The corridor is always warm enough to make breath unnecessary.</title><rect x="1360" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8013</text><text x="1420.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Temple…</text>
+</g>
+<g><title>vnum 8014
+Kharazhad â€' The Ember Vault Approach
+
+At the base of a switchback descent cut through the oldest volcanic stone in the complex, a massive door of Embersteel bars the passage downward. The door's surface is inscribed with Giant-era runes that the Rarozhki have never successfully translated, and fire elementals drift in slow patrol arcs across the approach corridor. The High Thane's seal alone authorizes entry, and even then, entry has been granted only twice in living memory.</title><rect x="28" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="88.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8014</text><text x="88.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' The Em…</text>
+</g>
+<g><title>vnum 8015
+Kharazhad â€' South Residential Tier
+
+The southern residential tiers cling to the caldera's lower inner wall where the heat from the forge-vents is most intense. Houses here are built with heat-channels that draw some of the warmth away, but visitors from cooler climes find the ambient temperature exhausting within hours. The residents â€' mostly smithing families and forge-workers â€' seem not to notice.</title><rect x="1804" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1864.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8015</text><text x="1864.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' South …</text>
+</g>
+<g><title>vnum 8016
+Kharazhad â€' Provisioner's Street
+
+Kharazhad imports most of its food from Pekakarlik river traders and Halfling caravans, and Provisioner's Street is where those goods are warehoused and sold. The contrast with the forge-quarter is striking: here amid sacks of grain and crates of dried fruit, the heat seems almost manageable. The provisioners are mostly Halflings and Pekakarlik Dwarves, their cheerful commercial voices incongruous against the volcanic backdrop.</title><rect x="1064" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1124.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8016</text><text x="1124.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Provis…</text>
+</g>
+<g><title>vnum 8017
+Kharazhad â€' East Wall Walkway
+
+The eastern wall of the caldera has been cut into a series of walkways and defensive positions that give archers clear lines of fire across the approaches below. The wall itself radiates heat from within, and the stone is warm to the touch at every point. From here the desert stretches east in a shimmer of heat, punctuated by the dark peaks of the Emberfangs twenty miles distant.</title><rect x="1804" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8017</text><text x="1864.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' East W…</text>
+</g>
+<g><title>vnum 8018
+Kharazhad â€' Northeast Tower
+
+The northeast tower of the caldera's defensive ring is Kharazhad's primary watch-post, staffed by rotating shifts of Rarozhki rangers whose desert-adapted vision can spot a caravan at five miles in clear conditions. Signal mirrors are mounted at the tower's crown, capable of relaying messages to Ashgarin Fold in under an hour. The tower's lower levels serve as an officers' mess.</title><rect x="1508" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8018</text><text x="1568.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Northe…</text>
+</g>
+<g><title>vnum 8019
+Kharazhad â€' North Gate Approach
+
+A secondary gate in the caldera's northern wall opens toward the road to the Emberfang peaks, used primarily by mining expeditions and Rarozhki patrol parties. The gate is smaller than the main entrance and guarded by a permanent post of four soldiers. Ore-sledges wait in a queue beside the gate, loaded with raw stone from the mountain's upper workings.</title><rect x="1508" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8019</text><text x="1568.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' North …</text>
+</g>
+<g><title>vnum 8020
+Kharazhad â€' West Residential Quarter
+
+The western quarter is where Kharazhad's Taraf-Imro and Kovaka residents have established their homes â€' a somewhat less blistering neighborhood by virtue of its position relative to the forge-vents. Kovaka stonework decorates the archways, and a small Taraf-Imro communal hall occupies a corner of the quarter, its interior hung with the geometric tapestries typical of that people.</title><rect x="1360" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1420.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8020</text><text x="1420.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' West R…</text>
+</g>
+<g><title>vnum 8021
+Kharazhad â€' Taraf-Imro Communal Hall
+
+A two-story hall of dressed stone maintained by Kharazhad's Taraf-Imro population, its upper floor used for meetings and its lower for communal meals. The Taraf-Imro who live in Kharazhad are mostly traders and skilled artisans who have spent years negotiating the cultural distance between Rarozhki formality and their own traditions. The hall is a piece of home in an alien landscape.</title><rect x="1064" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1124.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8021</text><text x="1124.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Taraf-…</text>
+</g>
+<g><title>vnum 8022
+Kharazhad â€' Kovaka Stone Ward
+
+The Kovaka Elves who live in Kharazhad occupy a small ward of exceptionally well-maintained stone structures, their angular geometry a contrast to the organic curves of Rarozhki volcanic architecture. Kovaka stonebinders work quietly in open-fronted workshops, repairing rune-circles and maintaining the structural integrity of the caldera's older sections. Their patience in this hot, close environment reflects centuries of adaptation.</title><rect x="1064" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1124.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8022</text><text x="1124.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Kovaka…</text>
+</g>
+<g><title>vnum 8023
+Kharazhad â€' West Gate
+
+The western gate of Kharazhad is a working entrance used by supply caravans from Ashgarin Fold and the river settlements below. Embersteel-banded wagons line the approach, and Pekakarlik teamsters haggle with Rarozhki gate-wardens over cargo inspections. A customs office occupies the gatehouse's lower room, and the smell of fresh desert air drifting through the open arch is bracing after the forge-quarter's heat.</title><rect x="1064" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1124.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8023</text><text x="1124.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' West G…</text>
+</g>
+<g><title>vnum 8024
+Kharazhad â€' Forge-Priests' Cloister
+
+The forge-priests who serve the Lady of Fire maintain this walled cloister adjacent to the temple, where novices learn the theology and craft of sacred smithing. A small practice forge burns in the courtyard, and the sound of prayer-hammering â€' rhythmic, deliberate strikes made as devotional act rather than productive work â€' carries through the walls at the canonical hours.</title><rect x="1212" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8024</text><text x="1272.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Forge-…</text>
+</g>
+<g><title>vnum 8025
+Kharazhad â€' The Quench Yards
+
+Embersteel fresh from the forge is quenched in massive tanks of mineral-rich water drawn from the deep caldera aquifer, each quench accompanied by a shriek of steam that pressurizes the surrounding corridors. The quench-masters are a specialized guild within the broader smith culture, and their timing decisions â€' the precise moment between forge and quench â€' determine whether a blade becomes masterwork or slag.</title><rect x="1656" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8025</text><text x="1716.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' The Qu…</text>
+</g>
+<g><title>vnum 8026
+Kharazhad â€' Deep Ore Corridor
+
+A descending corridor cut through solid basalt leads from the forge complex to the upper mine-works where raw volcanic ore is extracted. The walls here are veined with the orange-red Embersteel ore in its natural state, and even unprocessed it radiates warmth to the touch. Mine-carts on iron rails fill the corridor at shift-change, their loads rattling northward toward the forges.</title><rect x="916" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8026</text><text x="976.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Deep O…</text>
+<text x="976.0" y="1768" text-anchor="middle" fill="#6a84a8" font-size="10">down→8027</text>
+</g>
+<g><title>vnum 8027
+Kharazhad â€' Upper Mine Works
+
+The upper mine-works are a network of cut passages where Rarozhki miners extract the Embersteel ore that feeds the city's forge economy. Pickaxes ring against hot stone, and the passages are lit by lava-globes â€' sealed balls of volcanic glass containing small amounts of molten rock that provide steady, sourceless illumination. Ventilation shafts cut every fifty feet carry away the worst of the mine-gases.</title><rect x="2100" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2160.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8027</text><text x="2160.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Upper …</text>
+<text x="2160.0" y="1028" text-anchor="middle" fill="#6a84a8" font-size="10">up→8026</text>
+</g>
+<g><title>vnum 8028
+Kharazhad â€' Vent Chamber
+
+A natural chamber where a secondary magma vent rises from the deep rock, its flow controlled by Giant-era stonework that the Rarozhki maintain with obsessive care. The air here is barely breathable without fire resistance, and the temperature exceeds anything found in the forge-halls above. This chamber is the geological explanation for Kharazhad's very existence â€' without this vent, there is no Embersteel, no city, no Stonefire clan.</title><rect x="1952" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8028</text><text x="2012.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Vent C…</text>
+</g>
+<g><title>vnum 8029
+Kharazhad â€' The Hammerbright Tavern
+
+The only establishment in Kharazhad that might charitably be called a tavern occupies a broad vault cut into the residential quarter's lowest level. Stools of iron and stone circle a central forge-pit that doubles as hearth and entertainment â€' arm-wrestling over the coals is a traditional Rarozhki recreational activity. The drink is hot fermented root-ale served in iron cups, and it is considerably better than it sounds.</title><rect x="1064" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1124.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8029</text><text x="1124.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' The Ha…</text>
+</g>
+<g><title>vnum 8030
+Kharazhad â€' Stonefire Clan Vault
+
+The innermost sanctum of the Stonefire clan's private holdings is sealed behind a door of solid Embersteel that has never in three centuries been forced. Within, according to Rarozhki tradition, are kept the clan's founding relics, the High Thane's testament, and the original deed of compact between the Rarozhki and the Giants who first permitted them to work this caldera. The current High Thane holds the only key.</title><rect x="1360" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1420.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8030</text><text x="1420.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Stonef…</text>
+</g>
+<g><title>vnum 8031
+Kharazhad â€' Caldera Rim Path (North)
+
+A narrow path cut into the caldera's outer rim gives access to the higher wall positions and the ventilation works above the city. The drop into the caldera on one side and the sheer volcanic slope on the other make this a vertigo-inducing walk for the uninitiated. Rarozhki children run this path as a coming-of-age test, and the adults' nonchalance about the exposure is quietly alarming to visitors.</title><rect x="1656" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8031</text><text x="1716.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Calder…</text>
+</g>
+<g><title>vnum 8032
+Kharazhad â€' Ventilation Shafts
+
+The ventilation system that keeps Kharazhad's forge-gases from poisoning the city is a piece of Giant-era engineering that the Rarozhki have modified and extended over centuries. Vertical shafts cut through the caldera wall draw hot gas out and channel cooler air from above the rim downward. The system requires constant maintenance, and a team of engineers is always on duty here.</title><rect x="916" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8032</text><text x="976.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Ventil…</text>
+</g>
+<g><title>vnum 8033
+Kharazhad â€' Signal Platform
+
+The signal platform on the caldera's eastern rim provides line-of-sight to Ashgarin Fold to the east and, on clear days, to the distant glint of the Great River to the west. A mirror array and a fire-basket for smoke signals are maintained in ready condition. From this elevation the full scale of the Infinite Desert becomes visible â€' a shimmering sea of ochre and gold that seems to have no end.</title><rect x="1952" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8033</text><text x="2012.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Signal…</text>
+</g>
+<g><title>vnum 8034
+Kharazhad â€' The Stone Covenant Hall
+
+Founded by High Thane Karveth Stonefire himself following his witnessing of Aldenheim's fall, the Stone Covenant is a religious-martial order dedicated to preserving fire-craft knowledge against future catastrophe. The Covenant Hall houses their library of forge-records and their reliquary of Aldenheim artifacts â€' tools and metals that survived the destruction. The air here smells of old paper and cool stone, a welcome relief from the forge quarter.</title><rect x="1508" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1568.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8034</text><text x="1568.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' The St…</text>
+</g>
+<g><title>vnum 8035
+Kharazhad â€' Healer's Alcove
+
+Burns are an occupational hazard in Kharazhad, and the healer's alcove adjacent to the forge complex is always busy. Kovaka healers apply mineral-paste poultices and channel earth-affinity magic into damaged tissue while Pekakarlik water-adepts cool the worst heat injuries. The combination of the two traditions has produced a burn-treatment practice that northern physicians would find fascinating.</title><rect x="1804" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1864.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8035</text><text x="1864.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Healer…</text>
+</g>
+<g><title>vnum 8036
+Kharazhad â€' Merchant Caravanserai
+
+The caravanserai just inside the main gate provides lodging and storage for the outside merchants who make Kharazhad's trade connections possible. Stone stalls accommodate pack animals that would otherwise refuse the heat, and the sleeping quarters are cut deep enough into the caldera wall that the temperature is merely uncomfortably warm rather than actively dangerous. Halfling caravan masters dominate the guest register.</title><rect x="1508" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1568.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8036</text><text x="1568.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Mercha…</text>
+</g>
+<g><title>vnum 8037
+Kharazhad â€' Apprentice Forges
+
+Young Rarozhki smiths spend their first three years of apprenticeship at these smaller practice forges, learning the foundational techniques of fire-work before they are permitted anywhere near the Embersteel channels. The work here is iron and copper, and the mistakes are instructive rather than catastrophic. The masters who supervise the apprentice forges are notably more patient than their counterparts in the main complex.</title><rect x="916" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8037</text><text x="976.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Appren…</text>
+</g>
+<g><title>vnum 8038
+Kharazhad â€' Volcanic Spring Baths
+
+A natural volcanic spring has been channeled into a series of bathing pools at varying temperatures, providing Kharazhad's residents with one of the city's few genuine luxuries. The mineral-rich water is said to ease forge-aches and joint inflammation, and the pools are occupied at all hours. The hottest pool is a point of pride â€' outsiders typically last thirty seconds before retreating to the cooler ones.</title><rect x="1508" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1568.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8038</text><text x="1568.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Volcan…</text>
+</g>
+<g><title>vnum 8039
+Kharazhad â€' Fire-Powder Magazine
+
+Kharazhad's production of fire-powders â€' alchemical compounds derived from volcanic minerals with a range of explosive and incendiary applications â€' is stored in this heavily guarded magazine near the city's wall. The magazine is built with blast-walls and a quick-flood channel that can inundate the interior from the caldera aquifer if a fire breaks out. The guards here are the tensest soldiers in the city.</title><rect x="1952" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8039</text><text x="2012.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Fire-P…</text>
+</g>
+<g><title>vnum 8040
+Kharazhad â€' Rune-Circle Chamber
+
+Deep in the caldera's foundations, reached by a side passage from the ore corridors, a Giant-era rune-circle pulses with amber light in a chamber that has clearly never been remodeled â€' the Giant-carved walls are too large for Dwarf habitation and show no signs of Rarozhki modification. The circle's function is debated; the Rarozhki believe it stabilizes the caldera. The Kovaka who have studied it say it does something far more interesting.</title><rect x="28" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="88.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8040</text><text x="88.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Kharazhad â€' Rune-C…</text>
+</g>
+<g><title>vnum 8050
+Ember Vault â€' First Antechamber
+
+The air changes immediately below the Embersteel door â€' cooler, drier, and carrying a subtle metallic scent unlike anything in the forge complex above. Giant-carved reliefs line the antechamber walls, depicting the forge-rituals of an era before the Rarozhki, before the Shattering, when Giants worked these same volcanic channels for purposes that remain unknown. The floor is smooth and unmarked, as though no foot has touched it in centuries.</title><rect x="176" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="236.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8050</text><text x="236.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ember Vault â€' Firs…</text>
+</g>
+<g><title>vnum 8051
+Ember Vault â€' Giant Forge Hall
+
+A forge hall scaled for beings twelve feet tall confronts the descending visitor with immediate disorientation. Anvils of black iron the size of carriages stand dormant at each station, their surfaces pitted by use that ended millennia ago. Channels cut for magma flow still carry a faint warmth, but the flow itself was diverted when the vault was sealed. A fire elemental drifts in slow circles near the far wall, untethered but apparently contained.</title><rect x="324" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="384.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8051</text><text x="384.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ember Vault â€' Gian…</text>
+</g>
+<g><title>vnum 8052
+Ember Vault â€' Metal Repository
+
+Racks of Giant-scale metal ingots occupy this chamber â€' materials whose composition the Rarozhki have analyzed through the bars of an inner gate without being able to test. Some are Embersteel of a purity the surface forges cannot approach. Others are alloys that do not correspond to any metal in current knowledge. The inner gate is sealed with a mechanism that appears to require both fire and water affinity to open simultaneously.</title><rect x="472" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="532.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8052</text><text x="532.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ember Vault â€' Meta…</text>
+</g>
+<g><title>vnum 8053
+Ember Vault â€' The Sealed Chamber
+
+The innermost chamber of the Ember Vault is sealed by a door of some material that is neither stone nor metal, its surface cool to the touch despite the ambient heat. Giant-script covers every inch of the door's face, and two fire elementals maintain permanent vigil before it. Whatever the Aldenheim Dwarves and their Giant patrons placed in this final chamber, the precautions suggest it was something neither was willing to let the world touch casually.</title><rect x="620" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8053</text><text x="680.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ember Vault â€' The …</text>
+</g>
+<g><title>vnum 8054
+Ember Vault â€' Guard Garrison
+
+A garrison chamber where the Rarozhki who watch the Ember Vault's upper approaches are quartered in rotating shifts of six. The soldiers here are the most elite of the Stonefire Guard â€' chosen for temperament as much as skill, because the duty is long, the vault is unsettling, and nothing has ever happened here that requires action. The waiting is the hardest part, according to veterans of the rotation.</title><rect x="768" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="828.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8054</text><text x="828.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ember Vault â€' Guar…</text>
+</g>
+<g><title>vnum 8090
+Dunewell â€' Upper Cliff Market
+
+The cliff-face settlement of Dunewell begins here at the upper rim, where a market of canvas-roofed stalls occupies a wide ledge cut into the Great River Gorge's eastern wall. River fish, hydraulic tools, and rune-anchored masonry goods are traded here by Pekakarlik merchants who speak with the easy fluency of people accustomed to dealing with all comers. The drop to the river below is visible through gaps in the market floor â€' a long way down.</title><rect x="472" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="532.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8090</text><text x="532.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Upper C…</text>
+<text x="532.0" y="1176" text-anchor="middle" fill="#6a84a8" font-size="10">down→8092</text>
+</g>
+<g><title>vnum 8091
+Dunewell â€' Cliffside Approach Road
+
+A switchback road cut into the gorge wall descends from the desert plateau to the upper market level, its surface worn smooth by generations of caravan traffic. The wall on the right radiates heat from the desert above; the cool updraft from the river two hundred feet below creates a constant wind that makes conversation difficult. Rope railings are anchored to the wall at irregular intervals â€' local advice is to ignore them; Pekakarlik engineering standards are high.</title><rect x="620" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8091</text><text x="680.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Cliffsi…</text>
+</g>
+<g><title>vnum 8092
+Dunewell â€' Mid-Cliff Residential Tier
+
+Carved into the gorge wall at a level where the river's sound becomes a constant background presence, the residential tier of Dunewell is honeycombed with clan-apartments whose entrances face outward onto narrow ledge-streets. Laundry lines run between cliff-bolts; children play on platforms built out over the void with a casualness that defines Pekakarlik attitudes toward heights. The smell of cooking and river-damp is welcoming after the desert.</title><rect x="1804" y="176" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1864.0" y="194" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8092</text><text x="1864.0" y="238.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Mid-Cli…</text>
+<text x="1864.0" y="288" text-anchor="middle" fill="#6a84a8" font-size="10">up→8090 down→8093</text>
+</g>
+<g><title>vnum 8093
+Dunewell â€' Tunnel Works Entrance
+
+The primary entrance to Dunewell's under-river tunnel network is a broad archway reinforced with rune-anchored stone, carved with the flowing-water designs that characterize Pekakarlik monumental art. The tunnels beyond carry the Great River's flow through a system of channels and gates that the Flowkeepers operate continuously. Chief Flowkeeper Torra Floodgate's office is just inside, usually occupied by an assistant when Torra is in the tunnels.</title><rect x="620" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8093</text><text x="680.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Tunnel …</text>
+<text x="680.0" y="1768" text-anchor="middle" fill="#6a84a8" font-size="10">up→8092 down→8094</text>
+</g>
+<g><title>vnum 8094
+Dunewell â€' River-Level Docks
+
+At the base of the cliff, a series of wooden docks extends over the Great River, their pilings driven into the riverbed with a precision that has kept them standing through three documented flood-seasons. Flat-bottomed Pekakarlik riverboats are tied in rows, their cargoes being loaded and unloaded by teams working in the choreographed efficiency of long practice. The sound of the river is total here â€' conversation requires raised voices.</title><rect x="1360" y="2248" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="2266" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8094</text><text x="1420.0" y="2310.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' River-L…</text>
+<text x="1420.0" y="2360" text-anchor="middle" fill="#6a84a8" font-size="10">up→8093</text>
+</g>
+<g><title>vnum 8095
+Dunewell â€' Kovaka Stone Quarter
+
+A compact neighborhood where Dunewell's Kovaka Elf population maintains its own customs within the larger Pekakarlik settlement. Stone-carved archways open onto small courtyards where Kovaka rangers clean weapons and Kovaka stonebinders work maintenance repairs on the cliff-wall's structural anchors. The integration here is practical â€' the Kovaka are here because the gorge needs their skills, and both sides understand that.</title><rect x="324" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="384.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8095</text><text x="384.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Kovaka …</text>
+</g>
+<g><title>vnum 8096
+Dunewell â€' Flowkeeper Hall
+
+The administrative center of Dunewell's Consensus Council occupies a hall cut deep into the gorge wall, its stone cool and damp even at midsummer. Hydrological charts cover every available surface â€' maps of the Great River's seasonal variations, the tunnel system's current configuration, and the projected impact of the next flood season on dock infrastructure. The governance here is entirely practical in character.</title><rect x="472" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="532.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8096</text><text x="532.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Flowkee…</text>
+</g>
+<g><title>vnum 8097
+Dunewell â€' Under-River Tunnels
+
+The tunnelworks beneath the Great River are a marvel of Pekakarlik hydraulic engineering â€' channels cut through bedrock that carry controlled amounts of river water to side-pools used for water storage, fish-trapping, and the powering of mechanical devices through water-wheel systems. The walls are slick with moisture and the air is cool and cave-scented. The tunnels extend further than any single person has mapped.</title><rect x="1804" y="324" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="342" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8097</text><text x="1864.0" y="386.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Under-R…</text>
+</g>
+<g><title>vnum 8098
+Dunewell â€' North Dock & Boat-Yard
+
+The northern dock serves as Dunewell's boat construction and maintenance yard, where Pekakarlik shipwrights build the flat-hulled river craft that navigate the Great River's desert stretch. Frames of river-hardwood are fitted with hull planks sealed with a proprietary resin that makes them effectively waterproof indefinitely. Boats under construction rest in wooden cradles along the dock's upper terrace.</title><rect x="1656" y="1804" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="1822" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8098</text><text x="1716.0" y="1866.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' North D…</text>
+</g>
+<g><title>vnum 8099
+Dunewell â€' South Dock & Customs
+
+The southern dock handles the commercial traffic that makes Dunewell the central trading node for the desert's river corridor. A customs shed at the dock's head records all cargo passing through â€' the Consensus Council's primary revenue mechanism. Halfling traders sit in patient queues with their manifests, trading pleasantries with the Pekakarlik customs officers who inspect each load with meticulous thoroughness.</title><rect x="1360" y="2396" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1420.0" y="2414" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8099</text><text x="1420.0" y="2458.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' South D…</text>
+</g>
+<g><title>vnum 8100
+Dunewell â€' Eruskan Traders' Hostel
+
+The small Eruskan population of Dunewell operates this hostel for visiting traders from the northern reaches, offering sleeping mats, hot food, and the particular service of translating between the city's Pekakarlik formal dialect and the traders' Common. The hostel is two stories of carved-cliff rooms, and its common room serves a fish stew that visiting traders from every direction tend to discuss long after they have left Dunewell.</title><rect x="620" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="680.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8100</text><text x="680.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Eruskan…</text>
+</g>
+<g><title>vnum 8101
+Dunewell â€' The Tidal Amphitheater
+
+A natural bowl in the gorge wall has been widened and tiered into an amphitheater that floods to the lower tiers during the Great River's annual peak flow. During the Tide-Turning festival, boat races are run through the partially flooded amphitheater in a display of seamanship and bravery that is equal parts competition and ceremony. The flood-tide ring is marked on the lower wall in permanently stained stone.</title><rect x="2248" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2308.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8101</text><text x="2308.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' The Tid…</text>
+</g>
+<g><title>vnum 8102
+Dunewell â€' Rune-Anchor Workshop
+
+The specialized craft of rune-anchored masonry â€' stone construction stabilized by elemental runes that resist weathering, water damage, and seismic stress â€' is practiced and taught in this workshop. Pekakarlik stonebinders work alongside Kovaka rune-carvers here in a collaborative tradition that predates Dunewell's current governance structure. The workshop also produces repair materials for the Great River's ancient Giant-era infrastructure.</title><rect x="1212" y="324" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="342" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8102</text><text x="1272.0" y="386.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dunewell â€' Rune-An…</text>
+</g>
+<g><title>vnum 8108
+Solhaven â€' Oasis Grove Entry
+
+The road from the desert gives way to a canopy of desert palms and ancient tamarind trees whose roots tap the Giant-maintained underground channels that keep the Solhaven oasis alive. The temperature drops five degrees in the shade, and the sound of running water from an irrigation channel is immediately audible. A carved sandstone pillar at the grove's entrance bears a Giant-script inscription that the local Kovaka read as 'Water Given, Life Kept.'</title><rect x="768" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="828.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8108</text><text x="828.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Oasis G…</text>
+</g>
+<g><title>vnum 8109
+Solhaven â€' Oasis Heart
+
+At the center of the oasis grove, a natural spring fed by Giant-era underground channels rises into a stone basin carved with flowing-water reliefs. Desert willows and date palms crowd around it, their roots drinking from the overflow channels that distribute water to the settlement. This is the reason Solhaven exists â€' the spring has never gone dry in recorded memory, its output regulated by rune-circles that the Kovaka Elves maintain with painstaking care.</title><rect x="768" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="828.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8109</text><text x="828.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Oasis H…</text>
+</g>
+<g><title>vnum 8110
+Solhaven â€' Central Market
+
+The market of Solhaven is an open-air square in the lee of the oasis grove, shaded by a patchwork of canvas awnings in the bright colors favored by the Halfling traders who run most of the stalls. Oasis fruits, date wine, desert herbs, and caravan supplies are the staples, but the real draw is Pip Sungrove's brokerage service â€' a one-stop arrangement point for travelers crossing the desert in any direction.</title><rect x="1952" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="2012.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8110</text><text x="2012.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Central…</text>
+</g>
+<g><title>vnum 8111
+Solhaven â€' Pilgrim Lodging House
+
+Sand Warden pilgrims and civilian travelers on the oasis circuit rest here in a low stone building ringed with ventilation slits that allow airflow while blocking sand. The lodging house keeps a roster of active pilgrim groups and their circuit schedules â€' a practical safety net, since knowing who is on the road between oases is the only reliable way to notice when someone has not arrived. The Oasis Warden checks the roster daily.</title><rect x="2396" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2456.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8111</text><text x="2456.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Pilgrim…</text>
+</g>
+<g><title>vnum 8112
+Solhaven â€' Rune-Circle Shrine
+
+The Giant-era rune-circle that stabilizes the Solhaven oasis has been incorporated into a shrine to the Lord of Stone, its ancient geometric precision surrounded by offerings of polished stone and carved wooden figures. Kovaka guardians maintain the rune-circle's active state through periodic re-inscription of worn glyphs, and the shrine serves as a meditation site for Sand Warden pilgrims completing the oasis circuit. At night the runes emit a faint amber glow.</title><rect x="176" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="236.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8112</text><text x="236.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Rune-Ci…</text>
+</g>
+<g><title>vnum 8113
+Solhaven â€' Caravan Staging Ground
+
+The sandy ground east of the market has been leveled and marked with stone posts to form a caravan staging area where pack animals are watered, cargo is inspected, and outfitting for the next desert crossing is organized. Halfling provisioners circulate among the staging caravans selling last-minute supplies at prices that reflect the knowledge that the next shop is days away in any direction.</title><rect x="2100" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2160.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8113</text><text x="2160.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Caravan…</text>
+</g>
+<g><title>vnum 8114
+Solhaven â€' Pekakarlik Water Engineers' Hall
+
+The Pekakarlik Dwarves who maintain Solhaven's underground water distribution channels operate from this hall, its interior dominated by a scale model of the oasis's hydraulic system â€' channels, valves, and rune-points all mapped in miniature. The engineers conduct weekly inspections of the physical channels and daily monitoring of the rune-circles' performance. They are the quiet reason the oasis has not dried up despite centuries of climate stress.</title><rect x="324" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="384.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8114</text><text x="384.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Pekakar…</text>
+</g>
+<g><title>vnum 8115
+Solhaven â€' Lord of Stone Shrine
+
+A secondary shrine to the Lord of Stone occupies a natural alcove in the sandstone cliff behind the oasis, its interior cool and dark. Giant-era carvings on the back wall show the Lord of Stone in the act of raising a mountain â€' a depiction that local Kovaka scholars interpret as a record of actual events rather than allegory. Offerings of gems, carved stone animals, and desert-flowers are always fresh, left by Sand Warden pilgrims passing through.</title><rect x="176" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="236.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8115</text><text x="236.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Lord of…</text>
+</g>
+<g><title>vnum 8116
+Solhaven â€' Eruskan Quarter
+
+Solhaven's Eruskan residents â€' traders and their families who found the oasis pleasant enough to stay permanently â€' occupy a small quarter on the grove's southern fringe. The buildings here are whitewashed stone with decorated window-frames, a southern tradition transplanted to the desert with practical modifications for sand-resistance. A small shrine to no particular deity occupies one corner â€' a generalist practice common among Eruskan expatriates.</title><rect x="768" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="828.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8116</text><text x="828.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Eruskan…</text>
+</g>
+<g><title>vnum 8117
+Solhaven â€' Date Wine Cellar
+
+The date wine that Solhaven exports across the desert routes is fermented and aged in this underground cellar carved beneath the oasis grove, where the temperature remains cool enough for extended storage. The proprietor â€' an elderly Halfling woman named Bessa Sweetpit â€' maintains a tasting room at the cellar's entrance and considers her date wine to be Solhaven's finest diplomatic asset. She is not wrong.</title><rect x="916" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="976.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8117</text><text x="976.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Date Wi…</text>
+</g>
+<g><title>vnum 8118
+Solhaven â€' Oasis Warden's Office
+
+Oasis Warden Pip Sungrove operates from this cluttered office at the edge of the central market, its shelves loaded with caravan route maps, desert weather records, and a correspondence archive that covers thirty years of desert trade. Pip's two primary functions â€' maintaining the rune-circle and running the caravan brokerage â€' are here intertwined, since knowing who travels the desert is inseparable from knowing whether the oases that travelers depend on are functioning.</title><rect x="2544" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2604.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8118</text><text x="2604.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Oasis W…</text>
+</g>
+<g><title>vnum 8119
+Solhaven â€' Grove's Edge (North)
+
+The northern edge of the oasis grove is a sharp transition â€' within a few paces, the date palms and desert willows give way to open sand and the heat increases by ten degrees. A carved boundary marker in the Giant style stands at the edge, its inscription interpreted by Sand Wardens as a warning against straying without adequate water. The road north toward the Glass Wastes begins here, and it looks exactly as forbidding as it is.</title><rect x="768" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="828.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8119</text><text x="828.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Grove's…</text>
+</g>
+<g><title>vnum 8120
+Solhaven â€' Herbalist's Workshop
+
+Desert herbs with medicinal and alchemical value are dried, sorted, and processed in this workshop at the grove's western edge, where the morning light is best for color-matching during grading. The Halfling herbalists who work here supply caravan medicine-kits throughout the desert routes and export surplus to the Kharazhad healers. A drying rack built into the workshop's exterior wall carries a permanent array of hanging plant bundles.</title><rect x="1508" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1568.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8120</text><text x="1568.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Herbali…</text>
+</g>
+<g><title>vnum 8121
+Solhaven â€' Lantern-Walk Landing
+
+During the Lantern Walk festival that honors the Giants, this landing at the oasis spring's outlet pool is where river lanterns are launched to drift downstream through the grove's irrigation channels. The pool is lined with smooth stone and surrounded by carved fish-figures in a Giant tradition that the settlement's Halfling and Pekakarlik residents have maintained without fully understanding its original significance.</title><rect x="1656" y="1656" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1716.0" y="1674" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8121</text><text x="1716.0" y="1718.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' Lantern…</text>
+</g>
+<g><title>vnum 8122
+Solhaven â€' South Caravan Gate
+
+The southern approach to Solhaven is marked by a carved sandstone gate â€' not a true fortification, but a marker of settled space amid the desert. Caravans from the direction of Sandsong and the Pilgrim Road approach through this gate, and their arrival typically prompts immediate commercial activity from the Halfling traders who keep a watch rotation on the southern horizon.</title><rect x="324" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="384.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8122</text><text x="384.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Solhaven â€' South C…</text>
+</g>
+<g><title>vnum 8123
+Ashgarin Fold â€' Volcanic Spring Entry
+
+The settlement of Ashgarin Fold is built around a volcanic spring that emerges from a crack in the desert floor and pools in a natural depression before flowing into the rock. The smell of mineral-rich water and volcanic sulfur is immediate and distinctive. Stone buildings of basalt block â€' fire-tempered and harder than standard quarried stone â€' rise on the depression's rim, and the constant low hiss of the spring underlies every sound.</title><rect x="1212" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1272.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8123</text><text x="1272.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Vo…</text>
+</g>
+<g><title>vnum 8124
+Ashgarin Fold â€' Forge-Stone Complex
+
+The forge-stone complex is Ashgarin Fold's economic core â€' a cluster of working forges where volcanic spring water is used in the finishing process for fire-tempered stone tools and Embersteel equipment. The techniques practiced here are distinct from Kharazhad's methods, developed independently by the Fold's Joint Forge-Stone Council over centuries of isolated innovation. The products are distinctive: darker in color, with a surface sheen that Rarozhki smiths call 'spring-finished.'</title><rect x="1212" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1272.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8124</text><text x="1272.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Fo…</text>
+</g>
+<g><title>vnum 8125
+Ashgarin Fold â€' Firemother's Shrine
+
+Firemother Draya Cinderward maintains the volcanic spring shrine that is Ashgarin Fold's spiritual center, a platform of firewalking stones surrounding the spring's main outlet pool. The water is scalding at the source and cools only gradually as it flows outward. The shrine's twin dedication to the Lady of Fire and the Lord of Stone is expressed in its architecture â€' alternating fire-basalt and smooth river-granite in every surface.</title><rect x="1360" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1420.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8125</text><text x="1420.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Fi…</text>
+</g>
+<g><title>vnum 8126
+Ashgarin Fold â€' Quarrier's Hall
+
+Orean Humans and Pekakarlik Dwarves who work the basalt quarries outside the settlement gather in this hall for meals and coordination meetings. The Forge-Stone Council holds its regular sessions here, with Firemother Draya often present as mediator between the Rarozhki smiths whose forge preferences shape demand and the quarriers whose extraction capacity shapes supply. The dynamic is professionally civil and personally complicated.</title><rect x="1064" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1124.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8126</text><text x="1124.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Qu…</text>
+</g>
+<g><title>vnum 8127
+Ashgarin Fold â€' Firewalk Vows Hall
+
+The Firewalk Vows festival is Ashgarin Fold's most important annual event â€' oaths sworn while walking a path of volcanic stone, followed by communal forging. This hall serves as both preparation space for festival participants and year-round gathering space for those who have taken the Vows and formed the bonded community they create. The volcanic stone walkway is a permanent installation in the hall's center, kept warm by channels from the spring below.</title><rect x="1360" y="324" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1420.0" y="342" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8127</text><text x="1420.0" y="386.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Fi…</text>
+</g>
+<g><title>vnum 8128
+Ashgarin Fold â€' Residential Longhouses
+
+The residential buildings of Ashgarin Fold are longhouses of fire-tempered basalt arranged around the spring's lower pool, where the water has cooled enough for bathing and washing. The architecture is practical without ornamentation â€' thick walls for heat insulation, narrow windows for sand-exclusion, and roof-drains designed to collect the rare desert rainfall. A communal kitchen occupies the end of each longhouse block.</title><rect x="1064" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1124.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8128</text><text x="1124.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Re…</text>
+</g>
+<g><title>vnum 8129
+Ashgarin Fold â€' Spring Salt Works
+
+The volcanic spring water carries dissolved minerals that precipitate as a crust on the pool's edges and on the salt-pans constructed downstream. Volcanic spring salts from Ashgarin Fold are traded across the desert routes and north to the river settlements â€' their flavor is distinctive, with a mineral sharpness that cooks across Oreka seek for specific preparations. The salt workers are Pekakarlik and Orean in roughly equal proportion.</title><rect x="1656" y="324" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="1716.0" y="342" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8129</text><text x="1716.0" y="386.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Sp…</text>
+</g>
+<g><title>vnum 8130
+Ashgarin Fold â€' East Basalt Approach
+
+The road east from Ashgarin Fold toward the Scorchspires passes through a landscape of exposed basalt formations â€' columns and sheets of ancient lava that cooled in irregular patterns millions of years ago. The volcanic spring's overflow has cut a shallow channel through the basalt that follows the road for a mile before sinking into the rock. The distant peaks of the Emberfangs are visible on the horizon in clear weather.</title><rect x="1360" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8130</text><text x="1420.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Ashgarin Fold â€' Ea…</text>
+</g>
+<g><title>vnum 8133
+Sandsong â€' Pilgrim Road Hub
+
+The settlement of Sandsong exists because the pilgrim roads from three directions converge here, making it the natural rest-and-resupply point for Sand Warden circuits of the oasis ring. The buildings are low and sand-colored, almost invisible from a distance, their walls thick enough to survive sandstorms. Chapter Warden Sula Dustwalker's office is the tallest structure in the settlement â€' a distinction that requires only two stories.</title><rect x="2248" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2308.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8133</text><text x="2308.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Pilgrim…</text>
+</g>
+<g><title>vnum 8134
+Sandsong â€' Giant Shrine
+
+The largest known intact Giant shrine in the Infinite Desert stands at Sandsong's northern edge, its scale dwarfing the settlement buildings nearby. Carved from a single monolith of dark granite, the shrine's relief work depicts the Giants' relationships with the elemental forces with an artistic precision that has not been matched in any later tradition. Sand Wraiths drift at the shrine's margins at night, and pilgrim tradition holds that respectful visitors have nothing to fear from them.</title><rect x="2248" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2308.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8134</text><text x="2308.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Giant S…</text>
+</g>
+<g><title>vnum 8135
+Sandsong â€' Sand Warden Chapter House
+
+The chapter house of Sandsong's Sand Warden organization is a working administrative space â€' maps, circuit schedules, sandstorm records, and rune-circle maintenance logs cover every available surface. Sula Dustwalker runs a tight operation with a lean staff, and the chapter house reflects that: efficient, minimal, and focused entirely on the practical demands of keeping the oasis circuit functional.</title><rect x="176" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="236.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8135</text><text x="236.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Sand Wa…</text>
+</g>
+<g><title>vnum 8136
+Sandsong â€' Halfling Caravan Quarter
+
+Halfling caravaneers who use Sandsong as a waypoint on the desert crossing maintain this quarter of semi-permanent structures â€' buildings that have been rebuilt so many times in the same location that they are functionally permanent. Trading of caravan supplies, desert herbs, and Giant relics happens continuously in the quarter's open spaces, and the Halfling tendency toward social gathering means the quarter is rarely quiet.</title><rect x="2544" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="2604.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8136</text><text x="2604.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Halflin…</text>
+</g>
+<g><title>vnum 8137
+Sandsong â€' Pilgrim Rest House
+
+The rest house provides basic but reliable shelter for pilgrims completing the oasis circuit â€' sleeping mats in a sand-screened hall, a communal water point fed by the settlement's underground cistern, and a food-share tradition where pilgrims contribute what they have to a communal pot. The practice has been continuous for longer than anyone can document, and it is considered one of the desert's genuine hospitalities.</title><rect x="176" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="236.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8137</text><text x="236.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Pilgrim…</text>
+</g>
+<g><title>vnum 8138
+Sandsong â€' Stone's Memory Vigil Site
+
+The Stone's Memory festival is held at this prepared ground between the Giant shrine and the settlement's southern edge â€' a vigil site where the rune-circles are ritually renewed by Sand Warden chapter members while the broader community maintains an overnight watch. The ground is marked with concentric rings of placed stone that are removed and replaced fresh each year. During off-festival periods the space is used for caravan inspections and communal gatherings.</title><rect x="2544" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2604.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8138</text><text x="2604.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Stone's…</text>
+</g>
+<g><title>vnum 8139
+Sandsong â€' Relic Trader's Stall
+
+Giant relics recovered from the desert ruins pass through Sandsong regularly, and this permanent stall acts as a clearinghouse where Sand Wardens assess whether a recovered item is a trade good or a sacred object requiring proper placement. The distinction matters enormously to the pilgrim community and generates some of the settlement's most intense disagreements. Sula Dustwalker usually resolves disputes personally, and her decisions are treated as final.</title><rect x="2396" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="2456.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8139</text><text x="2456.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Relic T…</text>
+</g>
+<g><title>vnum 8140
+Sandsong â€' Desert Observation Post
+
+A stone platform raised three meters above the settlement's roofline serves as both weather watch and approach monitor. Sand Warden rangers rotate through observation shifts here, tracking sandstorm fronts, mapping Sand Wraith movements, and noting caravan arrivals from all four approaches. The observation records maintained here constitute one of the most comprehensive accounts of desert weather patterns in existence.</title><rect x="2248" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2308.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8140</text><text x="2308.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Sandsong â€' Desert …</text>
+</g>
+<g><title>vnum 8200
+Giant Oasis-City Ruins â€' Outer Ring
+
+The outermost ring of the ruined Giant oasis-city is marked by broken wall segments that once stood forty feet high, now half-buried in drifted sand. The carved reliefs that cover every surviving surface depict Giant daily life â€' colossal figures tending water channels, conducting ceremonies, and building the very walls whose ruins you now walk among. Between the wall segments, sand has filled what were once patrolled corridors to within a foot of the old parapet height.</title><rect x="1656" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8200</text><text x="1716.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8201
+Giant Oasis-City Ruins â€' Eastern Gate
+
+The eastern gate of the oasis-city still stands to its full original height â€' a vaulted arch of green-veined stone that required no mortar because the Giant engineers cut each stone to lock against its neighbors under their own weight. A carved Giant figure flanks each side of the arch in high relief, each bearing a vessel that ancient water channels once filled continuously. The channels are dry now, but the stone is still faintly cool to the touch from groundwater far below.</title><rect x="1804" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8201</text><text x="1864.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8202
+Giant Oasis-City Ruins â€' Northern Approach
+
+The northern approach road to the oasis-city is still traceable as a wide, slightly elevated strip of paving stones that the sand has not quite covered. Giant-scale road markers stand at intervals â€' carved posts bearing distance counts in Giant numerals that archaeologists have deciphered only approximately. Sand Wraiths drift along the road in the late afternoon, following a patrol circuit they have maintained for longer than human civilization has existed.</title><rect x="1656" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8202</text><text x="1716.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8203
+Giant Oasis-City Ruins â€' Western Residential Ruins
+
+Giant residential buildings scaled for twelve-foot inhabitants have partially collapsed, their thick stone walls creating a maze of interior spaces now accessible only through collapse-gaps. The interior rooms are darker and cooler than the open desert, and Sand Wraiths tend to gather in the deepest sections at midday. Personal effects in Giant scale â€' stone furniture, ceramic vessels, metal fixtures â€' have been extensively looted but occasional pieces remain in contexts too difficult to ext</title><rect x="472" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="532.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8203</text><text x="532.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8204
+Giant Oasis-City Ruins â€' The Dry Oasis Basin
+
+At the city's heart, where the Giant-maintained spring once rose, a depression marks the site of the oasis that gave the city its life. The spring mechanism â€' a complex of stone valves and rune-circles â€' is visible at the basin's bottom, dry for centuries, its rune-circles dark. The basin is perhaps two hundred feet across, its slopes carved with offering-reliefs that suggest this was simultaneously civic infrastructure and sacred space. Sand has filled the bottom third.</title><rect x="1804" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8204</text><text x="1864.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8205
+Giant Oasis-City Ruins â€' Processional Way
+
+A broad avenue â€' clearly processional rather than functional in purpose â€' runs west from the city center, its paving intact enough to walk without difficulty. Carved stone trees line both sides, their abstract forms representing desert plants in a stylized Giant aesthetic. At intervals, low stone platforms that once supported statues now hold only the anchor-bolts of figures long since toppled and removed by either time or treasure-hunters.</title><rect x="472" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="532.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8205</text><text x="532.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8206
+Giant Oasis-City Ruins â€' Hall of Waters
+
+This enormous hall â€' roofless now, its ceiling having collapsed inward centuries ago â€' once served as the administrative center for the oasis's water distribution. Stone conduit maps are carved into the floor, showing the full network of channels that carried spring water to every district of the city. Following them as a navigation guide through the ruins is surprisingly effective, since the channels themselves are often still traceable in the sand.</title><rect x="1508" y="176" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="194" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8206</text><text x="1568.0" y="238.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8207
+Giant Oasis-City Ruins â€' Sacred Grove Remnant
+
+A few ancient trees â€' desert-adapted species with roots that reach the deep aquifer â€' have survived in the ruins of the sacred grove at the city's northern end. Their presence gives the ruins an uncanny quality: living green amid dead stone, silence where there was once the sound of a city. The trees are enormous by desert standards, their canopies providing rare shade, and Sand Wraiths appear more cautiously in their vicinity than elsewhere in the ruins.</title><rect x="2248" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2308.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8207</text><text x="2308.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+</g>
+<g><title>vnum 8208
+Giant Oasis-City Ruins â€' Treasure Vault Entry
+
+A stone trapdoor in Giant scale has been partially uncovered from the sand â€' partially, because whoever uncovered it seems to have encountered difficulties proceeding. Tool marks, a discarded rope, and a cold campfire suggest at least one previous expedition that did not return to complete the work. The trapdoor bears the Lord of Stone's seal alongside a warning inscription in Giant script that the local Sand Warden chapter advises translating before attempting entry.</title><rect x="2100" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2160.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8208</text><text x="2160.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+<text x="2160.0" y="1324" text-anchor="middle" fill="#6a84a8" font-size="10">down→8209</text>
+</g>
+<g><title>vnum 8209
+Giant Oasis-City Ruins â€' Underground Archive
+
+Below the trapdoor, a vaulted chamber of impeccable Giant stonework has been preserved from the desert's ravages entirely. Stone tablets in floor-to-ceiling racks cover every wall â€' records of the oasis-city's administration, water system maintenance logs, and, in one corner, what appear to be personal journals. A Giant trap mechanism is still active here, its trigger stones detecting weight and responding with a sealed-door mechanism that is not immediately reversible from the inside.</title><rect x="916" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8209</text><text x="976.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Giant Oasis-City Rui…</text>
+<text x="976.0" y="732" text-anchor="middle" fill="#6a84a8" font-size="10">up→8208</text>
+</g>
+<g><title>vnum 8220
+The Sunken Thrones â€' Outer Desert
+
+The approach to the Sunken Thrones is marked by the increasing presence of carved stone fragments protruding from the dunes â€' pieces of buildings that were once connected to the administrative capital of the Eke Concordant. Sand Wraiths are visible here even by day, their towering forms of swirling dust drifting in slow circuits that suggest purpose rather than random wandering. The rune-circles that once held the sand at bay have failed outward from the center.</title><rect x="916" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8220</text><text x="976.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+</g>
+<g><title>vnum 8221
+The Sunken Thrones â€' Throne Approach Road
+
+The final approach to the Keeper's thrones is along a still-visible processional road whose paving has been undermined by sand infiltration, creating a tilted, uneven surface that catches the ankle if walked carelessly. Stone guardian figures â€' Giant-carved, twelve feet high, and largely intact â€' line the road at twenty-foot intervals, their faces worn featureless by millennia of sand-abrasion but their postures still clearly ceremonial. Sand Wraiths drift between them like a mirror processi</title><rect x="1508" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8221</text><text x="1568.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+</g>
+<g><title>vnum 8222
+The Sunken Thrones â€' Northern Ruins
+
+The administrative buildings that surrounded the throne complex on its northern side are deep in sand â€' only rooftops and upper story fragments protrude in most areas. In one section, a partial collapse has opened a room whose interior is still visible: stone desks, dried-ink record-tablets, and the remains of a filing system organized with the meticulous bureaucratic precision of the Concordant era. No one has attempted to excavate it in living memory.</title><rect x="916" y="324" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="342" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8222</text><text x="976.0" y="386.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+</g>
+<g><title>vnum 8223
+The Sunken Thrones â€' The Four Thrones
+
+The great carved thrones of the Keepers are visible here â€' four stone seats the size of small buildings, each carved from a single piece of dark granite and inscribed with the personal seal of one of Oreka's four Keepers. Three stand intact, though half-buried in sand. The fourth â€' the Third Crowned Keeper's throne â€' has been deliberately defaced, its inscriptions obliterated and its carved figure decapitated, though who performed this act and when is unrecorded. Sand Wraiths circle the th</title><rect x="1656" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8223</text><text x="1716.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+<text x="1716.0" y="584" text-anchor="middle" fill="#6a84a8" font-size="10">down→8226</text>
+</g>
+<g><title>vnum 8224
+The Sunken Thrones â€' Vault Approach
+
+East of the thrones, a stone staircase descending beneath the sand level leads to the vault complex that treasure hunters have sought for generations. The staircase itself is accessible, but the lower sections fill with sand rapidly after each clearing â€' a property that may be mechanical rather than natural, given the rune-circles evident in the staircase walls. Sand Wraiths are thickest here, their movements distinctly protective rather than random.</title><rect x="1804" y="472" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="490" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8224</text><text x="1864.0" y="534.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+<text x="1864.0" y="584" text-anchor="middle" fill="#6a84a8" font-size="10">down→8227</text>
+</g>
+<g><title>vnum 8225
+The Sunken Thrones â€' Pilgrim Rest Point
+
+Pilgrims who come to pay respects at the Sunken Thrones rest here under a canvas shade structure maintained by the Sandsong Sand Warden chapter. Water is cached in sealed containers and replenished by circuit riders. The rest point is placed carefully â€' close enough to the thrones for pilgrimage purposes but outside the zone where the Sand Wraiths become agitated by non-reverential activity. A carved stone tablet lists the proper forms of address for approaching the thrones.</title><rect x="1952" y="28" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2012.0" y="46" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8225</text><text x="2012.0" y="90.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+</g>
+<g><title>vnum 8226
+The Sunken Thrones â€' Concordant Records Hall
+
+Beneath the thrones, a hall of Concordant-era records has survived in near-perfect condition â€' the stone construction and the accidental airtightness of the burial creating a preservation environment. Record-tablets in stacked cases document the administrative decisions of the first two Crowned Keepers, and cross-referenced among them are accounts of the Third Keeper's governance that are far more damning than any northern history text has acknowledged.</title><rect x="916" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8226</text><text x="976.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+</g>
+<g><title>vnum 8227
+The Sunken Thrones â€' The Sealed Vault
+
+The innermost vault bears the Second Crowned Keeper's personal seal â€' an impression in metal set into the stone door with a complexity suggesting Giant assistance in its manufacture. The vault has been successfully sealed for the entirety of the Concordant's collapse and the millennia since. Whatever records of the Concordant's final days and the Third Keeper's failures lie within, they have waited an unimaginably long time for someone to open the door. The seal can be read but not yet unlocke</title><rect x="1064" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1124.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8227</text><text x="1124.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">The Sunken Thrones â…</text>
+</g>
+<g><title>vnum 8240
+Glass Wastes â€' Iridescent Flats (Entry)
+
+The transition from desert sand to the Glass Wastes is sharp and alarming â€' one step on sand, the next on smooth, iridescent fused surface that rings faintly underfoot. The glass here was sand once, melted and fused by the alien magic of the Deceivers' march north. It is warm to the touch even at night, and its surface reflects sky and movement in unnatural combinations. Kin-sense begins to flicker here at the edges, intermittently rather than completely.</title><rect x="620" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8240</text><text x="680.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Glass Wastes â€' Iri…</text>
+</g>
+<g><title>vnum 8241
+Glass Wastes â€' Deep Glass Field
+
+The fused surface extends here in all directions without interruption, its iridescent surface broken only by occasional bubbles and ridges where the alien magic ran hottest. Nothing grows. No insects cross the glass. Even wind seems to behave differently over these fields, moving in patterns that do not correspond to the surrounding desert's airflow. Kin-sense is effectively dead in the deep glass â€' not muffled but absent, as if the glass has absorbed the elemental resonance.</title><rect x="472" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="532.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8241</text><text x="532.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Glass Wastes â€' Dee…</text>
+</g>
+<g><title>vnum 8242
+Glass Wastes â€' Ancient Battleground
+
+A patch of the glass is disturbed in a way that suggests the fusion did not happen uniformly â€' there are deeper pits and ridges that preserve the shape of a conflict. Frozen mid-action in the glass are what appear to be the outlines of figures â€' not bodies, since organic material would not have survived, but the impressions their positions left as the sand fused around them. The shapes of Kin and Deceiver are distinguishable to those willing to look closely enough.</title><rect x="472" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="532.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8242</text><text x="532.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Glass Wastes â€' Anc…</text>
+<text x="532.0" y="880" text-anchor="middle" fill="#6a84a8" font-size="10">down→8276</text>
+</g>
+<g><title>vnum 8243
+Glass Wastes â€' Glass Sinkhole
+
+A section of the fused glass has cracked and partially collapsed inward, creating a sinkhole that descends perhaps thirty feet into a cavity that smells of minerals and old fire. The walls of the sinkhole are glass of varying thickness â€' in some places translucent enough to suggest spaces behind them. Treasure hunters have attempted descent here before; their rope-anchors are visible at the rim, the ropes cut rather than worn.</title><rect x="324" y="916" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="384.0" y="934" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8243</text><text x="384.0" y="978.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Glass Wastes â€' Gla…</text>
+</g>
+<g><title>vnum 8244
+Glass Wastes â€' Buried Deceiver Cache
+
+A section of glass has been carefully broken from above in a grid pattern, revealing a space beneath where items of obvious alien manufacture are partially buried in the still-hot glass substrate. The tools and equipment here bear Deceiver design â€' functional, angular, made of materials without Orekan parallel. Some appear intact. The Kin-sense dead zone here is absolute, and there is a quality to the silence that is not merely natural absence but something that feels deliberately maintained.</title><rect x="620" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8244</text><text x="680.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Glass Wastes â€' Bur…</text>
+<text x="680.0" y="880" text-anchor="middle" fill="#6a84a8" font-size="10">down→8264</text>
+</g>
+<g><title>vnum 8260
+Tharok's Pillar â€' Outer Approach
+
+The great pillar raised by Lirien at the site where Tharok, last of the Giants, crumbled to dust is visible from two hours' walk away â€' a needle of dark stone rising sixty feet from the flat desert, perfectly straight, perfectly unweathered despite apparent millennia of desert wind. The pillar is carved from base to tip with the Giant-script account of Tharok's last days, and the translation, still incomplete after two centuries of scholarly effort, grows more harrowing as it ascends.</title><rect x="1952" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8260</text><text x="2012.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Tharok's Pillar â€' …</text>
+</g>
+<g><title>vnum 8261
+Tharok's Pillar â€' The Rune-Circle
+
+Around the pillar's base, the oldest functioning rune-circle in the Infinite Desert pulses with amber light at all hours â€' not only on moonless nights, as at other sites. The circle is approximately forty feet in diameter and carved so deeply into the bedrock that it shows no sign of desert erosion despite its apparent age. Sand Wraiths gather at the circle's edge but do not cross it. Whether their presence is protective or simply attracted by the circle's power is a question of considerable t</title><rect x="2100" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2160.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8261</text><text x="2160.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Tharok's Pillar â€' …</text>
+</g>
+<g><title>vnum 8262
+Tharok's Pillar â€' Shrine Platform
+
+A platform of polished stone, maintained by Sand Warden pilgrims on the Pilgrim Road circuit, provides a clean space for offerings and meditation adjacent to the pillar. The platform's stones are replaced annually â€' a tradition that began when pilgrims noticed that the stones nearest the pillar crack and degrade faster than those further away, suggesting the pillar's rune-work continues to exert forces on surrounding matter. The platform offerings are always stone â€' no organic material is le</title><rect x="2692" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="2752.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8262</text><text x="2752.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Tharok's Pillar â€' …</text>
+</g>
+<g><title>vnum 8263
+Tharok's Pillar â€' Scholar's Camp
+
+A semi-permanent camp of desert-proof tents marks where the scholars who study Tharok's Pillar maintain their ongoing translation and survey work. The camp's composition changes as researchers rotate in and out, but it is rarely fully abandoned. Current work focuses on the upper third of the pillar's inscription, which the available Rarozhki record-lore suggests contains an account of what Tharok understood about the world's future â€' if 'understoodood' is the right word for whatever a final Gi</title><rect x="2840" y="620" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2900.0" y="638" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8263</text><text x="2900.0" y="682.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Tharok's Pillar â€' …</text>
+</g>
+<g><title>vnum 8264
+Dust-Cache Warren -- Upper Vault
+
+A broken-open antechamber beneath the Buried Deceiver Cache above. Kobold workers have widened the original breach into a crude vaulted room propped with scavenged timber. Sand drifts in through cracks in the sealed ceiling, and the air is thick with dust and lamp-smoke. A Pekakarlik-script rune half-visible on a wall has been partially erased by a careless scraper.</title><rect x="1212" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1272.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8264</text><text x="1272.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8265
+Dust-Cache Warren -- Main Shaft
+
+The central shaft of the warren descends steeply from the upper vault, its floor a long slope of loose sand and broken Pekakarlik stonework. A rope-and-pulley hauling system at the top lifts ore-sacks to the surface. The shaft branches into work-tunnels to north, east, and south.</title><rect x="1360" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8265</text><text x="1420.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8266
+Dust-Cache Warren -- Kobold Work Gang
+
+A wider chamber where the warren's kobold laborers sift through loose sand for Deceiver-era trinkets. Three kobolds -- two scouts and a trapsmith -- work the sieves while chanting a low repetitive work-song. Every recovered item goes into a wicker basket which the trapsmith then catalogues with meticulous care.</title><rect x="1508" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8266</text><text x="1568.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8267
+Dust-Cache Warren -- The Sand Wraith's Cell
+
+A chamber the kobolds accidentally opened three weeks ago and have since sealed off with timber and canvas. Inside, something ancient and very thirsty paces in an irregular circle. The air here is dry beyond reason -- it pulls moisture from the lungs on every breath. The Sand Wraith was buried alive. She has not forgiven anyone for it.</title><rect x="1656" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8267</text><text x="1716.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8268
+Dust-Cache Warren -- Translators' Chamber
+
+A small carved-out cell with a writing-bench and lamp, occupied by two Pekakarlik dwarves. Their chains are short enough that they cannot reach the door. They are here to read the Deceiver runes on recovered items, and they are terrified. One of them, seeing Kin, risks everything and raises a finger to her lips.</title><rect x="1804" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8268</text><text x="1864.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8269
+Dust-Cache Warren -- The Scavenger's Vault
+
+A dressed-stone chamber at the bottom of the main shaft, lit by multiple oil-lamps. The floor is covered in a carefully-arranged sorting of recovered artifacts: rack of Deceiver daggers, shelf of cipher-tablets, a velvet tray holding a dozen rings. A dour dwarf in fine lamellar sits at a writing-desk, updating a ledger.</title><rect x="1952" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8269</text><text x="2012.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8270
+Dust-Cache Warren -- Trap-Diggers' Workshop
+
+A workshop where the warren's more skilled kobolds work on genuine trap-craft rather than mere sifting. Benches hold small brass mechanisms, glass phials of various poisons, and a few pristine Deceiver-era devices the kobolds are trying to reverse-engineer with uneven success.</title><rect x="2100" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2160.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8270</text><text x="2160.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8271
+Dust-Cache Warren -- Scavenger-Lord's Chamber
+
+The Dark Dwarf's private quarters, appointed in surprisingly good taste: a proper bed, a shelf of books stolen from Kinsweave libraries, a small brass samovar. He sits in a padded chair, reading, with a war-axe across his knees. A Dark Dwarf warrior guards the door. The Scavenger-Lord looks up, unsurprised and faintly annoyed.</title><rect x="2248" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2308.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8271</text><text x="2308.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8272
+Dust-Cache Warren -- Deeper Dig Site
+
+The active excavation, where the warren's workers are still breaking through to whatever the Pekakarlik runes indicate lies deeper. A rough ramp descends into a chamber only partly excavated. An ore-cart rails setup has been abandoned mid-installation.</title><rect x="2396" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2456.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8272</text><text x="2456.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8273
+Dust-Cache Warren -- Abandoned Machine Room
+
+A chamber the kobolds have cleared but not yet fully catalogued. Rows of strange metal apparatus stand in the sand, half-buried. Some of them are still warm to the touch despite centuries of burial. The Pekakarlik translators refused to read the inscriptions here, and were beaten for their refusal.</title><rect x="2544" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2604.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8273</text><text x="2604.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8274
+Dust-Cache Warren -- Hidden Storeroom
+
+A concealed strongroom the Scavenger-Lord keeps for the items he has not yet declared to the warren's official ledger. A locked iron chest sits in the middle of the room; behind it, leaning against the wall, is a Deceiver-era staff whose head is a perfectly smooth sphere of black glass.</title><rect x="2692" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2752.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8274</text><text x="2752.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8275
+Dust-Cache Warren -- Bolt-Hole
+
+A narrow tunnel leading away to the south, cut by the Scavenger-Lord's personal work-gang in secret. It emerges, supposedly, somewhere in the dunes several miles from the warren. He has never used it; the tunnel is maintained but unused, as a safety measure he hopes never to need.</title><rect x="2840" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2900.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8275</text><text x="2900.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Dust-Cache Warren --…</text>
+</g>
+<g><title>vnum 8276
+Fusion-Cell -- Surface Hatch
+
+Beneath a fused-glass slab indistinguishable from the surrounding Glass Wastes, a concealed hatch opens into a small surface blind: a canvas-roofed tent-space holding a desk, a weapon-stand, and a ledger-book. The tent is not visible from even a few paces away. The outpost's discretion is, above all else, absolute.</title><rect x="2988" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3048.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8276</text><text x="3048.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Surfa…</text>
+</g>
+<g><title>vnum 8277
+Fusion-Cell -- Surface Guards' Post
+
+A small observation-chamber behind the surface hatch, with a narrow slit-window looking out across the Glass Wastes. Two Silentborn in neutral traveling-clothes stand watch by the window, weapons low and hands ready. The watch-rotation is on a stone slate on the wall.</title><rect x="3136" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3196.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8277</text><text x="3196.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Surfa…</text>
+</g>
+<g><title>vnum 8278
+Fusion-Cell -- Descent Corridor
+
+A long staircase of polished black stone descends steeply from the surface hatch. Runes inlaid in silver along the stair-walls shed a faint, cold illumination. The air grows warmer as one descends, not cooler -- the fusion furnace is running.</title><rect x="3284" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3344.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8278</text><text x="3344.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Desce…</text>
+</g>
+<g><title>vnum 8279
+Fusion-Cell -- Upper Lab Hall
+
+The central hall of the upper lab, a long arched chamber whose floor is a single polished slab and whose walls are lined with glass-fronted cabinets full of neatly-labeled samples. Silentborn researchers in spotless white aprons move between stations with purposeful quiet.</title><rect x="3432" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3492.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8279</text><text x="3492.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Upper…</text>
+</g>
+<g><title>vnum 8280
+Fusion-Cell -- Materials Storage
+
+A locked chamber full of crates of fused-glass samples, each labeled with its extraction-date and coordinates. A Dark Dwarf warrior stands guard in the corner, polishing her waraxe. She looks up at intruders with unconcealed professional interest: a break in the boredom.</title><rect x="3580" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3640.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8280</text><text x="3640.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Mater…</text>
+</g>
+<g><title>vnum 8281
+Fusion-Cell -- Fusion Furnace Access
+
+An iron-and-stone corridor whose walls are hot to the touch. The corridor slopes gently downward toward the primary fusion chamber. Thick bundles of silver cable run along the ceiling, connecting the furnace to apparatus elsewhere in the complex. The air tastes like lightning.</title><rect x="3728" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3788.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8281</text><text x="3788.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Fusio…</text>
+</g>
+<g><title>vnum 8282
+Fusion-Cell -- The Primary Fusion Chamber
+
+A domed chamber whose floor is a ring-shaped furnace, currently active, its interior glowing a deep and unreasonable violet. Safely suspended above the ring on an iron gallery, a Half-Dómnathar in scholar's robes directs the work with calm, absorbed concentration. Two Silentborn assistants stand at the gallery rail, reading from an open notebook.</title><rect x="3876" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="3936.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8282</text><text x="3936.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- The P…</text>
+</g>
+<g><title>vnum 8283
+Fusion-Cell -- Researchers' Quarters
+
+A row of narrow cells for the outpost's Silentborn researchers. Each cell contains a cot, a small shelf, and a reading-light. Several of the cells are currently occupied by off-duty staff asleep or studying. The quarters are spartan, but the outpost is proud of them.</title><rect x="4024" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4084.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8283</text><text x="4084.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Resea…</text>
+</g>
+<g><title>vnum 8284
+Fusion-Cell -- Containment Cell
+
+A reinforced glass-fronted cell contains a prisoner. She is a human woman of middle years in worn traveling-robes, shackled at wrist and ankle to a stone block that cannot be moved. Her hands are blistered where she has been forced to cast spells she did not want to cast. She watches you without hope, which is itself a terrible thing to see.</title><rect x="4172" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4232.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8284</text><text x="4232.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Conta…</text>
+</g>
+<g><title>vnum 8285
+Fusion-Cell -- Void-Smith's Forge
+
+A cold forge where a Dark Dwarf smith shapes iron into containment-vessels, suppressor-irons, and the housings of the fusion-chamber's consumable cells. The anvil runs with perpetual frost despite the forge's banked coals. She works quickly and well.</title><rect x="4320" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4380.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8285</text><text x="4380.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Void-…</text>
+</g>
+<g><title>vnum 8286
+Fusion-Cell -- Construct Guard Post
+
+A square chamber whose only occupant stands in the center. Eight feet tall, obsidian-bodied, breathing no breath. A Void-Construct, on sentinel duty. The air around it is cold. The runes inlaid into the chamber's floor prevent any non-authorized entry from passing into the lower complex; the Construct enforces the prohibition.</title><rect x="4468" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4528.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8286</text><text x="4528.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Const…</text>
+</g>
+<g><title>vnum 8287
+Fusion-Cell -- Records Library
+
+A long narrow room lined with metal filing-cabinets and a central work-table. The cabinets contain the outpost's research logs: five years of attempts to reproduce the Glass Wastes' fusion-event. The conclusions are, so far, incomplete. A Silentborn researcher stands at the table, cross-referencing two volumes.</title><rect x="4616" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4676.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8287</text><text x="4676.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Recor…</text>
+</g>
+<g><title>vnum 8288
+Fusion-Cell -- Observation Platform
+
+A small viewing-gallery set above the primary fusion chamber's outer ring. The floor here is glass-panelled, allowing visitors to observe the furnace from above. Brass-and-ivory opera-glasses rest on a shelf. A ledger bound to the railing records observations in exquisitely neat script.</title><rect x="4764" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4824.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8288</text><text x="4824.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Obser…</text>
+</g>
+<g><title>vnum 8289
+Fusion-Cell -- Secondary Furnace
+
+A smaller furnace-chamber currently banked and cooling. Its purpose is preliminary heating of materials before they are introduced to the primary. The chamber is empty of staff; a maintenance-gang apparently finished here hours ago. Warmth radiates from the walls.</title><rect x="4912" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="4972.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8289</text><text x="4972.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Secon…</text>
+</g>
+<g><title>vnum 8290
+Fusion-Cell -- Experimental Cold Lab
+
+An extremely cold chamber where the researchers work on preservation and storage of fusion-reaction by-products. The walls are lined with sealed glass cases holding substances that should not be possible to stabilize. Breath frosts. Fingers stiffen. The precise temperature is maintained by Pekakarlik cold-stones of unusual power.</title><rect x="5060" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="5120.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8290</text><text x="5120.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Exper…</text>
+</g>
+<g><title>vnum 8291
+Fusion-Cell -- The Mother-Core
+
+The outpost's most sensitive chamber. At its center, suspended in a ring of silver holders above a pit of absolutely black water, hangs a small rough sphere of material that is neither stone nor metal nor glass. It is, the researchers believe, a fragment of the original Deceiver fusion-event. The air here is not quite right. It does not take breath willingly.</title><rect x="5208" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="5268.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8291</text><text x="5268.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- The M…</text>
+</g>
+<g><title>vnum 8292
+Fusion-Cell -- Escape Shaft Access
+
+A concealed chamber behind a pivoting section of wall. A shaft descends sharply here -- the outpost's planned evacuation route if the fusion-chamber destabilizes. The researchers talk about this shaft very rarely and always in low voices.</title><rect x="5356" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="5416.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8292</text><text x="5416.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Escap…</text>
+</g>
+<g><title>vnum 8293
+Fusion-Cell -- Deep Escape Shaft
+
+A long vertical shaft, braced with iron rungs. It descends through solid sandstone for what feels like a very long time, and eventually emerges into a natural cavern whose entrance-tunnels have never been mapped by the outpost's surveyors. Somewhere below is a larger cavern system.</title><rect x="5504" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="5564.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8293</text><text x="5564.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Deep …</text>
+</g>
+<g><title>vnum 8294
+Fusion-Cell -- Sealed Cavern
+
+The shaft terminates in a natural limestone cavern whose far walls disappear into darkness. The air is cooler than the outpost above and smells of old stone and faint sulfur. A rough stone door -- dressed by Kin hands generations ago -- is set into the far wall, sealed with Pekakarlik runes still glowing faintly.</title><rect x="5652" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="5712.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8294</text><text x="5712.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Seale…</text>
+</g>
+<g><title>vnum 8295
+Fusion-Cell -- Ancient Cache
+
+A small chamber beyond the sealed door, where the Pekakarlik once hid a cache of items against the Deceivers' return. A rack of old dwarven gear, a wrapped bundle of scrolls, and a small stone chest rest undisturbed. These have been here for three hundred years. They are the outpost's researchers' great secret hope: that when they find this cache, they will understand what the Pekakarlik hid from the Deceivers, and why.</title><rect x="5800" y="2692" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="5860.0" y="2710" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8295</text><text x="5860.0" y="2754.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Fusion-Cell -- Ancie…</text>
+</g>
+<g><title>vnum 8300
+Desert Road â€' Kharazhad Junction
+
+The junction of the Kharazhad road and the central desert caravan route is marked by a carved stone waymarker whose Giant-script distance counts have been supplemented by Pekakarlik carvings in four later scripts. Caravans from all desert directions pass through here, and the junction often has a small informal market of travelers selling and trading with each other before diverging onto separate routes. The heat here is unrelenting from mid-morning through late afternoon.</title><rect x="768" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="828.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8300</text><text x="828.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Khar…</text>
+</g>
+<g><title>vnum 8301
+Desert Road â€' South Trade Route
+
+The southern trade route descends from the junction toward the Apelian Sea basin, its path marked by cairns of stacked stone at half-day intervals. The surface is hardpan with intermittent sand drifts, and caravan masters navigate by the distant volcanic peaks rather than the route markers when visibility permits. Sand Wraiths have been reported at the midpoint of this section with sufficient consistency that experienced guides factor them into their timing.</title><rect x="768" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="828.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8301</text><text x="828.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Sout…</text>
+</g>
+<g><title>vnum 8302
+Desert Road â€' East Caravan Stage
+
+A waypoint station â€' a roofed rest-platform with a covered water cache â€' has been maintained at this east caravan stage by the Sandsong Sand Warden chapter for generations. The water cache is checked and refilled on a fourteen-day circuit, and caravan masters know the schedule well enough to plan water rationing around it. The platform's shade is genuine relief after an eastbound morning crossing, and the benches around its edge are worn smooth by generations of exhausted travelers.</title><rect x="1952" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8302</text><text x="2012.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' East…</text>
+</g>
+<g><title>vnum 8303
+Desert Road â€' West Crossing to River
+
+The western route toward the Great River Gorge and Dunewell crosses a section of desert where the surface transitions from hardpan to loose sand and back in unpredictable stretches. Caravan masters who know this route carry pole-markers to test the surface before committing heavy loads, and the pace slows to a crawl in the loose sections. The gorge becomes audible â€' a faint rushing of water â€' about an hour before it becomes visible.</title><rect x="620" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8303</text><text x="680.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' West…</text>
+</g>
+<g><title>vnum 8304
+Desert Road â€' Southern Approach to Solhaven
+
+The oasis grove of Solhaven becomes visible as a smear of green on the horizon after a long section of featureless desert. Experienced travelers know this smear has been visible for two hours before arriving â€' distance over flat desert is deeply deceptive. The temperature begins to drop almost imperceptibly as the oasis humidity spreads outward from the grove, and this subtle change is enough to motivate the last stretch of travel.</title><rect x="768" y="1360" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="828.0" y="1378" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8304</text><text x="828.0" y="1422.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Sout…</text>
+</g>
+<g><title>vnum 8305
+Desert Road â€' Sandsong Approach
+
+The approach road to Sandsong from the west crosses a section of particularly fine sand â€' powder rather than grit, which gets into everything but does not impede movement. The settlement's observation post is visible as a dark speck above the roofline when conditions are clear. Sand Warden rangers from Sandsong patrol this approach regularly, and their presence usually means that news of approaching caravans precedes arrival by an hour or more.</title><rect x="2100" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2160.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8305</text><text x="2160.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Sand…</text>
+</g>
+<g><title>vnum 8306
+Desert Road â€' Pillar Road Junction
+
+A secondary junction on the caravan route marks the turn-off toward Tharok's Pillar, indicated by a waymarker carved with the Giant-script word for 'remembrance' â€' or possibly 'final,' given the ambiguity in the translation. Pilgrims traveling to the Pillar turn here, separating from commercial caravans that continue on the main route. The junction has a small stone shelter large enough for four people to sit out a sandstorm.</title><rect x="1952" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8306</text><text x="2012.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Pill…</text>
+</g>
+<g><title>vnum 8307
+Desert Road â€' Long Flat Crossing
+
+This section of the caravan route crosses a long flat of compressed sand and gravel where the walking is easy but the exposure to sun is total. No shade, no landmarks, no variation â€' just the horizon in all directions and the steady crunch of footsteps. Experienced desert travelers move this section in pre-dawn darkness and rest during the midday hours. Those who attempt it in full sun learn quickly why the desert has its reputation.</title><rect x="2100" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2160.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8307</text><text x="2160.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Long…</text>
+</g>
+<g><title>vnum 8308
+Desert Road â€' Glass Wastes Bypass
+
+The caravan route bends sharply here to avoid the nearest Glass Wastes field â€' the bend was established by Pekakarlik caravan masters generations ago when the dead-Kin-sense zone was first recognized as a navigation and survival hazard. A cairn of white-painted stones marks the bypass turn with exaggerated clarity, and a painted warning-board in six scripts has been maintained by the Sandsong chapter since someone tried to take the direct route and was not seen again.</title><rect x="2248" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2308.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8308</text><text x="2308.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Glas…</text>
+</g>
+<g><title>vnum 8309
+Desert Road â€' Midpoint Water Cache
+
+A large water cache buried beneath the surface â€' insulated stone containers sealed against heat and sand infiltration â€' provides emergency water at the midpoint of the longest unsupported section of the caravan route. The cache location is known to licensed caravan masters and Sand Warden chapter members; it is not marked on any public map. The cache is never to be used for convenience, only for genuine emergency â€' a social compact enforced entirely by reputation and the understanding that</title><rect x="2396" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2456.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8309</text><text x="2456.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Midp…</text>
+</g>
+<g><title>vnum 8310
+Desert Road â€' Ruin Outlook
+
+From a low rise in the terrain â€' barely visible as a hill but enough to extend sightlines â€' the outer ruins of the Giant oasis-city are visible to the north, and the discolored patch of the Glass Wastes to the west. The vantage is used by caravan scouts and Sand Warden rangers as a standard observation point. A fire-signal platform here can relay information to both Sandsong and the oasis-city ruin camp simultaneously.</title><rect x="2692" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2752.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8310</text><text x="2752.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Ruin…</text>
+</g>
+<g><title>vnum 8311
+Desert Road â€' Ashgarin Fold Eastern Branch
+
+The branch road toward Ashgarin Fold leaves the main caravan route here, heading east-northeast toward the volcanic highlands. The surface improves markedly â€' the Fold's Orean quarriers maintain this section as their supply road, and the hardpack is rolled and graded regularly. The smell of volcanic sulfur becomes intermittently detectable on easterly winds from here onward.</title><rect x="2840" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2900.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8311</text><text x="2900.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Desert Road â€' Ashg…</text>
+</g>
+<g><title>vnum 8331
+Scorchspires â€' Western Approach
+
+The volcanic peaks of the Scorchspires rise from the desert floor with the abruptness of geological violence â€' no foothills, no gradual transition, just sand and then rock that leans over you at angles that seem to defy stable geology. The stone is dark red and black, heat-fractured into columns and overhangs. Rarozhki Dwarf patrol markers â€' iron stakes with clan-sigil brands â€' appear at intervals indicating the Kharazhad territorial boundary.</title><rect x="916" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8331</text><text x="976.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Scorchspires â€' Wes…</text>
+</g>
+<g><title>vnum 8332
+Scorchspires â€' Emberfang Ridge
+
+The Emberfang peaks are named for the way their summits, when viewed from the desert at sunset, resemble a row of teeth with fire behind them. The ridge here is a series of jagged basalt columns rising from a hardpan floor scattered with volcanic ejecta â€' rocks that cooled mid-flight and struck the ground with enough force to half-bury themselves. The air smells of active geology: minerals, heat, and the faint sweetness of volcanic gas at concentrations that cause headache but not immediate da</title><rect x="1656" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8332</text><text x="1716.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Scorchspires â€' Emb…</text>
+</g>
+<g><title>vnum 8333
+Scorchspires â€' Rarozhki Watch Station
+
+A watch station built into a natural basalt overhang commands views across both the desert approaches and the upper volcanic terrain. Rarozhki rangers in heat-resistant gear rotate through three-day shifts here, monitoring for both external intrusion and the internal geological signals â€' smoke patterns, ground tremors, gas emission changes â€' that warn of volcanic activity. The station's fire-signal equipment is maintained in daily readiness.</title><rect x="1804" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8333</text><text x="1864.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Scorchspires â€' Rar…</text>
+</g>
+<g><title>vnum 8334
+Scorchspires â€' Volcanic Flow Field
+
+A historical lava flow â€' several centuries old by Rarozhki records â€' has cooled into a field of ropy, twisted stone that is navigable but deeply disorienting. The flow field extends east from the ridge to a vent field where secondary vents release steam and gas in unpredictable locations. The Embersteel ore that Kharazhad depends on is most concentrated in areas like this one, and Rarozhki mining expeditions work the field's eastern margins.</title><rect x="1804" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1864.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8334</text><text x="1864.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Scorchspires â€' Vol…</text>
+</g>
+<g><title>vnum 8335
+Scorchspires â€' Upper Vent Field
+
+The upper reaches of the Scorchspires expose the active geological processes that created the Rarozhki way of life â€' steam vents, sulfur deposits, and small lava channels that flow in predictable seasonal patterns. The Rarozhki navigate this terrain with practiced ease, reading the geological signs that tell them where new vents may open and which channels are safe to cross. For visitors, the terrain is genuinely dangerous without a guide.</title><rect x="1952" y="768" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2012.0" y="786" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8335</text><text x="2012.0" y="830.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Scorchspires â€' Upp…</text>
+</g>
+<g><title>vnum 8346
+Great River Gorge â€' Upper Rim Overlook
+
+The rim of the Great River Gorge provides the most dramatic geological view in the Infinite Desert â€' a canyon three hundred feet deep whose vertical walls expose strata representing millions of years of desert history. The river below is audible as a constant roar that varies in pitch with the season. The Pekakarlik settlements are visible as carved interruptions in the wall-face across the gorge, connected by boat traffic invisible at this distance.</title><rect x="916" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="976.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8346</text><text x="976.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8347
+Great River Gorge â€' Descent Path
+
+A switchback trail descends the gorge's eastern wall, its surface cut and maintained by Pekakarlik engineers who have been improving the original Giant-carved path for centuries. The trail is safe by desert standards â€' maintained rope anchors, drainage channels, and widened passing-places for loaded animals â€' but requires several hours to descend and a certain commitment of attention on the narrower sections. The sound of the river grows with every switchback.</title><rect x="1360" y="1804" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="1822" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8347</text><text x="1420.0" y="1866.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8348
+Great River Gorge â€' River Terrace
+
+A natural terrace about a third of the way down the gorge wall provides a rest point on the descent and a launching site for Pekakarlik small craft that can be lowered from here rather than requiring the full descent to river level. The terrace surface is covered with river-smooth stones deposited by ancient flood events when the river ran much higher. A carved Pekakarlik relief on the terrace wall records water levels from historical floods â€' the highest mark is alarming.</title><rect x="1360" y="1952" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="1970" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8348</text><text x="1420.0" y="2014.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8349
+Great River Gorge â€' River Level North
+
+At river level, the gorge is a different world from the desert above â€' cool, wet, and green with riparian vegetation that clings to every crack in the stone walls. The Great River runs fast and deep here, its current carrying the snowmelt of the Giant's Teeth hundreds of miles to the north. Pekakarlik dock structures are visible up and downstream, connected by a system of rope-ferries that allows crossings without fighting the current.</title><rect x="1360" y="2100" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1420.0" y="2118" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8349</text><text x="1420.0" y="2162.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8350
+Great River Gorge â€' Western Rim Road
+
+A road follows the gorge's western rim, providing the primary land route between the northern and southern desert along the river corridor. Caravan traffic moves in both directions throughout the day, and the road is wide enough for two carts to pass. Rarozhki stone markers at intervals note distance to Kharazhad and the major settlements. In mid-afternoon the western-rim road is entirely in the sun and the heat on exposed stone is brutal.</title><rect x="620" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="680.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8350</text><text x="680.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8351
+Great River Gorge â€' Cliff-Face Settlement (North Tier)
+
+A Pekakarlik cliff-face settlement occupies this section of the gorge's eastern wall â€' apartments carved into the rock, their entrances barely visible from across the gorge, their exteriors hung with fishing lines that extend over the river below. The settlement has a private quality; the Pekakarlik here are engaged in the business of river life and trade, not tourism. Visitors are accommodated practically rather than warmly.</title><rect x="1508" y="1952" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1568.0" y="1970" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8351</text><text x="1568.0" y="2014.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8352
+Great River Gorge â€' Cliff-Face Settlement (South Tier)
+
+The southern tier of the gorge settlement connects to the tunnelworks that extend beneath the river, a network that the Pekakarlik Flowkeepers maintain continuously. A repair team is almost always visible working on some section of the external dock structure, replacing rot-damaged planking or reinforcing a mooring post weakened by current. The settlement is alive in the way that working places are alive â€' constant, purposeful, and entirely indifferent to aesthetic appreciation.</title><rect x="1508" y="2100" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#6cb38f" stroke-width="2" /><text x="1568.0" y="2118" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8352</text><text x="1568.0" y="2162.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8353
+Great River Gorge â€' Sea Falls Approach
+
+The river's gradient increases perceptibly here as the Great River approaches the Sea Falls â€' the series of dramatic cascades that connect the Kailian and Apelian seas through the body of Oreka. The roar of the falls is audible from this rim road approach, carried upward and outward by the gorge acoustics. Portage trails bypass the falls entirely on both rim roads, and they are busy year-round with the goods that the Sea Falls make impossible to navigate.</title><rect x="1064" y="1804" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1124.0" y="1822" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8353</text><text x="1124.0" y="1866.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8354
+Great River Gorge â€' Sea Falls Overlook
+
+The Sea Falls drop in three great cascades that fill the gorge with perpetual mist and a roar that makes normal conversation impossible. The water at the base of the falls boils and churns in a permanent white chaos before reorganizing into the calmer river that continues south. The mist produces a micro-climate of unusual coolness and humidity â€' plants grow on the cliff-faces here that would not survive fifty yards away in either direction.</title><rect x="1064" y="1952" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1124.0" y="1970" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8354</text><text x="1124.0" y="2014.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8355
+Great River Gorge â€' Portage Station (North)
+
+The northern portage station at the Sea Falls is a Halfling and Pekakarlik operation that transfers cargo around the falls â€' too dangerous for navigation even by the most skilled boat pilots. The station has warehousing, draft animals, and specialized freight wagons for the overland bypass route. The portage fee is controlled by tradition rather than market pricing, a convention that has kept the route politically accessible to small traders and prevented monopolization.</title><rect x="324" y="1212" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="384.0" y="1230" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8355</text><text x="384.0" y="1274.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8356
+Great River Gorge â€' Portage Bypass Road
+
+The portage bypass road makes a wide arc around the Sea Falls, its surface maintained to a standard that reflects the road's economic importance. Teams of draft animals pull loaded wagons continuously in both directions, and the traffic management at the pinch-points where the road narrows is handled by a system of alternating priority signals that the portage operators have refined over generations into something that almost never fails.</title><rect x="472" y="1508" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="532.0" y="1526" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8356</text><text x="532.0" y="1570.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8357
+Great River Gorge â€' Portage Station (South)
+
+The southern portage station marks the end of the bypass and the beginning of navigable water again on the southern side of the Sea Falls. Cargo is reloaded here onto waiting boats for the journey south to the Apelian Sea. The station maintains a small hostel and a trading post where goods are sometimes sold before the southern leg of transport rather than carried further â€' the station's location makes it a secondary market for goods whose primary market is elsewhere.</title><rect x="620" y="1804" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#c79a5e" stroke-width="2" /><text x="680.0" y="1822" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8357</text><text x="680.0" y="1866.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8358
+Great River Gorge â€' Canyon Pool
+
+A natural widening of the gorge at a bend in the Great River has created a deep pool of calmer water where boats anchor to rest between the difficult current sections. The pool's walls show high-water marks from multiple flood seasons, and a Pekakarlik-maintained rescue station on a rock platform above the pool keeps ropes and flotation equipment ready. The pool is cold even in high summer, fed by current from the mountains.</title><rect x="1656" y="1952" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1716.0" y="1970" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8358</text><text x="1716.0" y="2014.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8359
+Great River Gorge â€' North Rim Trail
+
+A narrow trail along the gorge's north rim connects the Kharazhad approach road to the portage bypass, providing a faster alternative to the switchback descent for travelers who do not need to use the river. The trail requires careful footing in several sections but is navigable without climbing equipment. Desert flora grows to the rim-edge, and the transition from desert ground-cover to the sudden void of the gorge is startling every time.</title><rect x="1508" y="324" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="1568.0" y="342" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8359</text><text x="1568.0" y="386.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+<g><title>vnum 8360
+Great River Gorge â€' Spring Flood High-Water Mark
+
+A section of gorge wall where the spring flood tide has deposited a distinctive band of sediment at its maximum height â€' a visual record of the river's seasonal extremes. The Pekakarlik have been measuring and recording flood heights here for centuries, and the carved record on the wall face constitutes the longest continuous flood-data series in Oreka. Current flood heights are compared to this record by every generation of Flowkeepers as part of their maintenance planning.</title><rect x="2396" y="1064" width="120" height="120" rx="8" ry="8" fill="#1a1f2e" stroke="#5b677f" stroke-width="2" /><text x="2456.0" y="1082" text-anchor="middle" fill="#8aa0c2" font-size="11">vnum 8360</text><text x="2456.0" y="1126.0" text-anchor="middle" fill="#d9dce6" font-size="12" font-weight="600">Great River Gorge â€…</text>
+</g>
+</svg></div>
+</body></html>

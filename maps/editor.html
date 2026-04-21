@@ -1,0 +1,521 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>OrekaMUD3 Area Editor</title>
+<style>
+  :root {
+    --bg:#0b0d12; --panel:#0f1117; --border:#2a3141; --text:#d9dce6;
+    --muted:#8593a8; --accent:#6cb38f; --warn:#d88080; --gold:#c79a5e;
+    --cell:#1a1f2e; --cell-border:#5b677f; --edge:#3e4a63;
+  }
+  html,body { background:var(--bg); color:var(--text); margin:0; font-family:system-ui,sans-serif; height:100%; }
+  body { display:grid; grid-template-columns: 260px 1fr; height:100vh; }
+  #left {
+    border-right:1px solid var(--border); padding:14px; overflow:auto;
+  }
+  #left h2 { margin:0 0 8px 0; font-weight:500; font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:0.8px; }
+  #left .area-btn {
+    display:block; width:100%; text-align:left;
+    background:transparent; color:var(--text);
+    border:1px solid var(--border); border-radius:6px;
+    padding:6px 10px; margin-bottom:4px;
+    cursor:pointer; font-size:13px;
+  }
+  #left .area-btn:hover { border-color:var(--accent); }
+  #left .area-btn.active { border-color:var(--accent); background:rgba(108,179,143,0.08); }
+  #left .count { color:var(--muted); font-size:11px; float:right; }
+  #main { display:flex; flex-direction:column; min-width:0; }
+  #topbar {
+    padding:10px 14px; border-bottom:1px solid var(--border);
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+  }
+  #topbar button {
+    background:#1a1f2e; color:var(--text); border:1px solid var(--border);
+    border-radius:6px; padding:6px 12px; cursor:pointer; font-size:12px;
+  }
+  #topbar button:hover { border-color:var(--accent); }
+  #topbar button.primary { border-color:var(--accent); }
+  #status { color:var(--muted); font-size:12px; margin-left:auto; }
+  #canvas-wrap { flex:1; overflow:auto; background:var(--panel); position:relative; }
+  #canvas-wrap svg { display:block; background:var(--bg); }
+  .room-rect {
+    fill:var(--cell); stroke:var(--cell-border); stroke-width:2; cursor:grab;
+  }
+  .room-rect.selected { stroke:var(--accent); stroke-width:3; }
+  .room-rect.connect-source { stroke:var(--gold); stroke-width:3; stroke-dasharray:5,3; }
+  .room-rect.safe { stroke:var(--accent); }
+  .room-rect.shop { stroke:var(--gold); }
+  .room-vnum { fill:#8aa0c2; font-size:11px; pointer-events:none; }
+  .room-name { fill:var(--text); font-size:12px; font-weight:600; pointer-events:none; }
+  .edge { stroke:var(--edge); stroke-width:2; cursor:pointer; }
+  .edge:hover { stroke:var(--warn); }
+  .edge.warped { stroke:var(--warn); stroke-dasharray:6,4; }
+  #details {
+    position:absolute; bottom:10px; right:10px; width:360px;
+    background:var(--panel); border:1px solid var(--border); border-radius:8px;
+    padding:12px; font-size:13px;
+  }
+  #details.hidden { display:none; }
+  #details label { display:block; color:var(--muted); margin-top:8px; font-size:11px; text-transform:uppercase; }
+  #details input, #details textarea {
+    width:100%; background:var(--bg); color:var(--text);
+    border:1px solid var(--border); border-radius:4px; padding:6px;
+    font-size:12px; font-family:inherit; box-sizing:border-box;
+  }
+  #details textarea { resize:vertical; min-height:80px; }
+  #details .flags { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+  #details .flag {
+    background:var(--cell); border:1px solid var(--border); padding:2px 6px;
+    border-radius:4px; font-size:11px; cursor:pointer;
+  }
+  #details .flag.on { background:var(--accent); color:var(--bg); border-color:var(--accent); }
+  #details .btn-row { margin-top:10px; display:flex; gap:6px; }
+  #details .btn-row button { flex:1; padding:6px; font-size:12px; }
+  .danger { border-color:var(--warn) !important; color:var(--warn) !important; }
+  .toast {
+    position:fixed; bottom:20px; left:50%; transform:translateX(-50%);
+    background:var(--cell); border:1px solid var(--accent);
+    padding:10px 16px; border-radius:6px; font-size:13px;
+    z-index:100; transition:opacity 0.3s;
+  }
+  .toast.err { border-color:var(--warn); color:var(--warn); }
+  #mode-hint { font-size:11px; color:var(--muted); margin-top:4px; }
+  kbd { background:var(--cell); border:1px solid var(--border); padding:1px 4px; border-radius:3px; font-size:10px; }
+</style></head>
+<body>
+<aside id="left">
+  <h2>Areas</h2>
+  <div id="area-list"></div>
+  <h2 style="margin-top:20px;">Keys</h2>
+  <div style="font-size:11px; color:var(--muted); line-height:1.6;">
+    <div><kbd>click</kbd> select room</div>
+    <div><kbd>drag</kbd> move room</div>
+    <div><kbd>C</kbd> connect mode: click two rooms</div>
+    <div><kbd>N</kbd> new room at cursor</div>
+    <div><kbd>Del</kbd> delete selected</div>
+    <div><kbd>Esc</kbd> cancel</div>
+  </div>
+</aside>
+<section id="main">
+  <div id="topbar">
+    <strong id="area-title">— pick an area —</strong>
+    <button id="btn-new" title="New room (N)">+ Room</button>
+    <button id="btn-connect" title="Connect two rooms (C)">⇌ Connect</button>
+    <button id="btn-save-layout" class="primary" title="Save positions">Save Layout</button>
+    <button id="btn-rebuild" title="Regenerate static map HTML">Rebuild Maps</button>
+    <span id="mode-hint"></span>
+    <span id="status">ready</span>
+  </div>
+  <div id="canvas-wrap">
+    <svg id="canvas" width="2400" height="1600"></svg>
+    <div id="details" class="hidden"></div>
+  </div>
+</section>
+<script>
+const API = "http://127.0.0.1:8401";
+const CELL = 120, GAP = 28;
+const DIRS = ["north","south","east","west","northeast","northwest","southeast","southwest","up","down","in","out"];
+const GRID_DIRS = {
+  north:[0,-1], south:[0,1], east:[1,0], west:[-1,0],
+  northeast:[1,-1], northwest:[-1,-1], southeast:[1,1], southwest:[-1,1],
+};
+
+let state = {
+  areaName: null,
+  rooms: [],                       // from server
+  positions: {},                   // vnum -> {x,y} pixel coords
+  selected: null,                  // vnum
+  connectSource: null,             // vnum in connect mode
+  mode: null,                      // null | "connect" | "new"
+  dragging: null,
+  dirty: false,
+};
+
+const svg = document.getElementById("canvas");
+const areaList = document.getElementById("area-list");
+const areaTitle = document.getElementById("area-title");
+const details = document.getElementById("details");
+const statusEl = document.getElementById("status");
+const modeHint = document.getElementById("mode-hint");
+
+function toast(msg, err=false) {
+  const t = document.createElement("div");
+  t.className = "toast" + (err ? " err" : "");
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.opacity = 0; setTimeout(() => t.remove(), 300); }, 2200);
+}
+
+async function api(path, opts={}) {
+  const res = await fetch(API + path, {
+    method: opts.method || "GET",
+    headers: {"Content-Type":"application/json"},
+    body: opts.body ? JSON.stringify(opts.body) : undefined,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) { toast(data.error || `HTTP ${res.status}`, true); throw new Error(data.error || res.status); }
+  return data;
+}
+
+async function loadAreaList() {
+  try {
+    const { areas } = await api("/api/areas");
+    areaList.innerHTML = "";
+    for (const a of areas) {
+      const btn = document.createElement("button");
+      btn.className = "area-btn";
+      btn.dataset.name = a.name;
+      btn.innerHTML = `${a.name}<span class="count">${a.room_count}</span>`;
+      btn.onclick = () => loadArea(a.name);
+      areaList.appendChild(btn);
+    }
+    const qs = new URLSearchParams(location.search);
+    const pick = qs.get("area");
+    if (pick) loadArea(pick);
+  } catch (e) {
+    toast("Edit server not reachable. Run: python scripts/map_edit_server.py", true);
+  }
+}
+
+function autoLayout(rooms, override) {
+  // BFS from first altar/temple, else min vnum.
+  const byVnum = new Map(rooms.map(r => [r.vnum, r]));
+  const hub = rooms.find(r => {
+    const f = new Set(r.flags || []);
+    return f.has("altar") || f.has("temple") || f.has("hub");
+  });
+  const start = hub ? hub.vnum : Math.min(...rooms.map(r => r.vnum));
+  const pos = new Map([[start, [0,0]]]);
+  const taken = new Map([[`0,0`, start]]);
+  const queue = [start];
+  while (queue.length) {
+    const v = queue.shift();
+    const r = byVnum.get(v);
+    if (!r) continue;
+    for (const [dir, target] of Object.entries(r.exits || {})) {
+      const d = GRID_DIRS[dir.toLowerCase()];
+      if (!d || !byVnum.has(+target) || pos.has(+target)) continue;
+      let [nx, ny] = pos.get(v);
+      nx += d[0]; ny += d[1];
+      while (taken.has(`${nx},${ny}`)) { nx += d[0]||1; ny += d[1]||0; }
+      pos.set(+target, [nx, ny]);
+      taken.set(`${nx},${ny}`, +target);
+      queue.push(+target);
+    }
+  }
+  // orphans in a row below
+  let maxY = 0; for (const [,y] of pos.values()) if (y > maxY) maxY = y;
+  let col = 0;
+  for (const r of rooms) {
+    if (!pos.has(r.vnum)) { pos.set(r.vnum, [col, maxY + 2]); col++; }
+  }
+  // pixelize
+  const xs = [...pos.values()].map(p => p[0]);
+  const ys = [...pos.values()].map(p => p[1]);
+  const mnx = Math.min(...xs), mny = Math.min(...ys);
+  const out = {};
+  for (const [v, [gx, gy]] of pos) {
+    out[v] = {
+      x: override[v]?.x ?? ((gx - mnx) * (CELL+GAP) + GAP),
+      y: override[v]?.y ?? ((gy - mny) * (CELL+GAP) + GAP),
+    };
+  }
+  // honor override for any vnum the BFS missed
+  for (const v of Object.keys(override)) {
+    if (!out[v]) out[v] = { x: override[v].x, y: override[v].y };
+  }
+  return out;
+}
+
+async function loadArea(name) {
+  const { rooms, layout } = await api(`/api/areas/${name}`);
+  state.areaName = name;
+  state.rooms = rooms;
+  state.positions = autoLayout(rooms, layout || {});
+  state.selected = null;
+  state.connectSource = null;
+  state.mode = null;
+  areaTitle.textContent = name + " — " + rooms.length + " rooms";
+  for (const btn of areaList.querySelectorAll(".area-btn")) {
+    btn.classList.toggle("active", btn.dataset.name === name);
+  }
+  render();
+  details.classList.add("hidden");
+  history.replaceState(null, "", `?area=${encodeURIComponent(name)}`);
+  setMode(null);
+}
+
+function render() {
+  svg.innerHTML = "";
+  // compute viewBox bounds
+  const xs = Object.values(state.positions).map(p => p.x);
+  const ys = Object.values(state.positions).map(p => p.y);
+  const W = Math.max(1600, Math.max(...xs) + CELL + 80);
+  const H = Math.max(900, Math.max(...ys) + CELL + 80);
+  svg.setAttribute("width", W);
+  svg.setAttribute("height", H);
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+
+  // edges
+  const seen = new Set();
+  for (const r of state.rooms) {
+    const a = r.vnum;
+    for (const [dir, target] of Object.entries(r.exits || {})) {
+      const b = +target;
+      const key = a < b ? `${a}-${b}` : `${b}-${a}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const pa = state.positions[a], pb = state.positions[b];
+      if (!pa || !pb) continue;
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", pa.x + CELL/2);
+      line.setAttribute("y1", pa.y + CELL/2);
+      line.setAttribute("x2", pb.x + CELL/2);
+      line.setAttribute("y2", pb.y + CELL/2);
+      line.setAttribute("class", "edge");
+      line.dataset.a = a; line.dataset.b = b; line.dataset.dir = dir.toLowerCase();
+      line.addEventListener("click", (e) => { e.stopPropagation(); onEdgeClick(a, b, dir); });
+      svg.appendChild(line);
+    }
+  }
+
+  // rooms
+  for (const r of state.rooms) {
+    const p = state.positions[r.vnum];
+    if (!p) continue;
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    g.dataset.vnum = r.vnum;
+    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.setAttribute("x", p.x); rect.setAttribute("y", p.y);
+    rect.setAttribute("width", CELL); rect.setAttribute("height", CELL);
+    rect.setAttribute("rx", 8); rect.setAttribute("ry", 8);
+    let cls = "room-rect";
+    const flags = new Set(r.flags || []);
+    if (flags.has("safe") || flags.has("temple") || flags.has("altar")) cls += " safe";
+    if (flags.has("shop") || flags.has("street")) cls += " shop";
+    if (state.selected === r.vnum) cls += " selected";
+    if (state.connectSource === r.vnum) cls += " connect-source";
+    rect.setAttribute("class", cls);
+    g.appendChild(rect);
+
+    const tVnum = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    tVnum.setAttribute("x", p.x + CELL/2); tVnum.setAttribute("y", p.y + 18);
+    tVnum.setAttribute("text-anchor", "middle"); tVnum.setAttribute("class", "room-vnum");
+    tVnum.textContent = `vnum ${r.vnum}`;
+    g.appendChild(tVnum);
+
+    const tName = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    tName.setAttribute("x", p.x + CELL/2); tName.setAttribute("y", p.y + CELL/2 + 4);
+    tName.setAttribute("text-anchor", "middle"); tName.setAttribute("class", "room-name");
+    const nm = r.name || "";
+    tName.textContent = nm.length > 20 ? nm.slice(0,18) + "…" : nm;
+    g.appendChild(tName);
+
+    g.addEventListener("mousedown", (e) => onRoomMouseDown(e, r.vnum));
+    g.addEventListener("click", (e) => { e.stopPropagation(); onRoomClick(r.vnum); });
+    svg.appendChild(g);
+  }
+}
+
+function setMode(mode) {
+  state.mode = mode;
+  document.getElementById("btn-connect").classList.toggle("primary", mode === "connect");
+  document.getElementById("btn-new").classList.toggle("primary", mode === "new");
+  if (mode === "connect") {
+    modeHint.textContent = "Connect mode: click source room, then target room";
+  } else if (mode === "new") {
+    modeHint.textContent = "New room mode: click on the canvas to place";
+  } else {
+    modeHint.textContent = "";
+  }
+  if (mode !== "connect") state.connectSource = null;
+  render();
+}
+
+function onRoomMouseDown(e, vnum) {
+  if (state.mode) return;
+  if (e.button !== 0) return;
+  const p = state.positions[vnum];
+  state.dragging = { vnum, startX: e.clientX, startY: e.clientY, origX: p.x, origY: p.y, moved: false };
+  e.preventDefault();
+}
+
+svg.addEventListener("mousemove", (e) => {
+  if (!state.dragging) return;
+  const dx = e.clientX - state.dragging.startX;
+  const dy = e.clientY - state.dragging.startY;
+  if (Math.abs(dx) > 2 || Math.abs(dy) > 2) state.dragging.moved = true;
+  state.positions[state.dragging.vnum] = {
+    x: state.dragging.origX + dx,
+    y: state.dragging.origY + dy,
+  };
+  state.dirty = true;
+  render();
+});
+
+window.addEventListener("mouseup", () => {
+  if (state.dragging) {
+    if (state.dragging.moved) statusEl.textContent = "moved — save layout to persist";
+    state.dragging = null;
+  }
+});
+
+function onRoomClick(vnum) {
+  if (state.dragging && state.dragging.moved) return;
+  if (state.mode === "connect") {
+    if (state.connectSource === null) {
+      state.connectSource = vnum;
+      render();
+    } else if (state.connectSource !== vnum) {
+      promptAndConnect(state.connectSource, vnum);
+      state.connectSource = null;
+      setMode(null);
+    }
+    return;
+  }
+  state.selected = vnum;
+  render();
+  showDetails(vnum);
+}
+
+async function promptAndConnect(src, dst) {
+  const dir = prompt(`Direction from room ${src} toward ${dst}?\n(${DIRS.join(", ")})`, "east");
+  if (!dir) return;
+  const d = dir.trim().toLowerCase();
+  if (!DIRS.includes(d)) { toast("unknown direction", true); return; }
+  await api(`/api/areas/${state.areaName}/room/${src}/exit`, {
+    method: "PUT", body: { direction: d, target: dst }
+  });
+  const reverse = { north:"south", south:"north", east:"west", west:"east",
+                    northeast:"southwest", southwest:"northeast",
+                    northwest:"southeast", southeast:"northwest",
+                    up:"down", down:"up", "in":"out", out:"in" }[d];
+  if (reverse && confirm(`Also link ${dst} ${reverse} → ${src}?`)) {
+    await api(`/api/areas/${state.areaName}/room/${dst}/exit`, {
+      method: "PUT", body: { direction: reverse, target: src }
+    });
+  }
+  toast(`connected ${src} ${d} → ${dst}`);
+  await loadArea(state.areaName);
+}
+
+async function onEdgeClick(a, b, dir) {
+  if (!confirm(`Delete exit ${a} ${dir} → ${b}?`)) return;
+  await api(`/api/areas/${state.areaName}/room/${a}/exit/${dir.toLowerCase()}`, { method:"DELETE" });
+  toast(`removed ${a} ${dir} → ${b}`);
+  await loadArea(state.areaName);
+}
+
+function showDetails(vnum) {
+  const r = state.rooms.find(x => x.vnum === vnum);
+  if (!r) return;
+  const flagCatalog = ["safe","temple","altar","hub","shop","street","inn","water","earth","fire","air"];
+  const currentFlags = new Set(r.flags || []);
+  details.innerHTML = `
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <strong>vnum ${r.vnum}</strong>
+      <button onclick="details.classList.add('hidden')" style="background:none; border:none; color:var(--muted); cursor:pointer;">✕</button>
+    </div>
+    <label>Name</label>
+    <input id="fld-name" value="${(r.name||'').replace(/"/g,'&quot;')}"/>
+    <label>Description</label>
+    <textarea id="fld-desc">${(r.description||'').replace(/</g,'&lt;')}</textarea>
+    <label>Flags</label>
+    <div class="flags" id="flags-wrap">
+      ${flagCatalog.map(f => `<span class="flag ${currentFlags.has(f)?'on':''}" data-flag="${f}">${f}</span>`).join("")}
+    </div>
+    <label>Exits</label>
+    <div style="font-size:11px; color:var(--muted);">${
+      Object.entries(r.exits||{}).map(([d,t]) => `${d} → ${t}`).join(" · ") || "(none)"
+    }</div>
+    <div class="btn-row">
+      <button class="primary" id="btn-save-room">Save</button>
+      <button class="danger" id="btn-del-room">Delete Room</button>
+    </div>
+  `;
+  details.classList.remove("hidden");
+  for (const el of details.querySelectorAll(".flag")) {
+    el.onclick = () => el.classList.toggle("on");
+  }
+  document.getElementById("btn-save-room").onclick = async () => {
+    const newFlags = [...details.querySelectorAll(".flag.on")].map(e => e.dataset.flag);
+    await api(`/api/areas/${state.areaName}/room/${vnum}`, {
+      method:"PATCH",
+      body: {
+        name: document.getElementById("fld-name").value,
+        description: document.getElementById("fld-desc").value,
+        flags: newFlags,
+      }
+    });
+    toast("room saved");
+    await loadArea(state.areaName);
+  };
+  document.getElementById("btn-del-room").onclick = async () => {
+    if (!confirm(`Delete room ${vnum} and all exits pointing to it? (backup is created)`)) return;
+    await api(`/api/areas/${state.areaName}/room/${vnum}`, { method:"DELETE" });
+    toast(`deleted room ${vnum}`);
+    await loadArea(state.areaName);
+  };
+}
+
+svg.addEventListener("click", async (e) => {
+  if (state.mode === "new") {
+    const rect = svg.getBoundingClientRect();
+    const x = (e.clientX - rect.left) * (svg.viewBox.baseVal.width / rect.width);
+    const y = (e.clientY - rect.top)  * (svg.viewBox.baseVal.height / rect.height);
+    const name = prompt("Room name?", "Unnamed Room");
+    if (!name) { setMode(null); return; }
+    const { room } = await api(`/api/areas/${state.areaName}/room`, {
+      method:"POST", body: { name }
+    });
+    state.positions[room.vnum] = { x: x - CELL/2, y: y - CELL/2 };
+    state.dirty = true;
+    toast(`created room ${room.vnum}`);
+    setMode(null);
+    await loadArea(state.areaName);
+    // restore the custom position by saving layout
+    await saveLayout(true);
+  }
+});
+
+async function saveLayout(quiet=false) {
+  const positions = {};
+  for (const [v, p] of Object.entries(state.positions)) {
+    positions[v] = { x: Math.round(p.x), y: Math.round(p.y) };
+  }
+  await api(`/api/areas/${state.areaName}/layout`, {
+    method:"POST", body: { positions }
+  });
+  state.dirty = false;
+  if (!quiet) toast("layout saved");
+  statusEl.textContent = "saved";
+}
+
+async function rebuildMaps() {
+  statusEl.textContent = "rebuilding…";
+  const res = await api("/api/areas/rebuild_all", { method:"POST" });
+  statusEl.textContent = res.ok ? "maps rebuilt" : "rebuild failed";
+  toast(res.ok ? "static maps rebuilt" : "rebuild failed", !res.ok);
+}
+
+document.getElementById("btn-new").onclick = () => setMode(state.mode === "new" ? null : "new");
+document.getElementById("btn-connect").onclick = () => setMode(state.mode === "connect" ? null : "connect");
+document.getElementById("btn-save-layout").onclick = () => saveLayout();
+document.getElementById("btn-rebuild").onclick = rebuildMaps;
+
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+  if (e.key === "c" || e.key === "C") setMode(state.mode === "connect" ? null : "connect");
+  else if (e.key === "n" || e.key === "N") setMode(state.mode === "new" ? null : "new");
+  else if (e.key === "Escape") { setMode(null); details.classList.add("hidden"); state.selected = null; render(); }
+  else if ((e.key === "Delete" || e.key === "Backspace") && state.selected !== null) {
+    const vnum = state.selected;
+    if (confirm(`Delete room ${vnum}?`)) {
+      api(`/api/areas/${state.areaName}/room/${vnum}`, { method:"DELETE" })
+        .then(() => { toast(`deleted ${vnum}`); loadArea(state.areaName); });
+    }
+  }
+});
+
+loadAreaList();
+</script>
+</body></html>

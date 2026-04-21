@@ -1,4 +1,37 @@
 import asyncio
+import os
+
+# Load environment variables from ./.env or the sibling VeilClient/.env so
+# Ollama host/model/etc flow through to src.ai._config without needing an
+# admin command on every restart. Zero-dependency parser — no python-dotenv
+# required.
+def _load_env_files():
+    candidates = [
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env"),
+        os.path.abspath(os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "..", "..", "VeilClient", ".env",
+        )),
+    ]
+    for path in candidates:
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line or line.startswith("#") or "=" not in line:
+                        continue
+                    key, _, value = line.partition("=")
+                    key = key.strip()
+                    value = value.strip().strip('"').strip("'")
+                    if key and key not in os.environ:
+                        os.environ[key] = value
+        except Exception:
+            pass
+
+
+_load_env_files()
 
 # Global session tracking for all connected users
 ACTIVE_SESSIONS = {}  # username: (writer, last_activity)
@@ -459,34 +492,43 @@ async def handle_client(reader, writer, world, parser):
                         if query in rname.lower():
                             chosen_race = rname
                             break
-            # Roll stats (simple 4d6 drop lowest, 6 times)
+            # Roll stats (simple 4d6 drop lowest, 6 times). One reroll allowed.
             import random
             def roll_stat():
                 rolls = sorted([random.randint(1,6) for _ in range(4)], reverse=True)
                 return sum(rolls[:3])
-            stats = [roll_stat() for _ in range(6)]
-            stat_names = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
-            stat_dict = dict(zip(stat_names, stats))
-            # Apply racial stat mods
             from src.races import get_race
             _race_data = get_race(chosen_race)
+            _ability_mods = (_race_data or {}).get('ability_mods', {}) or {}
+            _abbr_to_full = {"Str": "STR", "Dex": "DEX", "Con": "CON",
+                             "Int": "INT", "Wis": "WIS", "Cha": "CHA"}
+            stat_names = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
+            rerolls_remaining = 1
+            while True:
+                stats = [roll_stat() for _ in range(6)]
+                stat_dict = dict(zip(stat_names, stats))
+                _mod_parts = []
+                for _stat_abbr, _mod_val in _ability_mods.items():
+                    _full_name = _abbr_to_full.get(_stat_abbr, _stat_abbr.upper())
+                    if _full_name in stat_dict:
+                        stat_dict[_full_name] += _mod_val
+                        _mod_parts.append(f"{_full_name} {_mod_val:+d}")
+                if _mod_parts:
+                    writer.write(f"Racial modifiers ({chosen_race}): {', '.join(_mod_parts)}\n")
+                writer.write(f"Rolled stats: {', '.join(f'{n}: {v}' for n,v in stat_dict.items())}\n")
+                if rerolls_remaining <= 0:
+                    break
+                writer.write(f"Accept these stats or reroll? ({rerolls_remaining} reroll remaining) [a/r]: ")
+                _choice = (await reader.readline()).strip().lower()
+                if _choice.startswith('r'):
+                    rerolls_remaining -= 1
+                    continue
+                break
             if _race_data:
-                _ability_mods = _race_data.get('ability_mods', {})
-                if _ability_mods:
-                    _mod_parts = []
-                    for _stat_abbr, _mod_val in _ability_mods.items():
-                        _full_name = {"Str": "STR", "Dex": "DEX", "Con": "CON", "Int": "INT", "Wis": "WIS", "Cha": "CHA"}.get(_stat_abbr, _stat_abbr.upper())
-                        if _full_name in stat_dict:
-                            stat_dict[_full_name] += _mod_val
-                            _mod_parts.append(f"{_full_name} {_mod_val:+d}")
-                    if _mod_parts:
-                        writer.write(f"Racial modifiers ({chosen_race}): {', '.join(_mod_parts)}\n")
-                # Set move/max_move from racial speed
                 _racial_speed = _race_data.get('speed', 30)
                 _racial_move = (_racial_speed * 10) // 3
             else:
                 _racial_move = 100
-            writer.write(f"Rolled stats: {', '.join(f'{n}: {v}' for n,v in stat_dict.items())}\n")
             # Class
             chosen_class = await prompt_class(writer, reader)
             # Magi chosen path selection
@@ -887,7 +929,7 @@ async def handle_client(reader, writer, world, parser):
         )
     )
     last_room_vnum = character.room.vnum
-    COMBAT_TICK_RATE = 4  # seconds between auto-attack rounds
+    COMBAT_TICK_RATE = 2  # seconds between auto-attack rounds (was 4)
     _cmd_times = []  # Rate limiting: timestamps of recent commands
     _CMD_RATE_LIMIT = 8  # max commands per second
     while True:
@@ -1557,6 +1599,40 @@ async def prompt_feats(writer, reader, character=None, allow_multiple=False):
             if selected in chosen_feats:
                 writer.write(f"You already picked {selected}. Choose a different feat.\n")
             else:
+                # Feats that require a choice (weapon type, spell school, skill, etc.)
+                CHOICE_FEATS = {
+                    "Weapon Focus": ("weapon type", ["Longsword", "Shortsword", "Dagger", "Greatsword", "Battleaxe", "Mace", "Quarterstaff", "Longbow", "Shortbow", "Rapier", "Warhammer", "Spear", "Handaxe", "Scimitar", "Flail"]),
+                    "Greater Weapon Focus": ("weapon type", ["Longsword", "Shortsword", "Dagger", "Greatsword", "Battleaxe", "Longbow", "Rapier", "Warhammer", "Spear"]),
+                    "Weapon Specialization": ("weapon type", ["Longsword", "Shortsword", "Dagger", "Greatsword", "Battleaxe", "Longbow", "Rapier", "Warhammer", "Spear"]),
+                    "Greater Weapon Specialization": ("weapon type", ["Longsword", "Shortsword", "Dagger", "Greatsword", "Battleaxe"]),
+                    "Improved Critical": ("weapon type", ["Longsword", "Shortsword", "Dagger", "Greatsword", "Battleaxe", "Longbow", "Rapier", "Warhammer", "Spear"]),
+                    "Spell Focus": ("spell school", ["Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation"]),
+                    "Greater Spell Focus": ("spell school", ["Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation"]),
+                    "Skill Focus": ("skill", ["Bluff", "Concentration", "Diplomacy", "Heal", "Hide", "Intimidate", "Knowledge (arcana)", "Knowledge (religion)", "Listen", "Move Silently", "Sense Motive", "Spellcraft", "Spot", "Survival", "Swim", "Tumble"]),
+                }
+                if selected in CHOICE_FEATS:
+                    choice_type, options = CHOICE_FEATS[selected]
+                    writer.write(f"\n  {selected} requires you to choose a {choice_type}:\n")
+                    for ci, opt in enumerate(options, 1):
+                        writer.write(f"    {ci}. {opt}\n")
+                    writer.write(f"  Choose (1-{len(options)}): ")
+                    choice_raw = (await reader.readline()).strip()
+                    try:
+                        ci = int(choice_raw) - 1
+                        if 0 <= ci < len(options):
+                            selected = f"{selected} ({options[ci]})"
+                        else:
+                            writer.write(f"  Invalid choice. Defaulting to {options[0]}.\n")
+                            selected = f"{selected} ({options[0]})"
+                    except ValueError:
+                        # Try name match
+                        matched = [o for o in options if choice_raw.lower() in o.lower()]
+                        if matched:
+                            selected = f"{selected} ({matched[0]})"
+                        else:
+                            writer.write(f"  Unrecognized. Defaulting to {options[0]}.\n")
+                            selected = f"{selected} ({options[0]})"
+                    writer.write(f"  -> {selected}\n")
                 chosen_feats.append(selected)
                 writer.write(f"  Feat {len(chosen_feats)}/{num_feats}: {selected}\n")
         else:
@@ -1836,6 +1912,22 @@ async def wandering_gods_tick(world):
                                 pass
         except Exception as e:
             logger.error(f"Error in wandering gods tick: {e}")
+
+
+async def gmcp_tick(world):
+    """Central GMCP state tick — emit vitals/status/room-mobs deltas every 2s.
+
+    Suppresses redundant emits via per-character fingerprint cache in
+    src/gmcp.py. Panels that rely on live HP/combat state (combat feed,
+    character sheet) depend on this loop.
+    """
+    from src import gmcp as _gmcp
+    while True:
+        try:
+            await asyncio.sleep(2)
+            _gmcp.tick_all(world)
+        except Exception as e:
+            logger.error(f"Error in GMCP tick: {e}")
 
 
 async def chat_despawn_tick(world):
@@ -2279,6 +2371,7 @@ async def main():
 
     # Start chat session auto-despawn tick
     asyncio.create_task(chat_despawn_tick(world))
+    asyncio.create_task(gmcp_tick(world))
 
     # Start dynamic weather tick
     asyncio.create_task(weather_tick(world))

@@ -7,8 +7,20 @@
       "importance": 0.4,
       "session_id": "rpsay",
       "created_at": 1775858540.5880363
+    },
+    {
+      "text": "[RP overheard] Hormoth said: \"My lady do you have time to talk with me?\" \u2014 I replied: \"The waters part to listen, and I am ever ready to guide those who seek the current's wisdom. What brings you to my quadrant, traveler?\"",
+      "importance": 0.4,
+      "session_id": "rpsay",
+      "created_at": 1776449113.1977284
+    },
+    {
+      "text": "[RP overheard] Hormoth said: \"How are you today Lady of the Seas\" \u2014 I replied: \"The sea is ever-changing, child. How does one measure the mood of the deep?\"",
+      "importance": 0.4,
+      "session_id": "rpsay",
+      "created_at": 1776453552.4473855
     }
   ],
-  "last_interaction": 1775858540.5880394,
+  "last_interaction": 1776453552.4473886,
   "total_sessions": 0
 }

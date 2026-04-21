@@ -69,10 +69,10 @@ class FactionManager:
         if character.guild_name == faction_id:
             self._update_rank(character, faction_id)
 
-        # GMCP: notify client of faction reputation change
+        # GMCP: per-faction delta update per docs/GMCP_SPEC.md
         try:
-            from src.gmcp import emit_factions
-            emit_factions(character)
+            from src.gmcp import emit_faction
+            emit_faction(character, fname, new_rep, change=amount)
         except Exception:
             pass
 

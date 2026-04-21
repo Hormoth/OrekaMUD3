@@ -22235,7 +22235,7 @@
   },
   {
     "vnum": 9010,
-    "name": "Warden Kael Ridgeborn",
+    "name": "Kael Ridgeborn, Warden",
     "level": 8,
     "hp_dice": [
       8,
@@ -22342,7 +22342,7 @@
   },
   {
     "vnum": 9011,
-    "name": "Elder Aelwyn Rootsong",
+    "name": "Aelwyn Rootsong, Elder",
     "level": 10,
     "hp_dice": [
       10,
@@ -22399,7 +22399,7 @@
   },
   {
     "vnum": 9012,
-    "name": "Speaker Maren Firebraid",
+    "name": "Maren Firebraid, Speaker",
     "level": 7,
     "hp_dice": [
       7,
@@ -22513,7 +22513,7 @@
   },
   {
     "vnum": 9014,
-    "name": "Captain Sera Dawnwatch",
+    "name": "Sera Dawnwatch, Captain",
     "level": 7,
     "hp_dice": [
       7,
@@ -23642,7 +23642,7 @@
   },
   {
     "vnum": 9109,
-    "name": "High Priestess Miravel",
+    "name": "Miravel, High Priestess",
     "level": 8,
     "hp_dice": [
       8,
@@ -25597,7 +25597,7 @@
   },
   {
     "vnum": 9142,
-    "name": "Oasis Warden Jebril",
+    "name": "Jebril, Oasis Warden",
     "level": 4,
     "hp_dice": [
       4,
@@ -26508,7 +26508,7 @@
   },
   {
     "vnum": 9200,
-    "name": "Guide Priestess Elia",
+    "name": "Elia, Guide Priestess",
     "level": 5,
     "hp_dice": [
       5,
@@ -26600,7 +26600,7 @@
   },
   {
     "vnum": 9201,
-    "name": "Priest of Stone Morath",
+    "name": "Morath, Priest of Stone",
     "level": 5,
     "hp_dice": [
       5,
@@ -26702,7 +26702,7 @@
   },
   {
     "vnum": 9202,
-    "name": "Priestess of Fire Ashara",
+    "name": "Ashara, Priestess of Fire",
     "level": 5,
     "hp_dice": [
       5,
@@ -26892,7 +26892,7 @@
   },
   {
     "vnum": 9204,
-    "name": "Priestess of the Sea Maren",
+    "name": "Maren, Priestess of the Sea",
     "level": 5,
     "hp_dice": [
       5,
@@ -26994,7 +26994,7 @@
   },
   {
     "vnum": 9205,
-    "name": "Priest of Wind Taelon",
+    "name": "Taelon, Priest of Wind",
     "level": 5,
     "hp_dice": [
       5,
@@ -27096,7 +27096,7 @@
   },
   {
     "vnum": 9206,
-    "name": "Quartermaster Bren",
+    "name": "Bren, Quartermaster",
     "level": 3,
     "hp_dice": [
       3,
@@ -43568,7 +43568,7 @@
   },
   {
     "vnum": 4306,
-    "name": "Elder Naerin Silverleaf",
+    "name": "Naerin Silverleaf, Elder",
     "level": 6,
     "hp_dice": [
       6,
@@ -43690,7 +43690,7 @@
   },
   {
     "vnum": 4308,
-    "name": "Keeper Sunwend Dalan",
+    "name": "Sunwend Dalan, Keeper",
     "level": 6,
     "hp_dice": [
       6,
@@ -43812,7 +43812,7 @@
   },
   {
     "vnum": 4310,
-    "name": "Captain Vaerd of the Chainless",
+    "name": "Vaerd, Captain of the Chainless",
     "level": 6,
     "hp_dice": [
       6,
@@ -44117,7 +44117,7 @@
   },
   {
     "vnum": 4315,
-    "name": "The chained Pekakarlik translator",
+    "name": "Brunarik, chained Pekakarlik translator",
     "level": 2,
     "hp_dice": [
       2,
@@ -44174,7 +44174,7 @@
   },
   {
     "vnum": 4316,
-    "name": "The bound Wind-Rider scout",
+    "name": "Askyr, bound Wind-Rider scout",
     "level": 2,
     "hp_dice": [
       2,
@@ -44231,7 +44231,7 @@
   },
   {
     "vnum": 4317,
-    "name": "The caged Mytroan herder",
+    "name": "Tulen, caged Mytroan herder",
     "level": 2,
     "hp_dice": [
       2,
@@ -44288,7 +44288,7 @@
   },
   {
     "vnum": 4318,
-    "name": "The captive Elf scholar",
+    "name": "Aelindar, captive Hasura Elf scholar",
     "level": 2,
     "hp_dice": [
       2,
@@ -44345,7 +44345,7 @@
   },
   {
     "vnum": 4319,
-    "name": "The cage-bound steppe herder",
+    "name": "Berkhan, cage-bound Mytroan herder",
     "level": 2,
     "hp_dice": [
       2,
@@ -44402,7 +44402,7 @@
   },
   {
     "vnum": 4320,
-    "name": "The captive arcanist",
+    "name": "Sylvara, captive Na'wasua arcanist",
     "level": 2,
     "hp_dice": [
       2,
@@ -44459,7 +44459,7 @@
   },
   {
     "vnum": 4321,
-    "name": "the chained farmer",
+    "name": "Madon, chained Orean farmer",
     "level": 1,
     "hp_dice": [
       1,
@@ -44516,7 +44516,7 @@
   },
   {
     "vnum": 4322,
-    "name": "the roped-up villager",
+    "name": "Erren, roped-up Orean villager",
     "level": 1,
     "hp_dice": [
       1,
@@ -44573,7 +44573,7 @@
   },
   {
     "vnum": 4323,
-    "name": "the shackled scout",
+    "name": "Yarkan, shackled Mytroan scout",
     "level": 1,
     "hp_dice": [
       1,
@@ -44630,7 +44630,7 @@
   },
   {
     "vnum": 4324,
-    "name": "the bound captive",
+    "name": "Yazmir, bound Taraf-Imro captive",
     "level": 1,
     "hp_dice": [
       1,
@@ -44687,7 +44687,7 @@
   },
   {
     "vnum": 4325,
-    "name": "the tied-up traveler",
+    "name": "Dorion, tied-up Eruskan traveler",
     "level": 1,
     "hp_dice": [
       1,
@@ -44744,7 +44744,7 @@
   },
   {
     "vnum": 4326,
-    "name": "the shackled scout",
+    "name": "Esmer, shackled Mytroan scout",
     "level": 1,
     "hp_dice": [
       1,
@@ -44801,7 +44801,7 @@
   },
   {
     "vnum": 4327,
-    "name": "the bound captive",
+    "name": "Thorvid, bound Visetri captive",
     "level": 1,
     "hp_dice": [
       1,
@@ -44858,7 +44858,7 @@
   },
   {
     "vnum": 4328,
-    "name": "the chained farmer",
+    "name": "Breck, chained Orean farmer",
     "level": 1,
     "hp_dice": [
       1,
@@ -44915,7 +44915,7 @@
   },
   {
     "vnum": 4329,
-    "name": "the bound captive",
+    "name": "Callista, bound Eruskan captive",
     "level": 1,
     "hp_dice": [
       1,
@@ -44972,7 +44972,7 @@
   },
   {
     "vnum": 4330,
-    "name": "the shackled scout",
+    "name": "Korrin, shackled Kovaka scout",
     "level": 1,
     "hp_dice": [
       1,
@@ -45029,7 +45029,7 @@
   },
   {
     "vnum": 4331,
-    "name": "the bound captive",
+    "name": "Baerin, bound Visetri captive",
     "level": 1,
     "hp_dice": [
       1,
@@ -45086,7 +45086,7 @@
   },
   {
     "vnum": 4332,
-    "name": "the chained farmer",
+    "name": "Garrik, chained Orean farmer",
     "level": 1,
     "hp_dice": [
       1,
@@ -45143,7 +45143,7 @@
   },
   {
     "vnum": 4333,
-    "name": "the shackled scout",
+    "name": "Thaellen, shackled Hasura scout",
     "level": 1,
     "hp_dice": [
       1,
@@ -45200,7 +45200,7 @@
   },
   {
     "vnum": 4334,
-    "name": "the roped-up villager",
+    "name": "Marenth, roped-up Eruskan villager",
     "level": 1,
     "hp_dice": [
       1,
@@ -45257,7 +45257,7 @@
   },
   {
     "vnum": 4335,
-    "name": "the gagged prisoner",
+    "name": "Grumnir, gagged Visetri prisoner",
     "level": 1,
     "hp_dice": [
       1,
@@ -45314,7 +45314,7 @@
   },
   {
     "vnum": 4336,
-    "name": "the bound captive",
+    "name": "Vesslai, bound Pekakarlik captive",
     "level": 1,
     "hp_dice": [
       1,
@@ -45371,7 +45371,7 @@
   },
   {
     "vnum": 4337,
-    "name": "the tied-up traveler",
+    "name": "Tariq, tied-up Taraf-Imro traveler",
     "level": 1,
     "hp_dice": [
       1,
@@ -45428,7 +45428,7 @@
   },
   {
     "vnum": 4338,
-    "name": "the chained farmer",
+    "name": "Stoikhen, chained Pekakarlik farmer",
     "level": 1,
     "hp_dice": [
       1,
@@ -45485,7 +45485,7 @@
   },
   {
     "vnum": 4339,
-    "name": "the roped-up villager",
+    "name": "Safira, roped-up Taraf-Imro villager",
     "level": 1,
     "hp_dice": [
       1,
@@ -45542,7 +45542,7 @@
   },
   {
     "vnum": 4340,
-    "name": "the roped-up villager",
+    "name": "Morgrav, roped-up Pekakarlik villager",
     "level": 1,
     "hp_dice": [
       1,
@@ -45599,7 +45599,7 @@
   },
   {
     "vnum": 4341,
-    "name": "the shackled scout",
+    "name": "Drezna, shackled Pekakarlik scout",
     "level": 1,
     "hp_dice": [
       1,
@@ -45656,7 +45656,7 @@
   },
   {
     "vnum": 4342,
-    "name": "the shackled scout",
+    "name": "Arzgar, shackled Rarozhki scout",
     "level": 1,
     "hp_dice": [
       1,
@@ -45713,7 +45713,7 @@
   },
   {
     "vnum": 4343,
-    "name": "the roped-up villager",
+    "name": "Kaldrin, roped-up Rarozhki villager",
     "level": 1,
     "hp_dice": [
       1,
@@ -45770,7 +45770,7 @@
   },
   {
     "vnum": 4344,
-    "name": "the gagged prisoner",
+    "name": "Brokan, gagged Kovaka prisoner",
     "level": 1,
     "hp_dice": [
       1,
@@ -45827,7 +45827,7 @@
   },
   {
     "vnum": 4345,
-    "name": "the chained farmer",
+    "name": "Edrin, chained Orean farmer",
     "level": 1,
     "hp_dice": [
       1,
@@ -48115,7 +48115,7 @@
   },
   {
     "vnum": 9210,
-    "name": "Quartermaster Brenn",
+    "name": "Brenn, Quartermaster",
     "level": 5,
     "hp_dice": [
       5,
@@ -48170,7 +48170,7 @@
   },
   {
     "vnum": 9211,
-    "name": "Street Warden Corla",
+    "name": "Corla, Street Warden",
     "level": 5,
     "hp_dice": [
       5,
@@ -48223,5 +48223,160 @@
     "room_vnum": 3001,
     "loot_table": [],
     "dialogue": "Heading into Custos? Good. Three things to know: The Deepwell Tavern on River Street has a cellar that goes deeper than any tavern should -- rats and worse down there, good practice for a new blade. The Dockside Shrine of Semyon has a priestess who needs help with something in the river. And if you find anyone in chains out in the wilderness -- cut them free. The world rewards those who bring people home. Type 'help getting_started' if you need a reminder of the basics. Now go south -- Oreka is waiting."
+  },
+  {
+    "vnum": 9207,
+    "name": "Halene, Sea-Apothecary",
+    "level": 3,
+    "hp_dice": [
+      3,
+      6,
+      3
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      4,
+      0
+    ],
+    "flags": [
+      "shopkeeper",
+      "no_attack"
+    ],
+    "room_vnum": 1003,
+    "type_": "Humanoid",
+    "alignment": "Neutral Good",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 12,
+      "Con": 10,
+      "Int": 13,
+      "Wis": 15,
+      "Cha": 13
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [
+      "Friendly",
+      "Healer"
+    ],
+    "feats": [],
+    "skills": {
+      "Heal": 6,
+      "Appraise": 4
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 1,
+      "Will": 4
+    },
+    "environment": "Town",
+    "organization": "Shop",
+    "cr": 1,
+    "advancement": "By character class",
+    "shop_inventory": [
+      301,
+      204,
+      205,
+      206,
+      207,
+      603,
+      650
+    ],
+    "base_shop_inventory": [
+      301,
+      204,
+      205,
+      206,
+      207,
+      603,
+      650
+    ],
+    "buy_rate": 0.5,
+    "sell_rate": 1.2,
+    "description": "A calm Eruskan woman in sea-green linens, her apron pocketed with vials and dried herbs. She sells healing potions and traveling supplies to those setting out from the Chapel.",
+    "dialogue": "\"Fresh in from the coast. A potion for wounds, rations for the road. Type 'list' to see what I have.\""
+  },
+  {
+    "vnum": 9208,
+    "name": "Vaelen, Wind-Scribe",
+    "level": 3,
+    "hp_dice": [
+      3,
+      6,
+      3
+    ],
+    "ac": 10,
+    "damage_dice": [
+      1,
+      4,
+      0
+    ],
+    "flags": [
+      "shopkeeper",
+      "no_attack"
+    ],
+    "room_vnum": 1004,
+    "type_": "Humanoid",
+    "alignment": "Neutral",
+    "ability_scores": {
+      "Str": 9,
+      "Dex": 12,
+      "Con": 10,
+      "Int": 15,
+      "Wis": 13,
+      "Cha": 12
+    },
+    "initiative": 1,
+    "speed": {
+      "land": 30
+    },
+    "attacks": [],
+    "special_attacks": [],
+    "special_qualities": [
+      "Friendly",
+      "Scholar"
+    ],
+    "feats": [],
+    "skills": {
+      "Spellcraft": 5,
+      "Appraise": 4,
+      "Decipher Script": 4
+    },
+    "saves": {
+      "Fort": 1,
+      "Ref": 1,
+      "Will": 3
+    },
+    "environment": "Town",
+    "organization": "Shop",
+    "cr": 1,
+    "advancement": "By character class",
+    "shop_inventory": [
+      303,
+      601,
+      602,
+      600,
+      611,
+      208,
+      203
+    ],
+    "base_shop_inventory": [
+      303,
+      601,
+      602,
+      600,
+      611,
+      208,
+      203
+    ],
+    "buy_rate": 0.5,
+    "sell_rate": 1.2,
+    "description": "A Hasura scribe in wind-silk robes, her slim fingers always ink-stained. She sells scrolls, blank parchment, and small light sources to travelers who expect long roads.",
+    "dialogue": "\"A spare scroll, a little ink, a lantern against the dark. Every wanderer needs something.\""
   }
 ]

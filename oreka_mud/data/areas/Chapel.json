@@ -11,7 +11,8 @@
     },
     "flags": [
       "safe",
-      "altar"
+      "altar",
+      "temple"
     ],
     "ambience": {
       "mood": "reverent",
@@ -214,7 +215,8 @@
     },
     "flags": [
       "earth",
-      "altar"
+      "altar",
+      "safe"
     ]
   },
   {
@@ -229,7 +231,8 @@
     },
     "flags": [
       "fire",
-      "altar"
+      "altar",
+      "safe"
     ]
   },
   {
@@ -246,7 +249,8 @@
     },
     "flags": [
       "water",
-      "altar"
+      "altar",
+      "safe"
     ]
   },
   {
@@ -261,7 +265,8 @@
     },
     "flags": [
       "air",
-      "altar"
+      "altar",
+      "safe"
     ]
   },
   {

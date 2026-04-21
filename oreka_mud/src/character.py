@@ -353,26 +353,29 @@ class Character:
     def get_skill(self, skill):
         value = self.skills.get(skill, 0) if hasattr(self, 'skills') else 0
         from src.feats import FEATS
-        # Always check Acrobatic, Agile, Alertness for their skills
+        seen_bases = set()
         for feat_name in getattr(self, 'feats', []):
-            feat = FEATS.get(feat_name)
+            base = feat_name.split(' (', 1)[0]
+            if base in seen_bases:
+                continue
+            seen_bases.add(base)
+            feat = FEATS.get(feat_name) or FEATS.get(base)
             if feat and feat.effect:
                 value = feat.apply(self, skill=skill, value=value)
-        # Passive check for Acrobatic, Agile, Alertness even if not in feats (for futureproofing)
-        for passive in ("Acrobatic", "Agile", "Alertness"):
-            if passive in getattr(self, 'feats', []):
-                feat = FEATS.get(passive)
-                if feat and feat.effect:
-                    value = feat.apply(self, skill=skill, value=value)
         return value
 
     def get_save(self, save):
         value = self.saves.get(save, 0) if hasattr(self, 'saves') else 0
         from src.feats import FEATS
+        seen_bases = set()
         for feat_name in getattr(self, 'feats', []):
-            feat = FEATS.get(feat_name)
+            base = feat_name.split(' (', 1)[0]
+            if base in seen_bases:
+                continue
+            seen_bases.add(base)
+            feat = FEATS.get(feat_name) or FEATS.get(base)
             if feat and feat.effect:
-                value = feat.apply(self, save=save, value=value)
+                value = feat.apply(self, save_type=save, value=value)
         return value
     def _auto_spells_known(self):
         """Auto-populate spells known for spellcasting classes."""
@@ -620,9 +623,23 @@ class Character:
         char.char_class = data.get("char_class", "Adventurer")
         char.class_level = data.get("class_level", data.get("level", 1))
         char.class_features = data.get("class_features", [])
-        char.spells_known = data.get("spells_known", {})
-        char.spells_per_day = data.get("spells_per_day", {})
-        char.spells_used = data.get("spells_used", {})
+        # JSON serializes int dict keys as strings. Spell-level-keyed dicts
+        # must be int-keyed at runtime or `spells_per_day.get(spell_level, 0)`
+        # silently returns 0 and blocks cast/prepare.
+        def _int_key_dict(d):
+            if not isinstance(d, dict):
+                return d
+            out = {}
+            for k, v in d.items():
+                try:
+                    out[int(k)] = v
+                except (TypeError, ValueError):
+                    out[k] = v
+            return out
+        char.spells_known = _int_key_dict(data.get("spells_known", {}))
+        char.spells_per_day = _int_key_dict(data.get("spells_per_day", {}))
+        char.spells_used = _int_key_dict(data.get("spells_used", {}))
+        char.prepared_spells = _int_key_dict(data.get("prepared_spells", {}) or {})
         char.quests = data.get("quests", [])
         # Load quest log from saved data
         quest_log_data = data.get("quest_log")
@@ -1052,8 +1069,13 @@ class Character:
         # Apply feat bonuses to skill checks (Skill Focus, Acrobatic, etc.)
         feat_bonus = 0
         from src.feats import FEATS
+        seen_bases = set()
         for feat_name in getattr(self, 'feats', []):
-            feat = FEATS.get(feat_name)
+            base = feat_name.split(' (', 1)[0]
+            if base in seen_bases:
+                continue
+            seen_bases.add(base)
+            feat = FEATS.get(feat_name) or FEATS.get(base)
             if feat and feat.effect:
                 feat_bonus = feat.apply(self, skill=skill, value=feat_bonus)
         return roll + skill_val + ability_mod + bonus - penalty + feat_bonus
@@ -1156,21 +1178,21 @@ class Character:
 
     def add_condition(self, condition):
         """Add a status condition (e.g., 'prone', 'flanking', 'shaken')."""
+        is_new = condition not in self.conditions
         self.conditions.add(condition)
-        # GMCP: notify client of condition change
         try:
             from src.gmcp import emit_status
-            emit_status(self)
+            emit_status(self, added=condition if is_new else None)
         except Exception:
             pass
 
     def remove_condition(self, condition):
         """Remove a status condition."""
+        had = condition in self.conditions
         self.conditions.discard(condition)
-        # GMCP: notify client of condition change
         try:
             from src.gmcp import emit_status
-            emit_status(self)
+            emit_status(self, removed=condition if had else None)
         except Exception:
             pass
 

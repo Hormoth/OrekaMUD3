@@ -11,6 +11,7 @@ All NPC responses go through get_npc_response() which tries each tier in order.
 
 import asyncio
 import json
+import os
 import random
 import logging
 
@@ -20,14 +21,17 @@ logger = logging.getLogger("OrekaMUD.AI")
 # Configuration State
 # =========================================================================
 
+# Defaults read from env vars (set via VeilClient/.env or shell) so a MUD
+# restart picks up Ollama config changes without needing admin commands.
+# Fallbacks target a local Ollama with models that are commonly pulled.
 _config = {
     "enabled": True,           # LLM enabled — Ollama is running
-    "backend": "ollama",       # "ollama" or "lmstudio"
-    "ollama_host": "http://10.1.79.28:11434",
-    "ollama_model": "qwen2.5:14b",
-    "lmstudio_host": "http://10.1.79.27:1234",
-    "lmstudio_model": "local-model",
-    "timeout": 30,             # seconds (bumped for network latency)
+    "backend": os.environ.get("AI_BACKEND", "ollama"),
+    "ollama_host": os.environ.get("OLLAMA_FAST_URL", "http://localhost:11434").rstrip("/"),
+    "ollama_model": os.environ.get("OLLAMA_FAST_MODEL", "llama3:latest"),
+    "lmstudio_host": os.environ.get("LMSTUDIO_HOST", "http://localhost:1234"),
+    "lmstudio_model": os.environ.get("LMSTUDIO_MODEL", "local-model"),
+    "timeout": int(os.environ.get("AI_TIMEOUT", "30")),
 }
 
 
@@ -375,11 +379,16 @@ async def _call_ollama(prompt: str, system_prompt: str, *,
         options["frequency_penalty"] = gp["frequency_penalty"]
 
     url = f"{_config['ollama_host']}/api/generate"
+    # ``think: false`` suppresses the internal chain-of-thought field on
+    # reasoning models (qwen3, deepseek-r1). Without it, those models emit
+    # into ``thinking`` and leave ``response`` empty — NPCs say nothing.
+    # Non-reasoning models ignore the field. Safe to always send.
     payload = json.dumps({
         "model": _config["ollama_model"],
         "prompt": prompt,
         "system": system_prompt,
         "stream": False,
+        "think": False,
         "options": options,
     }).encode("utf-8")
 
@@ -1275,8 +1284,20 @@ def _parse_json_response(raw_text: str) -> dict:
     if not data.get("dialogue"):
         return None
 
+    raw_dialogue = str(data.get("dialogue", ""))[:500]
+    try:
+        from src.chat_context import scrub_forbidden_referrals
+        scrubbed, hits = scrub_forbidden_referrals(raw_dialogue)
+        if hits:
+            logger.warning(
+                f"Scrubbed forbidden referral(s) from NPC dialogue: {hits}"
+            )
+            raw_dialogue = scrubbed
+    except Exception:
+        pass
+
     return {
-        "dialogue": str(data.get("dialogue", ""))[:500],
+        "dialogue": raw_dialogue,
         "game_actions": data.get("game_actions", [])
                         if isinstance(data.get("game_actions"), list) else [],
         "emotion_state": str(data.get("emotion_state", "neutral")),

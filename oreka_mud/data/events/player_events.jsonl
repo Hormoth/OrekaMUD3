@@ -1,48 +1,31 @@
 {"timestamp": "2026-03-27T21:11:05.499386", "player": "TestBot", "type": "test_event", "data": {"test": true}, "room_vnum": 1000, "region": "chapel"}
-{"timestamp": "2026-03-27T21:21:24.406169", "player": "Hormoth", "type": "login", "data": {"class": "Cleric", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-27T21:38:44.971628", "player": "Hormoth", "type": "login", "data": {"class": "Cleric", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-27T21:48:59.720279", "player": "Hormoth", "type": "login", "data": {"class": "Cleric", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-28T04:01:49.415335", "player": "Hormoth", "type": "login", "data": {"class": "Magi", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-29T02:22:20.896709", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-29T02:47:37.714598", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-29T02:58:06.990189", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-29T03:07:19.820354", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-29T03:16:49.999292", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-30T18:04:20.644279", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-30T18:12:36.435588", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-30T18:19:59.397027", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-30T20:31:09.700680", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1003, "region": null}
-{"timestamp": "2026-03-30T20:35:29.814230", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-30T20:39:32.004904", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-30T21:12:15.736283", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-31T21:29:49.648863", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-31T21:34:24.079809", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 1}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-31T21:42:09.870961", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-31T21:46:33.604353", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-31T22:38:44.871809", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-03-31T22:54:50.370061", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-31T23:01:38.799535", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-03-31T23:07:36.641561", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 4037, "region": null}
-{"timestamp": "2026-04-01T00:59:35.639928", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 4037, "region": null}
-{"timestamp": "2026-04-01T01:02:10.723300", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-04-01T01:03:25.549774", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 1000, "region": null}
-{"timestamp": "2026-04-01T01:07:09.432547", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-01T01:07:38.955979", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 2}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-01T01:21:10.370838", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-01T16:13:42.252230", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-01T16:22:34.682892", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-01T21:57:38.108154", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-01T21:58:46.749902", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-02T01:34:18.909497", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-02T01:34:21.793423", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-04T03:00:10.566589", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 3009, "region": null}
-{"timestamp": "2026-04-10T21:56:04.221186", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1003, "region": null}
-{"timestamp": "2026-04-10T22:03:27.351296", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-10T22:10:39.955407", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-11T03:41:09.814356", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-13T19:35:44.544454", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1001, "region": null}
-{"timestamp": "2026-04-13T19:48:56.811999", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-13T19:49:06.230179", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-13T20:30:12.042558", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-13T21:43:02.292179", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
-{"timestamp": "2026-04-14T20:55:24.123226", "player": "Hormoth", "type": "login", "data": {"class": "Fighter", "level": 3}, "room_vnum": 1002, "region": null}
+{"timestamp": "2026-04-16T19:20:56.609756", "player": "Ayrton", "type": "login", "data": {"class": "Cleric", "level": 5}, "room_vnum": 4001, "region": null}
+{"timestamp": "2026-04-17T00:03:00.020047", "player": "Ayrton", "type": "login", "data": {"class": "Cleric", "level": 5}, "room_vnum": 4001, "region": null}
+{"timestamp": "2026-04-17T00:04:47.210674", "player": "Ayrton", "type": "logout", "data": {}, "room_vnum": 3001, "region": null}
+{"timestamp": "2026-04-17T16:21:25.032269", "player": "Tee", "type": "login", "data": {"class": "Paladin", "level": 1}, "room_vnum": 1000, "region": null}
+{"timestamp": "2026-04-17T16:22:56.493975", "player": "Tee", "type": "logout", "data": {}, "room_vnum": 1000, "region": null}
+{"timestamp": "2026-04-17T17:47:53.056994", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 1}, "room_vnum": 1000, "region": null}
+{"timestamp": "2026-04-17T19:18:26.481071", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 1}, "room_vnum": 1003, "region": null}
+{"timestamp": "2026-04-17T19:35:16.889932", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 1002, "region": null}
+{"timestamp": "2026-04-17T19:43:23.716457", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 4217, "region": null}
+{"timestamp": "2026-04-17T19:49:20.677164", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 4009, "region": null}
+{"timestamp": "2026-04-17T19:52:07.464240", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 4003, "region": null}
+{"timestamp": "2026-04-17T19:53:51.766690", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 4215, "region": null}
+{"timestamp": "2026-04-17T20:07:04.920834", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 1001, "region": null}
+{"timestamp": "2026-04-17T20:13:19.147787", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 2}, "room_vnum": 4213, "region": null}
+{"timestamp": "2026-04-17T20:25:58.824493", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-17T23:00:03.893870", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 3}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-17T23:01:15.562388", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 3}, "room_vnum": 4085, "region": null}
+{"timestamp": "2026-04-17T23:07:36.605774", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 3}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-17T23:10:38.213007", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-18T00:41:25.721518", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 3}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-18T00:43:35.303358", "player": "Hormoth", "type": "logout", "data": {}, "room_vnum": 4005, "region": null}
+{"timestamp": "2026-04-18T02:54:58.069635", "player": "Kyra", "type": "login", "data": {"class": "Sorcerer", "level": 4}, "room_vnum": 1000, "region": null}
+{"timestamp": "2026-04-18T03:09:20.375254", "player": "Kyra", "type": "login", "data": {"class": "Sorcerer", "level": 4}, "room_vnum": 3009, "region": null}
+{"timestamp": "2026-04-18T03:10:31.484509", "player": "Kyra", "type": "login", "data": {"class": "Sorcerer", "level": 4}, "room_vnum": 3009, "region": null}
+{"timestamp": "2026-04-18T03:27:37.044690", "player": "Ayrton", "type": "login", "data": {"class": "Cleric", "level": 5}, "room_vnum": 3001, "region": null}
+{"timestamp": "2026-04-18T03:42:20.480038", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 3}, "room_vnum": 4005, "region": null}
+{"timestamp": "2026-04-18T04:15:04.290560", "player": "Ayrton", "type": "logout", "data": {}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-20T16:49:32.814817", "player": "Kyra", "type": "login", "data": {"class": "Sorcerer", "level": 4}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-20T16:53:08.241943", "player": "Kyra", "type": "logout", "data": {}, "room_vnum": 4086, "region": null}
+{"timestamp": "2026-04-21T19:58:27.712941", "player": "Hormoth", "type": "login", "data": {"class": "Rogue", "level": 3}, "room_vnum": 3009, "region": null}

@@ -91,26 +91,35 @@ class GMCPHandler:
     def emit_vitals(self, character):
         self.emit("Char.Vitals", _build_vitals(character))
 
-    def emit_status(self, character):
-        self.emit("Char.Status", _build_status(character))
+    def emit_status(self, character, added=None, removed=None):
+        self.emit("Char.Status", _build_status(character, added=added, removed=removed))
+
+    def emit_faction(self, faction_name, reputation, change=0):
+        self.emit("Char.Factions", _build_faction(faction_name, reputation, change))
 
     def emit_factions(self, character):
-        self.emit("Char.Factions", _build_factions(character))
+        """Emit the full faction set as one message per faction (initial refresh)."""
+        rep = getattr(character, 'reputation', {})
+        for name, value in rep.items():
+            self.emit_faction(name, value, change=0)
 
-    def emit_deity(self, character, at_shrine=False, shrine_name=None):
-        self.emit("Char.Deity", _build_deity(character, at_shrine, shrine_name))
+    def emit_deity(self, character, at_shrine=False, shrine_name=None, patron_nearby=False):
+        self.emit("Char.Deity", _build_deity(character, at_shrine, shrine_name, patron_nearby))
 
     def emit_room(self, room, character=None):
         self.emit("Room.Info", _build_room(room))
 
-    def emit_room_mobs(self, room):
-        self.emit("Room.Mobs", _build_room_mobs(room))
+    def emit_room_mobs(self, room, character=None):
+        self.emit("Room.Mobs", _build_room_mobs(room, character))
 
-    def emit_kin_sense(self, detections, room_modifier="normal", range_ft=60):
-        self.emit("Char.KinSense", _build_kin_sense(detections, room_modifier, range_ft))
+    def emit_kin_sense(self, presences, room_modifier=None, range_ft=60):
+        self.emit("Char.KinSense", _build_kin_sense(presences, room_modifier, range_ft))
 
     def emit_quest(self, character):
         self.emit("Char.Quest", _build_quest(character))
+
+    def emit_inventory(self, character):
+        self.emit("Char.Inventory", _build_inventory(character))
 
 
 # ---------------------------------------------------------------------------
@@ -189,26 +198,35 @@ class WebSocketGMCPHandler:
     def emit_vitals(self, character):
         self.emit("Char.Vitals", _build_vitals(character))
 
-    def emit_status(self, character):
-        self.emit("Char.Status", _build_status(character))
+    def emit_status(self, character, added=None, removed=None):
+        self.emit("Char.Status", _build_status(character, added=added, removed=removed))
+
+    def emit_faction(self, faction_name, reputation, change=0):
+        self.emit("Char.Factions", _build_faction(faction_name, reputation, change))
 
     def emit_factions(self, character):
-        self.emit("Char.Factions", _build_factions(character))
+        """Emit the full faction set as one message per faction (initial refresh)."""
+        rep = getattr(character, 'reputation', {})
+        for name, value in rep.items():
+            self.emit_faction(name, value, change=0)
 
-    def emit_deity(self, character, at_shrine=False, shrine_name=None):
-        self.emit("Char.Deity", _build_deity(character, at_shrine, shrine_name))
+    def emit_deity(self, character, at_shrine=False, shrine_name=None, patron_nearby=False):
+        self.emit("Char.Deity", _build_deity(character, at_shrine, shrine_name, patron_nearby))
 
     def emit_room(self, room, character=None):
         self.emit("Room.Info", _build_room(room))
 
-    def emit_room_mobs(self, room):
-        self.emit("Room.Mobs", _build_room_mobs(room))
+    def emit_room_mobs(self, room, character=None):
+        self.emit("Room.Mobs", _build_room_mobs(room, character))
 
-    def emit_kin_sense(self, detections, room_modifier="normal", range_ft=60):
-        self.emit("Char.KinSense", _build_kin_sense(detections, room_modifier, range_ft))
+    def emit_kin_sense(self, presences, room_modifier=None, range_ft=60):
+        self.emit("Char.KinSense", _build_kin_sense(presences, room_modifier, range_ft))
 
     def emit_quest(self, character):
         self.emit("Char.Quest", _build_quest(character))
+
+    def emit_inventory(self, character):
+        self.emit("Char.Inventory", _build_inventory(character))
 
 
 # ---------------------------------------------------------------------------
@@ -216,61 +234,85 @@ class WebSocketGMCPHandler:
 # ---------------------------------------------------------------------------
 
 def _build_vitals(character):
-    """Build Char.Vitals payload."""
+    """Build Char.Vitals payload per docs/GMCP_SPEC.md."""
     from src.character import XP_TABLE
-    tnl = max(0, XP_TABLE.get(character.level + 1, 0) - getattr(character, 'xp', 0))
+    xp_tnl = max(0, XP_TABLE.get(character.level + 1, 0) - getattr(character, 'xp', 0))
+    spell_slots = {}
+    for lvl, remaining in getattr(character, 'spells_per_day', {}).items():
+        spell_slots[str(lvl)] = remaining
     return {
         "hp": character.hp,
         "hp_max": character.max_hp,
-        "ac": character.ac,
         "mv": getattr(character, 'move', 100),
         "mv_max": getattr(character, 'max_move', 100),
+        "ac": character.ac,
         "gold": getattr(character, 'gold', 0),
-        "tnl": tnl,
-        "level": character.level,
+        "xp_tnl": xp_tnl,
+        "spell_slots": spell_slots,
     }
 
 
-def _build_status(character):
-    """Build Char.Status payload — active conditions and basic info."""
+def _build_status(character, added=None, removed=None):
+    """Build Char.Status payload per docs/GMCP_SPEC.md.
+
+    ``added`` and ``removed`` are optional condition-name strings used by
+    event-driven callers to signal exactly one transition; callers that
+    lack delta info (initial emit, periodic refresh) pass None.
+    """
     conditions = list(getattr(character, 'conditions', set()))
     conditions += list(getattr(character, 'active_conditions', {}).keys())
     divine = getattr(character, 'divine_buffs', {})
     if divine and divine.get('duration', 0) > 0:
         conditions.append("Blessed")
-
-    spells = {}
-    spd = getattr(character, 'spells_per_day', {})
-    for lvl, remaining in spd.items():
-        spells[str(lvl)] = remaining
-
     return {
         "conditions": conditions,
-        "spells": spells,
-        "level": character.level,
-        "class": getattr(character, 'char_class', 'Unknown'),
-        "race": getattr(character, 'race', 'Unknown'),
+        "added": added,
+        "removed": removed,
     }
 
 
-def _build_factions(character):
-    """Build Char.Factions payload — all faction reputation values."""
-    rep = getattr(character, 'reputation', {})
-    return dict(rep)
+_FACTION_TIER_BANDS = (
+    (600, "allied"),
+    (300, "friendly"),
+    (100, "respected"),
+    (-100, "neutral"),
+    (-300, "unfriendly"),
+    (-500, "hostile"),
+)
 
 
-def _build_deity(character, at_shrine=False, shrine_name=None):
-    """Build Char.Deity payload — patron, shrine status, divine buffs."""
+def _faction_tier(reputation):
+    for threshold, label in _FACTION_TIER_BANDS:
+        if reputation >= threshold:
+            return label
+    return "reviled"
+
+
+def _build_faction(faction_name, reputation, change=0):
+    """Build a per-faction Char.Factions payload per docs/GMCP_SPEC.md."""
+    return {
+        "faction": faction_name,
+        "reputation": reputation,
+        "tier": _faction_tier(reputation),
+        "change": change,
+    }
+
+
+def _build_deity(character, at_shrine=False, shrine_name=None, patron_nearby=False):
+    """Build Char.Deity payload per docs/GMCP_SPEC.md."""
     divine = getattr(character, 'divine_buffs', {})
     buffs = []
     if divine and divine.get('duration', 0) > 0:
-        buffs.append(divine.get('deity', 'Divine Blessing'))
-
+        buffs.append({
+            "name": divine.get('deity', 'Divine Blessing'),
+            "duration": int(divine.get('duration', 0)),
+        })
     return {
         "patron": getattr(character, 'deity', None),
         "at_shrine": at_shrine,
         "shrine_name": shrine_name,
-        "active_buffs": buffs,
+        "patron_nearby": patron_nearby,
+        "buffs": buffs,
     }
 
 
@@ -306,58 +348,96 @@ def _build_room(room):
     else:
         region = "deepwater_expansion"
 
+    exits_map = {}
+    for direction, target in getattr(room, 'exits', {}).items():
+        if isinstance(target, int):
+            exits_map[direction] = target
+        else:
+            exits_map[direction] = getattr(target, 'vnum', None)
+
     return {
         "vnum": vnum,
         "name": room.name,
         "description": getattr(room, 'description', ''),
+        "area": region,
         "region": region,
-        "exits": list(room.exits.keys()),
+        "exits": exits_map,
+        "flags": list(getattr(room, 'flags', []) or []),
         "effects": effects,
         "terrain": getattr(room, 'terrain', None),
-        "area": region,
     }
 
 
-def _build_room_mobs(room):
-    """Build Room.Mobs payload — mobs in the room with health state."""
+_NONHOSTILE_FLAGS = {
+    'no_attack', 'shopkeeper', 'trainer', 'banker', 'blacksmith',
+    'guard', 'innkeeper', 'quest', 'friendly',
+}
+
+
+def _is_hostile(mob):
+    if getattr(mob, 'hostile', False):
+        return True
+    flags = set(getattr(mob, 'flags', []) or [])
+    return not (flags & _NONHOSTILE_FLAGS)
+
+
+def _mob_summary(mob):
+    hp = getattr(mob, 'hp', 0)
+    max_hp = getattr(mob, 'max_hp', 1) or 1
+    return {
+        "name": mob.name,
+        "hostile": _is_hostile(mob),
+        "cr": getattr(mob, 'cr', getattr(mob, 'level', 0)),
+        "hp_percent": int(round((hp / max_hp) * 100)),
+        "vnum": getattr(mob, 'vnum', 0),
+    }
+
+
+def _build_room_mobs(room, character=None):
+    """Build Room.Mobs payload per docs/GMCP_SPEC.md.
+
+    Includes combat state derived from ``character.combat_target`` when
+    the character is engaged with a mob in this room.
+    """
     mobs = []
     for mob in getattr(room, 'mobs', []):
         if not getattr(mob, 'alive', True):
             continue
-        hp = getattr(mob, 'hp', 0)
-        max_hp = getattr(mob, 'max_hp', 1)
-        if max_hp <= 0:
-            max_hp = 1
-        pct = (hp / max_hp) * 100
+        mobs.append(_mob_summary(mob))
 
-        if pct >= 100:
-            state = "unhurt"
-        elif pct >= 75:
-            state = "lightly wounded"
-        elif pct >= 50:
-            state = "wounded"
-        elif pct >= 25:
-            state = "badly wounded"
-        elif pct > 0:
-            state = "near death"
-        else:
-            state = "dead"
+    target_mob = getattr(character, 'combat_target', None) if character else None
+    in_combat = False
+    target_payload = None
+    if target_mob and getattr(target_mob, 'alive', True):
+        in_combat = True
+        hp = getattr(target_mob, 'hp', 0)
+        max_hp = getattr(target_mob, 'max_hp', 1) or 1
+        target_conditions = list(getattr(target_mob, 'conditions', set()))
+        target_conditions += list(getattr(target_mob, 'active_conditions', {}).keys())
+        target_payload = {
+            "name": target_mob.name,
+            "hp_percent": int(round((hp / max_hp) * 100)),
+            "conditions": target_conditions,
+        }
 
-        mobs.append({
-            "name": mob.name,
-            "hp_state": state,
-            "level": getattr(mob, 'level', 0),
-            "vnum": getattr(mob, 'vnum', 0),
-        })
-    return {"mobs": mobs}
-
-
-def _build_kin_sense(detections, room_modifier="normal", range_ft=60):
-    """Build Char.KinSense payload."""
     return {
-        "detections": detections,
-        "room_modifier": room_modifier,
+        "in_combat": in_combat,
+        "target": target_payload,
+        "mobs": mobs,
+    }
+
+
+def _build_kin_sense(presences, room_modifier=None, range_ft=60):
+    """Build Char.KinSense payload per docs/GMCP_SPEC.md.
+
+    ``presences`` is a list of per-entity dicts:
+    ``{name, resonance, distance, bearing, type}``. Callers with only
+    aggregated counts should expand before calling (see kin_sense.py).
+    """
+    return {
         "range_ft": range_ft,
+        "modifier": room_modifier if room_modifier and room_modifier != "normal" else None,
+        "presences": list(presences or []),
     }
 
 
@@ -385,6 +465,34 @@ def _build_quest(character):
     return {
         "active": active,
         "completed": completed,
+    }
+
+
+def _build_inventory(character):
+    """Build Char.Inventory payload — items carried and equipped."""
+    items = []
+    for item in getattr(character, 'inventory', []):
+        entry = {"name": getattr(item, 'name', str(item)), "quantity": 1}
+        flags = []
+        for flag in ('glowing', 'humming', 'invisible', 'magic', 'evil', 'anti_evil',
+                     'anti_good', 'anti_neutral', 'cursed', 'blessed'):
+            if getattr(item, flag, False):
+                flags.append(flag)
+        if flags:
+            entry["flags"] = flags
+        if hasattr(item, 'item_type'):
+            entry["type"] = item.item_type
+        items.append(entry)
+
+    equipped = {}
+    for slot, item in getattr(character, 'equipment', {}).items():
+        if item:
+            equipped[slot] = getattr(item, 'name', str(item))
+
+    return {
+        "items": items,
+        "equipped": equipped,
+        "gold": getattr(character, 'gold', 0),
     }
 
 
@@ -423,6 +531,7 @@ def unregister_handler(character):
     name = getattr(character, 'name', None)
     if name:
         _handlers.pop(name, None)
+        _last_emit_state.pop(name, None)
 
 
 # ---------------------------------------------------------------------------
@@ -451,6 +560,8 @@ def emit(character, package, data=None):
         handler.emit_deity(character)
     elif package == "Char.Quest":
         handler.emit_quest(character)
+    elif package == "Char.Inventory":
+        handler.emit_inventory(character)
 
 
 def emit_vitals(character):
@@ -460,25 +571,36 @@ def emit_vitals(character):
         handler.emit_vitals(character)
 
 
-def emit_status(character):
-    """Emit Char.Status for a character if they have a GMCP handler."""
+def emit_status(character, added=None, removed=None):
+    """Emit Char.Status for a character if they have a GMCP handler.
+
+    ``added`` / ``removed`` name the single condition that changed in this
+    event (spec-aligned delta). Callers without delta info pass None.
+    """
     handler = get_handler(character)
     if handler:
-        handler.emit_status(character)
+        handler.emit_status(character, added=added, removed=removed)
+
+
+def emit_faction(character, faction_name, reputation, change=0):
+    """Emit a single-faction Char.Factions update per spec."""
+    handler = get_handler(character)
+    if handler:
+        handler.emit_faction(faction_name, reputation, change)
 
 
 def emit_factions(character):
-    """Emit Char.Factions for a character if they have a GMCP handler."""
+    """Emit one Char.Factions message per faction (initial refresh)."""
     handler = get_handler(character)
     if handler:
         handler.emit_factions(character)
 
 
-def emit_deity(character, at_shrine=False, shrine_name=None):
+def emit_deity(character, at_shrine=False, shrine_name=None, patron_nearby=False):
     """Emit Char.Deity for a character if they have a GMCP handler."""
     handler = get_handler(character)
     if handler:
-        handler.emit_deity(character, at_shrine, shrine_name)
+        handler.emit_deity(character, at_shrine, shrine_name, patron_nearby)
 
 
 def emit_room(character, room=None):
@@ -491,19 +613,25 @@ def emit_room(character, room=None):
 
 
 def emit_room_mobs(character, room=None):
-    """Emit Room.Mobs for a character if they have a GMCP handler."""
+    """Emit Room.Mobs for a character if they have a GMCP handler.
+
+    Combat state derives from ``character.combat_target``.
+    """
     handler = get_handler(character)
     if handler:
         r = room or getattr(character, 'room', None)
         if r:
-            handler.emit_room_mobs(r)
+            handler.emit_room_mobs(r, character)
 
 
-def emit_kin_sense(character, detections, room_modifier="normal", range_ft=60):
-    """Emit Char.KinSense for a character if they have a GMCP handler."""
+def emit_kin_sense(character, presences, room_modifier=None, range_ft=60):
+    """Emit Char.KinSense for a character if they have a GMCP handler.
+
+    ``presences`` is per-spec: list of ``{name, resonance, distance, bearing, type}``.
+    """
     handler = get_handler(character)
     if handler:
-        handler.emit_kin_sense(detections, room_modifier, range_ft)
+        handler.emit_kin_sense(presences, room_modifier, range_ft)
 
 
 def emit_quest(character):
@@ -511,6 +639,13 @@ def emit_quest(character):
     handler = get_handler(character)
     if handler:
         handler.emit_quest(character)
+
+
+def emit_inventory(character):
+    """Emit Char.Inventory for a character if they have a GMCP handler."""
+    handler = get_handler(character)
+    if handler:
+        handler.emit_inventory(character)
 
 
 # ---------------------------------------------------------------------------
@@ -556,3 +691,91 @@ def emit_chat_materialized(character, room_vnum, room_name):
             "room_vnum": room_vnum,
             "room_name": room_name,
         })
+
+
+# ---------------------------------------------------------------------------
+# Central tick emitter — fires delta-aware state snapshots every N seconds
+# ---------------------------------------------------------------------------
+
+# Per-character state cache to gate redundant emits.
+_last_emit_state = {}  # {character_name: {"vitals": {...}, "conditions": set, "room_vnum": int}}
+
+
+def _tick_emit_for(character):
+    """Emit any state-delta GMCP packages for one character.
+
+    Caches last-emitted vitals fingerprint, condition set, and room vnum
+    so redundant per-tick packets are suppressed.
+    """
+    handler = get_handler(character)
+    if not handler:
+        return
+    name = getattr(character, 'name', None)
+    if not name:
+        return
+    prev = _last_emit_state.setdefault(name, {})
+
+    vitals = _build_vitals(character)
+    vitals_fp = (
+        vitals["hp"], vitals["hp_max"], vitals["mv"], vitals["mv_max"],
+        vitals["ac"], vitals["gold"], vitals["xp_tnl"],
+        tuple(sorted(vitals["spell_slots"].items())),
+    )
+    if prev.get("vitals_fp") != vitals_fp:
+        handler.emit("Char.Vitals", vitals)
+        prev["vitals_fp"] = vitals_fp
+
+    current_conditions = set(getattr(character, 'conditions', set()))
+    current_conditions |= set(getattr(character, 'active_conditions', {}).keys())
+    divine = getattr(character, 'divine_buffs', {})
+    if divine and divine.get('duration', 0) > 0:
+        current_conditions.add("Blessed")
+    prev_conditions = prev.get("conditions", set())
+    if current_conditions != prev_conditions:
+        added = next(iter(current_conditions - prev_conditions), None)
+        removed = next(iter(prev_conditions - current_conditions), None)
+        handler.emit_status(character, added=added, removed=removed)
+        prev["conditions"] = current_conditions
+
+    room = getattr(character, 'room', None)
+    if room is not None:
+        target = getattr(character, 'combat_target', None)
+        target_alive = bool(target and getattr(target, 'alive', True))
+        mob_fp = tuple(
+            (getattr(m, 'name', ''), getattr(m, 'hp', 0), getattr(m, 'alive', True))
+            for m in getattr(room, 'mobs', [])
+            if getattr(m, 'alive', True)
+        )
+        combat_fp = (
+            target_alive,
+            getattr(target, 'name', None) if target_alive else None,
+            getattr(target, 'hp', None) if target_alive else None,
+        )
+        new_fp = (mob_fp, combat_fp)
+        if prev.get("room_mobs_fp") != new_fp:
+            handler.emit_room_mobs(room, character)
+            prev["room_mobs_fp"] = new_fp
+
+
+def tick_all(world):
+    """Central GMCP tick — emit deltas for every connected character.
+
+    Call on a 2-second loop from main.py. Safe to call when no handlers
+    are registered (no-op).
+    """
+    if not _handlers:
+        return
+    players = getattr(world, 'players', None) or []
+    for character in players:
+        if getattr(character, 'name', None) in _handlers:
+            try:
+                _tick_emit_for(character)
+            except Exception as e:
+                logger.debug(f"GMCP tick error for {character.name}: {e}")
+
+
+def clear_cache(character):
+    """Clear per-character delta cache on disconnect or on forced refresh."""
+    name = getattr(character, 'name', None)
+    if name:
+        _last_emit_state.pop(name, None)

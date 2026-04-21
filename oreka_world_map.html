@@ -40,6 +40,37 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: 
 #tooltip { position: fixed; background: #16213e; border: 1px solid #e94560; padding: 8px 12px; border-radius: 6px; font-size: 12px; pointer-events: none; display: none; z-index: 1000; max-width: 300px; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
 #tooltip .tt-name { color: #e94560; font-weight: bold; }
 #tooltip .tt-area { color: #888; font-size: 11px; }
+
+/* ── Edit Mode ─────────────────────────────────────────────────────── */
+#edit-panel { padding: 10px; border-bottom: 1px solid #0f3460; background: #16213e; }
+#edit-panel .edit-label { color: #6fa3e8; font-weight: bold; font-size: 12px; margin-right: 6px; }
+#edit-toggle { width: 100%; padding: 6px; background: #1a1a2e; color: #6fa3e8; border: 1px solid #2a4d7a; border-radius: 3px; font-size: 12px; cursor: pointer; margin-bottom: 6px; }
+#edit-toggle.on { background: #2a4d7a; color: #fff; border-color: #6fa3e8; }
+#edit-hint { font-size: 10px; color: #7a88a8; margin-bottom: 6px; line-height: 1.4; }
+#edit-hint b { color: #9abae8; }
+#edit-changes { max-height: 140px; overflow-y: auto; font-size: 11px; margin-bottom: 6px; }
+#edit-changes .change-row { display: flex; align-items: center; padding: 3px 4px; border-bottom: 1px solid #0f3460; gap: 4px; }
+#edit-changes .change-row:hover { background: #1a2a44; }
+#edit-changes .change-desc { flex: 1; color: #cfd9ee; font-family: 'Consolas', monospace; font-size: 10px; }
+#edit-changes .change-desc.added { color: #7ddba8; }
+#edit-changes .change-desc.removed { color: #e85d75; }
+#edit-changes .change-desc.moved { color: #e8b84d; }
+#edit-changes .change-x { background: transparent; color: #888; border: none; cursor: pointer; padding: 0 4px; font-size: 12px; }
+#edit-changes .change-x:hover { color: #e94560; }
+#edit-count { color: #888; font-size: 10px; }
+#edit-actions { display: flex; gap: 4px; margin-top: 6px; }
+#edit-actions button { flex: 1; padding: 5px; background: #1a1a2e; color: #6fa3e8; border: 1px solid #0f3460; border-radius: 3px; font-size: 11px; cursor: pointer; }
+#edit-actions button:hover:not(:disabled) { background: #0f3460; color: #fff; }
+#edit-actions button:disabled { opacity: 0.4; cursor: not-allowed; }
+#edit-selected { color: #e8b84d; font-size: 11px; margin-top: 4px; min-height: 14px; }
+
+/* Direction picker modal */
+#dir-picker { position: fixed; display: none; z-index: 2000; background: #16213e; border: 2px solid #e94560; border-radius: 8px; padding: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+#dir-picker .dp-title { color: #e94560; font-size: 11px; margin-bottom: 8px; text-align: center; font-weight: bold; }
+#dir-picker .dp-grid { display: grid; grid-template-columns: repeat(3, 36px); gap: 4px; }
+#dir-picker button { padding: 6px 0; background: #1a1a2e; color: #9abae8; border: 1px solid #2a4d7a; border-radius: 3px; font-size: 11px; cursor: pointer; font-weight: bold; }
+#dir-picker button:hover { background: #2a4d7a; color: #fff; }
+#dir-picker button.cancel { grid-column: 1 / -1; background: #3a1a2a; color: #e85d75; border-color: #4a2a3a; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -57,6 +88,25 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: 
       </label>
     </div>
     <div id="stats"></div>
+
+    <!-- EDIT MODE ------------------------------------------------------- -->
+    <div id="edit-panel">
+      <button id="edit-toggle">✎ Edit Mode: OFF</button>
+      <div id="edit-hint">
+        <b>Drag</b> a room to reposition.
+        <b>Shift+click</b> room A then B to add an exit.
+        Drag the canvas to pan (edit off only).
+      </div>
+      <div id="edit-selected"></div>
+      <div id="edit-count">0 pending changes</div>
+      <div id="edit-changes"></div>
+      <div id="edit-actions">
+        <button id="edit-import">Import</button>
+        <button id="edit-export" disabled>Export JSON</button>
+        <button id="edit-clear" disabled>Clear All</button>
+      </div>
+      <input type="file" id="edit-import-file" accept=".json,application/json" style="display:none">
+    </div>
 
     <!-- LIVE VIEW CONTROLS --------------------------------------------- -->
     <div id="live-panel" style="padding:10px; border-bottom:1px solid #0f3460;">
@@ -88,6 +138,24 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #1a1a2e; color: 
 </div>
 
 <div id="tooltip"></div>
+
+<!-- Direction picker for adding exits in edit mode -->
+<div id="dir-picker">
+  <div class="dp-title" id="dp-title">Pick direction</div>
+  <div class="dp-grid">
+    <button data-dir="northwest">nw</button>
+    <button data-dir="north">n</button>
+    <button data-dir="northeast">ne</button>
+    <button data-dir="west">w</button>
+    <button data-dir="up">up</button>
+    <button data-dir="east">e</button>
+    <button data-dir="southwest">sw</button>
+    <button data-dir="south">s</button>
+    <button data-dir="southeast">se</button>
+    <button data-dir="down" style="grid-column: 2">down</button>
+    <button class="cancel" data-dir="">Cancel</button>
+  </div>
+</div>
 
 <script>
 // =====================================================================
@@ -894,6 +962,7 @@ function render() {
   const W = container.clientWidth;
   const H = container.clientHeight;
   ctx.clearRect(0, 0, W, H);
+  if (typeof window.__PRE_RENDER_HOOK__ === 'function') window.__PRE_RENDER_HOOK__(ctx);
   ctx.save();
   ctx.translate(W/2 + panX, H/2 + panY);
   ctx.scale(zoom, zoom);
@@ -1183,6 +1252,8 @@ function drawLiveOverlays(ctx) {
     }
     ctx.restore();
   });
+
+  if (typeof window.__POST_RENDER_HOOK__ === 'function') window.__POST_RENDER_HOOK__(ctx);
 }
 
 // Redraw at a slow tick so pulses animate even without new snapshots.
@@ -1410,6 +1481,398 @@ if (!CanvasRenderingContext2D.prototype.roundRect) {
 }
 
 init();
+
+// =====================================================================
+// EDIT MODE — room repositioning + exit patching (layered on top of the
+// read-only viewer; touches no core rendering state until apply/export).
+// Persists pending changes in localStorage so edits survive reloads.
+// =====================================================================
+(function(){
+  const STORAGE_KEY = 'oreka_world_map_edits_v1';
+  const S = {
+    on: false,
+    posOverrides: {},   // vnum -> {x, y}  (overrides BFS layout)
+    exitPatches: [],    // [{from, dir, target, removed}]  target=null means remove
+    pendingFrom: null,  // vnum awaiting second click in exit flow
+    drag: null,         // {vnum, originalX, originalY}
+  };
+
+  // Load persisted edits
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const saved = JSON.parse(raw);
+      S.posOverrides = saved.posOverrides || {};
+      S.exitPatches = saved.exitPatches || [];
+    }
+  } catch (e) { /* ignore */ }
+
+  function persist() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        posOverrides: S.posOverrides,
+        exitPatches: S.exitPatches,
+      }));
+    } catch (e) { /* quota full */ }
+  }
+
+  // The base renderer calls these hooks (edited once in render() core).
+  // Pre-hook: nothing yet, reserved for future layered changes.
+  // Post-hook: overlay pending-change indicators on top of the base draw.
+  window.__POST_RENDER_HOOK__ = function(ctx) {
+    // Positions come from the global `positions` dict — we mutate it on
+    // drag so the base renderer draws at the new coords automatically.
+    if (S.on) drawEditOverlay(ctx);
+  };
+
+  // Merge exit patches into ROOM_DATA so the base renderer draws them.
+  // Removals clear; additions write. We re-apply on every change so the
+  // user can toggle changes off without needing to refresh.
+  function applyPatchesToRoomData() {
+    // First, restore from ORIGINAL_EXITS snapshot for any room we've touched
+    for (const p of S.exitPatches) {
+      const orig = ORIGINAL_EXITS[p.from];
+      if (orig && ROOM_DATA[p.from]) ROOM_DATA[p.from].exits = { ...orig };
+    }
+    // Then re-apply current patches
+    for (const p of S.exitPatches) {
+      const room = ROOM_DATA[p.from];
+      if (!room) continue;
+      if (!room.exits) room.exits = {};
+      if (p.removed || p.target == null) delete room.exits[p.dir];
+      else room.exits[p.dir] = p.target;
+    }
+  }
+
+  // Snapshot original exits so we can revert patches cleanly.
+  const ORIGINAL_EXITS = {};
+  function snapshotOriginalExits(vnum) {
+    if (!ORIGINAL_EXITS[vnum] && ROOM_DATA[vnum]) {
+      ORIGINAL_EXITS[vnum] = { ...(ROOM_DATA[vnum].exits || {}) };
+    }
+  }
+
+  // Apply persisted overrides on load so the map opens in the edited state
+  function applyPositionOverrides() {
+    for (const [vnum, pos] of Object.entries(S.posOverrides)) {
+      if (positions[vnum]) positions[vnum] = { x: pos.x, y: pos.y };
+    }
+  }
+
+  for (const p of S.exitPatches) snapshotOriginalExits(p.from);
+  applyPatchesToRoomData();
+  applyPositionOverrides();
+
+  // ── Overlay rendering: highlight pending edits ─────────────────────
+  // The base render calls us after it has already applied its
+  // translate/scale transform — we draw in that same coord space.
+  function drawEditOverlay(ctx) {
+    ctx.save();
+    // Ring modified rooms with a dashed gold halo
+    ctx.lineWidth = 2 / zoom;
+    ctx.strokeStyle = '#e8b84d';
+    ctx.setLineDash([4 / zoom, 3 / zoom]);
+    for (const vnum of Object.keys(S.posOverrides)) {
+      const pos = positions[vnum];
+      if (!pos) continue;
+      ctx.beginPath();
+      ctx.arc(pos.x * CELL, pos.y * CELL, CELL * 0.45, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    // Pending exit patches
+    for (const p of S.exitPatches) {
+      const a = positions[p.from];
+      const b = p.target != null ? positions[p.target] : null;
+      if (!a || !b) continue;
+      ctx.lineWidth = 2.5 / zoom;
+      ctx.strokeStyle = p.removed || p.target == null ? '#e85d75' : '#7ddba8';
+      ctx.setLineDash([6 / zoom, 4 / zoom]);
+      ctx.beginPath();
+      ctx.moveTo(a.x * CELL, a.y * CELL);
+      ctx.lineTo(b.x * CELL, b.y * CELL);
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    // Highlight first-click room in exit-add flow
+    if (S.pendingFrom && positions[S.pendingFrom]) {
+      const pos = positions[S.pendingFrom];
+      ctx.lineWidth = 3 / zoom;
+      ctx.strokeStyle = '#e94560';
+      ctx.beginPath();
+      ctx.arc(pos.x * CELL, pos.y * CELL, CELL * 0.5, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+
+  // ── Drag-to-reposition ─────────────────────────────────────────────
+  // Intercept mousedown in capture phase so we can preempt the pan-drag
+  // when edit mode is on and the click landed on a room.
+  canvas.addEventListener('mousedown', (e) => {
+    if (!S.on) return;
+    if (e.shiftKey) return;  // shift-click is handled separately
+    const rect = canvas.getBoundingClientRect();
+    const vnum = findRoomAt(e.clientX - rect.left, e.clientY - rect.top);
+    if (!vnum) return;
+    // Preempt the pan-drag
+    e.stopImmediatePropagation();
+    isDragging = false;
+    container.classList.remove('dragging');
+    const pos = positions[vnum];
+    S.drag = {
+      vnum,
+      offsetX: pos.x,
+      offsetY: pos.y,
+      startClientX: e.clientX,
+      startClientY: e.clientY,
+    };
+    setSelectedText(`Moving room ${vnum}…`);
+  }, true);
+
+  window.addEventListener('mousemove', (e) => {
+    if (!S.drag) return;
+    const dx = (e.clientX - S.drag.startClientX) / zoom / CELL;
+    const dy = (e.clientY - S.drag.startClientY) / zoom / CELL;
+    const nx = Math.round((S.drag.offsetX + dx) * 2) / 2;
+    const ny = Math.round((S.drag.offsetY + dy) * 2) / 2;
+    S.posOverrides[S.drag.vnum] = { x: nx, y: ny };
+    positions[S.drag.vnum] = { x: nx, y: ny };
+    render();
+  }, true);
+
+  window.addEventListener('mouseup', () => {
+    if (S.drag) {
+      persist();
+      refreshChangesPanel();
+      setSelectedText('');
+    }
+    S.drag = null;
+  }, true);
+
+  // ── Shift+click to add an exit ─────────────────────────────────────
+  canvas.addEventListener('click', (e) => {
+    if (!S.on || !e.shiftKey) return;
+    e.stopImmediatePropagation();
+    const rect = canvas.getBoundingClientRect();
+    const vnum = findRoomAt(e.clientX - rect.left, e.clientY - rect.top);
+    if (!vnum) return;
+    if (S.pendingFrom == null) {
+      S.pendingFrom = vnum;
+      setSelectedText(`Exit from ${vnum} — shift+click target room…`);
+      render();
+    } else if (S.pendingFrom === vnum) {
+      S.pendingFrom = null;
+      setSelectedText('');
+      render();
+    } else {
+      openDirPicker(S.pendingFrom, vnum, e.clientX, e.clientY);
+    }
+  }, true);
+
+  // ── Direction picker ───────────────────────────────────────────────
+  const dirPicker = document.getElementById('dir-picker');
+  const dpTitle = document.getElementById('dp-title');
+  function openDirPicker(from, to, screenX, screenY) {
+    dpTitle.textContent = `${from} → ${to} — direction?`;
+    dirPicker.style.display = 'block';
+    const rect = dirPicker.getBoundingClientRect();
+    dirPicker.style.left = Math.max(8, Math.min(window.innerWidth - rect.width - 8, screenX + 10)) + 'px';
+    dirPicker.style.top = Math.max(8, Math.min(window.innerHeight - rect.height - 8, screenY + 10)) + 'px';
+    dirPicker._from = from;
+    dirPicker._to = to;
+  }
+  function closeDirPicker() {
+    dirPicker.style.display = 'none';
+    S.pendingFrom = null;
+    setSelectedText('');
+    render();
+  }
+  dirPicker.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    const dir = btn.dataset.dir;
+    if (!dir) { closeDirPicker(); return; }
+    addExitPatch(dirPicker._from, dir, dirPicker._to);
+    closeDirPicker();
+  });
+
+  function addExitPatch(from, dir, target) {
+    snapshotOriginalExits(from);
+    // Remove any previous patch for this from+dir
+    S.exitPatches = S.exitPatches.filter(p => !(p.from === from && p.dir === dir));
+    S.exitPatches.push({ from, dir, target, removed: false });
+    applyPatchesToRoomData();
+    persist();
+    refreshChangesPanel();
+    render();
+  }
+
+  function removePatchAt(idx) {
+    const p = S.exitPatches[idx];
+    if (!p) return;
+    S.exitPatches.splice(idx, 1);
+    applyPatchesToRoomData();
+    persist();
+    refreshChangesPanel();
+    render();
+  }
+
+  function removePositionOverride(vnum) {
+    delete S.posOverrides[vnum];
+    computeLayout();          // BFS layout restores original position
+    applyPositionOverrides(); // other overrides still stand
+    persist();
+    refreshChangesPanel();
+    render();
+  }
+
+  // ── Sidebar panel wiring ───────────────────────────────────────────
+  const toggleBtn = document.getElementById('edit-toggle');
+  const changesEl = document.getElementById('edit-changes');
+  const countEl = document.getElementById('edit-count');
+  const selectedEl = document.getElementById('edit-selected');
+  const exportBtn = document.getElementById('edit-export');
+  const clearBtn = document.getElementById('edit-clear');
+
+  function setSelectedText(text) {
+    selectedEl.textContent = text;
+  }
+
+  function refreshChangesPanel() {
+    const posKeys = Object.keys(S.posOverrides);
+    const rows = [];
+    for (const vnum of posKeys) {
+      const p = S.posOverrides[vnum];
+      const name = (ROOM_DATA[vnum] && ROOM_DATA[vnum].name) || vnum;
+      rows.push({ kind: 'moved', desc: `moved ${vnum} (${name.slice(0,22)}) → (${p.x},${p.y})`, remove: () => removePositionOverride(vnum) });
+    }
+    for (let i = 0; i < S.exitPatches.length; i++) {
+      const p = S.exitPatches[i];
+      if (p.removed || p.target == null) {
+        rows.push({ kind: 'removed', desc: `- exit ${p.from} ${p.dir}`, remove: () => removePatchAt(i) });
+      } else {
+        rows.push({ kind: 'added', desc: `+ exit ${p.from} ${p.dir} → ${p.target}`, remove: () => removePatchAt(i) });
+      }
+    }
+    countEl.textContent = `${rows.length} pending change${rows.length === 1 ? '' : 's'}`;
+    exportBtn.disabled = rows.length === 0;
+    clearBtn.disabled = rows.length === 0;
+    changesEl.innerHTML = '';
+    rows.forEach((r, idx) => {
+      const row = document.createElement('div');
+      row.className = 'change-row';
+      const desc = document.createElement('div');
+      desc.className = `change-desc ${r.kind}`;
+      desc.textContent = r.desc;
+      const x = document.createElement('button');
+      x.className = 'change-x';
+      x.textContent = '×';
+      x.title = 'remove this change';
+      x.addEventListener('click', () => r.remove());
+      row.appendChild(desc);
+      row.appendChild(x);
+      changesEl.appendChild(row);
+    });
+  }
+
+  function toggleEditMode() {
+    S.on = !S.on;
+    toggleBtn.textContent = S.on ? '✎ Edit Mode: ON' : '✎ Edit Mode: OFF';
+    toggleBtn.classList.toggle('on', S.on);
+    container.style.cursor = S.on ? 'crosshair' : 'grab';
+    setSelectedText('');
+    S.pendingFrom = null;
+    render();
+  }
+
+  function exportPatch() {
+    const out = { posOverrides: S.posOverrides, exitPatches: S.exitPatches, generated_at: new Date().toISOString() };
+    const json = JSON.stringify(out, null, 2);
+    navigator.clipboard.writeText(json).then(
+      () => { exportBtn.textContent = 'Copied!'; setTimeout(() => exportBtn.textContent = 'Export JSON', 1200); },
+      () => {
+        // Fallback: download a file
+        const blob = new Blob([json], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'oreka_map_edits.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    );
+  }
+
+  function clearAll() {
+    if (!confirm('Discard all pending edits?')) return;
+    S.posOverrides = {};
+    S.exitPatches = [];
+    localStorage.removeItem(STORAGE_KEY);
+    // Restore original exits for any rooms we'd touched
+    for (const vnum of Object.keys(ORIGINAL_EXITS)) {
+      if (ROOM_DATA[vnum]) ROOM_DATA[vnum].exits = { ...ORIGINAL_EXITS[vnum] };
+    }
+    computeLayout();
+    refreshChangesPanel();
+    render();
+  }
+
+  toggleBtn.addEventListener('click', toggleEditMode);
+  exportBtn.addEventListener('click', exportPatch);
+  clearBtn.addEventListener('click', clearAll);
+
+  // ── Import ────────────────────────────────────────────────────────
+  // Accepts the same shape Export produces: {posOverrides, exitPatches}.
+  // Merges into current edits rather than replacing, so layouts can
+  // be stacked. Use Clear All first to load a layout from scratch.
+  const importBtn = document.getElementById('edit-import');
+  const importFile = document.getElementById('edit-import-file');
+  importBtn.addEventListener('click', () => importFile.click());
+  importFile.addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      const newPos = parsed.posOverrides || {};
+      const newPatches = parsed.exitPatches || [];
+      let countPos = 0, countPatches = 0;
+      for (const [vnum, pos] of Object.entries(newPos)) {
+        if (ROOM_DATA[vnum]) {
+          S.posOverrides[vnum] = pos;
+          countPos++;
+        }
+      }
+      for (const p of newPatches) {
+        if (!p || !p.from) continue;
+        snapshotOriginalExits(p.from);
+        S.exitPatches = S.exitPatches.filter(x => !(x.from === p.from && x.dir === p.dir));
+        S.exitPatches.push(p);
+        countPatches++;
+      }
+      applyPatchesToRoomData();
+      applyPositionOverrides();
+      persist();
+      refreshChangesPanel();
+      render();
+      const desc = parsed.description ? `: ${parsed.description}` : '';
+      setSelectedText(`Imported ${countPos} positions, ${countPatches} exits${desc}`);
+    } catch (err) {
+      alert('Import failed: ' + err.message);
+    }
+    importFile.value = '';  // allow re-import of same file
+  });
+
+  // Escape cancels the pending exit flow
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (dirPicker.style.display === 'block') { closeDirPicker(); return; }
+      if (S.pendingFrom) { S.pendingFrom = null; setSelectedText(''); render(); }
+    }
+  });
+
+  refreshChangesPanel();
+})();
 </script>
 </body>
 </html>

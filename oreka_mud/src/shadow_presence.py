@@ -79,10 +79,13 @@ class ShadowPresence:
         """Send [~WORLD~] text to the telnet player if in chat mode."""
         if self.is_telnet and self.character_ref:
             char = self.character_ref
-            # Also inject into the active ChatSession
             if getattr(char, 'active_chat_session', None):
                 char.active_chat_session.add_world_event(text)
-            # Display to the player
+                try:
+                    from src.gmcp import emit_chat_world_event
+                    emit_chat_world_event(char, text)
+                except Exception:
+                    pass
             if hasattr(char, '_writer'):
                 try:
                     char._writer.write(

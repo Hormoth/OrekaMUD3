@@ -48,6 +48,12 @@ class Feat:
         Returns:
             Modified value or result
         """
+        if context is None:
+            for key, ctx in (('skill', 'skill'), ('save_type', 'save'), ('save', 'save'),
+                             ('weapon', 'attack'), ('attacker', 'ac')):
+                if key in kwargs:
+                    context = ctx
+                    break
         if self.effect:
             return self.effect(user, context=context, **kwargs)
         return kwargs.get('value', 0)

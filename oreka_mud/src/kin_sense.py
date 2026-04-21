@@ -362,30 +362,50 @@ def get_kin_sense_readout(character, room):
     if not lines:
         return ""
 
-    # GMCP: emit structured kin-sense data for the client
+    # GMCP: emit per-presence kin-sense data per docs/GMCP_SPEC.md.
+    # Kin-sense has no spatial model in-engine — every detection is in the
+    # same room. We synthesize ``distance`` as 10 (token "close") and
+    # ``bearing`` as a stable hash of the name so the client visualizer can
+    # place presences consistently across ticks.
     try:
         from src.gmcp import emit_kin_sense as _gmcp_kin
-        detections = []
-        for (cat, element, race_name), count in counts.items():
-            detections.append({
+        presences = []
+
+        def _bearing_for(token):
+            return abs(hash(str(token))) % 360
+
+        for entity in entities:
+            cat, element, race_name = get_resonance(entity)
+            if cat is None:
+                continue
+            familiar = _is_familiar(character, entity)
+            entity_type = "player" if hasattr(entity, 'xp') else "mob"
+            display_name = getattr(entity, 'name', 'Unknown') if familiar else "Unknown"
+            presences.append({
+                "name": display_name,
                 "resonance": cat,
                 "element": element,
-                "race": race_name,
-                "count": count,
+                "race": race_name if familiar else None,
+                "distance": 10,
+                "bearing": _bearing_for(getattr(entity, 'name', entity_type)),
+                "type": entity_type,
             })
-        # Include shadow presences as echo resonance
+
         for shadow in shadows:
-            if shadow.player_name != getattr(character, 'name', ''):
-                detections.append({
-                    "resonance": "echo",
-                    "element": None,
-                    "race": None,
-                    "count": 1,
-                    "name": shadow.player_name,
-                    "is_shadow": True,
-                })
-        room_mod = "suppressed" if ('false_silence' in room_flags or 'kin_sense_dead' in room_flags) else "normal"
-        _gmcp_kin(character, detections, room_modifier=room_mod, range_ft=60)
+            if shadow.player_name == getattr(character, 'name', ''):
+                continue
+            presences.append({
+                "name": shadow.player_name,
+                "resonance": "echo",
+                "element": None,
+                "race": None,
+                "distance": 10,
+                "bearing": _bearing_for(shadow.player_name),
+                "type": "shadow",
+            })
+
+        room_mod = "suppressed" if ('false_silence' in room_flags or 'kin_sense_dead' in room_flags) else None
+        _gmcp_kin(character, presences, room_modifier=room_mod, range_ft=60)
     except Exception:
         pass
 

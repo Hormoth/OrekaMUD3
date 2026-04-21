@@ -19,6 +19,69 @@ from src import conditions as cond
 from src import feats as feat_module
 from src import quests as quest_module
 
+
+# ── D&D 3.5 Weapon Critical Ranges ──────────────────────────────────────────
+# Default is 20/x2. Weapons with wider threat ranges or higher multipliers
+# are listed here. The keen property and Improved Critical feat double the
+# threat range (e.g., 19-20 becomes 17-20).
+
+_WEAPON_CRIT_TABLE = {
+    # weapon_name_fragment: (base_threat_range, crit_multiplier)
+    "rapier": (18, 2), "scimitar": (18, 2), "kukri": (18, 2), "falchion": (18, 2),
+    "longsword": (19, 2), "short sword": (19, 2), "shortsword": (19, 2),
+    "greatsword": (19, 2), "bastard sword": (19, 2), "elven curve blade": (18, 2),
+    "battleaxe": (20, 3), "greataxe": (20, 3), "handaxe": (20, 3),
+    "warhammer": (20, 3), "heavy flail": (19, 2), "light flail": (20, 2),
+    "heavy pick": (20, 4), "light pick": (20, 4), "war pick": (20, 4),
+    "lance": (20, 3), "scythe": (20, 4), "halberd": (20, 3),
+    "glaive": (20, 3), "guisarme": (20, 3),
+}
+
+
+def get_weapon_crit_info(attacker):
+    """Return (threat_range, crit_multiplier) for an attacker's equipped weapon.
+
+    Accounts for weapon type, keen property, and Improved Critical feat.
+    """
+    weapon = None
+    if hasattr(attacker, 'get_equipped_weapon'):
+        weapon = attacker.get_equipped_weapon()
+
+    base_threat = 20
+    crit_mult = 2
+
+    if weapon:
+        name_lower = getattr(weapon, 'name', '').lower()
+        # Check the crit table for matching weapon names
+        for fragment, (threat, mult) in _WEAPON_CRIT_TABLE.items():
+            if fragment in name_lower:
+                base_threat = threat
+                crit_mult = mult
+                break
+
+        # Check weapon stats for explicit overrides
+        stats = getattr(weapon, 'stats', {}) or {}
+        if 'threat_range' in stats:
+            base_threat = stats['threat_range']
+        if 'crit_multiplier' in stats:
+            crit_mult = stats['crit_multiplier']
+
+        # Keen property doubles threat range (widens it)
+        props = getattr(weapon, 'properties', []) or []
+        if 'keen' in props:
+            threat_width = 21 - base_threat  # e.g., 20 -> 1, 19 -> 2, 18 -> 3
+            base_threat = 21 - (threat_width * 2)  # double the range
+
+    # Improved Critical feat also doubles threat range
+    if hasattr(attacker, 'has_feat') and attacker.has_feat('Improved Critical'):
+        threat_width = 21 - base_threat
+        # Only double once (keen and Improved Critical don't stack in 3.5)
+        weapon_props = getattr(weapon, 'properties', []) if weapon else []
+        if 'keen' not in weapon_props:
+            base_threat = 21 - (threat_width * 2)
+
+    return max(2, base_threat), crit_mult  # Minimum threat range of 2 (never below)
+
 if TYPE_CHECKING:
     from src.character import Character
     from src.mob import Mob
@@ -723,7 +786,12 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
 
     use_dex = False
     if hasattr(attacker, 'has_feat') and attacker.has_feat("Weapon Finesse"):
-        if hasattr(attacker, '_is_finesse_weapon') and attacker._is_finesse_weapon():
+        # Check equipped weapon for 'finesse' or 'light' property
+        main_hand = None
+        if hasattr(attacker, 'equipment') and isinstance(attacker.equipment, dict):
+            main_hand = attacker.equipment.get('main_hand')
+        wp = [str(p).lower() for p in (getattr(main_hand, 'properties', []) or [])] if main_hand else []
+        if 'finesse' in wp or 'light' in wp or not main_hand:
             use_dex = True
 
     stat_mod = dex_mod if use_dex else str_mod
@@ -767,7 +835,8 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
         smite_bonus = (getattr(attacker, 'cha_score', 10) - 10) // 2
 
     # Inspire Courage attack bonus from Bard buff
-    inspire_atk = getattr(attacker, 'active_buffs', {}).get('inspire_attack', 0)
+    _buffs = getattr(attacker, 'active_buffs', {})
+    inspire_atk = _buffs.get('inspire_attack', 0) if isinstance(_buffs, dict) else 0
 
     # Size modifier (Small/Tiny attacker gets bonus; Large attacker gets penalty)
     size_mod = get_size_modifier(attacker)
@@ -813,7 +882,7 @@ def calculate_attack_bonus(attacker, target=None, is_aoo: bool = False) -> int:
             + size_mod + temp_attack - fd_penalty - weather_penalty)
 
 
-def calculate_damage(attacker, is_crit: bool = False, target=None) -> int:
+def calculate_damage(attacker, is_crit: bool = False, target=None, crit_mult: int = 0) -> int:
     """Calculate damage for an attack"""
     # Get damage dice — check equipped weapon first, then damage_dice, then default
     # If disarmed (cannot_use_weapon), skip weapon and fall through to unarmed
@@ -868,10 +937,13 @@ def calculate_damage(attacker, is_crit: bool = False, target=None) -> int:
 
     # Condition damage penalties (e.g., sickened gives -2 damage)
     condition_penalty = 0
-    if hasattr(attacker, 'get_condition_modifier'):
-        condition_penalty = attacker.get_condition_modifier('damage_penalty')
-    else:
-        condition_penalty = cond.calculate_condition_modifiers(attacker, 'damage_penalty')
+    try:
+        if hasattr(attacker, 'get_condition_modifier'):
+            condition_penalty = attacker.get_condition_modifier('damage_penalty') or 0
+        else:
+            condition_penalty = cond.calculate_condition_modifiers(attacker, 'damage_penalty') or 0
+    except Exception:
+        condition_penalty = 0
     damage -= condition_penalty
 
     # Ranger Favored Enemy bonus damage
@@ -889,12 +961,14 @@ def calculate_damage(attacker, is_crit: bool = False, target=None) -> int:
         attacker._smite_active = False  # consume the smite
 
     # Inspire Courage bonus damage from Bard buff
-    inspire_dmg = getattr(attacker, 'active_buffs', {}).get('inspire_damage', 0)
+    _buffs = getattr(attacker, 'active_buffs', {})
+    inspire_dmg = _buffs.get('inspire_damage', 0) if isinstance(_buffs, dict) else 0
     damage += inspire_dmg
 
-    # Critical hit multiplier (simplified: x2)
+    # Critical hit multiplier (uses weapon's actual crit multiplier)
     if is_crit:
-        damage *= 2
+        mult = crit_mult if crit_mult > 0 else 2
+        damage *= mult
 
     return max(1, damage)  # Minimum 1 damage
 
@@ -1041,9 +1115,16 @@ def trigger_aoo(defender, attacker, reason: str) -> Optional[str]:
     if roll == 1:
         return f"[AoO] {defender.name} swings at {attacker.name} ({reason}) - MISS (natural 1)"
 
-    is_crit = roll == 20
-    if is_crit or roll + attack_bonus >= ac:
-        damage = calculate_damage(defender, is_crit)
+    # Check for critical threat using weapon's actual threat range
+    threat_range, crit_mult = get_weapon_crit_info(defender)
+    is_crit = False
+    if roll >= threat_range:
+        confirm_roll = random.randint(1, 20) + attack_bonus
+        if confirm_roll >= ac:
+            is_crit = True
+
+    if roll == 20 or roll + attack_bonus >= ac:
+        damage = calculate_damage(defender, is_crit, crit_mult=crit_mult)
         attacker.hp = max(0, attacker.hp - damage)
 
         crit_msg = " CRITICAL HIT!" if is_crit else ""
@@ -1146,30 +1227,26 @@ def attack(attacker, target, power_attack_amt: int = 0, is_full_attack: bool = F
             results.append(f"{attacker.name} attacks {target.name} - MISS (natural 1)")
             continue
 
-        # Check for critical threat (natural 20)
+        # Check for critical threat using weapon's actual threat range
+        threat_range, crit_mult = get_weapon_crit_info(attacker)
         is_crit = False
-        if roll == 20:
-            # Confirm critical
+        if roll >= threat_range:
+            # Confirm critical: roll again vs AC
             confirm_roll = random.randint(1, 20)
             if confirm_roll + attack_bonus >= ac:
                 is_crit = True
 
-        # Check hit
+        # Check hit (natural 20 always hits)
         if roll == 20 or roll + attack_bonus >= ac:
-            # Check keen critical threat (19-20 instead of just 20)
             weapon_for_props = attacker.get_equipped_weapon() if hasattr(attacker, 'get_equipped_weapon') else None
             weapon_props = list(getattr(weapon_for_props, 'properties', []))
-            if not is_crit and roll == 19 and 'keen' in weapon_props:
-                confirm_roll = random.randint(1, 20)
-                if confirm_roll + attack_bonus >= ac:
-                    is_crit = True
 
             # Vorpal on natural 20 confirmed crit: instant kill
             vorpal_kill = False
             if is_crit and roll == 20 and 'vorpal' in weapon_props:
                 vorpal_kill = True
 
-            damage = calculate_damage(attacker, is_crit, target=target)
+            damage = calculate_damage(attacker, is_crit, target=target, crit_mult=crit_mult)
 
             # --- Fix 44: Special Weapon Properties (elemental damage) ---
             weapon_bonus_msgs = []

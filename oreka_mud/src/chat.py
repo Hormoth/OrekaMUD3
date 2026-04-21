@@ -53,7 +53,7 @@ def broadcast_to_room(room, message, exclude=None, include_prompt=True):
     if not room or not hasattr(room, 'players'):
         return
 
-    for player in room.players:
+    for player in list(room.players):
         if exclude and player == exclude:
             continue
         send_to_player(player, message)
@@ -71,7 +71,7 @@ def broadcast_to_world(world, message, exclude=None):
     if not world or not hasattr(world, 'players'):
         return
 
-    for player in world.players:
+    for player in list(world.players):
         if exclude and player == exclude:
             continue
         # Skip AI players
@@ -229,7 +229,7 @@ def find_player_by_name(world, name):
         return None
 
     name_lower = name.lower()
-    for player in world.players:
+    for player in list(world.players):
         if player.name.lower() == name_lower:
             return player
     return None
@@ -250,7 +250,7 @@ def find_player_by_name_prefix(world, prefix):
         return None
 
     prefix_lower = prefix.lower()
-    for player in world.players:
+    for player in list(world.players):
         if player.name.lower().startswith(prefix_lower):
             return player
     return None

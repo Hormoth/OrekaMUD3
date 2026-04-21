@@ -200,6 +200,34 @@ def build_chat_context(player, npc, session) -> dict:
     if forbidden:
         system_parts.append(f"\nForbidden topics: {', '.join(forbidden)}")
 
+    # Layer 5b: YOUR QUESTS — the closed set this NPC may actually offer.
+    # Prevents hallucinated quests and "go see the quest hall" referrals.
+    quest_roster = _build_quest_roster(player, npc)
+    session._quest_roster_ids = {q["quest_id"] for q in quest_roster}
+    if quest_roster:
+        lines = [f"- id={q['quest_id']} | {q['title']}: {q['hook']}" for q in quest_roster]
+        system_parts.append(
+            "\nYOUR QUESTS (the ONLY quests you may offer this player):\n"
+            + "\n".join(lines)
+        )
+    else:
+        system_parts.append(
+            "\nYOUR QUESTS: YOU HAVE NO QUESTS TO OFFER THIS PLAYER.\n"
+            "If they ask for work, say so plainly in character. "
+            "Do NOT invent a quest. Do NOT direct them to a quest hall, "
+            "quest desk, quest master, or quest board — none exist."
+        )
+
+    # Layer 5c: KNOWN PEOPLE — real NPCs in this NPC's room and adjacent rooms.
+    # The NPC may only refer the player to people on this list.
+    known_people = _build_known_people(npc, player)
+    if known_people:
+        lines = [f"- {p['name']} — {p['role']}" for p in known_people]
+        system_parts.append(
+            "\nKNOWN PEOPLE (real individuals nearby — only refer the "
+            "player to names on this list):\n" + "\n".join(lines)
+        )
+
     # Layer 6: Rules
     system_parts.append(f"""
 RULES:
@@ -208,11 +236,20 @@ RULES:
 - Respond in 2-4 sentences unless the player asks something requiring detail.
 - You may trigger game actions by including them in your JSON response.
 - If world events are injected, react to them naturally as your character would.
+- ONLY offer quests listed in YOUR QUESTS above. If the list is empty or no
+  quest fits, refuse plainly — do NOT invent a quest or a quest-giver.
+- There is NO quest hall, quest desk, quest master, quest board, or adventurer
+  guild administrator in this world. Never direct the player to one.
+- Only name or refer the player to people listed under KNOWN PEOPLE, or to
+  canonical named figures you already know from the world's lore. Never
+  invent an NPC name on the spot.
+- If you don't know something, say you don't know — don't fabricate.
 
 RESPONSE FORMAT (JSON):
 {{"dialogue": "Your in-character speech", "game_actions": [], "emotion_state": "neutral", "remember": null}}
 
 Valid game_actions types: modify_reputation, grant_quest, give_item, take_item, set_condition, send_message
+For grant_quest, quest_id MUST be one of the ids listed under YOUR QUESTS.
 Valid emotion_state values: neutral, happy, angry, sad, afraid, suspicious, reverent, excited, troubled""")
 
     system = "\n".join(system_parts)
@@ -233,6 +270,149 @@ Valid emotion_state values: neutral, happy, angry, sad, afraid, suspicious, reve
         "messages": messages,
         "world_events": world_events,
     }
+
+
+# =========================================================================
+# Anti-hallucination helpers
+# =========================================================================
+
+# Phrases an AI NPC must never use — none of these exist in the world.
+FORBIDDEN_REFERRAL_PATTERNS = (
+    "quest hall", "quest desk", "quest master", "quest board",
+    "adventurer's guild", "adventurers guild", "adventurer guild",
+    "guild hall front desk", "quest giver at the",
+)
+
+
+def _build_quest_roster(player, npc) -> list:
+    """Return the closed set of quests this NPC may offer this player now.
+
+    Merges hidden quests (from hidden_quests.json, rep-gated) with regular
+    quests (from QuestManager, prerequisite/level-gated). Each entry has
+    ``quest_id``, ``title``, ``hook`` — the minimum the LLM needs to
+    describe the hook in character.
+    """
+    roster = []
+    seen = set()
+
+    try:
+        from src.quest_reveal import check_for_reveals
+        for q in check_for_reveals(player, npc):
+            qid = str(q.get("id", "")).strip()
+            if not qid or qid in seen:
+                continue
+            seen.add(qid)
+            roster.append({
+                "quest_id": qid,
+                "title": q.get("title", qid.replace("_", " ").title()),
+                "hook": q.get("hook", ""),
+            })
+    except Exception as e:
+        logger.debug(f"hidden quest roster failed: {e}")
+
+    try:
+        from src.quests import get_quest_manager
+        qm = get_quest_manager()
+        quest_log = getattr(player, 'quest_log', None)
+        if quest_log:
+            for q in qm.get_available_quests(player, quest_log,
+                                             npc_name=getattr(npc, 'name', '')):
+                qid = str(q.id)
+                if qid in seen:
+                    continue
+                seen.add(qid)
+                roster.append({
+                    "quest_id": qid,
+                    "title": q.name,
+                    "hook": q.description[:180] if q.description else "",
+                })
+    except Exception as e:
+        logger.debug(f"regular quest roster failed: {e}")
+
+    return roster
+
+
+def _build_known_people(npc, player) -> list:
+    """Return a short list of real NPCs in the same room and adjacent rooms.
+
+    The LLM must only refer the player to people on this list — stops the
+    "go see the quest hall front desk" hallucinations. Capped at 30 to
+    keep the prompt compact.
+    """
+    room = getattr(npc, 'room', None) or getattr(player, 'room', None)
+    if room is None:
+        return []
+
+    world = getattr(room, '_world', None)
+    seen = set()
+    people = []
+
+    def _add(mob, here=False):
+        name = getattr(mob, 'name', '')
+        if not name or name in seen or mob is npc:
+            return
+        seen.add(name)
+        flags = getattr(mob, 'flags', []) or []
+        role_bits = []
+        for flag in ('shopkeeper', 'trainer', 'banker', 'blacksmith',
+                     'guard', 'innkeeper', 'quest_giver', 'family_rep'):
+            if flag in flags:
+                role_bits.append(flag.replace('_', ' '))
+        npc_type = getattr(mob, 'type_', '') or ''
+        if npc_type and npc_type not in role_bits:
+            role_bits.insert(0, npc_type)
+        if not role_bits:
+            role_bits.append("resident")
+        location = "here" if here else "nearby"
+        people.append({"name": name, "role": f"{', '.join(role_bits)} — {location}"})
+
+    for mob in getattr(room, 'mobs', []):
+        if getattr(mob, 'alive', True):
+            _add(mob, here=True)
+
+    if world is not None:
+        for direction, target in getattr(room, 'exits', {}).items():
+            if len(people) >= 30:
+                break
+            target_vnum = target if isinstance(target, int) else getattr(target, 'vnum', None)
+            if target_vnum is None:
+                continue
+            adj = world.rooms.get(target_vnum)
+            if not adj:
+                continue
+            for mob in getattr(adj, 'mobs', []):
+                if len(people) >= 30:
+                    break
+                if getattr(mob, 'alive', True):
+                    _add(mob, here=False)
+
+    return people[:30]
+
+
+def scrub_forbidden_referrals(text: str) -> tuple:
+    """Return (scrubbed_text, found_phrases). Strips sentences containing
+    forbidden quest-hall referrals — these never exist in the world.
+    Called after AI dialogue generation as a safety net.
+    """
+    if not text:
+        return text, []
+    lowered = text.lower()
+    hits = [p for p in FORBIDDEN_REFERRAL_PATTERNS if p in lowered]
+    if not hits:
+        return text, []
+
+    import re
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+    kept = []
+    for sentence in sentences:
+        s_lower = sentence.lower()
+        if any(p in s_lower for p in FORBIDDEN_REFERRAL_PATTERNS):
+            continue
+        kept.append(sentence)
+    scrubbed = " ".join(kept).strip()
+    if not scrubbed:
+        scrubbed = "I don't have work for you right now."
+    return scrubbed, hits
 
 
 def _build_default_personality(npc) -> str:
@@ -280,7 +460,7 @@ async def execute_game_actions(player, npc, actions: list, session) -> list:
                     results.append(msg)
 
             elif action_type == "grant_quest":
-                msg = _handle_quest_grant(player, action)
+                msg = _handle_quest_grant(player, action, session=session)
                 if msg:
                     results.append(msg)
 
@@ -345,11 +525,25 @@ async def _handle_reputation(player, action: dict) -> str:
     return ""
 
 
-def _handle_quest_grant(player, action: dict) -> str:
-    """Grant a quest to the player."""
-    quest_id = action.get("quest_id", "")
+def _handle_quest_grant(player, action: dict, session=None) -> str:
+    """Grant a quest to the player — whitelisted against the NPC's roster.
+
+    Rejects any quest_id not in the roster built at context time, so a
+    hallucinated grant action from the LLM becomes a no-op instead of
+    corrupting the player's quest log.
+    """
+    quest_id = str(action.get("quest_id", "") or "").strip()
     if not quest_id:
         return ""
+
+    allowed = getattr(session, "_quest_roster_ids", None) if session else None
+    if allowed is not None and quest_id not in allowed:
+        logger.warning(
+            f"Rejected hallucinated grant_quest: quest_id={quest_id!r} "
+            f"not in NPC's roster ({sorted(allowed)[:5]}...)"
+        )
+        return ""
+
     try:
         from src.quests import get_quest_manager
         qm = get_quest_manager()
